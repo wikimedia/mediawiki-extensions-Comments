@@ -27,7 +27,7 @@ $wgExtensionCredits['parserhook'][] = array(
 	'version' => '2.4.1',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix' ),
 	'description' => 'Adds <tt>&lt;comments&gt;</tt> parser hook that allows commenting on articles',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:Comments'
+	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
 );
 
 // ResourceLoader support for MediaWiki 1.17+
