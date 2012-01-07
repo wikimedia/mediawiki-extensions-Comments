@@ -42,6 +42,7 @@ class CommentIgnoreList extends SpecialPage {
 			$out .= $this->displayCommentBlockList();
 		} else {
 			if( $wgRequest->wasPosted() ) {
+				$user_name = htmlspecialchars_decode( $user_name );
 				$user_id = User::idFromName( $user_name );
 				// Anons can be comment-blocked, but idFromName returns nothing
 				// for an anon, so...
@@ -112,9 +113,9 @@ class CommentIgnoreList extends SpecialPage {
 				wfMsg( 'comment-ignore-remove-message', $user_name ) .
 			'</div>
 			<div>
-				<form action="" method="post" name="comment_block">
-					<input type="hidden" name="user" value="' . $user_name . '" />
-					<input type="button" class="site-button" value="' . wfMsg( 'comment-ignore-unblock' ) . '" onclick="document.comment_block.submit()" />
+				<form action="" method="post" name="comment_block">' .
+					Html::hidden( 'user', htmlspecialchars( $user_name, ENT_QUOTES ) ) .
+					'<input type="button" class="site-button" value="' . wfMsg( 'comment-ignore-unblock' ) . '" onclick="document.comment_block.submit()" />
 					<input type="button" class="site-button" value="' . wfMsg( 'comment-ignore-cancel' ) . '" onclick="history.go(-1)" />
 				</form>
 			</div>';
