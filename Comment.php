@@ -4,12 +4,12 @@
  *
  * @file
  * @ingroup Extensions
- * @version 2.4.1
+ * @version 2.5
  * @author David Pean <david.pean@gmail.com>
  * @author Misza <misza@shoutwiki.com>
  * @author Jack Phoenix <jack@countervandalism.net>
- * @copyright Copyright © 2008-2011 David Pean, Misza and Jack Phoenix
- * @link http://www.mediawiki.org/wiki/Extension:Comments Documentation
+ * @copyright Copyright © 2008-2012 David Pean, Misza and Jack Phoenix
+ * @link https://www.mediawiki.org/wiki/Extension:Comments Documentation
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
@@ -24,7 +24,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'Comments',
-	'version' => '2.4.1',
+	'version' => '2.5',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix' ),
 	'description' => 'Adds <tt>&lt;comments&gt;</tt> parser hook that allows commenting on articles',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
@@ -34,6 +34,12 @@ $wgExtensionCredits['parserhook'][] = array(
 $wgResourceModules['ext.comments'] = array(
 	'scripts' => 'Comment.js',
 	'styles' => 'Comments.css',
+	'messages' => array(
+		'comment-voted-label', 'comment-loading',
+		'comment-auto-refresher-pause', 'comment-auto-refresher-enable',
+		'comment-cancel-reply', 'comment-reply-to', 'comment-block-warning',
+		'comment-block-anon', 'comment-block-user'
+	),
 	'localBasePath' => dirname( __FILE__ ),
 	'remoteExtPath' => 'Comments',
 	'position' => 'top' // available since r85616
@@ -91,24 +97,24 @@ function wfComments( &$parser ) {
 }
 
 function displayComments( $input, $args, $parser ) {
-	global $wgTitle, $wgOut, $wgScriptPath, $wgHooks;
+	global $wgOut;
 
 	wfProfileIn( __METHOD__ );
 
 	$parser->disableCache();
 
-	// Add required CSS & JS
-	if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
-		$wgOut->addModules( 'ext.comments' );
-	} else {
-		$wgOut->addScriptFile( $wgScriptPath . '/extensions/Comments/Comment.js' );
-		$wgOut->addExtensionStyle( $wgScriptPath . '/extensions/Comments/Comments.css' );
-	}
-
-	// Add i18n for JS
-	$wgHooks['MakeGlobalVariablesScript'][] = 'wfAddCommentJSVars';
+	// Add required CSS & JS via ResourceLoader
+	$wgOut->addModules( 'ext.comments' );
 
 	// Parse arguments
+	// The preg_match() lines here are to support the old-style way of
+	// adding arguments:
+	// <comments>
+	// Allow=Foo,Bar
+	// Voting=Plus
+	// </comments>
+	// whereas the normal, standard MediaWiki style, which this extension
+	// also supports is: <comments allow="Foo,Bar" voting="Plus" />
 	$allow = '';
 	if( preg_match( '/^\s*Allow\s*=\s*(.*)/mi', $input, $matches ) ) {
 		$allow = htmlspecialchars( $matches[1] );
@@ -127,7 +133,7 @@ function displayComments( $input, $args, $parser ) {
 		$voting = $args['voting'];
 	}
 
-	$comment = new Comment( $wgTitle->getArticleID() );
+	$comment = new Comment( $wgOut->getTitle()->getArticleID() );
 	$comment->setAllow( $allow );
 	$comment->setVoting( $voting );
 
@@ -141,6 +147,8 @@ function displayComments( $input, $args, $parser ) {
 
 	$output .= '<div id="allcomments">' . $comment->display() . '</div>';
 
+	// If the database is in read-only mode, display a message informing the
+	// user about that, otherwise allow them to comment
 	if( !wfReadOnly() ) {
 		$output .= $comment->displayForm();
 	} else {
@@ -150,26 +158,6 @@ function displayComments( $input, $args, $parser ) {
 	wfProfileOut( __METHOD__ );
 
 	return $output;
-}
-
-/**
- * Add some i18n messages to the array of JS globals. This is called from
- * displayComments() (the callback function for wfComments).
- *
- * @param $vars Array: array of pre-existing JavaScript global variables
- * @return Boolean: true
- */
-function wfAddCommentJSVars( $vars ) {
-	$vars['_COMMENT_VOTED'] = wfMsg( 'comment-voted-label' );
-	$vars['_COMMENT_LOADING'] = wfMsg( 'comment-loading' );
-	$vars['_COMMENT_PAUSE_REFRESHER'] = wfMsg( 'comment-auto-refresher-pause' );
-	$vars['_COMMENT_ENABLE_REFRESHER'] = wfMsg( 'comment-auto-refresher-enable' );
-	$vars['_COMMENT_CANCEL_REPLY'] = wfMsg( 'comment-cancel-reply' );
-	$vars['_COMMENT_REPLY_TO'] = wfMsg( 'comment-reply-to' );
-	$vars['_COMMENT_BLOCK_WARNING'] = wfMsg( 'comment-block-warning' );
-	$vars['_COMMENT_BLOCK_ANON'] = wfMsg( 'comment-block-anon' );
-	$vars['_COMMENT_BLOCK_USER'] = wfMsg( 'comment-block-user' );
-	return true;
 }
 
 // Translations for {{NUMBEROFCOMMENTS}}

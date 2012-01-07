@@ -4,7 +4,7 @@
  * object-oriented.
  *
  * @file
- * @date 19 June 2011
+ * @date 7 January 2012
  */
 var Comment = {
 	submitted: 0,
@@ -16,58 +16,14 @@ var Comment = {
 	pause: 0,
 
 	/**
-	 * Change the opacity of an element in a cross-browser compatible manner.
-	 *
-	 * @param opacity Integer: opacity
-	 * @param id String: element ID
-	 */
-	changeOpacity: function( opacity, id ) {
-		var object = document.getElementById( id ).style;
-		object.opacity = ( opacity / 100 );
-		object.MozOpacity = ( opacity / 100 );
-		object.KhtmlOpacity = ( opacity / 100 );
-		object.filter = 'alpha(opacity=' + opacity + ')';
-	},
-
-	/**
-	 * Code from http://brainerror.net/scripts/javascript/blendtrans/
-	 *
-	 * @param id String: element ID
-	 * @param opacStart Integer
-	 * @param opacEnd Integer
-	 * @param millisec Integer
-	 */
-	opacity: function( id, opacStart, opacEnd, millisec ) {
-		// speed for each frame
-		var speed = Math.round( millisec / 100 );
-		var timer = 0;
-		var i;
-
-		// determine the direction for the blending, if start and end are the same nothing happens
-		if( opacStart > opacEnd ) {
-			for( i = opacStart; i >= opacEnd; i-- ) {
-				setTimeout( "Comment.changeOpacity(" + i + ",'" + id + "')", ( timer * speed ) );
-				timer++;
-				document.getElementById( id ).style.display = 'none'; // added by Jack
-			}
-		} else if( opacStart < opacEnd ) {
-			for( i = opacStart; i <= opacEnd; i++ ) {
-				setTimeout( "Comment.changeOpacity(" + i + ",'" + id + "')", ( timer * speed ) );
-				timer++;
-				document.getElementById( id ).style.display = 'block'; // added by Jack
-			}
-		}
-	},
-
-	/**
 	 * When a comment's author is ignored, "Show Comment" link will be
 	 * presented to the user.
 	 * If the user clicks on it, this function is called to show the hidden
 	 * comment.
 	 */
 	show: function( id ) {
-		Comment.opacity( 'ignore-' + id, 100, 0, 6500 );
-		Comment.opacity( 'comment-' + id, 0, 100, 500 );
+		jQuery( '#ignore-' + id ).hide( 100 );
+		jQuery( '#comment-' + id ).show( 500 );
 	},
 
 	/**
@@ -78,18 +34,16 @@ var Comment = {
 	 * @param user_id Integer: user ID number of the user whose comments we
 	 *                         want to block
 	 * @param c_id Integer: comment ID number
-	 * @param mk String: vote key (MD5-hashed combination of comment ID, the
-	 *                   string 'pants' and user's name); unused
 	 */
-	blockUser: function( user_name, user_id, c_id, mk ) {
+	blockUser: function( user_name, user_id, c_id ) {
 		if( !user_name ) {
-			user_name = _COMMENT_BLOCK_ANON;
+			user_name = mw.msg( 'comment-block-anon' );
 		} else {
-			user_name = _COMMENT_BLOCK_USER + ' ' + user_name;
+			user_name = mw.msg( 'comment-block-user' ) + ' ' + user_name;
 		}
-		if( confirm( _COMMENT_BLOCK_WARNING + ' ' + user_name + ' ?' ) ) {
+		if( confirm( mw.msg( 'comment-block-warning' ) + ' ' + user_name + ' ?' ) ) {
 			sajax_request_type = 'POST';
-			sajax_do_call( 'wfCommentBlock', [ c_id, user_id, mk ], function( response ) {
+			sajax_do_call( 'wfCommentBlock', [ c_id, user_id ], function( response ) {
 				alert( response.responseText );
 				window.location.href = window.location;
 			});
@@ -102,20 +56,19 @@ var Comment = {
 	 *
 	 * @param cid Integer: comment ID number
 	 * @param vt Integer: vote value
-	 * @param mk String: vote key (MD5-hashed combination of comment ID, the
-	 *                   string 'pants' and user's name); unused
 	 * @param vg
 	 */
-	vote: function( cid, vt, mk, vg ) {
+	vote: function( cid, vt, vg ) {
 		sajax_request_type = 'POST';
 		sajax_do_call(
 			'wfCommentVote',
-			[ cid, vt, mk, ( ( vg ) ? vg : 0 ), document.commentform.pid.value ],
+			[ cid, vt, ( ( vg ) ? vg : 0 ), document.commentform.pid.value ],
 			function( response ) {
 				document.getElementById( 'Comment' + cid ).innerHTML = response.responseText;
 				var img = '<img src="' + wgScriptPath + '/extensions/Comments/images/voted.gif" alt="" />';
 				document.getElementById( 'CommentBtn' + cid ).innerHTML =
-					img + '<span class="CommentVoted">' + _COMMENT_VOTED + '</span>';
+					img + '<span class="CommentVoted">' +
+					mw.msg( 'comment-voted-label' ) + '</span>';
 			}
 		);
 	},
@@ -129,7 +82,7 @@ var Comment = {
 	 * @param end
 	 */
 	viewComments: function( pid, ord, end ) {
-		document.getElementById( 'allcomments' ).innerHTML = _COMMENT_LOADING + '<br /><br />';
+		document.getElementById( 'allcomments' ).innerHTML = mw.msg( 'comment-loading' ) + '<br /><br />';
 		var x = sajax_init_object();
 		var url = wgServer + wgScriptPath +
 			'/index.php?title=Special:CommentListGet&pid=' + pid + '&ord=' +
@@ -153,25 +106,12 @@ var Comment = {
 	},
 
 	/**
-	 * HTML-encodes ampersands and plus signs in the given input string.
-	 *
-	 * @param str String: input
-	 * @return String: input with ampersands and plus signs encoded
-	 */
-	fixString: function( str ) {
-		str = str.replace( /&/gi, '%26' );
-		str = str.replace( /\+/gi, '%2B' );
-		return str;
-	},
-
-	/**
 	 * Submit a new comment.
 	 */
 	submit: function() {
 		if( Comment.submitted === 0 ) {
 			Comment.submitted = 1;
 
-			// Moved variables here...
 			var pidVal = document.commentform.pid.value;
 			var parentId;
 			if ( !document.commentform.comment_parent_id.value ) {
@@ -179,16 +119,12 @@ var Comment = {
 			} else {
 				parentId = document.commentform.comment_parent_id.value;
 			}
-			var fixedStr = Comment.fixString( document.commentform.comment_text.value );
-			var sid = document.commentform.sid.value;
-			var mk = document.commentform.mk.value;
+			var commentText = document.commentform.comment_text.value;
 
-			// @todo CHECKME: possible double-encoding
-			// (fixString func + encodeURIComponent, which sajax object does)
 			sajax_request_type = 'POST';
 			sajax_do_call(
 				'wfCommentSubmit',
-				[ pidVal, parentId, fixedStr, sid, mk ],
+				[ pidVal, parentId, commentText ],
 				function( response ) {
 					document.commentform.comment_text.value = '';
 					Comment.viewComments( document.commentform.pid.value, 0, 1 );
@@ -199,40 +135,31 @@ var Comment = {
 	},
 
 	/**
-	 * I'm not sure what is the purpose of this function. This is used in
-	 * toggleLiveComments() below.
-	 * AFAIK we can do document.getElementById( 'spy' ).innerHTML and get the
-	 * desired results in all browsers, including Internet Explorer.
+	 * Toggle comment auto-refreshing on or off
+	 *
+	 * @param status
 	 */
-	Ob: function( e, f ) {
-		if( document.all ) {
-			return ( ( f ) ? document.all[e].style : document.all[e] );
-		} else {
-			return ( ( f ) ? document.getElementById( e ).style : document.getElementById( e ) );
-		}
-	},
-
 	toggleLiveComments: function( status ) {
-		var Pause;
-		// @todo FIXME/CHECKME: maybe this should be Comment.pause instead?
 		if( status ) {
-			Pause = 0;
+			Comment.pause = 0;
 		} else {
-			Pause = 1;
+			Comment.pause = 1;
 		}
 		var msg;
 		if ( status ) {
-			msg = _COMMENT_PAUSE_REFRESHER;
+			msg = mw.msg( 'comment-auto-refresher-pause' );
 		} else {
-			msg = _COMMENT_ENABLE_REFRESHER;
+			msg = mw.msg( 'comment-auto-refresher-enable' );
 		}
-		Comment.Ob( 'spy' ).innerHTML =
-			'<a href="javascript:Comment.toggleLiveComments(' + ( ( status ) ? 0 : 1 ) +
-			')" style="font-size: 10px">' + msg + '</a>';
+
+		jQuery( 'div#spy a' ).click( function() {
+			Comment.toggleLiveComments( ( status ) ? 0 : 1 );
+		} ).css( 'font-size', '10px' ).text( msg );
+
 		if( !Comment.pause ) {
 			Comment.LatestCommentID = document.commentform.lastcommentid.value;
 			Comment.timer = setTimeout(
-				'Comment.checkUpdate()',
+				function() { Comment.checkUpdate(); },
 				Comment.updateDelay
 			);
 		}
@@ -267,7 +194,10 @@ var Comment = {
 		Comment.isBusy = false;
 		if( !Comment.pause ) {
 			clearTimeout( Comment.timer );
-			Comment.timer = setTimeout( 'Comment.checkUpdate()', Comment.updateDelay );
+			Comment.timer = setTimeout(
+				function() { Comment.checkUpdate(); },
+				Comment.updateDelay
+			);
 		}
 	},
 
@@ -278,9 +208,23 @@ var Comment = {
 	 * @param poster String: name of the person whom we're replying to
 	 */
 	reply: function( parentId, poster ) {
-		document.getElementById( 'replyto' ).innerHTML = _COMMENT_REPLY_TO +
-			' ' + poster + ' (<a href="javascript:Comment.cancelReply()">' +
-			_COMMENT_CANCEL_REPLY + '</a>) <br />';
+		jQuery( '#replyto' ).text(
+			mw.msg( 'comment-reply-to' ) + ' ' + poster + ' ('
+		);
+		jQuery( '<a>', {
+			href: 'javascript:void(0);',
+			'class': 'comments-cancel-reply-link',
+			click: function() {
+				// Calling Comments.cancelReply(); here, like in the original
+				// code, does not work for some reason so we have to duplicate
+				// its functionality here. Ah well, it's only two lines.
+				document.getElementById( 'replyto' ).innerHTML = '';
+				document.commentform.comment_parent_id.value = '';
+			},
+			text: mw.msg( 'comment-cancel-reply' )
+		} ).appendTo( '#replyto' );
+		jQuery( '#replyto' ).append( ') <br />' );
+
 		document.commentform.comment_parent_id.value = parentId;
 	},
 
@@ -289,3 +233,65 @@ var Comment = {
 		document.commentform.comment_parent_id.value = '';
 	}
 };
+
+jQuery( document ).ready( function() {
+	// "Sort by X" feature
+	jQuery( 'select[name="TheOrder"]' ).change( function() {
+		Comment.viewComments(
+			mw.config.get( 'wgArticleId' ), // or we could use jQuery( 'input[name="pid"]' ).val(), too
+			jQuery( this ).val()
+		);
+	} );
+
+	// Comment auto-refresher
+	jQuery( 'div#spy a' ).click( function() {
+		Comment.toggleLiveComments( 1 );
+	} );
+
+	// Voting links
+	jQuery( 'a#comment-vote-link' ).click( function() {
+		var that = jQuery( this );
+		Comment.vote(
+			that.data( 'comment-id' ),
+			that.data( 'vote-type' ),
+			that.data( 'voting' )
+		);
+	} );
+
+	// "Block this user" links
+	jQuery( 'a.comments-block-user' ).each( function( index ) {
+		var that = jQuery( this );
+		that.click( function() {
+			Comment.blockUser(
+				that.data( 'comments-safe-username' ),
+				that.data( 'comments-user-id' ),
+				that.data( 'comments-comment-id' )
+			);
+		} );
+	} );
+
+	// "Show this hidden comment" -- comments made by people on the user's
+	// personal block list
+	jQuery( 'div.c-ignored-links a' ).each( function( index ) {
+		var that = jQuery( this );
+		that.click( function() {
+			Comment.show( that.data( 'comment-id' ) );
+		} );
+	} );
+
+	// Reply links
+	jQuery( 'a.comments-reply-to' ).each( function( index ) {
+		var that = jQuery( this );
+		that.bind( 'click', function() {
+			Comment.reply(
+				that.data( 'comment-id' ),
+				that.data( 'comments-safe-username' )
+			);
+		} );
+	} );
+
+	// Handle clicks on the submit button (previously this was an onclick attr)
+	jQuery( 'div.c-form-button input[type="button"]' ).click( function() {
+		Comment.submit();
+	} );
+} );

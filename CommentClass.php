@@ -112,22 +112,19 @@ class Comment {
 	}
 
 	function getCommentText( $comment_text ) {
-		global $wgTitle, $wgOut, $wgParser;
+		global $wgOut, $wgParser;
 
-		$comment_text = trim( str_replace( "&quot;", "'", $comment_text ) );
+		$comment_text = trim( str_replace( '&quot;', "'", $comment_text ) );
 		$comment_text_parts = explode( "\n", $comment_text );
 		$comment_text_fix = '';
 		foreach( $comment_text_parts as $part ) {
 			$comment_text_fix .= ( ( $comment_text_fix ) ? "\n" : '' ) . trim( $part );
 		}
 
-		if( $wgTitle->getArticleID() > 0 ) {
+		if( $wgOut->getTitle()->getArticleID() > 0 ) {
 			$comment_text = $wgParser->recursiveTagParse( $comment_text_fix );
 		} else {
-			$comment_text = $wgParser->parse(
-				$comment_text_fix, $wgTitle, $wgOut->parserOptions(), true
-			);
-			$comment_text = $comment_text->getText();
+			$comment_text = $wgOut->parse( $comment_text_fix );
 		}
 
 		// really bad hack because we want to parse=firstline, but don't want wrapping <p> tags
@@ -264,9 +261,7 @@ class Comment {
 		global $wgUser;
 		$dbw = wfGetDB( DB_MASTER );
 
-		// @todo FIXME/CHECKME: hurr durr legacy DIY security...still needed?
-		// I sure hope not...
-		$text = /*$this->fixStr( str_replace( "'", '&quot;',*/ $this->CommentText /*) )*/;
+		$text = $this->CommentText;
 		wfSuppressWarnings();
 		$commentDate = date( 'Y-m-d H:i:s' );
 		wfRestoreWarnings();
@@ -651,7 +646,7 @@ class Comment {
 		$output = '<div class="c-order">
 			<div class="c-order-select">
 				<form name="ChangeOrder" action="">
-					<select name="TheOrder" onchange="Comment.viewComments(' . $this->PageID . ',this.value)">
+					<select name="TheOrder">
 						<option value="0">' .
 							wfMsg( 'comment-sort-by-date' ) .
 						'</option>
@@ -662,7 +657,7 @@ class Comment {
 				</form>
 			</div>
 			<div id="spy" class="c-spy">
-				<a href="javascript:Comment.toggleLiveComments(1)">' .
+				<a href="javascript:void(0)">' .
 					wfMsg( 'comment-auto-refresher-enable' ) .
 				'</a>
 			</div>
@@ -682,11 +677,10 @@ class Comment {
 		}
 
 		$voteLink = '';
-		$voteKey = md5( $commentID . 'pants' . $wgUser->getName() );
 		if ( $wgUser->isLoggedIn() ) {
-			$voteLink .= '<a href=\'javascript:Comment.vote(' . $commentID .
-				',' . $voteType . ',"' . $voteKey . '","' . $this->Voting .
-				'")\'>';
+			$voteLink .= '<a id="comment-vote-link" data-comment-id="' .
+				$commentID . '" data-vote-type="' . $voteType .
+				'" data-voting="' . $this->Voting . '" href="javascript:void(0);">';
 		} else {
 			// Anonymous users need to log in before they can vote
 			$login = SpecialPage::getTitleFor( 'Userlogin' );
@@ -757,7 +751,8 @@ class Comment {
 				if( $comment['Comment_user_id'] != 0 ) {
 					$title = Title::makeTitle( NS_USER, $comment['Comment_Username'] );
 
-					$CommentPoster = '<a href="' . $title->escapeFullURL() . '" rel="nofollow">' . $comment['Comment_Username'] . '</a>';
+					$CommentPoster = '<a href="' . $title->escapeFullURL() .
+						'" rel="nofollow">' . $comment['Comment_Username'] . '</a>';
 
 					$CommentReplyTo = $comment['Comment_Username'];
 
@@ -788,8 +783,8 @@ class Comment {
 					if( $replyRow ) {
 						$replyRow .= ' | ';
 					}
-					$replyRow .= " | <a href=\"#end\" rel=\"nofollow\" onclick=\"javascript:Comment.reply({$comment['CommentID']},'" .
-						htmlspecialchars( $CommentReplyTo, ENT_QUOTES ) . "')\">" .
+					$replyRow .= " | <a href=\"#end\" rel=\"nofollow\" class=\"comments-reply-to\" data-comment-id=\"{$comment['CommentID']}\" data-comments-safe-username=\"" .
+						htmlspecialchars( $CommentReplyTo, ENT_QUOTES ) . '">' .
 						wfMsg( 'comment-reply' ) . '</a>';
 				}
 
@@ -801,17 +796,18 @@ class Comment {
 					$comment_class = 'r-message';
 				}
 
-				// Display Block icon for logged in users for comments of users that are already not in your block list
+				// Display Block icon for logged in users for comments of users
+				// that are already not in your block list
 				$block_link = '';
 
 				if(
 					$wgUser->getID() != 0 && $wgUser->getID() != $comment['Comment_user_id'] &&
 					!( in_array( $comment['Comment_Username'], $block_list ) )
 				) {
-					$block_link = "<a href=\"javascript:void(0)\" rel=\"nofollow\" onclick=\"javascript:Comment.blockUser('" .
+					$block_link = '<a href="javascript:void(0);" rel="nofollow" class="comments-block-user" data-comments-safe-username="' .
 						htmlspecialchars( $comment['Comment_Username'], ENT_QUOTES ) .
-						"',{$comment['Comment_user_id']},{$comment['CommentID']},'" .
-						md5( $comment['Comment_Username'] . '-' . $comment['Comment_user_id'] ) . "')\">
+						'" data-comments-comment-id="' . $comment['CommentID'] . '" data-comments-user-id="' .
+						$comment['Comment_user_id'] . "\">
 					<img src=\"{$wgScriptPath}/extensions/Comments/images/block.png\" border=\"0\" alt=\"\"/>
 				</a>";
 				}
@@ -828,7 +824,7 @@ class Comment {
 					$output .= "<div id=\"ignore-{$comment['CommentID']}\" class=\"c-ignored {$container_class}\">\n";
 					$output .= wfMsgExt( 'comment-ignore-message', 'parsemag' );
 					$output .= '<div class="c-ignored-links">' . "\n";
-					$output .= "<a href=\"javascript:Comment.show({$comment['CommentID']});\">" .
+					$output .= "<a href=\"javascript:void(0);\" data-comment-id=\"{$comment['CommentID']}\">" .
 						wfMsg( 'comment-show-comment-link' ) . '</a> | ';
 					$output .= "<a href=\"{$blockListTitle->escapeFullURL()}\">" .
 						wfMsg( 'comment-manage-blocklist-link' ) . '</a>';
@@ -910,7 +906,8 @@ class Comment {
 				$output .= $this->getCommentText( $comment['Comment_Text'] );
 				$output .= '</div>' . "\n";
 				$output .= '<div class="c-actions">' . "\n";
-				$output .= '<a href="' . $title->escapeFullURL() . "#comment-{$comment['CommentID']}\" rel=\"nofollow\">" . wfMsg( 'comment-permalink' ) . '</a> ';
+				$output .= '<a href="' . $title->escapeFullURL() . "#comment-{$comment['CommentID']}\" rel=\"nofollow\">" .
+					wfMsg( 'comment-permalink' ) . '</a> ';
 				if( $replyRow || $dlt ) {
 					$output .= "{$replyRow} {$dlt}" . "\n";
 				}
@@ -925,25 +922,13 @@ class Comment {
 	}
 
 	/**
-	 * "Fixes" a string - replaces urlencoded entries with proper characters
-	 *
-	 * @param $str String: string to fix
-	 * @return $str String: fixed string
-	 */
-	function fixStr( $str ) {
-		$str = str_replace( '%26', '&', $str );
-		$str = str_replace( '%2B', '+', $str );
-		$str = str_replace( '%5C', "\\", $str );
-		return $str;
-	}
-
-	/**
 	 * Displays the form for adding new comments
 	 *
 	 * @return $output Mixed: HTML output
 	 */
 	function displayForm() {
 		global $wgUser;
+
 		$output = '<form action="" method="post" name="commentform">' . "\n";
 
 		if( $this->Allow ) {
@@ -952,7 +937,6 @@ class Comment {
 				strtoupper( addslashes( $wgUser->getName() ) )
 			);
 		}
-		$commentKey = md5( $this->PageID . 'pants' . $wgUser->getName() );
 
 		// 'comment' user right is required to add new comments
 		if( !$wgUser->isAllowed( 'comment' ) ) {
@@ -962,8 +946,10 @@ class Comment {
 			// and maybe there's a list of users who should be allowed to post
 			// comments
 			if( $wgUser->isBlocked() == false && ( $this->Allow == '' || $pos !== false ) ) {
-				$output .= '<div class="c-form-title">' . wfMsg( 'comment-submit' ) . '</div>' . "\n";
+				$output .= '<div class="c-form-title">' .
+					wfMsg( 'comment-submit' ) . '</div>' . "\n";
 				$output .= '<div id="replyto" class="c-form-reply-to"></div>' . "\n";
+				// Show a message to anons, prompting them to register or log in
 				if ( !$wgUser->isLoggedIn() ) {
 					$login_title = SpecialPage::getTitleFor( 'Userlogin' );
 					$register_title = SpecialPage::getTitleFor( 'Userlogin', 'signup' );
@@ -976,15 +962,14 @@ class Comment {
 				}
 
 				$output .= '<textarea name="comment_text" id="comment" rows="5" cols="64"></textarea>' . "\n";
-				$output .= '<div class="c-form-button"><input type="button" value="' . wfMsg( 'comment-post' ) . '" onclick="javascript:Comment.submit()" class="site-button" /></div>' . "\n";
+				$output .= '<div class="c-form-button"><input type="button" value="' .
+					wfMsg( 'comment-post' ) . '" class="site-button" /></div>' . "\n";
 			}
 			$output .= '<input type="hidden" name="action" value="purge" />' . "\n";
 			$output .= '<input type="hidden" name="pid" value="' . $this->PageID . '" />' . "\n";
 			$output .= '<input type="hidden" name="commentid" />' . "\n";
 			$output .= '<input type="hidden" name="lastcommentid" value="' . $this->getLatestCommentID() . '" />' . "\n";
 			$output .= '<input type="hidden" name="comment_parent_id" />' . "\n";
-			$output .= '<input type="hidden" name="sid" value="' . session_id() . '" />' . "\n";
-			$output .= '<input type="hidden" name="mk" value="' . $commentKey . '" />' . "\n";
 		}
 		$output .= '</form>' . "\n";
 		return $output;

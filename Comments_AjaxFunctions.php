@@ -4,7 +4,14 @@
  */
 
 $wgAjaxExportList[] = 'wfCommentSubmit';
-function wfCommentSubmit( $page_id, $parent_id, $comment_text, $sid, $mk ) {
+function wfCommentSubmit( $page_id, $parent_id, $comment_text ) {
+	global $wgUser;
+
+	// Blocked users cannot submit new comments
+	if( $wgUser->isBlocked() ) {
+		return '';
+	}
+
 	if( $comment_text != '' ) {
 		$comment = new Comment( $page_id );
 		$comment->setCommentText( $comment_text );
@@ -12,7 +19,6 @@ function wfCommentSubmit( $page_id, $parent_id, $comment_text, $sid, $mk ) {
 		$comment->add();
 
 		if( class_exists( 'UserStatsTrack' ) ) {
-			global $wgUser;
 			$stats = new UserStatsTrack( $wgUser->getID(), $wgUser->getName() );
 			$stats->incStatField( 'comment' );
 		}
@@ -21,7 +27,14 @@ function wfCommentSubmit( $page_id, $parent_id, $comment_text, $sid, $mk ) {
 }
 
 $wgAjaxExportList[] = 'wfCommentVote';
-function wfCommentVote( $comment_id, $vote_value, $mk, $vg, $page_id ) {
+function wfCommentVote( $comment_id, $vote_value, $vg, $page_id ) {
+	global $wgUser;
+
+	// Blocked users cannot vote, obviously
+	if( $wgUser->isBlocked() ) {
+		return '';
+	}
+
 	if( is_numeric( $comment_id ) && is_numeric( $vote_value ) ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
@@ -41,7 +54,6 @@ function wfCommentVote( $comment_id, $vote_value, $mk, $vg, $page_id ) {
 			$out = $comment->getCommentScore();
 
 			if( class_exists( 'UserStatsTrack' ) ) {
-				global $wgUser;
 				$stats = new UserStatsTrack( $wgUser->getID(), $wgUser->getName() );
 
 				// Must update stats for user doing the voting
@@ -96,7 +108,7 @@ function wfCommentLatestID( $page_id ) {
 }
 
 $wgAjaxExportList[] = 'wfCommentBlock';
-function wfCommentBlock( $comment_id, $user_id, $mk ) {
+function wfCommentBlock( $comment_id, $user_id ) {
 	// Load user_name and user_id for person we want to block from the comment it originated from
 	$dbr = wfGetDB( DB_SLAVE );
 	$s = $dbr->selectRow(
