@@ -45,9 +45,7 @@ $wgResourceModules['ext.comments'] = array(
 	'position' => 'top' // available since r85616
 );
 
-// Configuration variables
-// Web-readable path to the directory where the extension files are located
-$wgCommentsDirectory = "$wgScriptPath/extensions/Comments";
+# Configuration variables
 // Path to an image which will be displayed instead of an avatar if social tools aren't installed.
 // Should be 50x50px
 $wgCommentsDefaultAvatar = 'http://www.shoutwiki.com/w/extensions/SocialProfile/avatars/default_ml.gif';
