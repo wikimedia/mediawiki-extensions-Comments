@@ -114,7 +114,7 @@ class CommentIgnoreList extends SpecialPage {
 			'</div>
 			<div>
 				<form action="" method="post" name="comment_block">' .
-					Html::hidden( 'user', htmlspecialchars( $user_name, ENT_QUOTES ) ) .
+					Html::hidden( 'user', $user_name ) .
 					'<input type="button" class="site-button" value="' . wfMsg( 'comment-ignore-unblock' ) . '" onclick="document.comment_block.submit()" />
 					<input type="button" class="site-button" value="' . wfMsg( 'comment-ignore-cancel' ) . '" onclick="history.go(-1)" />
 				</form>
