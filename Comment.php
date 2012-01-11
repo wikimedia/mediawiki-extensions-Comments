@@ -24,7 +24,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'Comments',
-	'version' => '2.5',
+	'version' => '2.6',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix' ),
 	'description' => 'Adds <tt>&lt;comments&gt;</tt> parser hook that allows commenting on articles',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
@@ -61,6 +61,7 @@ $wgGroupPermissions['commentadmin']['commentadmin'] = true;
 // Set up the new special pages
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['Comments'] = $dir . 'Comments.i18n.php';
+$wgExtensionMessagesFiles['CommentsMagic'] = $dir . 'Comments.i18n.magic.php';
 $wgAutoloadClasses['Comment'] = $dir . 'CommentClass.php';
 $wgAutoloadClasses['CommentIgnoreList'] = $dir . 'SpecialCommentIgnoreList.php';
 $wgAutoloadClasses['CommentListGet'] = $dir . 'CommentAction.php';
@@ -156,18 +157,6 @@ function displayComments( $input, $args, $parser ) {
 	wfProfileOut( __METHOD__ );
 
 	return $output;
-}
-
-// Translations for {{NUMBEROFCOMMENTS}}
-//$wgExtensionMessagesFiles['NumberOfComments'] = $dir . 'Comments.i18n.magic.php';
-
-$wgHooks['LanguageGetMagic'][] = 'wfNumberOfCommentsMagicWord';
-function wfNumberOfCommentsMagicWord( &$magicWords, $langID ) {
-	// tell MediaWiki that {{NUMBEROFCOMMENTS}} and all case variants found in
-	// wiki text should be mapped to magic ID 'NUMBEROFCOMMENTS'
-	// (0 means case-insensitive)
-	$magicWords['NUMBEROFCOMMENTS'] = array( 0, 'NUMBEROFCOMMENTS' );
-	return true;
 }
 
 $wgHooks['ParserGetVariableValueSwitch'][] = 'wfNumberOfCommentsAssignValue';
