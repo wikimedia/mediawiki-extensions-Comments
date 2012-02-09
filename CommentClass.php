@@ -779,13 +779,15 @@ class Comment {
 
 				// Reply Link (does not appear on child comments)
 				$replyRow = '';
-				if( $comment['Comment_Parent_ID'] == 0 ) {
-					if( $replyRow ) {
-						$replyRow .= ' | ';
+				if ( $wgUser->isAllowed( 'comment' ) ) {
+					if( $comment['Comment_Parent_ID'] == 0 ) {
+						if( $replyRow ) {
+							$replyRow .= ' | ';
+						}
+						$replyRow .= " | <a href=\"#end\" rel=\"nofollow\" class=\"comments-reply-to\" data-comment-id=\"{$comment['CommentID']}\" data-comments-safe-username=\"" .
+							htmlspecialchars( $CommentReplyTo, ENT_QUOTES ) . '">' .
+							wfMsg( 'comment-reply' ) . '</a>';
 					}
-					$replyRow .= " | <a href=\"#end\" rel=\"nofollow\" class=\"comments-reply-to\" data-comment-id=\"{$comment['CommentID']}\" data-comments-safe-username=\"" .
-						htmlspecialchars( $CommentReplyTo, ENT_QUOTES ) . '">' .
-						wfMsg( 'comment-reply' ) . '</a>';
 				}
 
 				if( $comment['Comment_Parent_ID'] == 0 ) {
