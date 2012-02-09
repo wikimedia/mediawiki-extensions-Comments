@@ -669,7 +669,7 @@ class Comment {
 	}
 
 	function getVoteLink( $commentID, $voteType ) {
-		global $wgUser, $wgScriptPath;
+		global $wgUser, $wgScriptPath, $wgOut;
 
 		// Blocked users cannot vote, obviously
 		if( $wgUser->isBlocked() ) {
@@ -684,7 +684,10 @@ class Comment {
 		} else {
 			// Anonymous users need to log in before they can vote
 			$login = SpecialPage::getTitleFor( 'Userlogin' );
-			$voteLink .= "<a href=\"{$login->escapeFullURL()}\" rel=\"nofollow\">";
+			$voteLink .=
+				"<a href=\"" .
+				$login->escapeLocalURL( array( 'returnto' => $wgOut->getTitle()->getDBkey() ) ) .
+				"\" rel=\"nofollow\">";
 		}
 
 		$imagePath = $wgScriptPath . '/extensions/Comments/images';
