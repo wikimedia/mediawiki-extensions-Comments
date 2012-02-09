@@ -675,6 +675,9 @@ class Comment {
 		if( $wgUser->isBlocked() ) {
 			return '';
 		}
+		if ( ! $wgUser->isAllowed( 'comment' ) ) {
+			return '';
+		}
 
 		$voteLink = '';
 		if ( $wgUser->isLoggedIn() ) {
