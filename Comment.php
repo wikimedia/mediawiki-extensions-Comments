@@ -4,7 +4,7 @@
  *
  * @file
  * @ingroup Extensions
- * @version 2.5
+ * @version 2.7
  * @author David Pean <david.pean@gmail.com>
  * @author Misza <misza@shoutwiki.com>
  * @author Jack Phoenix <jack@countervandalism.net>
@@ -24,7 +24,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'Comments',
-	'version' => '2.6',
+	'version' => '2.7',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix' ),
 	'description' => 'Adds <tt>&lt;comments&gt;</tt> parser hook that allows commenting on articles',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
@@ -38,7 +38,7 @@ $wgResourceModules['ext.comments'] = array(
 		'comment-voted-label', 'comment-loading',
 		'comment-auto-refresher-pause', 'comment-auto-refresher-enable',
 		'comment-cancel-reply', 'comment-reply-to', 'comment-block-warning',
-		'comment-block-anon', 'comment-block-user'
+		'comment-block-anon', 'comment-block-user', 'comment-delete-warning'
 	),
 	'localBasePath' => dirname( __FILE__ ),
 	'remoteExtPath' => 'Comments',
@@ -136,10 +136,6 @@ function displayComments( $input, $args, $parser ) {
 	$comment->setAllow( $allow );
 	$comment->setVoting( $voting );
 
-	if( isset( $_POST['commentid'] ) ) { // isset added by misza
-		$comment->setCommentID( $_POST['commentid'] );
-		$comment->delete();
-	}
 	// This was originally commented out, I don't know why.
 	// Uncommented to prevent E_NOTICE.
 	$output = $comment->displayOrderForm();

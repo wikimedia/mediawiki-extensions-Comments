@@ -4,7 +4,7 @@
  * object-oriented.
  *
  * @file
- * @date 7 January 2012
+ * @date 4 May 2012
  */
 var Comment = {
 	submitted: 0,
@@ -45,6 +45,22 @@ var Comment = {
 			sajax_request_type = 'POST';
 			sajax_do_call( 'wfCommentBlock', [ c_id, user_id ], function( response ) {
 				alert( response.responseText );
+				window.location.href = window.location;
+			});
+		}
+	},
+
+	/**
+	 * This function is called whenever a user clicks on the "Delete Comment"
+	 * link to delete a comment.
+	 *
+	 * @param c_id Integer: comment ID number
+	 */
+	deleteComment: function( c_id ) {
+		var pageId = document.commentform.pid.value;
+		if( confirm( mw.msg( 'comment-delete-warning' ) ) ) {
+			sajax_request_type = 'POST';
+			sajax_do_call( 'wfDeleteComment', [ pageId, c_id ], function( response ) {
 				window.location.href = window.location;
 			});
 		}
@@ -266,6 +282,16 @@ jQuery( document ).ready( function() {
 				that.data( 'comments-safe-username' ),
 				that.data( 'comments-user-id' ),
 				that.data( 'comments-comment-id' )
+			);
+		} );
+	} );
+
+	// "Delete Comment" links
+	jQuery( 'a.comment-delete-link' ).each( function( index ) {
+		var that = jQuery( this );
+		that.click( function() {
+			Comment.deleteComment(
+				that.data( 'comment-id' )
 			);
 		} );
 	} );

@@ -501,6 +501,7 @@ class Comment {
 			array( 'Comment_Vote_ID' => $this->CommentID ),
 			__METHOD__
 		);
+		$dbw->commit();
 		$this->clearCommentListCache();
 		wfRunHooks( 'Comment::delete', array( $this, $this->CommentID, $this->PageID ) );
 	}
@@ -675,7 +676,7 @@ class Comment {
 		if( $wgUser->isBlocked() ) {
 			return '';
 		}
-		if ( ! $wgUser->isAllowed( 'comment' ) ) {
+		if ( !$wgUser->isAllowed( 'comment' ) ) {
 			return '';
 		}
 
@@ -778,9 +779,13 @@ class Comment {
 
 				// Comment delete button for privileged users
 				$dlt = '';
+
 				if( $wgUser->isAllowed( 'commentadmin' ) ) {
-					$dlt = " | <span class=\"c-delete\"><a href=\"javascript:document.commentform.commentid.value={$comment['CommentID']};document.commentform.submit();\">" .
-						wfMsg( 'comment-delete-link' ) . '</a></span>';
+					//$dlt = " | <span class=\"c-delete\"><a href=\"javascript:document.commentform.commentid.value={$comment['CommentID']};document.commentform.submit();\">" .
+					$dlt = ' | <span class="c-delete">' .
+						'<a href="javascript:void(0);" rel="nofollow" class="comment-delete-link" data-comment-id="' .
+							$comment['CommentID'] . '">' .
+							wfMsg( 'comment-delete-link' ) . '</a></span>';
 				}
 
 				// Reply Link (does not appear on child comments)

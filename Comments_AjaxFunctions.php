@@ -132,3 +132,19 @@ function wfCommentBlock( $comment_id, $user_id ) {
 
 	return 'ok';
 }
+
+$wgAjaxExportList[] = 'wfDeleteComment';
+function wfDeleteComment( $pageId, $commentId ) {
+	global $wgUser;
+
+	// Blocked users cannot delete comments, and neither can unprivileged ones
+	if( $wgUser->isBlocked() || !$wgUser->isAllowed( 'commentadmin' ) ) {
+		return '';
+	}
+
+	$comment = new Comment( $pageId );
+	$comment->setCommentID( $commentId );
+	$comment->delete();
+
+	return 'ok';
+}
