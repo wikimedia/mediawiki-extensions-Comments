@@ -222,3 +222,60 @@ $messages['nl'] = array(
 	'right-comment' => 'Reacties toevoegen',
 	'right-commentadmin' => 'Beheer door gebruikers ingediende reacties',
 );
+
+/** Chinese (中文)
+ * @author Zoglun <zoglun@gmail.com>
+ */
+$messages['zh'] = array(
+	'comment-comment' => '评论',
+	'comments-db-locked' => '<h3>添加评论</h3>数据库被锁死，正在进行维护，请过一段时间后再来~！',
+	'comment-voted-label' => '投票',
+	'comment-loading' => '读取中...',
+	'comment-auto-refresher-enable' => '开启评论自动刷新',
+	'comment-auto-refresher-pause' => '关闭评论自动刷新',
+	'comment-reply-to' => '回复给',
+	'comment-cancel-reply' => '取消',
+	'comment-block-warning' => '你确信你要永久的忽视全部来自这里的评论吗？',
+	'comment-delete-warning' => '你确信你想删除这段评论？',
+	'comment-block-anon' => '匿名用户（显示IP地址）',
+	'comment-block-user' => '用户',
+	'comment-sort-by-date' => '按时间顺序排列',
+	'comment-sort-by-score' => '按分数高低排列',
+	'comment-show-comment-link' => '显示评论',
+	'comment-manage-blocklist-link' => '管理忽略评论列表',
+	'comment-ignore-message' => '你忽略了来自这个人的评论',
+	'comment-you' => ' 你',
+	'comment-reply' => '回复',
+	'comment-login-required' => '登陆后才能留言',
+	'comment-not-allowed' => '你没有足够的权限来留言',
+	'comment-post' => '发表评论',
+	'comment-submit' => '添加你的评论',
+	'comment-score-text' => '分数',
+	'comment-permalink' => '永久链接',
+	'comment-delete-link' => '删除评论',
+	'comment-anon-name' => '匿名用户',
+	'comment-anon-message' => '{{SITENAME}} 欢迎 <b>评论</b>~！  如果你不想匿名, <a href="$1">免费注册</a> 或者 <a href="$2">登陆</a>。',
+	'comment-ignore-item' => '<a href="$1">$2</a> 在 $3 <a href="$4">(解除黑名单)</a>',
+	'comment-ignore-no-users' => '目前没有用户被加入黑名单。',
+	'comment-ignore-remove-message' => '你确信你要把<b>$1</b>的评论移出黑名单？',
+	'comment-ignore-unblock' => '解除封锁',
+	'comment-ignore-cancel' => '取消',
+	'comment-ignore-title' => '忽略的评论列表',
+	'commentignorelist' => '忽略的评论列表',
+	'comments-no-comments-of-day' => '目前没有今日评论', // for the <commentsoftheday/> parser hook
+	'commentslogpage' => '评论日志',
+	'commentslogpagetext' => '这是评论的日志',
+	'commentslog-create-entry' => '新评论',
+	'comments-time-ago' => '$1 之前',
+	'comments-time-days' => '{{PLURAL:$1|一天|$1 天}}',
+	'comments-time-hours' => '{{PLURAL:$1|一小时|$1 小时}}',
+	'comments-time-minutes' => '{{PLURAL:$1|一分钟|$1 分钟}}',
+	'comments-time-seconds' => '{{PLURAL:$1|一秒|$1 秒}}',
+	'log-show-hide-comments' => '$1 评论日志', // For Special:Log
+	// For Special:ListUsers - new commentadmin group
+	'group-commentadmin' => '评论管理',
+	'group-commentadmin-member' => '评论管理员',
+	// For Special:ListGroupRights
+	'right-comment' => '提交评论',
+	'right-commentadmin' => '管理用户提交的评论',
+);
