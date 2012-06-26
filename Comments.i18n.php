@@ -67,6 +67,63 @@ $messages['en'] = array(
 	'right-commentadmin' => 'Administrate user-submitted comments',
 );
 
+/** German (Deutsch)
+ * @author Gerry
+ */
+$messages['de'] = array(
+	'comment-comment' => 'Kommentar',
+	'comments-db-locked' => '<h3>Kommentar hinzufügen</h3>Die Datenbank is momentan wegen Wartungsarbeiten nicht erreichbar. Bitte später noch einmal probieren!',
+	'comment-voted-label' => 'Stimmen',
+	'comment-loading' => 'Laden...',
+	'comment-auto-refresher-enable' => 'Kommentar Auto-Refresh einschalten',
+	'comment-auto-refresher-pause' => 'Kommentar Auto-Refresh pausieren',
+	'comment-reply-to' => 'Antworten',
+	'comment-cancel-reply' => 'Abbrechen',
+	'comment-block-warning' => 'Bist du sicher, alle Kommentare zu ignorieren von Benutzer',
+	'comment-delete-warning' => 'Kommentar wirklich löschen?',
+	'comment-block-anon' => 'Anonymer Benutzer (über IP Adresse)',
+	'comment-block-user' => 'Benutzer',
+	'comment-sort-by-date' => 'Sortieren nach Datum',
+	'comment-sort-by-score' => 'Sortieren nach Score',
+	'comment-show-comment-link' => 'Zeige Kommentar',
+	'comment-manage-blocklist-link' => 'Ignore Liste bearbeiten',
+	'comment-ignore-message' => 'Du ignorierst den Schreiber dieses Kommentars',
+	'comment-you' => ' Du',
+	'comment-reply' => 'Anworten',
+	'comment-login-required' => 'Du musst eingeloggt sein um Kommentare hinzuzufügen',
+	'comment-not-allowed' => 'Du bist nicht berechtigt Kommentare hinzuzufügen',
+	'comment-post' => 'Schreibe Kommentar',
+	'comment-submit' => 'Füge Kommentar hinzu',
+	'comment-score-text' => 'Score',
+	'comment-permalink' => 'Permalink',
+	'comment-delete-link' => 'Lösche Kommentar',
+	'comment-anon-name' => 'Anonymer Benutzer',
+	'comment-anon-message' => '{{SITENAME}} begrüßt <b>alle Kommentare</b>.  Wenn du nicht anonymer Benutzer sein willst <a href="$1">registriere</a> oder <a href="$2">log dich ein</a>.',
+	'comment-ignore-item' => '<a href="$1">$2</a> on $3 <a href="$4">(unblock)</a>',
+	'comment-ignore-no-users' => 'Keine Benutzer sind momentan blockiert.',
+	'comment-ignore-remove-message' => 'Bist du sicher, die Kommentare von Benutzer <b>$1</b> wieder freizugeben?',
+	'comment-ignore-unblock' => 'Freigeben',
+	'comment-ignore-cancel' => 'Abbrechen',
+	'comment-ignore-title' => 'Kommentar Ignore Liste',
+	'commentignorelist' => 'Kommentar Ignore List',
+	'comments-no-comments-of-day' => 'Es gibt keinen Kommentar des Tages.', // for the <commentsoftheday/> parser hook
+	'commentslogpage' => 'Kommentar Log',
+	'commentslogpagetext' => 'Das ist ein Kommentar Log.',
+	'commentslog-create-entry' => 'Neuer Kommentar',
+	'comments-time-ago' => '$1 vorbei',
+	'comments-time-days' => '{{PLURAL:$1|ein Tag|$1 days}}',
+	'comments-time-hours' => '{{PLURAL:$1|eine Stunde|$1 hours}}',
+	'comments-time-minutes' => '{{PLURAL:$1|eine Minute|$1 minutes}}',
+	'comments-time-seconds' => '{{PLURAL:$1|eine Sekunde|$1 seconds}}',
+	'log-show-hide-comments' => '$1 Kommentar Log', // For Special:Log
+	// For Special:ListUsers - new commentadmin group
+	'group-commentadmin' => 'Kommentar Administrator',
+	'group-commentadmin-member' => 'Kommentar Administrator',
+	// For Special:ListGroupRights
+	'right-comment' => 'Kommentar abgeben',
+	'right-commentadmin' => 'Kommentare bearbeiten',
+);
+
 /** Finnish (Suomi)
  * @author Jack Phoenix <jack@countervandalism.net>
  */
