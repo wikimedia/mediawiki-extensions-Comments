@@ -7,8 +7,9 @@ $wgAjaxExportList[] = 'wfCommentSubmit';
 function wfCommentSubmit( $page_id, $parent_id, $comment_text ) {
 	global $wgUser;
 
-	// Blocked users cannot submit new comments
-	if( $wgUser->isBlocked() ) {
+	// Blocked users cannot submit new comments, and neither can those users
+	// without the necessary privileges
+	if( $wgUser->isBlocked() || !$wgUser->isAllowed( 'comment' ) ) {
 		return '';
 	}
 
@@ -30,8 +31,9 @@ $wgAjaxExportList[] = 'wfCommentVote';
 function wfCommentVote( $comment_id, $vote_value, $vg, $page_id ) {
 	global $wgUser;
 
-	// Blocked users cannot vote, obviously
-	if( $wgUser->isBlocked() ) {
+	// Blocked users cannot vote, obviously, and neither can those users
+	// without the necessary privileges
+	if( $wgUser->isBlocked() || !$wgUser->isAllowed( 'comment' ) ) {
 		return '';
 	}
 
