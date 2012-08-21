@@ -67,6 +67,49 @@ $messages['en'] = array(
 	'right-commentadmin' => 'Administrate user-submitted comments',
 );
 
+/** Message documentation */
+$messages['qqq'] = array(
+	'comment-comment' => 'This message might be unused.',
+	'comments-db-locked' => 'Displayed if a page contains the &lt;comments /&gt; tag while the database is locked.',
+	'comment-voted-label' => 'Shown when you have voted (either thumbs up or thumbs down) for a given comment',
+	'comment-auto-refresher-enable' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
+	'comment-auto-refresher-pause' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
+	'comment-reply-to' => 'This message is followed by the user\'s username whom you\'re about to reply to. For example, "Reply to Jack Phoenix".',
+	'comment-block-warning' => "Displayed in a JavaScript popup alert when the user is about to ignore someone's comments. This message is followed by either MediaWiki:Comment-block-anon or MediaWiki:Comment-block-user, depending on the fact whether the user is an anonymous one or not.",
+	'comment-delete-warning' => "Displayed in a JavaScript popup alert when the user is about to delete someone's comment.",
+	'comment-sort-by-date' => 'Drop-down menu item; refer to the [[mw:File:Comments.png|image]] for details',
+	'comment-sort-by-score' => 'Drop-down menu item; refer to the [[mw:File:Comments.png|image]] for details',
+	'comment-show-comment-link' => 'When a user who is on your comment ignore list has posted a comment, you are shown an explanation ([[MediaWiki:Comment-ignore-message]]) and options on what to do. Clicking on this link will show the hidden comment.',
+	'comment-manage-blocklist-link' => 'When a user who is on your comment ignore list has posted a comment, you are shown an explanation ([[MediaWiki:Comment-ignore-message]]) and options on what to do ([[MediaWiki:Comment-show-comment-link]] and this message). Clicking on this link will take you to Special:CommentIgnoreList, where you can remove people from your comment ignore list.',
+	'comment-ignore-message' => "Shown in the output of the <comments /> tag instead of the person's comment if you're ignoring the said person.",
+	'comment-login-required' => 'Shown when the user does not have the "comment" user right and they are logged out but a page contains the &lt;comments /&gt; tag.',
+	'comment-not-allowed' => 'Shown when the user does not have the "comment" user right but a page contains the &lt;comments /&gt; tag.',
+	'comment-post' => 'Button text, clicking on this button submits your comment; refer to the [[mw:File:Comments.png|image]] for details',
+	'comment-submit' => 'This text is shown above the comment form (the form where you can submit your own comment(s)); refer to the [[mw:File:Comments.png|image]] for details',
+	'comment-score-text' => "Followed by the comment's score; refer to the [[mw:File:Comments.png|image]] for details",
+	'comment-permalink' => '"Permalink" means "permanent link" and clicking on it creates what is a permanent link to a comment, at least until a (comment) administrator deletes the comment or the whole page gets deleted or the &lt;comments/&gt; tag is removed from it',
+	'comment-delete-link' => 'Link text; clicking on this deletes the comment (duh)',
+	'comment-anon-name' => 'Generic name shown for anonymous (not logged in/unregistered) users, since their IP addresses aren\'t directly exposed',
+	'comment-anon-message' => 'Shown above the comment form to anonymous users. $1 is the URL to Special:UserLogin, $2 is the URL to Special:UserLogin/signup.',
+	'comment-ignore-item' => "Shown on Special:CommentIgnoreList. $1 is the URL to the blocked user's user page, $2 is the name of the blocked user, $3 is the timestamp (when the user was blocked) and $4 is the URL to the unblock form.",
+	'comment-ignore-no-users' => "Shown on Special:CommentIgnoreList if you haven't blocked anyone's comments.",
+	'comment-ignore-remove-message' => "Confirmation message, shown when the user is about to unblock someone's comments on Special:CommentIgnoreList. $1 is the username of the user whose comments the user has blocked.",
+	'comment-ignore-title' => 'Title of Special:CommentIgnoreList, as shown on the said page.',
+	'commentignorelist' => 'Title of Special:CommentIgnoreList, as shown on Special:SpecialPages; the comment ignore list contains a list of users whose comments you are ignoring; an ignored comment won\'t show up by default and you have to click on a special link to view it',
+	'comments-no-comments-of-day' => 'Shown as the output of the &lt;commentsoftheday/&gt; parser hook if there are no comments of the day',
+	'commentslogpage' => 'Shown on the dropdown on Special:Log',
+	'commentslogpagetext' => 'Explanation of the comments log, shown on Special:Log',
+	'commentslogentry' => "For compatibility, don't translate this",
+	'commentslog-create-entry' => 'Log entry for [[Special:Log]]',
+	'comments-create-text' => "Don't translate this",
+	'comments-time-ago' => '$1 is one of the following messages: comments-time-days, comments-time-hours, comments-time-minutes, comments-time-seconds',
+	'log-show-hide-comments' => 'For Special:Log; $1 is show or hide (there are probably some MW core messages for those two)',
+	'group-commentadmin' => "Shown on Special:ListUsers. Members of this group can delete other users' comments.",
+	'group-commentadmin-member' => 'Member of the Comment Administrators (commentadmin) group, shown on Special:ListUsers',
+	'right-comment' => 'Shown on Special:ListGroupRights',
+	'right-commentadmin' => 'Shown on Special:ListGroupRights',
+);
+
 /** German (Deutsch)
  * @author Gerry
  */
