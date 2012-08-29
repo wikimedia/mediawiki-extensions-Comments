@@ -34,7 +34,7 @@ class CommentIgnoreList extends SpecialPage {
 			return false;
 		}
 
-		$wgOut->setPageTitle( wfMsg( 'comment-ignore-title' ) );
+		$wgOut->setPageTitle( wfMsg( 'comments-ignore-title' ) );
 
 		$out = ''; // Prevent E_NOTICE
 
@@ -85,7 +85,7 @@ class CommentIgnoreList extends SpecialPage {
 			foreach( $res as $row ) {
 				$user_title = Title::makeTitle( NS_USER, $row->cb_user_name_blocked );
 				$out .= '<li>' . wfMsg(
-					'comment-ignore-item',
+					'comments-ignore-item',
 					$user_title->escapeFullURL(),
 					$user_title->getText(),
 					$row->cb_date,
@@ -95,7 +95,7 @@ class CommentIgnoreList extends SpecialPage {
 			$out .= '</ul>';
 		} else {
 			$out = '<div class="comment_blocked_user">' .
-				wfMsg( 'comment-ignore-no-users' ) . '</div>';
+				wfMsg( 'comments-ignore-no-users' ) . '</div>';
 		}
 		return $out;
 	}
@@ -110,13 +110,13 @@ class CommentIgnoreList extends SpecialPage {
 		$user_name = $wgRequest->getVal( 'user' );
 
 		$out = '<div class="comment_blocked_user">' .
-				wfMsg( 'comment-ignore-remove-message', $user_name ) .
+				wfMsg( 'comments-ignore-remove-message', $user_name ) .
 			'</div>
 			<div>
 				<form action="" method="post" name="comment_block">' .
 					Html::hidden( 'user', $user_name ) .
-					'<input type="button" class="site-button" value="' . wfMsg( 'comment-ignore-unblock' ) . '" onclick="document.comment_block.submit()" />
-					<input type="button" class="site-button" value="' . wfMsg( 'comment-ignore-cancel' ) . '" onclick="history.go(-1)" />
+					'<input type="button" class="site-button" value="' . wfMsg( 'comments-ignore-unblock' ) . '" onclick="document.comment_block.submit()" />
+					<input type="button" class="site-button" value="' . wfMsg( 'comments-ignore-cancel' ) . '" onclick="history.go(-1)" />
 				</form>
 			</div>';
 		return $out;

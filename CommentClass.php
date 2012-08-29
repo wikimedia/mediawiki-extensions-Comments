@@ -649,17 +649,17 @@ class Comment {
 				<form name="ChangeOrder" action="">
 					<select name="TheOrder">
 						<option value="0">' .
-							wfMsg( 'comment-sort-by-date' ) .
+							wfMsg( 'comments-sort-by-date' ) .
 						'</option>
 						<option value="1">' .
-							wfMsg( 'comment-sort-by-score' ) .
+							wfMsg( 'comments-sort-by-score' ) .
 						'</option>
 					</select>
 				</form>
 			</div>
 			<div id="spy" class="c-spy">
 				<a href="javascript:void(0)">' .
-					wfMsg( 'comment-auto-refresher-enable' ) .
+					wfMsg( 'comments-auto-refresher-enable' ) .
 				'</a>
 			</div>
 			<div class="cleared"></div>
@@ -773,8 +773,8 @@ class Comment {
 						$AFCounter++;
 					}
 
-					$CommentPoster = wfMsgForContent( 'comment-anon-name' ) . ' #' . $AFBucket[$comment['Comment_Username']];
-					$CommentReplyTo = wfMsgForContent( 'comment-anon-name' );
+					$CommentPoster = wfMsgForContent( 'comments-anon-name' ) . ' #' . $AFBucket[$comment['Comment_Username']];
+					$CommentReplyTo = wfMsgForContent( 'comments-anon-name' );
 				}
 
 				// Comment delete button for privileged users
@@ -785,7 +785,7 @@ class Comment {
 					$dlt = ' | <span class="c-delete">' .
 						'<a href="javascript:void(0);" rel="nofollow" class="comment-delete-link" data-comment-id="' .
 							$comment['CommentID'] . '">' .
-							wfMsg( 'comment-delete-link' ) . '</a></span>';
+							wfMsg( 'comments-delete-link' ) . '</a></span>';
 				}
 
 				// Reply Link (does not appear on child comments)
@@ -797,7 +797,7 @@ class Comment {
 						}
 						$replyRow .= " | <a href=\"#end\" rel=\"nofollow\" class=\"comments-reply-to\" data-comment-id=\"{$comment['CommentID']}\" data-comments-safe-username=\"" .
 							htmlspecialchars( $CommentReplyTo, ENT_QUOTES ) . '">' .
-							wfMsg( 'comment-reply' ) . '</a>';
+							wfMsg( 'comments-reply' ) . '</a>';
 					}
 				}
 
@@ -835,12 +835,12 @@ class Comment {
 					$blockListTitle = SpecialPage::getTitleFor( 'CommentIgnoreList' );
 
 					$output .= "<div id=\"ignore-{$comment['CommentID']}\" class=\"c-ignored {$container_class}\">\n";
-					$output .= wfMsgExt( 'comment-ignore-message', 'parsemag' );
+					$output .= wfMsgExt( 'comments-ignore-message', 'parsemag' );
 					$output .= '<div class="c-ignored-links">' . "\n";
 					$output .= "<a href=\"javascript:void(0);\" data-comment-id=\"{$comment['CommentID']}\">" .
-						wfMsg( 'comment-show-comment-link' ) . '</a> | ';
+						wfMsg( 'comments-show-comment-link' ) . '</a> | ';
 					$output .= "<a href=\"{$blockListTitle->escapeFullURL()}\">" .
-						wfMsg( 'comment-manage-blocklist-link' ) . '</a>';
+						wfMsg( 'comments-manage-blocklist-link' ) . '</a>';
 					$output .= '</div>' . "\n";
 					$output .= '</div>' . "\n";
 				}
@@ -877,7 +877,7 @@ class Comment {
 
 				if( $this->AllowMinus == true || $this->AllowPlus == true ) {
 					$output .= '<span class="c-score-title">' .
-						wfMsg( 'comment-score-text' ) .
+						wfMsg( 'comments-score-text' ) .
 						" <span id=\"Comment{$comment['CommentID']}\">{$CommentScore}</span></span>";
 
 					// Voting is possible only when database is unlocked
@@ -896,12 +896,12 @@ class Comment {
 								}
 								$output .= '</span>';
 							} else {
-								$output .= wfMsg( 'comment-you' );
+								$output .= wfMsg( 'comments-you' );
 							}
 						} else {
 							// Already voted?
 							$output .= '<img src="' . $wgScriptPath . '/extensions/Comments/images/voted.gif" border="0" alt="" />' .
-										wfMsg( 'comment-voted-label' );
+										wfMsg( 'comments-voted-label' );
 						}
 					}
 				}
@@ -920,7 +920,7 @@ class Comment {
 				$output .= '</div>' . "\n";
 				$output .= '<div class="c-actions">' . "\n";
 				$output .= '<a href="' . $title->escapeFullURL() . "#comment-{$comment['CommentID']}\" rel=\"nofollow\">" .
-					wfMsg( 'comment-permalink' ) . '</a> ';
+					wfMsg( 'comments-permalink' ) . '</a> ';
 				if( $replyRow || $dlt ) {
 					$output .= "{$replyRow} {$dlt}" . "\n";
 				}
@@ -953,21 +953,21 @@ class Comment {
 
 		// 'comment' user right is required to add new comments
 		if( !$wgUser->isAllowed( 'comment' ) ) {
-			$output .= wfMsg( 'comment-not-allowed' );
+			$output .= wfMsg( 'comments-not-allowed' );
 		} else {
 			// Blocked users can't add new comments under any conditions...
 			// and maybe there's a list of users who should be allowed to post
 			// comments
 			if( $wgUser->isBlocked() == false && ( $this->Allow == '' || $pos !== false ) ) {
 				$output .= '<div class="c-form-title">' .
-					wfMsg( 'comment-submit' ) . '</div>' . "\n";
+					wfMsg( 'comments-submit' ) . '</div>' . "\n";
 				$output .= '<div id="replyto" class="c-form-reply-to"></div>' . "\n";
 				// Show a message to anons, prompting them to register or log in
 				if ( !$wgUser->isLoggedIn() ) {
 					$login_title = SpecialPage::getTitleFor( 'Userlogin' );
 					$register_title = SpecialPage::getTitleFor( 'Userlogin', 'signup' );
 					$output .= '<div class="c-form-message">' . wfMsgExt(
-						'comment-anon-message',
+						'comments-anon-message',
 						'parsemag',
 						$register_title->escapeFullURL(),
 						$login_title->escapeFullURL()
@@ -976,7 +976,7 @@ class Comment {
 
 				$output .= '<textarea name="comment_text" id="comment" rows="5" cols="64"></textarea>' . "\n";
 				$output .= '<div class="c-form-button"><input type="button" value="' .
-					wfMsg( 'comment-post' ) . '" class="site-button" /></div>' . "\n";
+					wfMsg( 'comments-post' ) . '" class="site-button" /></div>' . "\n";
 			}
 			$output .= '<input type="hidden" name="action" value="purge" />' . "\n";
 			$output .= '<input type="hidden" name="pid" value="' . $this->PageID . '" />' . "\n";

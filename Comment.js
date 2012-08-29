@@ -4,7 +4,7 @@
  * object-oriented.
  *
  * @file
- * @date 4 May 2012
+ * @date 29 August 2012
  */
 var Comment = {
 	submitted: 0,
@@ -37,11 +37,11 @@ var Comment = {
 	 */
 	blockUser: function( user_name, user_id, c_id ) {
 		if( !user_name ) {
-			user_name = mw.msg( 'comment-block-anon' );
+			user_name = mw.msg( 'comments-block-anon' );
 		} else {
-			user_name = mw.msg( 'comment-block-user' ) + ' ' + user_name;
+			user_name = mw.msg( 'comments-block-user' ) + ' ' + user_name;
 		}
-		if( confirm( mw.msg( 'comment-block-warning' ) + ' ' + user_name + ' ?' ) ) {
+		if( confirm( mw.msg( 'comments-block-warning' ) + ' ' + user_name + ' ?' ) ) {
 			sajax_request_type = 'POST';
 			sajax_do_call( 'wfCommentBlock', [ c_id, user_id ], function( response ) {
 				alert( response.responseText );
@@ -58,7 +58,7 @@ var Comment = {
 	 */
 	deleteComment: function( c_id ) {
 		var pageId = document.commentform.pid.value;
-		if( confirm( mw.msg( 'comment-delete-warning' ) ) ) {
+		if( confirm( mw.msg( 'comments-delete-warning' ) ) ) {
 			sajax_request_type = 'POST';
 			sajax_do_call( 'wfDeleteComment', [ pageId, c_id ], function( response ) {
 				window.location.href = window.location;
@@ -84,7 +84,7 @@ var Comment = {
 				var img = '<img src="' + wgScriptPath + '/extensions/Comments/images/voted.gif" alt="" />';
 				document.getElementById( 'CommentBtn' + cid ).innerHTML =
 					img + '<span class="CommentVoted">' +
-					mw.msg( 'comment-voted-label' ) + '</span>';
+					mw.msg( 'comments-voted-label' ) + '</span>';
 			}
 		);
 	},
@@ -98,7 +98,7 @@ var Comment = {
 	 * @param end
 	 */
 	viewComments: function( pid, ord, end ) {
-		document.getElementById( 'allcomments' ).innerHTML = mw.msg( 'comment-loading' ) + '<br /><br />';
+		document.getElementById( 'allcomments' ).innerHTML = mw.msg( 'comments-loading' ) + '<br /><br />';
 		var x = sajax_init_object();
 		var url = wgServer + wgScriptPath +
 			'/index.php?title=Special:CommentListGet&pid=' + pid + '&ord=' +
@@ -163,9 +163,9 @@ var Comment = {
 		}
 		var msg;
 		if ( status ) {
-			msg = mw.msg( 'comment-auto-refresher-pause' );
+			msg = mw.msg( 'comments-auto-refresher-pause' );
 		} else {
-			msg = mw.msg( 'comment-auto-refresher-enable' );
+			msg = mw.msg( 'comments-auto-refresher-enable' );
 		}
 
 		jQuery( 'div#spy a' ).click( function() {
@@ -225,7 +225,7 @@ var Comment = {
 	 */
 	reply: function( parentId, poster ) {
 		jQuery( '#replyto' ).text(
-			mw.msg( 'comment-reply-to' ) + ' ' + poster + ' ('
+			mw.msg( 'comments-reply-to' ) + ' ' + poster + ' ('
 		);
 		jQuery( '<a>', {
 			href: 'javascript:void(0);',
@@ -237,7 +237,7 @@ var Comment = {
 				document.getElementById( 'replyto' ).innerHTML = '';
 				document.commentform.comment_parent_id.value = '';
 			},
-			text: mw.msg( 'comment-cancel-reply' )
+			text: mw.msg( 'comments-cancel-reply' )
 		} ).appendTo( '#replyto' );
 		jQuery( '#replyto' ).append( ') <br />' );
 

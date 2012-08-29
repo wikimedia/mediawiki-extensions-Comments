@@ -5,7 +5,7 @@
  *
  * @file
  * @ingroup Extensions
- * @date 5 August 2011
+ * @date 29 August 2012
  */
 if ( !defined( 'MEDIAWIKI' ) ) {
 	die();
@@ -94,8 +94,8 @@ function getCommentsOfTheDay( $input, $args, $parser ) {
 			$avatar = new wAvatar( $commentOfTheDay['userid'], 's' );
 			$commentIcon = $avatar->getAvatarImage();
 		} else {
-			$commentPoster_Display = wfMsg( 'comment-anon-name' );
-			$commentPoster = wfMsg( 'comment-anon-name' );
+			$commentPoster_Display = wfMsg( 'comments-anon-name' );
+			$commentPoster = wfMsg( 'comments-anon-name' );
 			$commentIcon = 'default_s.gif';
 		}
 

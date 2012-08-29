@@ -4,7 +4,7 @@
  *
  * @file
  * @ingroup Extensions
- * @version 2.7
+ * @version 2.7.1
  * @author David Pean <david.pean@gmail.com>
  * @author Misza <misza@shoutwiki.com>
  * @author Jack Phoenix <jack@countervandalism.net>
@@ -24,7 +24,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'Comments',
-	'version' => '2.7',
+	'version' => '2.7.1',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix' ),
 	'description' => 'Adds <tt>&lt;comments&gt;</tt> parser hook that allows commenting on articles',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
@@ -35,10 +35,10 @@ $wgResourceModules['ext.comments'] = array(
 	'scripts' => 'Comment.js',
 	'styles' => 'Comments.css',
 	'messages' => array(
-		'comment-voted-label', 'comment-loading',
-		'comment-auto-refresher-pause', 'comment-auto-refresher-enable',
-		'comment-cancel-reply', 'comment-reply-to', 'comment-block-warning',
-		'comment-block-anon', 'comment-block-user', 'comment-delete-warning'
+		'comments-voted-label', 'comments-loading',
+		'comments-auto-refresher-pause', 'comments-auto-refresher-enable',
+		'comments-cancel-reply', 'comments-reply-to', 'comments-block-warning',
+		'comments-block-anon', 'comments-block-user', 'comments-delete-warning'
 	),
 	'localBasePath' => dirname( __FILE__ ),
 	'remoteExtPath' => 'Comments',
