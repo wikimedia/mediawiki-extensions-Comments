@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn///sM\u003d",
+        "filename": "Comments.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2012-08-30T12:52:52Z",
+      "side": 1,
+      "message": "Use code instead of tt. http://www.w3schools.com/html5/tag_tt.asp",
+      "revId": "d2a69f433cc29c4bc017c3502de98a93290db2e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
