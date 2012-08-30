@@ -23,10 +23,11 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
+	'path' => __FILE__,
 	'name' => 'Comments',
 	'version' => '2.7.1',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix' ),
-	'description' => 'Adds <tt>&lt;comments&gt;</tt> parser hook that allows commenting on articles',
+	'descriptionmsg' => 'comments-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
 );
 

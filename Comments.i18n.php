@@ -13,6 +13,7 @@ $messages = array();
  */
 $messages['en'] = array(
 	'comments-comment' => 'Comment',
+	'comments-desc' => 'Adds <tt>&lt;comments&gt;</tt> parser hook that allows commenting on pages',
 	'comments-db-locked' => '<h3>Adding Comments</h3>The database is currently locked for routine database maintenance, after which it will be back to normal. Please check back later!',
 	'comments-voted-label' => 'Voted',
 	'comments-loading' => 'Loading...',
@@ -39,7 +40,7 @@ $messages['en'] = array(
 	'comments-permalink' => 'Permalink',
 	'comments-delete-link' => 'Delete Comment',
 	'comments-anon-name' => 'Anonymous User',
-	'comments-anon-message' => '{{SITENAME}} welcomes <b>all comments</b>.  If you don\'t want to be anonymous, <a href="$1">register</a> or <a href="$2">log in</a>.  It\'s free.',
+	'comments-anon-message' => '{{SITENAME}} welcomes <b>all comments</b>.  If you do not want to be anonymous, <a href="$1">register</a> or <a href="$2">log in</a>. It is free.',
 	'comments-ignore-item' => '<a href="$1">$2</a> on $3 <a href="$4">(unblock)</a>',
 	'comments-ignore-no-users' => 'There are no users currently blocked.',
 	'comments-ignore-remove-message' => 'Are you sure you want to unblock user <b>$1</b>\'s comments?',
@@ -61,7 +62,8 @@ $messages['en'] = array(
 	'log-show-hide-comments' => '$1 comment log', // For Special:Log
 	// For Special:ListUsers - new commentadmin group
 	'group-commentadmin' => 'Comment Administrators',
-	'group-commentadmin-member' => 'Comment Administrator',
+	'group-commentadmin-member' => '{{GENDER:$1|comment administrator}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Comment Administrators',
 	// For Special:ListGroupRights
 	'right-comment' => 'Submit comments',
 	'right-commentadmin' => 'Administrate user-submitted comments',
@@ -70,6 +72,7 @@ $messages['en'] = array(
 /** Message documentation */
 $messages['qqq'] = array(
 	'comments-comment' => 'This message might be unused.',
+	'comments-desc' => '{{desc}}',
 	'comments-db-locked' => 'Displayed if a page contains the &lt;comments /&gt; tag while the database is locked.',
 	'comments-voted-label' => 'Shown when you have voted (either thumbs up or thumbs down) for a given comment',
 	'comments-auto-refresher-enable' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
