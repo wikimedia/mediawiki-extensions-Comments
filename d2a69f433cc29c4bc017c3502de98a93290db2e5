@@ -16,6 +16,58 @@
       "revId": "d2a69f433cc29c4bc017c3502de98a93290db2e5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn///mg\u003d",
+        "filename": "Comments.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2012-08-30T15:28:18Z",
+      "side": 1,
+      "message": "That indeed is correct, though I\u0027d take W3Schools\u0027 info with a grain of salt. See http://w3fools.com/ for more info.",
+      "parentUuid": "AAAARn///sM\u003d",
+      "revId": "d2a69f433cc29c4bc017c3502de98a93290db2e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn///mk\u003d",
+        "filename": "Comments.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2012-08-30T15:28:18Z",
+      "side": 1,
+      "message": "What\u0027s wrong with \"don\u0027t\" and \"it\u0027s\"? They\u0027re both perfectly valid English and used in many places...",
+      "revId": "d2a69f433cc29c4bc017c3502de98a93290db2e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn///mo\u003d",
+        "filename": "Comments.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2012-08-30T15:28:18Z",
+      "side": 1,
+      "message": "The {{GENDER:$1|foo}} syntax might be self-documenting, but as I wrote on CodeReview almost a year ago (http://www.mediawiki.org/wiki/Special:Code/MediaWiki/99312), it\u0027s awfully silly and qqq should be used for that IMO, since English does not make a distinction between \"female comment administrator\", \"male comment administrator\" and \"comment administrator who hasn\u0027t specified their gender\".",
+      "revId": "d2a69f433cc29c4bc017c3502de98a93290db2e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
