@@ -69,7 +69,9 @@ $messages['en'] = array(
 	'right-commentadmin' => 'Administrate user-submitted comments',
 );
 
-/** Message documentation */
+/** Message documentation (Message documentation)
+ * @author Darth Kule
+ */
 $messages['qqq'] = array(
 	'comments-comment' => 'This message might be unused.',
 	'comments-desc' => '{{desc}}',
@@ -78,13 +80,16 @@ $messages['qqq'] = array(
 	'comments-auto-refresher-enable' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
 	'comments-auto-refresher-pause' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
 	'comments-reply-to' => 'This message is followed by the user\'s username whom you\'re about to reply to. For example, "Reply to Jack Phoenix".',
-	'comments-block-warning' => "Displayed in a JavaScript popup alert when the user is about to ignore someone's comments. This message is followed by either MediaWiki:Comment-block-anon or MediaWiki:Comment-block-user, depending on the fact whether the user is an anonymous one or not.",
+	'comments-block-warning' => "Displayed in a JavaScript popup alert when the user is about to ignore someone's comments. This message is followed by either {{msg-mw|Comments-block-anon}} or {{msg-mw|Comments-block-user}}, depending on the fact whether the user is an anonymous one or not.",
 	'comments-delete-warning' => "Displayed in a JavaScript popup alert when the user is about to delete someone's comment.",
+	'comments-block-anon' => 'Follows {{msg-mw|Comments-block-warning}} when the user is anonymous.',
+	'comments-block-user' => 'Follows {{msg-mw|Comments-block-warning}} when the user is a registered one.',
 	'comments-sort-by-date' => 'Drop-down menu item; refer to the [[mw:File:Comments.png|image]] for details',
 	'comments-sort-by-score' => 'Drop-down menu item; refer to the [[mw:File:Comments.png|image]] for details',
 	'comments-show-comment-link' => 'When a user who is on your comment ignore list has posted a comment, you are shown an explanation ([[MediaWiki:Comment-ignore-message]]) and options on what to do. Clicking on this link will show the hidden comment.',
 	'comments-manage-blocklist-link' => 'When a user who is on your comment ignore list has posted a comment, you are shown an explanation ([[MediaWiki:Comment-ignore-message]]) and options on what to do ([[MediaWiki:Comment-show-comment-link]] and this message). Clicking on this link will take you to Special:CommentIgnoreList, where you can remove people from your comment ignore list.',
 	'comments-ignore-message' => "Shown in the output of the <comments /> tag instead of the person's comment if you're ignoring the said person.",
+	'comments-you' => 'Refer to the [[mw:File:Comments.png|image]] for details. Note that there is a space before the word.',
 	'comments-login-required' => 'Shown when the user does not have the "comment" user right and they are logged out but a page contains the &lt;comments /&gt; tag.',
 	'comments-not-allowed' => 'Shown when the user does not have the "comment" user right but a page contains the &lt;comments /&gt; tag.',
 	'comments-post' => 'Button text, clicking on this button submits your comment; refer to the [[mw:File:Comments.png|image]] for details',
@@ -92,19 +97,17 @@ $messages['qqq'] = array(
 	'comments-score-text' => "Followed by the comment's score; refer to the [[mw:File:Comments.png|image]] for details",
 	'comments-permalink' => '"Permalink" means "permanent link" and clicking on it creates what is a permanent link to a comment, at least until a (comment) administrator deletes the comment or the whole page gets deleted or the &lt;comments/&gt; tag is removed from it',
 	'comments-delete-link' => 'Link text; clicking on this deletes the comment (duh)',
-	'comments-anon-name' => 'Generic name shown for anonymous (not logged in/unregistered) users, since their IP addresses aren\'t directly exposed',
+	'comments-anon-name' => "Generic name shown for anonymous (not logged in/unregistered) users, since their IP addresses aren't directly exposed",
 	'comments-anon-message' => 'Shown above the comment form to anonymous users. $1 is the URL to Special:UserLogin, $2 is the URL to Special:UserLogin/signup.',
 	'comments-ignore-item' => "Shown on Special:CommentIgnoreList. $1 is the URL to the blocked user's user page, $2 is the name of the blocked user, $3 is the timestamp (when the user was blocked) and $4 is the URL to the unblock form.",
 	'comments-ignore-no-users' => "Shown on Special:CommentIgnoreList if you haven't blocked anyone's comments.",
 	'comments-ignore-remove-message' => "Confirmation message, shown when the user is about to unblock someone's comments on Special:CommentIgnoreList. $1 is the username of the user whose comments the user has blocked.",
 	'comments-ignore-title' => 'Title of Special:CommentIgnoreList, as shown on the said page.',
-	'commentignorelist' => 'Title of Special:CommentIgnoreList, as shown on Special:SpecialPages; the comment ignore list contains a list of users whose comments you are ignoring; an ignored comment won\'t show up by default and you have to click on a special link to view it',
+	'commentignorelist' => "Title of Special:CommentIgnoreList, as shown on Special:SpecialPages; the comment ignore list contains a list of users whose comments you are ignoring; an ignored comment won't show up by default and you have to click on a special link to view it",
 	'comments-no-comments-of-day' => 'Shown as the output of the &lt;commentsoftheday/&gt; parser hook if there are no comments of the day',
 	'commentslogpage' => 'Shown on the dropdown on Special:Log',
 	'commentslogpagetext' => 'Explanation of the comments log, shown on Special:Log',
-	'commentslogentry' => "For compatibility, don't translate this",
 	'commentslog-create-entry' => 'Log entry for [[Special:Log]]',
-	'comments-create-text' => "Don't translate this",
 	'comments-time-ago' => '$1 is one of the following messages: comments-time-days, comments-time-hours, comments-time-minutes, comments-time-seconds',
 	'log-show-hide-comments' => 'For Special:Log; $1 is show or hide (there are probably some MW core messages for those two)',
 	'group-commentadmin' => "Shown on Special:ListUsers. Members of this group can delete other users' comments.",
@@ -115,9 +118,11 @@ $messages['qqq'] = array(
 
 /** German (Deutsch)
  * @author Gerry
+ * @author Metalhead64
  */
 $messages['de'] = array(
 	'comments-comment' => 'Kommentar',
+	'comments-desc' => 'Ergänzt die Parsererweiterung <code>&lt;comments&gt;</code> zum Kommentieren von Seiten',
 	'comments-db-locked' => '<h3>Kommentar hinzufügen</h3>Die Datenbank is momentan wegen Wartungsarbeiten nicht erreichbar. Bitte später noch einmal probieren!',
 	'comments-voted-label' => 'Stimmen',
 	'comments-loading' => 'Laden...',
@@ -140,16 +145,19 @@ $messages['de'] = array(
 	'comments-not-allowed' => 'Du bist nicht berechtigt Kommentare hinzuzufügen',
 	'comments-post' => 'Schreibe Kommentar',
 	'comments-submit' => 'Füge Kommentar hinzu',
+	'comments-score-text' => 'Score',
+	'comments-permalink' => 'Permanentlink',
 	'comments-delete-link' => 'Lösche Kommentar',
 	'comments-anon-name' => 'Anonymer Benutzer',
 	'comments-anon-message' => '{{SITENAME}} begrüßt <b>alle Kommentare</b>.  Wenn du nicht anonymer Benutzer sein willst <a href="$1">registriere</a> oder <a href="$2">log dich ein</a>.',
+	'comments-ignore-item' => '<a href="$1">$2</a> am $3 <a href="$4">(freigeben)</a>',
 	'comments-ignore-no-users' => 'Keine Benutzer sind momentan blockiert.',
 	'comments-ignore-remove-message' => 'Bist du sicher, die Kommentare von Benutzer <b>$1</b> wieder freizugeben?',
 	'comments-ignore-unblock' => 'Freigeben',
 	'comments-ignore-cancel' => 'Abbrechen',
 	'comments-ignore-title' => 'Kommentar Ignore Liste',
 	'commentignorelist' => 'Kommentar Ignore List',
-	'comments-no-comments-of-day' => 'Es gibt keinen Kommentar des Tages.', // for the <commentsoftheday/> parser hook
+	'comments-no-comments-of-day' => 'Es gibt keinen Kommentar des Tages.',
 	'commentslogpage' => 'Kommentar Log',
 	'commentslogpagetext' => 'Das ist ein Kommentar Log.',
 	'commentslog-create-entry' => 'Neuer Kommentar',
@@ -158,16 +166,15 @@ $messages['de'] = array(
 	'comments-time-hours' => '{{PLURAL:$1|eine Stunde|$1 Stunden}}',
 	'comments-time-minutes' => '{{PLURAL:$1|eine Minute|$1 Minuten}}',
 	'comments-time-seconds' => '{{PLURAL:$1|eine Sekunde|$1 Sekunden}}',
-	'log-show-hide-comments' => '$1 Kommentar Log', // For Special:Log
-	// For Special:ListUsers - new commentadmin group
+	'log-show-hide-comments' => '$1 Kommentar Log',
 	'group-commentadmin' => 'Kommentar Administrator',
-	'group-commentadmin-member' => 'Kommentar Administrator',
-	// For Special:ListGroupRights
+	'group-commentadmin-member' => '{{GENDER:$1|Kommentaradministrator|Kommentaradministratorin}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Kommentaradministratoren',
 	'right-comment' => 'Kommentar abgeben',
 	'right-commentadmin' => 'Kommentare bearbeiten',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Jack Phoenix <jack@countervandalism.net>
  */
 $messages['fi'] = array(
@@ -175,12 +182,12 @@ $messages['fi'] = array(
 	'comments-db-locked' => '<h3>Kommenttien lisääminen</h3>Tietokanta on tällä hetkellä lukittu rutiinihuoltoa varten, jonka jälkeen se palautuu takaisin normaaliksi. Tule myöhemmin uudestaan!',
 	'comments-voted-label' => 'Äänestetty',
 	'comments-loading' => 'Ladataan...',
-	'comments-auto-refresher-pause' => 'Pysäytä kommenttien automaattinen päivitys',
 	'comments-auto-refresher-enable' => 'Ota käyttöön kommenttien automaattinen päivitys',
+	'comments-auto-refresher-pause' => 'Pysäytä kommenttien automaattinen päivitys',
 	'comments-reply-to' => 'Vastaa käyttäjälle',
 	'comments-cancel-reply' => 'Peruuta',
-	'comments-delete-warning' => 'Oletko varma, että haluat poistaa tämän kommentin?',
 	'comments-block-warning' => 'Oletko varma, että haluat lopullisesti jättää kaikki kommentit huomiotta',
+	'comments-delete-warning' => 'Oletko varma, että haluat poistaa tämän kommentin?',
 	'comments-block-anon' => 'tältä anonyymiltä käyttäjältä (IP-osoitteensa perusteella)',
 	'comments-block-user' => 'käyttäjältä',
 	'comments-sort-by-date' => 'Järjestä päivämäärän mukaan',
@@ -194,7 +201,7 @@ $messages['fi'] = array(
 	'comments-not-allowed' => 'Et voi lisätä kommentteja.',
 	'comments-post' => 'Lähetä kommentti',
 	'comments-submit' => 'Lisää kommenttisi',
-	'comments-score-text'=> 'Pistemäärä',
+	'comments-score-text' => 'Pistemäärä',
 	'comments-permalink' => 'Ikilinkki',
 	'comments-delete-link' => 'Poista kommentti',
 	'comments-anon-name' => 'Anonyymi käyttäjä',
@@ -222,14 +229,14 @@ $messages['fi'] = array(
 	'right-commentadmin' => 'Hallinnoida käyttäjien lähettämiä kommentteja',
 );
 
-/** French (Français) */
+/** French (français) */
 $messages['fr'] = array(
 	'comments-comment' => 'Commenter',
 	'comments-db-locked' => "<h3>Ajouter des commentaires</h3>La base de données sont actuellement bloqués pour l'entretien de routine de base de données, après quoi il sera de retour à la normale. S'il vous plaît revenez plus tard !",
 	'comments-voted-label' => 'Voté',
 	'comments-loading' => 'Chargement...',
-	'comments-auto-refresher-pause' => 'Arrêter commentaire auto-actualiser',
 	'comments-auto-refresher-enable' => 'Activer commentaire auto-actualiser',
+	'comments-auto-refresher-pause' => 'Arrêter commentaire auto-actualiser',
 	'comments-reply-to' => 'Répondre à',
 	'comments-cancel-reply' => 'Annuler',
 	'comments-block-warning' => 'Êtes-vous sûr de vouloir ignorer de façon permanente à tous les commentaires de',
@@ -249,7 +256,7 @@ $messages['fr'] = array(
 	'comments-permalink' => 'Lien permanent',
 	'comments-delete-link' => 'Supprimer le commentaire',
 	'comments-anon-name' => 'Utilisateur anonyme',
-	'comments-anon-message' => "{{SITENAME}} se félicite de <b>tous les commentaires</b>.  Si vous ne voulez pas être anonyme, <a href=\"$1\">enregistre</a> ou <a href=\"$2\">se connecter</a>.  C'est gratuit.",
+	'comments-anon-message' => '{{SITENAME}} se félicite de <b>tous les commentaires</b>.  Si vous ne voulez pas être anonyme, <a href="$1">enregistre</a> ou <a href="$2">se connecter</a>.  C\'est gratuit.',
 	'comments-ignore-item' => '<a href="$1">$2</a> sur $3 <a href="$4">(débloquer)</a>',
 	'comments-ignore-no-users' => "Il n'y a pas d'utilisateurs actuellement bloquée.",
 	'comments-ignore-remove-message' => "Voulez-vous vraiment de débloquer les commentaires de l'utilisateur <b>$1</b> ?",
@@ -267,6 +274,38 @@ $messages['fr'] = array(
 	'comments-time-seconds' => '{{PLURAL:$1|une seconde|$1 seconds}}',
 	'group-commentadmin' => 'Administrateurs de commentaires',
 	'group-commentadmin-member' => 'Administrateur de commentaires',
+);
+
+/** Italian (italiano)
+ * @author Darth Kule
+ */
+$messages['it'] = array(
+	'comments-desc' => "Aggiunge l'hook del parser <code>&lt;comments&gt;</code> che permette di scrivere commenti sulle pagine",
+	'comments-voted-label' => 'Votato',
+	'comments-loading' => 'Caricamento in corso...',
+	'comments-auto-refresher-enable' => "Attivare l'aggiornamento automatico dei commenti",
+	'comments-auto-refresher-pause' => "Ferma l'aggiornamento automatico dei commenti",
+	'comments-reply-to' => 'Rispondi a',
+	'comments-cancel-reply' => 'Annulla',
+	'comments-block-warning' => 'Ignorare in maniera permanente tutti i commenti',
+	'comments-block-anon' => 'di questo utente anonimo (tramite il suo indirizzo IP)',
+	'comments-block-user' => "dell'utente",
+	'comments-you' => ' Tu',
+	'comments-login-required' => "È necessario effettuare l'accesso per aggiungere commenti",
+	'comments-score-text' => 'Punteggio',
+	'comments-permalink' => 'Link permanente',
+	'comments-delete-link' => 'Elimina commento',
+	'comments-anon-name' => 'Utente anonimo',
+	'comments-ignore-unblock' => 'Sblocca',
+	'comments-ignore-cancel' => 'Annulla',
+	'commentslog-create-entry' => 'Nuovo commento',
+	'comments-time-ago' => '$1 fa',
+	'comments-time-days' => '{{PLURAL:$1|un giorno|$1 giorni}}',
+	'comments-time-hours' => "{{PLURAL:$1|un'ora|$1 ore}}",
+	'comments-time-minutes' => '{{PLURAL:$1|un minuto|$1 minuti}}',
+	'comments-time-seconds' => '{{PLURAL:$1|un secondo|$1 secondi}}',
+	'right-comment' => 'Invia commenti',
+	'right-commentadmin' => 'Gestisce i commenti inviati dagli utenti',
 );
 
 /** Dutch (Nederlands)
@@ -323,59 +362,3 @@ $messages['nl'] = array(
 	'right-commentadmin' => 'Beheer door gebruikers ingediende reacties',
 );
 
-/** Chinese (中文)
- * @author Zoglun <zoglun@gmail.com>
- */
-$messages['zh'] = array(
-	'comments-comment' => '评论',
-	'comments-db-locked' => '<h3>添加评论</h3>数据库被锁死，正在进行维护，请过一段时间后再来~！',
-	'comments-voted-label' => '投票',
-	'comments-loading' => '读取中...',
-	'comments-auto-refresher-enable' => '开启评论自动刷新',
-	'comments-auto-refresher-pause' => '关闭评论自动刷新',
-	'comments-reply-to' => '回复给',
-	'comments-cancel-reply' => '取消',
-	'comments-block-warning' => '你确信你要永久的忽视全部来自这里的评论吗？',
-	'comments-delete-warning' => '你确信你想删除这段评论？',
-	'comments-block-anon' => '匿名用户（显示IP地址）',
-	'comments-block-user' => '用户',
-	'comments-sort-by-date' => '按时间顺序排列',
-	'comments-sort-by-score' => '按分数高低排列',
-	'comments-show-comment-link' => '显示评论',
-	'comments-manage-blocklist-link' => '管理忽略评论列表',
-	'comments-ignore-message' => '你忽略了来自这个人的评论',
-	'comments-you' => ' 你',
-	'comments-reply' => '回复',
-	'comments-login-required' => '登陆后才能留言',
-	'comments-not-allowed' => '你没有足够的权限来留言',
-	'comments-post' => '发表评论',
-	'comments-submit' => '添加你的评论',
-	'comments-score-text' => '分数',
-	'comments-permalink' => '永久链接',
-	'comments-delete-link' => '删除评论',
-	'comments-anon-name' => '匿名用户',
-	'comments-anon-message' => '{{SITENAME}} 欢迎 <b>评论</b>~！  如果你不想匿名, <a href="$1">免费注册</a> 或者 <a href="$2">登陆</a>。',
-	'comments-ignore-item' => '<a href="$1">$2</a> 在 $3 <a href="$4">(解除黑名单)</a>',
-	'comments-ignore-no-users' => '目前没有用户被加入黑名单。',
-	'comments-ignore-remove-message' => '你确信你要把<b>$1</b>的评论移出黑名单？',
-	'comments-ignore-unblock' => '解除封锁',
-	'comments-ignore-cancel' => '取消',
-	'comments-ignore-title' => '忽略的评论列表',
-	'commentignorelist' => '忽略的评论列表',
-	'comments-no-comments-of-day' => '目前没有今日评论', // for the <commentsoftheday/> parser hook
-	'commentslogpage' => '评论日志',
-	'commentslogpagetext' => '这是评论的日志',
-	'commentslog-create-entry' => '新评论',
-	'comments-time-ago' => '$1 之前',
-	'comments-time-days' => '{{PLURAL:$1|一天|$1 天}}',
-	'comments-time-hours' => '{{PLURAL:$1|一小时|$1 小时}}',
-	'comments-time-minutes' => '{{PLURAL:$1|一分钟|$1 分钟}}',
-	'comments-time-seconds' => '{{PLURAL:$1|一秒|$1 秒}}',
-	'log-show-hide-comments' => '$1 评论日志', // For Special:Log
-	// For Special:ListUsers - new commentadmin group
-	'group-commentadmin' => '评论管理',
-	'group-commentadmin-member' => '评论管理员',
-	// For Special:ListGroupRights
-	'right-comment' => '提交评论',
-	'right-commentadmin' => '管理用户提交的评论',
-);
