@@ -193,9 +193,11 @@ $messages['de-formal'] = array(
 
 /** Spanish (español)
  * @author AndreyWiki
+ * @author Armando-Martin
  * @author Bernardom
  */
 $messages['es'] = array(
+	'comments-comment' => 'Comentario',
 	'comments-db-locked' => '<h3>Agregar comentarios</h3>La base de datos se ha bloqueado para realizar tareas de mantenimiento de rutina. Cuando estos trabajos concluyan, la base de datos volverá a la normalidad. Por favor, regresa más tarde.',
 	'comments-voted-label' => 'Valorado',
 	'comments-loading' => 'Cargando...',
@@ -654,5 +656,29 @@ $messages['nl'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Opmerkingenbeheerders',
 	'right-comment' => 'Reacties toevoegen',
 	'right-commentadmin' => 'Beheer door gebruikers ingediende reacties',
+);
+
+/** Telugu (తెలుగు)
+ * @author Veeven
+ */
+$messages['te'] = array(
+	'comments-cancel-reply' => 'రద్దుచేయి',
+	'comments-block-user' => 'వాడుకరి',
+	'comments-show-comment-link' => 'వ్యాఖ్యను చూపించు',
+	'comments-you' => ' మీరు',
+	'comments-reply' => 'స్పందించండి',
+	'comments-permalink' => 'స్థిరలంకె',
+	'comments-delete-link' => 'వ్యాఖ్యను తొలగించు',
+	'comments-anon-name' => 'అజ్ఞాత వాడుకరి',
+	'comments-ignore-cancel' => 'రద్దుచేయి',
+	'commentslogpage' => 'వ్యాఖ్యల చిట్టా',
+	'commentslogpagetext' => 'ఇది వ్యాఖ్యల యొక్క చిట్టా.',
+	'commentslog-create-entry' => 'కొత్త వ్యాఖ్య',
+	'comments-time-ago' => '$1 క్రితం',
+	'comments-time-days' => '{{PLURAL:$1|ఒక రోజు|$1 రోజుల}}',
+	'comments-time-hours' => '{{PLURAL:$1|ఒక గంట|$1 గంటల}}',
+	'comments-time-minutes' => '{{PLURAL:$1|ఒక నిమిషం|$1 నిమిషాల}}',
+	'comments-time-seconds' => '{{PLURAL:$1|$1 క్షణం|$1 క్షణాల}}',
+	'log-show-hide-comments' => 'వ్యాఖ్యల చిట్టాను $1',
 );
 
