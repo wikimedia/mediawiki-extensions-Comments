@@ -133,7 +133,7 @@ $messages['de'] = array(
 	'comments-reply-to' => 'Antworten',
 	'comments-cancel-reply' => 'Abbrechen',
 	'comments-block-warning' => 'Bist du dir sicher, dass du alle Kommentare von',
-	'comments-delete-warning' => 'Soll dieser Kommentar tatsächlich gelöscht werden?',
+	'comments-delete-warning' => 'Bist du sicher, dass du diesen Kommentar löschen möchtest?',
 	'comments-block-anon' => 'diesem anonymen Benutzer mit dieser IP-Adresse ignorieren möchtest?',
 	'comments-block-user' => 'Benutzer',
 	'comments-sort-by-date' => 'Nach Datum sortieren',
@@ -161,7 +161,7 @@ $messages['de'] = array(
 	'commentignorelist' => 'Ignorierliste zu Kommentaren',
 	'comments-no-comments-of-day' => 'Es gibt keinen Kommentar des Tages.',
 	'commentslogpage' => 'Kommentar-Logbuch',
-	'commentslogpagetext' => 'Das ist ein Logbuch zu Kommentaren.',
+	'commentslogpagetext' => 'Dies ist ein Logbuch der Kommentare.',
 	'commentslog-create-entry' => 'Neuer Kommentar',
 	'comments-time-ago' => 'vor $1',
 	'comments-time-days' => '{{PLURAL:$1|einem Tag|$1 Tage}}',
@@ -182,6 +182,7 @@ $messages['de'] = array(
 $messages['de-formal'] = array(
 	'comments-db-locked' => '<h3>Hinzufügen von Kommentaren</h3>Die Datenbank ist momentan aufgrund routinemäßiger Wartungsarbeiten für den Schreibzugriff gesperrt. Bitte probieren Sie es später noch einmal.',
 	'comments-block-warning' => 'Sind Sie sich sicher, dass Sie alle Kommentare von',
+	'comments-delete-warning' => 'Sind Sie sicher, dass Sie diesen Kommentar löschen möchten?',
 	'comments-block-anon' => 'diesem anonymen Benutzer mit dieser IP-Adresse ignorieren möchten?',
 	'comments-ignore-message' => 'Sie ignorieren den Verfasser dieses Kommentars',
 	'comments-you' => ' Sie',
@@ -251,6 +252,7 @@ $messages['es'] = array(
 
 /** Finnish (suomi)
  * @author Jack Phoenix <jack@countervandalism.net>
+ * @author Nike
  */
 $messages['fi'] = array(
 	'comments-comment' => 'Kommentoi',
@@ -260,7 +262,7 @@ $messages['fi'] = array(
 	'comments-auto-refresher-enable' => 'Ota käyttöön kommenttien automaattinen päivitys',
 	'comments-auto-refresher-pause' => 'Pysäytä kommenttien automaattinen päivitys',
 	'comments-reply-to' => 'Vastaa käyttäjälle',
-	'comments-cancel-reply' => 'Peruuta',
+	'comments-cancel-reply' => 'Peru',
 	'comments-block-warning' => 'Oletko varma, että haluat lopullisesti jättää kaikki kommentit huomiotta',
 	'comments-delete-warning' => 'Oletko varma, että haluat poistaa tämän kommentin?',
 	'comments-block-anon' => 'tältä anonyymiltä käyttäjältä (IP-osoitteensa perusteella)',
@@ -275,7 +277,7 @@ $messages['fi'] = array(
 	'comments-login-required' => 'Sinun tulee olla kirjautunut sisään voidaksesi lisätä kommentteja',
 	'comments-not-allowed' => 'Et voi lisätä kommentteja.',
 	'comments-post' => 'Lähetä kommentti',
-	'comments-submit' => 'Lisää kommenttisi',
+	'comments-submit' => 'Kommenttisi',
 	'comments-score-text' => 'Pistemäärä',
 	'comments-permalink' => 'Ikilinkki',
 	'comments-delete-link' => 'Poista kommentti',
@@ -285,11 +287,11 @@ $messages['fi'] = array(
 	'comments-ignore-no-users' => 'Sinulla ei ole yhtään käyttäjää huomioimattomuuslistallasi.',
 	'comments-ignore-remove-message' => 'Oletko varma, että haluat huomioida kommentit käyttäjältä <b>$1</b>?',
 	'comments-ignore-unblock' => 'Poista esto',
-	'comments-ignore-cancel' => 'Peruuta',
+	'comments-ignore-cancel' => 'Peru',
 	'comments-ignore-title' => 'Kommenttien huomioimattomuuslista',
 	'commentignorelist' => 'Kommenttien huomioimattomuuslista',
 	'comments-no-comments-of-day' => 'Ei päivän kommentteja.',
-	'commentslogpage' => 'Kommettiloki',
+	'commentslogpage' => 'Kommenttiloki',
 	'commentslogpagetext' => 'Tämä on loki kommenteista.',
 	'commentslog-create-entry' => 'Uusi kommentti',
 	'comments-time-ago' => '$1 sitten',
@@ -656,6 +658,28 @@ $messages['nl'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Opmerkingenbeheerders',
 	'right-comment' => 'Reacties toevoegen',
 	'right-commentadmin' => 'Beheer door gebruikers ingediende reacties',
+);
+
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'comments-comment' => 'تبصره',
+	'comments-cancel-reply' => 'ناګارل',
+	'comments-block-user' => 'کارن',
+	'comments-you' => 'تاسې',
+	'comments-reply' => 'ځوابول',
+	'comments-delete-link' => 'تبصره ړنګول',
+	'comments-anon-name' => 'ورکنومی کارن',
+	'comments-ignore-unblock' => 'بنديز لرې کول',
+	'comments-ignore-cancel' => 'ناګارل',
+	'commentslogpage' => 'د تبصرو يادښت',
+	'commentslog-create-entry' => 'نوې تبصره',
+	'comments-time-ago' => '$1 دمخه',
+	'comments-time-days' => '{{PLURAL:$1|يو ورځ|$1 ورځې}}',
+	'comments-time-hours' => '{{PLURAL:$1|يو ساعت|$1 ساعتونه}}',
+	'comments-time-minutes' => '{{PLURAL:$1|يو دقيقه|$1 دقيقې}}',
+	'comments-time-seconds' => '{{PLURAL:$1|يوه ثانيه|$1 ثانيې}}',
 );
 
 /** Telugu (తెలుగు)
