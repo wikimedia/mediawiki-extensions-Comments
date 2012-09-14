@@ -417,6 +417,7 @@ $messages['gl'] = array(
 $messages['hsb'] = array(
 	'comments-comment' => 'Komentar',
 	'comments-desc' => 'Přidawa parserowu hoku <code>&lt;comments&gt;</code>, kotraž komentowanje stronow zmóžnja.',
+	'comments-db-locked' => '<h3>Přidawanje komentarow</h3>Datowa banka je tuchwilu rutinoweho wothladowanja datoweje banki dla zawrjena, po kotrymž budźe zaso wšitko normalne. Prošu spytaj pozdźišo hišće raz!',
 	'comments-voted-label' => 'Wothłosowany',
 	'comments-loading' => 'Začituje so...',
 	'comments-auto-refresher-enable' => 'Awtomatiske aktualizowanje komentarow zmóžnić',
@@ -580,6 +581,23 @@ $messages['ja'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:コメント管理者',
 	'right-comment' => 'コメントを投稿',
 	'right-commentadmin' => '利用者が投稿したコメントを管理',
+);
+
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'comments-loading' => 'იტვირთება…',
+	'comments-cancel-reply' => 'გაუქმება',
+	'comments-block-user' => 'მომხმარებელი',
+	'comments-you' => 'თქვენ',
+	'comments-reply' => 'პასუხი',
+	'commentslog-create-entry' => 'ახალი კომენტარი',
+	'comments-time-ago' => '$1 წინ',
+	'comments-time-days' => '{{PLURAL:$1|ერთი დღე|$1 დღე}}',
+	'comments-time-hours' => '{{PLURAL:$1|ერთი საათი|$1 საათი}}',
+	'comments-time-minutes' => '{{PLURAL:$1|ერთი წუთი|$1 წუთი}}',
+	'comments-time-seconds' => '{{PLURAL:$1|ერთი წამი|$1 წამი}}',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
