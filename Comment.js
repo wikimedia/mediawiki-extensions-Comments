@@ -36,12 +36,13 @@ var Comment = {
 	 * @param c_id Integer: comment ID number
 	 */
 	blockUser: function( user_name, user_id, c_id ) {
+		var message;
 		if( !user_name ) {
-			user_name = mw.msg( 'comments-block-anon' );
+			message = mw.msg( 'comments-block-warning-anon' );
 		} else {
-			user_name = mw.msg( 'comments-block-user' ) + ' ' + user_name;
+			message = mw.msg( 'comments-block-warning-user', user_name );
 		}
-		if( confirm( mw.msg( 'comments-block-warning' ) + ' ' + user_name + ' ?' ) ) {
+		if( confirm( message ) ) {
 			sajax_request_type = 'POST';
 			sajax_do_call( 'wfCommentBlock', [ c_id, user_id ], function( response ) {
 				alert( response.responseText );

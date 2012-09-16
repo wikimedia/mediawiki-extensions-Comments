@@ -896,7 +896,7 @@ class Comment {
 								}
 								$output .= '</span>';
 							} else {
-								$output .= wfMsg( 'comments-you' );
+								$output .= wfMsg( 'word-separator' ) . wfMsg( 'comments-you' );
 							}
 						} else {
 							// Already voted?

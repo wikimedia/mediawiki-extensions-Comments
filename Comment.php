@@ -4,7 +4,7 @@
  *
  * @file
  * @ingroup Extensions
- * @version 2.7.1
+ * @version 2.7.2
  * @author David Pean <david.pean@gmail.com>
  * @author Misza <misza@shoutwiki.com>
  * @author Jack Phoenix <jack@countervandalism.net>
@@ -25,7 +25,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'Comments',
-	'version' => '2.7.1',
+	'version' => '2.7.2',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix' ),
 	'descriptionmsg' => 'comments-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
@@ -38,8 +38,9 @@ $wgResourceModules['ext.comments'] = array(
 	'messages' => array(
 		'comments-voted-label', 'comments-loading',
 		'comments-auto-refresher-pause', 'comments-auto-refresher-enable',
-		'comments-cancel-reply', 'comments-reply-to', 'comments-block-warning',
-		'comments-block-anon', 'comments-block-user', 'comments-delete-warning'
+		'comments-cancel-reply', 'comments-reply-to',
+		'comments-block-warning-anon', 'comments-block-warning-user',
+		'comments-delete-warning'
 	),
 	'localBasePath' => dirname( __FILE__ ),
 	'remoteExtPath' => 'Comments',
