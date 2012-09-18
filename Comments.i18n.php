@@ -70,6 +70,7 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Darth Kule
+ * @author Nike
  * @author Shirayuki
  */
 $messages['qqq'] = array(
@@ -113,6 +114,18 @@ $messages['qqq'] = array(
 	'group-commentadmin-member' => 'Member of the Comment Administrators (commentadmin) group, shown on Special:ListUsers',
 	'right-comment' => '{{doc-right|comment}}',
 	'right-commentadmin' => '{{doc-right|commentadmin}}',
+);
+
+/** Breton (brezhoneg)
+ * @author Y-M D
+ */
+$messages['br'] = array(
+	'comments-comment' => 'Evezhiadenn',
+	'comments-you' => "C'hwi",
+	'comments-reply' => 'Respont',
+	'comments-submit' => "Ouzhpennañ hoc'h evezhiadenn",
+	'comments-ignore-cancel' => 'Nullañ',
+	'commentslog-create-entry' => 'Evezhiadenn nevez',
 );
 
 /** German (Deutsch)
@@ -268,7 +281,7 @@ $messages['fi'] = array(
 	'comments-show-comment-link' => 'Näytä kommentti',
 	'comments-manage-blocklist-link' => 'Hallinnoi huomioimattomuuslistaa',
 	'comments-ignore-message' => 'Et huomioi tämän kommentin kirjoittajaa',
-	'comments-you' => ' Sinä',
+	'comments-you' => 'Sinä',
 	'comments-reply' => 'Vastaa',
 	'comments-login-required' => 'Sinun tulee olla kirjautunut sisään voidaksesi lisätä kommentteja',
 	'comments-not-allowed' => 'Et voi lisätä kommentteja.',
@@ -359,6 +372,8 @@ $messages['gl'] = array(
 	'comments-auto-refresher-pause' => 'Deter a actualización automática dos comentarios',
 	'comments-reply-to' => 'Responder a',
 	'comments-cancel-reply' => 'Cancelar',
+	'comments-block-warning-anon' => 'Está seguro de querer ignorar permanentemente todos os comentarios deste usuario anónimo (mediante o seu enderezo IP)?',
+	'comments-block-warning-user' => 'Está seguro de querer ignorar permanentemente todos os comentarios do usuario $1?',
 	'comments-delete-warning' => 'Estás seguro de querer borrar este comentario?',
 	'comments-sort-by-date' => 'Ordenar por data',
 	'comments-sort-by-score' => 'Ordenar por puntuación',
