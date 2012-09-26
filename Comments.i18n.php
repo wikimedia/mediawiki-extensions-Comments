@@ -261,6 +261,7 @@ $messages['es'] = array(
 );
 
 /** Finnish (suomi)
+ * @author Crt
  * @author Jack Phoenix <jack@countervandalism.net>
  * @author Nike
  */
@@ -309,16 +310,18 @@ $messages['fi'] = array(
 	'comments-time-minutes' => '{{PLURAL:$1|minuutti|$1 minuuttia}}',
 	'comments-time-seconds' => '{{PLURAL:$1|sekunti|$1 sekuntia}}',
 	'log-show-hide-comments' => '$1 kommenttiloki',
-	'group-commentadmin' => 'Kommenttien ylläpitäjät',
-	'group-commentadmin-member' => 'Kommenttien ylläpitäjä',
+	'group-commentadmin' => 'kommenttien ylläpitäjät',
+	'group-commentadmin-member' => '{{GENDER:$1|kommenttien ylläpitäjä}}',
 	'right-comment' => 'Lähettää kommentteja',
 	'right-commentadmin' => 'Hallinnoida käyttäjien lähettämiä kommentteja',
 );
 
-/** French (français) */
+/** French (français)
+ * @author Linedwell
+ */
 $messages['fr'] = array(
 	'comments-comment' => 'Commenter',
-	'comments-db-locked' => "<h3>Ajouter des commentaires</h3>La base de données sont actuellement bloqués pour l'entretien de routine de base de données, après quoi il sera de retour à la normale. S'il vous plaît revenez plus tard !",
+	'comments-db-locked' => "<h3>Ajouter des commentaires</h3>La base de données est actuellement bloquée pour la maintenance de routine, après quoi elle sera de retour à la normale. S'il vous plaît revenez plus tard !",
 	'comments-voted-label' => 'Voté',
 	'comments-loading' => 'Chargement...',
 	'comments-auto-refresher-enable' => 'Activer commentaire auto-actualiser',
@@ -329,7 +332,7 @@ $messages['fr'] = array(
 	'comments-sort-by-score' => 'Trier par score',
 	'comments-show-comment-link' => 'Voir commentaire',
 	'comments-manage-blocklist-link' => 'Gérer la liste ignorer',
-	'comments-ignore-message' => "Vous êtes ignorant de l'auteur de ce commentaire",
+	'comments-ignore-message' => "Vous ignorez l'auteur de ce commentaire",
 	'comments-you' => ' Vous',
 	'comments-reply' => 'Répondre',
 	'comments-login-required' => 'Vous devez être connecté afin de pouvoir ajouter des commentaires',
@@ -350,7 +353,7 @@ $messages['fr'] = array(
 	'commentslogpage' => 'Historique des commentaires',
 	'commentslogpagetext' => 'Ceci est un journal de commentaires.',
 	'commentslog-create-entry' => 'Nouveau commentaire',
-	'comments-time-ago' => 'Il ya $1',
+	'comments-time-ago' => "Il y'a $1",
 	'comments-time-days' => '{{PLURAL:$1|un jour|$1 jours}}',
 	'comments-time-hours' => '{{PLURAL:$1|une heure|$1 heures}}',
 	'comments-time-minutes' => '{{PLURAL:$1|une minute|$1 minutes}}',
