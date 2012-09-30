@@ -116,6 +116,62 @@ $messages['qqq'] = array(
 	'right-commentadmin' => '{{doc-right|commentadmin}}',
 );
 
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
+ * @author Wizardist
+ */
+$messages['be-tarask'] = array(
+	'comments-comment' => 'Камэнтары',
+	'comments-desc' => 'Дадае ў парсэр падтрымку <code>&lt;comments&gt;</code> для падтрымкі камэнтараў на старонках',
+	'comments-db-locked' => '<h3>Уключэньне камэнтаваньня</h3>База зьвестак у гэты момант заблякаваная для апрацоўкі, пасьля якой усё будзе вернута як было. Калі ласка, завітайце пазьней!',
+	'comments-voted-label' => 'Прагаласавалі',
+	'comments-loading' => 'Загрузка...',
+	'comments-auto-refresher-enable' => 'Уключыць аўтаабнаўленьне камэнтараў',
+	'comments-auto-refresher-pause' => 'Прыпыніць аўтаабнаўленьне камэнтараў',
+	'comments-reply-to' => 'Адказаць',
+	'comments-cancel-reply' => 'Скасаваць',
+	'comments-block-warning-anon' => 'Ці вы ўпэўненыя, што жадаеце ігнараваць усе камэнтары ад гэтага ананіма (паводле IP-адрасу)?',
+	'comments-block-warning-user' => 'Ці вы ўпэўненыя, што жадаеце ігнараваць усе камэнтары ад удзельніка $1?',
+	'comments-delete-warning' => 'Вы ўпэўненыя, што жадаеца выдаліць гэты камэнтар?',
+	'comments-sort-by-date' => 'Сартаваць паводле даты',
+	'comments-sort-by-score' => 'Сартаваць паводле адзнакі',
+	'comments-show-comment-link' => 'Паказаць камэнтар',
+	'comments-manage-blocklist-link' => 'Кіраваньне сьпісам ігнараваньня',
+	'comments-ignore-message' => 'Вы ігнаруеце аўтара гэтага камэнтара',
+	'comments-you' => 'Вы',
+	'comments-reply' => 'Адказаць',
+	'comments-login-required' => 'Вы мусіце ўвайсьці, каб дасылаць камэнтары',
+	'comments-not-allowed' => 'Вам не дазволена дасылаць камэнтары.',
+	'comments-post' => 'Даслаць камэнтар',
+	'comments-submit' => 'Падзяліцеся камэнтарам',
+	'comments-score-text' => 'Адзнака',
+	'comments-permalink' => 'Сталая спасылка',
+	'comments-delete-link' => 'Выдаліць камэнтар',
+	'comments-anon-name' => 'Ананімны ўдзельнік',
+	'comments-anon-message' => '{{SITENAME}} вітае <b>ўсіх камэнтатараў</b>. Калі вы не жадаеце хаваць сваю асобу, <a href="$1">зарэгіструйцеся</a> ці <a href="$2">ўвайдзіце</a>. Гэта бясплатна.',
+	'comments-ignore-item' => '<a href="$1">$2</a>, $3 <a href="$4">(разблякаваць)</a>',
+	'comments-ignore-no-users' => 'Цяпер ніводны ўдзельнік не заблякаваны.',
+	'comments-ignore-remove-message' => 'Вы ўпэўненыя, што жадаеце зноў бачыць камэнтары <b>$1</b>?',
+	'comments-ignore-unblock' => 'Разблякаваць',
+	'comments-ignore-cancel' => 'Скасаваць',
+	'comments-ignore-title' => 'Сьпіс ігнараваных камэнтатараў',
+	'commentignorelist' => 'Сьпіс ігнараваных камэнтатараў',
+	'comments-no-comments-of-day' => 'Сёньня лепшых камэнтараў дня няма.',
+	'commentslogpage' => 'Журнал камэнтараў',
+	'commentslogpagetext' => 'Гэта журнал камэнтараў.',
+	'commentslog-create-entry' => 'Новы камэнтар',
+	'comments-time-ago' => '$1 таму',
+	'comments-time-days' => '$1 {{PLURAL:$1|дзень|дні|дзён}}',
+	'comments-time-hours' => '$1 {{PLURAL:$1|гадзіну|гадзіны|гадзінаў}}',
+	'comments-time-minutes' => '$1 {{PLURAL:$1|хвіліну|хвіліны|хвілінаў}}',
+	'comments-time-seconds' => '$1 {{PLURAL:$1|сэкунду|сэкунды|сэкундаў}}',
+	'log-show-hide-comments' => '$1 журнал камэнтараў',
+	'group-commentadmin' => 'Адміністратары камэнтараў',
+	'group-commentadmin-member' => '{{GENDER:$1|адміністратар камэнтараў|адміністратарка камэнтараў}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Адміністратары камэнтараў',
+	'right-comment' => 'дасылаць камэнтары',
+	'right-commentadmin' => 'адміністраваць дасланыя камэнтары',
+);
+
 /** Breton (brezhoneg)
  * @author Y-M D
  */
@@ -200,6 +256,29 @@ $messages['de-formal'] = array(
 	'comments-not-allowed' => 'Sie sind nicht berechtigt Kommentare hinzuzufügen.',
 	'comments-anon-message' => '{{SITENAME}} freut sich über <b>alle Kommentare</b>. Sofern Sie nicht anonym bleiben möchten, <a href="$1">registrieren Sie sich bitte</a> oder <a href="$2">melden Sie sich an</a>.',
 	'comments-ignore-remove-message' => 'Sind Sie sicher, dass Sie die Kommentare von Benutzer <b>$1</b> wieder freigeben möchten?',
+);
+
+/** Zazaki (Zazaki)
+ * @author Erdemaslancan
+ */
+$messages['diq'] = array(
+	'comments-comment' => 'Vacayış',
+	'comments-voted-label' => 'Rey Bıdê',
+	'comments-loading' => 'Bar beno...',
+	'comments-reply-to' => 'Cewabê',
+	'comments-cancel-reply' => 'Bıterkne',
+	'comments-show-comment-link' => 'Vatışi bıvin',
+	'comments-you' => 'Tı',
+	'comments-reply' => 'Cewab',
+	'comments-post' => 'Vatışe bırşe',
+	'comments-submit' => 'Vatışa xo dekere de',
+	'comments-score-text' => 'Skor',
+	'comments-permalink' => 'Greyo Daimi',
+	'comments-anon-name' => 'Karbero anonim',
+	'comments-ignore-unblock' => 'bloqi hewad',
+	'comments-ignore-cancel' => 'Bıterkne',
+	'commentslog-create-entry' => 'Vatışo newe',
+	'comments-time-ago' => 'Verdê $1',
 );
 
 /** Spanish (español)
@@ -759,9 +838,14 @@ $messages['nl'] = array(
  */
 $messages['ps'] = array(
 	'comments-comment' => 'تبصره',
+	'comments-loading' => 'برسېرېدنې کې دی...',
 	'comments-cancel-reply' => 'ناګارل',
+	'comments-sort-by-date' => 'اوډنه د نېټې له مخې',
+	'comments-sort-by-score' => 'اوډنه د شمېرو له مخې',
+	'comments-show-comment-link' => 'تبصره ښکاره کول',
 	'comments-you' => 'تاسې',
 	'comments-reply' => 'ځوابول',
+	'comments-submit' => 'خپله تبصره ورګډول',
 	'comments-delete-link' => 'تبصره ړنګول',
 	'comments-anon-name' => 'ورکنومی کارن',
 	'comments-ignore-unblock' => 'بنديز لرې کول',
