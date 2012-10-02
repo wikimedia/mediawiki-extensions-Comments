@@ -242,7 +242,7 @@ $messages['de'] = array(
 	'right-commentadmin' => 'Benutzerkommentare verwalten',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Kghbln
  */
 $messages['de-formal'] = array(
