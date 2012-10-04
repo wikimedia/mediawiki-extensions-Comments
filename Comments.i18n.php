@@ -72,6 +72,7 @@ $messages['en'] = array(
  * @author Darth Kule
  * @author Nike
  * @author Shirayuki
+ * @author Siebrand
  */
 $messages['qqq'] = array(
 	'comments-comment' => 'This message might be unused.',
@@ -82,7 +83,8 @@ $messages['qqq'] = array(
 	'comments-auto-refresher-pause' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
 	'comments-reply-to' => 'This message is followed by the user\'s username whom you\'re about to reply to. For example, "Reply to Jack Phoenix".',
 	'comments-block-warning-anon' => 'Displayed in a JavaScript popup alert when the user is about to ignore the comments of an anonymous user.',
-	'comments-block-warning-user' => "Displayed in a JavaScript popup alert when the user is about to ignore a registered user's comments; $1 is the user name of the user whose comments we're about to ignore.",
+	'comments-block-warning-user' => "Displayed in a JavaScript pop-up alert when the user is about to ignore a registered user's comments. Parameters:
+* $1 is the user name of the user whose comments we're about to ignore.",
 	'comments-delete-warning' => "Displayed in a JavaScript popup alert when the user is about to delete someone's comment.",
 	'comments-sort-by-date' => 'Drop-down menu item; refer to the [[mw:File:Comments.png|image]] for details',
 	'comments-sort-by-score' => 'Drop-down menu item; refer to the [[mw:File:Comments.png|image]] for details',
