@@ -691,6 +691,7 @@ $messages['lb'] = array(
 	'comments-comment' => 'Bemierkung',
 	'comments-desc' => "Setzt d'Parsererweiderung <code>&lt;comments&gt;</code> derbäi déi et erlaabt fir Säiten ze kommentéieren",
 	'comments-db-locked' => "<h3>Bemierkungen derbäisetzen</h3> D'Datebank ass elo wéinst Maintenance-Aarbechte gespaart. Probéiert w.e.g. méi spéit nach eng Kéier.",
+	'comments-voted-label' => 'Ofgestëmmt',
 	'comments-loading' => 'Lueden...',
 	'comments-reply-to' => 'Äntwerten',
 	'comments-cancel-reply' => 'Ofbriechen',
@@ -709,6 +710,7 @@ $messages['lb'] = array(
 	'comments-permalink' => 'Permanentlink',
 	'comments-delete-link' => 'Bemierkung läschen',
 	'comments-anon-name' => 'Anonyme Benotzer',
+	'comments-anon-message' => '{{SITENAME}} freet sech iwwer <b>all Bemierkungen</b>. Wann Dir net anonym bleiwe wëllt, <a href="$1">da mellt Iech w.e.g. un</a> oder <a href="$2">loggt Iech an</a>. Et ass gratis.',
 	'comments-ignore-no-users' => 'Et sinn elo keng Benotzer gespaart.',
 	'comments-ignore-remove-message' => "Sidd Dir sécher datt Dir d'Spär fir d'Bemierkunge vum Benotzer <b>$1</b> ophiewe wëllt?",
 	'comments-ignore-unblock' => 'Spär ophiewen',
@@ -784,6 +786,7 @@ $messages['mk'] = array(
  * @author Mitchel Corstjens
  * @author SPQRobin
  * @author Siebrand
+ * @author Wiki13
  */
 $messages['nl'] = array(
 	'comments-comment' => 'Reactie',
@@ -794,6 +797,7 @@ $messages['nl'] = array(
 	'comments-auto-refresher-pause' => 'Reactie auto-ververser uitschakelen',
 	'comments-reply-to' => 'Reageer op',
 	'comments-cancel-reply' => 'Annuleren',
+	'comments-block-warning-user' => 'Weet je zeker dat je alle opmerkingen van $1 permanent wilt negeren?',
 	'comments-delete-warning' => 'Weet u zeker dat u deze opmerking wilt verwijderen?',
 	'comments-sort-by-date' => 'Sorteer op datum',
 	'comments-sort-by-score' => 'Sorteer op score',
