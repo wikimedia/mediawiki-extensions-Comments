@@ -655,7 +655,6 @@ $messages['ja'] = array(
 	'commentslogpage' => 'コメント記録',
 	'commentslogpagetext' => 'これはコメントの記録です。',
 	'commentslog-create-entry' => '新規コメント',
-	'comments-create-text' => '[[$1]] - $2',
 	'comments-time-ago' => '$1前',
 	'comments-time-days' => '{{PLURAL:$1|$1 日}}',
 	'comments-time-hours' => '{{PLURAL:$1|$1 時間}}',
