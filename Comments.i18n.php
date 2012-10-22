@@ -440,7 +440,7 @@ $messages['fr'] = array(
 	'comments-time-minutes' => '{{PLURAL:$1|une minute|$1 minutes}}',
 	'comments-time-seconds' => '{{PLURAL:$1|une seconde|$1 seconds}}',
 	'group-commentadmin' => 'Administrateurs de commentaires',
-	'group-commentadmin-member' => 'Administrateur de commentaires',
+	'group-commentadmin-member' => 'Administrateur de commentaires', # Fuzzy
 );
 
 /** Galician (galego)
@@ -655,6 +655,7 @@ $messages['ja'] = array(
 	'commentslogpage' => 'コメント記録',
 	'commentslogpagetext' => 'これはコメントの記録です。',
 	'commentslog-create-entry' => '新規コメント',
+	'comments-create-text' => '[[$1]] - $2',
 	'comments-time-ago' => '$1前',
 	'comments-time-days' => '{{PLURAL:$1|$1 日}}',
 	'comments-time-hours' => '{{PLURAL:$1|$1 時間}}',
@@ -891,4 +892,3 @@ $messages['te'] = array(
 	'comments-time-seconds' => '{{PLURAL:$1|$1 క్షణం|$1 క్షణాల}}',
 	'log-show-hide-comments' => 'వ్యాఖ్యల చిట్టాను $1',
 );
-
