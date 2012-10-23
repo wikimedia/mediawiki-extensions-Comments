@@ -797,6 +797,7 @@ $messages['nl'] = array(
 	'comments-auto-refresher-pause' => 'Reactie auto-ververser uitschakelen',
 	'comments-reply-to' => 'Reageer op',
 	'comments-cancel-reply' => 'Annuleren',
+	'comments-block-warning-anon' => 'Weet je zeker dat je permanent alle opmerkingen van deze anonieme gebruiker wilt negeren (via hun IP-adres)?',
 	'comments-block-warning-user' => 'Weet je zeker dat je alle opmerkingen van $1 permanent wilt negeren?',
 	'comments-delete-warning' => 'Weet u zeker dat u deze opmerking wilt verwijderen?',
 	'comments-sort-by-date' => 'Sorteer op datum',
