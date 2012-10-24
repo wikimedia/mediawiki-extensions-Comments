@@ -341,6 +341,30 @@ $messages['es'] = array(
 	'right-commentadmin' => 'Administrar los comentarios enviados por los usuarios',
 );
 
+/** Persian (فارسی)
+ * @author پاناروما
+ */
+$messages['fa'] = array(
+	'comments-comment' => 'نظر',
+	'comments-voted-label' => 'رای',
+	'comments-loading' => 'در حال بارگذاری...',
+	'comments-reply-to' => 'پاسخ به',
+	'comments-cancel-reply' => 'لغو کردن',
+	'comments-sort-by-date' => 'مرتب سازی بر اساس تاریخ',
+	'comments-show-comment-link' => 'نمایش نظرها',
+	'comments-you' => 'شما',
+	'comments-reply' => 'پاسخ دادن',
+	'comments-login-required' => 'برای نظردهی لازم است ابتدا وارد سامانه شوید',
+	'comments-post' => 'ارسال نظر',
+	'comments-score-text' => 'امتیاز',
+	'comments-permalink' => 'پیوند پایدار',
+	'comments-delete-link' => 'حذف نظر',
+	'comments-anon-name' => 'کاربر ناشناس',
+	'comments-ignore-cancel' => 'لغو کردن',
+	'commentslog-create-entry' => 'نظر جدید',
+	'comments-time-ago' => '$1 پیش',
+);
+
 /** Finnish (suomi)
  * @author Crt
  * @author Jack Phoenix <jack@countervandalism.net>
