@@ -422,10 +422,12 @@ $messages['fi'] = array(
 );
 
 /** French (français)
+ * @author Gomoko
  * @author Linedwell
  */
 $messages['fr'] = array(
 	'comments-comment' => 'Commenter',
+	'comments-desc' => "Ajoute une amorce d'analyse <code>&lt;comments&gt;</code> qui permet de commenter les pages",
 	'comments-db-locked' => "<h3>Ajouter des commentaires</h3>La base de données est actuellement bloquée pour la maintenance de routine, après quoi elle sera de retour à la normale. S'il vous plaît revenez plus tard !",
 	'comments-voted-label' => 'Voté',
 	'comments-loading' => 'Chargement...',
@@ -433,6 +435,9 @@ $messages['fr'] = array(
 	'comments-auto-refresher-pause' => 'Arrêter commentaire auto-actualiser',
 	'comments-reply-to' => 'Répondre à',
 	'comments-cancel-reply' => 'Annuler',
+	'comments-block-warning-anon' => 'Êtes-vous sûr de vouloir ignorer de façon permanente tous les commentaires de cet utilisateur anonyme (via son adresse IP)?',
+	'comments-block-warning-user' => "Êtes-vous sûr de vouloir ignorer de façon permanente tous les commentaires de l'utilisateur $1?",
+	'comments-delete-warning' => 'Êtes-vous sûr de vouloir supprimer ce commentaire?',
 	'comments-sort-by-date' => 'Trier par date',
 	'comments-sort-by-score' => 'Trier par score',
 	'comments-show-comment-link' => 'Voir commentaire',
@@ -441,6 +446,7 @@ $messages['fr'] = array(
 	'comments-you' => ' Vous',
 	'comments-reply' => 'Répondre',
 	'comments-login-required' => 'Vous devez être connecté afin de pouvoir ajouter des commentaires',
+	'comments-not-allowed' => "Vous n'êtes pas autorisé à publier de commentaire.",
 	'comments-post' => 'Publier le commentaire',
 	'comments-submit' => 'Ajouter votre commentaire',
 	'comments-score-text' => 'Score',
@@ -455,6 +461,7 @@ $messages['fr'] = array(
 	'comments-ignore-cancel' => 'Annuler',
 	'comments-ignore-title' => 'Commentaire liste des ignorés',
 	'commentignorelist' => 'Commentaire liste des ignorés',
+	'comments-no-comments-of-day' => "Il n'y a aucun commentaire sur la journée.",
 	'commentslogpage' => 'Historique des commentaires',
 	'commentslogpagetext' => 'Ceci est un journal de commentaires.',
 	'commentslog-create-entry' => 'Nouveau commentaire',
@@ -463,8 +470,12 @@ $messages['fr'] = array(
 	'comments-time-hours' => '{{PLURAL:$1|une heure|$1 heures}}',
 	'comments-time-minutes' => '{{PLURAL:$1|une minute|$1 minutes}}',
 	'comments-time-seconds' => '{{PLURAL:$1|une seconde|$1 seconds}}',
+	'log-show-hide-comments' => 'journal de commentaires $1',
 	'group-commentadmin' => 'Administrateurs de commentaires',
-	'group-commentadmin-member' => 'Administrateur de commentaires', # Fuzzy
+	'group-commentadmin-member' => '{{GENDER:$1|administrateur de commentaires|administratrice de commentaires}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Administrateurs de commentaires',
+	'right-comment' => 'Publier les commentaires',
+	'right-commentadmin' => 'Administrer les commentaires soumis par les utilisateurs',
 );
 
 /** Galician (galego)
