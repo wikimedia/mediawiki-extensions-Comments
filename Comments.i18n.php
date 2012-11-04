@@ -174,6 +174,20 @@ $messages['be-tarask'] = array(
 	'right-commentadmin' => 'адміністраваць дасланыя камэнтары',
 );
 
+/** Bengali (বাংলা)
+ * @author Bellayet
+ */
+$messages['bn'] = array(
+	'comments-comment' => 'মন্তব্য',
+	'comments-loading' => 'লোডিং...',
+	'comments-cancel-reply' => 'বাতিল',
+	'comments-you' => 'আপনি',
+	'comments-reply' => 'উত্তর',
+	'comments-score-text' => 'স্কোর',
+	'comments-ignore-cancel' => 'বাতিল',
+	'comments-time-ago' => '$1 আগে',
+);
+
 /** Breton (brezhoneg)
  * @author Y-M D
  */
