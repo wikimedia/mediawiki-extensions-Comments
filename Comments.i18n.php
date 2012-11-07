@@ -945,3 +945,25 @@ $messages['te'] = array(
 	'comments-time-seconds' => '{{PLURAL:$1|$1 క్షణం|$1 క్షణాల}}',
 	'log-show-hide-comments' => 'వ్యాఖ్యల చిట్టాను $1',
 );
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Yfdyh000
+ */
+$messages['zh-hans'] = array(
+	'comments-voted-label' => '已投票',
+	'comments-loading' => '载入中...',
+	'comments-auto-refresher-enable' => '开启评论自动刷新',
+	'comments-auto-refresher-pause' => '关闭评论自动刷新',
+	'comments-reply-to' => '回复',
+	'comments-cancel-reply' => '取消',
+	'comments-block-warning-anon' => '您确定要永久忽略来自此IP地址的所有评论吗？',
+	'comments-block-warning-user' => '您确定要永久忽略来自用户 $1 的所有评论吗？',
+	'comments-delete-warning' => '您确定要删除此评论吗？',
+	'comments-sort-by-date' => '按日期排序',
+	'comments-sort-by-score' => '按分数排序',
+	'comments-show-comment-link' => '显示评论',
+	'comments-manage-blocklist-link' => '管理忽略列表',
+	'comments-ignore-message' => '你忽略了来自这个人的评论',
+	'comments-you' => '你',
+	'comments-reply' => '回复',
+);
