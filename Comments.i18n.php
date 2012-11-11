@@ -548,6 +548,33 @@ $messages['gl'] = array(
 	'right-commentadmin' => 'Administrar os comentarios enviados polos usuarios',
 );
 
+/** Hebrew (עברית)
+ * @author חיים
+ */
+$messages['he'] = array(
+	'comments-comment' => 'תגובה',
+	'comments-voted-label' => 'הצבעה',
+	'comments-loading' => 'טוען...',
+	'comments-auto-refresher-enable' => 'אפשר רענון אוטומטי של תגובה',
+	'comments-auto-refresher-pause' => 'מנע רענון אוטומטי של תגובה',
+	'comments-reply-to' => 'השב אל',
+	'comments-cancel-reply' => 'ביטול',
+	'comments-you' => 'אתה',
+	'comments-reply' => 'השב',
+	'comments-post' => 'פרסם תגובה',
+	'comments-submit' => 'הוסף את ההערה שלך',
+	'comments-score-text' => 'תוצאה',
+	'comments-delete-link' => 'מחק תגובה',
+	'comments-anon-name' => 'משתמש אנונימי',
+	'comments-ignore-unblock' => 'ביטול חסימה',
+	'comments-ignore-cancel' => 'ביטול',
+	'commentslogpage' => 'יומן ההערות',
+	'commentslog-create-entry' => 'תגובה חדשה',
+	'comments-time-ago' => 'לפני $1',
+	'log-show-hide-comments' => '$1 יומן ההערות',
+	'group-commentadmin' => 'הערה מנהלית',
+);
+
 /** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
