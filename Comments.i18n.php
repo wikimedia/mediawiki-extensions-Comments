@@ -870,6 +870,7 @@ $messages['mk'] = array(
  */
 $messages['nl'] = array(
 	'comments-comment' => 'Reactie',
+	'comments-desc' => "Voegt de parserhook <code>&lt;comments&gt;</code> toe die het mogelijk maakt te reageren op pagina's",
 	'comments-db-locked' => '<h3>Reacties Toevoegen</h3>De database is momenteel gesloten voor routine database onderhoud, waarna het weer normaal zal zijn. Kom a.u.b. later terug!',
 	'comments-voted-label' => 'Gestemd',
 	'comments-loading' => 'Laden...',
