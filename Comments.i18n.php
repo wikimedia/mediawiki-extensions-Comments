@@ -974,6 +974,17 @@ $messages['te'] = array(
 	'log-show-hide-comments' => 'వ్యాఖ్యల చిట్టాను $1',
 );
 
+/** Central Atlas Tamazight (ⵜⴰⵎⴰⵣⵉⵖⵜ)
+ * @author Tifinaghes
+ */
+$messages['tzm'] = array(
+	'comments-comment' => 'ⵜⴰⵏⵏⴰⵢⵜ',
+	'comments-you' => 'ⴽⴻⵢⵢ',
+	'comments-reply' => 'ⵔⴰⵔ',
+	'comments-post' => 'ⵔⵏⵓ ⵜⴰⵏⵏⴰⵢⵜ',
+	'comments-submit' => 'ⵔⵏⵓ ⵜⴰⵏⵏⴰⵢⵜ',
+);
+
 /** Simplified Chinese (中文（简体）‎)
  * @author Yfdyh000
  */
