@@ -985,6 +985,52 @@ $messages['tzm'] = array(
 	'comments-submit' => 'ⵔⵏⵓ ⵜⴰⵏⵏⴰⵢⵜ',
 );
 
+/** Ukrainian (українська)
+ * @author Base
+ */
+$messages['uk'] = array(
+	'comments-comment' => 'Коментарі',
+	'comments-voted-label' => 'Проголосували',
+	'comments-loading' => 'Завантаження…',
+	'comments-auto-refresher-enable' => 'Увімкнути автоновлення коментарів',
+	'comments-auto-refresher-pause' => 'Призупинити автооновлення коментарів',
+	'comments-reply-to' => 'Відповісти',
+	'comments-cancel-reply' => 'Скасувати',
+	'comments-block-warning-anon' => 'Ви дійсно бажаєте постійно ігнорувати коментарі від цього анонімного користувача (за IP-адресою)?',
+	'comments-block-warning-user' => 'Ви дісно хочете постійно ігнорувати усі коментарі {{GENDER:$1|користувача|користувачки}} $1?',
+	'comments-delete-warning' => 'Ви дійсно бажаєте вилучити цей коментар?',
+	'comments-sort-by-date' => 'Сортувати за датою',
+	'comments-sort-by-score' => 'Сортувати за оцінками',
+	'comments-show-comment-link' => 'Показати коментар',
+	'comments-manage-blocklist-link' => 'Керувати списками ігнорування',
+	'comments-ignore-message' => 'Ви ігноруєта автора цього коментраря',
+	'comments-you' => 'Ви',
+	'comments-reply' => 'Відповісти',
+	'comments-login-required' => 'Ви повинні увійти до системи, щоб додавати коментарі',
+	'comments-not-allowed' => 'Вам не дозволено надсилати коментарі.',
+	'comments-post' => 'Надіслати коментар',
+	'comments-submit' => 'Додати свій коментар',
+	'comments-score-text' => 'Оцінка',
+	'comments-permalink' => 'Постійне посилання',
+	'comments-delete-link' => 'Вилучити коментар',
+	'comments-anon-name' => 'Анонімний користувач',
+	'comments-ignore-unblock' => 'Розблокувати',
+	'comments-ignore-cancel' => 'Скасувати',
+	'comments-ignore-title' => 'Список коментарів, що ігноруються',
+	'commentignorelist' => 'Список коментарів, що ігноруються',
+	'commentslog-create-entry' => 'Новий коментар',
+	'comments-time-ago' => '$1 тому',
+	'comments-time-days' => '$1 {{PLURAL:$1|день|дні|днів}}',
+	'comments-time-hours' => '$1 {{PLURAL:$1|годину|години|годин}}',
+	'comments-time-minutes' => '$1 {{PLURAL:$1|хвилину|хвилини|хвилин}}',
+	'comments-time-seconds' => '$1 {{PLURAL:$1|секунду|секунди|секунд}}',
+	'log-show-hide-comments' => '$1 журнал коментарів',
+	'group-commentadmin' => 'Адміністратор коментарів',
+	'group-commentadmin-member' => '{{GENDER:$1|адміністратор коментарів|адміністраторка коментрарів}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Адміністратори коментарів',
+	'right-comment' => 'Надіслати коментарі',
+);
+
 /** Simplified Chinese (中文（简体）‎)
  * @author Yfdyh000
  */
