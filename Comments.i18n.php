@@ -118,6 +118,34 @@ $messages['qqq'] = array(
 	'right-commentadmin' => '{{doc-right|commentadmin}}',
 );
 
+/** Assamese (অসমীয়া)
+ * @author Bishnu Saikia
+ */
+$messages['as'] = array(
+	'comments-comment' => 'মন্তব্য',
+	'comments-voted-label' => 'ভোট দিয়া হ’ল',
+	'comments-loading' => "ল'ড হৈ আছে…",
+	'comments-cancel-reply' => 'বাতিল কৰক',
+	'comments-show-comment-link' => 'মন্তব্য দেখুৱাওক',
+	'comments-you' => 'আপুনি',
+	'comments-reply' => 'উত্তৰ',
+	'comments-post' => 'মন্তব্য প্ৰেৰণ কৰক',
+	'comments-submit' => 'আপোনাৰ মন্তব্য যোগ দিয়ক',
+	'comments-score-text' => 'নম্বৰ',
+	'comments-permalink' => 'স্থায়ী সংযোগ',
+	'comments-delete-link' => 'মন্তব্য বিলোপ কৰক',
+	'comments-ignore-unblock' => 'প্ৰতিবন্ধক উঠাই লওক',
+	'comments-ignore-cancel' => 'বাতিল কৰক',
+	'commentslogpage' => 'মন্তব্য অভিলেখ',
+	'commentslog-create-entry' => 'নতুন মন্তব্য',
+	'comments-time-ago' => '$1 আগেয়ে',
+	'comments-time-days' => '{{PLURAL:$1|$1 দিন|$1 দিন}}', # Fuzzy
+	'comments-time-hours' => '{{PLURAL:$1|$১ ঘন্টা|$১ ঘন্টা}}', # Fuzzy
+	'comments-time-minutes' => '{{PLURAL:$1|$১ মিনিট|$১ মিনিট}}', # Fuzzy
+	'comments-time-seconds' => '{{PLURAL:$1|$১ ছেকেণ্ড |$১ ছেকেণ্ড}}',
+	'right-comment' => 'মন্তব্য জমা দিয়ক',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Wizardist
  */
@@ -382,6 +410,7 @@ $messages['fa'] = array(
 /** Finnish (suomi)
  * @author Crt
  * @author Jack Phoenix <jack@countervandalism.net>
+ * @author Nedergard
  * @author Nike
  */
 $messages['fi'] = array(
@@ -431,18 +460,20 @@ $messages['fi'] = array(
 	'log-show-hide-comments' => '$1 kommenttiloki',
 	'group-commentadmin' => 'kommenttien ylläpitäjät',
 	'group-commentadmin-member' => '{{GENDER:$1|kommenttien ylläpitäjä}}',
+	'grouppage-commentadmin' => '{{ns:project}}:kommenttien ylläpitäjät',
 	'right-comment' => 'Lähettää kommentteja',
 	'right-commentadmin' => 'Hallinnoida käyttäjien lähettämiä kommentteja',
 );
 
 /** French (français)
+ * @author Crochet.david
  * @author Gomoko
  * @author Linedwell
  */
 $messages['fr'] = array(
 	'comments-comment' => 'Commenter',
-	'comments-desc' => "Ajoute une amorce d'analyse <code>&lt;comments&gt;</code> qui permet de commenter les pages",
-	'comments-db-locked' => "<h3>Ajouter des commentaires</h3>La base de données est actuellement bloquée pour la maintenance de routine, après quoi elle sera de retour à la normale. S'il vous plaît revenez plus tard !",
+	'comments-desc' => 'Ajoute une amorce d’analyse <code>&lt;comments&gt;</code> qui permet de commenter les pages',
+	'comments-db-locked' => '<h3>Ajouter des commentaires</h3>La base de données est actuellement bloquée pour la maintenance de routine, après quoi elle sera de retour à la normale. S’il vous plaît revenez plus tard !',
 	'comments-voted-label' => 'Voté',
 	'comments-loading' => 'Chargement...',
 	'comments-auto-refresher-enable' => 'Activer commentaire auto-actualiser',
@@ -450,13 +481,13 @@ $messages['fr'] = array(
 	'comments-reply-to' => 'Répondre à',
 	'comments-cancel-reply' => 'Annuler',
 	'comments-block-warning-anon' => 'Êtes-vous sûr de vouloir ignorer de façon permanente tous les commentaires de cet utilisateur anonyme (via son adresse IP)?',
-	'comments-block-warning-user' => "Êtes-vous sûr de vouloir ignorer de façon permanente tous les commentaires de l'utilisateur $1?",
+	'comments-block-warning-user' => 'Êtes-vous sûr de vouloir ignorer de façon permanente tous les commentaires de l’utilisateur $1?',
 	'comments-delete-warning' => 'Êtes-vous sûr de vouloir supprimer ce commentaire?',
 	'comments-sort-by-date' => 'Trier par date',
 	'comments-sort-by-score' => 'Trier par score',
 	'comments-show-comment-link' => 'Voir commentaire',
 	'comments-manage-blocklist-link' => 'Gérer la liste ignorer',
-	'comments-ignore-message' => "Vous ignorez l'auteur de ce commentaire",
+	'comments-ignore-message' => 'Vous ignorez l’auteur de ce commentaire',
 	'comments-you' => ' Vous',
 	'comments-reply' => 'Répondre',
 	'comments-login-required' => 'Vous devez être connecté afin de pouvoir ajouter des commentaires',
@@ -467,19 +498,19 @@ $messages['fr'] = array(
 	'comments-permalink' => 'Lien permanent',
 	'comments-delete-link' => 'Supprimer le commentaire',
 	'comments-anon-name' => 'Utilisateur anonyme',
-	'comments-anon-message' => '{{SITENAME}} se félicite de <b>tous les commentaires</b>.  Si vous ne voulez pas être anonyme, <a href="$1">enregistre</a> ou <a href="$2">se connecter</a>.  C\'est gratuit.',
+	'comments-anon-message' => '{{SITENAME}} se félicite de <b>tous les commentaires</b>.  Si vous ne voulez pas être anonyme, <a href="$1">enregistre</a> ou <a href="$2">se connecter</a>.  C’est gratuit.',
 	'comments-ignore-item' => '<a href="$1">$2</a> sur $3 <a href="$4">(débloquer)</a>',
-	'comments-ignore-no-users' => "Il n'y a pas d'utilisateurs actuellement bloquée.",
-	'comments-ignore-remove-message' => "Voulez-vous vraiment de débloquer les commentaires de l'utilisateur <b>$1</b> ?",
+	'comments-ignore-no-users' => 'Il n’y a pas d’utilisateurs actuellement bloquée.',
+	'comments-ignore-remove-message' => 'Voulez-vous vraiment de débloquer les commentaires de l’utilisateur <b>$1</b> ?',
 	'comments-ignore-unblock' => 'Débloquer',
 	'comments-ignore-cancel' => 'Annuler',
 	'comments-ignore-title' => 'Commentaire liste des ignorés',
 	'commentignorelist' => 'Commentaire liste des ignorés',
-	'comments-no-comments-of-day' => "Il n'y a aucun commentaire sur la journée.",
+	'comments-no-comments-of-day' => 'Il n’y a aucun commentaire sur la journée.',
 	'commentslogpage' => 'Historique des commentaires',
 	'commentslogpagetext' => 'Ceci est un journal de commentaires.',
 	'commentslog-create-entry' => 'Nouveau commentaire',
-	'comments-time-ago' => "Il y'a $1",
+	'comments-time-ago' => 'Il y’a $1',
 	'comments-time-days' => '{{PLURAL:$1|un jour|$1 jours}}',
 	'comments-time-hours' => '{{PLURAL:$1|une heure|$1 heures}}',
 	'comments-time-minutes' => '{{PLURAL:$1|une minute|$1 minutes}}',
@@ -986,6 +1017,7 @@ $messages['tzm'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author Ahonc
  * @author Base
  */
 $messages['uk'] = array(
@@ -1028,7 +1060,7 @@ $messages['uk'] = array(
 	'group-commentadmin' => 'Адміністратор коментарів',
 	'group-commentadmin-member' => '{{GENDER:$1|адміністратор коментарів|адміністраторка коментрарів}}',
 	'grouppage-commentadmin' => '{{ns:project}}:Адміністратори коментарів',
-	'right-comment' => 'Надіслати коментарі',
+	'right-comment' => 'робити коментарі',
 );
 
 /** Simplified Chinese (中文（简体）‎)
