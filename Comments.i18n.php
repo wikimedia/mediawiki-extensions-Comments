@@ -978,6 +978,62 @@ $messages['ps'] = array(
 	'comments-time-seconds' => '{{PLURAL:$1|يوه ثانيه|$1 ثانيې}}',
 );
 
+/** Swedish (svenska)
+ * @author WikiPhoenix
+ */
+$messages['sv'] = array(
+	'comments-comment' => 'Kommentar',
+	'comments-desc' => 'Lägger till parserkroken <code>&lt;comments&gt;</code> som tillåter kommentarer på sidor',
+	'comments-db-locked' => '<h3>Lägga till kommentarer</h3>Databasen är för tillfället låst för rutinerat underhåll, och kommer att fungera normalt när det är klart. Var god kom tillbaka senare!',
+	'comments-voted-label' => 'Röstade',
+	'comments-loading' => 'Läser in...',
+	'comments-auto-refresher-enable' => 'Aktivera autouppdatering av kommentar',
+	'comments-auto-refresher-pause' => 'Pausa autouppdatering av kommentarer',
+	'comments-reply-to' => 'Besvara',
+	'comments-cancel-reply' => 'Avbryt',
+	'comments-block-warning-anon' => 'Är du säker på att du vill ignorera alla kommentarer från denna anonyma användare permanent (via dess IP-adress)?',
+	'comments-block-warning-user' => 'Är du säker på att du vill ignorera alla kommentarer från användaren $1?',
+	'comments-delete-warning' => 'Är du säker på att du vill radera denna kommentar?',
+	'comments-sort-by-date' => 'Sortera efter datum',
+	'comments-sort-by-score' => 'Sortera efter poäng',
+	'comments-show-comment-link' => 'Visa kommentar',
+	'comments-manage-blocklist-link' => 'Hantera ignoreringslista',
+	'comments-ignore-message' => 'Du ignorerar författaren till denna kommentar',
+	'comments-you' => 'Du',
+	'comments-reply' => 'Svara',
+	'comments-login-required' => 'Du måste vara inloggad för att lägga till kommentarer',
+	'comments-not-allowed' => 'Du får inte posta kommentarer.',
+	'comments-post' => 'Skicka kommentar',
+	'comments-submit' => 'Lägg till din kommentar',
+	'comments-score-text' => 'Poäng',
+	'comments-permalink' => 'Permanent länk',
+	'comments-delete-link' => 'Radera kommentar',
+	'comments-anon-name' => 'Anonym användare',
+	'comments-anon-message' => '{{SITENAME}} välkomnar <b>alla kommentarer</b>. Om du inte vill vara anonym kan du <a href="$1">registrera</a> eller <a href="$2">logga in</a>. Det är gratis.',
+	'comments-ignore-item' => '<a href="$1">$2</a> den $3 <a href="$4">(ta bort blockering)</a>',
+	'comments-ignore-no-users' => 'Det finns inga användare som är blockerade för tillfället.',
+	'comments-ignore-remove-message' => 'Är du säker på att du vill ta bort blockeringen för användaren <b>$1</b>s kommentarer?',
+	'comments-ignore-unblock' => 'Ta bort blockering',
+	'comments-ignore-cancel' => 'Avbryt',
+	'comments-ignore-title' => 'Ignoreringslista för kommentarer',
+	'commentignorelist' => 'Ignoreringslista för kommentarer',
+	'comments-no-comments-of-day' => 'Det finns inga kommentarer idag.',
+	'commentslogpage' => 'Kommentarlogg',
+	'commentslogpagetext' => 'Detta är en logg för kommentarer.',
+	'commentslog-create-entry' => 'Ny kommentar',
+	'comments-time-ago' => '$1 sedan',
+	'comments-time-days' => '{{PLURAL:$1|en dag|$1 dagar}}',
+	'comments-time-hours' => '{{PLURAL:$1|en timme|$1 timmar}}',
+	'comments-time-minutes' => '{{PLURAL:$1|en minut|$1 minuter}}',
+	'comments-time-seconds' => '{{PLURAL:$1|en sekund|$1 sekunder}}',
+	'log-show-hide-comments' => '$1 kommentarlogg',
+	'group-commentadmin' => 'Kommentaradministratörer',
+	'group-commentadmin-member' => '{{GENDER:$1|kommentaradministratör}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Kommentaradministratörer',
+	'right-comment' => 'Skicka kommentarer',
+	'right-commentadmin' => 'Administrera kommentarer som användare har skickat',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */
