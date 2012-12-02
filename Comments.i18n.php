@@ -1075,6 +1075,7 @@ $messages['tzm'] = array(
 /** Ukrainian (українська)
  * @author Ahonc
  * @author Base
+ * @author Ата
  */
 $messages['uk'] = array(
 	'comments-comment' => 'Коментарі',
@@ -1102,10 +1103,17 @@ $messages['uk'] = array(
 	'comments-permalink' => 'Постійне посилання',
 	'comments-delete-link' => 'Вилучити коментар',
 	'comments-anon-name' => 'Анонімний користувач',
+	'comments-anon-message' => '{{SITENAME}} вітає <b>усі коментарі</b>. Якщо Ви не хочете бути анонімними, <a href="$1">зареєструйтесь</a> або <a href="$2">увійдіть</a>. Це безкоштовно.',
+	'comments-ignore-item' => '<a href="$1">$2</a>, заблоковано $3 <a href="$4">(розблокувати)</a>',
+	'comments-ignore-no-users' => 'Користувачів, яких наразі заблоковано, немає.',
+	'comments-ignore-remove-message' => 'Ви впевнені, що хочете розблокувати коментарі користувача <b>$1</b>?',
 	'comments-ignore-unblock' => 'Розблокувати',
 	'comments-ignore-cancel' => 'Скасувати',
 	'comments-ignore-title' => 'Список коментарів, що ігноруються',
 	'commentignorelist' => 'Список коментарів, що ігноруються',
+	'comments-no-comments-of-day' => 'Сьогодні коментарів немає.',
+	'commentslogpage' => 'Журнал коментарів',
+	'commentslogpagetext' => 'Це журнал коментарів.',
 	'commentslog-create-entry' => 'Новий коментар',
 	'comments-time-ago' => '$1 тому',
 	'comments-time-days' => '$1 {{PLURAL:$1|день|дні|днів}}',
