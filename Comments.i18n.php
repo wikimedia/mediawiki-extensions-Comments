@@ -898,12 +898,16 @@ $messages['mk'] = array(
 $messages['ms'] = array(
 	'comments-comment' => 'Komen',
 	'comments-desc' => 'Membubuh penghurai <code>&lt;comments&gt;</code> yang membolehkan komen pada halaman',
+	'comments-db-locked' => '<h3>Menambah komen</h3>Pangkalan data kini dikunci untuk kerja penyelenggaraan rutin, selepas ini kembali normal. Sila datang balik nanti!',
 	'comments-voted-label' => 'Diundi',
 	'comments-loading' => 'Sedang dimuatkan...',
 	'comments-auto-refresher-enable' => 'Hidupkan pengemaskini komen automatik',
 	'comments-auto-refresher-pause' => 'Rehatkan pengemaskini komen automatik',
 	'comments-reply-to' => 'Balas',
 	'comments-cancel-reply' => 'Batalkan',
+	'comments-block-warning-anon' => 'Adakah anda benar-benar ingin mengabaikan semua komen daripada pengguna awanama ini (melalui alamat IP-nya) buat selama-lamanya?',
+	'comments-block-warning-user' => 'Adakah anda benar-benar ingin mengabaikan semua komen daripada pengguna $1 buat selama-lamanya?',
+	'comments-delete-warning' => 'Adakah anda benar-benar ingin memadamkan komen ini?',
 	'comments-sort-by-date' => 'Isih ikut tarikh',
 	'comments-sort-by-score' => 'Isih ikut markah',
 	'comments-show-comment-link' => 'Paparkan komen',
@@ -941,6 +945,7 @@ $messages['ms'] = array(
 	'group-commentadmin-member' => '{{GENDER:$1|penyelia komen}}',
 	'grouppage-commentadmin' => '{{ns:project}}:Penyelia Komen',
 	'right-comment' => 'Menghantar komen',
+	'right-commentadmin' => 'Mentadbir urus komen serahan pengguna',
 );
 
 /** Dutch (Nederlands)
