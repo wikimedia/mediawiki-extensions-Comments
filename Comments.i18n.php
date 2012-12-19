@@ -76,7 +76,7 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'comments-comment' => 'This message might be unused.',
-	'comments-desc' => '{{desc}}',
+	'comments-desc' => '{{desc|name=Comments|url=http://www.mediawiki.org/wiki/Extension:Comments}}',
 	'comments-db-locked' => 'Displayed if a page contains the &lt;comments /&gt; tag while the database is locked.',
 	'comments-voted-label' => 'Shown when you have voted (either thumbs up or thumbs down) for a given comment',
 	'comments-auto-refresher-enable' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
