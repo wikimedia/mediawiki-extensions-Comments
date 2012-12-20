@@ -779,18 +779,35 @@ $messages['ja'] = array(
  * @author David1010
  */
 $messages['ka'] = array(
+	'comments-comment' => 'კომენტარი',
+	'comments-voted-label' => 'ხმა მიცემულია',
 	'comments-loading' => 'იტვირთება…',
 	'comments-cancel-reply' => 'გაუქმება',
+	'comments-delete-warning' => 'დარწმუნებული ხართ, რომ გსურთ ამ კომენტარის წაშლა?',
 	'comments-you' => 'თქვენ',
 	'comments-reply' => 'პასუხი',
+	'comments-post' => 'კომენტარის დატოვება',
+	'comments-submit' => 'დაამატეთ თქვენი კომენტარი',
+	'comments-score-text' => 'შეფასება',
+	'comments-permalink' => 'მუდმივი ბმული',
+	'comments-delete-link' => 'კომენტარის წაშლა',
+	'comments-anon-name' => 'ანონიმური მომხმარებელი',
+	'comments-anon-message' => '{{SITENAME}} მიესალმება <b>ყველა კომენტარს</b>. თუ თქვენ არ გსურთ იყოთ ანონიმი, <a href="$1">დარეგისტრირდით</a> ან <a href="$2">შედით სისტემაში</a>. ეს უფასოა.',
+	'comments-ignore-item' => '<a href="$1">$2</a> $3-ზე <a href="$4">(განბლოკვა)</a>',
+	'comments-ignore-remove-message' => 'დარწმუნებული ხართ, რომ გსურთ განბლოკოთ მომხმარებელ <b>$1</b>-ის კომენტარი?',
 	'comments-ignore-unblock' => 'განბლოკვა',
 	'comments-ignore-cancel' => 'გაუქმება',
+	'comments-ignore-title' => 'კომენტარის იგნორირების სია',
+	'commentignorelist' => 'კომენტარის იგნორირების სია',
 	'commentslog-create-entry' => 'ახალი კომენტარი',
 	'comments-time-ago' => '$1 წინ',
 	'comments-time-days' => '{{PLURAL:$1|ერთი დღე|$1 დღე}}',
 	'comments-time-hours' => '{{PLURAL:$1|ერთი საათი|$1 საათი}}',
 	'comments-time-minutes' => '{{PLURAL:$1|ერთი წუთი|$1 წუთი}}',
 	'comments-time-seconds' => '{{PLURAL:$1|ერთი წამი|$1 წამი}}',
+	'group-commentadmin' => 'კომენტარების ადმინისტრატორები',
+	'group-commentadmin-member' => '{{GENDER:$1|კომენტარების ადმინისტრატორი}}',
+	'grouppage-commentadmin' => '{{ns:project}}:კომენტარების ადმინისტრატორები',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -1191,6 +1208,8 @@ $messages['tzm'] = array(
  */
 $messages['uk'] = array(
 	'comments-comment' => 'Коментарі',
+	'comments-desc' => 'Додає у парсер обробку <code>&lt;comments&gt;</code>, що вмикає підтримки коментування на сторінках',
+	'comments-db-locked' => '<h3>Додавання коментування</h3>Базу даних наразі заблоковано для опрацювання, після якого вона повернеться у норму. Будь ласка, перевірте пізніше!',
 	'comments-voted-label' => 'Проголосували',
 	'comments-loading' => 'Завантаження…',
 	'comments-auto-refresher-enable' => 'Увімкнути автоновлення коментарів',
@@ -1237,6 +1256,7 @@ $messages['uk'] = array(
 	'group-commentadmin-member' => '{{GENDER:$1|адміністратор коментарів|адміністраторка коментрарів}}',
 	'grouppage-commentadmin' => '{{ns:project}}:Адміністратори коментарів',
 	'right-comment' => 'робити коментарі',
+	'right-commentadmin' => 'Адмініструвати надіслані користувачами коментарі',
 );
 
 /** Simplified Chinese (中文（简体）‎)
