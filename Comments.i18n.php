@@ -118,6 +118,19 @@ $messages['qqq'] = array(
 	'right-commentadmin' => '{{doc-right|commentadmin}}',
 );
 
+/** Afrikaans (Afrikaans)
+ * @author Naudefj
+ */
+$messages['af'] = array(
+	'comments-comment' => 'Opmerking',
+	'comments-voted-label' => 'Gestem',
+	'comments-loading' => 'Laai...',
+	'comments-cancel-reply' => 'Kanselleer',
+	'comments-you' => 'U',
+	'comments-reply' => 'Antwoord',
+	'comments-ignore-cancel' => 'Kanselleer',
+);
+
 /** Assamese (অসমীয়া)
  * @author Bishnu Saikia
  */
@@ -228,6 +241,29 @@ $messages['br'] = array(
 	'commentslog-create-entry' => 'Evezhiadenn nevez',
 );
 
+/** Czech (česky)
+ * @author Vks
+ */
+$messages['cs'] = array(
+	'comments-cancel-reply' => 'Zrušit',
+	'comments-ignore-unblock' => 'Odblokovat',
+	'commentslogpage' => 'Protokol o komentářích',
+	'comments-time-ago' => 'před $1',
+	'right-comment' => 'Odeslat komentář',
+);
+
+/** Danish (dansk)
+ * @author Tjernobyl
+ */
+$messages['da'] = array(
+	'comments-cancel-reply' => 'Annuller',
+	'comments-submit' => 'Tilføj din kommentar',
+	'comments-score-text' => 'Point',
+	'comments-permalink' => 'Permanent henvisning',
+	'comments-delete-link' => 'Slet kommentar',
+	'comments-anon-name' => 'Anonym bruger',
+);
+
 /** German (Deutsch)
  * @author Gerry
  * @author Kghbln
@@ -325,6 +361,38 @@ $messages['diq'] = array(
 	'comments-time-ago' => 'Verdê $1',
 );
 
+/** Greek (Ελληνικά)
+ * @author ZaDiak
+ */
+$messages['el'] = array(
+	'comments-comment' => 'Σχόλιο',
+	'comments-voted-label' => 'Έχετε ψηφίσει',
+	'comments-loading' => 'Φόρτωση...',
+	'comments-reply-to' => 'Απάντηση σε',
+	'comments-cancel-reply' => 'Ακύρωση',
+	'comments-sort-by-date' => 'Ταξινόμηση κατά ημερομηνία',
+	'comments-sort-by-score' => 'Ταξινόμηση κατά βαθμολογία',
+	'comments-show-comment-link' => 'Προβολή σχολίου',
+	'comments-you' => 'Εσείς',
+	'comments-reply' => 'Απάντηση',
+	'comments-post' => 'Δημοσίευση σχολίου',
+	'comments-submit' => 'Προσθήκη του σχολίου σας',
+	'comments-score-text' => 'Βαθμολογία',
+	'comments-delete-link' => 'Διαγραφή σχολίου',
+	'comments-anon-name' => 'Ανώνυμος χρήστης',
+	'comments-ignore-unblock' => 'Άρση φραγής',
+	'comments-ignore-cancel' => 'Ακύρωση',
+	'commentslogpage' => 'Αρχείο καταγραφής σχολίων',
+	'commentslogpagetext' => 'Αυτό είναι ένα αρχείο καταγραφής σχολίων.',
+	'commentslog-create-entry' => 'Νέο σχόλιο',
+	'comments-time-ago' => 'πριν $1',
+	'comments-time-days' => '{{PLURAL:$1|μια μέρα|$1 μέρες}}',
+	'comments-time-hours' => '{{PLURAL:$1|μια ώρα|$1 ώρες}}',
+	'comments-time-minutes' => '{{PLURAL:$1|ένα λεπτό|$1 λεπτά}}',
+	'comments-time-seconds' => '{{PLURAL:$1|ένα δευτερόλεπτο|$1 δευτερόλεπτα}}',
+	'right-comment' => 'Καταχώρηση σχολίων',
+);
+
 /** Spanish (español)
  * @author AndreyWiki
  * @author Armando-Martin
@@ -381,6 +449,19 @@ $messages['es'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Administradores de comentarios',
 	'right-comment' => 'Enviar comentarios',
 	'right-commentadmin' => 'Administrar los comentarios enviados por los usuarios',
+);
+
+/** Estonian (eesti)
+ * @author Avjoska
+ */
+$messages['et'] = array(
+	'comments-loading' => 'Laadimine...',
+	'comments-reply-to' => 'Vasta',
+	'comments-sort-by-date' => 'Sorteeri kuupäeva järgi',
+	'comments-reply' => 'Vasta',
+	'comments-login-required' => 'Sa pead olema sisselogitud, et lisada kommentaare',
+	'commentslog-create-entry' => 'Uus kommentaar',
+	'comments-time-ago' => '$1 tagasi',
 );
 
 /** Persian (فارسی)
@@ -662,6 +743,32 @@ $messages['hsb'] = array(
 	'right-commentadmin' => 'Wužiwarske komentary zrjadować',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author Farras
+ */
+$messages['id'] = array(
+	'comments-comment' => 'Komentar',
+	'comments-loading' => 'Memuat...',
+	'comments-reply-to' => 'Balas ke',
+	'comments-cancel-reply' => 'Batal',
+	'comments-delete-warning' => 'Anda yakin ingin menghapus komentar ini?',
+	'comments-sort-by-date' => 'Urut berdasarkan tanggal',
+	'comments-sort-by-score' => 'Urut berdasarkan skor',
+	'comments-show-comment-link' => 'Tampilkan komentar',
+	'comments-you' => 'Anda',
+	'comments-reply' => 'Balas',
+	'comments-login-required' => 'Anda harus masuk log untuk menambahkan komentar',
+	'comments-not-allowed' => 'Anda tidak diizinkan mengirim komentar.',
+	'commentslogpagetext' => 'Ini adalah log komentar.',
+	'commentslog-create-entry' => 'Komentar baru',
+	'comments-time-ago' => '$1 yang lalu',
+	'comments-time-days' => '{{PLURAL:$1|satu hari|$1 hari}}',
+	'comments-time-hours' => '{{PLURAL:$1|satu jam|$1 jam}}',
+	'comments-time-minutes' => '{{PLURAL:$1|satu menit|$1 menit}}',
+	'comments-time-seconds' => '{{PLURAL:$1|satu detik|$1 detik}}',
+	'right-comment' => 'Kirim komentar',
+);
+
 /** Italian (italiano)
  * @author Beta16
  * @author Darth Kule
@@ -844,6 +951,7 @@ $messages['lb'] = array(
 	'comments-ignore-unblock' => 'Spär ophiewen',
 	'comments-ignore-cancel' => 'Ofbriechen',
 	'comments-no-comments-of-day' => 'Et gëtt keng Bemierkunge vum Dag.',
+	'commentslogpage' => 'Logbuch vun de Bemierkungen',
 	'commentslog-create-entry' => 'Nei Bemierkung',
 	'comments-time-ago' => 'viru(n) $1',
 	'comments-time-days' => '{{PLURAL:$1|engem Dag|$1 Deeg}}',
@@ -975,11 +1083,11 @@ $messages['ms'] = array(
 $messages['nl'] = array(
 	'comments-comment' => 'Reactie',
 	'comments-desc' => "Voegt de parserhook <code>&lt;comments&gt;</code> toe die het mogelijk maakt te reageren op pagina's",
-	'comments-db-locked' => '<h3>Reacties Toevoegen</h3>De database is momenteel gesloten voor routine database onderhoud, waarna het weer normaal zal zijn. Kom a.u.b. later terug!',
+	'comments-db-locked' => '<h3>Reacties toevoegen</h3>De database is gesloten voor onderhoud. Probeer het later opnieuw.',
 	'comments-voted-label' => 'Gestemd',
 	'comments-loading' => 'Bezig met laden…',
-	'comments-auto-refresher-enable' => 'Reactie auto-ververser inschakelen',
-	'comments-auto-refresher-pause' => 'Reactie auto-ververser uitschakelen',
+	'comments-auto-refresher-enable' => 'Automatisch bijwerken van reacties inschakelen',
+	'comments-auto-refresher-pause' => 'Automatisch bijwerken van reacties pauzeren',
 	'comments-reply-to' => 'Reageren op',
 	'comments-cancel-reply' => 'Annuleren',
 	'comments-block-warning-anon' => 'Weet u zeker dat u permanent alle reacties van deze anonieme gebruiker wilt negeren (via het IP-adres)?',
@@ -1105,6 +1213,65 @@ $messages['ps'] = array(
 	'comments-time-hours' => '{{PLURAL:$1|يو ساعت|$1 ساعتونه}}',
 	'comments-time-minutes' => '{{PLURAL:$1|يو دقيقه|$1 دقيقې}}',
 	'comments-time-seconds' => '{{PLURAL:$1|يوه ثانيه|$1 ثانيې}}',
+);
+
+/** Romanian (română)
+ * @author Firilacroco
+ * @author Minisarm
+ * @author Stelistcristi
+ */
+$messages['ro'] = array(
+	'comments-comment' => 'Comentariu',
+	'comments-voted-label' => 'Votat',
+	'comments-loading' => 'Se încarcă...',
+	'comments-reply-to' => 'Răspundeți utilizatorului',
+	'comments-cancel-reply' => 'Revocare',
+	'comments-sort-by-date' => 'Sortare după dată',
+	'comments-sort-by-score' => 'Sortare după scor',
+	'comments-show-comment-link' => 'Arată comentariul',
+	'comments-manage-blocklist-link' => 'Administrează lista de ignorare',
+	'comments-ignore-message' => 'Autorul acestui comentariu este ignorat de către dv.',
+	'comments-you' => 'Dumneavoastră',
+	'comments-reply' => 'Răspunde',
+	'comments-login-required' => 'Trebuie să fiți autentificat pentru a adăuga comentarii',
+	'comments-not-allowed' => 'Nu sunteți autorizat să publicați comentarii.',
+	'comments-post' => 'Postează comentariul',
+	'comments-submit' => 'Adăugați comentariul dumneavoastră',
+	'comments-score-text' => 'Scor',
+	'comments-permalink' => 'Legătură permanentă',
+	'comments-delete-link' => 'Ștergere comentariul',
+	'comments-anon-name' => 'Utilizator anonim',
+	'comments-ignore-no-users' => 'Nu există utilizatori blocați.',
+	'comments-ignore-unblock' => 'Deblocare',
+	'comments-ignore-cancel' => 'Renunță',
+	'commentslog-create-entry' => 'Comentariu nou',
+	'comments-time-ago' => 'în urmă cu $1',
+	'log-show-hide-comments' => '$1 jurnalul de comentarii',
+	'group-commentadmin' => 'Administratori de comentarii',
+	'right-comment' => 'Trimite comentarii',
+);
+
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'comments-comment' => 'පරිකථනය',
+	'comments-loading' => 'ප්‍රවේශනය වෙමින් පවතී...',
+	'comments-cancel-reply' => 'අත් හරින්න',
+	'comments-show-comment-link' => 'පරිකථනය පෙන්වන්න',
+	'comments-you' => 'ඔබ',
+	'comments-reply' => 'පිළිතුරු දෙන්න',
+	'comments-submit' => 'ඔබේ පරිකථනය එක් කරන්න',
+	'comments-score-text' => 'ලකුණ',
+	'comments-delete-link' => 'පරිකථනය මකන්න',
+	'comments-anon-name' => 'නිර්නාමික පරිශීලක',
+	'comments-ignore-unblock' => 'ආවාරණය',
+	'comments-ignore-cancel' => 'අත් හරින්න',
+	'commentslogpage' => 'පරිකථන ලඝු සටහන',
+	'commentslog-create-entry' => 'නව පරිකථනය',
+	'comments-time-ago' => '$1 පෙර',
+	'log-show-hide-comments' => '$1 පරිකථන ලඝුසටහන',
+	'right-comment' => 'පරිකථන යොමන්න',
 );
 
 /** Swedish (svenska)
@@ -1260,9 +1427,11 @@ $messages['uk'] = array(
 );
 
 /** Simplified Chinese (中文（简体）‎)
+ * @author Shirayuki
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
+	'comments-comment' => '评论',
 	'comments-voted-label' => '已投票',
 	'comments-loading' => '载入中...',
 	'comments-auto-refresher-enable' => '开启评论自动刷新',
@@ -1279,4 +1448,23 @@ $messages['zh-hans'] = array(
 	'comments-ignore-message' => '你忽略了来自这个人的评论',
 	'comments-you' => '你',
 	'comments-reply' => '回复',
+	'comments-permalink' => '永久链接',
+	'comments-anon-name' => '匿名用户',
+	'comments-ignore-cancel' => '取消',
+	'comments-time-ago' => '$1前',
+);
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Shirayuki
+ */
+$messages['zh-hant'] = array(
+	'comments-comment' => '評論',
+	'comments-loading' => '載入中...',
+	'comments-cancel-reply' => '取消',
+	'comments-reply' => '回覆',
+	'comments-score-text' => '分數',
+	'comments-permalink' => '永久鏈接',
+	'comments-anon-name' => '匿名用戶',
+	'comments-ignore-cancel' => '取消',
+	'comments-time-ago' => '$1前',
 );
