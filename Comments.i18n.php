@@ -215,13 +215,27 @@ $messages['be-tarask'] = array(
 	'right-commentadmin' => 'адміністраваць дасланыя камэнтары',
 );
 
+/** Bulgarian (български)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['bg'] = array(
+	'comments-comment' => 'Коментар',
+	'comments-cancel-reply' => 'Отказване',
+	'comments-you' => 'Вие',
+	'comments-reply' => 'Отговор',
+	'comments-score-text' => 'Точки',
+	'comments-ignore-cancel' => 'Отказване',
+);
+
 /** Bengali (বাংলা)
  * @author Bellayet
  */
 $messages['bn'] = array(
 	'comments-comment' => 'মন্তব্য',
 	'comments-loading' => 'লোডিং...',
+	'comments-reply-to' => 'প্রাপক',
 	'comments-cancel-reply' => 'বাতিল',
+	'comments-show-comment-link' => 'মন্তব্য দেখাও',
 	'comments-you' => 'আপনি',
 	'comments-reply' => 'উত্তর',
 	'comments-score-text' => 'স্কোর',
@@ -256,12 +270,18 @@ $messages['cs'] = array(
  * @author Tjernobyl
  */
 $messages['da'] = array(
+	'comments-comment' => 'Kommentar',
+	'comments-loading' => 'Indlæser...',
 	'comments-cancel-reply' => 'Annuller',
+	'comments-sort-by-date' => 'Sorter efter dato',
+	'comments-you' => 'Dig',
+	'comments-reply' => 'Svar',
 	'comments-submit' => 'Tilføj din kommentar',
 	'comments-score-text' => 'Point',
 	'comments-permalink' => 'Permanent henvisning',
 	'comments-delete-link' => 'Slet kommentar',
 	'comments-anon-name' => 'Anonym bruger',
+	'comments-ignore-cancel' => 'Annuller',
 );
 
 /** German (Deutsch)
@@ -393,6 +413,36 @@ $messages['el'] = array(
 	'right-comment' => 'Καταχώρηση σχολίων',
 );
 
+/** Esperanto (Esperanto)
+ * @author Yekrats
+ */
+$messages['eo'] = array(
+	'comments-comment' => 'Komento',
+	'comments-voted-label' => 'Voĉdonita',
+	'comments-loading' => 'Ŝargante...',
+	'comments-cancel-reply' => 'Nuligi',
+	'comments-you' => 'Vi',
+	'comments-reply' => 'Respondi',
+	'comments-login-required' => 'Vi devas ensaluti por aldoni komentojn',
+	'comments-not-allowed' => 'Vi ne estas permesata por afiŝi komentojn.',
+	'comments-post' => 'Afiŝi komenton',
+	'comments-submit' => 'Aldoni vian komenton',
+	'comments-score-text' => 'Poentaro',
+	'comments-permalink' => 'Konstanta ligilo',
+	'comments-delete-link' => 'Forigi komenton',
+	'comments-anon-name' => 'Anonimulo',
+	'comments-anon-message' => '{{SITENAME}} bonvenas <b>ĉiujn komentojn</b>. Se vi ne volas esti anonima, <a href="$1">registri</a> aŭ <a href="$2">ensaluti</a>. Estas senpage.',
+	'comments-ignore-unblock' => 'Malforbari',
+	'comments-ignore-cancel' => 'Nenio',
+	'commentslog-create-entry' => 'Nova komento',
+	'comments-time-ago' => 'antaŭ $1',
+	'log-show-hide-comments' => 'protokolo de komentoj $1',
+	'group-commentadmin-member' => '{{GENDER:$1|administranto de komentoj|administrantino de komentoj}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Administrantoj de komentoj',
+	'right-comment' => 'Publikigi komentojn',
+	'right-commentadmin' => 'Administri komentaron senditan de komentoj',
+);
+
 /** Spanish (español)
  * @author AndreyWiki
  * @author Armando-Martin
@@ -453,13 +503,21 @@ $messages['es'] = array(
 
 /** Estonian (eesti)
  * @author Avjoska
+ * @author Pikne
  */
 $messages['et'] = array(
 	'comments-loading' => 'Laadimine...',
-	'comments-reply-to' => 'Vasta',
-	'comments-sort-by-date' => 'Sorteeri kuupäeva järgi',
+	'comments-reply-to' => 'Vasta kasutajale',
+	'comments-sort-by-date' => 'Järjesta kuupäeva järgi',
+	'comments-ignore-message' => 'Sa eirad selle kommentaari autorit',
+	'comments-you' => 'Sina',
 	'comments-reply' => 'Vasta',
 	'comments-login-required' => 'Sa pead olema sisselogitud, et lisada kommentaare',
+	'comments-post' => 'Saada kommentaar',
+	'comments-submit' => 'Lisa oma kommentaar',
+	'comments-delete-link' => 'Kustuta kommentaar',
+	'comments-anon-name' => 'Anonüümne kasutaja',
+	'comments-ignore-unblock' => 'Lõpeta blokeerimine',
 	'commentslog-create-entry' => 'Uus kommentaar',
 	'comments-time-ago' => '$1 tagasi',
 );
@@ -745,6 +803,7 @@ $messages['hsb'] = array(
 
 /** Indonesian (Bahasa Indonesia)
  * @author Farras
+ * @author පසිඳු කාවින්ද
  */
 $messages['id'] = array(
 	'comments-comment' => 'Komentar',
@@ -759,6 +818,8 @@ $messages['id'] = array(
 	'comments-reply' => 'Balas',
 	'comments-login-required' => 'Anda harus masuk log untuk menambahkan komentar',
 	'comments-not-allowed' => 'Anda tidak diizinkan mengirim komentar.',
+	'comments-score-text' => 'Skor',
+	'comments-ignore-cancel' => 'Batalkan',
 	'commentslogpagetext' => 'Ini adalah log komentar.',
 	'commentslog-create-entry' => 'Komentar baru',
 	'comments-time-ago' => '$1 yang lalu',
@@ -767,6 +828,16 @@ $messages['id'] = array(
 	'comments-time-minutes' => '{{PLURAL:$1|satu menit|$1 menit}}',
 	'comments-time-seconds' => '{{PLURAL:$1|satu detik|$1 detik}}',
 	'right-comment' => 'Kirim komentar',
+);
+
+/** Icelandic (íslenska)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['is'] = array(
+	'comments-comment' => 'Athugasemd',
+	'comments-cancel-reply' => 'Hætta við',
+	'comments-reply' => 'Svara',
+	'comments-ignore-cancel' => 'Hætta við',
 );
 
 /** Italian (italiano)
@@ -961,6 +1032,57 @@ $messages['lb'] = array(
 	'right-comment' => 'Bemierkunge späicheren',
 );
 
+/** Lithuanian (lietuvių)
+ * @author Eitvys200
+ */
+$messages['lt'] = array(
+	'comments-comment' => 'Komentaras',
+	'comments-voted-label' => 'Balsavo',
+	'comments-loading' => 'Įkeliama…',
+	'comments-reply-to' => 'Atsakyti į',
+	'comments-cancel-reply' => 'Atšaukti',
+	'comments-delete-warning' => 'Ar tikrai norite ištrinti šį komentarą?',
+	'comments-sort-by-date' => 'Rūšiuoti pagal datą',
+	'comments-sort-by-score' => 'Rūšiuoti pagal rezultatą',
+	'comments-show-comment-link' => 'Rodyti komentarą',
+	'comments-you' => 'Jūs',
+	'comments-reply' => 'Atsakyti',
+	'comments-post' => 'Rašyti komentarą',
+	'comments-submit' => 'Pridėk savo komentarą',
+	'comments-score-text' => 'Rezultatas',
+	'comments-delete-link' => 'Ištrinti komentarą',
+	'comments-anon-name' => 'Anoniminis vartotojas',
+	'comments-ignore-unblock' => 'Atblokuoti',
+	'comments-ignore-cancel' => 'Atšaukti',
+	'commentslog-create-entry' => 'Naujas komentaras',
+	'comments-time-ago' => 'prieš $1',
+	'right-comment' => 'Siųsti komentarus',
+);
+
+/** Latvian (latviešu)
+ * @author Papuass
+ */
+$messages['lv'] = array(
+	'comments-voted-label' => 'Nobalsots',
+	'comments-loading' => 'Ielādē…',
+	'comments-reply-to' => 'Atbildēt uz',
+	'comments-cancel-reply' => 'Atcelt',
+	'comments-sort-by-date' => 'Kārtot pēc datuma',
+	'comments-sort-by-score' => 'Kārtot pēc vērtējuma',
+	'comments-show-comment-link' => 'Parādīt komentāru',
+	'comments-reply' => 'Atbildēt',
+	'comments-login-required' => 'Jums ir jāpieslēdzas, lai pievienotu komentārus',
+	'comments-not-allowed' => 'Jums nav atļauts publicēt komentārus.',
+	'comments-post' => 'Publicēt komentāru',
+	'comments-submit' => 'Pievienot savu komentāru',
+	'comments-score-text' => 'Vērtējums',
+	'comments-permalink' => 'Pastāvīgā saite',
+	'comments-delete-link' => 'Dzēst komentāru',
+	'comments-anon-name' => 'Anonīms lietotājs',
+	'comments-ignore-unblock' => 'Atbloķēt',
+	'comments-ignore-cancel' => 'Atcelt',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
@@ -1071,6 +1193,46 @@ $messages['ms'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Penyelia Komen',
 	'right-comment' => 'Menghantar komen',
 	'right-commentadmin' => 'Mentadbir urus komen serahan pengguna',
+);
+
+/** Maltese (Malti)
+ * @author Chrisportelli
+ */
+$messages['mt'] = array(
+	'comments-comment' => 'Kumment',
+	'comments-desc' => "Iżżid il-''parser hook'' <code>&lt;comments&gt;</code> li tippermetti l-kummenti fuq paġni",
+	'comments-voted-label' => 'Ivvutajt',
+	'comments-loading' => "Tiela'...",
+	'comments-auto-refresher-enable' => 'Attiva l-aġġornament awtomatikament tal-kummenti',
+	'comments-auto-refresher-pause' => 'Waqqaf l-aġġornament awtomatikament tal-kummenti',
+	'comments-reply-to' => 'Irrispondi lil',
+	'comments-cancel-reply' => 'Ħassar',
+	'comments-block-warning-anon' => 'Inti ċert li tixtieq tinjora għal kollox il-kummenti minn utenti anonimi (permezz tal-indirizz IP)?',
+	'comments-block-warning-user' => 'Inti ċert li tixtieq tinjora għal kollox il-kummenti mill-utent $1?',
+	'comments-delete-warning' => 'Inti ċert li tixtieq tħassar dan il-kumment?',
+	'comments-sort-by-date' => 'Ordna skont id-data',
+	'comments-sort-by-score' => 'Ordna skont il-punteġġ',
+	'comments-show-comment-link' => 'Uri l-kumment',
+	'comments-ignore-message' => "Inti qiegħed tinjora l-awtur ta' dan il-kumment",
+	'comments-you' => 'Inti',
+	'comments-reply' => 'Irrispondi',
+	'comments-login-required' => "Trid tkun fil-kont tiegħek sabiex tkun tista' iżżid kummenti",
+	'comments-not-allowed' => 'Inti ma tistax tħalli kummenti.',
+	'comments-post' => 'Ibgħat il-kumment',
+	'comments-submit' => 'Żid il-kumment tiegħek',
+	'comments-score-text' => 'Punteġġ',
+	'comments-permalink' => 'Ħolqa permanenti',
+	'comments-delete-link' => 'Ħassar il-kumment',
+	'comments-anon-name' => 'Utent anonimu',
+	'comments-anon-message' => '{{SITENAME}} tilqa\' il-<b>kummenti kollha</b>. Jekk ma tridx li tibqa\' anonimu, <a href="$1">irreġistra</a> jew <a href="$2">idħol fil-kont</a>. Dan huwa b\'xejn.',
+	'comments-ignore-item' => '<a href="$1">$2</a> nhar il-$3 <a href="$4">(żblokka)</a>',
+	'comments-ignore-no-users' => "M'hemm l-ebda utent li huwa attwalment imblukkat.",
+	'comments-ignore-remove-message' => 'Inti ċert li tixtieq tiżblokka l-kummenti tal-utent <b>$1</b>?',
+	'comments-ignore-unblock' => 'Żblokka',
+	'comments-no-comments-of-day' => "M'hemm l-ebda kummenti tal-ġurnata.",
+	'commentslogpage' => 'Reġistru tal-kummenti',
+	'commentslogpagetext' => 'Dan huwa reġistru tal-kummenti.',
+	'commentslog-create-entry' => 'Kumment ġdid',
 );
 
 /** Dutch (Nederlands)
@@ -1252,6 +1414,7 @@ $messages['ro'] = array(
 );
 
 /** Sinhala (සිංහල)
+ * @author Singhalawap
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
@@ -1265,12 +1428,12 @@ $messages['si'] = array(
 	'comments-score-text' => 'ලකුණ',
 	'comments-delete-link' => 'පරිකථනය මකන්න',
 	'comments-anon-name' => 'නිර්නාමික පරිශීලක',
-	'comments-ignore-unblock' => 'ආවාරණය',
+	'comments-ignore-unblock' => 'වාරණය ඉවත්කරන්න',
 	'comments-ignore-cancel' => 'අත් හරින්න',
 	'commentslogpage' => 'පරිකථන ලඝු සටහන',
 	'commentslog-create-entry' => 'නව පරිකථනය',
 	'comments-time-ago' => '$1 පෙර',
-	'log-show-hide-comments' => '$1 පරිකථන ලඝුසටහන',
+	'log-show-hide-comments' => '$1 පරිකථන සටහන',
 	'right-comment' => 'පරිකථන යොමන්න',
 );
 
@@ -1328,6 +1491,45 @@ $messages['sv'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Kommentaradministratörer',
 	'right-comment' => 'Skicka kommentarer',
 	'right-commentadmin' => 'Administrera kommentarer som användare har skickat',
+);
+
+/** Tamil (தமிழ்)
+ * @author Shanmugamp7
+ */
+$messages['ta'] = array(
+	'comments-comment' => 'கருத்து',
+	'comments-voted-label' => 'வாக்களிக்கப்பட்டது',
+	'comments-loading' => 'ஏற்றப்படுகிறது...',
+	'comments-cancel-reply' => 'ரத்து செய்',
+	'comments-you' => 'தாங்கள்',
+	'comments-reply' => 'பதில் அளி',
+	'comments-login-required' => 'கருத்துக்களை சேர்க்க நீங்கள் புகுபதிகை செய்ய வேண்டும்',
+	'comments-not-allowed' => 'கருத்துகளை பதிவு செய்ய நீங்கள் அனுமதிக்கப்படவில்லை.',
+	'comments-post' => 'கருத்துக்களை பதியவும்',
+	'comments-submit' => 'உங்கள் கருத்தை சேர்க்கவும்',
+	'comments-score-text' => 'பெறுபுள்ளி',
+	'comments-permalink' => 'நிரந்தர இணைப்பு',
+	'comments-delete-link' => 'கருத்தை நீக்கவும்',
+	'comments-anon-name' => 'அடையாளம் காட்டாத பயனர்',
+	'comments-ignore-no-users' => 'தற்போது தடை செய்யப்பட பயனர்கள் யாரும் இல்லை.',
+	'comments-ignore-remove-message' => 'நீங்கள் உறுதியாக <b>$1</b>-ன் கருத்துக்களை தடை நீக்க விரும்புகிறீர்களா?',
+	'comments-ignore-unblock' => 'தடை நீக்கு',
+	'comments-ignore-cancel' => 'ரத்து செய்',
+	'comments-ignore-title' => 'கருத்து புறக்கணிப்பு பட்டியல்',
+	'commentignorelist' => 'கருத்து புறக்கணிப்பு பட்டியல்',
+	'commentslogpage' => 'கருத்துகள் பதிகை',
+	'commentslogpagetext' => 'இது கருத்துகளின் பதிகை ஆகும்.',
+	'commentslog-create-entry' => 'புதிய கருத்து',
+	'comments-time-ago' => '$1 முன்பு',
+	'comments-time-days' => '{{PLURAL:$1|ஒரு நாள்|$1 நாட்கள்}}',
+	'comments-time-hours' => '{{PLURAL:$1|ஒரு மணி|$1 மணிகள்}}',
+	'comments-time-minutes' => '{{PLURAL:$1|ஒரு நிமிடம்|$1 நிமிடங்கள்}}',
+	'comments-time-seconds' => '{{PLURAL:$1|ஒரு வினாடி|$1 வினாடிகள்}}',
+	'log-show-hide-comments' => '$1 கருத்து பதிகை',
+	'group-commentadmin' => 'கருத்து நிர்வாகிகள்',
+	'group-commentadmin-member' => '{{GENDER:$1|கருத்து நிர்வாகி}}',
+	'grouppage-commentadmin' => '{{ns:project}}:கருத்து நிர்வாகிகள்',
+	'right-comment' => 'கருத்துகளை அனுப்பவும்',
 );
 
 /** Telugu (తెలుగు)
