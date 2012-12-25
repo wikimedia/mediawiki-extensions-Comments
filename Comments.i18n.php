@@ -382,6 +382,7 @@ $messages['diq'] = array(
 );
 
 /** Greek (Ελληνικά)
+ * @author Glavkos
  * @author ZaDiak
  */
 $messages['el'] = array(
@@ -410,6 +411,9 @@ $messages['el'] = array(
 	'comments-time-hours' => '{{PLURAL:$1|μια ώρα|$1 ώρες}}',
 	'comments-time-minutes' => '{{PLURAL:$1|ένα λεπτό|$1 λεπτά}}',
 	'comments-time-seconds' => '{{PLURAL:$1|ένα δευτερόλεπτο|$1 δευτερόλεπτα}}',
+	'group-commentadmin' => 'Διαχειριστές σχολίων',
+	'group-commentadmin-member' => '{{GENDER:$1|διαχειριστής σχολίων}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Διαχειριστές σχολίων',
 	'right-comment' => 'Καταχώρηση σχολίων',
 );
 
@@ -420,7 +424,11 @@ $messages['eo'] = array(
 	'comments-comment' => 'Komento',
 	'comments-voted-label' => 'Voĉdonita',
 	'comments-loading' => 'Ŝargante...',
+	'comments-reply-to' => 'Respondo al',
 	'comments-cancel-reply' => 'Nuligi',
+	'comments-sort-by-date' => 'Ordigi laŭ datoj',
+	'comments-sort-by-score' => 'Ordigi laŭ poentaro',
+	'comments-show-comment-link' => 'Montri komenton',
 	'comments-you' => 'Vi',
 	'comments-reply' => 'Respondi',
 	'comments-login-required' => 'Vi devas ensaluti por aldoni komentojn',
@@ -432,11 +440,23 @@ $messages['eo'] = array(
 	'comments-delete-link' => 'Forigi komenton',
 	'comments-anon-name' => 'Anonimulo',
 	'comments-anon-message' => '{{SITENAME}} bonvenas <b>ĉiujn komentojn</b>. Se vi ne volas esti anonima, <a href="$1">registri</a> aŭ <a href="$2">ensaluti</a>. Estas senpage.',
+	'comments-ignore-no-users' => 'Estas neniuj uzantoj nune forbaritaj.',
+	'comments-ignore-remove-message' => 'Ĉu vi certas ke vi volas malforbari komentojn de uzanto <b>$1</b>?',
 	'comments-ignore-unblock' => 'Malforbari',
 	'comments-ignore-cancel' => 'Nenio',
+	'comments-ignore-title' => 'Ignor-listo de komentoj',
+	'commentignorelist' => 'Ignor-listo de komentoj',
+	'comments-no-comments-of-day' => 'Estas neniuj komentoj de la tago.',
+	'commentslogpage' => 'Protokolo pri komentoj',
+	'commentslogpagetext' => 'Jen protokolo de komentoj.',
 	'commentslog-create-entry' => 'Nova komento',
 	'comments-time-ago' => 'antaŭ $1',
+	'comments-time-days' => '{{PLURAL:$1|$1 tago|$1 tagoj}}',
+	'comments-time-hours' => '{{PLURAL:$1|$1 horo|$1 horoj}}',
+	'comments-time-minutes' => '{{PLURAL:$1|$1 minuto|$1 minutoj}}',
+	'comments-time-seconds' => '{{PLURAL:$1|$1 sekundo|$1 sekundoj}}',
 	'log-show-hide-comments' => 'protokolo de komentoj $1',
+	'group-commentadmin' => 'Administrantoj de komentoj',
 	'group-commentadmin-member' => '{{GENDER:$1|administranto de komentoj|administrantino de komentoj}}',
 	'grouppage-commentadmin' => '{{ns:project}}:Administrantoj de komentoj',
 	'right-comment' => 'Publikigi komentojn',
@@ -508,18 +528,44 @@ $messages['es'] = array(
 $messages['et'] = array(
 	'comments-loading' => 'Laadimine...',
 	'comments-reply-to' => 'Vasta kasutajale',
+	'comments-cancel-reply' => 'Loobu',
+	'comments-block-warning-anon' => 'Kas oled kindel, et soovid kõiki selle anonüümse kasutaja kommentaare jäädavalt eirata (IP-aadressi põhjal)?',
+	'comments-block-warning-user' => 'Kas oled kindel, et soovid kõiki kasutaja $1 kommentaare jäädavalt eirata?',
+	'comments-delete-warning' => 'Kas oled kindel, et tahad selle kommentaari kustutada?',
 	'comments-sort-by-date' => 'Järjesta kuupäeva järgi',
+	'comments-show-comment-link' => 'Näita kommentaari',
+	'comments-manage-blocklist-link' => 'Halda eiramisloendit',
 	'comments-ignore-message' => 'Sa eirad selle kommentaari autorit',
 	'comments-you' => 'Sina',
 	'comments-reply' => 'Vasta',
 	'comments-login-required' => 'Sa pead olema sisselogitud, et lisada kommentaare',
+	'comments-not-allowed' => 'Sul pole lubatud kommentaare postitada.',
 	'comments-post' => 'Saada kommentaar',
 	'comments-submit' => 'Lisa oma kommentaar',
+	'comments-permalink' => 'Püsilink',
 	'comments-delete-link' => 'Kustuta kommentaar',
 	'comments-anon-name' => 'Anonüümne kasutaja',
+	'comments-ignore-no-users' => 'Blokeeritud kasutajaid pole praegu.',
+	'comments-ignore-remove-message' => 'Kas oled kindel, et soovid kasutaja <b>$1</b> kommentaaride blokeerimise tühistada?',
 	'comments-ignore-unblock' => 'Lõpeta blokeerimine',
+	'comments-ignore-cancel' => 'Loobu',
+	'comments-ignore-title' => 'Kommentaaride eiramisloend',
+	'commentignorelist' => 'Kommentaaride eiramisloend',
+	'comments-no-comments-of-day' => 'Päevakommentaarid puuduvad.',
+	'commentslogpage' => 'Kommentaarilogi',
+	'commentslogpagetext' => 'See on kommentaaride logi.',
 	'commentslog-create-entry' => 'Uus kommentaar',
 	'comments-time-ago' => '$1 tagasi',
+	'comments-time-days' => '{{PLURAL:$1|üks päev|$1 päeva}}',
+	'comments-time-hours' => '{{PLURAL:$1|üks tund|$1 tundi}}',
+	'comments-time-minutes' => '{{PLURAL:$1|üks minut|$1 minutit}}',
+	'comments-time-seconds' => '{{PLURAL:$1|üks sekund|$1 sekundit}}',
+	'log-show-hide-comments' => '$1 kommentaarilogi',
+	'group-commentadmin' => 'Kommentaariadministraatorid',
+	'group-commentadmin-member' => '{{GENDER:$1|kommentaariadministraator}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Kommentaariadministraatorid',
+	'right-comment' => 'Saata kommentaare',
+	'right-commentadmin' => 'Hallata kasutajate saadetud kommentaare',
 );
 
 /** Persian (فارسی)
@@ -799,6 +845,26 @@ $messages['hsb'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Komentarowi administratorojo',
 	'right-comment' => 'Komentary wotpósłać',
 	'right-commentadmin' => 'Wužiwarske komentary zrjadować',
+);
+
+/** Hungarian (magyar)
+ * @author Dj
+ */
+$messages['hu'] = array(
+	'comments-voted-label' => 'Szavazott',
+	'comments-loading' => 'Betöltés…',
+	'comments-cancel-reply' => 'Mégse',
+	'comments-sort-by-date' => 'Rendezés dátum szerint',
+	'comments-sort-by-score' => 'Rendezés pont szerint',
+	'comments-show-comment-link' => 'Hozzászólás megjelenítése',
+	'comments-you' => 'Te',
+	'comments-reply' => 'Válasz',
+	'comments-ignore-cancel' => 'Mégse',
+	'comments-time-ago' => '$1 ezelőtt',
+	'comments-time-days' => '{{PLURAL:$1|egy|$1}} nappal',
+	'comments-time-hours' => '{{PLURAL:$1|egy|$1}} órával',
+	'comments-time-minutes' => '{{PLURAL:$1|egy|$1}} perccel',
+	'comments-time-seconds' => '{{PLURAL:$1|egy|$1}} másodperccel',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1406,11 +1472,46 @@ $messages['ro'] = array(
 	'comments-ignore-no-users' => 'Nu există utilizatori blocați.',
 	'comments-ignore-unblock' => 'Deblocare',
 	'comments-ignore-cancel' => 'Renunță',
+	'comments-no-comments-of-day' => 'Nu există niciun comentariu al zilei.',
+	'commentslogpage' => 'Jurnalul de comentarii',
+	'commentslogpagetext' => 'Acesta este un jurnal de comentarii.',
 	'commentslog-create-entry' => 'Comentariu nou',
 	'comments-time-ago' => 'în urmă cu $1',
+	'comments-time-days' => '{{PLURAL:$1|o zi|$1 zile}}',
+	'comments-time-hours' => '{{PLURAL:$1|o oră|$1 ore}}',
+	'comments-time-minutes' => '{{PLURAL:$1|un minut|$1 minute}}',
+	'comments-time-seconds' => '{{PLURAL:$1|o secundă|$1 secunde}}',
 	'log-show-hide-comments' => '$1 jurnalul de comentarii',
 	'group-commentadmin' => 'Administratori de comentarii',
 	'right-comment' => 'Trimite comentarii',
+);
+
+/** Russian (русский)
+ * @author Kaganer
+ */
+$messages['ru'] = array(
+	'comments-comment' => 'Комментарий',
+	'comments-show-comment-link' => 'Показать комментарий',
+	'comments-manage-blocklist-link' => 'Управление списком игнорируемых',
+	'comments-ignore-message' => 'Вы игнорируете автора этого комментария',
+	'comments-you' => 'Вы',
+	'comments-reply' => 'Ответить',
+	'comments-login-required' => 'Для добавления комментариев вы должны авторизоваться.',
+	'comments-not-allowed' => 'Вы не можете оставлять комментарии.',
+	'comments-post' => 'Оставить комментарий',
+	'comments-submit' => 'Добавить свой комментарий',
+	'comments-score-text' => 'Оценка',
+	'comments-permalink' => 'Постоянная ссылка',
+	'comments-delete-link' => 'Удалить комментарий',
+	'comments-anon-name' => 'Анонимный участник',
+	'comments-anon-message' => 'На сайте {{SITENAME}} приветствуются <b>все комментарии</b>. Если вы не хотите быть анонимным, <a href="$1">зарегистрируйтесь</a> или <a href="$2">представьтесь</a>. Это бесплатно.',
+	'comments-ignore-item' => '<a href="$1">$2</a> на $3 <a href="$4">(разблокировать)</a>',
+	'comments-ignore-no-users' => 'В настоящее время нет ни одного заблокированного участника.',
+	'comments-ignore-remove-message' => 'Вы уверены, что хотите разблокировать комментарии участника <b>$1</b>?',
+	'comments-ignore-unblock' => 'Разблокировать',
+	'comments-ignore-cancel' => 'Отменить',
+	'comments-ignore-title' => 'Список тех, чьи комментарии игнорируются',
+	'commentignorelist' => 'Список игнорируемых комментаторов',
 );
 
 /** Sinhala (සිංහල)
@@ -1419,21 +1520,44 @@ $messages['ro'] = array(
  */
 $messages['si'] = array(
 	'comments-comment' => 'පරිකථනය',
+	'comments-voted-label' => 'මනාපය දෙන ලදී',
 	'comments-loading' => 'ප්‍රවේශනය වෙමින් පවතී...',
+	'comments-reply-to' => 'පිළිතුරු දෙන්න',
 	'comments-cancel-reply' => 'අත් හරින්න',
+	'comments-delete-warning' => 'ඔබට මෙම පරිකථනය මැකීමට අවශ්‍යමද?',
+	'comments-sort-by-date' => 'දිනය අනුව පෙළගස්වන්න',
+	'comments-sort-by-score' => 'ලකුණ අනුව පෙළගස්වන්න',
 	'comments-show-comment-link' => 'පරිකථනය පෙන්වන්න',
+	'comments-manage-blocklist-link' => 'නොසලකා හැරීම් ලැයිස්තුව කළමනාකරණය කරන්න',
+	'comments-ignore-message' => 'ඔබ මෙම පරිකථනයේ කතෘ නොසලකා හරිමින් සිටියි',
 	'comments-you' => 'ඔබ',
 	'comments-reply' => 'පිළිතුරු දෙන්න',
+	'comments-login-required' => 'පරිකථන එක් කිරීම සඳහා ඔබ ප්‍රවිෂ්ට වී සිටිය යුතුය',
+	'comments-not-allowed' => 'ඔබට පරිකථන තැපැල් කිරීමට ඉඩ ලබා නොදේ.',
+	'comments-post' => 'පරිකථනය තැපැල් කරන්න',
 	'comments-submit' => 'ඔබේ පරිකථනය එක් කරන්න',
 	'comments-score-text' => 'ලකුණ',
 	'comments-delete-link' => 'පරිකථනය මකන්න',
 	'comments-anon-name' => 'නිර්නාමික පරිශීලක',
+	'comments-ignore-item' => '<a href="$1">$2</a> මත $3 <a href="$4">(ආවාරණය)</a>',
+	'comments-ignore-no-users' => 'දැනට වාරණය කරන ලද පරිශීලකයන් නොමැත.',
 	'comments-ignore-unblock' => 'වාරණය ඉවත්කරන්න',
 	'comments-ignore-cancel' => 'අත් හරින්න',
+	'comments-ignore-title' => 'පරිකථන නොසලකා හැරීම් ලැයිස්තුව',
+	'commentignorelist' => 'පරිකථන නොසලකා හැරීම් ලැයිස්තුව',
+	'comments-no-comments-of-day' => 'දවසේ පරිකථන කිසිවක් එහි නොමැත.',
 	'commentslogpage' => 'පරිකථන ලඝු සටහන',
+	'commentslogpagetext' => 'මෙය පරිකථනවල ලඝු සටහනකි.',
 	'commentslog-create-entry' => 'නව පරිකථනය',
 	'comments-time-ago' => '$1 පෙර',
+	'comments-time-days' => '{{PLURAL:$1|දවසක්|දවස් $1}}',
+	'comments-time-hours' => '{{PLURAL:$1|පැයක්|පැය $1}}',
+	'comments-time-minutes' => '{{PLURAL:$1|මිනිත්තුවක්|මිනිත්තු $1}}',
+	'comments-time-seconds' => '{{PLURAL:$1|තත්පරයක්|තත්පර $1}}',
 	'log-show-hide-comments' => '$1 පරිකථන සටහන',
+	'group-commentadmin' => 'පරිකථන පරිපාලකවරු',
+	'group-commentadmin-member' => '{{GENDER:$1|පරිකථන පරිපාලක}}',
+	'grouppage-commentadmin' => '{{ns:project}}:පරිකථන පරිපාලකවරු',
 	'right-comment' => 'පරිකථන යොමන්න',
 );
 
@@ -1501,6 +1625,8 @@ $messages['ta'] = array(
 	'comments-voted-label' => 'வாக்களிக்கப்பட்டது',
 	'comments-loading' => 'ஏற்றப்படுகிறது...',
 	'comments-cancel-reply' => 'ரத்து செய்',
+	'comments-sort-by-date' => 'தேதியைப பொறுத்து வரிசைப்படுத்து',
+	'comments-show-comment-link' => 'கருத்தை காட்டு',
 	'comments-you' => 'தாங்கள்',
 	'comments-reply' => 'பதில் அளி',
 	'comments-login-required' => 'கருத்துக்களை சேர்க்க நீங்கள் புகுபதிகை செய்ய வேண்டும்',
@@ -1629,6 +1755,7 @@ $messages['uk'] = array(
 );
 
 /** Simplified Chinese (中文（简体）‎)
+ * @author Hzy980512
  * @author Shirayuki
  * @author Yfdyh000
  */
@@ -1653,6 +1780,7 @@ $messages['zh-hans'] = array(
 	'comments-permalink' => '永久链接',
 	'comments-anon-name' => '匿名用户',
 	'comments-ignore-cancel' => '取消',
+	'commentslog-create-entry' => '新评论',
 	'comments-time-ago' => '$1前',
 );
 
