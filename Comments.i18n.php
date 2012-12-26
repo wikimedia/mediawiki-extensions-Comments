@@ -1488,9 +1488,23 @@ $messages['ro'] = array(
 
 /** Russian (русский)
  * @author Kaganer
+ * @author Ole Yves
  */
 $messages['ru'] = array(
 	'comments-comment' => 'Комментарий',
+	'comments-desc' => 'Добавляет тег <code>&lt;comments&gt;</code>, который позволяет комментировать страницы',
+	'comments-db-locked' => '<h3>Добавление комментариев</h3>В настоящее время база данных заблокирована для планового обслуживания баз данных, после чего она вернётся в нормальное состояние. Пожалуйста, попробуйте позже!',
+	'comments-voted-label' => 'Проголосовал',
+	'comments-loading' => 'Загрузка...',
+	'comments-auto-refresher-enable' => 'Включить автоматическое обновление комментариев',
+	'comments-auto-refresher-pause' => 'Остановить автоматическое обновление комментариев',
+	'comments-reply-to' => 'Ответить',
+	'comments-cancel-reply' => 'Отменить',
+	'comments-block-warning-anon' => 'Вы уверены, что хотите постоянно игнорировать все комментарии, поступающие от этого анонимного участника (через его IP-адрес)?',
+	'comments-block-warning-user' => 'Вы уверены, что хотите постоянно игнорировать все комментарии от участника $1?',
+	'comments-delete-warning' => 'Вы уверены, что хотите удалить данный комментарий?',
+	'comments-sort-by-date' => 'Упорядочить по дате',
+	'comments-sort-by-score' => 'Упорядочить по числу баллов',
 	'comments-show-comment-link' => 'Показать комментарий',
 	'comments-manage-blocklist-link' => 'Управление списком игнорируемых',
 	'comments-ignore-message' => 'Вы игнорируете автора этого комментария',
@@ -1512,6 +1526,21 @@ $messages['ru'] = array(
 	'comments-ignore-cancel' => 'Отменить',
 	'comments-ignore-title' => 'Список тех, чьи комментарии игнорируются',
 	'commentignorelist' => 'Список игнорируемых комментаторов',
+	'comments-no-comments-of-day' => 'Нет комментариев дня.',
+	'commentslogpage' => 'Журнал комментариев',
+	'commentslogpagetext' => 'Это журнал комментариев.',
+	'commentslog-create-entry' => 'Новый комментарий',
+	'comments-time-ago' => '$1 назад',
+	'comments-time-days' => '{{PLURAL:$1|День|$1 дня|$1 дней}}',
+	'comments-time-hours' => '{{PLURAL:$1|Час|$1 часа|$1 часов}}',
+	'comments-time-minutes' => '{{PLURAL:$1|Минуту|$1 минуты|$1 минут}}',
+	'comments-time-seconds' => '{{PLURAL:$1|Секунду|$1 секунды|$1 секунд}}',
+	'log-show-hide-comments' => '$1 комментарий из журнала',
+	'group-commentadmin' => 'Модераторы комментариев',
+	'group-commentadmin-member' => '{{GENDER:$1|модератор комментариев}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Модераторы комментариев',
+	'right-comment' => 'Отправить комментарии',
+	'right-commentadmin' => 'Администрировать комментарии, опубликованные участником',
 );
 
 /** Sinhala (සිංහල)
@@ -1537,6 +1566,7 @@ $messages['si'] = array(
 	'comments-post' => 'පරිකථනය තැපැල් කරන්න',
 	'comments-submit' => 'ඔබේ පරිකථනය එක් කරන්න',
 	'comments-score-text' => 'ලකුණ',
+	'comments-permalink' => 'නිත්‍යසබැඳිය',
 	'comments-delete-link' => 'පරිකථනය මකන්න',
 	'comments-anon-name' => 'නිර්නාමික පරිශීලක',
 	'comments-ignore-item' => '<a href="$1">$2</a> මත $3 <a href="$4">(ආවාරණය)</a>',
