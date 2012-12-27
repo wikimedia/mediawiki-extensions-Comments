@@ -526,6 +526,7 @@ $messages['es'] = array(
  * @author Pikne
  */
 $messages['et'] = array(
+	'comments-comment' => 'Kommenteeri',
 	'comments-loading' => 'Laadimine...',
 	'comments-reply-to' => 'Vasta kasutajale',
 	'comments-cancel-reply' => 'Loobu',
@@ -851,20 +852,56 @@ $messages['hsb'] = array(
  * @author Dj
  */
 $messages['hu'] = array(
+	'comments-comment' => 'Megjegyzés',
+	'comments-desc' => 'Hozzáadja a <code>&lt;comments&gt;</code> tag-et, és lehetőséget biztosít megjegyzéseket fűzni a lapokhoz',
+	'comments-db-locked' => '<h3>Megjegyzések hozzáadása</h3>Az adatbázis jelenleg rutin karbantartás miatt zárolt, amely után ismét normál állapotba került. Kérlek próbáld meg később!',
 	'comments-voted-label' => 'Szavazott',
 	'comments-loading' => 'Betöltés…',
+	'comments-auto-refresher-enable' => 'Automatikus megjegyzés frissítő engedélyezése',
+	'comments-auto-refresher-pause' => 'Automatikus megjegyzés frissítő felfüggesztése',
+	'comments-reply-to' => 'Válasz',
 	'comments-cancel-reply' => 'Mégse',
+	'comments-block-warning-anon' => 'Biztos, hogy véglegesen figyelmen kívül hagyod ezen névtelen szerkesztő valamennyi megjegyzéseit (az IP-címe alapján)?',
+	'comments-block-warning-user' => 'Biztos, hogy véglegesen figyelmen kívül hagyod $1 valamennyi megjegyzését?',
+	'comments-delete-warning' => 'Biztos, hogy törölni akarod ezt a megjegyzést?',
 	'comments-sort-by-date' => 'Rendezés dátum szerint',
 	'comments-sort-by-score' => 'Rendezés pont szerint',
 	'comments-show-comment-link' => 'Hozzászólás megjelenítése',
+	'comments-manage-blocklist-link' => 'Figyelmen kívül hagyott megjegyzések kezelése',
+	'comments-ignore-message' => 'Figyelmen kívül hagyod ezen szerző megjegyzéseit',
 	'comments-you' => 'Te',
 	'comments-reply' => 'Válasz',
+	'comments-login-required' => 'Megjegyzés írásához be kell jelentkezned',
+	'comments-not-allowed' => 'Nincs jogosultságod megjegyzés írásához.',
+	'comments-post' => 'Hozzászólás elküldése',
+	'comments-submit' => 'Szólj hozzá!',
+	'comments-score-text' => 'Pont:',
+	'comments-permalink' => 'Permalink',
+	'comments-delete-link' => 'Megjegyzés törlése',
+	'comments-anon-name' => 'Névtelen felhasználó',
+	'comments-anon-message' => '{{SITENAME}} üdvözöl <b>minden hozzászólást</b>. Ha nem akarsz névtelene lenni, <a href="$1">regisztrálj</a> vagy <a href="$2">jelentkezz be</a>. Ez ingyenes.',
+	'comments-ignore-item' => '<a href="$1">$2</a> $3 <a href="$4">(felold)</a>',
+	'comments-ignore-no-users' => 'Jelenleg nincs blokkolt felhasználó.',
+	'comments-ignore-remove-message' => 'Biztos, hogy meg akarod szüntetni <b>$1</b> felhasználó megjegyzéseinek a blokkolását?',
+	'comments-ignore-unblock' => 'Blokk feloldása',
 	'comments-ignore-cancel' => 'Mégse',
+	'comments-ignore-title' => 'Figyelmen kívül hagyandó megjegyzések listája',
+	'commentignorelist' => 'Figyelmen kívül hagyandó megjegyzések listája',
+	'comments-no-comments-of-day' => 'Nincs napi hozzászólás.',
+	'commentslogpage' => 'Megjegyzés napló',
+	'commentslogpagetext' => 'Ez a megjegyzések naplója',
+	'commentslog-create-entry' => 'Új megjegyzés',
 	'comments-time-ago' => '$1 ezelőtt',
 	'comments-time-days' => '{{PLURAL:$1|egy|$1}} nappal',
 	'comments-time-hours' => '{{PLURAL:$1|egy|$1}} órával',
 	'comments-time-minutes' => '{{PLURAL:$1|egy|$1}} perccel',
 	'comments-time-seconds' => '{{PLURAL:$1|egy|$1}} másodperccel',
+	'log-show-hide-comments' => '$1 megjegyzés naplót',
+	'group-commentadmin' => 'Megjegyzés adminisztrátorok',
+	'group-commentadmin-member' => '{{GENDER:$1|megjegyzés adminisztrátor}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Megjegyzés adminisztrátorok',
+	'right-comment' => 'Megjegyzés küldése',
+	'right-commentadmin' => 'Felhasználók által küldött megjegyzések adminisztrálása',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1052,6 +1089,13 @@ $messages['ka'] = array(
 	'group-commentadmin' => 'კომენტარების ადმინისტრატორები',
 	'group-commentadmin-member' => '{{GENDER:$1|კომენტარების ადმინისტრატორი}}',
 	'grouppage-commentadmin' => '{{ns:project}}:კომენტარების ადმინისტრატორები',
+);
+
+/** Kirghiz (Кыргызча)
+ * @author Growingup
+ */
+$messages['ky'] = array(
+	'commentslog-create-entry' => 'Жаңы комментарий',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -1361,6 +1405,41 @@ $messages['nl'] = array(
 	'right-commentadmin' => 'Gebruikersreacties beheren',
 );
 
+/** Oriya (ଓଡ଼ିଆ)
+ * @author Jnanaranjan Sahu
+ */
+$messages['or'] = array(
+	'comments-comment' => 'ମତାମତ',
+	'comments-voted-label' => 'ମତଦାନ',
+	'comments-loading' => 'ଖୋଲୁଅଛି...',
+	'comments-reply-to' => 'କୁ ଉତ୍ତର ଦେବେ',
+	'comments-cancel-reply' => 'ବାତିଲ',
+	'comments-block-warning-user' => 'ଆପଣ ନିଶ୍ଚିତ ଯେ $1ବ୍ୟବହାରକାରୀ ଦ୍ଵାରା ସମସ୍ତ ମତକୁ ସ୍ଥାୟୀରୂପେ ଅଣଦେଖା କରିବେ ?',
+	'comments-delete-warning' => 'ଆପଣ ନିଶ୍ଚିତ ଭାବେ ଏହି ମତଟିକୁ ହଟାଇବାକୁ ଚାହୁଁଛନ୍ତି ?',
+	'comments-sort-by-date' => 'ତାରିଖ ଅନୁଯାୟୀ ସଜାଇବେ',
+	'comments-show-comment-link' => 'ମନ୍ତବ୍ୟଗୁଡ଼ିକୁ ଦେଖାଇବେ',
+	'comments-manage-blocklist-link' => 'ଅଣଦେଖା ତାଳିକାଟିକୁ ପରିଚାଳନା କରିବେ',
+	'comments-ignore-message' => 'ଆପଣ ଏହି ମନ୍ତବ୍ୟର ଲେଖକଙ୍କୁ ଅଣଦେଖା କରୁଛନ୍ତି',
+	'comments-you' => 'ଆପଣ',
+	'comments-reply' => 'ଉତ୍ତର',
+	'comments-login-required' => 'ଆପଣଙ୍କୁ ମନ୍ତବ୍ୟଦେବା ପାଇଁ ଲଗଇନ କରିବାକୁ ପଡିବ',
+	'comments-not-allowed' => 'ଆପଣଙ୍କୁ ମନ୍ତବ୍ୟ ଦେବା ପାଇଁ ଅନୁମତି ନାହିଁ ।',
+	'comments-post' => 'ମତ ଦେବେ',
+	'comments-submit' => 'ଆପଣଙ୍କ ମତ ଦେବେ',
+	'comments-score-text' => 'ଗଣନା',
+	'comments-delete-link' => 'ମତ ହଟାଇବେ',
+	'comments-ignore-no-users' => 'ଏବେ କୌଣସି ବ୍ୟବହାରକାରୀଙ୍କୁ କିଳାଯାଇନାହିଁ ।',
+	'comments-ignore-title' => 'ମତ ଅଣଦେଖା ତାଲିକା',
+	'commentignorelist' => 'ମତ ଅଣଦେଖା ତାଲିକା',
+	'comments-no-comments-of-day' => 'ଆଜି ପାଇଁ  କୌଣସି ମତ ନାହିଁ ।',
+	'commentslogpage' => 'ମନ୍ତବ୍ୟ ତାଲିକା',
+	'commentslogpagetext' => 'ଏହା ମନ୍ତବ୍ୟଗୁଡିକର ଏକ ତାଲିକା ।',
+	'commentslog-create-entry' => 'ନୂଆ ମନ୍ତବ୍ୟ',
+	'comments-time-ago' => '$1 ପୂର୍ବରୁ',
+	'group-commentadmin' => 'ମନ୍ତବ୍ୟ ଅଧିକାରୀଗଣ',
+	'right-comment' => 'ମନ୍ତବ୍ୟ ଦାଖଲ କରିବେ',
+);
+
 /** Polish (polski)
  * @author Odie2
  */
@@ -1415,6 +1494,62 @@ $messages['pl'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Komentarz administratorów',
 	'right-comment' => 'Zgłoś komentarze',
 	'right-commentadmin' => 'Administrowanie wysłanych komentarzy użytkownika',
+);
+
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'comments-comment' => 'Coment',
+	'comments-desc' => "A gionta l'agansi dël parser <code>&lt;comments&gt;</code> ch'a përmëtt ëd comenté dzora le pagine",
+	'comments-db-locked' => "<h3>Gionté coment</h3>Ël database a l'é al moment blocà për manutension ordinaria dël database, ma d'apress a tornerà a la normalità. Për piasì controla prest!",
+	'comments-voted-label' => 'Votà',
+	'comments-loading' => 'A caria ...',
+	'comments-auto-refresher-enable' => 'Ativa auto-rinfrescament dij coment',
+	'comments-auto-refresher-pause' => "Ferma l'auto-rinfrescament dij coment",
+	'comments-reply-to' => 'Arspond a',
+	'comments-cancel-reply' => 'Scancela',
+	'comments-block-warning-anon' => "Ses-to sigur ëd vorèj ignoré përmanentement tùit ij coment da st'utent anònim (travers soe adrësse IP)?",
+	'comments-block-warning-user' => "Ses-to sigur ëd vorèj ignoré përmanentement tùit ij coment da l'utent $1?",
+	'comments-delete-warning' => 'É-lo sicur ëd vorèj scancelé sto coment-sì?',
+	'comments-sort-by-date' => 'Ordina për data',
+	'comments-sort-by-score' => 'Ordina për valutassion',
+	'comments-show-comment-link' => 'Mosta coment',
+	'comments-manage-blocklist-link' => "Gestiss lista dj'ignorà",
+	'comments-ignore-message' => "It të stas ignorand l'autor dë sto comet",
+	'comments-you' => 'Ti',
+	'comments-reply' => 'Arspond',
+	'comments-login-required' => 'It deuve esse intrà për gionté dij coment',
+	'comments-not-allowed' => "A l'ha nen ël drit dë scrive dij coment.",
+	'comments-post' => "Coment a l'artìcol",
+	'comments-submit' => 'Gionta tò coment',
+	'comments-score-text' => 'Pontegi',
+	'comments-permalink' => 'Colegament përmanent',
+	'comments-delete-link' => 'Scansela coment',
+	'comments-anon-name' => 'Utent anònim',
+	'comments-anon-message' => '{{SITENAME}} a aceta <b>tùit ij coment</b>. Se ti it veule pa esse anònim, <a href="$1">registrëte</a> o <a href="$2">intra</a>. A l\'é lìber.',
+	'comments-ignore-item' => '<a href="$1">$2</a> dzor $3 <a href="$4">(dësblòca)</a>',
+	'comments-ignore-no-users' => 'A-i é pa gnun utent blocà al moment.',
+	'comments-ignore-remove-message' => "Ses-to sigur ëd vorèj dësbloché ij coment ëd l'utent <b>$1</b>?",
+	'comments-ignore-unblock' => 'Dësbloché',
+	'comments-ignore-cancel' => 'Scancela',
+	'comments-ignore-title' => 'Lista dij coment ignorà',
+	'commentignorelist' => 'Lista dij coment ignorà',
+	'comments-no-comments-of-day' => 'A-i é pa gnun coment dël di.',
+	'commentslogpage' => 'Registr dij coment',
+	'commentslogpagetext' => "Sòn-sì a l'é un registr dij coment.",
+	'commentslog-create-entry' => 'Coment neuv',
+	'comments-time-ago' => '$1 fa',
+	'comments-time-days' => '{{PLURAL:$1|un di|$1 di}}',
+	'comments-time-hours' => "{{PLURAL:$1|n'ora|$1 ore}}",
+	'comments-time-minutes' => '{{PLURAL:$1|na minuta|$1 minute}}',
+	'comments-time-seconds' => '{{PLURAL:$1|un second|$1 second}}',
+	'log-show-hide-comments' => '$1 registr dij coment',
+	'group-commentadmin' => 'Aministrador dij Coment',
+	'group-commentadmin-member' => '{{GENDER:$1|aministrator dij coment}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Aministrator dij Coment',
+	'right-comment' => 'Spediss coment',
+	'right-commentadmin' => 'Aministra coment spedì da utent',
 );
 
 /** Pashto (پښتو)
@@ -1484,6 +1619,24 @@ $messages['ro'] = array(
 	'log-show-hide-comments' => '$1 jurnalul de comentarii',
 	'group-commentadmin' => 'Administratori de comentarii',
 	'right-comment' => 'Trimite comentarii',
+);
+
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'comments-voted-label' => 'Vutate',
+	'comments-loading' => 'Stoche a careche…',
+	'comments-reply-to' => 'Respunne a',
+	'comments-cancel-reply' => 'Annulle',
+	'comments-sort-by-date' => 'Ordine pe date',
+	'comments-sort-by-score' => 'Ordine pe pundegge',
+	'comments-show-comment-link' => "Fà vedè 'u commende",
+	'comments-you' => 'Tu',
+	'comments-reply' => 'Respunne',
+	'comments-score-text' => 'Pundegge',
+	'comments-ignore-unblock' => 'Sblocche',
+	'comments-ignore-cancel' => 'Annulle',
 );
 
 /** Russian (русский)
@@ -1645,6 +1798,21 @@ $messages['sv'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Kommentaradministratörer',
 	'right-comment' => 'Skicka kommentarer',
 	'right-commentadmin' => 'Administrera kommentarer som användare har skickat',
+);
+
+/** Swahili (Kiswahili)
+ * @author Stephenwanjau
+ */
+$messages['sw'] = array(
+	'comments-loading' => 'Inapakiwa...',
+	'comments-you' => 'Wewe',
+	'comments-reply' => 'Jibu',
+	'comments-post' => 'Chapisha maoni',
+	'comments-submit' => 'Ongeza maoni yako',
+	'comments-delete-link' => 'Futa maoni',
+	'comments-ignore-cancel' => 'Ghairi',
+	'commentslogpage' => 'Kumbukumbu ya maoni',
+	'commentslog-create-entry' => 'Maoni mapya',
 );
 
 /** Tamil (தமிழ்)
