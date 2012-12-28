@@ -159,6 +159,15 @@ $messages['as'] = array(
 	'right-comment' => 'মন্তব্য জমা দিয়ক',
 );
 
+/** South Azerbaijani (تورکجه)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['azb'] = array(
+	'comments-cancel-reply' => 'لغو ائت',
+	'comments-score-text' => 'امتیاز',
+	'comments-ignore-cancel' => 'لغو ائت',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Wizardist
  */
@@ -1091,6 +1100,13 @@ $messages['ka'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:კომენტარების ადმინისტრატორები',
 );
 
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'comments-comment' => 'Aanmärkong',
+);
+
 /** Kirghiz (Кыргызча)
  * @author Growingup
  */
@@ -1576,6 +1592,7 @@ $messages['ps'] = array(
 	'comments-time-hours' => '{{PLURAL:$1|يو ساعت|$1 ساعتونه}}',
 	'comments-time-minutes' => '{{PLURAL:$1|يو دقيقه|$1 دقيقې}}',
 	'comments-time-seconds' => '{{PLURAL:$1|يوه ثانيه|$1 ثانيې}}',
+	'right-comment' => 'تبصرې سپارل',
 );
 
 /** Romanian (română)
