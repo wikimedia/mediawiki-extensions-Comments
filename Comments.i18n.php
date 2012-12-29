@@ -264,6 +264,43 @@ $messages['br'] = array(
 	'commentslog-create-entry' => 'Evezhiadenn nevez',
 );
 
+/** Catalan (català)
+ * @author Arnaugir
+ */
+$messages['ca'] = array(
+	'comments-comment' => 'Comentari',
+	'comments-voted-label' => 'Votat',
+	'comments-loading' => 'Carregant...',
+	'comments-reply-to' => 'Respon a',
+	'comments-cancel-reply' => 'Cancel·la',
+	'comments-sort-by-date' => 'Ordena per data',
+	'comments-sort-by-score' => 'Ordena per puntuació',
+	'comments-show-comment-link' => 'Mostra el comentari',
+	'comments-manage-blocklist-link' => "Gestiona la llista d'ignorats",
+	'comments-ignore-message' => "Estàs ignorant l'autor d'aquest comentari",
+	'comments-you' => 'Vostè',
+	'comments-reply' => 'Resposta',
+	'comments-login-required' => "Has d'estar identificat per afegir comentaris",
+	'comments-not-allowed' => 'No teniu permís per enviar comentaris.',
+	'comments-post' => 'Publica un comentari',
+	'comments-submit' => 'Afegeix el teu comentari',
+	'comments-score-text' => 'Puntuació',
+	'comments-permalink' => 'enllaç permanent',
+	'comments-delete-link' => 'Suprimeix el comentari',
+	'comments-anon-name' => 'Usuari anònim',
+	'comments-ignore-no-users' => 'No hi ha cap usuari blocat.',
+	'comments-ignore-unblock' => 'Desbloqueja',
+	'comments-ignore-cancel' => 'Cancel·la',
+	'comments-ignore-title' => "Llista d'ignorats dels comentaris",
+	'commentignorelist' => "Llista d'ignorats dels comentaris",
+	'comments-no-comments-of-day' => 'No hi ha cap comentari del dia.',
+	'commentslogpage' => 'Registre de comentaris',
+	'commentslogpagetext' => 'Això és un registre de comentaris.',
+	'commentslog-create-entry' => 'Comentari nou',
+	'comments-time-ago' => 'fa $1',
+	'log-show-hide-comments' => 'Registre de comentaris de $1',
+);
+
 /** Czech (česky)
  * @author Vks
  */
@@ -408,6 +445,7 @@ $messages['el'] = array(
 	'comments-post' => 'Δημοσίευση σχολίου',
 	'comments-submit' => 'Προσθήκη του σχολίου σας',
 	'comments-score-text' => 'Βαθμολογία',
+	'comments-permalink' => 'Μόνιμος σύνδεσμος',
 	'comments-delete-link' => 'Διαγραφή σχολίου',
 	'comments-anon-name' => 'Ανώνυμος χρήστης',
 	'comments-ignore-unblock' => 'Άρση φραγής',
@@ -1105,6 +1143,10 @@ $messages['ka'] = array(
  */
 $messages['ksh'] = array(
 	'comments-comment' => 'Aanmärkong',
+	'comments-cancel-reply' => 'Ophüre',
+	'comments-sort-by-date' => 'Nohm Dattum zoteere',
+	'comments-you' => 'Do',
+	'comments-reply' => 'Antwoot',
 );
 
 /** Kirghiz (Кыргызча)
