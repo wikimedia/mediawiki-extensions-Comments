@@ -168,6 +168,20 @@ $messages['azb'] = array(
 	'comments-ignore-cancel' => 'لغو ائت',
 );
 
+/** Bashkir (башҡортса)
+ * @author Ләйсән
+ */
+$messages['ba'] = array(
+	'comments-comment' => 'Аңлатма',
+	'comments-voted-label' => 'Тауыш бирҙе',
+	'comments-loading' => 'Тейәү',
+	'comments-reply-to' => 'Яуап бирергә',
+	'comments-cancel-reply' => 'Кире алырға',
+	'comments-show-comment-link' => 'Аңлатманы күрһәтергә',
+	'comments-you' => 'Һеҙ',
+	'comments-reply' => 'Яуап бирергә',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Wizardist
  */
@@ -754,6 +768,48 @@ $messages['fr'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Administrateurs de commentaires',
 	'right-comment' => 'Publier les commentaires',
 	'right-commentadmin' => 'Administrer les commentaires soumis par les utilisateurs',
+);
+
+/** Franco-Provençal (arpetan)
+ * @author ChrisPtDe
+ */
+$messages['frp'] = array(
+	'comments-comment' => 'Comentèro',
+	'comments-voted-label' => 'Votâ',
+	'comments-loading' => 'Chargement...',
+	'comments-reply-to' => 'Rèpondre a',
+	'comments-cancel-reply' => 'Anular',
+	'comments-sort-by-date' => 'Betar per dâta',
+	'comments-sort-by-score' => 'Betar per mârca',
+	'comments-show-comment-link' => 'Montrar lo comentèro',
+	'comments-you' => 'Vos',
+	'comments-reply' => 'Rèpondre',
+	'comments-post' => 'Mandar lo mèssâjo',
+	'comments-submit' => 'Apondre voutron comentèro',
+	'comments-score-text' => 'Mârca',
+	'comments-permalink' => 'Lim fixo',
+	'comments-delete-link' => 'Ôtar lo comentèro',
+	'comments-anon-name' => 'Utilisator anonimo',
+	'comments-ignore-item' => '<a href="$1">$2</a> sur $3 <a href="$4">(dèblocar)</a>',
+	'comments-ignore-no-users' => 'Ora y at gins d’utilisator blocâ.',
+	'comments-ignore-remove-message' => 'Voléd-vos franc dèblocar los comentèros de l’utilisator <b>$1</b> ?',
+	'comments-ignore-unblock' => 'Dèblocar',
+	'comments-ignore-cancel' => 'Anular',
+	'comments-no-comments-of-day' => 'Y at gins de comentèro du jorn.',
+	'commentslogpage' => 'Jornal des comentèros',
+	'commentslogpagetext' => 'O est un jornal de comentèros.',
+	'commentslog-create-entry' => 'Novél comentèro',
+	'comments-time-ago' => 'cen fât $1',
+	'comments-time-days' => '{{PLURAL:$1|yon jorn|$1 jorns}}',
+	'comments-time-hours' => '{{PLURAL:$1|yona hora|$1 hores}}',
+	'comments-time-minutes' => '{{PLURAL:$1|yona menuta|$1 menutes}}',
+	'comments-time-seconds' => '{{PLURAL:$1|yona seconda|$1 secondes}}',
+	'log-show-hide-comments' => '$1 lo jornal des comentèros',
+	'group-commentadmin' => 'Administrators de comentèros',
+	'group-commentadmin-member' => 'administrat{{GENDER:$1|or|rice}} de comentèros',
+	'grouppage-commentadmin' => '{{ns:project}}:Administrators de comentèros',
+	'right-comment' => 'Sometre des comentèros',
+	'right-commentadmin' => 'Administrar los comentèros somês per los utilisators',
 );
 
 /** Galician (galego)
@@ -1438,7 +1494,7 @@ $messages['nl'] = array(
 	'comments-permalink' => 'Permanente verwijzing',
 	'comments-delete-link' => 'Reactie verwijderen',
 	'comments-anon-name' => 'Anonieme gebruiker',
-	'comments-anon-message' => '{{SITENAME}} verwelkomt <b>alle reacties</b>. Als u niet anoniem wilt zijn, <a href="$1">Registreer</a> u dan u <a href="$2">meld u aan</a>.',
+	'comments-anon-message' => '{{SITENAME}} verwelkomt <b>alle reacties</b>. Als u niet anoniem wilt zijn, <a href="$1">Registreer</a> u dan of <a href="$2">meld u aan</a>.',
 	'comments-ignore-item' => '<a href="$1">$2</a> op $3 <a href="$4">(zichtbaar maken)</a>',
 	'comments-ignore-no-users' => 'Er zijn momenteel geen gebruikers geblokkeerd.',
 	'comments-ignore-remove-message' => 'Weet u zeker dat u de reacties van <b>$1</b> weer wilt zien?',
@@ -1461,6 +1517,21 @@ $messages['nl'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Opmerkingenbeheerders',
 	'right-comment' => 'Reacties toevoegen',
 	'right-commentadmin' => 'Gebruikersreacties beheren',
+);
+
+/** Nederlands (informeel)‎ (Nederlands (informeel)‎)
+ * @author Siebrand
+ */
+$messages['nl-informal'] = array(
+	'comments-block-warning-anon' => 'Weet je zeker dat je permanent alle reacties van deze anonieme gebruiker wilt negeren (via het IP-adres)?',
+	'comments-block-warning-user' => 'Weet je zeker dat je alle reacties van $1 permanent wilt negeren?',
+	'comments-delete-warning' => 'Weet je zeker dat je deze reactie wilt verwijderen?',
+	'comments-ignore-message' => 'Je negeert de auteur van deze reactie',
+	'comments-you' => 'Jij',
+	'comments-login-required' => 'Je moet aangemeld zijn om reacties toe te kunnen voegen',
+	'comments-not-allowed' => 'Je mag niet reageren.',
+	'comments-anon-message' => '{{SITENAME}} verwelkomt <b>alle reacties</b>. Als je niet anoniem wilt zijn, <a href="$1">Registreer</a> je dan of <a href="$2">meld je aan</a>.',
+	'comments-ignore-remove-message' => 'Weet je zeker dat je de reacties van <b>$1</b> weer wilt zien?',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
@@ -1684,6 +1755,7 @@ $messages['ro'] = array(
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'comments-comment' => 'Commende',
 	'comments-voted-label' => 'Vutate',
 	'comments-loading' => 'Stoche a careche…',
 	'comments-reply-to' => 'Respunne a',
@@ -1693,9 +1765,22 @@ $messages['roa-tara'] = array(
 	'comments-show-comment-link' => "Fà vedè 'u commende",
 	'comments-you' => 'Tu',
 	'comments-reply' => 'Respunne',
+	'comments-post' => "Mitte 'nu commende",
+	'comments-submit' => "Aggiunge 'u commende tune",
 	'comments-score-text' => 'Pundegge',
+	'comments-delete-link' => "Scangille 'u commende",
+	'comments-anon-name' => 'Utende anonime',
 	'comments-ignore-unblock' => 'Sblocche',
 	'comments-ignore-cancel' => 'Annulle',
+	'comments-no-comments-of-day' => "Non ge stonne commende d'a sciurnate.",
+	'commentslogpage' => 'Archivije de le commende',
+	'commentslogpagetext' => "Quiste jè 'n'archivije de commende.",
+	'commentslog-create-entry' => 'Commende nuève',
+	'comments-time-ago' => '$1 fà',
+	'comments-time-days' => "{{PLURAL: $1|'nu sciurne|$1 sciurne}}",
+	'comments-time-hours' => "{{PLURAL: $1|'n'ore|$1 ore}}",
+	'comments-time-minutes' => "{{PLURAL:$1|'nu minute|$1 minute}}",
+	'comments-time-seconds' => "{{PLURAL:$1|'nu seconde|$1 seconde}}",
 );
 
 /** Russian (русский)
@@ -1763,6 +1848,8 @@ $messages['si'] = array(
 	'comments-comment' => 'පරිකථනය',
 	'comments-voted-label' => 'මනාපය දෙන ලදී',
 	'comments-loading' => 'ප්‍රවේශනය වෙමින් පවතී...',
+	'comments-auto-refresher-enable' => 'පරිකථන ස්වයං-නවමුව සක්‍රිය කරන්න',
+	'comments-auto-refresher-pause' => 'පරිකථන ස්වයං-නවමුව විරාම කරන්න',
 	'comments-reply-to' => 'පිළිතුරු දෙන්න',
 	'comments-cancel-reply' => 'අත් හරින්න',
 	'comments-delete-warning' => 'ඔබට මෙම පරිකථනය මැකීමට අවශ්‍යමද?',
@@ -1801,6 +1888,7 @@ $messages['si'] = array(
 	'group-commentadmin-member' => '{{GENDER:$1|පරිකථන පරිපාලක}}',
 	'grouppage-commentadmin' => '{{ns:project}}:පරිකථන පරිපාලකවරු',
 	'right-comment' => 'පරිකථන යොමන්න',
+	'right-commentadmin' => 'පරිශීලක-යොමන ලද පරිකථන පාලනය කරන්න',
 );
 
 /** Swedish (svenska)
