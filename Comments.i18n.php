@@ -869,6 +869,7 @@ $messages['gl'] = array(
 );
 
 /** Hebrew (עברית)
+ * @author Ofrahod
  * @author חיים
  */
 $messages['he'] = array(
@@ -891,8 +892,32 @@ $messages['he'] = array(
 	'commentslogpage' => 'יומן ההערות',
 	'commentslog-create-entry' => 'תגובה חדשה',
 	'comments-time-ago' => 'לפני $1',
+	'comments-time-days' => '{{PLURAL:$1|יום אחד|יומיים|$1 ימים}}',
+	'comments-time-hours' => '{{PLURAL:$1|שעה אחת|שעתיים|$1 שעות}}',
+	'comments-time-minutes' => '{{PLURAL:$1|דקה אחת|$1 דקות}}',
+	'comments-time-seconds' => '{{PLURAL:$1|שנייה אחת|$1 שניות}}',
 	'log-show-hide-comments' => '$1 יומן ההערות',
 	'group-commentadmin' => 'הערה מנהלית',
+);
+
+/** Hindi (हिन्दी)
+ * @author Ansumang
+ */
+$messages['hi'] = array(
+	'comments-comment' => 'टिप्पणी',
+	'comments-loading' => 'लोड हो रहा है...',
+	'comments-reply-to' => 'उत्तर दें',
+	'comments-cancel-reply' => 'रद्द करें',
+	'comments-show-comment-link' => 'टीप्पणी दिखाएँ',
+	'comments-you' => 'तुम',
+	'comments-reply' => 'उत्तर दें',
+	'comments-post' => 'टिप्पणी पोस्ट करें',
+	'comments-submit' => 'आपकी टिप्पणी जोड़ें',
+	'comments-score-text' => 'अंक',
+	'comments-ignore-cancel' => 'रद्द करें',
+	'commentslogpage' => 'टिप्पणियाँ लॉग',
+	'commentslog-create-entry' => 'नई टिप्पणी',
+	'comments-time-ago' => '$1 पहले',
 );
 
 /** Upper Sorbian (hornjoserbsce)
@@ -1491,7 +1516,7 @@ $messages['nl'] = array(
 	'comments-post' => 'Reactie toevoegen',
 	'comments-submit' => 'Reageren',
 	'comments-score-text' => 'Score',
-	'comments-permalink' => 'Permanente verwijzing',
+	'comments-permalink' => 'Permanente koppeling',
 	'comments-delete-link' => 'Reactie verwijderen',
 	'comments-anon-name' => 'Anonieme gebruiker',
 	'comments-anon-message' => '{{SITENAME}} verwelkomt <b>alle reacties</b>. Als u niet anoniem wilt zijn, <a href="$1">Registreer</a> u dan of <a href="$2">meld u aan</a>.',
@@ -1535,6 +1560,7 @@ $messages['nl-informal'] = array(
 );
 
 /** Oriya (ଓଡ଼ିଆ)
+ * @author Ansumang
  * @author Jnanaranjan Sahu
  */
 $messages['or'] = array(
@@ -1558,6 +1584,7 @@ $messages['or'] = array(
 	'comments-score-text' => 'ଗଣନା',
 	'comments-delete-link' => 'ମତ ହଟାଇବେ',
 	'comments-ignore-no-users' => 'ଏବେ କୌଣସି ବ୍ୟବହାରକାରୀଙ୍କୁ କିଳାଯାଇନାହିଁ ।',
+	'comments-ignore-cancel' => 'ବାତିଲ',
 	'comments-ignore-title' => 'ମତ ଅଣଦେଖା ତାଲିକା',
 	'commentignorelist' => 'ମତ ଅଣଦେଖା ତାଲିକା',
 	'comments-no-comments-of-day' => 'ଆଜି ପାଇଁ  କୌଣସି ମତ ନାହିଁ ।',
@@ -1889,6 +1916,45 @@ $messages['si'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:පරිකථන පරිපාලකවරු',
 	'right-comment' => 'පරිකථන යොමන්න',
 	'right-commentadmin' => 'පරිශීලක-යොමන ලද පරිකථන පාලනය කරන්න',
+);
+
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
+ * @author Rancher
+ */
+$messages['sr-ec'] = array(
+	'comments-comment' => 'Коментар',
+	'comments-voted-label' => 'Гласано',
+	'comments-loading' => 'Учитавам…',
+	'comments-auto-refresher-enable' => 'Омогући самоосвежавање коментара',
+	'comments-auto-refresher-pause' => 'Онемогући самоосвежавање коментара',
+	'comments-reply-to' => 'Одговори на',
+	'comments-cancel-reply' => 'Откажи',
+	'comments-block-warning-user' => 'Желите ли да трајно занемарите све коментаре корисника $1?',
+	'comments-delete-warning' => 'Желите ли да обришете овај коментар?',
+	'comments-sort-by-date' => 'Поређај по датуму',
+	'comments-sort-by-score' => 'Поређај по бодовима',
+	'comments-show-comment-link' => 'Прикажи коментар',
+	'comments-manage-blocklist-link' => 'Управљај списком занемарених',
+	'comments-ignore-message' => 'Занемарујете аутора овог коментара',
+	'comments-ignore-unblock' => 'Деблокирај',
+	'comments-ignore-cancel' => 'Откажи',
+	'comments-ignore-title' => 'Списак занемарених коментара',
+	'commentignorelist' => 'Списак занемарених коментара',
+	'comments-no-comments-of-day' => 'Нема коментара дана.',
+	'commentslogpage' => 'Дневник коментара',
+	'commentslogpagetext' => 'Ово је дневник коментара.',
+	'commentslog-create-entry' => 'Нови коментар',
+	'comments-time-ago' => 'пре $1',
+	'comments-time-days' => '{{PLURAL:$1|један дан|$1 дана|$1 дана}}', # Fuzzy
+	'comments-time-hours' => '{{PLURAL:$1|један сат|$1 сата|$1 сати}}', # Fuzzy
+	'comments-time-minutes' => '{{PLURAL:$1|један минут|$1 минута|$1 минута}}', # Fuzzy
+	'comments-time-seconds' => '{{PLURAL:$1|један секунд|$1 секунде|$1 секунди}}', # Fuzzy
+	'log-show-hide-comments' => '$1 дневник коментара',
+	'group-commentadmin' => 'Администратори коментара',
+	'group-commentadmin-member' => '{{GENDER:$1|администратор|администраторка|администратор}} коментара',
+	'grouppage-commentadmin' => '{{ns:project}}:Администратори коментара',
+	'right-comment' => 'слање коментара',
+	'right-commentadmin' => 'управљање корисничким коментарима',
 );
 
 /** Swedish (svenska)
