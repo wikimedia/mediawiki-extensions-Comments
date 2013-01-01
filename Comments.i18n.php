@@ -71,6 +71,7 @@ $messages['en'] = array(
 /** Message documentation (Message documentation)
  * @author Darth Kule
  * @author Nike
+ * @author Purodha
  * @author Shirayuki
  * @author Siebrand
  */
@@ -110,10 +111,33 @@ $messages['qqq'] = array(
 	'commentslogpage' => 'Shown on the dropdown on Special:Log',
 	'commentslogpagetext' => 'Explanation of the comments log, shown on Special:Log',
 	'commentslog-create-entry' => 'Log entry for [[Special:Log]]',
-	'comments-time-ago' => '$1 is one of the following messages: comments-time-days, comments-time-hours, comments-time-minutes, comments-time-seconds',
+	'comments-time-ago' => '$1 is one of the following messages: {{msg-mw|comments-time-days}}, {{msg-mw|comments-time-hours}}, {{msg-mw|comments-time-minutes}}, {{msg-mw|comments-time-seconds}}',
+	'comments-time-days' => 'See also:
+* {{msg-mw|Comments-time-ago}}
+* {{msg-mw|Comments-time-hours}}
+* {{msg-mw|Comments-time-minutes}}
+* {{msg-mw|Comments-time-seconds}}',
+	'comments-time-hours' => 'See also:
+* {{msg-mw|Comments-time-ago}}
+* {{msg-mw|Comments-time-days}}
+* {{msg-mw|Comments-time-minutes}}
+* {{msg-mw|Comments-time-seconds}}',
+	'comments-time-minutes' => 'See also:
+* {{msg-mw|Comments-time-ago}}
+* {{msg-mw|Comments-time-days}}
+* {{msg-mw|Comments-time-hours}}
+* {{msg-mw|Comments-time-seconds}}',
+	'comments-time-seconds' => 'See also:
+* {{msg-mw|Comments-time-ago}}
+* {{msg-mw|Comments-time-days}}
+* {{msg-mw|Comments-time-hours}}
+* {{msg-mw|Comments-time-minutes}}',
 	'log-show-hide-comments' => 'For Special:Log; $1 is show or hide (there are probably some MW core messages for those two)',
-	'group-commentadmin' => "Shown on Special:ListUsers. Members of this group can delete other users' comments.",
-	'group-commentadmin-member' => 'Member of the Comment Administrators (commentadmin) group, shown on Special:ListUsers',
+	'group-commentadmin' => "Shown on [[Special:ListUsers]]. Members of this group can delete other users' comments.
+{{doc-group|commentadmin}}",
+	'group-commentadmin-member' => 'Member of the Comment Administrators (commentadmin) group, shown on [[Special:ListUsers]].
+{{doc-group|commentadmin|member}}',
+	'grouppage-commentadmin' => '{{doc-group|commentadmin|page}}',
 	'right-comment' => '{{doc-right|comment}}',
 	'right-commentadmin' => '{{doc-right|commentadmin}}',
 );
@@ -1224,10 +1248,42 @@ $messages['ka'] = array(
  */
 $messages['ksh'] = array(
 	'comments-comment' => 'Aanmärkong',
+	'comments-voted-label' => 'Afjeschtemmp',
+	'comments-loading' => 'Aam Laade&nbsp;&hellip;',
+	'comments-reply-to' => 'Antowoote aan:',
 	'comments-cancel-reply' => 'Ophüre',
+	'comments-delete-warning' => 'Wells De heh dä Beidraach verhaftesch fottschmieße?',
 	'comments-sort-by-date' => 'Nohm Dattum zoteere',
+	'comments-show-comment-link' => 'Aanmerkong aanzeije',
+	'comments-ignore-message' => 'Do övverjeihß dä Schriiver vun heh däm Beidraach',
 	'comments-you' => 'Do',
 	'comments-reply' => 'Antwoot',
+	'comments-login-required' => 'Do moß enjelogg sin, öm Aanmärkonge zoh Sigge schriive ze dörve',
+	'comments-not-allowed' => 'Do moß enjelogg sin, öm Aanmärkonge zoh Sigge schriive ze dörve',
+	'comments-post' => 'En Aanmärkong dobei donn',
+	'comments-submit' => 'Donn Ding Aanmärkong derbei',
+	'comments-score-text' => 'Punkte',
+	'comments-permalink' => 'Ene duurhafte Lengk',
+	'comments-delete-link' => 'Aanmärkong fottschmiiße',
+	'comments-anon-name' => 'Nameloose Metmaacher',
+	'comments-ignore-no-users' => 'Em Momang sen hein Metmaacher jeschpärrt.',
+	'comments-ignore-unblock' => 'Sperr ophävve',
+	'comments-ignore-cancel' => 'Ophüre',
+	'comments-no-comments-of-day' => 'Mer hann_er kein Aanmärkonge aan däm Daach.',
+	'commentslogpage' => 'Logbooch met Aanmärkonge',
+	'commentslogpagetext' => 'Heh is est Logbooch met Aanmärkonge',
+	'commentslog-create-entry' => 'En neue Aanmerkong',
+	'comments-time-ago' => 'vör $1',
+	'comments-time-days' => '{{PLURAL:$1|einem Daach|$1 Dääsch|keinem Daach}}',
+	'comments-time-hours' => '{{PLURAL:$1|eine Schtond|$1 Schtonde|keinem Schtond}}',
+	'comments-time-minutes' => '{{PLURAL:$1|eine Menutt|$1 Menutte|keine Menutt}}',
+	'comments-time-seconds' => '{{PLURAL:$1|eine Sekund|$1 Sekunde|keine Sekund}}',
+	'log-show-hide-comments' => 'Et Logbooch vun de Aanmärkonge $1',
+	'group-commentadmin' => 'Vewallder vun de Aanmärkonge',
+	'group-commentadmin-member' => '{{GENDER:$1|Vewallder vun de Aanmärkonge|Vewallderėn vun de Aanmärkonge|Vewallder vun de Aanmärkonge|Vewallderėn vun de Aanmärkonge|Vewallder vun de Aanmärkonge}}',
+	'grouppage-commentadmin' => '{{ns:project}}:{{int:group-commentadmin}}',
+	'right-comment' => 'Aanmärkonge enjävve',
+	'right-commentadmin' => 'Aanmärkonge vun Metmaachere Verwallde',
 );
 
 /** Kirghiz (Кыргызча)
