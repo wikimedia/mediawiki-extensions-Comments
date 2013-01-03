@@ -304,6 +304,7 @@ $messages['br'] = array(
 
 /** Catalan (català)
  * @author Arnaugir
+ * @author Pitort
  */
 $messages['ca'] = array(
 	'comments-comment' => 'Comentari',
@@ -336,7 +337,13 @@ $messages['ca'] = array(
 	'commentslogpagetext' => 'Això és un registre de comentaris.',
 	'commentslog-create-entry' => 'Comentari nou',
 	'comments-time-ago' => 'fa $1',
+	'comments-time-days' => '{{PLURAL:$1|un dia|$1 dies}}',
+	'comments-time-hours' => '{{PLURAL:$1|una hora|$1 hores}}',
+	'comments-time-minutes' => '{{PLURAL:$1|un minut|$1 minuts}}',
+	'comments-time-seconds' => '{{PLURAL:$1|un segon|$1 segons}}',
 	'log-show-hide-comments' => 'Registre de comentaris de $1',
+	'group-commentadmin' => 'Administradors de comentaris',
+	'group-commentadmin-member' => '{{GENDER:$1|adminsitrador|administradora}} de comentaris',
 );
 
 /** Czech (česky)
