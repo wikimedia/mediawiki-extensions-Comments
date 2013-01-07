@@ -933,6 +933,7 @@ $messages['he'] = array(
 
 /** Hindi (हिन्दी)
  * @author Ansumang
+ * @author Siddhartha Ghai
  */
 $messages['hi'] = array(
 	'comments-comment' => 'टिप्पणी',
@@ -940,13 +941,13 @@ $messages['hi'] = array(
 	'comments-reply-to' => 'उत्तर दें',
 	'comments-cancel-reply' => 'रद्द करें',
 	'comments-show-comment-link' => 'टीप्पणी दिखाएँ',
-	'comments-you' => 'तुम',
+	'comments-you' => 'आप',
 	'comments-reply' => 'उत्तर दें',
 	'comments-post' => 'टिप्पणी पोस्ट करें',
-	'comments-submit' => 'आपकी टिप्पणी जोड़ें',
+	'comments-submit' => 'अपनी टिप्पणी जोड़ें',
 	'comments-score-text' => 'अंक',
 	'comments-ignore-cancel' => 'रद्द करें',
-	'commentslogpage' => 'टिप्पणियाँ लॉग',
+	'commentslogpage' => 'टिप्पणी लॉग',
 	'commentslog-create-entry' => 'नई टिप्पणी',
 	'comments-time-ago' => '$1 पहले',
 );
@@ -1248,6 +1249,31 @@ $messages['ka'] = array(
 	'group-commentadmin' => 'კომენტარების ადმინისტრატორები',
 	'group-commentadmin-member' => '{{GENDER:$1|კომენტარების ადმინისტრატორი}}',
 	'grouppage-commentadmin' => '{{ns:project}}:კომენტარების ადმინისტრატორები',
+);
+
+/** Korean (한국어)
+ * @author LFM
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'comments-cancel-reply' => '취소',
+	'comments-show-comment-link' => '의견 보기',
+	'comments-manage-blocklist-link' => '무시 목록 관리',
+	'comments-ignore-message' => '이 의견을 남긴 사람을 무시하고 있습니다.',
+	'comments-you' => '나',
+	'comments-reply' => '덧글',
+	'comments-login-required' => '의견을 남기려면 로그인해야 합니다.',
+	'comments-not-allowed' => '의견을 남길 수 있는 권한이 없습니다.',
+	'comments-post' => '의견 남기기',
+	'comments-submit' => '의견을 추가합니다.',
+	'comments-score-text' => '점수',
+	'comments-permalink' => '고유링크',
+	'comments-delete-link' => '의견 삭제',
+	'comments-anon-name' => '익명 사용자',
+	'comments-ignore-no-users' => '현재 차단된 사용자가 없습니다.',
+	'comments-ignore-remove-message' => '정말로 <b>$1</b> 사용자의 의견을 차단 해제하겠습니까?',
+	'comments-ignore-unblock' => '차단 해제',
+	'comments-ignore-cancel' => '취소',
 );
 
 /** Colognian (Ripoarisch)
