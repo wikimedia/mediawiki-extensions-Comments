@@ -1258,10 +1258,19 @@ $messages['ka'] = array(
  */
 $messages['ko'] = array(
 	'comments-comment' => '덧글',
+	'comments-desc' => '문서에 덧글을 허용하는 <code>&lt;comments&gt;</code> 파서 훅 추가',
+	'comments-db-locked' => '<h3>덧글 추가</h3>데이터베이스가 현재 정기적인 데이터베이스 유지 관리를 위해 잠겨 있으며 이후 정상으로 돌아옵니다. 나중에 다시 확인하세요!',
 	'comments-voted-label' => '투표함',
 	'comments-loading' => '불러오는 중...',
+	'comments-auto-refresher-enable' => '덧글 자동 새로 고침 활성화',
+	'comments-auto-refresher-pause' => '덧글 자동 새로 고침 일시 정지',
 	'comments-reply-to' => '답변자',
 	'comments-cancel-reply' => '취소',
+	'comments-block-warning-anon' => '익명 사용자(IP 주소)에서 모든 덧글을 영구적으로 무시하겠습니까?',
+	'comments-block-warning-user' => '$1 사용자에서 모든 덧글을 영구적으로 무시하겠습니까?',
+	'comments-delete-warning' => '이 덧글을 삭제하겠습니까?',
+	'comments-sort-by-date' => '날짜순으로 정렬',
+	'comments-sort-by-score' => '점수순으로 정렬',
 	'comments-show-comment-link' => '덧글 보기',
 	'comments-manage-blocklist-link' => '무시 목록 관리',
 	'comments-ignore-message' => '이 덧글을 남긴 사람을 무시하고 있습니다.',
@@ -1275,16 +1284,29 @@ $messages['ko'] = array(
 	'comments-permalink' => '고유링크',
 	'comments-delete-link' => '덧글 삭제',
 	'comments-anon-name' => '익명 사용자',
+	'comments-anon-message' => '{{SITENAME}}(은)는 <b>모든 덧글</b>을 환영합니다. 익명을 원하지 않으면 <a href="$1">등록</a>하거나 <a href="$2">로그인</a>하세요. 무료입니다.',
+	'comments-ignore-item' => '$3에 <a href="$1">$2</a> <a href="$4">(차단 해제)</a>',
 	'comments-ignore-no-users' => '현재 차단된 사용자가 없습니다.',
 	'comments-ignore-remove-message' => '정말로 <b>$1</b> 사용자의 덧글을 차단 해제하겠습니까?',
 	'comments-ignore-unblock' => '차단 해제',
 	'comments-ignore-cancel' => '취소',
+	'comments-ignore-title' => '덧글 무시 목록',
+	'commentignorelist' => '덧글 무시 목록',
+	'comments-no-comments-of-day' => '오늘의 덧글이 없습니다.',
+	'commentslogpage' => '덧글 기록',
+	'commentslogpagetext' => '덧글의 기록입니다.',
 	'commentslog-create-entry' => '새 덧글',
 	'comments-time-ago' => '$1 전',
 	'comments-time-days' => '{{PLURAL:$1|1일|$1일}}',
 	'comments-time-hours' => '{{PLURAL:$1|한 시간|$1시간}}',
 	'comments-time-minutes' => '{{PLURAL:$1|1분|$1분}}',
 	'comments-time-seconds' => '{{PLURAL:$1|1초|$1초}}',
+	'log-show-hide-comments' => '$1 덧글 기록',
+	'group-commentadmin' => '덧글 관리자',
+	'group-commentadmin-member' => '{{GENDER:$1|덧글 관리자}}',
+	'grouppage-commentadmin' => '{{ns:project}}:덧글 관리자',
+	'right-comment' => '덧글 제출',
+	'right-commentadmin' => '사용자가 제출한 덧글 관리',
 );
 
 /** Colognian (Ripoarisch)
@@ -2210,6 +2232,7 @@ $messages['tzm'] = array(
 /** Ukrainian (українська)
  * @author Ahonc
  * @author Base
+ * @author RLuts
  * @author Ата
  */
 $messages['uk'] = array(
@@ -2229,7 +2252,7 @@ $messages['uk'] = array(
 	'comments-sort-by-score' => 'Сортувати за оцінками',
 	'comments-show-comment-link' => 'Показати коментар',
 	'comments-manage-blocklist-link' => 'Керувати списками ігнорування',
-	'comments-ignore-message' => 'Ви ігноруєта автора цього коментраря',
+	'comments-ignore-message' => 'Ви ігноруєте автора цього коментраря',
 	'comments-you' => 'Ви',
 	'comments-reply' => 'Відповісти',
 	'comments-login-required' => 'Ви повинні увійти до системи, щоб додавати коментарі',
