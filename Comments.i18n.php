@@ -101,7 +101,8 @@ Displayed in a JavaScript popup alert when the user is about to ignore the comme
 	'comments-score-text' => "Followed by the comment's score; refer to the [[mw:File:Comments.png|image]] for details",
 	'comments-permalink' => '"Permalink" means "permanent link" and clicking on it creates what is a permanent link to a comment, at least until a (comment) administrator deletes the comment or the whole page gets deleted or the &lt;comments/&gt; tag is removed from it',
 	'comments-delete-link' => 'Link text; clicking on this deletes the comment (duh)',
-	'comments-anon-name' => "Generic name shown for anonymous (not logged in/unregistered) users, since their IP addresses aren't directly exposed",
+	'comments-anon-name' => "Generic name shown for anonymous (not logged in/unregistered) users, since their IP addresses aren't directly exposed.
+{{Identical|Anonymous user}}",
 	'comments-anon-message' => 'Shown above the comment form to anonymous users. $1 is the URL to Special:UserLogin, $2 is the URL to Special:UserLogin/signup.',
 	'comments-ignore-item' => "Shown on Special:CommentIgnoreList. $1 is the URL to the blocked user's user page, $2 is the name of the blocked user, $3 is the timestamp (when the user was blocked) and $4 is the URL to the unblock form.",
 	'comments-ignore-no-users' => "Shown on Special:CommentIgnoreList if you haven't blocked anyone's comments.",
@@ -127,7 +128,8 @@ Displayed in a JavaScript popup alert when the user is about to ignore the comme
 * {{msg-mw|Comments-time-ago}}
 * {{msg-mw|Comments-time-days}}
 * {{msg-mw|Comments-time-hours}}
-* {{msg-mw|Comments-time-seconds}}',
+* {{msg-mw|Comments-time-seconds}}
+{{Identical|Minute}}',
 	'comments-time-seconds' => 'See also:
 * {{msg-mw|Comments-time-ago}}
 * {{msg-mw|Comments-time-days}}
@@ -154,6 +156,7 @@ $messages['af'] = array(
 	'comments-you' => 'U',
 	'comments-reply' => 'Antwoord',
 	'comments-ignore-cancel' => 'Kanselleer',
+	'comments-time-minutes' => '{{PLURAL:$1|$1 minuut|$1 minute}}',
 );
 
 /** Assamese (অসমীয়া)
@@ -1918,10 +1921,13 @@ $messages['roa-tara'] = array(
 	'comments-post' => "Mitte 'nu commende",
 	'comments-submit' => "Aggiunge 'u commende tune",
 	'comments-score-text' => 'Pundegge',
+	'comments-permalink' => 'Collegamende permanende',
 	'comments-delete-link' => "Scangille 'u commende",
 	'comments-anon-name' => 'Utende anonime',
 	'comments-ignore-unblock' => 'Sblocche',
 	'comments-ignore-cancel' => 'Annulle',
+	'comments-ignore-title' => "Commende l'elenghe de scarte",
+	'commentignorelist' => "Commende l'elenghe de scarte",
 	'comments-no-comments-of-day' => "Non ge stonne commende d'a sciurnate.",
 	'commentslogpage' => 'Archivije de le commende',
 	'commentslogpagetext' => "Quiste jè 'n'archivije de commende.",
@@ -1931,6 +1937,8 @@ $messages['roa-tara'] = array(
 	'comments-time-hours' => "{{PLURAL: $1|'n'ore|$1 ore}}",
 	'comments-time-minutes' => "{{PLURAL:$1|'nu minute|$1 minute}}",
 	'comments-time-seconds' => "{{PLURAL:$1|'nu seconde|$1 seconde}}",
+	'log-show-hide-comments' => '$1 archivije de commende',
+	'right-comment' => 'Conferme le commende',
 );
 
 /** Russian (русский)
