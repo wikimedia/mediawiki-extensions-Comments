@@ -1938,6 +1938,9 @@ $messages['roa-tara'] = array(
 	'comments-time-minutes' => "{{PLURAL:$1|'nu minute|$1 minute}}",
 	'comments-time-seconds' => "{{PLURAL:$1|'nu seconde|$1 seconde}}",
 	'log-show-hide-comments' => '$1 archivije de commende',
+	'group-commentadmin' => 'Amministrature de le Commende',
+	'group-commentadmin-member' => "{{GENDER:$1|amministratore d'u commende}}",
+	'grouppage-commentadmin' => "{{ns:project}}:Amministrature d'u commende",
 	'right-comment' => 'Conferme le commende',
 );
 
