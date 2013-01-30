@@ -1286,7 +1286,7 @@ $messages['ko'] = array(
 	'comments-score-text' => '점수',
 	'comments-permalink' => '고유링크',
 	'comments-delete-link' => '덧글 삭제',
-	'comments-anon-name' => '익명의 사용자',
+	'comments-anon-name' => '익명 사용자',
 	'comments-anon-message' => '{{SITENAME}}(은)는 <b>모든 덧글</b>을 환영합니다. 익명을 원하지 않으면 <a href="$1">등록</a>하거나 <a href="$2">로그인</a>하세요. 무료입니다.',
 	'comments-ignore-item' => '$3에 <a href="$1">$2</a> <a href="$4">(차단 해제)</a>',
 	'comments-ignore-no-users' => '현재 차단된 사용자가 없습니다.',
