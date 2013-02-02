@@ -1227,6 +1227,7 @@ $messages['ka'] = array(
 	'comments-comment' => 'კომენტარი',
 	'comments-voted-label' => 'ხმა მიცემულია',
 	'comments-loading' => 'იტვირთება…',
+	'comments-reply-to' => 'პასუხი',
 	'comments-cancel-reply' => 'გაუქმება',
 	'comments-delete-warning' => 'დარწმუნებული ხართ, რომ გსურთ ამ კომენტარის წაშლა?',
 	'comments-you' => 'თქვენ',
@@ -1253,6 +1254,7 @@ $messages['ka'] = array(
 	'group-commentadmin' => 'კომენტარების ადმინისტრატორები',
 	'group-commentadmin-member' => '{{GENDER:$1|კომენტარების ადმინისტრატორი}}',
 	'grouppage-commentadmin' => '{{ns:project}}:კომენტარების ადმინისტრატორები',
+	'right-comment' => 'კომენტარის გაგზავნა',
 );
 
 /** Korean (한국어)
