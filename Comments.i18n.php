@@ -2303,6 +2303,7 @@ $messages['uk'] = array(
 );
 
 /** Simplified Chinese (中文（简体）‎)
+ * @author Hydra
  * @author Hzy980512
  * @author Shirayuki
  * @author Yfdyh000
@@ -2340,10 +2341,21 @@ $messages['zh-hans'] = array(
 	'comments-ignore-cancel' => '取消',
 	'comments-ignore-title' => '评论忽略名单',
 	'commentignorelist' => '评论忽略名单',
+	'comments-no-comments-of-day' => '今天没有新的评论。',
 	'commentslogpage' => '评论日志',
 	'commentslogpagetext' => '这是评论的日志。',
 	'commentslog-create-entry' => '新评论',
 	'comments-time-ago' => '$1前',
+	'comments-time-days' => '{{PLURAL:$1|1天|$1天}}',
+	'comments-time-hours' => '{{PLURAL:$1|1小时|$1小时}}',
+	'comments-time-minutes' => '{{PLURAL:$1|1分钟|$1分钟}}',
+	'comments-time-seconds' => '{{PLURAL:$1|1秒|$1秒}}',
+	'log-show-hide-comments' => '$1评论日志',
+	'group-commentadmin' => '评论管理员们',
+	'group-commentadmin-member' => '{{GENDER:$1|评论管理员}}',
+	'grouppage-commentadmin' => '{{ns:project}}:评论管理员',
+	'right-comment' => '提交评论',
+	'right-commentadmin' => '管理用户提交的评论',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
