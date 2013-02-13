@@ -118,7 +118,8 @@ Displayed in a JavaScript popup alert when the user is about to ignore the comme
 * {{msg-mw|Comments-time-ago}}
 * {{msg-mw|Comments-time-hours}}
 * {{msg-mw|Comments-time-minutes}}
-* {{msg-mw|Comments-time-seconds}}',
+* {{msg-mw|Comments-time-seconds}}
+{{Identical|Day}}',
 	'comments-time-hours' => 'See also:
 * {{msg-mw|Comments-time-ago}}
 * {{msg-mw|Comments-time-days}}
