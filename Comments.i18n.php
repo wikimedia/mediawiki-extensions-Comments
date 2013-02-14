@@ -667,6 +667,7 @@ $messages['et'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Mahdiz
  * @author پاناروما
  */
 $messages['fa'] = array(
@@ -681,13 +682,16 @@ $messages['fa'] = array(
 	'comments-reply' => 'پاسخ دادن',
 	'comments-login-required' => 'برای نظردهی لازم است ابتدا وارد سامانه شوید',
 	'comments-post' => 'ارسال نظر',
+	'comments-submit' => 'اضافه کردن نظر شما',
 	'comments-score-text' => 'امتیاز',
 	'comments-permalink' => 'پیوند پایدار',
 	'comments-delete-link' => 'حذف نظر',
 	'comments-anon-name' => 'کاربر ناشناس',
+	'comments-ignore-unblock' => 'باز شود',
 	'comments-ignore-cancel' => 'لغو کردن',
 	'commentslog-create-entry' => 'نظر جدید',
 	'comments-time-ago' => '$1 پیش',
+	'right-comment' => 'ارسال نظرات',
 );
 
 /** Finnish (suomi)
