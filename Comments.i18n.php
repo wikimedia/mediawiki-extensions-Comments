@@ -99,7 +99,8 @@ Displayed in a JavaScript popup alert when the user is about to ignore the comme
 	'comments-post' => 'Button text, clicking on this button submits your comment; refer to the [[mw:File:Comments.png|image]] for details',
 	'comments-submit' => 'This text is shown above the comment form (the form where you can submit your own comment(s)); refer to the [[mw:File:Comments.png|image]] for details',
 	'comments-score-text' => "Followed by the comment's score; refer to the [[mw:File:Comments.png|image]] for details",
-	'comments-permalink' => '"Permalink" means "permanent link" and clicking on it creates what is a permanent link to a comment, at least until a (comment) administrator deletes the comment or the whole page gets deleted or the &lt;comments/&gt; tag is removed from it',
+	'comments-permalink' => '"Permalink" means "permanent link" and clicking on it creates what is a permanent link to a comment, at least until a (comment) administrator deletes the comment or the whole page gets deleted or the &lt;comments/&gt; tag is removed from it.
+{{Identical|Permalink}}',
 	'comments-delete-link' => 'Link text; clicking on this deletes the comment (duh)',
 	'comments-anon-name' => "Generic name shown for anonymous (not logged in/unregistered) users, since their IP addresses aren't directly exposed.
 {{Identical|Anonymous user}}",
@@ -1197,7 +1198,7 @@ $messages['ja'] = array(
 	'comments-post' => 'コメントを投稿',
 	'comments-submit' => '自分のコメントを追加',
 	'comments-score-text' => '得点',
-	'comments-permalink' => 'パーマリンク',
+	'comments-permalink' => '固定リンク',
 	'comments-delete-link' => 'コメントを削除',
 	'comments-anon-name' => '匿名利用者',
 	'comments-anon-message' => '{{SITENAME}}は<b>すべてのコメント</b>を歓迎します。匿名で投稿したくない場合は、<a href="$1">アカウント作成</a>または<a href="$2">ログイン</a>してください。無料です。',
