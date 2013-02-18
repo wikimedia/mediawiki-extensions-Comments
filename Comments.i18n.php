@@ -300,15 +300,22 @@ $messages['bn'] = array(
 );
 
 /** Breton (brezhoneg)
+ * @author Fohanno
  * @author Y-M D
  */
 $messages['br'] = array(
 	'comments-comment' => 'Evezhiadenn',
+	'comments-loading' => 'O kargañ...',
+	'comments-reply-to' => 'Respont da',
+	'comments-sort-by-date' => 'Urzhiañ dre zeiziad',
 	'comments-you' => "C'hwi",
 	'comments-reply' => 'Respont',
 	'comments-submit' => "Ouzhpennañ hoc'h evezhiadenn",
+	'comments-anon-name' => 'Implijer dizanv',
+	'comments-ignore-unblock' => 'Distankañ',
 	'comments-ignore-cancel' => 'Nullañ',
 	'commentslog-create-entry' => 'Evezhiadenn nevez',
+	'comments-time-ago' => '$1 zo',
 );
 
 /** Catalan (català)
@@ -1390,6 +1397,7 @@ $messages['lb'] = array(
 	'comments-sort-by-date' => 'Nom Datum zortéieren',
 	'comments-sort-by-score' => 'Nom Score zortéieren',
 	'comments-show-comment-link' => 'Bemierkung weisen',
+	'comments-manage-blocklist-link' => 'Lëscht vun den ignoréierte Bemierkungen geréieren',
 	'comments-ignore-message' => 'Dir ignoréiert den Auteur vun dëser Bemierkung',
 	'comments-you' => 'Dir',
 	'comments-reply' => 'Äntwerten',
@@ -1406,6 +1414,8 @@ $messages['lb'] = array(
 	'comments-ignore-remove-message' => "Sidd Dir sécher datt Dir d'Spär fir d'Bemierkunge vum Benotzer <b>$1</b> ophiewe wëllt?",
 	'comments-ignore-unblock' => 'Spär ophiewen',
 	'comments-ignore-cancel' => 'Ofbriechen',
+	'comments-ignore-title' => 'Lëscht vun den ignoréierte Bemierkungen',
+	'commentignorelist' => 'Lëscht vun den ignoréierte Bemierkungen',
 	'comments-no-comments-of-day' => 'Et gëtt keng Bemierkunge vum Dag.',
 	'commentslogpage' => 'Logbuch vun de Bemierkungen',
 	'commentslog-create-entry' => 'Nei Bemierkung',
@@ -1415,6 +1425,7 @@ $messages['lb'] = array(
 	'comments-time-minutes' => '{{PLURAL:$1|enger Minutt|$1 Minutten}}',
 	'comments-time-seconds' => '{{PLURAL:$1|enger Sekonn|$1 Sekonnen}}',
 	'right-comment' => 'Bemierkunge späicheren',
+	'right-commentadmin' => 'Bemierkunge vu Benotzer verwalten',
 );
 
 /** Lithuanian (lietuvių)
@@ -2319,6 +2330,8 @@ $messages['uk'] = array(
  */
 $messages['zh-hans'] = array(
 	'comments-comment' => '评论',
+	'comments-desc' => '增加<code>&lt;comments&gt;</code>解析器钩，允许在页面上发表评论',
+	'comments-db-locked' => '<h3>添加评论</h3>数据库当前因正在进行日常维护而被锁定，过会它会恢复正常，请稍后再来。',
 	'comments-voted-label' => '已投票',
 	'comments-loading' => '载入中...',
 	'comments-auto-refresher-enable' => '开启评论自动刷新',
@@ -2344,6 +2357,7 @@ $messages['zh-hans'] = array(
 	'comments-delete-link' => '删除评论',
 	'comments-anon-name' => '匿名用户',
 	'comments-anon-message' => '{{SITENAME}}欢迎<b>所有评论</b>。如果您不想匿名，<a href="$1">注册</a>或<a href="$2">登录</a>。它是免费的。',
+	'comments-ignore-item' => '<a href="$1">$2</a>于$3 <a href="$4">（解封）</a>',
 	'comments-ignore-no-users' => '目前没有用户被屏蔽。',
 	'comments-ignore-remove-message' => '您确定要解封<b>$1</b>的评论吗？',
 	'comments-ignore-unblock' => '解封',
