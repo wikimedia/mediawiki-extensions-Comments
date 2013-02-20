@@ -94,6 +94,7 @@ Displayed in a JavaScript popup alert when the user is about to ignore the comme
 	'comments-manage-blocklist-link' => 'When a user who is on your comment ignore list has posted a comment, you are shown an explanation ({{msg-mw|Comments-ignore-message}}) and options on what to do ({{msg-mw|Comments-show-comment-link}} and this message). Clicking on this link will take you to Special:CommentIgnoreList, where you can remove people from your comment ignore list.',
 	'comments-ignore-message' => "Shown in the output of the <comments /> tag instead of the person's comment if you're ignoring the said person.",
 	'comments-you' => 'Refer to the [[mw:File:Comments.png|image]] for details.',
+	'comments-reply' => '{{Identical|Reply}}',
 	'comments-login-required' => 'Shown when the user does not have the "comment" user right and they are logged out but a page contains the &lt;comments /&gt; tag.',
 	'comments-not-allowed' => 'Shown when the user does not have the "comment" user right but a page contains the &lt;comments /&gt; tag.',
 	'comments-post' => 'Button text, clicking on this button submits your comment; refer to the [[mw:File:Comments.png|image]] for details',
