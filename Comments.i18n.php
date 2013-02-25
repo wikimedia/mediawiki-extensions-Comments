@@ -80,6 +80,7 @@ $messages['qqq'] = array(
 	'comments-desc' => '{{desc|name=Comments|url=http://www.mediawiki.org/wiki/Extension:Comments}}',
 	'comments-db-locked' => 'Displayed if a page contains the &lt;comments /&gt; tag while the database is locked.',
 	'comments-voted-label' => 'Shown when you have voted (either thumbs up or thumbs down) for a given comment',
+	'comments-loading' => '{{Identical|Loading}}',
 	'comments-auto-refresher-enable' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
 	'comments-auto-refresher-pause' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
 	'comments-reply-to' => 'This message is followed by the user\'s username whom you\'re about to reply to. For example, "Reply to Jack Phoenix".',
