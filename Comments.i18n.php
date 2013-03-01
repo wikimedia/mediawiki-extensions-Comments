@@ -303,16 +303,22 @@ $messages['bn'] = array(
 
 /** Breton (brezhoneg)
  * @author Fohanno
+ * @author Fulup
  * @author Y-M D
  */
 $messages['br'] = array(
 	'comments-comment' => 'Evezhiadenn',
+	'comments-voted-label' => 'Votet',
 	'comments-loading' => 'O kargañ...',
 	'comments-reply-to' => 'Respont da',
+	'comments-cancel-reply' => 'Nullañ',
 	'comments-sort-by-date' => 'Urzhiañ dre zeiziad',
 	'comments-you' => "C'hwi",
 	'comments-reply' => 'Respont',
 	'comments-submit' => "Ouzhpennañ hoc'h evezhiadenn",
+	'comments-score-text' => 'Poentoù',
+	'comments-permalink' => 'Peurliamm',
+	'comments-delete-link' => 'Diverkañ an evezhiadenn',
 	'comments-anon-name' => 'Implijer dizanv',
 	'comments-ignore-unblock' => 'Distankañ',
 	'comments-ignore-cancel' => 'Nullañ',
