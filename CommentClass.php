@@ -46,6 +46,8 @@ class Comment {
 	static function getTimeOffset( $time, $timeabrv, $timename ) {
 		$timeStr = ''; // misza: initialize variables, DUMB FUCKS!
 		if( $time[$timeabrv] > 0 ) {
+			// Give grep a chance to find the usages:
+			// comments-time-days, comments-time-hours, comments-time-minutes, comments-time-seconds
 			$timeStr = wfMsgExt( "comments-time-{$timename}", 'parsemag', $time[$timeabrv] );
 		}
 		if( $timeStr ) {
