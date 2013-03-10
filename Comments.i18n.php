@@ -933,17 +933,23 @@ $messages['gl'] = array(
  */
 $messages['he'] = array(
 	'comments-comment' => 'תגובה',
+	'comments-db-locked' => '<h3>הוספת הערות</h3>מסד הנתונים נעול כעת עקב תחזוקה שגרתית במסד הנתונים, לאחר מכן האתר ישוב לקדמותו. אנא בדוק שנית במועד מאוחר יותר!',
 	'comments-voted-label' => 'הצבעה',
 	'comments-loading' => 'טוען...',
 	'comments-auto-refresher-enable' => 'אפשר רענון אוטומטי של תגובה',
 	'comments-auto-refresher-pause' => 'מנע רענון אוטומטי של תגובה',
 	'comments-reply-to' => 'השב אל',
 	'comments-cancel-reply' => 'ביטול',
+	'comments-sort-by-date' => 'מיין לפי שם',
+	'comments-sort-by-score' => 'מיין לפי ציון',
+	'comments-show-comment-link' => 'הצג הערה',
+	'comments-manage-blocklist-link' => 'ניהול רשימת התעלמות',
 	'comments-you' => 'אתה',
 	'comments-reply' => 'השב',
 	'comments-post' => 'פרסם תגובה',
 	'comments-submit' => 'הוסף את ההערה שלך',
 	'comments-score-text' => 'תוצאה',
+	'comments-permalink' => 'קישור קבוע',
 	'comments-delete-link' => 'מחק תגובה',
 	'comments-anon-name' => 'משתמש אנונימי',
 	'comments-ignore-unblock' => 'ביטול חסימה',
@@ -957,6 +963,7 @@ $messages['he'] = array(
 	'comments-time-seconds' => '{{PLURAL:$1|שנייה אחת|$1 שניות}}',
 	'log-show-hide-comments' => '$1 יומן ההערות',
 	'group-commentadmin' => 'הערה מנהלית',
+	'right-comment' => 'שלח הערות',
 );
 
 /** Hindi (हिन्दी)
