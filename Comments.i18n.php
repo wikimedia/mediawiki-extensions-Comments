@@ -87,7 +87,7 @@ $messages['qqq'] = array(
 	'comments-block-warning-anon' => '{{doc-singularthey}}
 Displayed in a JavaScript popup alert when the user is about to ignore the comments of an anonymous user.',
 	'comments-block-warning-user' => "Displayed in a JavaScript pop-up alert when the user is about to ignore a registered user's comments. Parameters:
-* $1 is the user name of the user whose comments we're about to ignore.",
+* $1 - the user name of the user whose comments we're about to ignore; can be used for GENDER",
 	'comments-delete-warning' => "Displayed in a JavaScript popup alert when the user is about to delete someone's comment.",
 	'comments-sort-by-date' => 'Drop-down menu item; refer to the [[mw:File:Comments.png|image]] for details',
 	'comments-sort-by-score' => 'Drop-down menu item; refer to the [[mw:File:Comments.png|image]] for details',
