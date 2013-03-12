@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "DqAmdNbg",
+        "filename": "Comment.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-03-12T15:07:13Z",
+      "side": 1,
+      "message": "poster should be a exact gender value or a mw.User object. I this case I guess it is user name or real name of the poster. that wont work\n\nUsage {{gender:[ gender | mw.user object ] | masculine form|feminine form|neutral form}}.\n The first node is either a string, which can be \"male\" or \"female\",\nor a User object (not a username).\n\n\nAnd missing dependency to mediawiki.jqueryMsg",
+      "revId": "7c890ea15ab6400f3b7314a72889158ade9087ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
