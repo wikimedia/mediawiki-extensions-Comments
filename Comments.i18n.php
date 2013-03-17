@@ -110,16 +110,28 @@ Displayed in a JavaScript popup alert when the user is about to ignore the comme
 Parameters:
 * $1 - the URL to [[Special:UserLogin]]
 * $2 - the URL to [[Special:UserLogin/signup]]',
-	'comments-ignore-item' => "Shown on Special:CommentIgnoreList. $1 is the URL to the blocked user's user page, $2 is the name of the blocked user, $3 is the timestamp (when the user was blocked) and $4 is the URL to the unblock form.",
+	'comments-ignore-item' => "Shown on Special:CommentIgnoreList. Parameters:
+* $1 - the URL to the blocked user's user page
+* $2 - the name of the blocked user
+* $3 - the timestamp (when the user was blocked) (format: Y-m-d H:i:s)
+* $4 - the URL to the unblock form",
 	'comments-ignore-no-users' => "Shown on Special:CommentIgnoreList if you haven't blocked anyone's comments.",
-	'comments-ignore-remove-message' => "Confirmation message, shown when the user is about to unblock someone's comments on Special:CommentIgnoreList. $1 is the username of the user whose comments the user has blocked.",
+	'comments-ignore-remove-message' => "Confirmation message, shown when the user is about to unblock someone's comments on Special:CommentIgnoreList.
+
+Parameters:
+* $1 - the username of the user whose comments the user has blocked",
 	'comments-ignore-title' => 'Title of Special:CommentIgnoreList, as shown on the said page.',
 	'commentignorelist' => "Title of Special:CommentIgnoreList, as shown on [[Special:SpecialPages]]; the comment ignore list contains a list of users whose comments you are ignoring; an ignored comment won't show up by default and you have to click on a special link to view it",
 	'comments-no-comments-of-day' => 'Shown as the output of the &lt;commentsoftheday/&gt; parser hook if there are no comments of the day',
 	'commentslogpage' => 'Shown on the dropdown on [[Special:Log]].',
 	'commentslogpagetext' => 'Explanation of the comments log, shown on [[Special:Log]].',
 	'commentslog-create-entry' => 'Log entry for [[Special:Log]]',
-	'comments-time-ago' => '$1 is one of the following messages: {{msg-mw|comments-time-days}}, {{msg-mw|comments-time-hours}}, {{msg-mw|comments-time-minutes}}, {{msg-mw|comments-time-seconds}}',
+	'comments-time-ago' => 'Parameters:
+* $1 - one of the following messages:
+** {{msg-mw|comments-time-days}}
+** {{msg-mw|comments-time-hours}}
+** {{msg-mw|comments-time-minutes}}
+** {{msg-mw|comments-time-seconds}}',
 	'comments-time-days' => 'See also:
 * {{msg-mw|Comments-time-ago}}
 * {{msg-mw|Comments-time-hours}}
@@ -142,7 +154,8 @@ Parameters:
 * {{msg-mw|Comments-time-days}}
 * {{msg-mw|Comments-time-hours}}
 * {{msg-mw|Comments-time-minutes}}',
-	'log-show-hide-comments' => 'For [[Special:Log]]; $1 is show or hide (there are probably some MW core messages for those two)',
+	'log-show-hide-comments' => 'For [[Special:Log]]. Parameters:
+* $1 - show or hide (there are probably some MW core messages for those two)',
 	'group-commentadmin' => "Shown on [[Special:ListUsers]]. Members of this group can delete other users' comments.
 {{doc-group|commentadmin}}",
 	'group-commentadmin-member' => 'Member of the Comment Administrators (commentadmin) group, shown on [[Special:ListUsers]].
