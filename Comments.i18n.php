@@ -84,6 +84,8 @@ $messages['qqq'] = array(
 	'comments-auto-refresher-enable' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
 	'comments-auto-refresher-pause' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
 	'comments-reply-to' => 'This message is followed by the user\'s username whom you\'re about to reply to. For example, "Reply to Jack Phoenix".',
+	'comments-cancel-reply' => 'Used as link text in JavaScript code.
+{{Identical|Cancel}}',
 	'comments-block-warning-anon' => '{{doc-singularthey}}
 Displayed in a JavaScript popup alert when the user is about to ignore the comments of an anonymous user.',
 	'comments-block-warning-user' => "Displayed in a JavaScript pop-up alert when the user is about to ignore a registered user's comments. Parameters:
@@ -120,8 +122,13 @@ Parameters:
 
 Parameters:
 * $1 - the username of the user whose comments the user has blocked",
+	'comments-ignore-unblock' => 'Used as Submit button text.
+{{Identical|Unblock}}',
+	'comments-ignore-cancel' => 'Used as Cancel button text.
+{{Identical|Cancel}}',
 	'comments-ignore-title' => 'Title of Special:CommentIgnoreList, as shown on the said page.',
-	'commentignorelist' => "Title of Special:CommentIgnoreList, as shown on [[Special:SpecialPages]]; the comment ignore list contains a list of users whose comments you are ignoring; an ignored comment won't show up by default and you have to click on a special link to view it",
+	'commentignorelist' => "{{doc-special|CommentIgnoreList}}
+The comment ignore list contains a list of users whose comments you are ignoring; an ignored comment won't show up by default and you have to click on a special link to view it",
 	'comments-no-comments-of-day' => 'Shown as the output of the &lt;commentsoftheday/&gt; parser hook if there are no comments of the day',
 	'commentslogpage' => 'Shown on the dropdown on [[Special:Log]].',
 	'commentslogpagetext' => 'Explanation of the comments log, shown on [[Special:Log]].',
