@@ -495,6 +495,7 @@ $messages['de-formal'] = array(
 
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
+ * @author Mirzali
  */
 $messages['diq'] = array(
 	'comments-comment' => 'Vacayış',
@@ -509,7 +510,7 @@ $messages['diq'] = array(
 	'comments-submit' => 'Vatışa xo dekere de',
 	'comments-score-text' => 'Skor',
 	'comments-permalink' => 'Greyo Daimi',
-	'comments-anon-name' => 'Karbero anonim',
+	'comments-anon-name' => 'Karbero bêname',
 	'comments-ignore-unblock' => 'bloqi hewad',
 	'comments-ignore-cancel' => 'Bıterkne',
 	'commentslog-create-entry' => 'Vatışo newe',
@@ -1664,6 +1665,16 @@ $messages['mt'] = array(
 	'commentslogpage' => 'Reġistru tal-kummenti',
 	'commentslogpagetext' => 'Dan huwa reġistru tal-kummenti.',
 	'commentslog-create-entry' => 'Kumment ġdid',
+);
+
+/** Low German (Plattdüütsch)
+ * @author Joachim Mos
+ */
+$messages['nds'] = array(
+	'comments-comment' => 'Kommentar',
+	'comments-loading' => 'Läädt…',
+	'comments-cancel-reply' => 'Afbreken',
+	'comments-you' => 'Du',
 );
 
 /** Dutch (Nederlands)
