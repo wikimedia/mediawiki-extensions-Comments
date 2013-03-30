@@ -1454,6 +1454,7 @@ $messages['lb'] = array(
 	'commentignorelist' => 'Lëscht vun den ignoréierte Bemierkungen',
 	'comments-no-comments-of-day' => 'Et gëtt keng Bemierkunge vum Dag.',
 	'commentslogpage' => 'Logbuch vun de Bemierkungen',
+	'commentslogpagetext' => 'Dëst ass eng Lëscht vun all Bemierkungen.',
 	'commentslog-create-entry' => 'Nei Bemierkung',
 	'comments-time-ago' => 'viru(n) $1',
 	'comments-time-days' => '{{PLURAL:$1|engem Dag|$1 Deeg}}',
