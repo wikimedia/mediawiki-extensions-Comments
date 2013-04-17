@@ -356,6 +356,7 @@ $messages['ca'] = array(
 	'comments-loading' => 'Carregant...',
 	'comments-reply-to' => 'Respon a',
 	'comments-cancel-reply' => 'Cancel·la',
+	'comments-delete-warning' => 'Esteu segurs de voler suprimir aquest comentari?',
 	'comments-sort-by-date' => 'Ordena per data',
 	'comments-sort-by-score' => 'Ordena per puntuació',
 	'comments-show-comment-link' => 'Mostra el comentari',
