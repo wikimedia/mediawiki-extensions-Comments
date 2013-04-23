@@ -1447,6 +1447,7 @@ $messages['lb'] = array(
 	'comments-delete-link' => 'Bemierkung läschen',
 	'comments-anon-name' => 'Anonyme Benotzer',
 	'comments-anon-message' => '{{SITENAME}} freet sech iwwer <b>all Bemierkungen</b>. Wann Dir net anonym bleiwe wëllt, <a href="$1">da mellt Iech w.e.g. un</a> oder <a href="$2">loggt Iech an</a>. Et ass gratis.',
+	'comments-ignore-item' => '<a href="$1">$2</a> ëm $3 <a href="$4">(Spär ophiewen)</a>',
 	'comments-ignore-no-users' => 'Et sinn elo keng Benotzer gespaart.',
 	'comments-ignore-remove-message' => "Sidd Dir sécher datt Dir d'Spär fir d'Bemierkunge vum Benotzer <b>$1</b> ophiewe wëllt?",
 	'comments-ignore-unblock' => 'Spär ophiewen',
