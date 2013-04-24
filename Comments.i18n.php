@@ -1991,6 +1991,7 @@ $messages['roa-tara'] = array(
 	'comments-ignore-message' => "Tu ste cache l'autore de stu commende",
 	'comments-you' => 'Tu',
 	'comments-reply' => 'Respunne',
+	'comments-login-required' => 'Tu à trasè pe aggiungere commende',
 	'comments-not-allowed' => 'Non ge sì abbilitate a mannà commende.',
 	'comments-post' => "Mitte 'nu commende",
 	'comments-submit' => "Aggiunge 'u commende tune",
