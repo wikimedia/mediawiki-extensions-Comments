@@ -76,7 +76,8 @@ $messages['en'] = array(
  * @author Siebrand
  */
 $messages['qqq'] = array(
-	'comments-comment' => 'This message might be unused.',
+	'comments-comment' => 'This message might be unused.
+{{Identical|Comment}}',
 	'comments-desc' => '{{desc|name=Comments|url=http://www.mediawiki.org/wiki/Extension:Comments}}',
 	'comments-db-locked' => 'Displayed if a page contains the &lt;comments /&gt; tag while the database is locked.',
 	'comments-voted-label' => 'Shown when you have voted (either thumbs up or thumbs down) for a given comment',
