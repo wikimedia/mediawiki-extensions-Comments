@@ -134,22 +134,26 @@ function displayComments( $input, $args, $parser ) {
 		$voting = $args['voting'];
 	}
 
-	$comment = new Comment( $wgOut->getTitle()->getArticleID() );
-	$comment->setAllow( $allow );
-	$comment->setVoting( $voting );
+	$title = $wgOut->getTitle();
+	$output = null;
+	if( $title ) {
+		$comment = new Comment( $title->getArticleID() );
+		$comment->setAllow( $allow );
+		$comment->setVoting( $voting );
 
-	// This was originally commented out, I don't know why.
-	// Uncommented to prevent E_NOTICE.
-	$output = $comment->displayOrderForm();
+		// This was originally commented out, I don't know why.
+		// Uncommented to prevent E_NOTICE.
+		$output = $comment->displayOrderForm();
 
-	$output .= '<div id="allcomments">' . $comment->display() . '</div>';
+		$output .= '<div id="allcomments">' . $comment->display() . '</div>';
 
-	// If the database is in read-only mode, display a message informing the
-	// user about that, otherwise allow them to comment
-	if( !wfReadOnly() ) {
-		$output .= $comment->displayForm();
-	} else {
-		$output .= wfMsg( 'comments-db-locked' );
+		// If the database is in read-only mode, display a message informing the
+		// user about that, otherwise allow them to comment
+		if( !wfReadOnly() ) {
+			$output .= $comment->displayForm();
+		} else {
+			$output .= wfMsg( 'comments-db-locked' );
+		}
 	}
 
 	wfProfileOut( __METHOD__ );
