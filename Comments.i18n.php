@@ -1427,6 +1427,7 @@ $messages['lb'] = array(
 	'comments-db-locked' => "<h3>Bemierkungen derbäisetzen</h3> D'Datebank ass elo wéinst Maintenance-Aarbechte gespaart. Probéiert w.e.g. méi spéit nach eng Kéier.",
 	'comments-voted-label' => 'Ofgestëmmt',
 	'comments-loading' => 'Lueden...',
+	'comments-auto-refresher-enable' => 'Automatesch Aktualisatioun vun de Bemierkungen aschalten',
 	'comments-reply-to' => 'Äntwerten',
 	'comments-cancel-reply' => 'Ofbriechen',
 	'comments-block-warning-anon' => 'Sidd Dir sécher datt Dir definitiv all Bemierkunge vun dësem anonyme Benotzer (iwwer seng IP-Adress) ignoréiere wëllt?',
