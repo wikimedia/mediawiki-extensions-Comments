@@ -1982,12 +1982,17 @@ $messages['ro'] = array(
  */
 $messages['roa-tara'] = array(
 	'comments-comment' => 'Commende',
+	'comments-desc' => 'Aggiunge <code>&lt;comments&gt;</code> cumme gance analizzatrice ca permette de commendà sus a le pàggene',
+	'comments-db-locked' => "<h3>Aggiunde de commende</h3>'U database jè bloccate pe mò pe manutenzione, apprisse ca spicce torne normale. Pe piacere pruève cchiù tarde!",
 	'comments-voted-label' => 'Vutate',
 	'comments-loading' => 'Stoche a careche…',
 	'comments-auto-refresher-enable' => "Abbilite l'aggiornamende automateche de le commende",
 	'comments-auto-refresher-pause' => "Firme l'aggiornamende automateche de le commende",
 	'comments-reply-to' => 'Respunne a',
 	'comments-cancel-reply' => 'Annulle',
+	'comments-block-warning-anon' => "Sì secure ca non ge vuè ccu pinze a le commende pe sembre da stu utende anonime (ausanne l'indirizze IP sue)?",
+	'comments-block-warning-user' => "Sì secure ca non ge vuè ccu pinze a le commende pe sembre da l'utende $1?",
+	'comments-delete-warning' => 'Sì secure ca vuè ccu scangille stu commende?',
 	'comments-sort-by-date' => 'Ordine pe date',
 	'comments-sort-by-score' => 'Ordine pe pundegge',
 	'comments-show-comment-link' => "Fà vedè 'u commende",
@@ -2006,6 +2011,7 @@ $messages['roa-tara'] = array(
 	'comments-anon-message' => '{{SITENAME}} bovègne a <b>tutte le commende</b>. Ce tu non ge vuè essere anonime, <a href="$1">reggistrate</a> o <a href="$2">tràse</a>. Jè libbere.',
 	'comments-ignore-item' => '<a href="$1">$2</a> a le $3 <a href="$4">(sblocche)</a>',
 	'comments-ignore-no-users' => 'Non ge stonne utinde bloccate pe mò.',
+	'comments-ignore-remove-message' => "Sì secure ca vuè ccu sblocche le commende de l'utende <b>$1</b>?",
 	'comments-ignore-unblock' => 'Sblocche',
 	'comments-ignore-cancel' => 'Annulle',
 	'comments-ignore-title' => "Commende l'elenghe de scarte",
@@ -2024,6 +2030,7 @@ $messages['roa-tara'] = array(
 	'group-commentadmin-member' => "{{GENDER:$1|amministratore d'u commende}}",
 	'grouppage-commentadmin' => "{{ns:project}}:Amministrature d'u commende",
 	'right-comment' => 'Conferme le commende',
+	'right-commentadmin' => 'Gestisce le commende de le utinde confermate',
 );
 
 /** Russian (русский)
