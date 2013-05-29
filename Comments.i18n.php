@@ -1934,6 +1934,14 @@ $messages['ps'] = array(
 	'right-comment' => 'تبصرې سپارل',
 );
 
+/** Brazilian Portuguese (português do Brasil)
+ * @author Luckas
+ */
+$messages['pt-br'] = array(
+	'comments-cancel-reply' => 'Cancelar',
+	'comments-ignore-cancel' => 'Cancelar',
+);
+
 /** Romanian (română)
  * @author Firilacroco
  * @author Minisarm
