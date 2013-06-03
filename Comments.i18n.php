@@ -187,7 +187,7 @@ $messages['af'] = array(
 	'comments-time-minutes' => '{{PLURAL:$1|$1 minuut|$1 minute}}',
 );
 
-/** Assamese (অসমীয়া)
+/** Assamese (অসমীয়া)
  * @author Bishnu Saikia
  */
 $messages['as'] = array(
@@ -1762,7 +1762,7 @@ $messages['nl-informal'] = array(
 	'comments-ignore-remove-message' => 'Weet je zeker dat je de reacties van <b>$1</b> weer wilt zien?',
 );
 
-/** Oriya (ଓଡ଼ିଆ)
+/** Oriya (ଓଡ଼ିଆ)
  * @author Ansumang
  * @author Jnanaranjan Sahu
  */
