@@ -392,6 +392,13 @@ $messages['ca'] = array(
 	'group-commentadmin-member' => '{{GENDER:$1|adminsitrador|administradora}} de comentaris',
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'comments-loading' => 'Чуйолуш…',
+);
+
 /** Czech (česky)
  * @author Vks
  */
