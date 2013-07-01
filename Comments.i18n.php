@@ -347,6 +347,13 @@ $messages['br'] = array(
 	'comments-time-ago' => '$1 zo',
 );
 
+/** Bosnian (bosanski)
+ * @author CERminator
+ */
+$messages['bs'] = array(
+	'comments-delete-warning' => 'Da li ste sigurni da želite obrisati ovaj komentar?',
+);
+
 /** Catalan (català)
  * @author Arnaugir
  * @author Pitort
