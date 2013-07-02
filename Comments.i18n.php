@@ -417,6 +417,13 @@ $messages['cs'] = array(
 	'right-comment' => 'Odeslat komentář',
 );
 
+/** Welsh (Cymraeg)
+ * @author Lloffiwr
+ */
+$messages['cy'] = array(
+	'comments-delete-warning' => "Ydych chi'n siwr eich bod am ddileu'r sylw hwn?",
+);
+
 /** Danish (dansk)
  * @author Tjernobyl
  */
