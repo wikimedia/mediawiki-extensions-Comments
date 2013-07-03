@@ -1783,6 +1783,27 @@ $messages['nl-informal'] = array(
 	'comments-ignore-remove-message' => 'Weet je zeker dat je de reacties van <b>$1</b> weer wilt zien?',
 );
 
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'comments-comment' => 'Comentari',
+	'comments-voted-label' => 'Votat',
+	'comments-loading' => 'Cargament...',
+	'comments-reply-to' => 'Respondre a',
+	'comments-cancel-reply' => 'Anullar',
+	'comments-sort-by-date' => 'Triar per data',
+	'comments-you' => 'Vos',
+	'comments-reply' => 'Respondre',
+	'comments-permalink' => 'Ligam permanent',
+	'comments-ignore-unblock' => 'Desblocar',
+	'comments-ignore-cancel' => 'Anullar',
+	'comments-time-days' => '{{PLURAL:$1|un jorn|$1 jorns}}',
+	'comments-time-hours' => '{{PLURAL:$1|una ora|$1 oras}}',
+	'comments-time-minutes' => '{{PLURAL:$1|una minuta|$1 minutas}}',
+	'comments-time-seconds' => '{{PLURAL:$1|una segonda|$1 segondas}}',
+);
+
 /** Oriya (ଓଡ଼ିଆ)
  * @author Ansumang
  * @author Jnanaranjan Sahu
