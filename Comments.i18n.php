@@ -60,9 +60,9 @@ $messages['en'] = array(
 	'comments-time-seconds' => '{{PLURAL:$1|one second|$1 seconds}}',
 	'log-show-hide-comments' => '$1 comment log', // For Special:Log
 	// For Special:ListUsers - new commentadmin group
-	'group-commentadmin' => 'Comment Administrators',
+	'group-commentadmin' => 'Comment administrators',
 	'group-commentadmin-member' => '{{GENDER:$1|comment administrator}}',
-	'grouppage-commentadmin' => '{{ns:project}}:Comment Administrators',
+	'grouppage-commentadmin' => '{{ns:project}}:Comment administrators',
 	// For Special:ListGroupRights
 	'right-comment' => 'Submit comments',
 	'right-commentadmin' => 'Administrate user-submitted comments',
