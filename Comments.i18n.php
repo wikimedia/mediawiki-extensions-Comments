@@ -1454,6 +1454,7 @@ $messages['lb'] = array(
 	'comments-voted-label' => 'Ofgestëmmt',
 	'comments-loading' => 'Lueden...',
 	'comments-auto-refresher-enable' => 'Automatesch Aktualisatioun vun de Bemierkungen aschalten',
+	'comments-auto-refresher-pause' => 'Automatesch Aktualisatioun vun de Bemierkungen ausschalten',
 	'comments-reply-to' => 'Äntwerten',
 	'comments-cancel-reply' => 'Ofbriechen',
 	'comments-block-warning-anon' => 'Sidd Dir sécher datt Dir definitiv all Bemierkunge vun dësem anonyme Benotzer (iwwer seng IP-Adress) ignoréiere wëllt?',
