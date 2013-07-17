@@ -404,6 +404,7 @@ $messages['ca'] = array(
  */
 $messages['ce'] = array(
 	'comments-loading' => 'Чуйолуш…',
+	'comments-submit' => 'ТӀетоха хьай къамел',
 );
 
 /** Czech (česky)
@@ -736,16 +737,22 @@ $messages['et'] = array(
 
 /** Persian (فارسی)
  * @author Mahdiz
+ * @author Reza1615
  * @author پاناروما
  */
 $messages['fa'] = array(
 	'comments-comment' => 'نظر',
 	'comments-voted-label' => 'رای',
 	'comments-loading' => 'در حال بارگذاری...',
+	'comments-auto-refresher-enable' => 'فعال کردن تازه‌شوندهٔ خودکار نظر',
+	'comments-auto-refresher-pause' => 'متوقف کردن تازه‌شوندهٔ خودکار نظر',
 	'comments-reply-to' => 'پاسخ به',
 	'comments-cancel-reply' => 'لغو کردن',
+	'comments-delete-warning' => 'آیا مطمئن هستید که می خواهید این نظر را حذف کنید؟',
 	'comments-sort-by-date' => 'مرتب سازی بر اساس تاریخ',
+	'comments-sort-by-score' => 'مرتب کردن بر اساس نمره',
 	'comments-show-comment-link' => 'نمایش نظرها',
+	'comments-manage-blocklist-link' => 'مدیریت فهرست چشم‌پوشی',
 	'comments-you' => 'شما',
 	'comments-reply' => 'پاسخ دادن',
 	'comments-login-required' => 'برای نظردهی لازم است ابتدا وارد سامانه شوید',
