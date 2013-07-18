@@ -404,7 +404,9 @@ $messages['ca'] = array(
  */
 $messages['ce'] = array(
 	'comments-loading' => 'Чуйолуш…',
+	'comments-cancel-reply' => 'Цаоьшу',
 	'comments-submit' => 'ТӀетоха хьай къамел',
+	'comments-ignore-cancel' => 'Цаоьшу',
 );
 
 /** Czech (česky)
@@ -736,32 +738,38 @@ $messages['et'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Alireza
  * @author Mahdiz
  * @author Reza1615
+ * @author Taha
  * @author پاناروما
  */
 $messages['fa'] = array(
 	'comments-comment' => 'نظر',
 	'comments-voted-label' => 'رای',
 	'comments-loading' => 'در حال بارگذاری...',
-	'comments-auto-refresher-enable' => 'فعال کردن تازه‌شوندهٔ خودکار نظر',
-	'comments-auto-refresher-pause' => 'متوقف کردن تازه‌شوندهٔ خودکار نظر',
+	'comments-auto-refresher-enable' => 'فعال‌کردن تازه‌کنندهٔ خودکار نظر',
+	'comments-auto-refresher-pause' => 'متوقف‌کردن تازه‌کنندهٔ خودکار نظر',
 	'comments-reply-to' => 'پاسخ به',
 	'comments-cancel-reply' => 'لغو کردن',
-	'comments-delete-warning' => 'آیا مطمئن هستید که می خواهید این نظر را حذف کنید؟',
+	'comments-delete-warning' => 'آیا مطمئن هستید که می‌خواهید این نظر را حذف کنید؟',
 	'comments-sort-by-date' => 'مرتب سازی بر اساس تاریخ',
-	'comments-sort-by-score' => 'مرتب کردن بر اساس نمره',
+	'comments-sort-by-score' => 'مرتب کردن بر اساس امتیاز',
 	'comments-show-comment-link' => 'نمایش نظرها',
 	'comments-manage-blocklist-link' => 'مدیریت فهرست چشم‌پوشی',
+	'comments-ignore-message' => 'شما از نویسنده این نظر چشم‌پوشی می‌کنید',
 	'comments-you' => 'شما',
 	'comments-reply' => 'پاسخ دادن',
 	'comments-login-required' => 'برای نظردهی لازم است ابتدا وارد سامانه شوید',
+	'comments-not-allowed' => 'شما مجاز به ارسال نظر نیستید.',
 	'comments-post' => 'ارسال نظر',
 	'comments-submit' => 'اضافه کردن نظر شما',
 	'comments-score-text' => 'امتیاز',
 	'comments-permalink' => 'پیوند پایدار',
 	'comments-delete-link' => 'حذف نظر',
 	'comments-anon-name' => 'کاربر ناشناس',
+	'comments-anon-message' => '{{SITENAME}} <b>از همه نظرات</b> استقبال می‌کند. اگر شما نمی‌خواهید به صورت ناشناس باشید، <a href="<span class=" notranslate"="" translate="no">$1 "> ثبت نام کنید</a> یا <a href="<span class=" notranslate"="" translate="no">$2" > وارد سامانه شوید.</a>. این عمل رایگان است.',
+	'comments-ignore-no-users' => 'هیچ کاربری در حال حاضر بسته نشده است.',
 	'comments-ignore-unblock' => 'باز شود',
 	'comments-ignore-cancel' => 'لغو کردن',
 	'commentslog-create-entry' => 'نظر جدید',
