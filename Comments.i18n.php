@@ -407,6 +407,7 @@ $messages['ce'] = array(
 	'comments-cancel-reply' => 'Цаоьшу',
 	'comments-submit' => 'ТӀетоха хьай къамел',
 	'comments-ignore-cancel' => 'Цаоьшу',
+	'comments-time-ago' => '$1 юха',
 );
 
 /** Czech (česky)
