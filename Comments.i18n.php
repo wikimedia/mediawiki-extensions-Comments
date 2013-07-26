@@ -139,7 +139,8 @@ The comment ignore list contains a list of users whose comments you are ignoring
 ** {{msg-mw|comments-time-days}}
 ** {{msg-mw|comments-time-hours}}
 ** {{msg-mw|comments-time-minutes}}
-** {{msg-mw|comments-time-seconds}}',
+** {{msg-mw|comments-time-seconds}}
+{{Identical|$1 ago}}',
 	'comments-time-days' => 'See also:
 * {{msg-mw|Comments-time-ago}}
 * {{msg-mw|Comments-time-hours}}
@@ -161,7 +162,8 @@ The comment ignore list contains a list of users whose comments you are ignoring
 * {{msg-mw|Comments-time-ago}}
 * {{msg-mw|Comments-time-days}}
 * {{msg-mw|Comments-time-hours}}
-* {{msg-mw|Comments-time-minutes}}',
+* {{msg-mw|Comments-time-minutes}}
+{{Identical|Second}}',
 	'log-show-hide-comments' => 'For [[Special:Log]]. Parameters:
 * $1 - show or hide (there are probably some MW core messages for those two)',
 	'group-commentadmin' => "Shown on [[Special:ListUsers]]. Members of this group can delete other users' comments.
