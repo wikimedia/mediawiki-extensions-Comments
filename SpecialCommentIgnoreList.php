@@ -20,28 +20,35 @@ class CommentIgnoreList extends SpecialPage {
 	 * @param $par Mixed: parameter passed to the page or null
 	 */
 	public function execute( $par ) {
-		global $wgUser, $wgOut, $wgRequest;
+		$out = $this->getOutput();
+		$request = $this->getRequest();
+		$user = $this->getUser();
 
-		$user_name = $wgRequest->getVal( 'user' );
+		$user_name = $request->getVal( 'user' );
 
 		/**
 		 * Redirect anonymous users to Login Page
 		 * It will automatically return them to the CommentIgnoreList page
 		 */
-		if( $wgUser->getID() == 0 && $user_name == '' ) {
+		if ( $user->getID() == 0 && $user_name == '' ) {
 			$loginPage = SpecialPage::getTitleFor( 'Userlogin' );
-			$wgOut->redirect( $loginPage->getLocalURL( 'returnto=Special:CommentIgnoreList' ) );
+			$out->redirect( $loginPage->getLocalURL( 'returnto=Special:CommentIgnoreList' ) );
 			return false;
 		}
 
-		$wgOut->setPageTitle( wfMsg( 'comments-ignore-title' ) );
+		$out->setPageTitle( $this->msg( 'comments-ignore-title' )->text() );
 
-		$out = ''; // Prevent E_NOTICE
+		$output = ''; // Prevent E_NOTICE
 
-		if( $user_name == '' ) {
-			$out .= $this->displayCommentBlockList();
+		if ( $user_name == '' ) {
+			$output .= $this->displayCommentBlockList();
 		} else {
-			if( $wgRequest->wasPosted() ) {
+			if ( $request->wasPosted() ) {
+				// Check for cross-site request forgeries (CSRF)
+				if ( !$user->matchEditToken( $request->getVal( 'token' ) ) ) {
+					$out->addWikiMsg( 'sessionfailure' );
+					return;
+				}
 				$user_name = htmlspecialchars_decode( $user_name );
 				$user_id = User::idFromName( $user_name );
 				// Anons can be comment-blocked, but idFromName returns nothing
@@ -50,18 +57,18 @@ class CommentIgnoreList extends SpecialPage {
 					$user_id = 0;
 				}
 				$c = new Comment( 0 );
-				$c->deleteBlock( $wgUser->getID(), $user_id );
-				if( $user_id && class_exists( 'UserStatsTrack' ) ) {
+				$c->deleteBlock( $user->getID(), $user_id );
+				if ( $user_id && class_exists( 'UserStatsTrack' ) ) {
 					$stats = new UserStatsTrack( $user_id, $user_name );
 					$stats->decStatField( 'comment_ignored' );
 				}
-				$out .= $this->displayCommentBlockList();
+				$output .= $this->displayCommentBlockList();
 			} else {
-				$out .= $this->confirmCommentBlockDelete();
+				$output .= $this->confirmCommentBlockDelete();
 			}
 		}
 
-		$wgOut->addHTML( $out );
+		$out->addHTML( $output );
 	}
 
 	/**
@@ -69,33 +76,34 @@ class CommentIgnoreList extends SpecialPage {
 	 * @return HTML
 	 */
 	function displayCommentBlockList() {
-		global $wgUser;
+		$lang = $this->getLanguage();
+		$title = $this->getTitle();
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'Comments_block',
 			array( 'cb_user_name_blocked', 'cb_date' ),
-			array( 'cb_user_id' => $wgUser->getID() ),
+			array( 'cb_user_id' => $this->getUser()->getID() ),
 			__METHOD__,
 			array( 'ORDER BY' => 'cb_user_name' )
 		);
 
-		if( $dbr->numRows( $res ) > 0 ) {
+		if ( $dbr->numRows( $res ) > 0 ) {
 			$out = '<ul>';
-			foreach( $res as $row ) {
+			foreach ( $res as $row ) {
 				$user_title = Title::makeTitle( NS_USER, $row->cb_user_name_blocked );
-				$out .= '<li>' . wfMsg(
+				$out .= '<li>' . $this->msg(
 					'comments-ignore-item',
 					$user_title->escapeFullURL(),
 					$user_title->getText(),
-					$row->cb_date,
-					$this->getTitle()->escapeFullURL( 'user=' . $user_title->getText() )
-				) . '</li>';
+					$lang->timeanddate( $row->cb_date ),
+					$title->escapeFullURL( 'user=' . $user_title->getText() )
+				)->text() . '</li>';
 			}
 			$out .= '</ul>';
 		} else {
 			$out = '<div class="comment_blocked_user">' .
-				wfMsg( 'comments-ignore-no-users' ) . '</div>';
+				$this->msg( 'comments-ignore-no-users' )->text() . '</div>';
 		}
 		return $out;
 	}
@@ -105,18 +113,17 @@ class CommentIgnoreList extends SpecialPage {
 	 * @return HTML
 	 */
 	function confirmCommentBlockDelete() {
-		global $wgRequest;
-
-		$user_name = $wgRequest->getVal( 'user' );
+		$user_name = $this->getRequest()->getVal( 'user' );
 
 		$out = '<div class="comment_blocked_user">' .
-				wfMsg( 'comments-ignore-remove-message', $user_name ) .
+				$this->msg( 'comments-ignore-remove-message', $user_name )->parse() .
 			'</div>
 			<div>
 				<form action="" method="post" name="comment_block">' .
-					Html::hidden( 'user', $user_name ) .
-					'<input type="button" class="site-button" value="' . wfMsg( 'comments-ignore-unblock' ) . '" onclick="document.comment_block.submit()" />
-					<input type="button" class="site-button" value="' . wfMsg( 'comments-ignore-cancel' ) . '" onclick="history.go(-1)" />
+					Html::hidden( 'user', $user_name ) . "\n" .
+					Html::hidden( 'token', $this->getUser()->getEditToken() ) . "\n" .
+					'<input type="button" class="site-button" value="' . $this->msg( 'comments-ignore-unblock' )->text() . '" onclick="document.comment_block.submit()" />
+					<input type="button" class="site-button" value="' . $this->msg( 'comments-ignore-cancel' )->text() . '" onclick="history.go(-1)" />
 				</form>
 			</div>';
 		return $out;

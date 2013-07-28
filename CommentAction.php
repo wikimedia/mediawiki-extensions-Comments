@@ -20,16 +20,17 @@ class CommentListGet extends UnlistedSpecialPage {
 	 * @param $par Mixed: parameter passed to the page or null
 	 */
 	public function execute( $par ) {
-		global $wgOut, $wgRequest;
+		$out = $this->getOutput();
+		$request = $this->getRequest();
 
 		$output = ''; // Prevent E_NOTICE
 
 		// Get new Comment list
-		$pid = $wgRequest->getInt( 'pid' );
-		$shwform = $wgRequest->getVal( 'shwform' );
+		$pid = $request->getInt( 'pid' );
+		$shwform = $request->getVal( 'shwform' );
 		if( $pid ) {
 			$comment = new Comment( $pid );
-			$comment->setOrderBy( $wgRequest->getInt( 'ord' ) );
+			$comment->setOrderBy( $request->getInt( 'ord' ) );
 			if( $shwform && $shwform == 1 ) {
 				$output .= $comment->displayOrderForm(); // misza: added isset check
 			}
@@ -38,7 +39,7 @@ class CommentListGet extends UnlistedSpecialPage {
 				$output .= $comment->displayForm(); // misza: added isset check
 			}
 		}
-		$wgOut->addHTML( $output );
-		$wgOut->setArticleBodyOnly( true );
+		$out->addHTML( $output );
+		$out->setArticleBodyOnly( true );
 	}
 }

@@ -48,7 +48,7 @@ class Comment {
 		if( $time[$timeabrv] > 0 ) {
 			// Give grep a chance to find the usages:
 			// comments-time-days, comments-time-hours, comments-time-minutes, comments-time-seconds
-			$timeStr = wfMsgExt( "comments-time-{$timename}", 'parsemag', $time[$timeabrv] );
+			$timeStr = wfMessage( "comments-time-{$timename}", $time[$timeabrv] )->parse();
 		}
 		if( $timeStr ) {
 			$timeStr .= ' ';
@@ -72,7 +72,7 @@ class Comment {
 			}
 		}
 		if( !$timeStr ) {
-			$timeStr = wfMsgExt( 'comments-time-seconds', 'parsemag', 1 );
+			$timeStr = wfMessage( 'comments-time-seconds', 1 )->parse();
 		}
 		return $timeStr;
 	}
@@ -260,7 +260,7 @@ class Comment {
 	 * database.
 	 */
 	function add() {
-		global $wgUser;
+		global $wgUser, $wgCommentsInRecentChanges;
 		$dbw = wfGetDB( DB_MASTER );
 
 		$text = $this->CommentText;
@@ -287,14 +287,16 @@ class Comment {
 
 		// Add a log entry.
 		$pageTitle = Title::newFromID( $this->PageID );
-		$message = wfMsgForContent(
-			'comments-create-text',
-			$pageTitle->getPrefixedText() . "#comment-{$commentId}",
-			$text
-		);
 
-		$log = new LogPage( 'comments', false /* show in RecentChanges? */ );
-		$log->addEntry( '+ comment', $wgUser->getUserPage(), $message );
+		$logEntry = new ManualLogEntry( 'comments', 'add' );
+		$logEntry->setPerformer( $wgUser );
+		$logEntry->setTarget( $pageTitle );
+		$logEntry->setComment( $text );
+		$logEntry->setParameters( array(
+			'4::commentid' => $commentId
+		) );
+		$logId = $logEntry->insert();
+		$logEntry->publish( $logId, ( $wgCommentsInRecentChanges ? 'rcandudp' : 'udp' ) );
 
 		wfRunHooks( 'Comment::add', array( $this, $commentId, $this->PageID ) );
 	}
@@ -504,7 +506,22 @@ class Comment {
 			__METHOD__
 		);
 		$dbw->commit();
+
+		// Log the deletion to Special:Log/comments.
+		global $wgUser, $wgCommentsInRecentChanges;
+		$logEntry = new ManualLogEntry( 'comments', 'delete' );
+		$logEntry->setPerformer( $wgUser );
+		$logEntry->setTarget( Title::newFromId( $this->PageID ) );
+		$logEntry->setParameters( array(
+			'4::commentid' => $this->CommentID
+		) );
+		$logId = $logEntry->insert();
+		$logEntry->publish( $logId, ( $wgCommentsInRecentChanges ? 'rcandudp' : 'udp' ) );
+
+		// Clear memcache & Squid cache
 		$this->clearCommentListCache();
+
+		// Ping other extensions that may have hooked into this point (i.e. LinkFilter)
 		wfRunHooks( 'Comment::delete', array( $this, $this->CommentID, $this->PageID ) );
 	}
 
@@ -542,7 +559,7 @@ class Comment {
 			),
 			__METHOD__,
 			array(),
-			array( 'Comments' => array( 'LEFT JOIN', 'Comment_Vote_ID=CommentID' ) )
+			array( 'Comments' => array( 'LEFT JOIN', 'Comment_Vote_ID = CommentID' ) )
 		);
 
 		$voted = array();
@@ -651,17 +668,17 @@ class Comment {
 				<form name="ChangeOrder" action="">
 					<select name="TheOrder">
 						<option value="0">' .
-							wfMsg( 'comments-sort-by-date' ) .
+							wfMessage( 'comments-sort-by-date' )->plain() .
 						'</option>
 						<option value="1">' .
-							wfMsg( 'comments-sort-by-score' ) .
+							wfMessage( 'comments-sort-by-score' )->plain() .
 						'</option>
 					</select>
 				</form>
 			</div>
 			<div id="spy" class="c-spy">
 				<a href="javascript:void(0)">' .
-					wfMsg( 'comments-auto-refresher-enable' ) .
+					wfMessage( 'comments-auto-refresher-enable' )->plain() .
 				'</a>
 			</div>
 			<div class="cleared"></div>
@@ -672,7 +689,7 @@ class Comment {
 	}
 
 	function getVoteLink( $commentID, $voteType ) {
-		global $wgUser, $wgScriptPath, $wgOut;
+		global $wgUser, $wgExtensionAssetsPath, $wgOut;
 
 		// Blocked users cannot vote, obviously
 		if( $wgUser->isBlocked() ) {
@@ -696,7 +713,7 @@ class Comment {
 				"\" rel=\"nofollow\">";
 		}
 
-		$imagePath = $wgScriptPath . '/extensions/Comments/images';
+		$imagePath = $wgExtensionAssetsPath . '/Comments/images';
 		if( $voteType == 1 ) {
 			$voteLink .= "<img src=\"{$imagePath}/thumbs-up.gif\" border=\"0\" alt=\"+\" /></a>";
 		} else {
@@ -711,7 +728,7 @@ class Comment {
 	 * CSS and JS is loaded in Comment.php, function displayComments.
 	 */
 	function display() {
-		global $wgUser, $wgOut, $wgScriptPath, $wgMemc, $wgUserLevels;
+		global $wgUser, $wgOut, $wgExtensionAssetsPath, $wgMemc, $wgUserLevels;
 
 		$output = '';
 
@@ -775,8 +792,9 @@ class Comment {
 						$AFCounter++;
 					}
 
-					$CommentPoster = wfMsgForContent( 'comments-anon-name' ) . ' #' . $AFBucket[$comment['Comment_Username']];
-					$CommentReplyTo = wfMsgForContent( 'comments-anon-name' );
+					$anonMsg = wfMessage( 'comments-anon-name' )->inContentLanguage()->plain();
+					$CommentPoster = $anonMsg . ' #' . $AFBucket[$comment['Comment_Username']];
+					$CommentReplyTo = $anonMsg;
 				}
 
 				// Comment delete button for privileged users
@@ -787,7 +805,7 @@ class Comment {
 					$dlt = ' | <span class="c-delete">' .
 						'<a href="javascript:void(0);" rel="nofollow" class="comment-delete-link" data-comment-id="' .
 							$comment['CommentID'] . '">' .
-							wfMsg( 'comments-delete-link' ) . '</a></span>';
+							wfMessage( 'comments-delete-link' )->plain() . '</a></span>';
 				}
 
 				// Reply Link (does not appear on child comments)
@@ -799,7 +817,7 @@ class Comment {
 						}
 						$replyRow .= " | <a href=\"#end\" rel=\"nofollow\" class=\"comments-reply-to\" data-comment-id=\"{$comment['CommentID']}\" data-comments-safe-username=\"" .
 							htmlspecialchars( $CommentReplyTo, ENT_QUOTES ) . '">' .
-							wfMsg( 'comments-reply' ) . '</a>';
+							wfMessage( 'comments-reply' )->plain() . '</a>';
 					}
 				}
 
@@ -823,7 +841,7 @@ class Comment {
 						htmlspecialchars( $comment['Comment_Username'], ENT_QUOTES ) .
 						'" data-comments-comment-id="' . $comment['CommentID'] . '" data-comments-user-id="' .
 						$comment['Comment_user_id'] . "\">
-					<img src=\"{$wgScriptPath}/extensions/Comments/images/block.png\" border=\"0\" alt=\"\"/>
+					<img src=\"{$wgExtensionAssetsPath}/Comments/images/block.png\" border=\"0\" alt=\"\"/>
 				</a>";
 				}
 
@@ -837,12 +855,12 @@ class Comment {
 					$blockListTitle = SpecialPage::getTitleFor( 'CommentIgnoreList' );
 
 					$output .= "<div id=\"ignore-{$comment['CommentID']}\" class=\"c-ignored {$container_class}\">\n";
-					$output .= wfMsgExt( 'comments-ignore-message', 'parsemag' );
+					$output .= wfMessage( 'comments-ignore-message' )->parse();
 					$output .= '<div class="c-ignored-links">' . "\n";
 					$output .= "<a href=\"javascript:void(0);\" data-comment-id=\"{$comment['CommentID']}\">" .
-						wfMsg( 'comments-show-comment-link' ) . '</a> | ';
+						wfMessage( 'comments-show-comment-link' )->plain() . '</a> | ';
 					$output .= "<a href=\"{$blockListTitle->escapeFullURL()}\">" .
-						wfMsg( 'comments-manage-blocklist-link' ) . '</a>';
+						wfMessage( 'comments-manage-blocklist-link' )->plain() . '</a>';
 					$output .= '</div>' . "\n";
 					$output .= '</div>' . "\n";
 				}
@@ -869,17 +887,17 @@ class Comment {
 
 				wfSuppressWarnings(); // E_STRICT bitches about strtotime()
 				$output .= '<div class="c-time">' .
-					wfMsg(
+					wfMessage(
 						'comments-time-ago',
 						self::getTimeAgo( strtotime( $comment['Comment_Date'] ) )
-					) . '</div>' . "\n";
+					)->parse() . '</div>' . "\n";
 				wfRestoreWarnings();
 
 				$output .= '<div class="c-score">' . "\n";
 
 				if( $this->AllowMinus == true || $this->AllowPlus == true ) {
 					$output .= '<span class="c-score-title">' .
-						wfMsg( 'comments-score-text' ) .
+						wfMessage( 'comments-score-text' )->plain() .
 						" <span id=\"Comment{$comment['CommentID']}\">{$CommentScore}</span></span>";
 
 					// Voting is possible only when database is unlocked
@@ -898,12 +916,12 @@ class Comment {
 								}
 								$output .= '</span>';
 							} else {
-								$output .= wfMsg( 'word-separator' ) . wfMsg( 'comments-you' );
+								$output .= wfMessage( 'word-separator' )->plain() . wfMessage( 'comments-you' )->plain();
 							}
 						} else {
 							// Already voted?
-							$output .= '<img src="' . $wgScriptPath . '/extensions/Comments/images/voted.gif" border="0" alt="" />' .
-										wfMsg( 'comments-voted-label' );
+							$output .= '<img src="' . $wgExtensionAssetsPath . '/Comments/images/voted.gif" border="0" alt="" />' .
+										wfMessage( 'comments-voted-label' )->plain();
 						}
 					}
 				}
@@ -922,7 +940,7 @@ class Comment {
 				$output .= '</div>' . "\n";
 				$output .= '<div class="c-actions">' . "\n";
 				$output .= '<a href="' . $title->escapeFullURL() . "#comment-{$comment['CommentID']}\" rel=\"nofollow\">" .
-					wfMsg( 'comments-permalink' ) . '</a> ';
+					wfMessage( 'comments-permalink' )->plain() . '</a> ';
 				if( $replyRow || $dlt ) {
 					$output .= "{$replyRow} {$dlt}" . "\n";
 				}
@@ -955,36 +973,36 @@ class Comment {
 
 		// 'comment' user right is required to add new comments
 		if( !$wgUser->isAllowed( 'comment' ) ) {
-			$output .= wfMsg( 'comments-not-allowed' );
+			$output .= wfMessage( 'comments-not-allowed' )->parse();
 		} else {
 			// Blocked users can't add new comments under any conditions...
 			// and maybe there's a list of users who should be allowed to post
 			// comments
 			if( $wgUser->isBlocked() == false && ( $this->Allow == '' || $pos !== false ) ) {
 				$output .= '<div class="c-form-title">' .
-					wfMsg( 'comments-submit' ) . '</div>' . "\n";
+					wfMessage( 'comments-submit' )->plain() . '</div>' . "\n";
 				$output .= '<div id="replyto" class="c-form-reply-to"></div>' . "\n";
 				// Show a message to anons, prompting them to register or log in
 				if ( !$wgUser->isLoggedIn() ) {
 					$login_title = SpecialPage::getTitleFor( 'Userlogin' );
 					$register_title = SpecialPage::getTitleFor( 'Userlogin', 'signup' );
-					$output .= '<div class="c-form-message">' . wfMsgExt(
+					$output .= '<div class="c-form-message">' . wfMessage(
 						'comments-anon-message',
-						'parsemag',
 						$register_title->escapeFullURL(),
 						$login_title->escapeFullURL()
-					) . '</div>' . "\n";
+					)->text() . '</div>' . "\n";
 				}
 
 				$output .= '<textarea name="comment_text" id="comment" rows="5" cols="64"></textarea>' . "\n";
 				$output .= '<div class="c-form-button"><input type="button" value="' .
-					wfMsg( 'comments-post' ) . '" class="site-button" /></div>' . "\n";
+					wfMessage( 'comments-post' )->plain() . '" class="site-button" /></div>' . "\n";
 			}
 			$output .= '<input type="hidden" name="action" value="purge" />' . "\n";
 			$output .= '<input type="hidden" name="pid" value="' . $this->PageID . '" />' . "\n";
 			$output .= '<input type="hidden" name="commentid" />' . "\n";
 			$output .= '<input type="hidden" name="lastcommentid" value="' . $this->getLatestCommentID() . '" />' . "\n";
 			$output .= '<input type="hidden" name="comment_parent_id" />' . "\n";
+			$output .= Html::hidden( 'token', $wgUser->getEditToken() );
 		}
 		$output .= '</form>' . "\n";
 		return $output;

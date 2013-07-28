@@ -4,12 +4,19 @@
  */
 
 $wgAjaxExportList[] = 'wfCommentSubmit';
-function wfCommentSubmit( $page_id, $parent_id, $comment_text ) {
+function wfCommentSubmit( $page_id, $parent_id, $comment_text, $token ) {
 	global $wgUser;
 
 	// Blocked users cannot submit new comments, and neither can those users
-	// without the necessary privileges
-	if( $wgUser->isBlocked() || !$wgUser->isAllowed( 'comment' ) ) {
+	// without the necessary privileges. Also prevent obvious cross-site request
+	// forgeries (CSRF)
+	if (
+		$wgUser->isBlocked() ||
+		!$wgUser->isAllowed( 'comment' ) ||
+		wfReadOnly() ||
+		!$wgUser->matchEditToken( $token )
+	)
+	{
 		return '';
 	}
 
@@ -28,12 +35,18 @@ function wfCommentSubmit( $page_id, $parent_id, $comment_text ) {
 }
 
 $wgAjaxExportList[] = 'wfCommentVote';
-function wfCommentVote( $comment_id, $vote_value, $vg, $page_id ) {
+function wfCommentVote( $comment_id, $vote_value, $vg, $page_id, $token ) {
 	global $wgUser;
 
 	// Blocked users cannot vote, obviously, and neither can those users
 	// without the necessary privileges
-	if( $wgUser->isBlocked() || !$wgUser->isAllowed( 'comment' ) ) {
+	if (
+		$wgUser->isBlocked() ||
+		!$wgUser->isAllowed( 'comment' ) ||
+		wfReadOnly() ||
+		!$wgUser->matchEditToken( $token )
+	)
+	{
 		return '';
 	}
 
@@ -110,7 +123,15 @@ function wfCommentLatestID( $page_id ) {
 }
 
 $wgAjaxExportList[] = 'wfCommentBlock';
-function wfCommentBlock( $comment_id, $user_id ) {
+function wfCommentBlock( $comment_id, $user_id, $token ) {
+	global $wgUser;
+
+	// Do nothing when the database is in read-only mode or if the request was
+	// forged
+	if ( wfReadOnly() || !$wgUser->matchEditToken( $token ) ) {
+		return '';
+	}
+
 	// Load user_name and user_id for person we want to block from the comment it originated from
 	$dbr = wfGetDB( DB_SLAVE );
 	$s = $dbr->selectRow(
@@ -136,11 +157,19 @@ function wfCommentBlock( $comment_id, $user_id ) {
 }
 
 $wgAjaxExportList[] = 'wfDeleteComment';
-function wfDeleteComment( $pageId, $commentId ) {
+function wfDeleteComment( $pageId, $commentId, $token ) {
 	global $wgUser;
 
-	// Blocked users cannot delete comments, and neither can unprivileged ones
-	if( $wgUser->isBlocked() || !$wgUser->isAllowed( 'commentadmin' ) ) {
+	// Blocked users cannot delete comments, and neither can unprivileged ones.
+	// Also check for database read-only status and ensure that this is _not_
+	// a cross-site request forgery (CSRF) before proceeding further.
+	if (
+		$wgUser->isBlocked() ||
+		!$wgUser->isAllowed( 'commentadmin' ) ||
+		wfReadOnly() ||
+		!$wgUser->matchEditToken( $token )
+	)
+	{
 		return '';
 	}
 

@@ -5,7 +5,7 @@
  *
  * @file
  * @ingroup Extensions
- * @date 29 August 2012
+ * @date 28 July 2013
  */
 if ( !defined( 'MEDIAWIKI' ) ) {
 	die();
@@ -30,7 +30,7 @@ function wfCommentsOfTheDay( &$parser ) {
  * @return String: HTML
  */
 function getCommentsOfTheDay( $input, $args, $parser ) {
-	global $wgMemc, $wgUploadPath;
+	global $wgMemc;
 
 	$oneDay = 60 * 60 * 24;
 
@@ -38,7 +38,7 @@ function getCommentsOfTheDay( $input, $args, $parser ) {
 	$key = wfMemcKey( 'comments-of-the-day', 'standalone-hook' );
 	$data = $wgMemc->get( $key );
 
-	if( $data ) { // success, got it from memcached!
+	if ( $data ) { // success, got it from memcached!
 		$commentsOfTheDay = $data;
 	} elseif ( !$data || $args['nocache'] ) { // just query the DB
 		$dbr = wfGetDB( DB_SLAVE );
@@ -85,23 +85,34 @@ function getCommentsOfTheDay( $input, $args, $parser ) {
 			$commentOfTheDay['pagetitle']
 		);
 
-		if( $commentOfTheDay['userid'] != 0 ) {
+		if ( $commentOfTheDay['userid'] != 0 ) {
 			$title = Title::makeTitle( NS_USER, $commentOfTheDay['username'] );
 			$commentPoster_Display = $commentOfTheDay['username'];
 			$commentPoster = '<a href="' . $title->getFullURL() .
 				'" title="' . $title->getText() . '" rel="nofollow">' .
 				$commentOfTheDay['username'] . '</a>';
-			$avatar = new wAvatar( $commentOfTheDay['userid'], 's' );
-			$commentIcon = $avatar->getAvatarImage();
+			if ( class_exists( 'wAvatar' ) ) {
+				$avatar = new wAvatar( $commentOfTheDay['userid'], 's' );
+				$commentIcon = $avatar->getAvatarImage();
+			} else {
+				$commentIcon = '';
+			}
 		} else {
-			$commentPoster_Display = wfMsg( 'comments-anon-name' );
-			$commentPoster = wfMsg( 'comments-anon-name' );
+			$commentPoster_Display = wfMessage( 'comments-anon-name' )->plain();
+			$commentPoster = wfMessage( 'comments-anon-name' )->plain();
 			$commentIcon = 'default_s.gif';
 		}
 
+		$avatarHTML = '';
+		if ( class_exists( 'wAvatar' ) ) {
+			global $wgUploadPath;
+			$avatarHTML = '<img src="' . $wgUploadPath . '/avatars/' . $commentIcon .
+			'" alt="" align="middle" style="margin-bottom:8px;" border="0"/>';
+		}
+
 		$comment_text = substr( $commentOfTheDay['text'], 0, 50 - strlen( $commentPoster_Display ) );
-		if( $comment_text != $commentOfTheDay['text'] ) {
-			$comment_text .= wfMsg( 'ellipsis' );
+		if ( $comment_text != $commentOfTheDay['text'] ) {
+			$comment_text .= wfMessage( 'ellipsis' )->plain();
 		}
 
 		$comments .= '<div class="cod">';
@@ -112,9 +123,8 @@ function getCommentsOfTheDay( $input, $args, $parser ) {
 			$sign = '-'; // this *really* shouldn't be happening...
 		}
 		$comments .= '<span class="cod-score">' . $sign . $commentOfTheDay['score'] .
-			'</span> <img src="' . $wgUploadPath . '/avatars/' . $commentIcon .
-			'" alt="" align="middle" style="margin-bottom:8px;" border="0"/>
-			<span class="cod-poster">' . $commentPoster . '</span>';
+			'</span> ' . $avatarHTML .
+			'<span class="cod-poster">' . $commentPoster . '</span>';
 		$comments .= '<span class="cod-comment"><a href="' .
 			$title2->getFullURL() . '#comment-' . $commentOfTheDay['id'] .
 			'" title="' . $title2->getText() . '">' . $comment_text .
@@ -126,7 +136,7 @@ function getCommentsOfTheDay( $input, $args, $parser ) {
 	if ( !empty( $comments ) ) {
 		$output .= $comments;
 	} else {
-		$output .= wfMsg( 'comments-no-comments-of-day' );
+		$output .= wfMessage( 'comments-no-comments-of-day' )->plain();
 	}
 
 	return $output;

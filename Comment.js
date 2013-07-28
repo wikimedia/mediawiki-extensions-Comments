@@ -4,7 +4,7 @@
  * object-oriented.
  *
  * @file
- * @date 29 August 2012
+ * @date 28 July 2013
  */
 var Comment = {
 	submitted: 0,
@@ -32,21 +32,31 @@ var Comment = {
 	 *
 	 * @param user_name String: name of the user whose comments we want to block
 	 * @param user_id Integer: user ID number of the user whose comments we
-	 *                         want to block
+	 *                         want to block (or 0 for anonymous users)
 	 * @param c_id Integer: comment ID number
 	 */
 	blockUser: function( user_name, user_id, c_id ) {
 		var message;
-		if( !user_name ) {
+		var token = document.commentform.token.value;
+
+		// Display a different message depending on whether we're blocking an
+		// anonymous user or a registered one.
+		// We could check if user_name is an IP with mw.util.isIPv4Address and
+		// mw.util.isIPv6Address, but that'd be overkill since we know that all
+		// anons have id = 0 in MediaWiki and we expose the user ID via HTML to
+		// this function, so...
+		if ( !user_id || user_id === 0 ) {
 			message = mw.msg( 'comments-block-warning-anon' );
 		} else {
 			message = mw.msg( 'comments-block-warning-user', user_name );
 		}
-		if( confirm( message ) ) {
+
+		if ( confirm( message ) ) {
 			sajax_request_type = 'POST';
-			sajax_do_call( 'wfCommentBlock', [ c_id, user_id ], function( response ) {
-				alert( response.responseText );
-				window.location.href = window.location;
+			sajax_do_call( 'wfCommentBlock', [ c_id, user_id, token ], function( response ) {
+				jQuery( '#comment-' + c_id ).hide( 2000 );
+				//alert( response.responseText );
+				//window.location.href = window.location;
 			});
 		}
 	},
@@ -58,11 +68,16 @@ var Comment = {
 	 * @param c_id Integer: comment ID number
 	 */
 	deleteComment: function( c_id ) {
-		var pageId = document.commentform.pid.value;
-		if( confirm( mw.msg( 'comments-delete-warning' ) ) ) {
+		var pageId = document.commentform.pid.value,
+			token = document.commentform.token.value;
+		if ( confirm( mw.msg( 'comments-delete-warning' ) ) ) {
 			sajax_request_type = 'POST';
-			sajax_do_call( 'wfDeleteComment', [ pageId, c_id ], function( response ) {
-				window.location.href = window.location;
+			sajax_do_call( 'wfDeleteComment', [ pageId, c_id, token ], function( response ) {
+				// The commented-out line is original code. I have no clue what
+				// it was supposed to do, but the jQuery gimmick below looks
+				// better, IMHO.
+				//window.location.href = window.location;
+				jQuery( '#comment-' + c_id ).hide( 2000 );
 			});
 		}
 	},
@@ -76,13 +91,15 @@ var Comment = {
 	 * @param vg
 	 */
 	vote: function( cid, vt, vg ) {
+		var pageID = document.commentform.pid.value,
+			token = document.commentform.token.value;
 		sajax_request_type = 'POST';
 		sajax_do_call(
 			'wfCommentVote',
-			[ cid, vt, ( ( vg ) ? vg : 0 ), document.commentform.pid.value ],
+			[ cid, vt, ( ( vg ) ? vg : 0 ), pageID, token ],
 			function( response ) {
 				document.getElementById( 'Comment' + cid ).innerHTML = response.responseText;
-				var img = '<img src="' + wgScriptPath + '/extensions/Comments/images/voted.gif" alt="" />';
+				var img = '<img src="' + mw.config.get( 'wgExtensionAssetsPath' ) + '/Comments/images/voted.gif" alt="" />';
 				document.getElementById( 'CommentBtn' + cid ).innerHTML =
 					img + '<span class="CommentVoted">' +
 					mw.msg( 'comments-voted-label' ) + '</span>';
@@ -101,20 +118,20 @@ var Comment = {
 	viewComments: function( pid, ord, end ) {
 		document.getElementById( 'allcomments' ).innerHTML = mw.msg( 'comments-loading' ) + '<br /><br />';
 		var x = sajax_init_object();
-		var url = wgServer + wgScriptPath +
+		var url = mw.config.get( 'wgServer' ) + mw.config.get( 'wgScriptPath' ) +
 			'/index.php?title=Special:CommentListGet&pid=' + pid + '&ord=' +
 			ord;
 
 		x.open( 'get', url, true );
 
 		x.onreadystatechange = function() {
-			if( x.readyState != 4 ) {
+			if ( x.readyState != 4 ) {
 				return;
 			}
 
 			document.getElementById( 'allcomments' ).innerHTML = x.responseText;
 			Comment.submitted = 0;
-			if( end ) {
+			if ( end ) {
 				window.location.hash = 'end';
 			}
 		};
@@ -126,7 +143,7 @@ var Comment = {
 	 * Submit a new comment.
 	 */
 	submit: function() {
-		if( Comment.submitted === 0 ) {
+		if ( Comment.submitted === 0 ) {
 			Comment.submitted = 1;
 
 			var pidVal = document.commentform.pid.value;
@@ -137,11 +154,12 @@ var Comment = {
 				parentId = document.commentform.comment_parent_id.value;
 			}
 			var commentText = document.commentform.comment_text.value;
+			var token = document.commentform.token.value;
 
 			sajax_request_type = 'POST';
 			sajax_do_call(
 				'wfCommentSubmit',
-				[ pidVal, parentId, commentText ],
+				[ pidVal, parentId, commentText, token ],
 				function( response ) {
 					document.commentform.comment_text.value = '';
 					Comment.viewComments( document.commentform.pid.value, 0, 1 );
@@ -157,7 +175,7 @@ var Comment = {
 	 * @param status
 	 */
 	toggleLiveComments: function( status ) {
-		if( status ) {
+		if ( status ) {
 			Comment.pause = 0;
 		} else {
 			Comment.pause = 1;
@@ -169,11 +187,12 @@ var Comment = {
 			msg = mw.msg( 'comments-auto-refresher-enable' );
 		}
 
-		jQuery( 'div#spy a' ).click( function() {
+		jQuery( 'body' ).on( 'click', 'div#spy a', function() {
 			Comment.toggleLiveComments( ( status ) ? 0 : 1 );
-		} ).css( 'font-size', '10px' ).text( msg );
+		} );
+		jQuery( 'div#spy a' ).css( 'font-size', '10px' ).text( msg );
 
-		if( !Comment.pause ) {
+		if ( !Comment.pause ) {
 			Comment.LatestCommentID = document.commentform.lastcommentid.value;
 			Comment.timer = setTimeout(
 				function() { Comment.checkUpdate(); },
@@ -183,7 +202,7 @@ var Comment = {
 	},
 
 	checkUpdate: function() {
-		if( Comment.isBusy ) {
+		if ( Comment.isBusy ) {
 			return;
 		}
 		var pid = document.commentform.pid.value;
@@ -195,21 +214,21 @@ var Comment = {
 	},
 
 	updateResults: function( response ) {
-		if( !response || response.readyState != 4 ) {
+		if ( !response || response.readyState != 4 ) {
 			return;
 		}
 
-		if( response.status == 200 ) {
+		if ( response.status == 200 ) {
 			// Get last new ID
 			Comment.CurLatestCommentID = response.responseText;
-			if( Comment.CurLatestCommentID != Comment.LatestCommentID ) {
+			if ( Comment.CurLatestCommentID != Comment.LatestCommentID ) {
 				Comment.viewComments( document.commentform.pid.value, 0, 1 );
 				Comment.LatestCommentID = Comment.CurLatestCommentID;
 			}
 		}
 
 		Comment.isBusy = false;
-		if( !Comment.pause ) {
+		if ( !Comment.pause ) {
 			clearTimeout( Comment.timer );
 			Comment.timer = setTimeout(
 				function() { Comment.checkUpdate(); },
@@ -221,7 +240,7 @@ var Comment = {
 	/**
 	 * Show the "reply to user X" form
 	 *
-	 * @param parentId Integer
+	 * @param parentId Integer: parent comment (the one we're replying to) ID
 	 * @param poster String: name of the person whom we're replying to
 	 */
 	reply: function( parentId, poster ) {
@@ -231,13 +250,6 @@ var Comment = {
 		jQuery( '<a>', {
 			href: 'javascript:void(0);',
 			'class': 'comments-cancel-reply-link',
-			click: function() {
-				// Calling Comments.cancelReply(); here, like in the original
-				// code, does not work for some reason so we have to duplicate
-				// its functionality here. Ah well, it's only two lines.
-				document.getElementById( 'replyto' ).innerHTML = '';
-				document.commentform.comment_parent_id.value = '';
-			},
 			text: mw.msg( 'comments-cancel-reply' )
 		} ).appendTo( '#replyto' );
 		jQuery( '#replyto' ).append( ') <br />' );
@@ -252,8 +264,13 @@ var Comment = {
 };
 
 jQuery( document ).ready( function() {
+	// Important note: these are all using jQuery( 'body' ) as the selector
+	// instead of the class/ID/whatever so that they work after viewComments()
+	// has been called (i.e. so that "Delete comment", reply, etc. links
+	// continue working after you've submitted a comment yourself)
+
 	// "Sort by X" feature
-	jQuery( 'select[name="TheOrder"]' ).change( function() {
+	jQuery( 'body' ).on( 'change', 'select[name="TheOrder"]', function() {
 		Comment.viewComments(
 			mw.config.get( 'wgArticleId' ), // or we could use jQuery( 'input[name="pid"]' ).val(), too
 			jQuery( this ).val()
@@ -261,12 +278,12 @@ jQuery( document ).ready( function() {
 	} );
 
 	// Comment auto-refresher
-	jQuery( 'div#spy a' ).click( function() {
+	jQuery( 'body' ).on( 'click', 'div#spy a', function() {
 		Comment.toggleLiveComments( 1 );
 	} );
 
 	// Voting links
-	jQuery( 'a#comment-vote-link' ).click( function() {
+	jQuery( 'body' ).on( 'click', 'a#comment-vote-link', function() {
 		var that = jQuery( this );
 		Comment.vote(
 			that.data( 'comment-id' ),
@@ -276,49 +293,41 @@ jQuery( document ).ready( function() {
 	} );
 
 	// "Block this user" links
-	jQuery( 'a.comments-block-user' ).each( function( index ) {
+	jQuery( 'body' ).on( 'click', 'a.comments-block-user', function() {
 		var that = jQuery( this );
-		that.click( function() {
-			Comment.blockUser(
-				that.data( 'comments-safe-username' ),
-				that.data( 'comments-user-id' ),
-				that.data( 'comments-comment-id' )
-			);
-		} );
+		Comment.blockUser(
+			that.data( 'comments-safe-username' ),
+			that.data( 'comments-user-id' ),
+			that.data( 'comments-comment-id' )
+		);
 	} );
 
 	// "Delete Comment" links
-	jQuery( 'a.comment-delete-link' ).each( function( index ) {
-		var that = jQuery( this );
-		that.click( function() {
-			Comment.deleteComment(
-				that.data( 'comment-id' )
-			);
-		} );
+	jQuery( 'body' ).on( 'click', 'a.comment-delete-link', function() {
+		Comment.deleteComment( jQuery( this ).data( 'comment-id' ) );
 	} );
 
 	// "Show this hidden comment" -- comments made by people on the user's
 	// personal block list
-	jQuery( 'div.c-ignored-links a' ).each( function( index ) {
-		var that = jQuery( this );
-		that.click( function() {
-			Comment.show( that.data( 'comment-id' ) );
-		} );
+	jQuery( 'body' ).on( 'click', 'div.c-ignored-links a', function() {
+		Comment.show( jQuery( this ).data( 'comment-id' ) );
 	} );
 
 	// Reply links
-	jQuery( 'a.comments-reply-to' ).each( function( index ) {
-		var that = jQuery( this );
-		that.bind( 'click', function() {
-			Comment.reply(
-				that.data( 'comment-id' ),
-				that.data( 'comments-safe-username' )
-			);
-		} );
+	jQuery( 'body' ).on( 'click', 'a.comments-reply-to', function() {
+		Comment.reply(
+			jQuery( this ).data( 'comment-id' ),
+			jQuery( this ).data( 'comments-safe-username' )
+		);
+	} );
+
+	// "Reply to <username>" links
+	jQuery( 'body' ).on( 'click', 'a.comments-cancel-reply-link', function() {
+		Comment.cancelReply();
 	} );
 
 	// Handle clicks on the submit button (previously this was an onclick attr)
-	jQuery( 'div.c-form-button input[type="button"]' ).click( function() {
+	jQuery( 'body' ).on( 'click', 'div.c-form-button input[type="button"]', function() {
 		Comment.submit();
 	} );
 } );
