@@ -71,6 +71,7 @@ $messages['en'] = array(
  * @author Darth Kule
  * @author Nike
  * @author Purodha
+ * @author Raymond
  * @author Shirayuki
  * @author Siebrand
  */
@@ -132,8 +133,13 @@ The comment ignore list contains a list of users whose comments you are ignoring
 	'comments-no-comments-of-day' => 'Shown as the output of the &lt;commentsoftheday/&gt; parser hook if there are no comments of the day',
 	'log-name-comments' => 'Shown on the dropdown on [[Special:Log]].',
 	'log-description-comments' => 'Explanation of the comments log, shown on [[Special:Log/comments]].',
-	'logentry-comments-add' => '$1 contains the user name + talk/block/contribs links, as is the standard with log entries nowadays. $3 is a wikilink to the page where the comment was posted; it contains a fragment that directly points to the new comment in question, i.e. [[Talk:Main Page#comment-10]] (the number is the internal comment identifier).',
-	'logentry-comments-delete' => "$1 contains the user name + talk/block/contribs links, as is the standard with log entries nowadays. $3 is a wikilink to the page where the comment was originally posted (and as opposed to the [[MediaWiki:Logentry-comments-add]] message, it does '''not''' contain a fragment) and $4 is the internal comment ID.",
+	'logentry-comments-add' => 'Parameters:
+* $1 - contains the user name + talk/block/contribs links, as is the standard with log entries nowadays
+* $3 - a wikilink to the page where the comment was posted; it contains a fragment that directly points to the new comment in question, i.e. [[Talk:Main Page#comment-10]] (the number is the internal comment identifier)',
+	'logentry-comments-delete' => "Parameters:
+* $1 - contains the user name + talk/block/contribs links, as is the standard with log entries nowadays
+* $3 - a wikilink to the page where the comment was originally posted (and as opposed to the {{msg-mw|Logentry-comments-add}} message, it does '''not''' contain a fragment)
+* $4 - the internal comment ID",
 	'comments-time-ago' => 'Parameters:
 * $1 - one of the following messages:
 ** {{msg-mw|comments-time-days}}
@@ -488,6 +494,8 @@ $messages['de'] = array(
 	'comments-no-comments-of-day' => 'Es gibt keinen Kommentar des Tages.',
 	'log-name-comments' => 'Kommentar-Logbuch',
 	'log-description-comments' => 'Dies ist ein Logbuch der Kommentare.',
+	'logentry-comments-add' => '$1 hinterließ einen neuen Kommentar auf $3',
+	'logentry-comments-delete' => '$1 löschte den Kommentar #$4 auf $3',
 	'comments-time-ago' => 'vor $1',
 	'comments-time-days' => '{{PLURAL:$1|einem Tag|$1 Tage}}',
 	'comments-time-hours' => '{{PLURAL:$1|einer Stunde|$1 Stunden}}',
@@ -870,6 +878,8 @@ $messages['fr'] = array(
 	'comments-no-comments-of-day' => 'Il n’y a aucun commentaire sur la journée.',
 	'log-name-comments' => 'Historique des commentaires',
 	'log-description-comments' => 'Ceci est un journal de commentaires.',
+	'logentry-comments-add' => '$1 a publié un nouveau commentaire sur $3',
+	'logentry-comments-delete' => '$1 a supprimé le commentaire #$4 sur $3',
 	'comments-time-ago' => 'Il y’a $1',
 	'comments-time-days' => '{{PLURAL:$1|un jour|$1 jours}}',
 	'comments-time-hours' => '{{PLURAL:$1|une heure|$1 heures}}',
@@ -1187,9 +1197,8 @@ $messages['ia'] = array(
 	'comments-ignore-title' => 'Lista de commentos ignorate',
 	'commentignorelist' => 'Lista de commentos ignorate',
 	'comments-no-comments-of-day' => 'Il non ha commentos del die.',
-	'commentslogpage' => 'Registro de commentos',
-	'commentslogpagetext' => 'Isto es un registro de commentos.',
-	'commentslog-create-entry' => 'Nove commento',
+	'log-name-comments' => 'Registro de commentos',
+	'log-description-comments' => 'Isto es un registro de commentos.',
 	'comments-time-ago' => '$1 retro',
 	'comments-time-days' => '{{PLURAL:$1|un die|$1 dies}}',
 	'comments-time-hours' => '{{PLURAL:$1|un hora|$1 horas}}',
@@ -1284,6 +1293,8 @@ $messages['it'] = array(
 	'comments-no-comments-of-day' => 'Non sono presenti commenti del giorno.',
 	'log-name-comments' => 'Commenti',
 	'log-description-comments' => 'Di seguito sono elencati i commenti.',
+	'logentry-comments-add' => '$1 ha pubblicato un nuovo commento su $3',
+	'logentry-comments-delete' => '$1 ha cancellato il commento #$4 su $3',
 	'comments-time-ago' => '$1 fa',
 	'comments-time-days' => '{{PLURAL:$1|un giorno|$1 giorni}}',
 	'comments-time-hours' => "{{PLURAL:$1|un'ora|$1 ore}}",
@@ -1318,7 +1329,7 @@ $messages['ja'] = array(
 	'comments-show-comment-link' => 'コメントを表示',
 	'comments-manage-blocklist-link' => '無視リストを管理',
 	'comments-ignore-message' => 'このコメントの作成者を無視しています',
-	'comments-you' => ' あなた',
+	'comments-you' => 'あなた',
 	'comments-reply' => '返信',
 	'comments-login-required' => 'コメントを追加するにはログインしてください',
 	'comments-not-allowed' => 'あなたにはコメントを投稿する権限がありません。',
@@ -1339,6 +1350,8 @@ $messages['ja'] = array(
 	'comments-no-comments-of-day' => '今日のコメントはありません。',
 	'log-name-comments' => 'コメント記録',
 	'log-description-comments' => 'これはコメントの記録です。',
+	'logentry-comments-add' => '$1 が $3 に新しいコメントを投稿',
+	'logentry-comments-delete' => '$1 が $3 のコメント #$4 を削除',
 	'comments-time-ago' => '$1前',
 	'comments-time-days' => '{{PLURAL:$1|$1 日}}',
 	'comments-time-hours' => '{{PLURAL:$1|$1 時間}}',
@@ -2081,7 +2094,7 @@ $messages['ro'] = array(
 	'comments-ignore-unblock' => 'Deblocare',
 	'comments-ignore-cancel' => 'Renunță',
 	'comments-no-comments-of-day' => 'Nu există niciun comentariu al zilei.',
-	'log-name-comments' => 'Jurnalul de comentarii',
+	'log-name-comments' => 'Jurnal comentarii',
 	'log-description-comments' => 'Acesta este un jurnal de comentarii.',
 	'comments-time-ago' => 'în urmă cu $1',
 	'comments-time-days' => '{{PLURAL:$1|o zi|$1 zile}}',
@@ -2135,6 +2148,8 @@ $messages['roa-tara'] = array(
 	'comments-no-comments-of-day' => "Non ge stonne commende d'a sciurnate.",
 	'log-name-comments' => 'Archivije de le commende',
 	'log-description-comments' => "Quiste jè 'n'archivije de commende.",
+	'logentry-comments-add' => "$1 ave mannate 'nu commende nuève sus a $3",
+	'logentry-comments-delete' => "$1 ave scangellate 'u commende #$4 sus a $3",
 	'comments-time-ago' => '$1 fà',
 	'comments-time-days' => "{{PLURAL: $1|'nu sciurne|$1 sciurne}}",
 	'comments-time-hours' => "{{PLURAL: $1|'n'ore|$1 ore}}",
