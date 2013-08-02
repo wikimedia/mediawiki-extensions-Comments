@@ -638,6 +638,7 @@ $messages['eo'] = array(
  * @author AndreyWiki
  * @author Armando-Martin
  * @author Bernardom
+ * @author Fitoschido
  */
 $messages['es'] = array(
 	'comments-comment' => 'Comentario',
@@ -678,6 +679,7 @@ $messages['es'] = array(
 	'comments-no-comments-of-day' => 'No hay ningún comentario del día.',
 	'log-name-comments' => 'Registro de comentarios',
 	'log-description-comments' => 'Este es un registro de los comentarios.',
+	'logentry-comments-add' => '$1 publicó un comentario nuevo en $3',
 	'comments-time-ago' => 'Hace $1',
 	'comments-time-days' => '{{PLURAL:$1|un día|$1 días}}',
 	'comments-time-hours' => '{{PLURAL:$1|una hora|$1 horas}}',
@@ -1776,6 +1778,7 @@ $messages['nds'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Hansmuller
  * @author Mark van Alphen
  * @author Mitchel Corstjens
  * @author SPQRobin
@@ -1821,6 +1824,8 @@ $messages['nl'] = array(
 	'comments-no-comments-of-day' => 'Er zijn geen reacties van de dag.',
 	'log-name-comments' => 'Berichtenlogboek',
 	'log-description-comments' => 'Dit is een logboek over reacties.',
+	'logentry-comments-add' => '$1 stuurde een nieuwe opmerking over $3 in.',
+	'logentry-comments-delete' => '$1 haalde commentaar #$4 over $3 weg.',
 	'comments-time-ago' => '$1 geleden',
 	'comments-time-days' => '{{PLURAL:$1|Eén dag|$1 dagen}}',
 	'comments-time-hours' => '{{PLURAL:$1|Eén uur|$1 uren}}',
