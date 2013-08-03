@@ -2468,6 +2468,7 @@ $messages['tzm'] = array(
 
 /** Ukrainian (українська)
  * @author Ahonc
+ * @author Andriykopanytsia
  * @author Base
  * @author RLuts
  * @author Ата
@@ -2511,6 +2512,7 @@ $messages['uk'] = array(
 	'comments-no-comments-of-day' => 'Сьогодні коментарів немає.',
 	'log-name-comments' => 'Журнал коментарів',
 	'log-description-comments' => 'Це журнал коментарів.',
+	'logentry-comments-delete' => '$1 видалив коментар #$4 на $3',
 	'comments-time-ago' => '$1 тому',
 	'comments-time-days' => '$1 {{PLURAL:$1|день|дні|днів}}',
 	'comments-time-hours' => '$1 {{PLURAL:$1|годину|години|годин}}',
