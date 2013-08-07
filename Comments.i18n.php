@@ -1673,6 +1673,14 @@ $messages['mk'] = array(
 	'right-commentadmin' => 'Раководење со кориснички коментари',
 );
 
+/** Marathi (मराठी)
+ * @author V.narsikar
+ */
+$messages['mr'] = array(
+	'logentry-comments-add' => '$1 ने $3 वर एक नविन शेरा टाकला',
+	'logentry-comments-delete' => '$1 ने $3 वरचा #$4 हा शेरा वगळला',
+);
+
 /** Malay (Bahasa Melayu)
  * @author Anakmalaysia
  */
