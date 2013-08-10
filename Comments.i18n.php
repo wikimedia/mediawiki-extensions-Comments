@@ -1549,6 +1549,7 @@ $messages['lb'] = array(
 	'comments-no-comments-of-day' => 'Et gëtt keng Bemierkunge vum Dag.',
 	'log-name-comments' => 'Logbuch vun de Bemierkungen',
 	'log-description-comments' => 'Dëst ass eng Lëscht vun all Bemierkungen.',
+	'logentry-comments-delete' => "$1 huet d'Bemierkung #$4 op $3 geläscht",
 	'comments-time-ago' => 'viru(n) $1',
 	'comments-time-days' => '{{PLURAL:$1|engem Dag|$1 Deeg}}',
 	'comments-time-hours' => '{{PLURAL:$1|enger Stonn|$1 Stonnen}}',
