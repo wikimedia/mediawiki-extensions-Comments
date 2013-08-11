@@ -141,31 +141,35 @@ The comment ignore list contains a list of users whose comments you are ignoring
 * $3 - a wikilink to the page where the comment was originally posted (and as opposed to the {{msg-mw|Logentry-comments-add}} message, it does '''not''' contain a fragment)
 * $4 - the internal comment ID",
 	'comments-time-ago' => 'Parameters:
-* $1 - one of the following messages:
+* $1 - the duration (e.g. "{{int:comments-time-minutes|1}} {{int:comments-time-seconds|42}} "), uses the following messages:
 ** {{msg-mw|comments-time-days}}
 ** {{msg-mw|comments-time-hours}}
 ** {{msg-mw|comments-time-minutes}}
 ** {{msg-mw|comments-time-seconds}}
 {{Identical|$1 ago}}',
-	'comments-time-days' => 'See also:
-* {{msg-mw|Comments-time-ago}}
+	'comments-time-days' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
+
+See also:
 * {{msg-mw|Comments-time-hours}}
 * {{msg-mw|Comments-time-minutes}}
 * {{msg-mw|Comments-time-seconds}}
 {{Identical|Day}}',
-	'comments-time-hours' => 'See also:
-* {{msg-mw|Comments-time-ago}}
+	'comments-time-hours' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
+
+See also:
 * {{msg-mw|Comments-time-days}}
 * {{msg-mw|Comments-time-minutes}}
 * {{msg-mw|Comments-time-seconds}}',
-	'comments-time-minutes' => 'See also:
-* {{msg-mw|Comments-time-ago}}
+	'comments-time-minutes' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
+
+See also:
 * {{msg-mw|Comments-time-days}}
 * {{msg-mw|Comments-time-hours}}
 * {{msg-mw|Comments-time-seconds}}
 {{Identical|Minute}}',
-	'comments-time-seconds' => 'See also:
-* {{msg-mw|Comments-time-ago}}
+	'comments-time-seconds' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
+
+See also:
 * {{msg-mw|Comments-time-days}}
 * {{msg-mw|Comments-time-hours}}
 * {{msg-mw|Comments-time-minutes}}
@@ -1549,6 +1553,7 @@ $messages['lb'] = array(
 	'comments-no-comments-of-day' => 'Et gëtt keng Bemierkunge vum Dag.',
 	'log-name-comments' => 'Logbuch vun de Bemierkungen',
 	'log-description-comments' => 'Dëst ass eng Lëscht vun all Bemierkungen.',
+	'logentry-comments-add' => '$1 huet eng nei Bemierkung op $3 gemaach',
 	'logentry-comments-delete' => "$1 huet d'Bemierkung #$4 op $3 geläscht",
 	'comments-time-ago' => 'viru(n) $1',
 	'comments-time-days' => '{{PLURAL:$1|engem Dag|$1 Deeg}}',
@@ -2055,6 +2060,14 @@ $messages['ps'] = array(
 	'comments-time-minutes' => '{{PLURAL:$1|يو دقيقه|$1 دقيقې}}',
 	'comments-time-seconds' => '{{PLURAL:$1|يوه ثانيه|$1 ثانيې}}',
 	'right-comment' => 'تبصرې سپارل',
+);
+
+/** Portuguese (português)
+ * @author Luckas
+ */
+$messages['pt'] = array(
+	'comments-cancel-reply' => 'Cancelar',
+	'comments-ignore-cancel' => 'Cancelar',
 );
 
 /** Brazilian Portuguese (português do Brasil)
