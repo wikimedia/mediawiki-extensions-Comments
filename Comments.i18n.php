@@ -149,6 +149,8 @@ The comment ignore list contains a list of users whose comments you are ignoring
 {{Identical|$1 ago}}',
 	'comments-time-days' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
 
+Parameters:
+* $1 - number of days
 See also:
 * {{msg-mw|Comments-time-hours}}
 * {{msg-mw|Comments-time-minutes}}
@@ -156,12 +158,16 @@ See also:
 {{Identical|Day}}',
 	'comments-time-hours' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
 
+Parameters:
+* $1 - number of hours
 See also:
 * {{msg-mw|Comments-time-days}}
 * {{msg-mw|Comments-time-minutes}}
 * {{msg-mw|Comments-time-seconds}}',
 	'comments-time-minutes' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
 
+Parameters:
+* $1 - number of minutes
 See also:
 * {{msg-mw|Comments-time-days}}
 * {{msg-mw|Comments-time-hours}}
@@ -169,6 +175,8 @@ See also:
 {{Identical|Minute}}',
 	'comments-time-seconds' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
 
+Parameters:
+* $1 - number of seconds
 See also:
 * {{msg-mw|Comments-time-days}}
 * {{msg-mw|Comments-time-hours}}
