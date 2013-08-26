@@ -2561,6 +2561,7 @@ $messages['uk'] = array(
  * @author Hydra
  * @author Hzy980512
  * @author Shirayuki
+ * @author TianyinLee
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
@@ -2602,6 +2603,8 @@ $messages['zh-hans'] = array(
 	'comments-no-comments-of-day' => '今天没有新的评论。',
 	'log-name-comments' => '评论日志',
 	'log-description-comments' => '这是评论的日志。',
+	'logentry-comments-add' => '$1在$3上添加了一则新评论',
+	'logentry-comments-delete' => '$1删除了$3上的评论#$4',
 	'comments-time-ago' => '$1前',
 	'comments-time-days' => '{{PLURAL:$1|1天|$1天}}',
 	'comments-time-hours' => '{{PLURAL:$1|1小时|$1小时}}',
