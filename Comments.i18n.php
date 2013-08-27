@@ -848,6 +848,21 @@ $messages['fi'] = array(
 	'right-commentadmin' => 'Hallinnoida käyttäjien lähettämiä kommentteja',
 );
 
+/** Faroese (føroyskt)
+ * @author EileenSanda
+ */
+$messages['fo'] = array(
+	'comments-comment' => 'Viðmerk',
+	'comments-desc' => 'Leggur afturat <code>&lt;comments&gt;</code> parser-húk ið loyvir viðmerkingum á síðum',
+	'comments-voted-label' => 'Atkvøtt',
+	'comments-loading' => 'Innlesur...',
+	'comments-reply-to' => 'Svara',
+	'comments-cancel-reply' => 'Angra',
+	'comments-show-comment-link' => 'Vís viðmerking',
+	'comments-you' => 'Tú',
+	'comments-reply' => 'Svara',
+);
+
 /** French (français)
  * @author Crochet.david
  * @author Gomoko
