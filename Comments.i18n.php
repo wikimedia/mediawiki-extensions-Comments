@@ -135,9 +135,11 @@ The comment ignore list contains a list of users whose comments you are ignoring
 	'log-description-comments' => 'Explanation of the comments log, shown on [[Special:Log/comments]].',
 	'logentry-comments-add' => 'Parameters:
 * $1 - contains the user name + talk/block/contribs links, as is the standard with log entries nowadays
+* $2 - username for <nowiki>{{GENDER}}</nowiki>; omit this parameter if you don\'t need to use <nowiki>{{GENDER}}</nowiki>
 * $3 - a wikilink to the page where the comment was posted; it contains a fragment that directly points to the new comment in question, i.e. [[Talk:Main Page#comment-10]] (the number is the internal comment identifier)',
 	'logentry-comments-delete' => "Parameters:
 * $1 - contains the user name + talk/block/contribs links, as is the standard with log entries nowadays
+* $2 - username for <nowiki>{{GENDER}}</nowiki>; omit this parameter if you don\'t need to use <nowiki>{{GENDER}}</nowiki>
 * $3 - a wikilink to the page where the comment was originally posted (and as opposed to the {{msg-mw|Logentry-comments-add}} message, it does '''not''' contain a fragment)
 * $4 - the internal comment ID",
 	'comments-time-ago' => 'Parameters:
