@@ -133,13 +133,13 @@ The comment ignore list contains a list of users whose comments you are ignoring
 	'comments-no-comments-of-day' => 'Shown as the output of the &lt;commentsoftheday/&gt; parser hook if there are no comments of the day',
 	'log-name-comments' => 'Shown on the dropdown on [[Special:Log]].',
 	'log-description-comments' => 'Explanation of the comments log, shown on [[Special:Log/comments]].',
-	'logentry-comments-add' => 'Parameters:
+	'logentry-comments-add' => "Parameters:
 * $1 - contains the user name + talk/block/contribs links, as is the standard with log entries nowadays
-* $2 - username for <nowiki>{{GENDER}}</nowiki>; omit this parameter if you don\'t need to use <nowiki>{{GENDER}}</nowiki>
-* $3 - a wikilink to the page where the comment was posted; it contains a fragment that directly points to the new comment in question, i.e. [[Talk:Main Page#comment-10]] (the number is the internal comment identifier)',
+* $2 - username for <nowiki>{{GENDER}}</nowiki>; omit this parameter if you don't need to use <nowiki>{{GENDER}}</nowiki>
+* $3 - a wikilink to the page where the comment was posted; it contains a fragment that directly points to the new comment in question, i.e. [[Talk:Main Page#comment-10]] (the number is the internal comment identifier)",
 	'logentry-comments-delete' => "Parameters:
 * $1 - contains the user name + talk/block/contribs links, as is the standard with log entries nowadays
-* $2 - username for <nowiki>{{GENDER}}</nowiki>; omit this parameter if you don\'t need to use <nowiki>{{GENDER}}</nowiki>
+* $2 - username for <nowiki>{{GENDER}}</nowiki>; omit this parameter if you don\\'t need to use <nowiki>{{GENDER}}</nowiki>
 * $3 - a wikilink to the page where the comment was originally posted (and as opposed to the {{msg-mw|Logentry-comments-add}} message, it does '''not''' contain a fragment)
 * $4 - the internal comment ID",
 	'comments-time-ago' => 'Parameters:
@@ -1490,7 +1490,7 @@ $messages['ko'] = array(
 	'logentry-comments-delete' => '$1 사용자가 $3에 덧글 #$4(을)를 삭제했습니다',
 	'comments-time-ago' => '$1 전',
 	'comments-time-days' => '{{PLURAL:$1|1일|$1일}}',
-	'comments-time-hours' => '{{PLURAL:$1|한 시간|$1시간}}',
+	'comments-time-hours' => '{{PLURAL:$1|1시간|$1시간}}',
 	'comments-time-minutes' => '{{PLURAL:$1|1분|$1분}}',
 	'comments-time-seconds' => '{{PLURAL:$1|1초|$1초}}',
 	'log-show-hide-comments' => '$1 덧글 기록',
