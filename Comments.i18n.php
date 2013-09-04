@@ -89,7 +89,9 @@ $messages['qqq'] = array(
 {{Identical|Cancel}}',
 	'comments-block-warning-anon' => '{{doc-singularthey}}
 Displayed in a JavaScript popup alert when the user is about to ignore the comments of an anonymous user.',
-	'comments-block-warning-user' => "Displayed in a JavaScript pop-up alert when the user is about to ignore a registered user's comments. Parameters:
+	'comments-block-warning-user' => "Displayed in a JavaScript pop-up alert when the user is about to ignore a registered user's comments.
+
+Parameters:
 * $1 - the user name of the user whose comments we're about to ignore; can be used for GENDER",
 	'comments-delete-warning' => "Displayed in a JavaScript popup alert when the user is about to delete someone's comment.",
 	'comments-sort-by-date' => 'Drop-down menu item; refer to the [[mw:File:Comments.png|image]] for details',
@@ -133,13 +135,13 @@ The comment ignore list contains a list of users whose comments you are ignoring
 	'comments-no-comments-of-day' => 'Shown as the output of the &lt;commentsoftheday/&gt; parser hook if there are no comments of the day',
 	'log-name-comments' => 'Shown on the dropdown on [[Special:Log]].',
 	'log-description-comments' => 'Explanation of the comments log, shown on [[Special:Log/comments]].',
-	'logentry-comments-add' => "Parameters:
+	'logentry-comments-add' => 'Parameters:
 * $1 - contains the user name + talk/block/contribs links, as is the standard with log entries nowadays
-* $2 - username for <nowiki>{{GENDER}}</nowiki>; omit this parameter if you don't need to use <nowiki>{{GENDER}}</nowiki>
-* $3 - a wikilink to the page where the comment was posted; it contains a fragment that directly points to the new comment in question, i.e. [[Talk:Main Page#comment-10]] (the number is the internal comment identifier)",
+* $2 - (Optional) username, for <nowiki>{{GENDER}}</nowiki> support
+* $3 - a wikilink to the page where the comment was posted; it contains a fragment that directly points to the new comment in question, i.e. [[Talk:Main Page#comment-10]] (the number is the internal comment identifier)',
 	'logentry-comments-delete' => "Parameters:
 * $1 - contains the user name + talk/block/contribs links, as is the standard with log entries nowadays
-* $2 - username for <nowiki>{{GENDER}}</nowiki>; omit this parameter if you don\\'t need to use <nowiki>{{GENDER}}</nowiki>
+* $2 - (Optional) username, for <nowiki>{{GENDER}}</nowiki> support
 * $3 - a wikilink to the page where the comment was originally posted (and as opposed to the {{msg-mw|Logentry-comments-add}} message, it does '''not''' contain a fragment)
 * $4 - the internal comment ID",
 	'comments-time-ago' => 'Parameters:
@@ -353,17 +355,29 @@ $messages['br'] = array(
 	'comments-loading' => 'O kargañ...',
 	'comments-reply-to' => 'Respont da',
 	'comments-cancel-reply' => 'Nullañ',
+	'comments-delete-warning' => "Ha sur oc'h hoc'h e fell deoc'h dilemel an evezhiadenn-mañ ?",
 	'comments-sort-by-date' => 'Urzhiañ dre zeiziad',
+	'comments-show-comment-link' => 'diskouez an evezhiadenn',
 	'comments-you' => "C'hwi",
 	'comments-reply' => 'Respont',
+	'comments-login-required' => "Ret eo deoc'h bezañ kevreet evit ouzhpennañ evezhiadennoù",
+	'comments-not-allowed' => "N'oc'h ket aotreet da embann evezhiadennoù.",
+	'comments-post' => 'Lakaat un evezhiadenn',
 	'comments-submit' => "Ouzhpennañ hoc'h evezhiadenn",
 	'comments-score-text' => 'Poentoù',
 	'comments-permalink' => 'Peurliamm',
 	'comments-delete-link' => 'Diverkañ an evezhiadenn',
 	'comments-anon-name' => 'Implijer dizanv',
+	'comments-ignore-no-users' => "N'eus implijer stanket ebet evit bremañ.",
+	'comments-ignore-remove-message' => "Ha sur oc'h e fell deoc'h distankañ evezhiadennoù an implijer <b>$1</b> ?",
 	'comments-ignore-unblock' => 'Distankañ',
 	'comments-ignore-cancel' => 'Nullañ',
+	'log-name-comments' => 'Marilh an evezhiadennoù',
+	'log-description-comments' => 'Hemañ zo ur marilh evezhiadennoù.',
 	'comments-time-ago' => '$1 zo',
+	'log-show-hide-comments' => 'Marilh evezhiadennoù $1',
+	'right-comment' => 'Kas an evezhiadennoù',
+	'right-commentadmin' => 'Merañ an evezhiadennoù kaset gant an implijerien',
 );
 
 /** Bosnian (bosanski)
