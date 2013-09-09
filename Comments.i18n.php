@@ -187,7 +187,8 @@ See also:
 * {{msg-mw|Comments-time-minutes}}
 {{Identical|Second}}',
 	'log-show-hide-comments' => 'For [[Special:Log]]. Parameters:
-* $1 - show or hide (there are probably some MW core messages for those two)',
+* $1 - one of {{msg-mw|Show}} or {{msg-mw|Hide}}
+{{Related|Log-show-hide}}',
 	'group-commentadmin' => "Shown on [[Special:ListUsers]]. Members of this group can delete other users' comments.
 {{doc-group|commentadmin}}",
 	'group-commentadmin-member' => 'Member of the Comment Administrators (commentadmin) group, shown on [[Special:ListUsers]].
