@@ -79,11 +79,15 @@ $messages['qqq'] = array(
 	'comments-comment' => 'This message might be unused.
 {{Identical|Comment}}',
 	'comments-desc' => '{{desc|name=Comments|url=http://www.mediawiki.org/wiki/Extension:Comments}}',
-	'comments-db-locked' => 'Displayed if a page contains the &lt;comments /&gt; tag while the database is locked.',
+	'comments-db-locked' => 'Displayed if a page contains the <code><nowiki><comments /></nowiki></code> tag while the database is locked.',
 	'comments-voted-label' => 'Shown when you have voted (either thumbs up or thumbs down) for a given comment',
 	'comments-loading' => '{{Identical|Loading}}',
-	'comments-auto-refresher-enable' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
-	'comments-auto-refresher-pause' => 'Auto-refresher is a feature where a page with the &lt;comments /&gt; tag is automatically refreshed for new comments. Refer to the [[mw:File:Comments.png|image]] for details.',
+	'comments-auto-refresher-enable' => 'Auto-refresher is a feature where a page with the <code><nowiki><comments /></nowiki></code> tag is automatically refreshed for new comments.
+
+Refer to the [[mw:File:Comments.png|image]] for details.',
+	'comments-auto-refresher-pause' => 'Auto-refresher is a feature where a page with the <code><nowiki><comments /></nowiki></code> tag is automatically refreshed for new comments.
+
+Refer to the [[mw:File:Comments.png|image]] for details.',
 	'comments-reply-to' => 'This message is followed by the user\'s username whom you\'re about to reply to. For example, "Reply to Jack Phoenix".',
 	'comments-cancel-reply' => 'Used as link text in JavaScript code.
 {{Identical|Cancel}}',
@@ -101,12 +105,12 @@ Parameters:
 	'comments-ignore-message' => "Shown in the output of the <comments /> tag instead of the person's comment if you're ignoring the said person.",
 	'comments-you' => 'Refer to the [[mw:File:Comments.png|image]] for details.',
 	'comments-reply' => '{{Identical|Reply}}',
-	'comments-login-required' => 'Shown when the user does not have the "comment" user right and they are logged out but a page contains the &lt;comments /&gt; tag.',
-	'comments-not-allowed' => 'Shown when the user does not have the "comment" user right but a page contains the &lt;comments /&gt; tag.',
+	'comments-login-required' => 'Shown when the user does not have the "comment" user right and they are logged out but a page contains the <code><nowiki><comments /></nowiki></code> tag.',
+	'comments-not-allowed' => 'Shown when the user does not have the "comment" user right but a page contains the <code><nowiki><comments /></nowiki></code> tag.',
 	'comments-post' => 'Button text, clicking on this button submits your comment; refer to the [[mw:File:Comments.png|image]] for details',
 	'comments-submit' => 'This text is shown above the comment form (the form where you can submit your own comment(s)); refer to the [[mw:File:Comments.png|image]] for details',
 	'comments-score-text' => "Followed by the comment's score; refer to the [[mw:File:Comments.png|image]] for details",
-	'comments-permalink' => '"Permalink" means "permanent link" and clicking on it creates what is a permanent link to a comment, at least until a (comment) administrator deletes the comment or the whole page gets deleted or the &lt;comments/&gt; tag is removed from it.
+	'comments-permalink' => '"Permalink" means "permanent link" and clicking on it creates what is a permanent link to a comment, at least until a (comment) administrator deletes the comment or the whole page gets deleted or the <code><nowiki><comments /></nowiki></code> tag is removed from it.
 {{Identical|Permalink}}',
 	'comments-delete-link' => 'Link text; clicking on this deletes the comment (duh)',
 	'comments-anon-name' => "Generic name shown for anonymous (not logged in/unregistered) users, since their IP addresses aren't directly exposed.
@@ -132,7 +136,7 @@ Parameters:
 	'comments-ignore-title' => 'Title of Special:CommentIgnoreList, as shown on the said page.',
 	'commentignorelist' => "{{doc-special|CommentIgnoreList}}
 The comment ignore list contains a list of users whose comments you are ignoring; an ignored comment won't show up by default and you have to click on a special link to view it",
-	'comments-no-comments-of-day' => 'Shown as the output of the &lt;commentsoftheday/&gt; parser hook if there are no comments of the day',
+	'comments-no-comments-of-day' => 'Shown as the output of the <code><nowiki><commentsoftheday /></nowiki></code> parser hook if there are no comments of the day.',
 	'log-name-comments' => 'Shown on the dropdown on [[Special:Log]].',
 	'log-description-comments' => 'Explanation of the comments log, shown on [[Special:Log/comments]].',
 	'logentry-comments-add' => 'Parameters:
