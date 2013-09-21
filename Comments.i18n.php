@@ -154,7 +154,7 @@ The comment ignore list contains a list of users whose comments you are ignoring
 ** {{msg-mw|comments-time-hours}}
 ** {{msg-mw|comments-time-minutes}}
 ** {{msg-mw|comments-time-seconds}}
-{{Identical|$1 ago}}',
+{{Identical|Ago}}',
 	'comments-time-days' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
 
 Parameters:
