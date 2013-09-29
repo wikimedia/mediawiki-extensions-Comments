@@ -381,6 +381,7 @@ $messages['br'] = array(
 	'log-name-comments' => 'Marilh an evezhiadennoù',
 	'log-description-comments' => 'Hemañ zo ur marilh evezhiadennoù.',
 	'logentry-comments-add' => '$1 en deus embannet un evezhiadenn nevez war $3',
+	'logentry-comments-delete' => '$1 en deus dilamet an evezhiadenn $4 war $3',
 	'comments-time-ago' => '$1 zo',
 	'comments-time-days' => '{{PLURAL:$1|un deiz|$1 deiz}}',
 	'comments-time-hours' => '{{PLURAL:$1|un eur|$1 eur}}',
@@ -468,7 +469,14 @@ $messages['cs'] = array(
  * @author Lloffiwr
  */
 $messages['cy'] = array(
+	'comments-comment' => 'Sylw',
+	'comments-voted-label' => 'Wedi pleidleisio',
+	'comments-loading' => "Wrthi'n llwytho...",
+	'comments-reply-to' => 'Ateb',
+	'comments-cancel-reply' => 'Diddymu',
 	'comments-delete-warning' => "Ydych chi'n siwr eich bod am ddileu'r sylw hwn?",
+	'comments-sort-by-date' => 'Trefnu yn ôl dyddiad',
+	'comments-reply' => 'Ateb',
 );
 
 /** Danish (dansk)
@@ -2106,7 +2114,7 @@ $messages['ps'] = array(
 	'comments-you' => 'تاسې',
 	'comments-reply' => 'ځوابول',
 	'comments-submit' => 'خپله تبصره ورګډول',
-	'comments-delete-link' => 'تبصره ړنګول',
+	'comments-delete-link' => 'تبصره ړنگول',
 	'comments-anon-name' => 'ورکنومی کارن',
 	'comments-ignore-unblock' => 'بنديز لرې کول',
 	'comments-ignore-cancel' => 'ناګارل',
@@ -2265,6 +2273,7 @@ $messages['roa-tara'] = array(
 
 /** Russian (русский)
  * @author Kaganer
+ * @author Okras
  * @author Ole Yves
  */
 $messages['ru'] = array(
@@ -2306,6 +2315,8 @@ $messages['ru'] = array(
 	'comments-no-comments-of-day' => 'Нет комментариев дня.',
 	'log-name-comments' => 'Журнал комментариев',
 	'log-description-comments' => 'Это журнал комментариев.',
+	'logentry-comments-add' => '$1 опубликовал новый комментарий на $3',
+	'logentry-comments-delete' => '$1 удалил комментарий #$4 на $3',
 	'comments-time-ago' => '$1 назад',
 	'comments-time-days' => '{{PLURAL:$1|День|$1 дня|$1 дней}}',
 	'comments-time-hours' => '{{PLURAL:$1|Час|$1 часа|$1 часов}}',
