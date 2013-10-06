@@ -1627,6 +1627,7 @@ $messages['lb'] = array(
 	'comments-time-minutes' => '{{PLURAL:$1|enger Minutt|$1 Minutten}}',
 	'comments-time-seconds' => '{{PLURAL:$1|enger Sekonn|$1 Sekonnen}}',
 	'log-show-hide-comments' => 'Logbuch vun de Bemierkunge $1',
+	'group-commentadmin' => 'Administrateure fir Bemierkungen',
 	'right-comment' => 'Bemierkunge späicheren',
 	'right-commentadmin' => 'Bemierkunge vu Benotzer verwalten',
 );
