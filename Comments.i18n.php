@@ -575,6 +575,7 @@ $messages['de-formal'] = array(
 
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
+ * @author Gorizon
  * @author Mirzali
  */
 $messages['diq'] = array(
@@ -590,9 +591,11 @@ $messages['diq'] = array(
 	'comments-submit' => 'Vatışa xo dekere de',
 	'comments-score-text' => 'Skor',
 	'comments-permalink' => 'Greyo Daimi',
+	'comments-delete-link' => 'Vatışi bestern',
 	'comments-anon-name' => 'Karbero bêname',
 	'comments-ignore-unblock' => 'bloqi hewad',
 	'comments-ignore-cancel' => 'Bıterkne',
+	'log-name-comments' => 'Qeyda vatışan',
 	'comments-time-ago' => 'Verdê $1',
 );
 
@@ -791,6 +794,7 @@ $messages['et'] = array(
 /** Persian (فارسی)
  * @author Alireza
  * @author Mahdiz
+ * @author Omidh
  * @author Reza1615
  * @author Taha
  * @author پاناروما
@@ -823,7 +827,15 @@ $messages['fa'] = array(
 	'comments-ignore-no-users' => 'هیچ کاربری در حال حاضر بسته نشده است.',
 	'comments-ignore-unblock' => 'باز شود',
 	'comments-ignore-cancel' => 'لغو کردن',
+	'logentry-comments-add' => '$1 یک نظر جدید در صفحه $3 ارسال کرد',
+	'logentry-comments-delete' => '$1 نظر #$4 را از صفحه $3 حذف کرد',
 	'comments-time-ago' => '$1 پیش',
+	'comments-time-days' => '{{PLURAL:$1|یک روز|$1 روز}}',
+	'comments-time-hours' => '{{PLURAL:$1|یک ساعت|$1 ساعت}}',
+	'comments-time-minutes' => '{{PLURAL:$1|یک دقیقه|$1 دقیقه}}',
+	'comments-time-seconds' => '{{PLURAL:$1|یک ثانیه|$1 ثانیه}}',
+	'log-show-hide-comments' => '$1 تغییرات نظرات',
+	'group-commentadmin' => 'مدیران نظرات',
 	'right-comment' => 'ارسال نظرات',
 );
 
