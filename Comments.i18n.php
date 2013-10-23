@@ -2434,6 +2434,7 @@ $messages['sr-ec'] = array(
 );
 
 /** Swedish (svenska)
+ * @author Jopparn
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
@@ -2475,6 +2476,7 @@ $messages['sv'] = array(
 	'comments-no-comments-of-day' => 'Det finns inga kommentarer idag.',
 	'log-name-comments' => 'Kommentarlogg',
 	'log-description-comments' => 'Detta är en logg för kommentarer.',
+	'logentry-comments-delete' => '$1 borttagen kommentar #$4 på $3',
 	'comments-time-ago' => '$1 sedan',
 	'comments-time-days' => '{{PLURAL:$1|en dag|$1 dagar}}',
 	'comments-time-hours' => '{{PLURAL:$1|en timme|$1 timmar}}',
