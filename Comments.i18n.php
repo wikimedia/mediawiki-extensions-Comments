@@ -453,6 +453,7 @@ $messages['ce'] = array(
 	'comments-submit' => 'ТӀетоха хьай къамел',
 	'comments-ignore-cancel' => 'Цаоьшу',
 	'comments-time-ago' => '$1 юха',
+	'comments-time-hours' => '{{PLURAL:$1|Сахьат|$1 сахьат|$1 сахьат}}', # Fuzzy
 );
 
 /** Czech (česky)
