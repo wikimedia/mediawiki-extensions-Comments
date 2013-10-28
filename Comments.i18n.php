@@ -1964,10 +1964,16 @@ $messages['oc'] = array(
 	'comments-permalink' => 'Ligam permanent',
 	'comments-ignore-unblock' => 'Desblocar',
 	'comments-ignore-cancel' => 'Anullar',
+	'comments-time-ago' => 'I a $1',
 	'comments-time-days' => '{{PLURAL:$1|un jorn|$1 jorns}}',
 	'comments-time-hours' => '{{PLURAL:$1|una ora|$1 oras}}',
 	'comments-time-minutes' => '{{PLURAL:$1|una minuta|$1 minutas}}',
 	'comments-time-seconds' => '{{PLURAL:$1|una segonda|$1 segondas}}',
+	'log-show-hide-comments' => 'jornal de comentaris $1',
+	'group-commentadmin' => 'Administrators de comentaris',
+	'group-commentadmin-member' => '{{GENDER:$1|administrator de comentaris|administratritz de comentaris}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Administrators de comentaris',
+	'right-comment' => 'Publicar los comentaris',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
@@ -2294,7 +2300,7 @@ $messages['roa-tara'] = array(
  */
 $messages['ru'] = array(
 	'comments-comment' => 'Комментарий',
-	'comments-desc' => 'Добавляет тег <code>&lt;comments&gt;</code>, который позволяет комментировать страницы',
+	'comments-desc' => 'Добавляет перехватчик синтаксического анализатора <code>&lt;comments&gt;</code>, который позволяет комментировать страницы',
 	'comments-db-locked' => '<h3>Добавление комментариев</h3>В настоящее время база данных заблокирована для планового обслуживания баз данных, после чего она вернётся в нормальное состояние. Пожалуйста, попробуйте позже!',
 	'comments-voted-label' => 'Проголосовал',
 	'comments-loading' => 'Загрузка...',
