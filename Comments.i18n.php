@@ -266,6 +266,13 @@ $messages['ba'] = array(
 	'comments-reply' => 'Яуап бирергә',
 );
 
+/** Bikol Central (Bikol Central)
+ * @author Geopoet
+ */
+$messages['bcl'] = array(
+	'comments-comment' => 'Komento',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Wizardist
  */
