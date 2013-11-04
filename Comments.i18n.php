@@ -271,6 +271,8 @@ $messages['ba'] = array(
  */
 $messages['bcl'] = array(
 	'comments-comment' => 'Komento',
+	'comments-voted-label' => 'Nagboto na',
+	'comments-loading' => 'Ikinakarga...',
 );
 
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
