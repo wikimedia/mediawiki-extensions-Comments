@@ -2354,6 +2354,7 @@ $messages['roa-tara'] = array(
  * @author Kaganer
  * @author Okras
  * @author Ole Yves
+ * @author SimonLitt
  */
 $messages['ru'] = array(
 	'comments-comment' => 'Комментарий',
@@ -2397,10 +2398,10 @@ $messages['ru'] = array(
 	'logentry-comments-add' => '$1 опубликовал новый комментарий на $3',
 	'logentry-comments-delete' => '$1 удалил комментарий #$4 на $3',
 	'comments-time-ago' => '$1 назад',
-	'comments-time-days' => '{{PLURAL:$1|День|$1 дня|$1 дней}}',
-	'comments-time-hours' => '{{PLURAL:$1|Час|$1 часа|$1 часов}}',
-	'comments-time-minutes' => '{{PLURAL:$1|Минуту|$1 минуты|$1 минут}}',
-	'comments-time-seconds' => '{{PLURAL:$1|Секунду|$1 секунды|$1 секунд}}',
+	'comments-time-days' => '{{PLURAL:$1|$1 день|$1 дня|$1 дней}}',
+	'comments-time-hours' => '{{PLURAL:$1|$1 час|$1 часа|$1 часов}}',
+	'comments-time-minutes' => '{{PLURAL:$1|$1 минуту|$1 минуты|$1 минут}}',
+	'comments-time-seconds' => '{{PLURAL:$1|$1 секунду|$1 секунды|$1 секунд}}',
 	'log-show-hide-comments' => '$1 комментарий из журнала',
 	'group-commentadmin' => 'Модераторы комментариев',
 	'group-commentadmin-member' => '{{GENDER:$1|модератор комментариев}}',
