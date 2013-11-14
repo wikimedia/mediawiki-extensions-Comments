@@ -928,10 +928,10 @@ class Comment {
 
 				$output .= '</div>' . "\n";
 
-				// $wgTitle points to Special:CommentListGet...and that special
-				// page shouldn't even exist, so we certainly don't want to
-				// advertise it...let's point the permalink to the current page
-				// instead :)
+				// The current title points to Special:CommentListGet...and that
+				// special page shouldn't even exist, so we certainly don't want
+				// to advertise it...let's point the permalink to the current
+				// page instead :)
 				$title = Title::newFromID( $this->PageID );
 
 				$output .= '</div>' . "\n";
