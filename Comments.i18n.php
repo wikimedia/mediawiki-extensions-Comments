@@ -748,6 +748,7 @@ $messages['eo'] = array(
  * @author Armando-Martin
  * @author Bernardom
  * @author Fitoschido
+ * @author Ihojose
  */
 $messages['es'] = array(
 	'comments-comment' => 'Comentario',
@@ -789,6 +790,7 @@ $messages['es'] = array(
 	'log-name-comments' => 'Registro de comentarios',
 	'log-description-comments' => 'Este es un registro de los comentarios.',
 	'logentry-comments-add' => '$1 publicó un comentario nuevo en $3',
+	'logentry-comments-delete' => '$1 eliminó el comentario #$4 en $3',
 	'comments-time-ago' => 'Hace $1',
 	'comments-time-days' => '{{PLURAL:$1|un día|$1 días}}',
 	'comments-time-hours' => '{{PLURAL:$1|una hora|$1 horas}}',
