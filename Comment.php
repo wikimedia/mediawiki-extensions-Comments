@@ -73,7 +73,7 @@ $wgSpecialPages['CommentListGet'] = 'CommentListGet';
 $wgSpecialPageGroups['CommentIgnoreList'] = 'users';
 
 // Load the AJAX functions required by this extension
-require_once( 'Comments_AjaxFunctions.php' );
+require_once( $dir . 'Comments_AjaxFunctions.php' );
 
 $wgAutoloadClasses['CommentsLogFormatter'] = $dir . 'CommentsLogFormatter.php';
 // Add a new log type
