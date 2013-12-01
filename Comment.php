@@ -95,6 +95,14 @@ $wgCommentsInRecentChanges = false;
 $wgAutoloadClasses['CommentsHooks'] = $dir . 'CommentsHooks.php';
 $wgHooks['ParserFirstCallInit'][] = 'CommentsHooks::onParserFirstCallInit';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'CommentsHooks::onLoadExtensionSchemaUpdates';
-$wgHooks['ParserGetVariableValueSwitch'][] = 'CommentsHooks::assignValueToNumberOfComments';
-$wgHooks['MagicWordwgVariableIDs'][] = 'CommentsHooks::registerNumberOfCommentsMagicWord';
 $wgHooks['RenameUserSQL'][] = 'CommentsHooks::onRenameUserSQL';
+// Number of comments hooks
+$wgHooks['ParserFirstCallInit'][] = 'NumberOfComments::setupNumberOfCommentsPageParser';
+$wgHooks['MagicWordwgVariableIDs'][] = 'NumberOfComments::registerNumberOfCommentsMagicWord';
+$wgHooks['MagicWordwgVariableIDs'][] = 'NumberOfComments::registerNumberOfCommentsPageMagicWord';
+$wgHooks['ParserGetVariableValueSwitch'][] = 'NumberOfComments::getNumberOfCommentsMagic';
+$wgHooks['ParserGetVariableValueSwitch'][] = 'NumberOfComments::getNumberOfCommentsPageMagic';
+
+// NumberOfComments magic word setup
+$wgAutoloadClasses['NumberOfComments'] = __DIR__ . '/NumberOfComments.php';
+$wgExtensionMessagesFiles['NumberOfCommentsMagic'] = __DIR__ . '/Comments.i18n.magic.php';

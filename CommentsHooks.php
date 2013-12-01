@@ -93,65 +93,6 @@ class CommentsHooks {
 	}
 
 	/**
-	 * Registers NUMBEROFCOMMENTS as a valid magic word identifier.
-	 *
-	 * @param $variableIds Array: array of valid magic word identifiers
-	 * @return Boolean
-	 */
-	public static function registerNumberOfCommentsMagicWord( &$variableIds ) {
-		$variableIds[] = 'NUMBEROFCOMMENTS';
-		return true;
-	}
-
-	/**
-	 * Main backend logic for the {{NUMBEROFCOMMENTS}} magic word.
-	 * If the {{NUMBEROFCOMMENTS}} magic word is found, first checks memcached
-	 * to see if we can get the value from cache, but if that fails for some
-	 * reason, then a COUNT(*) SQL query is done to fetch the amount from the
-	 * database.
-	 *
-	 * @param $parser Parser
-	 * @param $cache
-	 * @param $magicWordId String: magic word identifier
-	 * @param $ret Integer: what to return to the user (in our case, the number of comments)
-	 * @return Boolean
-	 */
-	public static function assignValueToNumberOfComments( &$parser, &$cache, &$magicWordId, &$ret ) {
-		global $wgMemc;
-
-		if ( $magicWordId == 'NUMBEROFCOMMENTS' ) {
-			$key = wfMemcKey( 'comments', 'magic-word' );
-			$data = $wgMemc->get( $key );
-			if ( $data != '' ) {
-				// We have it in cache? Oh goody, let's just use the cached value!
-				wfDebugLog(
-					'Comments',
-					'Got the amount of comments from memcached'
-				);
-				// return value
-				$ret = $data;
-			} else {
-				// Not cached → have to fetch it from the database
-				$dbr = wfGetDB( DB_SLAVE );
-				$commentCount = (int)$dbr->selectField(
-					'Comments',
-					'COUNT(*) AS count',
-					array(),
-					__METHOD__
-				);
-				wfDebugLog( 'Comments', 'Got the amount of comments from DB' );
-				// Store the count in cache...
-				// (86400 = seconds in a day)
-				$wgMemc->set( $key, $commentCount, 86400 );
-				// ...and return the value to the user
-				$ret = $commentCount;
-			}
-		}
-
-		return true;
-	}
-
-	/**
 	 * Adds the three new required database tables into the database when the
 	 * user runs /maintenance/update.php (the core database updater script).
 	 *
