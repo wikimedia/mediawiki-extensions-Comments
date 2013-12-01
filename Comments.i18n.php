@@ -657,6 +657,13 @@ $messages['diq'] = array(
 	'comments-time-ago' => 'Verdê $1',
 );
 
+/** Lower Sorbian (dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'comments-time-ago' => 'pśed $1',
+);
+
 /** Greek (Ελληνικά)
  * @author Glavkos
  * @author ZaDiak
