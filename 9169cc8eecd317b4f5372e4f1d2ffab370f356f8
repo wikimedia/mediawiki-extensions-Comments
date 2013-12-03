@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_305f8d15",
+        "filename": "NumberOfComments.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2013-12-03T20:51:25Z",
+      "side": 1,
+      "message": "Seems like you forgot to rename $customVariableIds to $variableIds here.",
+      "revId": "9169cc8eecd317b4f5372e4f1d2ffab370f356f8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
