@@ -25,7 +25,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'Comments',
-	'version' => '2.8',
+	'version' => '2.9',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix' ),
 	'descriptionmsg' => 'comments-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
@@ -42,7 +42,7 @@ $wgResourceModules['ext.comments'] = array(
 		'comments-block-warning-anon', 'comments-block-warning-user',
 		'comments-delete-warning'
 	),
-	'localBasePath' => dirname( __FILE__ ),
+	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'Comments',
 	'position' => 'top' // available since r85616
 );
@@ -61,7 +61,7 @@ $wgGroupPermissions['*']['comment'] = true;
 $wgGroupPermissions['commentadmin']['commentadmin'] = true;
 
 // Set up the new special pages
-$dir = dirname( __FILE__ ) . '/';
+$dir = __DIR__ . '/';
 $wgExtensionMessagesFiles['Comments'] = $dir . 'Comments.i18n.php';
 $wgExtensionMessagesFiles['CommentsMagic'] = $dir . 'Comments.i18n.magic.php';
 $wgAutoloadClasses['Comment'] = $dir . 'CommentClass.php';
@@ -95,6 +95,12 @@ $wgCommentsInRecentChanges = false;
 $wgAutoloadClasses['CommentsHooks'] = $dir . 'CommentsHooks.php';
 $wgHooks['ParserFirstCallInit'][] = 'CommentsHooks::onParserFirstCallInit';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'CommentsHooks::onLoadExtensionSchemaUpdates';
-$wgHooks['ParserGetVariableValueSwitch'][] = 'CommentsHooks::assignValueToNumberOfComments';
-$wgHooks['MagicWordwgVariableIDs'][] = 'CommentsHooks::registerNumberOfCommentsMagicWord';
 $wgHooks['RenameUserSQL'][] = 'CommentsHooks::onRenameUserSQL';
+// Number of comments hooks
+$wgHooks['ParserFirstCallInit'][] = 'NumberOfComments::setupNumberOfCommentsPageParser';
+$wgHooks['MagicWordwgVariableIDs'][] = 'NumberOfComments::registerNumberOfCommentsMagicWord';
+$wgHooks['ParserGetVariableValueSwitch'][] = 'NumberOfComments::getNumberOfCommentsMagic';
+
+// NumberOfComments magic word setup
+$wgAutoloadClasses['NumberOfComments'] = $dir . 'NumberOfComments.php';
+$wgExtensionMessagesFiles['NumberOfCommentsMagic'] = $dir . 'Comments.i18n.magic.php';
