@@ -4,7 +4,7 @@
  * object-oriented.
  *
  * @file
- * @date 28 July 2013
+ * @date 6 December 2013
  */
 var Comment = {
 	submitted: 0,
@@ -114,13 +114,15 @@ var Comment = {
 	 * @param pid Integer: page ID
 	 * @param ord Sorting order
 	 * @param end
+	 * @param cpage Integer: comment page number (used for pagination)
 	 */
-	viewComments: function( pid, ord, end ) {
+	viewComments: function( pid, ord, end, cpage ) {
+		document.commentform.cpage.value = cpage;
 		document.getElementById( 'allcomments' ).innerHTML = mw.msg( 'comments-loading' ) + '<br /><br />';
 		var x = sajax_init_object();
 		var url = mw.config.get( 'wgServer' ) + mw.config.get( 'wgScriptPath' ) +
 			'/index.php?title=Special:CommentListGet&pid=' + pid + '&ord=' +
-			ord;
+			ord + '&cpage=' + cpage;
 
 		x.open( 'get', url, true );
 
@@ -161,8 +163,13 @@ var Comment = {
 				'wfCommentSubmit',
 				[ pidVal, parentId, commentText, token ],
 				function( response ) {
-					document.commentform.comment_text.value = '';
-					Comment.viewComments( document.commentform.pid.value, 0, 1 );
+					if ( response.responseText === 'ok' ) {
+						document.commentform.comment_text.value = '';
+						Comment.viewComments( document.commentform.pid.value, 0, 1, document.commentform.cpage.value );
+					} else if ( response.responseText != undefined && response.responseText != null && response.responseText != '' ) {
+						alert( response.responseText );
+						Comment.submitted = 0;
+					}
 				}
 			);
 			Comment.cancelReply();
@@ -222,7 +229,7 @@ var Comment = {
 			// Get last new ID
 			Comment.CurLatestCommentID = response.responseText;
 			if ( Comment.CurLatestCommentID != Comment.LatestCommentID ) {
-				Comment.viewComments( document.commentform.pid.value, 0, 1 );
+				Comment.viewComments( document.commentform.pid.value, 0, 1, document.commentform.cpage.value );
 				Comment.LatestCommentID = Comment.CurLatestCommentID;
 			}
 		}
@@ -273,7 +280,9 @@ jQuery( document ).ready( function() {
 	jQuery( 'body' ).on( 'change', 'select[name="TheOrder"]', function() {
 		Comment.viewComments(
 			mw.config.get( 'wgArticleId' ), // or we could use jQuery( 'input[name="pid"]' ).val(), too
-			jQuery( this ).val()
+			jQuery( this ).val(),
+			0,
+			document.commentform.cpage.value
 		);
 	} );
 
@@ -329,5 +338,25 @@ jQuery( document ).ready( function() {
 	// Handle clicks on the submit button (previously this was an onclick attr)
 	jQuery( 'body' ).on( 'click', 'div.c-form-button input[type="button"]', function() {
 		Comment.submit();
+	} );
+
+	// Change page
+	jQuery( 'body' ).on( 'click', 'li.c-pager-item a.c-pager-link', function() {
+		var ord = 0,
+			commentsBody = jQuery( this ).parents( 'div.comments-body:first' );
+
+		if ( commentsBody.length > 0 ) {
+			var ordCrtl = commentsBody.first().find( 'select[name="TheOrder"]:first' );
+			if ( ordCrtl.length > 0 ) {
+				ord = ordCrtl.val();
+			}
+		}
+
+		Comment.viewComments(
+			mw.config.get( 'wgArticleId' ), // or we could use jQuery( 'input[name="pid"]' ).val(), too
+			ord,
+			0,
+			jQuery( this ).data( 'cpage' )
+		);
 	} );
 } );

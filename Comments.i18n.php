@@ -40,6 +40,8 @@ $messages['en'] = array(
 	'comments-delete-link' => 'Delete comment',
 	'comments-anon-name' => 'Anonymous user',
 	'comments-anon-message' => '{{SITENAME}} welcomes <b>all comments</b>. If you do not want to be anonymous, <a href="$1">register</a> or <a href="$2">log in</a>. It is free.',
+	'comments-links-are-forbidden' => 'External links in comments are forbidden!',
+	'comments-is-spam' => 'Submitted text of the comment was interpreted as spam.',
 	'comments-ignore-item' => '<a href="$1">$2</a> on $3 <a href="$4">(unblock)</a>',
 	'comments-ignore-no-users' => 'There are no users currently blocked.',
 	'comments-ignore-remove-message' => 'Are you sure you want to unblock user <b>$1</b>\'s comments?',
@@ -65,6 +67,7 @@ $messages['en'] = array(
 	// For Special:ListGroupRights
 	'right-comment' => 'Submit comments',
 	'right-commentadmin' => 'Administrate user-submitted comments',
+	'right-commentlinks' => 'Use external links in comments',
 );
 
 /** Message documentation (Message documentation)
@@ -119,6 +122,8 @@ Parameters:
 Parameters:
 * $1 - the URL to [[Special:UserLogin]]
 * $2 - the URL to [[Special:UserLogin/signup]]',
+	'comments-links-are-forbidden' => 'Error message shown to the user if they tried to post a comment that contains external links and they don\'t have the commentlinks user right.',
+	'comments-is-spam' => 'Error message shown to the user if they try to post a comment that matches the spam filter and they\'re not a member of the commentadmin group.',
 	'comments-ignore-item' => "Shown on Special:CommentIgnoreList. Parameters:
 * $1 - the URL to the blocked user's user page
 * $2 - the name of the blocked user

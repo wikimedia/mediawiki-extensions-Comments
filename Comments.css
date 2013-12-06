@@ -149,3 +149,17 @@ textarea#comment {
 .c-order-select {
 	float: left;
 }
+
+/* Pager */
+ul.c-pager {
+	clear: both;
+	margin: 0;
+}
+
+li.c-pager-item {
+	background-image: none;
+	display: inline;
+	font-size: 14px;
+	list-style-type: none;
+	padding: 0.5em;
+}

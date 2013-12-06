@@ -4,7 +4,7 @@
  *
  * @file
  * @ingroup Extensions
- * @version 2.8
+ * @version 3.0
  * @author David Pean <david.pean@gmail.com>
  * @author Misza <misza1313[ at ]gmail[ dot ]com>
  * @author Jack Phoenix <jack@countervandalism.net>
@@ -25,7 +25,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'Comments',
-	'version' => '2.9',
+	'version' => '3.0',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix' ),
 	'descriptionmsg' => 'comments-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
@@ -55,10 +55,13 @@ $wgCommentsDefaultAvatar = 'http://www.shoutwiki.com/w/extensions/SocialProfile/
 // New user rights
 $wgAvailableRights[] = 'comment';
 $wgAvailableRights[] = 'commentadmin';
+$wgAvailableRights[] = 'commentlinks';
 // Allows everyone, including unregistered users, to comment
 $wgGroupPermissions['*']['comment'] = true;
 // Allows users in the commentadmin group to administrate comments (incl. comment deletion)
 $wgGroupPermissions['commentadmin']['commentadmin'] = true;
+// Allows autoconfirmed users to use external links in comments
+$wgGroupPermissions['autoconfirmed']['commentlinks'] = true;
 
 // Set up the new special pages
 $dir = __DIR__ . '/';

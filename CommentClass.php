@@ -11,19 +11,71 @@
  * @ingroup Extensions
  */
 class Comment {
+	/**
+	 * @var Integer: page ID (page.page_id) of the page where the <comments />
+	 *               tag is in
+	 */
 	var $PageID = 0;
+
+	/**
+	 * @var Integer: total amount of comments by distinct commenters that the
+	 *               current page has
+	 */
 	var $CommentTotal = 0;
+
+	/**
+	 * @var String: text of the current comment
+	 */
 	var $CommentText = null;
-	var $CommentDate = null;
+
+	var $CommentDate = null; // @todo FIXME/CHECKME: unused, remove this?
+
+	/**
+	 * @var Integer: internal ID number (Comments.CommentID DB field) of the
+	 *               current comment that we're dealing with
+	 */
 	var $CommentID = 0;
+
+	/**
+	 * @var Integer: ID of the parent comment, if this is a child comment
+	 */
 	var $CommentParentID = 0;
+
 	var $CommentVote = 0;
+
+	/**
+	 * @var Integer: comment score (SUM() of all votes) of the current page
+	 */
 	var $CommentScore = 0;
+
+	/**
+	 * @var Integer: if this is _not_ 0, then the comments are ordered by their
+	 *               Comment_Score in descending order
+	 */
 	var $OrderBy = 0;
+
+	/**
+	 * @var Integer: maximum amount of comments shown per page before pagination
+	 *               is enabled; also used as the LIMIT for the SQL query
+	 */
+	var $Limit = 100;
+
+	var $PagerLimit = 9;
+	var $CurrentPagerPage = 0;
 	var $Allow = '';
 	var $Voting = '';
+
+	/**
+	 * @var Boolean: allow positive (plus) votes?
+	 */
 	var $AllowPlus = true;
+
+	/**
+	 * @var Boolean: allow negative (minus) votes?
+	 */
 	var $AllowMinus = true;
+
+	var $PAGE_QUERY = 'cpage';
 
 	/**
 	 * The following four functions are borrowed
@@ -256,6 +308,58 @@ class Comment {
 	}
 
 	/**
+	 * Simple spam check -- checks the supplied text against MediaWiki's
+	 * built-in regex-based spam filters
+	 *
+	 * @param $text String: text to check for spam patterns
+	 * @return Boolean: true if it contains spam, otherwise false
+	 */
+	public static function isSpam( $text ) {
+		global $wgSpamRegex, $wgSummarySpamRegex;
+
+		$retVal = false;
+		// Allow to hook other anti-spam extensions so that sites that use,
+		// for example, AbuseFilter, Phalanx or SpamBlacklist can add additional
+		// checks
+		wfRunHooks( 'Comments::isSpam', array( &$text, &$retVal ) );
+
+		// Run text through $wgSpamRegex (and $wgSummarySpamRegex if it has been specified)
+		if ( $wgSpamRegex && preg_match( $wgSpamRegex, $text ) ) {
+			$retVal = true;
+		}
+
+		if ( $wgSummarySpamRegex && is_array( $wgSummarySpamRegex ) ) {
+			foreach ( $wgSummarySpamRegex as $spamRegex ) {
+				if ( preg_match( $spamRegex, $text ) ) {
+					$retVal = true;
+				}
+			}
+		}
+
+		return $retVal;
+	}
+
+	/**
+	 * Checks the supplied text for links
+	 *
+	 * @param $text String: text to check
+	 * @return Boolean: true if it contains links, otherwise false
+	 */
+	public static function haveLinks( $text ) {
+		$linkPatterns = array(
+			'/(https?)|(ftp):\/\//',
+			'/=\\s*[\'"]?\\s*mailto:/',
+		);
+		foreach ( $linkPatterns as $linkPattern ) {
+			if ( preg_match( $linkPattern, $text ) ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
 	 * Adds the comment and all necessary info into the Comments table in the
 	 * database.
 	 */
@@ -476,6 +580,10 @@ class Comment {
 		}
 	}
 
+	function setCurrentPagerPage( $pagerPage ) {
+		$this->CurrentPagerPage = intval( $pagerPage );
+	}
+
 	/**
 	 * Purge caches (memcached, parser cache and Squid cache)
 	 */
@@ -576,7 +684,7 @@ class Comment {
 	 * @return Array: array containing every possible bit of information about
 	 *                a comment, including score, timestamp and more
 	 */
-	public function getCommentList() {
+	public function getCommentList( $page ) {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$tables = array();
@@ -595,7 +703,8 @@ class Comment {
 			'Comment_Minus_Count AS CommentVoteMinus', 'Comment_Parent_ID',
 			'CommentID'
 		);
-
+		$params['LIMIT'] = $this->Limit;
+		$params['OFFSET'] = ( $page > 0 ) ? ( ( $page - 1 ) * $this->Limit ) : 0;
 		if( $this->OrderBy != 0 ) {
 			$params['ORDER BY'] = 'Comment_Score DESC';
 		}
@@ -707,9 +816,21 @@ class Comment {
 		} else {
 			// Anonymous users need to log in before they can vote
 			$login = SpecialPage::getTitleFor( 'Userlogin' );
+			// Determine a sane returnto URL parameter, or at least try, and
+			// failing that, just take the user to the main page.
+			// Fun fact: the escapeLocalURL() call below used to use
+			// $wgOut->getTitle()->getDBkey() but that returns 'GetCommentList'
+			// which is so wrong on so many different levels that I don't know
+			// where to begin...
+			$returnToPageName = Title::newFromId( $this->PageID );
+			if ( $returnToPageName instanceof Title ) {
+				$returnTo = $returnToPageName->getPrefixedDBkey();
+			} else {
+				$returnTo = Title::newMainPage()->getPrefixedDBkey();
+			}
 			$voteLink .=
 				"<a href=\"" .
-				$login->escapeLocalURL( array( 'returnto' => $wgOut->getTitle()->getDBkey() ) ) .
+				$login->escapeLocalURL( array( 'returnto' => $returnTo ) ) .
 				"\" rel=\"nofollow\">";
 		}
 
@@ -724,13 +845,177 @@ class Comment {
 	}
 
 	/**
+	 * Display pager for the current page.
+	 *
+	 * @param $pagerCurrent Integer: page we are currently paged to
+	 * @param $pagesCount Integer: the maximum page number
+	 */
+	function displayPager( $pagerCurrent, $pagesCount ) {
+		// Middle is used to "center" pages around the current page.
+		$pager_middle = ceil( $this->PagerLimit / 2 );
+		// first is the first page listed by this pager piece (re quantity)
+		$pagerFirst = $pagerCurrent - $pager_middle + 1;
+		// last is the last page listed by this pager piece (re quantity)
+		$pagerLast = $pagerCurrent + $this->PagerLimit - $pager_middle;
+
+		// Prepare for generation loop.
+		$i = $pagerFirst;
+		if ( $pagerLast > $pagesCount ) {
+			// Adjust "center" if at end of query.
+			$i = $i + ( $pagesCount - $pagerLast );
+			$pagerLast = $pagesCount;
+		}
+		if ( $i <= 0 ) {
+			// Adjust "center" if at start of query.
+			$pagerLast = $pagerLast + ( 1 - $i );
+			$i = 1;
+		}
+
+		$output = '';
+		if ( $pagesCount > 1 ) {
+			$title = Title::newFromID( $this->PageID );
+			$output .= '<ul class="c-pager">';
+			$pagerEllipsis = '<li class="c-pager-item c-pager-ellipsis"><span>...</span></li>';
+
+			// Whether to display the "Previous page" link
+			if ( $pagerCurrent > 1 ) {
+				$output .= '<li class="c-pager-item c-pager-previous">' .
+					Html::rawElement(
+						'a',
+						array(
+							'rel' => 'nofollow',
+							'class' => 'c-pager-link',
+							'href' => '#cfirst',
+							'data-' . $this->PAGE_QUERY => ( $pagerCurrent - 1 ),
+						),
+						'&lt;'
+					) .
+					'</li>';
+			}
+
+			// Whether to display the "First page" link
+			if ( $i > 1 ) {
+				$output .= '<li class="c-pager-item c-pager-first">' .
+					Html::rawElement(
+						'a',
+						array(
+							'rel' => 'nofollow',
+							'class' => 'c-pager-link',
+							'href' => '#cfirst',
+							'data-' . $this->PAGE_QUERY => 1,
+						),
+						1
+					) .
+					'</li>';
+			}
+
+			// When there is more than one page, create the pager list.
+			if ( $i != $pagesCount ) {
+				if ( $i > 2 ) {
+					$output .= $pagerEllipsis;
+				}
+
+				// Now generate the actual pager piece.
+				for ( ; $i <= $pagerLast && $i <= $pagesCount; $i++ ) {
+					if ( $i == $pagerCurrent ) {
+						$output .= '<li class="c-pager-item c-pager-current"><span>' .
+							$i . '</span></li>';
+					} else {
+						$output .= '<li class="c-pager-item">' .
+							Html::rawElement(
+								'a',
+								array(
+									'rel' => 'nofollow',
+									'class' => 'c-pager-link',
+									'href' => '#cfirst',
+									'data-' . $this->PAGE_QUERY => $i,
+								),
+								$i
+							) .
+							'</li>';
+					}
+				}
+
+				if ( $i < $pagesCount ) {
+					$output .= $pagerEllipsis;
+				}
+			}
+
+			// Whether to display the "Last page" link
+			if ( $pagesCount > ( $i - 1 ) ) {
+				$output .= '<li class="c-pager-item c-pager-last">' .
+					Html::rawElement(
+						'a',
+						array(
+							'rel' => 'nofollow',
+							'class' => 'c-pager-link',
+							'href' => '#cfirst',
+							'data-' . $this->PAGE_QUERY => $pagesCount,
+						),
+						$pagesCount
+					) .
+					'</li>';
+			}
+
+			// Whether to display the "Next page" link
+			if ( $pagerCurrent < $pagesCount ) {
+				$output .= '<li class="c-pager-item c-pager-next">' .
+					Html::rawElement(
+						'a',
+						array(
+							'rel' => 'nofollow',
+							'class' => 'c-pager-link',
+							'href' => '#cfirst',
+							'data-' . $this->PAGE_QUERY => ( $pagerCurrent + 1 ),
+						),
+						'&gt;'
+					) .
+					'</li>';
+			}
+
+			$output .= '</ul>';
+		}
+
+		return $output;
+	}
+
+	/**
+	 * @return Integer: the page we are currently paged to
+	 */
+	function getCurrentPagerPage() {
+		global $wgOut;
+
+		if ( $this->CurrentPagerPage == 0 ) {
+			$request = $wgOut->getRequest();
+			$this->CurrentPagerPage = $request->getInt( $this->PAGE_QUERY, 1 );
+
+			if ( $this->CurrentPagerPage < 1 ) {
+				$this->CurrentPagerPage = 1;
+			}
+		}
+
+		return $this->CurrentPagerPage;
+	}
+
+	/**
 	 * Display all the comments for the current page.
 	 * CSS and JS is loaded in Comment.php, function displayComments.
 	 */
 	function display() {
-		global $wgUser, $wgOut, $wgExtensionAssetsPath, $wgMemc, $wgUserLevels;
+		global $wgUser, $wgScriptPath, $wgExtensionAssetsPath, $wgMemc, $wgUserLevels;
 
 		$output = '';
+
+		// TODO: Try cache
+		wfDebug( "Loading comments count for page {$this->PageID} from DB\n" );
+		$commentsCount = $this->countTotal();
+		$pagesCount = ( ( $commentsCount % $this->Limit ) > 0 )
+			? ( 1 +  floor( $commentsCount / $this->Limit ) ) :  floor( $commentsCount / $this->Limit );
+		$pagerCurrent = $this->getCurrentPagerPage( $pagesCount );
+
+		if ( $pagerCurrent > $pagesCount ) {
+			$pagerCurrent = $pagesCount;
+		}
 
 		// Try cache
 		$key = wfMemcKey( 'comment', 'list', $this->PageID );
@@ -738,7 +1023,7 @@ class Comment {
 
 		if( !$data ) {
 			wfDebug( "Loading comments for page {$this->PageID} from DB\n" );
-			$comments = $this->getCommentList();
+			$comments = $this->getCommentList( $pagerCurrent );
 			$wgMemc->set( $key, $comments );
 		} else {
 			wfDebug( "Loading comments for page {$this->PageID} from cache\n" );
@@ -769,6 +1054,9 @@ class Comment {
 		$AFCounter = 1;
 		$AFBucket = array();
 		if( $comments ) {
+			$pager = $this->displayPager( $pagerCurrent, $pagesCount );
+			$output .= $pager;
+			$output .= '<a id="cfirst" name="cfirst" rel="nofollow"></a>';
 			foreach( $comments as $comment ) {
 				$CommentScore = $comment['Comment_Score'];
 
@@ -949,6 +1237,7 @@ class Comment {
 				$output .= '<div class="cleared"></div>' . "\n";
 				$output .= '</div>' . "\n";
 			}
+			$output .= $pager;
 		}
 		$output .= '<a id="end" name="end" rel="nofollow"></a>';
 		return $output;
@@ -1002,6 +1291,7 @@ class Comment {
 			$output .= '<input type="hidden" name="commentid" />' . "\n";
 			$output .= '<input type="hidden" name="lastcommentid" value="' . $this->getLatestCommentID() . '" />' . "\n";
 			$output .= '<input type="hidden" name="comment_parent_id" />' . "\n";
+			$output .= '<input type="hidden" name="' . $this->PAGE_QUERY . '" value="' . $this->getCurrentPagerPage() . '" />' . "\n";
 			$output .= Html::hidden( 'token', $wgUser->getEditToken() );
 		}
 		$output .= '</form>' . "\n";

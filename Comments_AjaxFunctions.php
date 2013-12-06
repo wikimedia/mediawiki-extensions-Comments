@@ -21,6 +21,19 @@ function wfCommentSubmit( $page_id, $parent_id, $comment_text, $token ) {
 	}
 
 	if( $comment_text != '' ) {
+		// To protect against spam, it's necessary to check the supplied text
+		// against spam filters (but comment admins are allowed to bypass the
+		// spam filters)
+		if ( !$wgUser->isAllowed( 'commentadmin' ) && Comment::isSpam( $comment_text ) ) {
+			return wfMessage( 'comments-is-spam' )->plain();
+		}
+
+		// If the comment contains links but the user isn't allowed to post
+		// links, reject the submission
+		if ( !$wgUser->isAllowed( 'commentlinks' ) && Comment::haveLinks( $comment_text ) ) {
+			return wfMessage( 'comments-links-are-forbidden' )->plain();
+		}
+
 		$comment = new Comment( $page_id );
 		$comment->setCommentText( $comment_text );
 		$comment->setCommentParentID( $parent_id );
@@ -101,11 +114,13 @@ $wgAjaxExportList[] = 'wfCommentList';
  * it fucks up royally - it causes a *fatal* in Parser.php. Don't ask me why.
  * @param $page_id Integer: article ID number
  * @param $order Integer: ???
+ * @param $pagerPage Integer: the page we are currently paged to
  * @return HTML output
  */
-function wfCommentList( $page_id, $order ) {
+function wfCommentList( $page_id, $order, $pagerPage ) {
 	$comment = new Comment( $page_id );
 	$comment->setOrderBy( $order );
+	$comment->setCurrentPagerPage( $pagerPage );
 	if( isset( $_POST['shwform'] ) && $_POST['shwform'] == 1 ) {
 		$output .= $comment->displayOrderForm();
 	}

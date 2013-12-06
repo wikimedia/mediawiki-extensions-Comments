@@ -38,6 +38,14 @@ class CommentsHooks {
 		wfProfileIn( __METHOD__ );
 
 		$parser->disableCache();
+		// If an unclosed <comments> tag is added to a page, the extension will
+		// go to an infinite loop...this protects against that condition.
+		$parser->setHook( 'comments', array( 'CommentsHooks', 'nonDisplayComments' ) );
+
+		$title = $parser->getTitle();
+		if ( $title->getArticleID() == 0 && $title->getDBkey() == 'CommentListGet' ) {
+			return self::nonDisplayComments( $input, $args, $parser );
+		}
 
 		// Add required CSS & JS via ResourceLoader
 		$wgOut->addModules( 'ext.comments' );
@@ -73,6 +81,7 @@ class CommentsHooks {
 		$comment->setAllow( $allow );
 		$comment->setVoting( $voting );
 
+		$output = '<div class="comments-body">';
 		// This was originally commented out, I don't know why.
 		// Uncommented to prevent E_NOTICE.
 		$output = $comment->displayOrderForm();
@@ -87,7 +96,30 @@ class CommentsHooks {
 			$output .= wfMessage( 'comments-db-locked' )->parse();
 		}
 
+		$output .= '</div>'; // div.comments-body
+
 		wfProfileOut( __METHOD__ );
+
+		return $output;
+	}
+
+	public static function nonDisplayComments( $input, $args, $parser ) {
+		$attr = array();
+
+		foreach ( $args as $name => $value ) {
+			$attr[] = htmlspecialchars( $name ) . '="' . htmlspecialchars( $value ) . '"';
+		}
+
+		$output = '&lt;comments';
+		if ( count( $attr ) > 0 ) {
+			$output .= ' ' . implode( ' ', $attr );
+		}
+
+		if ( !is_null( $input ) ) {
+			$output .= '&gt;' . htmlspecialchars( $input ) . '&lt;/comments&gt;';
+		} else {
+			$output .= ' /&gt;';
+		}
 
 		return $output;
 	}
