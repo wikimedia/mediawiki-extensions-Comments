@@ -71,6 +71,7 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Beta16
  * @author Darth Kule
  * @author Nike
  * @author Purodha
@@ -122,8 +123,8 @@ Parameters:
 Parameters:
 * $1 - the URL to [[Special:UserLogin]]
 * $2 - the URL to [[Special:UserLogin/signup]]',
-	'comments-links-are-forbidden' => 'Error message shown to the user if they tried to post a comment that contains external links and they don\'t have the commentlinks user right.',
-	'comments-is-spam' => 'Error message shown to the user if they try to post a comment that matches the spam filter and they\'re not a member of the commentadmin group.',
+	'comments-links-are-forbidden' => "Error message shown to the user if they tried to post a comment that contains external links and they don't have the commentlinks user right.",
+	'comments-is-spam' => "Error message shown to the user if they try to post a comment that matches the spam filter and they're not a member of the commentadmin group.",
 	'comments-ignore-item' => "Shown on Special:CommentIgnoreList. Parameters:
 * $1 - the URL to the blocked user's user page
 * $2 - the name of the blocked user
@@ -205,6 +206,7 @@ See also:
 	'grouppage-commentadmin' => '{{doc-group|commentadmin|page}}',
 	'right-comment' => '{{doc-right|comment}}',
 	'right-commentadmin' => '{{doc-right|commentadmin}}',
+	'right-commentlinks' => '{{Doc-right|commentlinks}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -518,7 +520,7 @@ $messages['ce'] = array(
 	'comments-time-hours' => '{{PLURAL:$1|Сахьат|$1 сахьат|$1 сахьат}}', # Fuzzy
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Vks
  */
 $messages['cs'] = array(
@@ -595,6 +597,8 @@ $messages['de'] = array(
 	'comments-delete-link' => 'Kommentar löschen',
 	'comments-anon-name' => 'Anonymer Benutzer',
 	'comments-anon-message' => '{{SITENAME}} freut sich über <b>alle Kommentare</b>. Sofern du nicht anonym bleiben möchtest, <a href="$1">registriere dich bitte</a> oder <a href="$2">melde dich an</a>.',
+	'comments-links-are-forbidden' => 'Weblinks sind in Kommentaren verboten!',
+	'comments-is-spam' => 'Der eingegebene Kommentartext wurde als Spam interpretiert.',
 	'comments-ignore-item' => '<a href="$1">$2</a> am $3 <a href="$4">(freigeben)</a>',
 	'comments-ignore-no-users' => 'Momentan gibt es keine gesperrten Benutzer.',
 	'comments-ignore-remove-message' => 'Bist du sicher, dass du die Kommentare von Benutzer <b>$1</b> wieder freigeben möchtest?',
@@ -618,6 +622,7 @@ $messages['de'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Kommentaradministratoren',
 	'right-comment' => 'Kommentar abgeben',
 	'right-commentadmin' => 'Benutzerkommentare verwalten',
+	'right-commentlinks' => 'Weblinks in Kommentaren verwenden',
 );
 
 /** German (formal address) (Deutsch (Sie-Form)‎)
@@ -1446,6 +1451,7 @@ $messages['it'] = array(
 	'comments-delete-link' => 'Elimina commento',
 	'comments-anon-name' => 'Utente anonimo',
 	'comments-anon-message' => '{{SITENAME}} accetta <b>tutti i commenti</b>. Se non vuoi restare anonimo, <a href="$1">registrati</a> o <a href="$2">accedi</a>. È gratuito.',
+	'comments-links-are-forbidden' => 'I collegamenti esterni nei commenti sono vietati!',
 	'comments-ignore-item' => '<a href="$1">$2</a> il $3 <a href="$4">(sblocca)</a>',
 	'comments-ignore-no-users' => 'Non ci sono utenti attualmente bloccati.',
 	'comments-ignore-remove-message' => "Sbloccare i commenti dell'utente <b>$1</b>?",
@@ -1469,6 +1475,7 @@ $messages['it'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Amministratori di commenti',
 	'right-comment' => 'Invia commenti',
 	'right-commentadmin' => 'Gestisce i commenti inviati dagli utenti',
+	'right-commentlinks' => 'Usa collegamenti esterni nei commenti',
 );
 
 /** Japanese (日本語)
