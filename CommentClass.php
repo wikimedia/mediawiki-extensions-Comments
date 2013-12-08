@@ -1129,7 +1129,7 @@ class Comment {
 						htmlspecialchars( $comment['Comment_Username'], ENT_QUOTES ) .
 						'" data-comments-comment-id="' . $comment['CommentID'] . '" data-comments-user-id="' .
 						$comment['Comment_user_id'] . "\">
-					<img src=\"{$wgExtensionAssetsPath}/Comments/images/block.png\" border=\"0\" alt=\"\"/>
+					<img src=\"{$wgExtensionAssetsPath}/Comments/images/block.svg\" border=\"0\" alt=\"\"/>
 				</a>";
 				}
 
@@ -1208,7 +1208,7 @@ class Comment {
 							}
 						} else {
 							// Already voted?
-							$output .= '<img src="' . $wgExtensionAssetsPath . '/Comments/images/voted.gif" border="0" alt="" />' .
+							$output .= '<img src="' . $wgExtensionAssetsPath . '/Comments/images/voted.svg" border="0" alt="" />' .
 										wfMessage( 'comments-voted-label' )->plain();
 						}
 					}

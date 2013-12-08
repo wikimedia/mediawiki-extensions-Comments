@@ -99,7 +99,7 @@ var Comment = {
 			[ cid, vt, ( ( vg ) ? vg : 0 ), pageID, token ],
 			function( response ) {
 				document.getElementById( 'Comment' + cid ).innerHTML = response.responseText;
-				var img = '<img src="' + mw.config.get( 'wgExtensionAssetsPath' ) + '/Comments/images/voted.gif" alt="" />';
+				var img = '<img src="' + mw.config.get( 'wgExtensionAssetsPath' ) + '/Comments/images/voted.svg" alt="" />';
 				document.getElementById( 'CommentBtn' + cid ).innerHTML =
 					img + '<span class="CommentVoted">' +
 					mw.msg( 'comments-voted-label' ) + '</span>';
