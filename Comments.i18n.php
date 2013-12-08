@@ -1510,6 +1510,8 @@ $messages['ja'] = array(
 	'comments-delete-link' => 'コメントを削除',
 	'comments-anon-name' => '匿名利用者',
 	'comments-anon-message' => '{{SITENAME}}は<b>すべてのコメント</b>を歓迎します。匿名で投稿したくない場合は、<a href="$1">アカウント作成</a>または<a href="$2">ログイン</a>してください。無料です。',
+	'comments-links-are-forbidden' => 'コメント内での外部リンクの使用は禁止されています。',
+	'comments-is-spam' => '投稿したコメントの本文はスパムと判定されました。',
 	'comments-ignore-item' => '<a href="$1">$2</a> - $3 <a href="$4">(ブロック解除)</a>',
 	'comments-ignore-no-users' => '現在ブロックされている利用者はいません。',
 	'comments-ignore-remove-message' => '利用者 <b>$1</b> によるコメントを本当にブロック解除しますか?',
@@ -1533,6 +1535,7 @@ $messages['ja'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:コメント管理者',
 	'right-comment' => 'コメントを投稿',
 	'right-commentadmin' => '利用者が投稿したコメントを管理',
+	'right-commentlinks' => 'コメント内で外部リンクを使用',
 );
 
 /** Georgian (ქართული)
@@ -1815,6 +1818,8 @@ $messages['mk'] = array(
 	'comments-delete-link' => 'Избриши коментар',
 	'comments-anon-name' => 'Анонимен корисник',
 	'comments-anon-message' => 'На {{SITENAME}} се добредојдени <b>секакви коментари</b>.  Ако не сакате да бидете анонимни, <a href="$1">регистрирајте се</a> или <a href="$2">најавете се</a>. Бесплатно е.',
+	'comments-links-are-forbidden' => 'Во коментарите се забранети надворешни врски!',
+	'comments-is-spam' => 'Поднесениот текст на коментарот беше протолкуван како спам.',
 	'comments-ignore-item' => '<a href="$1">$2</a> на $3 <a href="$4">(одблокирај)</a>',
 	'comments-ignore-no-users' => 'Моментално нема блокирани корисници.',
 	'comments-ignore-remove-message' => 'Дали сте сигурни дека сакате да ги одблокирате коментарите на корисникот <b>$1</b>?',
@@ -1838,6 +1843,7 @@ $messages['mk'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Администратори на коментари',
 	'right-comment' => 'Поднесување на коментари',
 	'right-commentadmin' => 'Раководење со кориснички коментари',
+	'right-commentlinks' => 'Употреба на надворешни врски во коментарите',
 );
 
 /** Marathi (मराठी)
@@ -2011,6 +2017,8 @@ $messages['nl'] = array(
 	'comments-delete-link' => 'Reactie verwijderen',
 	'comments-anon-name' => 'Anonieme gebruiker',
 	'comments-anon-message' => '{{SITENAME}} verwelkomt <b>alle reacties</b>. Als u niet anoniem wilt zijn, <a href="$1">Registreer</a> u dan of <a href="$2">meld u aan</a>.',
+	'comments-links-are-forbidden' => 'Externe koppelingen in reacties zijn niet toegestaan!',
+	'comments-is-spam' => 'De opgegeven reactie is herhemd als spam.',
 	'comments-ignore-item' => '<a href="$1">$2</a> op $3 <a href="$4">(zichtbaar maken)</a>',
 	'comments-ignore-no-users' => 'Er zijn momenteel geen gebruikers geblokkeerd.',
 	'comments-ignore-remove-message' => 'Weet u zeker dat u de reacties van <b>$1</b> weer wilt zien?',
@@ -2034,6 +2042,7 @@ $messages['nl'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Opmerkingenbeheerders',
 	'right-comment' => 'Reacties toevoegen',
 	'right-commentadmin' => 'Gebruikersreacties beheren',
+	'right-commentlinks' => 'Externe koppelingen in reacties gebruiken',
 );
 
 /** Nederlands (informeel)‎ (Nederlands (informeel)‎)
@@ -2430,6 +2439,8 @@ $messages['ru'] = array(
 	'comments-delete-link' => 'Удалить комментарий',
 	'comments-anon-name' => 'Анонимный участник',
 	'comments-anon-message' => 'На сайте {{SITENAME}} приветствуются <b>все комментарии</b>. Если вы не хотите быть анонимным, <a href="$1">зарегистрируйтесь</a> или <a href="$2">представьтесь</a>. Это бесплатно.',
+	'comments-links-are-forbidden' => 'Внешние ссылки в комментариях запрещены!',
+	'comments-is-spam' => 'Представленный текст комментария был воспринят как спам.',
 	'comments-ignore-item' => '<a href="$1">$2</a> на $3 <a href="$4">(разблокировать)</a>',
 	'comments-ignore-no-users' => 'В настоящее время нет ни одного заблокированного участника.',
 	'comments-ignore-remove-message' => 'Вы уверены, что хотите разблокировать комментарии участника <b>$1</b>?',
@@ -2453,6 +2464,7 @@ $messages['ru'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Модераторы комментариев',
 	'right-comment' => 'Отправить комментарии',
 	'right-commentadmin' => 'Администрировать комментарии, опубликованные участником',
+	'right-commentlinks' => 'Использовать внешние ссылки в комментариях',
 );
 
 /** Sinhala (සිංහල)
@@ -2727,6 +2739,8 @@ $messages['uk'] = array(
 	'comments-delete-link' => 'Вилучити коментар',
 	'comments-anon-name' => 'Анонімний користувач',
 	'comments-anon-message' => '{{SITENAME}} вітає <b>усі коментарі</b>. Якщо Ви не хочете бути анонімними, <a href="$1">зареєструйтесь</a> або <a href="$2">увійдіть</a>. Це безкоштовно.',
+	'comments-links-are-forbidden' => 'Зовнішні посилання у коментарях - заборонені!',
+	'comments-is-spam' => 'Поданий текст коментаря був сприйнятий як спам.',
 	'comments-ignore-item' => '<a href="$1">$2</a>, заблоковано $3 <a href="$4">(розблокувати)</a>',
 	'comments-ignore-no-users' => 'Користувачів, яких наразі заблоковано, немає.',
 	'comments-ignore-remove-message' => 'Ви впевнені, що хочете розблокувати коментарі користувача <b>$1</b>?',
@@ -2750,6 +2764,7 @@ $messages['uk'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Адміністратори коментарів',
 	'right-comment' => 'робити коментарі',
 	'right-commentadmin' => 'Адмініструвати надіслані користувачами коментарі',
+	'right-commentlinks' => 'Вживати зовнішні посилання у коментарях',
 );
 
 /** Simplified Chinese (中文（简体）‎)
@@ -2788,6 +2803,8 @@ $messages['zh-hans'] = array(
 	'comments-delete-link' => '删除评论',
 	'comments-anon-name' => '匿名用户',
 	'comments-anon-message' => '{{SITENAME}}欢迎<b>所有评论</b>。如果您不想匿名，<a href="$1">注册</a>或<a href="$2">登录</a>。它是免费的。',
+	'comments-links-are-forbidden' => '评论中禁止外部链接！',
+	'comments-is-spam' => '提交的评论文本像是垃圾信息。',
 	'comments-ignore-item' => '<a href="$1">$2</a>于$3 <a href="$4">（解封）</a>',
 	'comments-ignore-no-users' => '目前没有用户被屏蔽。',
 	'comments-ignore-remove-message' => '您确定要解封<b>$1</b>的评论吗？',
@@ -2811,6 +2828,7 @@ $messages['zh-hans'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:评论管理员',
 	'right-comment' => '提交评论',
 	'right-commentadmin' => '管理用户提交的评论',
+	'right-commentlinks' => '评论中使用外部链接',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
