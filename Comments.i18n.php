@@ -1030,6 +1030,8 @@ $messages['fr'] = array(
 	'comments-delete-link' => 'Supprimer le commentaire',
 	'comments-anon-name' => 'Utilisateur anonyme',
 	'comments-anon-message' => '{{SITENAME}} se félicite de <b>tous les commentaires</b>.  Si vous ne voulez pas être anonyme, <a href="$1">enregistre</a> ou <a href="$2">se connecter</a>.  C’est gratuit.',
+	'comments-links-are-forbidden' => 'Les liens externes dans les commentaires sont interdits !',
+	'comments-is-spam' => 'Le texte du commentaire soumis a été interprété comme pourriel.',
 	'comments-ignore-item' => '<a href="$1">$2</a> sur $3 <a href="$4">(débloquer)</a>',
 	'comments-ignore-no-users' => 'Il n’y a pas d’utilisateurs actuellement bloquée.',
 	'comments-ignore-remove-message' => 'Voulez-vous vraiment de débloquer les commentaires de l’utilisateur <b>$1</b> ?',
@@ -1053,6 +1055,7 @@ $messages['fr'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Administrateurs de commentaires',
 	'right-comment' => 'Publier les commentaires',
 	'right-commentadmin' => 'Administrer les commentaires soumis par les utilisateurs',
+	'right-commentlinks' => 'Utiliser les liens externes dans les commentaires',
 );
 
 /** Franco-Provençal (arpetan)
@@ -1706,6 +1709,7 @@ $messages['lb'] = array(
 	'comments-delete-link' => 'Bemierkung läschen',
 	'comments-anon-name' => 'Anonyme Benotzer',
 	'comments-anon-message' => '{{SITENAME}} freet sech iwwer <b>all Bemierkungen</b>. Wann Dir net anonym bleiwe wëllt, <a href="$1">da mellt Iech w.e.g. un</a> oder <a href="$2">loggt Iech an</a>. Et ass gratis.',
+	'comments-links-are-forbidden' => 'Extern Linken a Bemierkunge si verbueden!',
 	'comments-ignore-item' => '<a href="$1">$2</a> ëm $3 <a href="$4">(Spär ophiewen)</a>',
 	'comments-ignore-no-users' => 'Et sinn elo keng Benotzer gespaart.',
 	'comments-ignore-remove-message' => "Sidd Dir sécher datt Dir d'Spär fir d'Bemierkunge vum Benotzer <b>$1</b> ophiewe wëllt?",
@@ -1727,6 +1731,7 @@ $messages['lb'] = array(
 	'group-commentadmin' => 'Administrateure fir Bemierkungen',
 	'right-comment' => 'Bemierkunge späicheren',
 	'right-commentadmin' => 'Bemierkunge vu Benotzer verwalten',
+	'right-commentlinks' => 'Extern Linken a Bemierkunge benotzen',
 );
 
 /** Lithuanian (lietuvių)
