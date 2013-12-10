@@ -2562,6 +2562,7 @@ $messages['sr-ec'] = array(
 
 /** Swedish (svenska)
  * @author Jopparn
+ * @author Tobulos1
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
@@ -2603,6 +2604,7 @@ $messages['sv'] = array(
 	'comments-no-comments-of-day' => 'Det finns inga kommentarer idag.',
 	'log-name-comments' => 'Kommentarlogg',
 	'log-description-comments' => 'Detta är en logg för kommentarer.',
+	'logentry-comments-add' => '$1 har postat en ny kommentar på $3',
 	'logentry-comments-delete' => '$1 borttagen kommentar #$4 på $3',
 	'comments-time-ago' => '$1 sedan',
 	'comments-time-days' => '{{PLURAL:$1|en dag|$1 dagar}}',
@@ -2615,6 +2617,7 @@ $messages['sv'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Kommentaradministratörer',
 	'right-comment' => 'Skicka kommentarer',
 	'right-commentadmin' => 'Administrera kommentarer som användare har skickat',
+	'right-commentlinks' => 'Använd externa länkar i kommentarer',
 );
 
 /** Swahili (Kiswahili)
