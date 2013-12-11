@@ -1002,7 +1002,7 @@ class Comment {
 	 * CSS and JS is loaded in Comment.php, function displayComments.
 	 */
 	function display() {
-		global $wgUser, $wgScriptPath, $wgExtensionAssetsPath, $wgMemc, $wgUserLevels;
+		global $wgUser, $wgScriptPath, $wgExtensionAssetsPath, $wgMemc, $wgUserLevels, $wgShowCommentVoters;
 
 		$output = '';
 
@@ -1182,9 +1182,14 @@ class Comment {
 				wfRestoreWarnings();
 
 				$output .= '<div class="c-score">' . "\n";
+				if ( $wgShowCommentVoters ) {
+					$votedUsers = ' title="' . $this->getUserVotesString( $comment['CommentID'] ) . '"';
+				} else {
+					$votedUsers = '';
+				}
 
 				if( $this->AllowMinus == true || $this->AllowPlus == true ) {
-					$output .= '<span class="c-score-title">' .
+					$output .= '<span class="c-score-title"' . $votedUsers . '>' .
 						wfMessage( 'comments-score-text' )->plain() .
 						" <span id=\"Comment{$comment['CommentID']}\">{$CommentScore}</span></span>";
 
@@ -1383,4 +1388,35 @@ class Comment {
 		$dbw->commit();
 	}
 
+	/**
+	 * Returns a string containing a list of users
+	 * who have voted for a comment
+	 *
+	 * @param $id Comment id
+	 * @return string list of users
+	 */
+	function getUserVotesString( $id ){
+		$dbr = wfGetDb( DB_SLAVE );
+
+		$res = $dbr -> select(
+				'Comments_Vote',
+				'Comment_Vote_Username',
+				array( 'Comment_Vote_ID' => $id )
+		);
+
+		$string = '';
+		$first = true;
+
+		foreach( $res as $row ){
+			if ( $first ) {
+				$string .= 'Voted: ';
+			} else {
+				$string .= ', ';
+			}
+			$first = false;
+			$string .= $row->Comment_Vote_Username;
+		}
+
+		return $string;
+	}
 }
