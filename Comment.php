@@ -51,6 +51,8 @@ $wgResourceModules['ext.comments'] = array(
 // Path to an image which will be displayed instead of an avatar if social tools aren't installed.
 // Should be 50x50px
 $wgCommentsDefaultAvatar = 'http://www.shoutwiki.com/w/extensions/SocialProfile/avatars/default_ml.gif';
+// Show which users have voted on comments?
+$wgShowCommentVoters = false;
 
 // New user rights
 $wgAvailableRights[] = 'comment';

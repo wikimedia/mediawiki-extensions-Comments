@@ -68,6 +68,7 @@ $messages['en'] = array(
 	'right-comment' => 'Submit comments',
 	'right-commentadmin' => 'Administrate user-submitted comments',
 	'right-commentlinks' => 'Use external links in comments',
+	'comments-voted' => 'Voted:',
 );
 
 /** Message documentation (Message documentation)
