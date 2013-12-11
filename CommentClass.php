@@ -1002,7 +1002,7 @@ class Comment {
 	 * CSS and JS is loaded in Comment.php, function displayComments.
 	 */
 	function display() {
-		global $wgUser, $wgScriptPath, $wgExtensionAssetsPath, $wgMemc, $wgUserLevels;
+		global $wgUser, $wgScriptPath, $wgExtensionAssetsPath, $wgMemc, $wgUserLevels, $wgEnableCommentBlocks;
 
 		$output = '';
 
@@ -1122,8 +1122,11 @@ class Comment {
 				$block_link = '';
 
 				if(
-					$wgUser->getID() != 0 && $wgUser->getID() != $comment['Comment_user_id'] &&
-					!( in_array( $comment['Comment_Username'], $block_list ) )
+					(
+						$wgUser->getID() != 0 && $wgUser->getID() != $comment['Comment_user_id'] &&
+						!( in_array( $comment['Comment_Username'], $block_list ) )
+					) &&
+					$wgEnableCommentBlocks
 				) {
 					$block_link = '<a href="javascript:void(0);" rel="nofollow" class="comments-block-user" data-comments-safe-username="' .
 						htmlspecialchars( $comment['Comment_Username'], ENT_QUOTES ) .
@@ -1137,7 +1140,7 @@ class Comment {
 				// along with a link to show the individual comment
 				$hide_comment_style = '';
 
-				if( in_array( $comment['Comment_Username'], $block_list ) ) {
+				if( in_array( $comment['Comment_Username'], $block_list ) && $wgEnableCommentBlocks ) {
 					$hide_comment_style = 'display:none;';
 
 					$blockListTitle = SpecialPage::getTitleFor( 'CommentIgnoreList' );
