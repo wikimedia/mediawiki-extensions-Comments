@@ -1455,6 +1455,7 @@ $messages['it'] = array(
 	'comments-anon-name' => 'Utente anonimo',
 	'comments-anon-message' => '{{SITENAME}} accetta <b>tutti i commenti</b>. Se non vuoi restare anonimo, <a href="$1">registrati</a> o <a href="$2">accedi</a>. È gratuito.',
 	'comments-links-are-forbidden' => 'I collegamenti esterni nei commenti sono vietati!',
+	'comments-is-spam' => 'Il testo del commento inviato è stato interpretato come spam.',
 	'comments-ignore-item' => '<a href="$1">$2</a> il $3 <a href="$4">(sblocca)</a>',
 	'comments-ignore-no-users' => 'Non ci sono utenti attualmente bloccati.',
 	'comments-ignore-remove-message' => "Sbloccare i commenti dell'utente <b>$1</b>?",
