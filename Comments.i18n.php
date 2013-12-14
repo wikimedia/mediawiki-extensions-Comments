@@ -1358,6 +1358,8 @@ $messages['ia'] = array(
 	'comments-delete-link' => 'Deler commento',
 	'comments-anon-name' => 'Usator anonyme',
 	'comments-anon-message' => '{{SITENAME}} accepta <b>omne commentos</b>. Si tu non vole esser anonyme, <a href="$1">crea un conto</a> o <a href="$2">aperi session</a>. Es gratuite.',
+	'comments-links-are-forbidden' => 'Ligamines externe non es permittite in commentos.',
+	'comments-is-spam' => 'Le texto submittite del commento ha essite interpretate como spam.',
 	'comments-ignore-item' => '<a href="$1">$2</a> le $3 <a href="$4">(disblocar)</a>',
 	'comments-ignore-no-users' => 'Il non ha usatores blocate.',
 	'comments-ignore-remove-message' => 'Es tu secur de voler disblocar le commentos del usator <b>$1</b>?',
@@ -1381,6 +1383,7 @@ $messages['ia'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Administratores de commentos',
 	'right-comment' => 'Submitter commentos',
 	'right-commentadmin' => 'Administrar commentos submittite per usatores',
+	'right-commentlinks' => 'Usar ligamines externe in commentos',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1578,6 +1581,13 @@ $messages['ka'] = array(
 	'right-comment' => 'კომენტარის გაგზავნა',
 );
 
+/** Kannada (ಕನ್ನಡ)
+ * @author Dimension10
+ */
+$messages['kn'] = array(
+	'comments-comment' => 'ಟಿಪ್ಪಣಿ',
+);
+
 /** Korean (한국어)
  * @author LFM
  * @author 아라
@@ -1680,11 +1690,12 @@ $messages['ksh'] = array(
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'comments-comment' => 'Bemierkung',
-	'comments-desc' => "Setzt d'Parsererweiderung <code>&lt;comments&gt;</code> derbäi déi et erlaabt fir Säiten ze kommentéieren",
-	'comments-db-locked' => "<h3>Bemierkungen derbäisetzen</h3> D'Datebank ass elo wéinst Maintenance-Aarbechte gespaart. Probéiert w.e.g. méi spéit nach eng Kéier.",
+	'comments-desc' => "Setzt d'Parsererweiderung <code>&lt;comments&gt;</code> dobäi déi et erlaabt fir Säiten ze kommentéieren",
+	'comments-db-locked' => "<h3>Bemierkungen dobäisetzen</h3> D'Datebank ass elo wéinst Maintenance-Aarbechte gespaart. Probéiert w.e.g. méi spéit nach eng Kéier.",
 	'comments-voted-label' => 'Ofgestëmmt',
 	'comments-loading' => 'Lueden...',
 	'comments-auto-refresher-enable' => 'Automatesch Aktualisatioun vun de Bemierkungen aschalten',
@@ -1701,10 +1712,10 @@ $messages['lb'] = array(
 	'comments-ignore-message' => 'Dir ignoréiert den Auteur vun dëser Bemierkung',
 	'comments-you' => 'Dir',
 	'comments-reply' => 'Äntwerten',
-	'comments-login-required' => 'Dir musst ageloggt si fir Bemierkungen derbäizesetzen',
-	'comments-not-allowed' => 'Dir däerft keng Bemierkungen derbäisetzen.',
-	'comments-post' => 'Bemierkung derbäisetzen',
-	'comments-submit' => 'Setzt Är Bemierkung derbäi',
+	'comments-login-required' => 'Dir musst ageloggt si fir Bemierkungen dobäizesetzen',
+	'comments-not-allowed' => 'Dir däerft keng Bemierkungen dobäisetzen.',
+	'comments-post' => 'Bemierkung dobäisetzen',
+	'comments-submit' => 'Setzt Är Bemierkung dobäi',
 	'comments-score-text' => 'Score',
 	'comments-permalink' => 'Permanentlink',
 	'comments-delete-link' => 'Bemierkung läschen',
@@ -1914,6 +1925,8 @@ $messages['ms'] = array(
 	'comments-delete-link' => 'Padamkan komen',
 	'comments-anon-name' => 'Pengguna awanama',
 	'comments-anon-message' => '{{SITENAME}} mengalu-alukan <b>semua komen</b>. Jika anda tidak mahu berawanama, sila <a href="$1">daftar</a> atau <a href="$2">log masuk</a>. Percuma.',
+	'comments-links-are-forbidden' => 'Pautan luar dilarang dalam komen!',
+	'comments-is-spam' => 'Teks komen yang dihantar ini ditafsir sebagai spam.',
 	'comments-ignore-item' => '<a href="$1">$2</a> pada $3 <a href="$4">(nyahsekat)</a>',
 	'comments-ignore-no-users' => 'Tiada pengguna yang disekat sekarang.',
 	'comments-ignore-remove-message' => 'Adakah anda benar-benar ingin menyahsekat komen-komen pengguna <b>$1</b>?',
@@ -1935,6 +1948,7 @@ $messages['ms'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Penyelia Komen',
 	'right-comment' => 'Menghantar komen',
 	'right-commentadmin' => 'Mentadbir urus komen serahan pengguna',
+	'right-commentlinks' => 'Menggunakan pautan luar dalam komen',
 );
 
 /** Maltese (Malti)
