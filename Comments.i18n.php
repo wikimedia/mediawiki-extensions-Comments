@@ -1590,6 +1590,7 @@ $messages['kn'] = array(
 
 /** Korean (한국어)
  * @author LFM
+ * @author Yjs5497
  * @author 아라
  */
 $messages['ko'] = array(
@@ -1621,6 +1622,8 @@ $messages['ko'] = array(
 	'comments-delete-link' => '덧글 삭제',
 	'comments-anon-name' => '익명 사용자',
 	'comments-anon-message' => '{{SITENAME}}(은)는 <b>모든 덧글</b>을 환영합니다. 익명을 원하지 않으면 <a href="$1">등록</a>하거나 <a href="$2">로그인</a>하세요. 무료입니다.',
+	'comments-links-are-forbidden' => '같이 보기에 있던 덧글이 현재 없습니다',
+	'comments-is-spam' => '제출된 글이 스팸으로 판단됩니다.',
 	'comments-ignore-item' => '$3에 <a href="$1">$2</a> <a href="$4">(차단 해제)</a>',
 	'comments-ignore-no-users' => '현재 차단된 사용자가 없습니다.',
 	'comments-ignore-remove-message' => '정말로 <b>$1</b> 사용자의 덧글을 차단 해제하겠습니까?',
@@ -1644,6 +1647,7 @@ $messages['ko'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:덧글 관리자',
 	'right-comment' => '덧글 제출',
 	'right-commentadmin' => '사용자가 제출한 덧글 관리',
+	'right-commentlinks' => '외부 링크를 써서 댓글 달기',
 );
 
 /** Colognian (Ripoarisch)
@@ -1694,8 +1698,8 @@ $messages['ksh'] = array(
  */
 $messages['lb'] = array(
 	'comments-comment' => 'Bemierkung',
-	'comments-desc' => "Setzt d'Parsererweiderung <code>&lt;comments&gt;</code> dobäi déi et erlaabt fir Säiten ze kommentéieren",
-	'comments-db-locked' => "<h3>Bemierkungen dobäisetzen</h3> D'Datebank ass elo wéinst Maintenance-Aarbechte gespaart. Probéiert w.e.g. méi spéit nach eng Kéier.",
+	'comments-desc' => "Setzt d'Parsererweiderung <code>&lt;comments&gt;</code> derbäi déi et erlaabt fir Säiten ze kommentéieren",
+	'comments-db-locked' => "<h3>Bemierkungen derbäisetzen</h3> D'Datebank ass elo wéinst Maintenance-Aarbechte gespaart. Probéiert w.e.g. méi spéit nach eng Kéier.",
 	'comments-voted-label' => 'Ofgestëmmt',
 	'comments-loading' => 'Lueden...',
 	'comments-auto-refresher-enable' => 'Automatesch Aktualisatioun vun de Bemierkungen aschalten',
@@ -1712,10 +1716,10 @@ $messages['lb'] = array(
 	'comments-ignore-message' => 'Dir ignoréiert den Auteur vun dëser Bemierkung',
 	'comments-you' => 'Dir',
 	'comments-reply' => 'Äntwerten',
-	'comments-login-required' => 'Dir musst ageloggt si fir Bemierkungen dobäizesetzen',
-	'comments-not-allowed' => 'Dir däerft keng Bemierkungen dobäisetzen.',
-	'comments-post' => 'Bemierkung dobäisetzen',
-	'comments-submit' => 'Setzt Är Bemierkung dobäi',
+	'comments-login-required' => 'Dir musst ageloggt si fir Bemierkungen derbäizesetzen',
+	'comments-not-allowed' => 'Dir däerft keng Bemierkungen derbäisetzen.',
+	'comments-post' => 'Bemierkung derbäisetzen',
+	'comments-submit' => 'Setzt Är Bemierkung derbäi',
 	'comments-score-text' => 'Score',
 	'comments-permalink' => 'Permanentlink',
 	'comments-delete-link' => 'Bemierkung läschen',
