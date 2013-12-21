@@ -1099,6 +1099,14 @@ $messages['frp'] = array(
 	'right-commentadmin' => 'Administrar los comentèros somês per los utilisators',
 );
 
+/** Western Frisian (Frysk)
+ * @author Kening Aldgilles
+ */
+$messages['fy'] = array(
+	'comments-cancel-reply' => 'Ofbrekke',
+	'comments-ignore-cancel' => 'Ofbrekke',
+);
+
 /** Galician (galego)
  * @author Toliño
  */
