@@ -671,7 +671,60 @@ $messages['diq'] = array(
  * @author Michawiki
  */
 $messages['dsb'] = array(
+	'comments-comment' => 'Komentar',
+	'comments-desc' => 'Pśidawa parserowu kokulku <code>&lt;comments&gt;</code>, kótaraž zmóžnja komentěrowanje bokow.',
+	'comments-db-locked' => '<h3>Pśidawanje komentarow</h3>Datowa banka jo tuchylu rutinowego wotwardowanja datoweje banki dla zastajone, pó kótaremž buźo zasej wšykno normalne. Pšosym wopytaj pózdźej hyšći raz!',
+	'comments-voted-label' => 'Wótgłosowany',
+	'comments-loading' => 'Zacytujo se...',
+	'comments-auto-refresher-enable' => 'Awtomatiske aktualizěrowanje komentarow zmóžniś',
+	'comments-auto-refresher-pause' => 'Awtomatiske aktualizěrowanje komentarow zastajiś',
+	'comments-reply-to' => 'Wótegroniś',
+	'comments-cancel-reply' => 'Pśetergnuś',
+	'comments-block-warning-anon' => 'Coš napšawdu wšykne komentary toś togo anonymnego wužywarja na pśecej ignorěrowaś (pśez jogo IP-adresu)?',
+	'comments-block-warning-user' => 'Coš napšawdu wšykne komentary wužywarja $1 na pśecej ignorěrowaś?',
+	'comments-delete-warning' => 'Coš toś ten komentar napšawdu lašowaś?',
+	'comments-sort-by-date' => 'Pó datumje sortěrowaś',
+	'comments-sort-by-score' => 'Pó licbje dypkow sortěrowaś',
+	'comments-show-comment-link' => 'Komentar pokazaś',
+	'comments-manage-blocklist-link' => 'Ignorěrowańsku lisćinu zastojaś',
+	'comments-ignore-message' => 'Ignorěrujoš awtora toś togo komentara',
+	'comments-you' => 'Ty',
+	'comments-reply' => 'Wótegroniś',
+	'comments-login-required' => 'Musyš se pśizjawiś, aby komentary pśidał',
+	'comments-not-allowed' => 'Njesmějoš žedne komentary pśidaś.',
+	'comments-post' => 'Komentar pósłaś',
+	'comments-submit' => 'Twój komentar pśidaś',
+	'comments-score-text' => 'Pógódnośenje',
+	'comments-permalink' => 'Trajny wótkaz',
+	'comments-delete-link' => 'Komentar lašowaś',
+	'comments-anon-name' => 'Anonymny wužywaŕ',
+	'comments-anon-message' => '{{SITENAME}} wjaseli se wó <b>wšych komentarach</b>. Jolic njocoš anonymny byś, <a href="$1">zregistrěruj se</a> abo <a href="$2">pśizjaw se</a>. To jo dermo.',
+	'comments-links-are-forbidden' => 'Eksterne wótkaze su w komentarach zakazane!',
+	'comments-is-spam' => 'Wótpósłany komentarowy tekst jo se ako spam interpretěrował.',
+	'comments-ignore-item' => '<a href="$1">$2</a> $3 <a href="$4">(wótblokěrowaś)</a>',
+	'comments-ignore-no-users' => 'Tuchylu njejsu žedne wužywarje zablokowane.',
+	'comments-ignore-remove-message' => 'Coš napšawdu komentary wužywarja <b>$1</b> wótblokěrowaś?',
+	'comments-ignore-unblock' => 'Wótblokěrowaś',
+	'comments-ignore-cancel' => 'Pśetergnuś',
+	'comments-ignore-title' => 'Ignorěrowańska lisćina komentarow',
+	'commentignorelist' => 'Ignorěrowańska lisćina komentarow',
+	'comments-no-comments-of-day' => 'Njedaju komentary dnja.',
+	'log-name-comments' => 'Komentarowy protokol',
+	'log-description-comments' => 'To jo komentarowy protokol.',
+	'logentry-comments-add' => '$1 jo nowy komentar na $3 zawóstajił',
+	'logentry-comments-delete' => '$1 jo komentar #$4 na $3 wulašował',
 	'comments-time-ago' => 'pśed $1',
+	'comments-time-days' => '{{PLURAL:$1|jadnym dnjom|$1 dnjoma|$1 dnjami|}}',
+	'comments-time-hours' => '{{PLURAL:$1|jadneju góźinu|$1 góźinoma|$1 góźinami}}',
+	'comments-time-minutes' => '{{PLURAL:$1|jadneju minutu|$1 minutoma|$1 minutami}}',
+	'comments-time-seconds' => '{{PLURAL:$1|jadneju sekundu|$1 sekundoma|$1 sekundami}}',
+	'log-show-hide-comments' => 'komentarowy protokol $1',
+	'group-commentadmin' => 'Komentarowe administratory',
+	'group-commentadmin-member' => '{{GENDER:$1|komentarowy administrator|komentarowa administratorka}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Komentarowe administratory',
+	'right-comment' => 'Komentary wótpósłaś',
+	'right-commentadmin' => 'Wužywarske komentary zastojaś',
+	'right-commentlinks' => 'Eksterne wótkaze w komentarach wužywaś',
 );
 
 /** Greek (Ελληνικά)
@@ -1108,6 +1161,7 @@ $messages['fy'] = array(
 );
 
 /** Galician (galego)
+ * @author Elisardojm
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -1139,6 +1193,8 @@ $messages['gl'] = array(
 	'comments-delete-link' => 'Borrar o comentario',
 	'comments-anon-name' => 'Usuario anónimo',
 	'comments-anon-message' => '{{SITENAME}} agradece <b>todos os comentarios</b>. Se non quere ser anónimo, <a href="$1">rexístrese</a> ou <a href="$2">acceda ao sistema</a>. É gratuíto.',
+	'comments-links-are-forbidden' => 'Están prohibidas as ligazóns externas nos comentario!',
+	'comments-is-spam' => 'O texto enviado no comentario foi interpretado coma publicidade.',
 	'comments-ignore-item' => '<a href="$1">$2</a> o $3 <a href="$4">(desbloquear)</a>',
 	'comments-ignore-no-users' => 'Actualmente non hai ningún usuario bloqueado.',
 	'comments-ignore-remove-message' => 'Está seguro de querer desbloquear os comentarios do usuario <b>$1</b>?',
@@ -1162,6 +1218,7 @@ $messages['gl'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Administradores de comentarios',
 	'right-comment' => 'Enviar comentarios',
 	'right-commentadmin' => 'Administrar os comentarios enviados polos usuarios',
+	'right-commentlinks' => 'Use ligazóns externas nos comentarios',
 );
 
 /** Hebrew (עברית)
@@ -1254,12 +1311,14 @@ $messages['hsb'] = array(
 	'comments-delete-link' => 'Komentar zhašeć',
 	'comments-anon-name' => 'Anonymny wužiwar',
 	'comments-anon-message' => '{{SITENAME}} wjeseli so wo <b>wšěch komentarach</b>. Jeli nochceš anonymny być, <a href="$1">registruj so</a> abo <a href="$2">přizjew so</a>. To je zadarmo.',
+	'comments-links-are-forbidden' => 'Eksterne wotkazy su w komentarach zakazane!',
+	'comments-is-spam' => 'Wotpósłany komentarowy tekst je so jako spam interpretował.',
 	'comments-ignore-item' => '<a href="$1">$2</a> $3 <a href="$4">(wotblokować)</a>',
 	'comments-ignore-no-users' => 'Tuchwilu njejsu žani wužiwarjo zablokowani.',
 	'comments-ignore-remove-message' => 'Chceš woprawdźe komentary wužiwarja <b>$1</b> wotblokować?',
 	'comments-ignore-unblock' => 'Wotblokować',
 	'comments-ignore-cancel' => 'Přetorhnyć',
-	'comments-ignore-title' => 'Ignorowanska lisćiny komentarow',
+	'comments-ignore-title' => 'Ignorowanska lisćina komentarow',
 	'commentignorelist' => 'Ignorowanska lisćiny komentarow',
 	'comments-no-comments-of-day' => 'Komentary dnja njejsu.',
 	'log-name-comments' => 'Komentarowy protokol',
@@ -1271,12 +1330,13 @@ $messages['hsb'] = array(
 	'comments-time-hours' => '{{PLURAL:$1|$1 hodźinu|$1 hodźinomaj|$1 hodźinami|$1 hodźinami}}',
 	'comments-time-minutes' => '{{PLURAL:$1|$1 mjeńšinu|$1 mjeńšinomaj|$1 mjeńšinami|$1 mjeńšinami}}',
 	'comments-time-seconds' => '{{PLURAL:$1|$1 sekundu|$1 sekundomaj|$1 sekundami|$1 sekundami}}',
-	'log-show-hide-comments' => '$1 komentarowy protokol',
+	'log-show-hide-comments' => 'komentarowy protokol $1',
 	'group-commentadmin' => 'Komentarowi administratorojo',
 	'group-commentadmin-member' => '{{GENDER:$1|komentarowy administrator|komentarowa administratorka}}',
 	'grouppage-commentadmin' => '{{ns:project}}:Komentarowi administratorojo',
 	'right-comment' => 'Komentary wotpósłać',
 	'right-commentadmin' => 'Wužiwarske komentary zrjadować',
+	'right-commentlinks' => 'Eksterne wotkazy w komentarach wužiwać',
 );
 
 /** Hungarian (magyar)
@@ -1734,6 +1794,7 @@ $messages['lb'] = array(
 	'comments-anon-name' => 'Anonyme Benotzer',
 	'comments-anon-message' => '{{SITENAME}} freet sech iwwer <b>all Bemierkungen</b>. Wann Dir net anonym bleiwe wëllt, <a href="$1">da mellt Iech w.e.g. un</a> oder <a href="$2">loggt Iech an</a>. Et ass gratis.',
 	'comments-links-are-forbidden' => 'Extern Linken a Bemierkunge si verbueden!',
+	'comments-is-spam' => 'Den Text vun der Bemierkung gouf als Spam interpretéiert.',
 	'comments-ignore-item' => '<a href="$1">$2</a> ëm $3 <a href="$4">(Spär ophiewen)</a>',
 	'comments-ignore-no-users' => 'Et sinn elo keng Benotzer gespaart.',
 	'comments-ignore-remove-message' => "Sidd Dir sécher datt Dir d'Spär fir d'Bemierkunge vum Benotzer <b>$1</b> ophiewe wëllt?",
@@ -1753,6 +1814,8 @@ $messages['lb'] = array(
 	'comments-time-seconds' => '{{PLURAL:$1|enger Sekonn|$1 Sekonnen}}',
 	'log-show-hide-comments' => 'Logbuch vun de Bemierkunge $1',
 	'group-commentadmin' => 'Administrateure fir Bemierkungen',
+	'group-commentadmin-member' => '{{GENDER:$1|Bemierkungs-Administrateur}}',
+	'grouppage-commentadmin' => '{{ns:project}}:Bemierkungs-Administrateuren',
 	'right-comment' => 'Bemierkunge späicheren',
 	'right-commentadmin' => 'Bemierkunge vu Benotzer verwalten',
 	'right-commentlinks' => 'Extern Linken a Bemierkunge benotzen',
