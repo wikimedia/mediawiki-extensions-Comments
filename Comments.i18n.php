@@ -923,6 +923,7 @@ $messages['et'] = array(
 
 /** Persian (فارسی)
  * @author Alireza
+ * @author Armin1392
  * @author Ebraminio
  * @author Mahdiz
  * @author Omidh
@@ -932,12 +933,16 @@ $messages['et'] = array(
  */
 $messages['fa'] = array(
 	'comments-comment' => 'نظر',
+	'comments-desc' => 'اضافه کردن <code>&lt;comments&gt;</code> قلاب تجزیه کننده که به نظر‌گذاری در صفحه‌ها اجازه می‌دهد',
+	'comments-db-locked' => '<h3> اضافه کردن نظرات </h3> در حال حاضر پایگاه اطلاعاتی برای حفاظت پایگاه اطلاعاتی جاری فقل است، که پی از این به حالت عادی برخواهد گشت.لطفاً بعداً بررسي كنيد!',
 	'comments-voted-label' => 'رای',
 	'comments-loading' => 'در حال بارگذاری...',
 	'comments-auto-refresher-enable' => 'فعال‌کردن تازه‌کنندهٔ خودکار نظر',
 	'comments-auto-refresher-pause' => 'متوقف‌کردن تازه‌کنندهٔ خودکار نظر',
 	'comments-reply-to' => 'پاسخ به',
 	'comments-cancel-reply' => 'لغو',
+	'comments-block-warning-anon' => 'آیا مطمئن هستید که می‌خواهید همهٔ نظرات را از این کاربر ناشناش برای همیشه (از طریق آدرس آی‌پی شان) نادیده بگیرید؟',
+	'comments-block-warning-user' => 'آیا مطمئنید می‌خواهید همهٔ نظرات از کاربر $1 را برای همیشه نادیده بگیرید؟',
 	'comments-delete-warning' => 'آیا مطمئن هستید که می‌خواهید این نظر را حذف کنید؟',
 	'comments-sort-by-date' => 'مرتب سازی بر اساس تاریخ',
 	'comments-sort-by-score' => 'مرتب کردن بر اساس امتیاز',
@@ -955,9 +960,15 @@ $messages['fa'] = array(
 	'comments-delete-link' => 'حذف نظر',
 	'comments-anon-name' => 'کاربر ناشناس',
 	'comments-anon-message' => '{{SITENAME}} <b>از همه نظرات</b> استقبال می‌کند. اگر شما نمی‌خواهید به صورت ناشناس باشید، <a href="<span class=" notranslate"="" translate="no">$1 "> ثبت نام کنید</a> یا <a href="<span class=" notranslate"="" translate="no">$2" > وارد سامانه شوید.</a>. این عمل رایگان است.',
+	'comments-links-are-forbidden' => 'اتصالات خارجی در نظرات ممنوع است!',
+	'comments-is-spam' => ' متن ارائه شدهٔ نظرات به عنوان اسپم ترجمه شده',
+	'comments-ignore-item' => '<a href="$1">$2</a> on $3 <a href="$4">(unblock)</a>',
 	'comments-ignore-no-users' => 'هیچ کاربری در حال حاضر بسته نشده است.',
+	'comments-ignore-remove-message' => 'آیا مطمئن هستید که می‌خواهید نظرات <b>$1</b> کاربر را باز کنید؟',
 	'comments-ignore-unblock' => 'باز شود',
 	'comments-ignore-cancel' => 'لغو',
+	'comments-ignore-title' => 'فهرست نظرات نادیده گرفته شده',
+	'commentignorelist' => 'فهرست نظرات نادیده گرفته شده',
 	'logentry-comments-add' => '$1 نظری جدید در صفحهٔ $3 ارسال کرد',
 	'logentry-comments-delete' => '$1 نظر #$4 را از صفحهٔ $3 حذف کرد',
 	'comments-time-ago' => '$1 پیش',
@@ -2684,6 +2695,7 @@ $messages['sv'] = array(
 	'comments-delete-link' => 'Radera kommentar',
 	'comments-anon-name' => 'Anonym användare',
 	'comments-anon-message' => '{{SITENAME}} välkomnar <b>alla kommentarer</b>. Om du inte vill vara anonym kan du <a href="$1">registrera</a> eller <a href="$2">logga in</a>. Det är gratis.',
+	'comments-links-are-forbidden' => 'Externa länkar i kommentarer är förbjudna!',
 	'comments-ignore-item' => '<a href="$1">$2</a> den $3 <a href="$4">(ta bort blockering)</a>',
 	'comments-ignore-no-users' => 'Det finns inga användare som är blockerade för tillfället.',
 	'comments-ignore-remove-message' => 'Är du säker på att du vill ta bort blockeringen för användaren <b>$1</b>s kommentarer?',
