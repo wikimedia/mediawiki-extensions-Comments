@@ -77,7 +77,7 @@ class CommentIgnoreList extends SpecialPage {
 	 */
 	function displayCommentBlockList() {
 		$lang = $this->getLanguage();
-		$title = $this->getTitle();
+		$title = $this->getPageTitle();
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
