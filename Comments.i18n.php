@@ -1726,7 +1726,7 @@ $messages['ko'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:덧글 관리자',
 	'right-comment' => '덧글 제출',
 	'right-commentadmin' => '사용자가 제출한 덧글 관리',
-	'right-commentlinks' => '외부 링크를 써서 댓글 달기',
+	'right-commentlinks' => '바깥 링크를 사용해 덧글 남기기',
 );
 
 /** Colognian (Ripoarisch)
@@ -2875,6 +2875,17 @@ $messages['uk'] = array(
 	'right-comment' => 'робити коментарі',
 	'right-commentadmin' => 'Адмініструвати надіслані користувачами коментарі',
 	'right-commentlinks' => 'Вживати зовнішні посилання у коментарях',
+);
+
+/** Yoruba (Yorùbá)
+ * @author Demmy
+ */
+$messages['yo'] = array(
+	'comments-time-ago' => '$1 sẹ́yìn',
+	'comments-time-days' => '{{PLURAL:$1|ọjọ́ kan|ọjọ́ $1}}',
+	'comments-time-hours' => '{{PLURAL:$1|wákàtí kan|wákàtí $1}}',
+	'comments-time-minutes' => '{{PLURAL:$1|ìṣẹ́jú kan|ìṣẹ́jú $1}}',
+	'comments-time-seconds' => '{{PLURAL:$1|ìṣẹ́júàáyá kan|ìṣẹ́júàáyá $1}}',
 );
 
 /** Simplified Chinese (中文（简体）‎)
