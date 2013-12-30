@@ -969,6 +969,9 @@ $messages['fa'] = array(
 	'comments-ignore-cancel' => 'لغو',
 	'comments-ignore-title' => 'فهرست نظرات نادیده گرفته شده',
 	'commentignorelist' => 'فهرست نظرات نادیده گرفته شده',
+	'comments-no-comments-of-day' => 'هیچ نظری از روز وجود ندارد.',
+	'log-name-comments' => 'سیاههٔ نظرات',
+	'log-description-comments' => 'این یک سیاههٔ نظرات است.',
 	'logentry-comments-add' => '$1 نظری جدید در صفحهٔ $3 ارسال کرد',
 	'logentry-comments-delete' => '$1 نظر #$4 را از صفحهٔ $3 حذف کرد',
 	'comments-time-ago' => '$1 پیش',
@@ -978,7 +981,11 @@ $messages['fa'] = array(
 	'comments-time-seconds' => '{{PLURAL:$1|یک ثانیه|$1 ثانیه}}',
 	'log-show-hide-comments' => 'سیاههٔ نظرات $1',
 	'group-commentadmin' => 'مدیران نظرات',
+	'group-commentadmin-member' => '{{GENDER:$1|سرپرست نظرات}}',
+	'grouppage-commentadmin' => '{{ns:project}}: سرپرستان نظرات',
 	'right-comment' => 'ارسال نظرات',
+	'right-commentadmin' => 'سرپرستی نظرات ارائه شدهٔ کاربران',
+	'right-commentlinks' => 'از اتصالات خارجی در نظرات استفاده کنید',
 );
 
 /** Finnish (suomi)
