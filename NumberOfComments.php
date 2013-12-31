@@ -123,7 +123,7 @@ class NumberOfComments {
 			} else {
 				$val = intval( $res );
 			}
-			$wgMemc->set( $key, $val, 60 * 60 * 24 ); // cache for 24 hours
+			$wgMemc->set( $key, $val, 60 * 60 ); // cache for an hour
 		}
 		return $val;
 	}
