@@ -84,7 +84,7 @@ class CommentsHooks {
 		$output = '<div class="comments-body">';
 		// This was originally commented out, I don't know why.
 		// Uncommented to prevent E_NOTICE.
-		$output = $comment->displayOrderForm();
+		$output .= $comment->displayOrderForm();
 
 		$output .= '<div id="allcomments">' . $comment->display() . '</div>';
 
