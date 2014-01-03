@@ -830,7 +830,7 @@ class Comment {
 			}
 			$voteLink .=
 				"<a href=\"" .
-				$login->escapeLocalURL( array( 'returnto' => $returnTo ) ) .
+				htmlspecialchars( $login->getLocalURL( array( 'returnto' => $returnTo ) ) ) .
 				"\" rel=\"nofollow\">";
 		}
 
