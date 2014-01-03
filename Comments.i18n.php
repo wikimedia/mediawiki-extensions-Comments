@@ -1242,6 +1242,7 @@ $messages['gl'] = array(
 /** Hebrew (עברית)
  * @author Ofrahod
  * @author חיים
+ * @author ערן
  */
 $messages['he'] = array(
 	'comments-comment' => 'תגובה',
@@ -1258,6 +1259,7 @@ $messages['he'] = array(
 	'comments-manage-blocklist-link' => 'ניהול רשימת התעלמות',
 	'comments-you' => 'אתה',
 	'comments-reply' => 'השב',
+	'comments-not-allowed' => 'אינך מורשה לפרסם תגובות.',
 	'comments-post' => 'פרסם תגובה',
 	'comments-submit' => 'הוסף את ההערה שלך',
 	'comments-score-text' => 'תוצאה',
@@ -2567,10 +2569,10 @@ $messages['ru'] = array(
 	'logentry-comments-add' => '$1 опубликовал новый комментарий на $3',
 	'logentry-comments-delete' => '$1 удалил комментарий #$4 на $3',
 	'comments-time-ago' => '$1 назад',
-	'comments-time-days' => '{{PLURAL:$1|$1 день|$1 дня|$1 дней}}',
-	'comments-time-hours' => '{{PLURAL:$1|$1 час|$1 часа|$1 часов}}',
-	'comments-time-minutes' => '{{PLURAL:$1|$1 минуту|$1 минуты|$1 минут}}',
-	'comments-time-seconds' => '{{PLURAL:$1|$1 секунду|$1 секунды|$1 секунд}}',
+	'comments-time-days' => '{{PLURAL:$1|$1 день|$1 дней|$1 дня}}', # Fuzzy
+	'comments-time-hours' => '{{PLURAL:$1|$1 час|$1 часов|$1 часа}}', # Fuzzy
+	'comments-time-minutes' => '{{PLURAL:$1|$1 минуту|$1 минут|$1 минуты}}', # Fuzzy
+	'comments-time-seconds' => '{{PLURAL:$1|$1 секунду|$1 секунд|$1 секунды}}', # Fuzzy
 	'log-show-hide-comments' => '$1 комментарий из журнала',
 	'group-commentadmin' => 'Модераторы комментариев',
 	'group-commentadmin-member' => '{{GENDER:$1|модератор комментариев}}',
