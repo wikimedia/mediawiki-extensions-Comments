@@ -817,6 +817,7 @@ $messages['eo'] = array(
  * @author AndreyWiki
  * @author Armando-Martin
  * @author Bernardom
+ * @author Ciencia Al Poder
  * @author Fitoschido
  * @author Ihojose
  */
@@ -849,6 +850,8 @@ $messages['es'] = array(
 	'comments-delete-link' => 'Borrar comentario',
 	'comments-anon-name' => 'Usuario anónimo',
 	'comments-anon-message' => '{{SITENAME}} valora <b>todos los comentarios</b>. Si no quieres ser un usuario anónimo, <a href="$1">regístrate</a> o <a href="$2">inicia sesión</a>. Es gratis.',
+	'comments-links-are-forbidden' => '¡No está permitido poner enlaces externos en los comentarios!',
+	'comments-is-spam' => 'El texto enviado en el comentario ha sido interpretado como spam.',
 	'comments-ignore-item' => '<a href="$1">$2</a> el $3 <a href="$4">(desbloquear)</a>',
 	'comments-ignore-no-users' => 'No hay ningún usuario bloqueado.',
 	'comments-ignore-remove-message' => '¿Estás seguro de que deseas desbloquear los comentarios de <b>$1</b>?',
@@ -872,6 +875,7 @@ $messages['es'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Administradores de comentarios',
 	'right-comment' => 'Enviar comentarios',
 	'right-commentadmin' => 'Administrar los comentarios enviados por los usuarios',
+	'right-commentlinks' => 'Usar enlaces externos en comentarios',
 );
 
 /** Estonian (eesti)
@@ -2521,6 +2525,7 @@ $messages['roa-tara'] = array(
 
 /** Russian (русский)
  * @author Kaganer
+ * @author Lockal
  * @author Okras
  * @author Ole Yves
  * @author SimonLitt
@@ -2569,10 +2574,10 @@ $messages['ru'] = array(
 	'logentry-comments-add' => '$1 опубликовал новый комментарий на $3',
 	'logentry-comments-delete' => '$1 удалил комментарий #$4 на $3',
 	'comments-time-ago' => '$1 назад',
-	'comments-time-days' => '{{PLURAL:$1|$1 день|$1 дней|$1 дня}}', # Fuzzy
-	'comments-time-hours' => '{{PLURAL:$1|$1 час|$1 часов|$1 часа}}', # Fuzzy
-	'comments-time-minutes' => '{{PLURAL:$1|$1 минуту|$1 минут|$1 минуты}}', # Fuzzy
-	'comments-time-seconds' => '{{PLURAL:$1|$1 секунду|$1 секунд|$1 секунды}}', # Fuzzy
+	'comments-time-days' => '{{PLURAL:$1|$1 день|$1 дней|$1 дня}}',
+	'comments-time-hours' => '{{PLURAL:$1|$1 час|$1 часов|$1 часа}}',
+	'comments-time-minutes' => '{{PLURAL:$1|$1 минуту|$1 минут|$1 минуты}}',
+	'comments-time-seconds' => '{{PLURAL:$1|$1 секунду|$1 секунд|$1 секунды}}',
 	'log-show-hide-comments' => '$1 комментарий из журнала',
 	'group-commentadmin' => 'Модераторы комментариев',
 	'group-commentadmin-member' => '{{GENDER:$1|модератор комментариев}}',
@@ -2884,6 +2889,13 @@ $messages['uk'] = array(
 	'right-comment' => 'робити коментарі',
 	'right-commentadmin' => 'Адмініструвати надіслані користувачами коментарі',
 	'right-commentlinks' => 'Вживати зовнішні посилання у коментарях',
+);
+
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'comments-you' => 'איר',
 );
 
 /** Yoruba (Yorùbá)
