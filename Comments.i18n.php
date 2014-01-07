@@ -515,6 +515,7 @@ $messages['ce'] = array(
 	'comments-loading' => 'Чуйолуш…',
 	'comments-cancel-reply' => 'Цаоьшу',
 	'comments-submit' => 'ТӀетоха хьай къамел',
+	'comments-score-text' => 'Мах хадор',
 	'comments-ignore-cancel' => 'Цаоьшу',
 	'comments-time-ago' => '$1 юха',
 	'comments-time-hours' => '{{PLURAL:$1|Сахьат|$1 сахьат|$1 сахьат}}', # Fuzzy
