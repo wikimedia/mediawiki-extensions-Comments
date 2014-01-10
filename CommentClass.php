@@ -322,16 +322,20 @@ class Comment {
 		// for example, AbuseFilter, Phalanx or SpamBlacklist can add additional
 		// checks
 		wfRunHooks( 'Comments::isSpam', array( &$text, &$retVal ) );
+		if ( $retVal ) {
+			// Should only be true here...
+			return $retVal;
+		}
 
 		// Run text through $wgSpamRegex (and $wgSummarySpamRegex if it has been specified)
 		if ( $wgSpamRegex && preg_match( $wgSpamRegex, $text ) ) {
-			$retVal = true;
+			return true;
 		}
 
 		if ( $wgSummarySpamRegex && is_array( $wgSummarySpamRegex ) ) {
 			foreach ( $wgSummarySpamRegex as $spamRegex ) {
 				if ( preg_match( $spamRegex, $text ) ) {
-					$retVal = true;
+					return true;
 				}
 			}
 		}
