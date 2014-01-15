@@ -1216,8 +1216,8 @@ $messages['gl'] = array(
 	'comments-delete-link' => 'Borrar o comentario',
 	'comments-anon-name' => 'Usuario anónimo',
 	'comments-anon-message' => '{{SITENAME}} agradece <b>todos os comentarios</b>. Se non quere ser anónimo, <a href="$1">rexístrese</a> ou <a href="$2">acceda ao sistema</a>. É gratuíto.',
-	'comments-links-are-forbidden' => 'Están prohibidas as ligazóns externas nos comentario!',
-	'comments-is-spam' => 'O texto enviado no comentario foi interpretado coma publicidade.',
+	'comments-links-are-forbidden' => 'Están prohibidas as ligazóns externas nos comentarios!',
+	'comments-is-spam' => 'O texto enviado no comentario foi interpretado como publicidade.',
 	'comments-ignore-item' => '<a href="$1">$2</a> o $3 <a href="$4">(desbloquear)</a>',
 	'comments-ignore-no-users' => 'Actualmente non hai ningún usuario bloqueado.',
 	'comments-ignore-remove-message' => 'Está seguro de querer desbloquear os comentarios do usuario <b>$1</b>?',
@@ -1241,7 +1241,7 @@ $messages['gl'] = array(
 	'grouppage-commentadmin' => '{{ns:project}}:Administradores de comentarios',
 	'right-comment' => 'Enviar comentarios',
 	'right-commentadmin' => 'Administrar os comentarios enviados polos usuarios',
-	'right-commentlinks' => 'Use ligazóns externas nos comentarios',
+	'right-commentlinks' => 'Usar ligazóns externas nos comentarios',
 );
 
 /** Hebrew (עברית)
