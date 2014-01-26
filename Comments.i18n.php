@@ -111,7 +111,8 @@ Parameters:
 	'comments-reply' => '{{Identical|Reply}}',
 	'comments-login-required' => 'Shown when the user does not have the "comment" user right and they are logged out but a page contains the <code><nowiki><comments /></nowiki></code> tag.',
 	'comments-not-allowed' => 'Shown when the user does not have the "comment" user right but a page contains the <code><nowiki><comments /></nowiki></code> tag.',
-	'comments-post' => 'Button text, clicking on this button submits your comment; refer to the [[mw:File:Comments.png|image]] for details',
+	'comments-post' => 'Button text, clicking on this button submits your comment; refer to the [[mw:File:Comments.png|image]] for details.
+{{Identical|Post comment}}',
 	'comments-submit' => 'This text is shown above the comment form (the form where you can submit your own comment(s)); refer to the [[mw:File:Comments.png|image]] for details',
 	'comments-score-text' => "Followed by the comment's score; refer to the [[mw:File:Comments.png|image]] for details",
 	'comments-permalink' => '"Permalink" means "permanent link" and clicking on it creates what is a permanent link to a comment, at least until a (comment) administrator deletes the comment or the whole page gets deleted or the <code><nowiki><comments /></nowiki></code> tag is removed from it.
