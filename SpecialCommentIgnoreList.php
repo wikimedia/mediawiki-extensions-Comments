@@ -56,7 +56,7 @@ class CommentIgnoreList extends SpecialPage {
 				if ( !$user_id ) {
 					$user_id = 0;
 				}
-				$c = new Comment( 0 );
+				$c = new Comment( 0, $this->getContext() );
 				$c->deleteBlock( $user->getID(), $user_id );
 				if ( $user_id && class_exists( 'UserStatsTrack' ) ) {
 					$stats = new UserStatsTrack( $user_id, $user_name );

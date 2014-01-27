@@ -29,7 +29,7 @@ class CommentListGet extends UnlistedSpecialPage {
 		$pid = $request->getInt( 'pid' );
 		$shwform = $request->getVal( 'shwform' );
 		if( $pid ) {
-			$comment = new Comment( $pid );
+			$comment = new Comment( $pid, $this->getContext() );
 			$comment->setOrderBy( $request->getInt( 'ord' ) );
 			if( $shwform && $shwform == 1 ) {
 				$output .= $comment->displayOrderForm(); // misza: added isset check
