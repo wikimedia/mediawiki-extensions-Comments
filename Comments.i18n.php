@@ -2428,6 +2428,13 @@ $messages['pt-br'] = array(
 	'right-comment' => 'Enviar comentários',
 );
 
+/** Quechua (Runa Simi)
+ * @author AlimanRuna
+ */
+$messages['qu'] = array(
+	'comments-time-ago' => '$1 ñaqha',
+);
+
 /** Romanian (română)
  * @author Firilacroco
  * @author Minisarm
