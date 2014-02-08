@@ -929,6 +929,17 @@ $messages['et'] = array(
 	'right-commentadmin' => 'Hallata kasutajate saadetud kommentaare',
 );
 
+/** Basque (euskara)
+ * @author Subi
+ */
+$messages['eu'] = array(
+	'comments-submit' => 'Gehitu zure iruzkina',
+	'comments-time-days' => '{{PLURAL:$1|egun bat|$1 egun}}',
+	'comments-time-hours' => '{{PLURAL:$1|ordu bat|$1 ordu}}',
+	'comments-time-minutes' => '{{PLURAL:$1|minutu bat|$1 minutu}}',
+	'comments-time-seconds' => '{{PLURAL:$1|segundo bat|$1 segundo}}',
+);
+
 /** Persian (فارسی)
  * @author Alireza
  * @author Armin1392
