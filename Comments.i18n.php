@@ -516,6 +516,8 @@ $messages['ca'] = array(
  */
 $messages['ce'] = array(
 	'comments-loading' => 'Чуйолуш…',
+	'comments-auto-refresher-enable' => 'Латаде комментареш автоматически карладахар',
+	'comments-auto-refresher-pause' => 'Сацаде комментареш автоматически карладахар',
 	'comments-cancel-reply' => 'Цаоьшу',
 	'comments-submit' => 'ТӀетоха хьай къамел',
 	'comments-score-text' => 'Мах хадор',
