@@ -2815,10 +2815,13 @@ $messages['ta'] = array(
 );
 
 /** Telugu (తెలుగు)
+ * @author Ravichandra
  * @author Veeven
  */
 $messages['te'] = array(
 	'comments-comment' => 'వ్యాఖ్య',
+	'comments-voted-label' => 'ఓటేశారు',
+	'comments-loading' => 'భర్తీ అవుతోంది...',
 	'comments-cancel-reply' => 'రద్దుచేయి',
 	'comments-show-comment-link' => 'వ్యాఖ్యను చూపించు',
 	'comments-you' => ' మీరు',
@@ -2826,6 +2829,7 @@ $messages['te'] = array(
 	'comments-login-required' => 'వ్యాఖ్యలను చేర్చడానికి మీరు ప్రవేశించి ఉండాలి',
 	'comments-not-allowed' => 'వ్యాఖ్యానించే అనుమతి మీకు లేదు.',
 	'comments-submit' => 'మీ వ్యాఖ్యను చేర్చండి',
+	'comments-score-text' => 'స్కోరు',
 	'comments-permalink' => 'స్థిరలంకె',
 	'comments-delete-link' => 'వ్యాఖ్యను తొలగించు',
 	'comments-anon-name' => 'అజ్ఞాత వాడుకరి',
