@@ -456,8 +456,12 @@ $messages['br'] = array(
 	'comments-time-minutes' => '{{PLURAL:$1|ur vunutenn|$1 munut}}',
 	'comments-time-seconds' => '{{PLURAL:$1|un eiladenn|$1 eiladenn}}',
 	'log-show-hide-comments' => 'Marilh evezhiadennoù $1',
+	'group-commentadmin' => 'Merourien an evezhiadennoù',
+	'group-commentadmin-member' => '{{GENDER:$1|merour|merourez}} an evezhiadennoù',
+	'grouppage-commentadmin' => '{{ns:project}}:Merourien an evezhiadennoù',
 	'right-comment' => 'Kas an evezhiadennoù',
 	'right-commentadmin' => 'Merañ an evezhiadennoù kaset gant an implijerien',
+	'right-commentlinks' => 'Implijout liammoù diavaez en evezhiadennoù',
 );
 
 /** Bosnian (bosanski)
