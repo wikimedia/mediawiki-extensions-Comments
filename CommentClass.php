@@ -86,7 +86,7 @@ class Comment extends ContextSource {
 
 		$totalDays = intval( $dtDiff / ( 24 * 60 * 60 ) );
 		$totalSecs = $dtDiff - ( $totalDays * 24 * 60 * 60 );
-		$dif['w'] = intval( $totalDays / 7 );
+		$dif['mo'] = intval( $totalDays / 30 );
 		$dif['d'] = $totalDays;
 		$dif['h'] = $h = intval( $totalSecs / ( 60 * 60 ) );
 		$dif['m'] = $m = intval( ( $totalSecs - ( $h * 60 * 60 ) ) / 60 );
@@ -99,7 +99,7 @@ class Comment extends ContextSource {
 		$timeStr = ''; // misza: initialize variables, DUMB FUCKS!
 		if( $time[$timeabrv] > 0 ) {
 			// Give grep a chance to find the usages:
-			// comments-time-days, comments-time-hours, comments-time-minutes, comments-time-seconds
+			// comments-time-days, comments-time-hours, comments-time-minutes, comments-time-seconds, comments-time-months
 			$timeStr = wfMessage( "comments-time-{$timename}", $time[$timeabrv] )->parse();
 		}
 		if( $timeStr ) {
@@ -111,16 +111,22 @@ class Comment extends ContextSource {
 	static function getTimeAgo( $time ) {
 		$timeArray = self::dateDiff( time(), $time );
 		$timeStr = '';
+		$timeStrMo = self::getTimeOffset( $timeArray, 'mo', 'months' );
 		$timeStrD = self::getTimeOffset( $timeArray, 'd', 'days' );
 		$timeStrH = self::getTimeOffset( $timeArray, 'h', 'hours' );
 		$timeStrM = self::getTimeOffset( $timeArray, 'm', 'minutes' );
 		$timeStrS = self::getTimeOffset( $timeArray, 's', 'seconds' );
-		$timeStr = $timeStrD;
-		if( $timeStr < 2 ) {
-			$timeStr .= $timeStrH;
-			$timeStr .= $timeStrM;
-			if( !$timeStr ) {
-				$timeStr .= $timeStrS;
+
+		if ( $timeStrMo ) {
+			$timeStr = $timeStrMo;
+		} else {
+			$timeStr = $timeStrD;
+			if( $timeStr < 2 ) {
+				$timeStr .= $timeStrH;
+				$timeStr .= $timeStrM;
+				if( !$timeStr ) {
+					$timeStr .= $timeStrS;
+				}
 			}
 		}
 		if( !$timeStr ) {

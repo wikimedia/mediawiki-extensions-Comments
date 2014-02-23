@@ -55,6 +55,7 @@ $messages['en'] = array(
 	'logentry-comments-add' => '$1 posted a new comment on $3',
 	'logentry-comments-delete' => '$1 deleted comment #$4 on $3',
 	'comments-time-ago' => '$1 ago',
+	'comments-time-months' => '{{PLURAL:$1|one month|$1 months}}',
 	'comments-time-days' => '{{PLURAL:$1|one day|$1 days}}',
 	'comments-time-hours' => '{{PLURAL:$1|one hour|$1 hours}}',
 	'comments-time-minutes' => '{{PLURAL:$1|one minute|$1 minutes}}',
@@ -162,11 +163,22 @@ The comment ignore list contains a list of users whose comments you are ignoring
 ** {{msg-mw|comments-time-minutes}}
 ** {{msg-mw|comments-time-seconds}}
 {{Identical|Ago}}',
+	'comments-time-months' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
+
+Parameters:
+* $1 - number of months
+See also:
+* {{msg-mw|Comments-time-days}}
+* {{msg-mw|Comments-time-hours}}
+* {{msg-mw|Comments-time-minutes}}
+* {{msg-mw|Comments-time-seconds}}
+{{Identical|Day}}',
 	'comments-time-days' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
 
 Parameters:
 * $1 - number of days
 See also:
+* {{msg-mw|Comments-time-months}}
 * {{msg-mw|Comments-time-hours}}
 * {{msg-mw|Comments-time-minutes}}
 * {{msg-mw|Comments-time-seconds}}
@@ -176,6 +188,7 @@ See also:
 Parameters:
 * $1 - number of hours
 See also:
+* {{msg-mw|Comments-time-months}}
 * {{msg-mw|Comments-time-days}}
 * {{msg-mw|Comments-time-minutes}}
 * {{msg-mw|Comments-time-seconds}}',
@@ -184,6 +197,7 @@ See also:
 Parameters:
 * $1 - number of minutes
 See also:
+* {{msg-mw|Comments-time-months}}
 * {{msg-mw|Comments-time-days}}
 * {{msg-mw|Comments-time-hours}}
 * {{msg-mw|Comments-time-seconds}}
@@ -193,6 +207,7 @@ See also:
 Parameters:
 * $1 - number of seconds
 See also:
+* {{msg-mw|Comments-time-months}}
 * {{msg-mw|Comments-time-days}}
 * {{msg-mw|Comments-time-hours}}
 * {{msg-mw|Comments-time-minutes}}
