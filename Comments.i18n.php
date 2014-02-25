@@ -163,54 +163,34 @@ The comment ignore list contains a list of users whose comments you are ignoring
 ** {{msg-mw|comments-time-minutes}}
 ** {{msg-mw|comments-time-seconds}}
 {{Identical|Ago}}',
-	'comments-time-months' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
+	'comments-time-months' => 'Used as <code>$1</code> in {{msg-mw|Comments-time-ago}}.
 
 Parameters:
 * $1 - number of months
-See also:
-* {{msg-mw|Comments-time-days}}
-* {{msg-mw|Comments-time-hours}}
-* {{msg-mw|Comments-time-minutes}}
-* {{msg-mw|Comments-time-seconds}}
+{{Related|Comments-time}}
 {{Identical|Day}}',
-	'comments-time-days' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
+	'comments-time-days' => 'Used as <code>$1</code> in {{msg-mw|Comments-time-ago}}.
 
 Parameters:
 * $1 - number of days
-See also:
-* {{msg-mw|Comments-time-months}}
-* {{msg-mw|Comments-time-hours}}
-* {{msg-mw|Comments-time-minutes}}
-* {{msg-mw|Comments-time-seconds}}
+{{Related|Comments-time}}
 {{Identical|Day}}',
-	'comments-time-hours' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
+	'comments-time-hours' => 'Used as <code>$1</code> in {{msg-mw|Comments-time-ago}}.
 
 Parameters:
 * $1 - number of hours
-See also:
-* {{msg-mw|Comments-time-months}}
-* {{msg-mw|Comments-time-days}}
-* {{msg-mw|Comments-time-minutes}}
-* {{msg-mw|Comments-time-seconds}}',
+{{Related|Comments-time}}',
 	'comments-time-minutes' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
 
 Parameters:
 * $1 - number of minutes
-See also:
-* {{msg-mw|Comments-time-months}}
-* {{msg-mw|Comments-time-days}}
-* {{msg-mw|Comments-time-hours}}
-* {{msg-mw|Comments-time-seconds}}
+{{Related|Comments-time}}
 {{Identical|Minute}}',
 	'comments-time-seconds' => 'Used as the duration in {{msg-mw|Comments-time-ago}}.
 
 Parameters:
 * $1 - number of seconds
-See also:
-* {{msg-mw|Comments-time-months}}
-* {{msg-mw|Comments-time-days}}
-* {{msg-mw|Comments-time-hours}}
-* {{msg-mw|Comments-time-minutes}}
+{{Related|Comments-time}}
 {{Identical|Second}}',
 	'log-show-hide-comments' => 'For [[Special:Log]]. Parameters:
 * $1 - one of {{msg-mw|Show}} or {{msg-mw|Hide}}
@@ -542,6 +522,7 @@ $messages['ce'] = array(
 	'comments-score-text' => 'Мах хадор',
 	'comments-ignore-cancel' => 'Цаоьшу',
 	'comments-time-ago' => '$1 юха',
+	'comments-time-months' => '{{PLURAL:$1|цхьа бутт|$1 беттанаш}}',
 	'comments-time-hours' => '{{PLURAL:$1|сахьат}}',
 );
 
@@ -1016,6 +997,7 @@ $messages['fa'] = array(
 	'logentry-comments-add' => '$1 نظری جدید در صفحهٔ $3 ارسال کرد',
 	'logentry-comments-delete' => '$1 نظر #$4 را از صفحهٔ $3 حذف کرد',
 	'comments-time-ago' => '$1 پیش',
+	'comments-time-months' => '{{PLURAL:$1|۱ ماه|$1 ماه‌}}',
 	'comments-time-days' => '{{PLURAL:$1|یک روز|$1 روز}}',
 	'comments-time-hours' => '{{PLURAL:$1|یک ساعت|$1 ساعت}}',
 	'comments-time-minutes' => '{{PLURAL:$1|یک دقیقه|$1 دقیقه}}',
@@ -1388,6 +1370,7 @@ $messages['hsb'] = array(
 	'logentry-comments-add' => '$1 je nowy komentar na $3 zawostajił',
 	'logentry-comments-delete' => '$1 je komentar #$4 na $3 zhašał',
 	'comments-time-ago' => 'před $1',
+	'comments-time-months' => '{{PLURAL:$1|jednym měsacom|$1 měsacomaj|$1 měsacami}}',
 	'comments-time-days' => '{{PLURAL:$1|$1 dnjom|$1 dnjomaj|$1 dnjemi|$1 dnjemi}}',
 	'comments-time-hours' => '{{PLURAL:$1|$1 hodźinu|$1 hodźinomaj|$1 hodźinami|$1 hodźinami}}',
 	'comments-time-minutes' => '{{PLURAL:$1|$1 mjeńšinu|$1 mjeńšinomaj|$1 mjeńšinami|$1 mjeńšinami}}',
@@ -1602,6 +1585,7 @@ $messages['it'] = array(
 	'logentry-comments-add' => '$1 ha pubblicato un nuovo commento su $3',
 	'logentry-comments-delete' => '$1 ha cancellato il commento #$4 su $3',
 	'comments-time-ago' => '$1 fa',
+	'comments-time-months' => '{{PLURAL:$1|un mese|$1 mesi}}',
 	'comments-time-days' => '{{PLURAL:$1|un giorno|$1 giorni}}',
 	'comments-time-hours' => "{{PLURAL:$1|un'ora|$1 ore}}",
 	'comments-time-minutes' => '{{PLURAL:$1|un minuto|$1 minuti}}',
@@ -1662,6 +1646,7 @@ $messages['ja'] = array(
 	'logentry-comments-add' => '$1 が $3 に新しいコメントを投稿',
 	'logentry-comments-delete' => '$1 が $3 のコメント #$4 を削除',
 	'comments-time-ago' => '$1前',
+	'comments-time-months' => '{{PLURAL:$1|$1 か月}}',
 	'comments-time-days' => '{{PLURAL:$1|$1 日}}',
 	'comments-time-hours' => '{{PLURAL:$1|$1 時間}}',
 	'comments-time-minutes' => '{{PLURAL:$1|$1 分}}',
@@ -1870,6 +1855,7 @@ $messages['lb'] = array(
 	'logentry-comments-add' => '$1 huet eng nei Bemierkung op $3 gemaach',
 	'logentry-comments-delete' => "$1 huet d'Bemierkung #$4 op $3 geläscht",
 	'comments-time-ago' => 'viru(n) $1',
+	'comments-time-months' => '{{PLURAL:$1|ee Mount|$1 Méint}}',
 	'comments-time-days' => '{{PLURAL:$1|engem Dag|$1 Deeg}}',
 	'comments-time-hours' => '{{PLURAL:$1|enger Stonn|$1 Stonnen}}',
 	'comments-time-minutes' => '{{PLURAL:$1|enger Minutt|$1 Minutten}}',
