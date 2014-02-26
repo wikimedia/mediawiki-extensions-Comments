@@ -1306,6 +1306,7 @@ $messages['he'] = array(
 /** Hindi (हिन्दी)
  * @author Ansumang
  * @author Siddhartha Ghai
+ * @author Vivek Rai
  */
 $messages['hi'] = array(
 	'comments-comment' => 'टिप्पणी',
@@ -1321,6 +1322,7 @@ $messages['hi'] = array(
 	'comments-ignore-cancel' => 'रद्द करें',
 	'log-name-comments' => 'टिप्पणी लॉग',
 	'comments-time-ago' => '$1 पहले',
+	'comments-time-months' => '{{PLURAL:$1|एक महीना| $१ महीने}}',
 );
 
 /** Upper Sorbian (hornjoserbsce)
@@ -1705,6 +1707,7 @@ $messages['kn'] = array(
 
 /** Korean (한국어)
  * @author LFM
+ * @author Priviet
  * @author Yjs5497
  * @author 아라
  */
@@ -1752,6 +1755,7 @@ $messages['ko'] = array(
 	'logentry-comments-add' => '$1 사용자가 $3에 새 덧글을 남겼습니다',
 	'logentry-comments-delete' => '$1 사용자가 $3에 덧글 #$4(을)를 삭제했습니다',
 	'comments-time-ago' => '$1 전',
+	'comments-time-months' => '{{PLURAL:$1|$1 달}}',
 	'comments-time-days' => '{{PLURAL:$1|1일|$1일}}',
 	'comments-time-hours' => '{{PLURAL:$1|1시간|$1시간}}',
 	'comments-time-minutes' => '{{PLURAL:$1|1분|$1분}}',
@@ -1931,7 +1935,7 @@ $messages['lv'] = array(
  */
 $messages['mk'] = array(
 	'comments-comment' => 'Коментар',
-	'comments-desc' => 'Додава парсерска кука <code>&lt;comments&gt;</code> што овозможува коментирање на страниците',
+	'comments-desc' => 'Додава расчленувачка кука <code>&lt;comments&gt;</code> што овозможува коментирање на страниците',
 	'comments-db-locked' => '<h3>Давање на коментари</h3>Базата е моментално заклучена за редовно одржување, и потоа ќе се врати во нормална работна состојба. Навратете се подоцна!',
 	'comments-voted-label' => 'Гласано',
 	'comments-loading' => 'Вчитувам...',
@@ -2125,6 +2129,7 @@ $messages['nds'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Arent
  * @author Hansmuller
  * @author Mark van Alphen
  * @author Mitchel Corstjens
@@ -2176,6 +2181,7 @@ $messages['nl'] = array(
 	'logentry-comments-add' => '$1 stuurde een nieuwe opmerking over $3 in.',
 	'logentry-comments-delete' => '$1 haalde commentaar #$4 over $3 weg.',
 	'comments-time-ago' => '$1 geleden',
+	'comments-time-months' => '{{PLURAL:$1|één maand|$1 maanden}}',
 	'comments-time-days' => '{{PLURAL:$1|Eén dag|$1 dagen}}',
 	'comments-time-hours' => '{{PLURAL:$1|Eén uur|$1 uren}}',
 	'comments-time-minutes' => '{{PLURAL:$1|Eén minuut|$1 minuten}}',
@@ -2620,6 +2626,13 @@ $messages['ru'] = array(
 	'right-commentlinks' => 'Использовать внешние ссылки в комментариях',
 );
 
+/** Scots (Scots)
+ * @author John Reid
+ */
+$messages['sco'] = array(
+	'comments-time-months' => '{{PLURAL:$1|yin month|$1 months}}',
+);
+
 /** Sinhala (සිංහල)
  * @author Singhalawap
  * @author පසිඳු කාවින්ද
@@ -2999,6 +3012,7 @@ $messages['zh-hans'] = array(
 	'logentry-comments-add' => '$1在$3上添加了一则新评论',
 	'logentry-comments-delete' => '$1删除了$3上的评论#$4',
 	'comments-time-ago' => '$1前',
+	'comments-time-months' => '{{PLURAL:$1|1个月|$1个月}}',
 	'comments-time-days' => '{{PLURAL:$1|1天|$1天}}',
 	'comments-time-hours' => '{{PLURAL:$1|1小时|$1小时}}',
 	'comments-time-minutes' => '{{PLURAL:$1|1分钟|$1分钟}}',
