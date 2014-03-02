@@ -1205,6 +1205,7 @@ $messages['fy'] = array(
 /** Galician (galego)
  * @author Elisardojm
  * @author Toliño
+ * @author Vivaelcelta
  */
 $messages['gl'] = array(
 	'comments-comment' => 'Comentar',
@@ -1250,6 +1251,7 @@ $messages['gl'] = array(
 	'logentry-comments-add' => '$1 deixou un novo comentario en "$3"',
 	'logentry-comments-delete' => '$1 borrou o comentario nº$4 en "$3"',
 	'comments-time-ago' => 'hai $1',
+	'comments-time-months' => '{{PLURAL:$1|un mes|$1 meses}}',
 	'comments-time-days' => '{{PLURAL:$1|un día|$1 días}}',
 	'comments-time-hours' => '{{PLURAL:$1|unha hora|$1 horas}}',
 	'comments-time-minutes' => '{{PLURAL:$1|un minuto|$1 minutos}}',
@@ -1322,7 +1324,7 @@ $messages['hi'] = array(
 	'comments-ignore-cancel' => 'रद्द करें',
 	'log-name-comments' => 'टिप्पणी लॉग',
 	'comments-time-ago' => '$1 पहले',
-	'comments-time-months' => '{{PLURAL:$1|एक महीना| $१ महीने}}',
+	'comments-time-months' => '{{PLURAL:$1|एक महीना|$1 महीने}}',
 );
 
 /** Upper Sorbian (hornjoserbsce)
@@ -2274,6 +2276,7 @@ $messages['or'] = array(
 );
 
 /** Polish (polski)
+ * @author Jacenty359
  * @author Odie2
  */
 $messages['pl'] = array(
@@ -2316,6 +2319,7 @@ $messages['pl'] = array(
 	'log-name-comments' => 'Dziennik komentarzy',
 	'log-description-comments' => 'Jest to dziennik komentarzy.',
 	'comments-time-ago' => '$1 temu',
+	'comments-time-months' => '{{PLURAL:$1|jeden miesiąc|$1 miesiące}}',
 	'comments-time-days' => '{{PLURAL:$1|dzień|$1 dni}}',
 	'comments-time-hours' => '{{PLURAL:$1|godzina|$1 godzin}}',
 	'comments-time-minutes' => '{{PLURAL:$1|minuta|$1 minut}}',
@@ -2634,6 +2638,7 @@ $messages['sco'] = array(
 );
 
 /** Sinhala (සිංහල)
+ * @author Sahan.ssw
  * @author Singhalawap
  * @author පසිඳු කාවින්ද
  */
@@ -2671,6 +2676,7 @@ $messages['si'] = array(
 	'log-name-comments' => 'පරිකථන ලඝු සටහන',
 	'log-description-comments' => 'මෙය පරිකථනවල ලඝු සටහනකි.',
 	'comments-time-ago' => '$1 පෙර',
+	'comments-time-months' => '{{PLURAL:$1|එක් මසක් |මාස $1ක් }}',
 	'comments-time-days' => '{{PLURAL:$1|දවසක්|දවස් $1}}',
 	'comments-time-hours' => '{{PLURAL:$1|පැයක්|පැය $1}}',
 	'comments-time-minutes' => '{{PLURAL:$1|මිනිත්තුවක්|මිනිත්තු $1}}',
@@ -2839,13 +2845,14 @@ $messages['ta'] = array(
 );
 
 /** Telugu (తెలుగు)
+ * @author Chaduvari
  * @author Ravichandra
  * @author Veeven
  */
 $messages['te'] = array(
 	'comments-comment' => 'వ్యాఖ్య',
 	'comments-voted-label' => 'ఓటేశారు',
-	'comments-loading' => 'భర్తీ అవుతోంది...',
+	'comments-loading' => 'లోడవుతోంది...',
 	'comments-cancel-reply' => 'రద్దుచేయి',
 	'comments-show-comment-link' => 'వ్యాఖ్యను చూపించు',
 	'comments-you' => ' మీరు',
@@ -2930,6 +2937,7 @@ $messages['uk'] = array(
 	'logentry-comments-add' => '$1 {{GENDER:$1|додав|додала}} новий коментар на сторінку $3',
 	'logentry-comments-delete' => '$1 видалив коментар #$4 на $3',
 	'comments-time-ago' => '$1 тому',
+	'comments-time-months' => '{{PLURAL:$1|$1 місяць|$1 місяців|$1 місяці}}',
 	'comments-time-days' => '$1 {{PLURAL:$1|день|дні|днів}}',
 	'comments-time-hours' => '$1 {{PLURAL:$1|годину|години|годин}}',
 	'comments-time-minutes' => '$1 {{PLURAL:$1|хвилину|хвилини|хвилин}}',
@@ -2948,6 +2956,7 @@ $messages['uk'] = array(
  */
 $messages['yi'] = array(
 	'comments-you' => 'איר',
+	'comments-time-months' => '{{PLURAL:$1|איין מאנאַט|$1 מאנאַטן}}',
 );
 
 /** Yoruba (Yorùbá)
