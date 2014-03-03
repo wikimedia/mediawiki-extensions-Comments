@@ -658,7 +658,7 @@ $messages['diq'] = array(
 	'comments-voted-label' => 'Rey Bıdê',
 	'comments-loading' => 'Bar beno...',
 	'comments-reply-to' => 'Cewabê',
-	'comments-cancel-reply' => 'Bıterkne',
+	'comments-cancel-reply' => 'Bıtexelne',
 	'comments-show-comment-link' => 'Vatışi bıvin',
 	'comments-you' => 'Tı',
 	'comments-reply' => 'Cewab',
@@ -669,7 +669,7 @@ $messages['diq'] = array(
 	'comments-delete-link' => 'Vatışi bestere',
 	'comments-anon-name' => 'Karbero bêname',
 	'comments-ignore-unblock' => 'bloqi hewad',
-	'comments-ignore-cancel' => 'Bıterkne',
+	'comments-ignore-cancel' => 'Bıtexelne',
 	'log-name-comments' => 'Qeyda vatışan',
 	'comments-time-ago' => 'Verdê $1',
 );
@@ -2864,6 +2864,9 @@ $messages['te'] = array(
 	'comments-permalink' => 'స్థిరలంకె',
 	'comments-delete-link' => 'వ్యాఖ్యను తొలగించు',
 	'comments-anon-name' => 'అజ్ఞాత వాడుకరి',
+	'comments-ignore-no-users' => 'ప్రస్తుతం నిరోధించబడిన వాడుకరులెవరూ లేరు.',
+	'comments-ignore-remove-message' => '<b>$1</b> వ్యాఖ్యలు అనుమతించడానికి మీకే అభ్యంతరం లేదా?',
+	'comments-ignore-unblock' => 'నిరోధాన్ని ఎత్తివేయి',
 	'comments-ignore-cancel' => 'రద్దుచేయి',
 	'log-name-comments' => 'వ్యాఖ్యల చిట్టా',
 	'log-description-comments' => 'ఇది వ్యాఖ్యల యొక్క చిట్టా.',
@@ -2873,6 +2876,7 @@ $messages['te'] = array(
 	'comments-time-minutes' => '{{PLURAL:$1|ఒక నిమిషం|$1 నిమిషాల}}',
 	'comments-time-seconds' => '{{PLURAL:$1|$1 క్షణం|$1 క్షణాల}}',
 	'log-show-hide-comments' => 'వ్యాఖ్యల చిట్టాను $1',
+	'right-comment' => 'వ్యాఖ్యల్ని సమర్పించు',
 );
 
 /** Central Atlas Tamazight (ⵜⴰⵎⴰⵣⵉⵖⵜ)
