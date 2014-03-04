@@ -2865,7 +2865,7 @@ $messages['te'] = array(
 	'comments-delete-link' => 'వ్యాఖ్యను తొలగించు',
 	'comments-anon-name' => 'అజ్ఞాత వాడుకరి',
 	'comments-ignore-no-users' => 'ప్రస్తుతం నిరోధించబడిన వాడుకరులెవరూ లేరు.',
-	'comments-ignore-remove-message' => '<b>$1</b> వ్యాఖ్యలు అనుమతించడానికి మీకే అభ్యంతరం లేదా?',
+	'comments-ignore-remove-message' => '<b>$1</b> యొక్క వ్యాఖ్యల నిరోధాన్ని ఎత్తివెయ్యాలనే మీరు నిశ్చయించుకున్నారా?',
 	'comments-ignore-unblock' => 'నిరోధాన్ని ఎత్తివేయి',
 	'comments-ignore-cancel' => 'రద్దుచేయి',
 	'log-name-comments' => 'వ్యాఖ్యల చిట్టా',
@@ -2876,7 +2876,7 @@ $messages['te'] = array(
 	'comments-time-minutes' => '{{PLURAL:$1|ఒక నిమిషం|$1 నిమిషాల}}',
 	'comments-time-seconds' => '{{PLURAL:$1|$1 క్షణం|$1 క్షణాల}}',
 	'log-show-hide-comments' => 'వ్యాఖ్యల చిట్టాను $1',
-	'right-comment' => 'వ్యాఖ్యల్ని సమర్పించు',
+	'right-comment' => 'వ్యాఖ్యల్ని సమర్పించడం',
 );
 
 /** Central Atlas Tamazight (ⵜⴰⵎⴰⵣⵉⵖⵜ)
