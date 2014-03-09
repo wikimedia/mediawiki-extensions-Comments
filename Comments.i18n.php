@@ -827,6 +827,7 @@ $messages['eo'] = array(
  * @author Ciencia Al Poder
  * @author Fitoschido
  * @author Ihojose
+ * @author Sporeunai
  */
 $messages['es'] = array(
 	'comments-comment' => 'Comentario',
@@ -872,6 +873,7 @@ $messages['es'] = array(
 	'logentry-comments-add' => '$1 publicó un comentario nuevo en $3',
 	'logentry-comments-delete' => '$1 eliminó el comentario n.º $4 en $3',
 	'comments-time-ago' => 'Hace $1',
+	'comments-time-months' => '{{PLURAL:$1|$1 mes|$1 meses}}',
 	'comments-time-days' => '{{PLURAL:$1|un día|$1 días}}',
 	'comments-time-hours' => '{{PLURAL:$1|una hora|$1 horas}}',
 	'comments-time-minutes' => '{{PLURAL:$1|un minuto|$1 minutos}}',
@@ -2416,10 +2418,32 @@ $messages['ps'] = array(
 
 /** Portuguese (português)
  * @author Luckas
+ * @author SandroHc
  */
 $messages['pt'] = array(
+	'comments-comment' => 'Comentário',
+	'comments-voted-label' => 'Votado',
+	'comments-loading' => 'A carregar…',
+	'comments-reply-to' => 'Respondendo a',
 	'comments-cancel-reply' => 'Cancelar',
+	'comments-sort-by-date' => 'Ordenar por data',
+	'comments-sort-by-score' => 'Ordenar por pontuação',
+	'comments-show-comment-link' => 'Mostrar comentário',
+	'comments-manage-blocklist-link' => 'Gerir lista de ignorados',
+	'comments-ignore-message' => 'Estás a ignorar o autor deste comentário',
+	'comments-you' => 'Tu',
+	'comments-reply' => 'Responder',
+	'comments-post' => 'Publicar comentário',
 	'comments-ignore-cancel' => 'Cancelar',
+	'log-name-comments' => 'Registo de comentários',
+	'logentry-comments-add' => '$1 publicou um novo comentário em $3',
+	'logentry-comments-delete' => '$1 eliminou o comentário #$4 em $3',
+	'comments-time-ago' => '$1 atrás',
+	'comments-time-months' => '{{PLURAL:$1|um mês|$1 meses}}',
+	'comments-time-days' => '{{PLURAL:$1|um dia|$1 dias}}',
+	'comments-time-hours' => '{{PLURAL:$1|uma hora|$1 horas}}',
+	'comments-time-minutes' => '{{PLURAL:$1|um minuto|$1 minutos}}',
+	'comments-time-seconds' => '{{PLURAL:$1|um segundo|$1 segundos}}',
 );
 
 /** Brazilian Portuguese (português do Brasil)
