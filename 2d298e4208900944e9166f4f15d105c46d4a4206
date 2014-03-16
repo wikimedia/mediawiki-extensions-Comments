@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_07b0153d",
+        "filename": "CommentsOfTheDay.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-03-16T20:50:12Z",
+      "side": 1,
+      "message": "Either I have broken this feature or it is not working on my installation. When adding \u003ccommentsoftheday /\u003e to a page, its output is just \"0 Rillke\"",
+      "revId": "2d298e4208900944e9166f4f15d105c46d4a4206",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
