@@ -55,7 +55,7 @@ function getCommentsOfTheDay( $input, $args, $parser ) {
 			),
 			array(
 				'comment_page_id = page_id',
-				'UNIX_TIMESTAMP(comment_date) > ' . ( time() - ( $oneDay ) )
+				Comment::dbUnixTime( $dbr, 'comment_date' ) . ' > ' . ( time() - ( $oneDay ) )
 			),
 			__METHOD__,
 			array( 'ORDER BY' => '(Comment_Plus_Count) DESC', 'LIMIT' => 5 )

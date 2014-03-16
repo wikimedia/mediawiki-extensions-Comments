@@ -709,9 +709,10 @@ class Comment extends ContextSource {
 
 		// Defaults (for non-social wikis)
 		$tables[] = 'Comments';
+		$unixTimeCall = self::dbUnixTime( $dbr, 'Comment_Date' );
 		$fields = array(
 			'Comment_Username', 'Comment_IP', 'Comment_Text',
-			'Comment_Date', 'UNIX_TIMESTAMP(Comment_Date) AS timestamp',
+			'Comment_Date', $unixTimeCall . ' AS timestamp',
 			'Comment_user_id', 'CommentID',
 			'IFNULL(Comment_Plus_Count - Comment_Minus_Count,0) AS Comment_Score',
 			'Comment_Plus_Count AS CommentVotePlus',
@@ -1007,6 +1008,11 @@ class Comment extends ContextSource {
 		}
 
 		return $this->CurrentPagerPage;
+	}
+
+	// @TODO: maybe put in core?
+	public static function dbUnixTime( $db, $column ) {
+		return $db->getType() === 'sqlite' ? "strftime('%s',$column)" : "UNIX_TIMESTAMP($column)";
 	}
 
 	/**
