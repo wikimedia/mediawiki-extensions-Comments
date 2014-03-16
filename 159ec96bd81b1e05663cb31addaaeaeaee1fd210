@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_ac2f0ef3",
+        "filename": "Comment.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-03-16T13:27:02Z",
+      "side": 1,
+      "message": "You\u0027ll have to pass the *gender* (and the user name) to JavaScript as JS does not know this as executed in the client, not the server.\n\nSee https://www.mediawiki.org/wiki/Manual:Messages_API#GENDER_in_JavaScript",
+      "revId": "159ec96bd81b1e05663cb31addaaeaeaee1fd210",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
