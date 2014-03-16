@@ -1078,6 +1078,9 @@ class Comment {
 						$user_level = new UserLevel( $comment['Comment_user_points'] );
 						$CommentPosterLevel = "{$user_level->getLevelName()}";
 					}
+
+					$user = User::newFromId( $comment['Comment_user_id'] );
+					$CommentReplyToGender = $user->getOption( 'gender', 'unknown' );
 				} else {
 					if( !array_key_exists( $comment['Comment_Username'], $AFBucket ) ) {
 						$AFBucket[$comment['Comment_Username']] = $AFCounter;
@@ -1087,6 +1090,7 @@ class Comment {
 					$anonMsg = wfMessage( 'comments-anon-name' )->inContentLanguage()->plain();
 					$CommentPoster = $anonMsg . ' #' . $AFBucket[$comment['Comment_Username']];
 					$CommentReplyTo = $anonMsg;
+					$CommentReplyToGender = 'unknown'; // Undisclosed gender as anon user
 				}
 
 				// Comment delete button for privileged users
@@ -1108,7 +1112,7 @@ class Comment {
 							$replyRow .= ' | ';
 						}
 						$replyRow .= " | <a href=\"#end\" rel=\"nofollow\" class=\"comments-reply-to\" data-comment-id=\"{$comment['CommentID']}\" data-comments-safe-username=\"" .
-							htmlspecialchars( $CommentReplyTo, ENT_QUOTES ) . '">' .
+							htmlspecialchars( $CommentReplyTo, ENT_QUOTES ) . "\" data-comments-user-gender=\"" . $CommentReplyToGender . '">' .
 							wfMessage( 'comments-reply' )->plain() . '</a>';
 					}
 				}
