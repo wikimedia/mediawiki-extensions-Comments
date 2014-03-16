@@ -249,10 +249,11 @@ var Comment = {
 	 *
 	 * @param parentId Integer: parent comment (the one we're replying to) ID
 	 * @param poster String: name of the person whom we're replying to
+	 * @param posterGender String: gender of the person whom we're replying to
 	 */
-	reply: function( parentId, poster ) {
+	reply: function( parentId, poster, posterGender ) {
 		jQuery( '#replyto' ).text(
-			mw.msg( 'comments-reply-to' ) + ' ' + poster + ' ('
+			mw.msg( 'comments-reply-to', poster, posterGender ) + ' ('
 		);
 		jQuery( '<a>', {
 			href: 'javascript:void(0);',
@@ -326,7 +327,8 @@ jQuery( document ).ready( function() {
 	jQuery( 'body' ).on( 'click', 'a.comments-reply-to', function() {
 		Comment.reply(
 			jQuery( this ).data( 'comment-id' ),
-			jQuery( this ).data( 'comments-safe-username' )
+			jQuery( this ).data( 'comments-safe-username' ),
+			jQuery( this ).data( 'comments-user-gender' )
 		);
 	} );
 

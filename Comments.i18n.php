@@ -19,7 +19,7 @@ $messages['en'] = array(
 	'comments-loading' => 'Loading...',
 	'comments-auto-refresher-enable' => 'Enable comment auto-refresher',
 	'comments-auto-refresher-pause' => 'Pause comment auto-refresher',
-	'comments-reply-to' => 'Reply to',
+	'comments-reply-to' => 'Reply to $1',
 	'comments-cancel-reply' => 'Cancel',
 	'comments-block-warning-anon' => 'Are you sure you want to permanently ignore all comments from this anonymous user (via their IP address)?',
 	'comments-block-warning-user' => 'Are you sure you want to permanently ignore all comments from user $1?',
@@ -92,7 +92,10 @@ Refer to the [[mw:File:Comments.png|image]] for details.',
 	'comments-auto-refresher-pause' => 'Auto-refresher is a feature where a page with the <code><nowiki><comments /></nowiki></code> tag is automatically refreshed for new comments.
 
 Refer to the [[mw:File:Comments.png|image]] for details.',
-	'comments-reply-to' => 'This message is followed by the user\'s username whom you\'re about to reply to. For example, "Reply to Jack Phoenix".',
+	'comments-reply-to' => 'This message is followed by the user\'s username whom you\'re about to reply to. For example, "Reply to Jack Phoenix".
+Parameters:
+* $1 - the user name to whom your\'re about to reply to
+* $2 - gender of that user',
 	'comments-cancel-reply' => 'Used as link text in JavaScript code.
 {{Identical|Cancel}}',
 	'comments-block-warning-anon' => '{{doc-singularthey}}
