@@ -1,0 +1,41 @@
+{
+    "@metadata": {
+        "authors": [
+            "Chaduvari",
+            "Ravichandra",
+            "Veeven"
+        ]
+    },
+    "comments-comment": "వ్యాఖ్య",
+    "comments-voted-label": "ఓటేశారు",
+    "comments-loading": "లోడవుతోంది...",
+    "comments-reply-to": "వీరికి సమాధానం",
+    "comments-cancel-reply": "రద్దుచేయి",
+    "comments-delete-warning": "మీరు నిజంగానే ఈ వ్యాఖ్యను తొలగించాలని అనుకుంటున్నారా?",
+    "comments-sort-by-date": "తేది ప్రకారం అమర్చు",
+    "comments-sort-by-score": "స్కోరు ప్రకారం అమర్చు",
+    "comments-show-comment-link": "వ్యాఖ్యను చూపించు",
+    "comments-you": " మీరు",
+    "comments-reply": "స్పందించండి",
+    "comments-login-required": "వ్యాఖ్యలను చేర్చడానికి మీరు ప్రవేశించి ఉండాలి",
+    "comments-not-allowed": "వ్యాఖ్యానించే అనుమతి మీకు లేదు.",
+    "comments-submit": "మీ వ్యాఖ్యను చేర్చండి",
+    "comments-score-text": "స్కోరు",
+    "comments-permalink": "స్థిరలంకె",
+    "comments-delete-link": "వ్యాఖ్యను తొలగించు",
+    "comments-anon-name": "అజ్ఞాత వాడుకరి",
+    "comments-ignore-no-users": "ప్రస్తుతం నిరోధించబడిన వాడుకరులెవరూ లేరు.",
+    "comments-ignore-remove-message": "<b>$1</b> యొక్క వ్యాఖ్యల నిరోధాన్ని ఎత్తివెయ్యాలనే మీరు నిశ్చయించుకున్నారా?",
+    "comments-ignore-unblock": "నిరోధాన్ని ఎత్తివేయి",
+    "comments-ignore-cancel": "రద్దుచేయి",
+    "log-name-comments": "వ్యాఖ్యల చిట్టా",
+    "log-description-comments": "ఇది వ్యాఖ్యల యొక్క చిట్టా.",
+    "comments-time-ago": "$1 క్రితం",
+    "comments-time-months": "{{PLURAL:$1|ఒక నెల|$1 నెలల}}",
+    "comments-time-days": "{{PLURAL:$1|ఒక రోజు|$1 రోజుల}}",
+    "comments-time-hours": "{{PLURAL:$1|ఒక గంట|$1 గంటల}}",
+    "comments-time-minutes": "{{PLURAL:$1|ఒక నిమిషం|$1 నిమిషాల}}",
+    "comments-time-seconds": "{{PLURAL:$1|$1 క్షణం|$1 క్షణాల}}",
+    "log-show-hide-comments": "వ్యాఖ్యల చిట్టాను $1",
+    "right-comment": "వ్యాఖ్యల్ని సమర్పించడం"
+}

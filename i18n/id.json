@@ -1,0 +1,29 @@
+{
+    "@metadata": {
+        "authors": [
+            "Farras",
+            "පසිඳු කාවින්ද"
+        ]
+    },
+    "comments-comment": "Komentar",
+    "comments-loading": "Memuat...",
+    "comments-reply-to": "Balas ke",
+    "comments-cancel-reply": "Batal",
+    "comments-delete-warning": "Anda yakin ingin menghapus komentar ini?",
+    "comments-sort-by-date": "Urut berdasarkan tanggal",
+    "comments-sort-by-score": "Urut berdasarkan skor",
+    "comments-show-comment-link": "Tampilkan komentar",
+    "comments-you": "Anda",
+    "comments-reply": "Balas",
+    "comments-login-required": "Anda harus masuk log untuk menambahkan komentar",
+    "comments-not-allowed": "Anda tidak diizinkan mengirim komentar.",
+    "comments-score-text": "Skor",
+    "comments-ignore-cancel": "Batalkan",
+    "log-description-comments": "Ini adalah log komentar.",
+    "comments-time-ago": "$1 yang lalu",
+    "comments-time-days": "{{PLURAL:$1|satu hari|$1 hari}}",
+    "comments-time-hours": "{{PLURAL:$1|satu jam|$1 jam}}",
+    "comments-time-minutes": "{{PLURAL:$1|satu menit|$1 menit}}",
+    "comments-time-seconds": "{{PLURAL:$1|satu detik|$1 detik}}",
+    "right-comment": "Kirim komentar"
+}

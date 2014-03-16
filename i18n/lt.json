@@ -1,0 +1,34 @@
+{
+    "@metadata": {
+        "authors": [
+            "Eitvys200"
+        ]
+    },
+    "comments-comment": "Komentaras",
+    "comments-voted-label": "Balsavo",
+    "comments-loading": "Įkeliama…",
+    "comments-reply-to": "Atsakyti į",
+    "comments-cancel-reply": "Atšaukti",
+    "comments-delete-warning": "Ar tikrai norite ištrinti šį komentarą?",
+    "comments-sort-by-date": "Rūšiuoti pagal datą",
+    "comments-sort-by-score": "Rūšiuoti pagal rezultatą",
+    "comments-show-comment-link": "Rodyti komentarą",
+    "comments-manage-blocklist-link": "Valdyti ignoravimo sąrašą",
+    "comments-ignore-message": "Jūs ignoruojate šio komentaro autorių",
+    "comments-you": "Jūs",
+    "comments-reply": "Atsakyti",
+    "comments-login-required": "Jūs turite būti prisijungęs jei norite pridėti komentarus",
+    "comments-not-allowed": "Jums neleidžiama rašyti komentarus.",
+    "comments-post": "Rašyti komentarą",
+    "comments-submit": "Pridėk savo komentarą",
+    "comments-score-text": "Rezultatas",
+    "comments-delete-link": "Ištrinti komentarą",
+    "comments-anon-name": "Anoniminis vartotojas",
+    "comments-ignore-no-users": "Šiuo metu nėra užblokuotų vartotojų.",
+    "comments-ignore-remove-message": "Ar tikrai norite atblokuoti vartotojo <b>$1</b> komentarus?",
+    "comments-ignore-unblock": "Atblokuoti",
+    "comments-ignore-cancel": "Atšaukti",
+    "log-name-comments": "Komentarų žurnalas",
+    "comments-time-ago": "prieš $1",
+    "right-comment": "Siųsti komentarus"
+}

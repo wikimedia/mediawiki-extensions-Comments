@@ -10,7 +10,7 @@
  * @file
  * @ingroup Extensions
  */
-class Comment {
+class Comment extends ContextSource {
 	/**
 	 * @var Integer: page ID (page.page_id) of the page where the <comments />
 	 *               tag is in
@@ -86,7 +86,7 @@ class Comment {
 
 		$totalDays = intval( $dtDiff / ( 24 * 60 * 60 ) );
 		$totalSecs = $dtDiff - ( $totalDays * 24 * 60 * 60 );
-		$dif['w'] = intval( $totalDays / 7 );
+		$dif['mo'] = intval( $totalDays / 30 );
 		$dif['d'] = $totalDays;
 		$dif['h'] = $h = intval( $totalSecs / ( 60 * 60 ) );
 		$dif['m'] = $m = intval( ( $totalSecs - ( $h * 60 * 60 ) ) / 60 );
@@ -99,7 +99,7 @@ class Comment {
 		$timeStr = ''; // misza: initialize variables, DUMB FUCKS!
 		if( $time[$timeabrv] > 0 ) {
 			// Give grep a chance to find the usages:
-			// comments-time-days, comments-time-hours, comments-time-minutes, comments-time-seconds
+			// comments-time-days, comments-time-hours, comments-time-minutes, comments-time-seconds, comments-time-months
 			$timeStr = wfMessage( "comments-time-{$timename}", $time[$timeabrv] )->parse();
 		}
 		if( $timeStr ) {
@@ -111,16 +111,22 @@ class Comment {
 	static function getTimeAgo( $time ) {
 		$timeArray = self::dateDiff( time(), $time );
 		$timeStr = '';
+		$timeStrMo = self::getTimeOffset( $timeArray, 'mo', 'months' );
 		$timeStrD = self::getTimeOffset( $timeArray, 'd', 'days' );
 		$timeStrH = self::getTimeOffset( $timeArray, 'h', 'hours' );
 		$timeStrM = self::getTimeOffset( $timeArray, 'm', 'minutes' );
 		$timeStrS = self::getTimeOffset( $timeArray, 's', 'seconds' );
-		$timeStr = $timeStrD;
-		if( $timeStr < 2 ) {
-			$timeStr .= $timeStrH;
-			$timeStr .= $timeStrM;
-			if( !$timeStr ) {
-				$timeStr .= $timeStrS;
+
+		if ( $timeStrMo ) {
+			$timeStr = $timeStrMo;
+		} else {
+			$timeStr = $timeStrD;
+			if( $timeStr < 2 ) {
+				$timeStr .= $timeStrH;
+				$timeStr .= $timeStrM;
+				if( !$timeStr ) {
+					$timeStr .= $timeStrS;
+				}
 			}
 		}
 		if( !$timeStr ) {
@@ -155,10 +161,17 @@ class Comment {
 	/**
 	 * Constructor - set the page ID
 	 *
-	 * @param $pageID Integer: ID number of the current page
+	 * @param int $pageID Integer: ID number of the current page
+	 * @param IContextSource $context
 	 */
-	public function __construct( $pageID ) {
+	public function __construct( $pageID, $context = null ) {
 		$this->PageID = intval( $pageID );
+		if ( $context ) {
+			// Automatically falls back to
+			// RequestContext::getMain() if not provided
+			// @todo This should be made non-optional in the future
+			$this->setContext( $context );
+		}
 	}
 
 	function setCommentText( $commentText ) {
@@ -166,7 +179,7 @@ class Comment {
 	}
 
 	function getCommentText( $comment_text ) {
-		global $wgOut, $wgParser;
+		global $wgParser;
 
 		$comment_text = trim( str_replace( '&quot;', "'", $comment_text ) );
 		$comment_text_parts = explode( "\n", $comment_text );
@@ -175,10 +188,10 @@ class Comment {
 			$comment_text_fix .= ( ( $comment_text_fix ) ? "\n" : '' ) . trim( $part );
 		}
 
-		if( $wgOut->getTitle()->getArticleID() > 0 ) {
+		if( $this->getTitle()->getArticleID() > 0 ) {
 			$comment_text = $wgParser->recursiveTagParse( $comment_text_fix );
 		} else {
-			$comment_text = $wgOut->parse( $comment_text_fix );
+			$comment_text = $this->getOutput()->parse( $comment_text_fix );
 		}
 
 		// really bad hack because we want to parse=firstline, but don't want wrapping <p> tags
@@ -368,7 +381,7 @@ class Comment {
 	 * database.
 	 */
 	function add() {
-		global $wgUser, $wgCommentsInRecentChanges;
+		global $wgCommentsInRecentChanges;
 		$dbw = wfGetDB( DB_MASTER );
 
 		$text = $this->CommentText;
@@ -379,8 +392,8 @@ class Comment {
 			'Comments',
 			array(
 				'Comment_Page_ID' => $this->PageID,
-				'Comment_Username' => $wgUser->getName(),
-				'Comment_user_id' => $wgUser->getId(),
+				'Comment_Username' => $this->getUser()->getName(),
+				'Comment_user_id' => $this->getUser()->getId(),
 				'Comment_Text' => $text,
 				'Comment_Date' => $commentDate,
 				'Comment_Parent_ID' => $this->CommentParentID,
@@ -397,7 +410,7 @@ class Comment {
 		$pageTitle = Title::newFromID( $this->PageID );
 
 		$logEntry = new ManualLogEntry( 'comments', 'add' );
-		$logEntry->setPerformer( $wgUser );
+		$logEntry->setPerformer( $this->getUser() );
 		$logEntry->setTarget( $pageTitle );
 		$logEntry->setComment( $text );
 		$logEntry->setParameters( array(
@@ -476,7 +489,7 @@ class Comment {
 	 * Adds a vote for a comment if the user hasn't voted for said comment yet.
 	 */
 	function addVote() {
-		global $wgMemc, $wgUser;
+		global $wgMemc;
 		$dbw = wfGetDB( DB_MASTER );
 		if( $this->UserAlreadyVoted() == false ) {
 			wfSuppressWarnings();
@@ -486,8 +499,8 @@ class Comment {
 				'Comments_Vote',
 				array(
 					'Comment_Vote_id' => $this->CommentID,
-					'Comment_Vote_Username' => $wgUser->getName(),
-					'Comment_Vote_user_id' => $wgUser->getId(),
+					'Comment_Vote_Username' => $this->getUser()->getName(),
+					'Comment_Vote_user_id' => $this->getUser()->getId(),
 					'Comment_Vote_Score' => $this->CommentVote,
 					'Comment_Vote_Date' => $commentDate,
 					'Comment_Vote_IP' => $_SERVER['REMOTE_ADDR']
@@ -498,7 +511,7 @@ class Comment {
 
 			// update cache voted list
 			$voted = array();
-			$key = wfMemcKey( 'comment', 'voted', $this->PageID, 'user_id', $wgUser->getID() );
+			$key = wfMemcKey( 'comment', 'voted', $this->PageID, 'user_id', $this->getUser()->getID() );
 			$voted = $wgMemc->get( $key );
 			$voted[] = $this->CommentID;
 			$wgMemc->set( $key, $voted );
@@ -546,14 +559,13 @@ class Comment {
 	 * @return Boolean: true if user has voted, otherwise false
 	 */
 	function UserAlreadyVoted() {
-		global $wgUser;
 		$dbr = wfGetDB( DB_SLAVE );
 		$s = $dbr->selectRow(
 			'Comments_Vote',
 			array( 'Comment_Vote_ID' ),
 			array(
 				'Comment_Vote_ID' => $this->CommentID,
-				'Comment_Vote_Username' => $wgUser->getName()
+				'Comment_Vote_Username' => $this->getUser()->getName()
 			),
 			__METHOD__
 		);
@@ -620,9 +632,9 @@ class Comment {
 		$dbw->commit();
 
 		// Log the deletion to Special:Log/comments.
-		global $wgUser, $wgCommentsInRecentChanges;
+		global $wgCommentsInRecentChanges;
 		$logEntry = new ManualLogEntry( 'comments', 'delete' );
-		$logEntry->setPerformer( $wgUser );
+		$logEntry->setPerformer( $this->getUser() );
 		$logEntry->setTarget( Title::newFromId( $this->PageID ) );
 		$logEntry->setParameters( array(
 			'4::commentid' => $this->CommentID
@@ -659,7 +671,6 @@ class Comment {
 	 * @return Array: array of comment ID numbers
 	 */
 	public function getCommentVotedList() {
-		global $wgUser;
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$res = $dbr->select(
@@ -667,7 +678,7 @@ class Comment {
 			'CommentID',
 			array(
 				'Comment_Page_ID' => $this->PageID,
-				'Comment_Vote_user_id' => $wgUser->getID()
+				'Comment_Vote_user_id' => $this->getUser()->getID()
 			),
 			__METHOD__,
 			array(),
@@ -802,18 +813,18 @@ class Comment {
 	}
 
 	function getVoteLink( $commentID, $voteType ) {
-		global $wgUser, $wgExtensionAssetsPath, $wgOut;
+		global $wgExtensionAssetsPath;
 
 		// Blocked users cannot vote, obviously
-		if( $wgUser->isBlocked() ) {
+		if( $this->getUser()->isBlocked() ) {
 			return '';
 		}
-		if ( !$wgUser->isAllowed( 'comment' ) ) {
+		if ( !$this->getUser()->isAllowed( 'comment' ) ) {
 			return '';
 		}
 
 		$voteLink = '';
-		if ( $wgUser->isLoggedIn() ) {
+		if ( $this->getUser()->isLoggedIn() ) {
 			$voteLink .= '<a id="comment-vote-link" data-comment-id="' .
 				$commentID . '" data-vote-type="' . $voteType .
 				'" data-voting="' . $this->Voting . '" href="javascript:void(0);">';
@@ -987,11 +998,8 @@ class Comment {
 	 * @return Integer: the page we are currently paged to
 	 */
 	function getCurrentPagerPage() {
-		global $wgOut;
-
 		if ( $this->CurrentPagerPage == 0 ) {
-			$request = $wgOut->getRequest();
-			$this->CurrentPagerPage = $request->getInt( $this->PAGE_QUERY, 1 );
+			$this->CurrentPagerPage = $this->getRequest()->getInt( $this->PAGE_QUERY, 1 );
 
 			if ( $this->CurrentPagerPage < 1 ) {
 				$this->CurrentPagerPage = 1;
@@ -1006,7 +1014,7 @@ class Comment {
 	 * CSS and JS is loaded in Comment.php, function displayComments.
 	 */
 	function display() {
-		global $wgUser, $wgScriptPath, $wgExtensionAssetsPath, $wgMemc, $wgUserLevels;
+		global $wgScriptPath, $wgExtensionAssetsPath, $wgMemc, $wgUserLevels;
 
 		$output = '';
 
@@ -1036,23 +1044,23 @@ class Comment {
 
 		// Try cache for voted list for this user
 		$voted = array();
-		if( $wgUser->isLoggedIn() ) {
-			$key = wfMemcKey( 'comment', 'voted', $this->PageID, 'user_id', $wgUser->getID() );
+		if( $this->getUser()->isLoggedIn() ) {
+			$key = wfMemcKey( 'comment', 'voted', $this->PageID, 'user_id', $this->getUser()->getID() );
 			$data = $wgMemc->get( $key );
 
 			if( !$data ) {
 				$voted = $this->getCommentVotedList();
 				$wgMemc->set( $key, $voted );
 			} else {
-				wfDebug( "Loading comment voted for page {$this->PageID} for user {$wgUser->getID()} from cache\n" );
+				wfDebug( "Loading comment voted for page {$this->PageID} for user {$this->getUser()->getID()} from cache\n" );
 				$voted = $data;
 			}
 		}
 
 		// Load complete blocked list for logged in user so they don't see their comments
 		$block_list = array();
-		if( $wgUser->getID() != 0 ) {
-			$block_list = $this->getBlockList( $wgUser->getId() );
+		if( $this->getUser()->getID() != 0 ) {
+			$block_list = $this->getBlockList( $this->getUser()->getId() );
 		}
 
 		$AFCounter = 1;
@@ -1078,6 +1086,9 @@ class Comment {
 						$user_level = new UserLevel( $comment['Comment_user_points'] );
 						$CommentPosterLevel = "{$user_level->getLevelName()}";
 					}
+					
+					$user = User::newFromId( $comment['Comment_user_id'] );
+					$CommentReplyToGender = $user->getOption( 'gender', 'unknown' );
 				} else {
 					if( !array_key_exists( $comment['Comment_Username'], $AFBucket ) ) {
 						$AFBucket[$comment['Comment_Username']] = $AFCounter;
@@ -1087,12 +1098,13 @@ class Comment {
 					$anonMsg = wfMessage( 'comments-anon-name' )->inContentLanguage()->plain();
 					$CommentPoster = $anonMsg . ' #' . $AFBucket[$comment['Comment_Username']];
 					$CommentReplyTo = $anonMsg;
+					$CommentReplyToGender = 'unknown'; // Undisclosed gender as anon user 
 				}
 
 				// Comment delete button for privileged users
 				$dlt = '';
 
-				if( $wgUser->isAllowed( 'commentadmin' ) ) {
+				if( $this->getUser()->isAllowed( 'commentadmin' ) ) {
 					//$dlt = " | <span class=\"c-delete\"><a href=\"javascript:document.commentform.commentid.value={$comment['CommentID']};document.commentform.submit();\">" .
 					$dlt = ' | <span class="c-delete">' .
 						'<a href="javascript:void(0);" rel="nofollow" class="comment-delete-link" data-comment-id="' .
@@ -1102,13 +1114,14 @@ class Comment {
 
 				// Reply Link (does not appear on child comments)
 				$replyRow = '';
-				if ( $wgUser->isAllowed( 'comment' ) ) {
+				if ( $this->getUser()->isAllowed( 'comment' ) ) {
 					if( $comment['Comment_Parent_ID'] == 0 ) {
 						if( $replyRow ) {
-							$replyRow .= ' | ';
+							$replyRow .= wfMessage( 'pipe-separator' )->plain();
 						}
 						$replyRow .= " | <a href=\"#end\" rel=\"nofollow\" class=\"comments-reply-to\" data-comment-id=\"{$comment['CommentID']}\" data-comments-safe-username=\"" .
-							htmlspecialchars( $CommentReplyTo, ENT_QUOTES ) . '">' .
+							htmlspecialchars( $CommentReplyTo, ENT_QUOTES ) ."\" data-comments-user-gender=\"" .
+							htmlspecialchars( $CommentReplyToGender ) . '">' .
 							wfMessage( 'comments-reply' )->plain() . '</a>';
 					}
 				}
@@ -1126,7 +1139,7 @@ class Comment {
 				$block_link = '';
 
 				if(
-					$wgUser->getID() != 0 && $wgUser->getID() != $comment['Comment_user_id'] &&
+					$this->getUser()->getID() != 0 && $this->getUser()->getID() != $comment['Comment_user_id'] &&
 					!( in_array( $comment['Comment_Username'], $block_list ) )
 				) {
 					$block_link = '<a href="javascript:void(0);" rel="nofollow" class="comments-block-user" data-comments-safe-username="' .
@@ -1197,7 +1210,7 @@ class Comment {
 						if( !in_array( $comment['CommentID'], $voted ) ) {
 							// You can only vote for other people's comments,
 							// not for your own
-							if( $wgUser->getName() != $comment['Comment_Username'] ) {
+							if( $this->getUser()->getName() != $comment['Comment_Username'] ) {
 								$output .= "<span id=\"CommentBtn{$comment['CommentID']}\">";
 								if( $this->AllowPlus == true ) {
 									$output .= $this->getVoteLink( $comment['CommentID'], 1 );
@@ -1253,30 +1266,28 @@ class Comment {
 	 * @return $output Mixed: HTML output
 	 */
 	function displayForm() {
-		global $wgUser;
-
 		$output = '<form action="" method="post" name="commentform">' . "\n";
 
 		if( $this->Allow ) {
 			$pos = strpos(
 				strtoupper( addslashes( $this->Allow ) ),
-				strtoupper( addslashes( $wgUser->getName() ) )
+				strtoupper( addslashes( $this->getUser()->getName() ) )
 			);
 		}
 
 		// 'comment' user right is required to add new comments
-		if( !$wgUser->isAllowed( 'comment' ) ) {
+		if( !$this->getUser()->isAllowed( 'comment' ) ) {
 			$output .= wfMessage( 'comments-not-allowed' )->parse();
 		} else {
 			// Blocked users can't add new comments under any conditions...
 			// and maybe there's a list of users who should be allowed to post
 			// comments
-			if( $wgUser->isBlocked() == false && ( $this->Allow == '' || $pos !== false ) ) {
+			if( $this->getUser()->isBlocked() == false && ( $this->Allow == '' || $pos !== false ) ) {
 				$output .= '<div class="c-form-title">' .
 					wfMessage( 'comments-submit' )->plain() . '</div>' . "\n";
 				$output .= '<div id="replyto" class="c-form-reply-to"></div>' . "\n";
 				// Show a message to anons, prompting them to register or log in
-				if ( !$wgUser->isLoggedIn() ) {
+				if ( !$this->getUser()->isLoggedIn() ) {
 					$login_title = SpecialPage::getTitleFor( 'Userlogin' );
 					$register_title = SpecialPage::getTitleFor( 'Userlogin', 'signup' );
 					$output .= '<div class="c-form-message">' . wfMessage(
@@ -1296,7 +1307,7 @@ class Comment {
 			$output .= '<input type="hidden" name="lastcommentid" value="' . $this->getLatestCommentID() . '" />' . "\n";
 			$output .= '<input type="hidden" name="comment_parent_id" />' . "\n";
 			$output .= '<input type="hidden" name="' . $this->PAGE_QUERY . '" value="' . $this->getCurrentPagerPage() . '" />' . "\n";
-			$output .= Html::hidden( 'token', $wgUser->getEditToken() );
+			$output .= Html::hidden( 'token', $this->getUser()->getEditToken() );
 		}
 		$output .= '</form>' . "\n";
 		return $output;
@@ -1309,7 +1320,6 @@ class Comment {
 	 * @param $userName Mixed: user name of the same guy
 	 */
 	public function blockUser( $userId, $userName ) {
-		global $wgUser;
 		$dbw = wfGetDB( DB_MASTER );
 
 		wfSuppressWarnings(); // E_STRICT bitching
@@ -1318,8 +1328,8 @@ class Comment {
 		$dbw->insert(
 			'Comments_block',
 			array(
-				'cb_user_id' => $wgUser->getId(),
-				'cb_user_name' => $wgUser->getName(),
+				'cb_user_id' => $this->getUser()->getId(),
+				'cb_user_name' => $this->getUser()->getName(),
 				'cb_user_id_blocked' => $userId,
 				'cb_user_name_blocked' => $userName,
 				'cb_date' => $date

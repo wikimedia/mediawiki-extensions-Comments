@@ -1,0 +1,41 @@
+{
+    "@metadata": {
+        "authors": [
+            "Shanmugamp7"
+        ]
+    },
+    "comments-comment": "கருத்து",
+    "comments-voted-label": "வாக்களிக்கப்பட்டது",
+    "comments-loading": "ஏற்றப்படுகிறது...",
+    "comments-cancel-reply": "ரத்து செய்",
+    "comments-sort-by-date": "தேதியைப பொறுத்து வரிசைப்படுத்து",
+    "comments-show-comment-link": "கருத்தை காட்டு",
+    "comments-you": "தாங்கள்",
+    "comments-reply": "பதில் அளி",
+    "comments-login-required": "கருத்துக்களை சேர்க்க நீங்கள் புகுபதிகை செய்ய வேண்டும்",
+    "comments-not-allowed": "கருத்துகளை பதிவு செய்ய நீங்கள் அனுமதிக்கப்படவில்லை.",
+    "comments-post": "கருத்துக்களை பதியவும்",
+    "comments-submit": "உங்கள் கருத்தை சேர்க்கவும்",
+    "comments-score-text": "பெறுபுள்ளி",
+    "comments-permalink": "நிரந்தர இணைப்பு",
+    "comments-delete-link": "கருத்தை நீக்கவும்",
+    "comments-anon-name": "அடையாளம் காட்டாத பயனர்",
+    "comments-ignore-no-users": "தற்போது தடை செய்யப்பட பயனர்கள் யாரும் இல்லை.",
+    "comments-ignore-remove-message": "நீங்கள் உறுதியாக <b>$1</b>-ன் கருத்துக்களை தடை நீக்க விரும்புகிறீர்களா?",
+    "comments-ignore-unblock": "தடை நீக்கு",
+    "comments-ignore-cancel": "ரத்து செய்",
+    "comments-ignore-title": "கருத்து புறக்கணிப்பு பட்டியல்",
+    "commentignorelist": "கருத்து புறக்கணிப்பு பட்டியல்",
+    "log-name-comments": "கருத்துகள் பதிகை",
+    "log-description-comments": "இது கருத்துகளின் பதிகை ஆகும்.",
+    "comments-time-ago": "$1 முன்பு",
+    "comments-time-days": "{{PLURAL:$1|ஒரு நாள்|$1 நாட்கள்}}",
+    "comments-time-hours": "{{PLURAL:$1|ஒரு மணி|$1 மணிகள்}}",
+    "comments-time-minutes": "{{PLURAL:$1|ஒரு நிமிடம்|$1 நிமிடங்கள்}}",
+    "comments-time-seconds": "{{PLURAL:$1|ஒரு வினாடி|$1 வினாடிகள்}}",
+    "log-show-hide-comments": "$1 கருத்து பதிகை",
+    "group-commentadmin": "கருத்து நிர்வாகிகள்",
+    "group-commentadmin-member": "{{GENDER:$1|கருத்து நிர்வாகி}}",
+    "grouppage-commentadmin": "{{ns:project}}:கருத்து நிர்வாகிகள்",
+    "right-comment": "கருத்துகளை அனுப்பவும்"
+}

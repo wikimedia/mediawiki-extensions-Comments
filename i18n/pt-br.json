@@ -1,0 +1,38 @@
+{
+    "@metadata": {
+        "authors": [
+            "Cainamarques",
+            "Luckas"
+        ]
+    },
+    "comments-loading": "Carregando...",
+    "comments-reply-to": "Responder a",
+    "comments-cancel-reply": "Cancelar",
+    "comments-delete-warning": "Você tem certeza que deseja excluir este comentário?",
+    "comments-sort-by-date": "Ordenar por data",
+    "comments-sort-by-score": "Ordenar por pontuação",
+    "comments-show-comment-link": "Mostrar comentário",
+    "comments-you": "Você",
+    "comments-reply": "Responder",
+    "comments-login-required": "Você precisa estar autenticado para adicionar comentários",
+    "comments-not-allowed": "Você não tem permissão para postar comentários.",
+    "comments-post": "Postar comentário",
+    "comments-submit": "Adicionar seu comentário",
+    "comments-score-text": "Pontuação",
+    "comments-permalink": "Link permanente",
+    "comments-delete-link": "Apagar comentário",
+    "comments-anon-name": "Usuário anônimo",
+    "comments-ignore-no-users": "Não há usuários atualmente bloqueados.",
+    "comments-ignore-remove-message": "Você tem certeza que deseja desbloquear os comentários do usuário <b>$1</b>?",
+    "comments-ignore-unblock": "Desbloquear",
+    "comments-ignore-cancel": "Cancelar",
+    "comments-ignore-title": "Lista de comentários ignorados",
+    "commentignorelist": "Lista de comentários ignorados",
+    "log-name-comments": "Registro de comentários",
+    "log-description-comments": "Este é um registro de comentários.",
+    "comments-time-days": "{{PLURAL:$1|um dia|$1 dias}}",
+    "comments-time-hours": "{{PLURAL:$1|uma hora|$1 horas}}",
+    "comments-time-minutes": "{{PLURAL:$1|um minuto|$1 minutos}}",
+    "comments-time-seconds": "{{PLURAL:$1|um segundo|$1 segundos}}",
+    "right-comment": "Enviar comentários"
+}

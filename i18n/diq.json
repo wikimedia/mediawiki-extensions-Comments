@@ -1,0 +1,27 @@
+{
+    "@metadata": {
+        "authors": [
+            "Erdemaslancan",
+            "Gorizon",
+            "Mirzali"
+        ]
+    },
+    "comments-comment": "Vacayış",
+    "comments-voted-label": "Rey Bıdê",
+    "comments-loading": "Bar beno...",
+    "comments-reply-to": "Cewabê",
+    "comments-cancel-reply": "Bıtexelne",
+    "comments-show-comment-link": "Vatışi bıvin",
+    "comments-you": "Tı",
+    "comments-reply": "Cewab",
+    "comments-post": "Vatışe bırşe",
+    "comments-submit": "Vatışa xo dekere de",
+    "comments-score-text": "Skor",
+    "comments-permalink": "Greyo Daimi",
+    "comments-delete-link": "Vatışi bestere",
+    "comments-anon-name": "Karbero bêname",
+    "comments-ignore-unblock": "bloqi hewad",
+    "comments-ignore-cancel": "Bıtexelne",
+    "log-name-comments": "Qeyda vatışan",
+    "comments-time-ago": "Verdê $1"
+}

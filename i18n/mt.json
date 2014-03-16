@@ -1,0 +1,40 @@
+{
+    "@metadata": {
+        "authors": [
+            "Chrisportelli"
+        ]
+    },
+    "comments-comment": "Kumment",
+    "comments-desc": "Iżżid il-''parser hook'' <code>&lt;comments&gt;</code> li tippermetti l-kummenti fuq paġni",
+    "comments-voted-label": "Ivvutajt",
+    "comments-loading": "Tiela'...",
+    "comments-auto-refresher-enable": "Attiva l-aġġornament awtomatikament tal-kummenti",
+    "comments-auto-refresher-pause": "Waqqaf l-aġġornament awtomatikament tal-kummenti",
+    "comments-reply-to": "Irrispondi lil",
+    "comments-cancel-reply": "Ħassar",
+    "comments-block-warning-anon": "Inti ċert li tixtieq tinjora għal kollox il-kummenti minn utenti anonimi (permezz tal-indirizz IP)?",
+    "comments-block-warning-user": "Inti ċert li tixtieq tinjora għal kollox il-kummenti mill-utent $1?",
+    "comments-delete-warning": "Inti ċert li tixtieq tħassar dan il-kumment?",
+    "comments-sort-by-date": "Ordna skont id-data",
+    "comments-sort-by-score": "Ordna skont il-punteġġ",
+    "comments-show-comment-link": "Uri l-kumment",
+    "comments-ignore-message": "Inti qiegħed tinjora l-awtur ta' dan il-kumment",
+    "comments-you": "Inti",
+    "comments-reply": "Irrispondi",
+    "comments-login-required": "Trid tkun fil-kont tiegħek sabiex tkun tista' iżżid kummenti",
+    "comments-not-allowed": "Inti ma tistax tħalli kummenti.",
+    "comments-post": "Ibgħat il-kumment",
+    "comments-submit": "Żid il-kumment tiegħek",
+    "comments-score-text": "Punteġġ",
+    "comments-permalink": "Ħolqa permanenti",
+    "comments-delete-link": "Ħassar il-kumment",
+    "comments-anon-name": "Utent anonimu",
+    "comments-anon-message": "{{SITENAME}} tilqa' il-<b>kummenti kollha</b>. Jekk ma tridx li tibqa' anonimu, <a href=\"$1\">irreġistra</a> jew <a href=\"$2\">idħol fil-kont</a>. Dan huwa b'xejn.",
+    "comments-ignore-item": "<a href=\"$1\">$2</a> nhar il-$3 <a href=\"$4\">(żblokka)</a>",
+    "comments-ignore-no-users": "M'hemm l-ebda utent li huwa attwalment imblukkat.",
+    "comments-ignore-remove-message": "Inti ċert li tixtieq tiżblokka l-kummenti tal-utent <b>$1</b>?",
+    "comments-ignore-unblock": "Żblokka",
+    "comments-no-comments-of-day": "M'hemm l-ebda kummenti tal-ġurnata.",
+    "log-name-comments": "Reġistru tal-kummenti",
+    "log-description-comments": "Dan huwa reġistru tal-kummenti."
+}

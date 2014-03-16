@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "Naudefj"
+        ]
+    },
+    "comments-comment": "Opmerking",
+    "comments-voted-label": "Gestem",
+    "comments-loading": "Laai...",
+    "comments-cancel-reply": "Kanselleer",
+    "comments-you": "U",
+    "comments-reply": "Antwoord",
+    "comments-ignore-cancel": "Kanselleer",
+    "comments-time-minutes": "{{PLURAL:$1|$1 minuut|$1 minute}}"
+}

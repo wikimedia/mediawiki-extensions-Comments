@@ -1,0 +1,28 @@
+{
+    "@metadata": {
+        "authors": [
+            "Bishnu Saikia"
+        ]
+    },
+    "comments-comment": "মন্তব্য",
+    "comments-voted-label": "ভোট দিয়া হ’ল",
+    "comments-loading": "ল'ড হৈ আছে…",
+    "comments-cancel-reply": "বাতিল কৰক",
+    "comments-show-comment-link": "মন্তব্য দেখুৱাওক",
+    "comments-you": "আপুনি",
+    "comments-reply": "উত্তৰ",
+    "comments-post": "মন্তব্য প্ৰেৰণ কৰক",
+    "comments-submit": "আপোনাৰ মন্তব্য যোগ দিয়ক",
+    "comments-score-text": "নম্বৰ",
+    "comments-permalink": "স্থায়ী সংযোগ",
+    "comments-delete-link": "মন্তব্য বিলোপ কৰক",
+    "comments-ignore-unblock": "প্ৰতিবন্ধক উঠাই লওক",
+    "comments-ignore-cancel": "বাতিল কৰক",
+    "log-name-comments": "মন্তব্য অভিলেখ",
+    "comments-time-ago": "$1 আগেয়ে",
+    "comments-time-days": "{{PLURAL:$1|$1 দিন|$1 দিন}}",
+    "comments-time-hours": "{{PLURAL:$1|$১ ঘন্টা|$১ ঘন্টা}}",
+    "comments-time-minutes": "{{PLURAL:$1|$১ মিনিট|$১ মিনিট}}",
+    "comments-time-seconds": "{{PLURAL:$1|$১ ছেকেণ্ড |$১ ছেকেণ্ড}}",
+    "right-comment": "মন্তব্য জমা দিয়ক"
+}

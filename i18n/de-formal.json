@@ -1,0 +1,17 @@
+{
+    "@metadata": {
+        "authors": [
+            "Kghbln"
+        ]
+    },
+    "comments-db-locked": "<h3>Hinzufügen von Kommentaren</h3>Die Datenbank ist momentan aufgrund routinemäßiger Wartungsarbeiten für den Schreibzugriff gesperrt. Bitte probieren Sie es später noch einmal.",
+    "comments-block-warning-anon": "Sind Sie sicher, dass Sie alle Kommentare dieses anonymen Benutzers (über seine IP-Adresse) dauerhaft ignorieren möchten?",
+    "comments-block-warning-user": "Sind Sie sicher, dass Sie alle Kommentare des Benutzers $1 dauerhaft ignorieren möchten?",
+    "comments-delete-warning": "Sind Sie sicher, dass Sie diesen Kommentar löschen möchten?",
+    "comments-ignore-message": "Sie ignorieren den Verfasser dieses Kommentars",
+    "comments-you": " Sie",
+    "comments-login-required": "Sie müssen angemeldet sein, um Kommentare hinzufügen zu können.",
+    "comments-not-allowed": "Sie sind nicht berechtigt Kommentare hinzuzufügen.",
+    "comments-anon-message": "{{SITENAME}} freut sich über <b>alle Kommentare</b>. Sofern Sie nicht anonym bleiben möchten, <a href=\"$1\">registrieren Sie sich bitte</a> oder <a href=\"$2\">melden Sie sich an</a>.",
+    "comments-ignore-remove-message": "Sind Sie sicher, dass Sie die Kommentare von Benutzer <b>$1</b> wieder freigeben möchten?"
+}

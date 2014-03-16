@@ -1,0 +1,31 @@
+{
+    "@metadata": {
+        "authors": [
+            "V.narsikar"
+        ]
+    },
+    "comments-comment": "शेरा",
+    "comments-desc": "<code>&lt;comments&gt;</code>हा पार्सरहूक जोडते ज्याने पानावर शेरे टाकणे शक्य होते.",
+    "comments-loading": "प्रभारण करीत आहे",
+    "comments-auto-refresher-enable": "शेरा स्वयं-तरोताजा करणे शक्य करा",
+    "comments-auto-refresher-pause": "शेरा स्वयं-तरोताजा करणे थोडा वेळ थांबवा",
+    "comments-reply-to": "ला उत्तर द्या",
+    "comments-cancel-reply": "रद्द करा",
+    "comments-sort-by-date": "तारखेनुसार निवड करा",
+    "comments-sort-by-score": "प्राप्तांकानुसार निवड करा",
+    "comments-show-comment-link": "शेरा दाखवा",
+    "comments-ignore-message": "आपण या शेऱ्याच्या लेखकास टाळत आहात",
+    "comments-you": "आपण",
+    "comments-reply": "उत्तर",
+    "comments-submit": "आपला शेरा जोडा",
+    "comments-score-text": "प्राप्तांक",
+    "comments-delete-link": "शेरा वगळा",
+    "comments-anon-name": "अनामिक सदस्य",
+    "logentry-comments-add": "$1 ने $3 वर एक नविन शेरा टाकला",
+    "logentry-comments-delete": "$1 ने $3 वरचा #$4 हा शेरा वगळला",
+    "comments-time-ago": "$1पूर्वी",
+    "comments-time-days": "{{PLURAL:$1|एक दिवस|$1 दिवस}}",
+    "comments-time-hours": "{{PLURAL:$1|एक तास|$1 तास}}",
+    "comments-time-minutes": "{{PLURAL:$1|एक मिनीट|$1 मिनीट}}",
+    "comments-time-seconds": "{{PLURAL:$1|एक सेकंद|$1 सेकंद}}"
+}

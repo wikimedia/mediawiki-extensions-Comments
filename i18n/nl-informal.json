@@ -1,0 +1,16 @@
+{
+    "@metadata": {
+        "authors": [
+            "Siebrand"
+        ]
+    },
+    "comments-block-warning-anon": "Weet je zeker dat je permanent alle reacties van deze anonieme gebruiker wilt negeren (via het IP-adres)?",
+    "comments-block-warning-user": "Weet je zeker dat je alle reacties van $1 permanent wilt negeren?",
+    "comments-delete-warning": "Weet je zeker dat je deze reactie wilt verwijderen?",
+    "comments-ignore-message": "Je negeert de auteur van deze reactie",
+    "comments-you": "Jij",
+    "comments-login-required": "Je moet aangemeld zijn om reacties toe te kunnen voegen",
+    "comments-not-allowed": "Je mag niet reageren.",
+    "comments-anon-message": "{{SITENAME}} verwelkomt <b>alle reacties</b>. Als je niet anoniem wilt zijn, <a href=\"$1\">Registreer</a> je dan of <a href=\"$2\">meld je aan</a>.",
+    "comments-ignore-remove-message": "Weet je zeker dat je de reacties van <b>$1</b> weer wilt zien?"
+}

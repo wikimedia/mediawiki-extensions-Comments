@@ -1,0 +1,12 @@
+{
+    "@metadata": {
+        "authors": [
+            "Demmy"
+        ]
+    },
+    "comments-time-ago": "$1 sẹ́yìn",
+    "comments-time-days": "{{PLURAL:$1|ọjọ́ kan|ọjọ́ $1}}",
+    "comments-time-hours": "{{PLURAL:$1|wákàtí kan|wákàtí $1}}",
+    "comments-time-minutes": "{{PLURAL:$1|ìṣẹ́jú kan|ìṣẹ́jú $1}}",
+    "comments-time-seconds": "{{PLURAL:$1|ìṣẹ́júàáyá kan|ìṣẹ́júàáyá $1}}"
+}

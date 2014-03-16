@@ -1,0 +1,43 @@
+{
+    "@metadata": {
+        "authors": [
+            "Cedric31"
+        ]
+    },
+    "comments-comment": "Comentari",
+    "comments-voted-label": "Votat",
+    "comments-loading": "Cargament...",
+    "comments-reply-to": "Respondre a",
+    "comments-cancel-reply": "Anullar",
+    "comments-sort-by-date": "Triar per data",
+    "comments-sort-by-score": "Triar per marca",
+    "comments-show-comment-link": "Veire lo comentari",
+    "comments-manage-blocklist-link": "Gerir la lista ignorar",
+    "comments-ignore-message": "Ignoratz l’autor d'aqueste comentari",
+    "comments-you": "Vos",
+    "comments-reply": "Respondre",
+    "comments-post": "Publicar lo comentari",
+    "comments-submit": "Apondre vòstre comentari",
+    "comments-score-text": "Marca",
+    "comments-permalink": "Ligam permanent",
+    "comments-delete-link": "Suprimir lo comentari",
+    "comments-anon-name": "Utilizaire anonim",
+    "comments-ignore-unblock": "Desblocar",
+    "comments-ignore-cancel": "Anullar",
+    "comments-ignore-title": "Lista dels comentaris ignorats",
+    "commentignorelist": "Lista dels comentaris ignorats",
+    "log-name-comments": "Istoric dels comentaris",
+    "comments-time-ago": "I a $1",
+    "comments-time-months": "{{PLURAL:$1|un mes|$1 meses}}",
+    "comments-time-days": "{{PLURAL:$1|un jorn|$1 jorns}}",
+    "comments-time-hours": "{{PLURAL:$1|una ora|$1 oras}}",
+    "comments-time-minutes": "{{PLURAL:$1|una minuta|$1 minutas}}",
+    "comments-time-seconds": "{{PLURAL:$1|una segonda|$1 segondas}}",
+    "log-show-hide-comments": "jornal de comentaris $1",
+    "group-commentadmin": "Administrators de comentaris",
+    "group-commentadmin-member": "{{GENDER:$1|administrator de comentaris|administratritz de comentaris}}",
+    "grouppage-commentadmin": "{{ns:project}}:Administrators de comentaris",
+    "right-comment": "Publicar los comentaris",
+    "right-commentadmin": "Administrar los comentaris someses pels utilizaires",
+    "right-commentlinks": "Utilizar los ligams extèrnes dins los comentaris"
+}
