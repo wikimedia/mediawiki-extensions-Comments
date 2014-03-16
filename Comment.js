@@ -251,8 +251,9 @@ var Comment = {
 	 * @param poster String: name of the person whom we're replying to
 	 */
 	reply: function( parentId, poster ) {
+		var user = poster;
 		jQuery( '#replyto' ).text(
-			mw.msg( 'comments-reply-to' ) + ' ' + poster + ' ('
+			mw.msg( 'comments-reply-to', user ) + ' ('
 		);
 		jQuery( '<a>', {
 			href: 'javascript:void(0);',
