@@ -11,7 +11,7 @@
     "comments-loading": "Loading...",
     "comments-auto-refresher-enable": "Enable comment auto-refresher",
     "comments-auto-refresher-pause": "Pause comment auto-refresher",
-    "comments-reply-to": "Reply to",
+    "comments-reply-to": "Reply to {{GENDER:$2|$1}}",
     "comments-cancel-reply": "Cancel",
     "comments-block-warning-anon": "Are you sure you want to permanently ignore all comments from this anonymous user (via their IP address)?",
     "comments-block-warning-user": "Are you sure you want to permanently ignore all comments from user $1?",
