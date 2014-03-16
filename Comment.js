@@ -252,7 +252,7 @@ var Comment = {
 	 */
 	reply: function( parentId, poster ) {
 		jQuery( '#replyto' ).text(
-			mw.msg( 'comments-reply-to' ) + ' ' + poster + ' ('
+			mw.msg( 'comments-reply-to', poster ) + ' ('
 		);
 		jQuery( '<a>', {
 			href: 'javascript:void(0);',
