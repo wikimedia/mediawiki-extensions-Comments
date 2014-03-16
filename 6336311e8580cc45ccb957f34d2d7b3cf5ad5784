@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_ece06695",
+        "filename": "Comment.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-03-16T16:40:06Z",
+      "side": 1,
+      "message": "You\u0027re just assigning one variable to another here. What\u0027s the purpose of doing so?",
+      "revId": "6336311e8580cc45ccb957f34d2d7b3cf5ad5784",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_ccdda2e3",
+        "filename": "Comment.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-03-16T16:40:06Z",
+      "side": 1,
+      "message": "Still, JavaScript does not \"know\" which gender user has. You are just passing a string containing the user name.",
+      "revId": "6336311e8580cc45ccb957f34d2d7b3cf5ad5784",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
