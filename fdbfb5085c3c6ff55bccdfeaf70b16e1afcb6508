@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_dcc8ab79",
+        "filename": "Comments.i18n.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-03-18T08:41:29Z",
+      "side": 1,
+      "message": "This should be:\n\n Reply to {{GENDER:$2|$1}}\n\nWe call this \"explicit GENDER\", because otherwise translators will not use it when they should, or they will ask to add GENDER support, even if it\u0027s there already.\n\nI know, hoops, hoops, hoops.",
+      "revId": "fdbfb5085c3c6ff55bccdfeaf70b16e1afcb6508",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
