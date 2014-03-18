@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_13a05199",
+        "filename": "CommentClass.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1083,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-03-18T14:26:53Z",
+      "side": 1,
+      "message": "There is a third parameter\nbool\t$ignoreHidden\tWhether to ignore the effects of $wgHiddenPrefs \n\nNot sure what the effects of $wgHiddenPrefs on gender options are. Tony, can you check that?",
+      "revId": "2f4dfdd9265f814bf8105d253875490410c65db6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_d391b953",
+        "filename": "CommentClass.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1115,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-03-18T14:26:53Z",
+      "side": 1,
+      "message": "Is ``htmlspecialchars()`` required here? Or can this option trusted being male, female or unknown?",
+      "revId": "2f4dfdd9265f814bf8105d253875490410c65db6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
