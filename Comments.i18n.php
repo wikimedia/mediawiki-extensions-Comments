@@ -446,6 +446,7 @@ $messages['br'] = array(
 	'logentry-comments-add' => '$1 en deus embannet un evezhiadenn nevez war $3',
 	'logentry-comments-delete' => '$1 en deus dilamet an evezhiadenn $4 war $3',
 	'comments-time-ago' => '$1 zo',
+	'comments-time-months' => '{{PLURAL:$1|ur miz|$1 miz}}',
 	'comments-time-days' => '{{PLURAL:$1|un deiz|$1 deiz}}',
 	'comments-time-hours' => '{{PLURAL:$1|un eur|$1 eur}}',
 	'comments-time-minutes' => '{{PLURAL:$1|ur vunutenn|$1 munut}}',
