@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "ae0e4726_65a90ddc",
+        "filename": "CommentClass.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1112,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-03-27T19:50:50Z",
+      "side": 1,
+      "message": "Doesn\u0027t have to be addressed in this patch set, but I recommend looking into it:\n\nIs this the same as message \"pipe-separator\"? If so, that should be used. Also two lines below.",
+      "revId": "2f4dfdd9265f814bf8105d253875490410c65db6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee14bf34_d391b953",
         "filename": "CommentClass.php",
         "patchSetId": 6
@@ -48,6 +65,24 @@
       "side": 1,
       "message": "I think it is. Although the default options are just female and male, they can be changed in includes/Preferences.php and thus may contain quotation marks.\n\nPlease htmlspecialchars( ) the $CommentReplyToGender",
       "parentUuid": "ee14bf34_d391b953",
+      "revId": "2f4dfdd9265f814bf8105d253875490410c65db6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae0e4726_a5ede524",
+        "filename": "CommentClass.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1115,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-03-27T19:50:50Z",
+      "side": 1,
+      "message": "I thought this wouldn\u0027t be needed, as gender is a limited input list. Still, it seems that at translatewiki.net, we have already 1 bad value:\n\n select up_value, count(up_value) from bw_user_properties where up_property \u003d \u0027gender\u0027 group by up_value;\n +----------+-----------------+\n | up_value | count(up_value) |\n +----------+-----------------+\n | female   |             258 |\n | m        |               1 |\n | male     |            2364 |\n +----------+-----------------+\n\nSo it should indeed be sanitised.",
+      "parentUuid": "ae0e4726_99ea4e72",
       "revId": "2f4dfdd9265f814bf8105d253875490410c65db6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
