@@ -33,6 +33,24 @@
       "revId": "2f4dfdd9265f814bf8105d253875490410c65db6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae0e4726_99ea4e72",
+        "filename": "CommentClass.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1115,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-03-27T13:06:13Z",
+      "side": 1,
+      "message": "I think it is. Although the default options are just female and male, they can be changed in includes/Preferences.php and thus may contain quotation marks.\n\nPlease htmlspecialchars( ) the $CommentReplyToGender",
+      "parentUuid": "ee14bf34_d391b953",
+      "revId": "2f4dfdd9265f814bf8105d253875490410c65db6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
