@@ -1,0 +1,12 @@
+{
+    "@metadata": {
+        "authors": [
+            "Vks"
+        ]
+    },
+    "comments-cancel-reply": "Zrušit",
+    "comments-ignore-unblock": "Odblokovat",
+    "log-name-comments": "Protokol o komentářích",
+    "comments-time-ago": "před $1",
+    "right-comment": "Odeslat komentář"
+}

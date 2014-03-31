@@ -1,0 +1,39 @@
+{
+    "@metadata": {
+        "authors": [
+            "Rancher"
+        ]
+    },
+    "comments-comment": "Коментар",
+    "comments-voted-label": "Гласано",
+    "comments-loading": "Учитавам…",
+    "comments-auto-refresher-enable": "Омогући самоосвежавање коментара",
+    "comments-auto-refresher-pause": "Онемогући самоосвежавање коментара",
+    "comments-reply-to": "Одговори на",
+    "comments-cancel-reply": "Откажи",
+    "comments-block-warning-user": "Желите ли да трајно занемарите све коментаре корисника $1?",
+    "comments-delete-warning": "Желите ли да обришете овај коментар?",
+    "comments-sort-by-date": "Поређај по датуму",
+    "comments-sort-by-score": "Поређај по бодовима",
+    "comments-show-comment-link": "Прикажи коментар",
+    "comments-manage-blocklist-link": "Управљај списком занемарених",
+    "comments-ignore-message": "Занемарујете аутора овог коментара",
+    "comments-ignore-unblock": "Деблокирај",
+    "comments-ignore-cancel": "Откажи",
+    "comments-ignore-title": "Списак занемарених коментара",
+    "commentignorelist": "Списак занемарених коментара",
+    "comments-no-comments-of-day": "Нема коментара дана.",
+    "log-name-comments": "Дневник коментара",
+    "log-description-comments": "Ово је дневник коментара.",
+    "comments-time-ago": "пре $1",
+    "comments-time-days": "{{PLURAL:$1|један дан|$1 дана|$1 дана}}",
+    "comments-time-hours": "{{PLURAL:$1|један сат|$1 сата|$1 сати}}",
+    "comments-time-minutes": "{{PLURAL:$1|један минут|$1 минута|$1 минута}}",
+    "comments-time-seconds": "{{PLURAL:$1|један секунд|$1 секунде|$1 секунди}}",
+    "log-show-hide-comments": "$1 дневник коментара",
+    "group-commentadmin": "Администратори коментара",
+    "group-commentadmin-member": "{{GENDER:$1|администратор|администраторка|администратор}} коментара",
+    "grouppage-commentadmin": "{{ns:project}}:Администратори коментара",
+    "right-comment": "слање коментара",
+    "right-commentadmin": "управљање корисничким коментарима"
+}

@@ -1,0 +1,42 @@
+{
+    "@metadata": {
+        "authors": [
+            "ChrisPtDe"
+        ]
+    },
+    "comments-comment": "Comentèro",
+    "comments-voted-label": "Votâ",
+    "comments-loading": "Chargement...",
+    "comments-reply-to": "Rèpondre a",
+    "comments-cancel-reply": "Anular",
+    "comments-sort-by-date": "Betar per dâta",
+    "comments-sort-by-score": "Betar per mârca",
+    "comments-show-comment-link": "Montrar lo comentèro",
+    "comments-you": "Vos",
+    "comments-reply": "Rèpondre",
+    "comments-post": "Mandar lo mèssâjo",
+    "comments-submit": "Apondre voutron comentèro",
+    "comments-score-text": "Mârca",
+    "comments-permalink": "Lim fixo",
+    "comments-delete-link": "Ôtar lo comentèro",
+    "comments-anon-name": "Utilisator anonimo",
+    "comments-ignore-item": "<a href=\"$1\">$2</a> sur $3 <a href=\"$4\">(dèblocar)</a>",
+    "comments-ignore-no-users": "Ora y at gins d’utilisator blocâ.",
+    "comments-ignore-remove-message": "Voléd-vos franc dèblocar los comentèros de l’utilisator <b>$1</b> ?",
+    "comments-ignore-unblock": "Dèblocar",
+    "comments-ignore-cancel": "Anular",
+    "comments-no-comments-of-day": "Y at gins de comentèro du jorn.",
+    "log-name-comments": "Jornal des comentèros",
+    "log-description-comments": "O est un jornal de comentèros.",
+    "comments-time-ago": "cen fât $1",
+    "comments-time-days": "{{PLURAL:$1|yon jorn|$1 jorns}}",
+    "comments-time-hours": "{{PLURAL:$1|yona hora|$1 hores}}",
+    "comments-time-minutes": "{{PLURAL:$1|yona menuta|$1 menutes}}",
+    "comments-time-seconds": "{{PLURAL:$1|yona seconda|$1 secondes}}",
+    "log-show-hide-comments": "$1 lo jornal des comentèros",
+    "group-commentadmin": "Administrators de comentèros",
+    "group-commentadmin-member": "administrat{{GENDER:$1|or|rice}} de comentèros",
+    "grouppage-commentadmin": "{{ns:project}}:Administrators de comentèros",
+    "right-comment": "Sometre des comentèros",
+    "right-commentadmin": "Administrar los comentèros somês per los utilisators"
+}

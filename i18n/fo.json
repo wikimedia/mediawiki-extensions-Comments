@@ -1,0 +1,23 @@
+{
+    "@metadata": {
+        "authors": [
+            "EileenSanda"
+        ]
+    },
+    "comments-comment": "Viðmerk",
+    "comments-desc": "Leggur afturat <code>&lt;comments&gt;</code> parser-húk ið loyvir viðmerkingum á síðum",
+    "comments-voted-label": "Atkvøtt",
+    "comments-loading": "Innlesur...",
+    "comments-reply-to": "Svara",
+    "comments-cancel-reply": "Angra",
+    "comments-show-comment-link": "Vís viðmerking",
+    "comments-you": "Tú",
+    "comments-reply": "Svara",
+    "comments-anon-name": "Dulnevndur brúkari",
+    "comments-anon-message": "{{SITENAME}} vil gjarna hava <b>viðmerkingar</b>. Um tú ikki vilt vera dulnevnd/ur, so kanst tú <a href=\"$1\">skráseta teg</a> ella <a href=\"$2\">rita inn</a>. Tað er ókeypis.",
+    "comments-ignore-item": "<a href=\"$1\">$2</a> hin $3 <a href=\"$4\">(tak sperring burtur)</a>",
+    "comments-time-ago": "$1 síðan",
+    "comments-time-days": "{{PLURAL:$1|ein dagur|$1 dagar}}",
+    "comments-time-hours": "{{PLURAL:$1|ein tími|$1 tímar}}",
+    "comments-time-minutes": "{{PLURAL:$1|ein minuttur|$1 minuttir}}"
+}

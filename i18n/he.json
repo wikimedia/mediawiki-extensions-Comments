@@ -1,0 +1,41 @@
+{
+    "@metadata": {
+        "authors": [
+            "Ofrahod",
+            "חיים",
+            "ערן"
+        ]
+    },
+    "comments-comment": "תגובה",
+    "comments-db-locked": "<h3>הוספת הערות</h3>מסד הנתונים נעול כעת עקב תחזוקה שגרתית במסד הנתונים, לאחר מכן האתר ישוב לקדמותו. אנא בדוק שנית במועד מאוחר יותר!",
+    "comments-voted-label": "הצבעה",
+    "comments-loading": "טוען...",
+    "comments-auto-refresher-enable": "אפשר רענון אוטומטי של תגובה",
+    "comments-auto-refresher-pause": "מנע רענון אוטומטי של תגובה",
+    "comments-reply-to": "השב אל",
+    "comments-cancel-reply": "ביטול",
+    "comments-sort-by-date": "מיין לפי שם",
+    "comments-sort-by-score": "מיין לפי ציון",
+    "comments-show-comment-link": "הצג הערה",
+    "comments-manage-blocklist-link": "ניהול רשימת התעלמות",
+    "comments-you": "אתה",
+    "comments-reply": "השב",
+    "comments-not-allowed": "אינך מורשה לפרסם תגובות.",
+    "comments-post": "פרסם תגובה",
+    "comments-submit": "הוסף את ההערה שלך",
+    "comments-score-text": "תוצאה",
+    "comments-permalink": "קישור קבוע",
+    "comments-delete-link": "מחק תגובה",
+    "comments-anon-name": "משתמש אנונימי",
+    "comments-ignore-unblock": "ביטול חסימה",
+    "comments-ignore-cancel": "ביטול",
+    "log-name-comments": "יומן ההערות",
+    "comments-time-ago": "לפני $1",
+    "comments-time-days": "{{PLURAL:$1|יום אחד|יומיים|$1 ימים}}",
+    "comments-time-hours": "{{PLURAL:$1|שעה אחת|שעתיים|$1 שעות}}",
+    "comments-time-minutes": "{{PLURAL:$1|דקה אחת|$1 דקות}}",
+    "comments-time-seconds": "{{PLURAL:$1|שנייה אחת|$1 שניות}}",
+    "log-show-hide-comments": "$1 יומן ההערות",
+    "group-commentadmin": "הערה מנהלית",
+    "right-comment": "שלח הערות"
+}

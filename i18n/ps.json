@@ -1,0 +1,27 @@
+{
+    "@metadata": {
+        "authors": [
+            "Ahmed-Najib-Biabani-Ibrahimkhel"
+        ]
+    },
+    "comments-comment": "تبصره",
+    "comments-loading": "برسېرېدنې کې دی...",
+    "comments-cancel-reply": "ناگارل",
+    "comments-sort-by-date": "اوډنه د نېټې له مخې",
+    "comments-sort-by-score": "اوډنه د شمېرو له مخې",
+    "comments-show-comment-link": "تبصره ښکاره کول",
+    "comments-you": "تاسې",
+    "comments-reply": "ځوابول",
+    "comments-submit": "خپله تبصره ورگډول",
+    "comments-delete-link": "تبصره ړنگول",
+    "comments-anon-name": "ورکنومی کارن",
+    "comments-ignore-unblock": "بنديز لرې کول",
+    "comments-ignore-cancel": "ناگارل",
+    "log-name-comments": "د تبصرو يادښت",
+    "comments-time-ago": "$1 دمخه",
+    "comments-time-days": "{{PLURAL:$1|يو ورځ|$1 ورځې}}",
+    "comments-time-hours": "{{PLURAL:$1|يو ساعت|$1 ساعتونه}}",
+    "comments-time-minutes": "{{PLURAL:$1|يو دقيقه|$1 دقيقې}}",
+    "comments-time-seconds": "{{PLURAL:$1|يوه ثانيه|$1 ثانيې}}",
+    "right-comment": "تبصرې سپارل"
+}

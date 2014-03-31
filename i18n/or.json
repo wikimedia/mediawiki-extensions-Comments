@@ -1,0 +1,37 @@
+{
+    "@metadata": {
+        "authors": [
+            "Ansumang",
+            "Jnanaranjan Sahu"
+        ]
+    },
+    "comments-comment": "ମତାମତ",
+    "comments-voted-label": "ମତଦାନ",
+    "comments-loading": "ଖୋଲୁଅଛି...",
+    "comments-reply-to": "କୁ ଉତ୍ତର ଦେବେ",
+    "comments-cancel-reply": "ବାତିଲ",
+    "comments-block-warning-user": "ଆପଣ ନିଶ୍ଚିତ ଯେ $1ବ୍ୟବହାରକାରୀ ଦ୍ଵାରା ସମସ୍ତ ମତକୁ ସ୍ଥାୟୀରୂପେ ଅଣଦେଖା କରିବେ ?",
+    "comments-delete-warning": "ଆପଣ ନିଶ୍ଚିତ ଭାବେ ଏହି ମତଟିକୁ ହଟାଇବାକୁ ଚାହୁଁଛନ୍ତି ?",
+    "comments-sort-by-date": "ତାରିଖ ଅନୁଯାୟୀ ସଜାଇବେ",
+    "comments-show-comment-link": "ମନ୍ତବ୍ୟଗୁଡ଼ିକୁ ଦେଖାଇବେ",
+    "comments-manage-blocklist-link": "ଅଣଦେଖା ତାଳିକାଟିକୁ ପରିଚାଳନା କରିବେ",
+    "comments-ignore-message": "ଆପଣ ଏହି ମନ୍ତବ୍ୟର ଲେଖକଙ୍କୁ ଅଣଦେଖା କରୁଛନ୍ତି",
+    "comments-you": "ଆପଣ",
+    "comments-reply": "ଉତ୍ତର",
+    "comments-login-required": "ଆପଣଙ୍କୁ ମନ୍ତବ୍ୟଦେବା ପାଇଁ ଲଗଇନ କରିବାକୁ ପଡିବ",
+    "comments-not-allowed": "ଆପଣଙ୍କୁ ମନ୍ତବ୍ୟ ଦେବା ପାଇଁ ଅନୁମତି ନାହିଁ ।",
+    "comments-post": "ମତ ଦେବେ",
+    "comments-submit": "ଆପଣଙ୍କ ମତ ଦେବେ",
+    "comments-score-text": "ଗଣନା",
+    "comments-delete-link": "ମତ ହଟାଇବେ",
+    "comments-ignore-no-users": "ଏବେ କୌଣସି ବ୍ୟବହାରକାରୀଙ୍କୁ କିଳାଯାଇନାହିଁ ।",
+    "comments-ignore-cancel": "ବାତିଲ",
+    "comments-ignore-title": "ମତ ଅଣଦେଖା ତାଲିକା",
+    "commentignorelist": "ମତ ଅଣଦେଖା ତାଲିକା",
+    "comments-no-comments-of-day": "ଆଜି ପାଇଁ  କୌଣସି ମତ ନାହିଁ ।",
+    "log-name-comments": "ମନ୍ତବ୍ୟ ତାଲିକା",
+    "log-description-comments": "ଏହା ମନ୍ତବ୍ୟଗୁଡିକର ଏକ ତାଲିକା ।",
+    "comments-time-ago": "$1 ପୂର୍ବରୁ",
+    "group-commentadmin": "ମନ୍ତବ୍ୟ ଅଧିକାରୀଗଣ",
+    "right-comment": "ମନ୍ତବ୍ୟ ଦାଖଲ କରିବେ"
+}

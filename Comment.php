@@ -4,7 +4,6 @@
  *
  * @file
  * @ingroup Extensions
- * @version 3.0
  * @author David Pean <david.pean@gmail.com>
  * @author Misza <misza1313[ at ]gmail[ dot ]com>
  * @author Jack Phoenix <jack@countervandalism.net>
@@ -25,7 +24,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'Comments',
-	'version' => '3.0',
+	'version' => '3.1.0',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix' ),
 	'descriptionmsg' => 'comments-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
@@ -65,6 +64,7 @@ $wgGroupPermissions['autoconfirmed']['commentlinks'] = true;
 
 // Set up the new special pages
 $dir = __DIR__ . '/';
+$wgMessagesDirs['Comments'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['Comments'] = $dir . 'Comments.i18n.php';
 $wgExtensionMessagesFiles['CommentsMagic'] = $dir . 'Comments.i18n.magic.php';
 $wgAutoloadClasses['Comment'] = $dir . 'CommentClass.php';

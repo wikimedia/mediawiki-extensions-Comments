@@ -1,0 +1,42 @@
+{
+    "@metadata": {
+        "authors": [
+            "Glavkos",
+            "ZaDiak"
+        ]
+    },
+    "comments-comment": "Σχόλιο",
+    "comments-voted-label": "Έχετε ψηφίσει",
+    "comments-loading": "Φόρτωση...",
+    "comments-auto-refresher-enable": "Ενεργοποίηση αυτόματης ανανέωσης σχολίων",
+    "comments-auto-refresher-pause": "Διακοπή αυτόματης ανανέωσης σχολίων",
+    "comments-reply-to": "Απάντηση σε",
+    "comments-cancel-reply": "Ακύρωση",
+    "comments-sort-by-date": "Ταξινόμηση κατά ημερομηνία",
+    "comments-sort-by-score": "Ταξινόμηση κατά βαθμολογία",
+    "comments-show-comment-link": "Προβολή σχολίου",
+    "comments-you": "Εσείς",
+    "comments-reply": "Απάντηση",
+    "comments-post": "Δημοσίευση σχολίου",
+    "comments-submit": "Προσθήκη του σχολίου σας",
+    "comments-score-text": "Βαθμολογία",
+    "comments-permalink": "Μόνιμος σύνδεσμος",
+    "comments-delete-link": "Διαγραφή σχολίου",
+    "comments-anon-name": "Ανώνυμος χρήστης",
+    "comments-ignore-unblock": "Άρση φραγής",
+    "comments-ignore-cancel": "Ακύρωση",
+    "comments-ignore-title": "Λίστα αγνόησης σχολίων",
+    "commentignorelist": "Λίστα αγνόησης σχολίων",
+    "log-name-comments": "Αρχείο καταγραφής σχολίων",
+    "log-description-comments": "Αυτό είναι ένα αρχείο καταγραφής σχολίων.",
+    "comments-time-ago": "πριν $1",
+    "comments-time-days": "{{PLURAL:$1|μια μέρα|$1 μέρες}}",
+    "comments-time-hours": "{{PLURAL:$1|μια ώρα|$1 ώρες}}",
+    "comments-time-minutes": "{{PLURAL:$1|ένα λεπτό|$1 λεπτά}}",
+    "comments-time-seconds": "{{PLURAL:$1|ένα δευτερόλεπτο|$1 δευτερόλεπτα}}",
+    "log-show-hide-comments": "$1 αρχείο καταγραφής σχολίων",
+    "group-commentadmin": "Διαχειριστές σχολίων",
+    "group-commentadmin-member": "{{GENDER:$1|διαχειριστής σχολίων}}",
+    "grouppage-commentadmin": "{{ns:project}}:Διαχειριστές σχολίων",
+    "right-comment": "Καταχώρηση σχολίων"
+}

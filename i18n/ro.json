@@ -1,0 +1,43 @@
+{
+    "@metadata": {
+        "authors": [
+            "Firilacroco",
+            "Minisarm",
+            "Stelistcristi"
+        ]
+    },
+    "comments-comment": "Comentariu",
+    "comments-voted-label": "Votat",
+    "comments-loading": "Se încarcă...",
+    "comments-reply-to": "Răspundeți utilizatorului",
+    "comments-cancel-reply": "Revocare",
+    "comments-sort-by-date": "Sortare după dată",
+    "comments-sort-by-score": "Sortare după scor",
+    "comments-show-comment-link": "Arată comentariul",
+    "comments-manage-blocklist-link": "Administrează lista de ignorare",
+    "comments-ignore-message": "Autorul acestui comentariu este ignorat de către dv.",
+    "comments-you": "Dumneavoastră",
+    "comments-reply": "Răspunde",
+    "comments-login-required": "Trebuie să fiți autentificat pentru a adăuga comentarii",
+    "comments-not-allowed": "Nu sunteți autorizat să publicați comentarii.",
+    "comments-post": "Postează comentariul",
+    "comments-submit": "Adăugați comentariul dumneavoastră",
+    "comments-score-text": "Scor",
+    "comments-permalink": "Legătură permanentă",
+    "comments-delete-link": "Ștergere comentariul",
+    "comments-anon-name": "Utilizator anonim",
+    "comments-ignore-no-users": "Nu există utilizatori blocați.",
+    "comments-ignore-unblock": "Deblocare",
+    "comments-ignore-cancel": "Renunță",
+    "comments-no-comments-of-day": "Nu există niciun comentariu al zilei.",
+    "log-name-comments": "Jurnal comentarii",
+    "log-description-comments": "Acesta este un jurnal de comentarii.",
+    "comments-time-ago": "în urmă cu $1",
+    "comments-time-days": "{{PLURAL:$1|o zi|$1 zile}}",
+    "comments-time-hours": "{{PLURAL:$1|o oră|$1 ore}}",
+    "comments-time-minutes": "{{PLURAL:$1|un minut|$1 minute}}",
+    "comments-time-seconds": "{{PLURAL:$1|o secundă|$1 secunde}}",
+    "log-show-hide-comments": "$1 jurnalul de comentarii",
+    "group-commentadmin": "Administratori de comentarii",
+    "right-comment": "Trimite comentarii"
+}

@@ -1,0 +1,43 @@
+{
+    "@metadata": {
+        "authors": [
+            "Purodha"
+        ]
+    },
+    "comments-comment": "Aanmärkong",
+    "comments-voted-label": "Afjeschtemmp",
+    "comments-loading": "Ben aam Laade{{int:ellipsis}}",
+    "comments-reply-to": "Antowoote aan:",
+    "comments-cancel-reply": "Ophüre",
+    "comments-delete-warning": "Wells De heh dä Beidraach verhaftesch fottschmieße?",
+    "comments-sort-by-date": "Nohm Dattum zoteere",
+    "comments-show-comment-link": "Aanmerkong aanzeije",
+    "comments-ignore-message": "Do övverjeihß dä Schriiver vun heh däm Beidraach",
+    "comments-you": "Do",
+    "comments-reply": "Antwoot",
+    "comments-login-required": "Do moß enjelogg sin, öm Aanmärkonge zoh Sigge schriive ze dörve",
+    "comments-not-allowed": "Do moß enjelogg sin, öm Aanmärkonge zoh Sigge schriive ze dörve",
+    "comments-post": "En Aanmärkong dobei donn",
+    "comments-submit": "Donn Ding Aanmärkong derbei",
+    "comments-score-text": "Punkte",
+    "comments-permalink": "Ene duurhafte Lengk",
+    "comments-delete-link": "Aanmärkong fottschmiiße",
+    "comments-anon-name": "Nameloose Metmaacher",
+    "comments-ignore-no-users": "Em Momang sen hein Metmaacher jeschpärrt.",
+    "comments-ignore-unblock": "Sperr ophävve",
+    "comments-ignore-cancel": "Ophüre",
+    "comments-no-comments-of-day": "Mer hann_er kein Aanmärkonge aan däm Daach.",
+    "log-name-comments": "Logbooch met Aanmärkonge",
+    "log-description-comments": "Heh is est Logbooch met Aanmärkonge",
+    "comments-time-ago": "vör $1",
+    "comments-time-days": "{{PLURAL:$1|einem Daach|$1 Dääsch|keinem Daach}}",
+    "comments-time-hours": "{{PLURAL:$1|eine Schtond|$1 Schtonde|keinem Schtond}}",
+    "comments-time-minutes": "{{PLURAL:$1|eine Menutt|$1 Menutte|keine Menutt}}",
+    "comments-time-seconds": "{{PLURAL:$1|eine Sekund|$1 Sekunde|keine Sekund}}",
+    "log-show-hide-comments": "Et Logbooch vun de Aanmärkonge $1",
+    "group-commentadmin": "Vewallder vun de Aanmärkonge",
+    "group-commentadmin-member": "{{GENDER:$1|Vewallder vun de Aanmärkonge|Vewallderėn vun de Aanmärkonge|Vewallder vun de Aanmärkonge|Vewallderėn vun de Aanmärkonge|Vewallder vun de Aanmärkonge}}",
+    "grouppage-commentadmin": "{{ns:project}}:{{int:group-commentadmin}}",
+    "right-comment": "Aanmärkonge enjävve",
+    "right-commentadmin": "Aanmärkonge vun Metmaachere Verwallde"
+}

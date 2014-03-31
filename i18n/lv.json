@@ -1,0 +1,25 @@
+{
+    "@metadata": {
+        "authors": [
+            "Papuass"
+        ]
+    },
+    "comments-voted-label": "Nobalsots",
+    "comments-loading": "Ielādē…",
+    "comments-reply-to": "Atbildēt uz",
+    "comments-cancel-reply": "Atcelt",
+    "comments-sort-by-date": "Kārtot pēc datuma",
+    "comments-sort-by-score": "Kārtot pēc vērtējuma",
+    "comments-show-comment-link": "Parādīt komentāru",
+    "comments-reply": "Atbildēt",
+    "comments-login-required": "Jums ir jāpieslēdzas, lai pievienotu komentārus",
+    "comments-not-allowed": "Jums nav atļauts publicēt komentārus.",
+    "comments-post": "Publicēt komentāru",
+    "comments-submit": "Pievienot savu komentāru",
+    "comments-score-text": "Vērtējums",
+    "comments-permalink": "Pastāvīgā saite",
+    "comments-delete-link": "Dzēst komentāru",
+    "comments-anon-name": "Anonīms lietotājs",
+    "comments-ignore-unblock": "Atbloķēt",
+    "comments-ignore-cancel": "Atcelt"
+}
