@@ -3,12 +3,13 @@
         "authors": [
             "Ansumang",
             "Siddhartha Ghai",
-            "Vivek Rai"
+            "Vivek Rai",
+            "Smtchahal"
         ]
     },
     "comments-comment": "टिप्पणी",
     "comments-loading": "लोड हो रहा है...",
-    "comments-reply-to": "उत्तर दें",
+    "comments-reply-to": "{{GENDER:$2|$1}} को उत्तर दें",
     "comments-cancel-reply": "रद्द करें",
     "comments-show-comment-link": "टीप्पणी दिखाएँ",
     "comments-you": "आप",

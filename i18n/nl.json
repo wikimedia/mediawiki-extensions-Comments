@@ -7,7 +7,8 @@
             "Mitchel Corstjens",
             "SPQRobin",
             "Siebrand",
-            "Wiki13"
+            "Wiki13",
+            "Southparkfan"
         ]
     },
     "comments-comment": "Reactie",
@@ -17,7 +18,7 @@
     "comments-loading": "Bezig met laden…",
     "comments-auto-refresher-enable": "Automatisch bijwerken van reacties inschakelen",
     "comments-auto-refresher-pause": "Automatisch bijwerken van reacties pauzeren",
-    "comments-reply-to": "Reageren op",
+    "comments-reply-to": "Reageren op {{GENDER:$2|$1}}",
     "comments-cancel-reply": "Annuleren",
     "comments-block-warning-anon": "Weet u zeker dat u permanent alle reacties van deze anonieme gebruiker wilt negeren (via het IP-adres)?",
     "comments-block-warning-user": "Weet u zeker dat u alle reacties van $1 permanent wilt negeren?",

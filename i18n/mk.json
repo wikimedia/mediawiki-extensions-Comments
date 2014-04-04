@@ -11,7 +11,7 @@
     "comments-loading": "Вчитувам...",
     "comments-auto-refresher-enable": "Вклучи автопревчитување на коментарите",
     "comments-auto-refresher-pause": "Исклучи автопревчитување на коментарите",
-    "comments-reply-to": "Одговори на",
+    "comments-reply-to": "Одговори на {{GENDER:$2|$1}}",
     "comments-cancel-reply": "Откажи",
     "comments-block-warning-anon": "Дали сте сигурни дека сакате трајно да ги занемарите сите коментари од овој анонимен корисник (преку неговата IP-адреса)?",
     "comments-block-warning-user": "Дали сте сигурни дека сакате трајно да ги занемарите сите коментари од корисникот $1?",

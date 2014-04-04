@@ -13,7 +13,7 @@
     "comments-loading": "Chargement...",
     "comments-auto-refresher-enable": "Activer commentaire auto-actualiser",
     "comments-auto-refresher-pause": "Arrêter commentaire auto-actualiser",
-    "comments-reply-to": "Répondre à",
+    "comments-reply-to": "Répondre à {{GENDER:$2|$1}}",
     "comments-cancel-reply": "Annuler",
     "comments-block-warning-anon": "Êtes-vous sûr de vouloir ignorer de façon permanente tous les commentaires de cet utilisateur anonyme (via son adresse IP)?",
     "comments-block-warning-user": "Êtes-vous sûr de vouloir ignorer de façon permanente tous les commentaires de l’utilisateur $1?",

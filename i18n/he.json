@@ -3,7 +3,8 @@
         "authors": [
             "Ofrahod",
             "חיים",
-            "ערן"
+            "ערן",
+            "Amire80"
         ]
     },
     "comments-comment": "תגובה",
@@ -12,7 +13,7 @@
     "comments-loading": "טוען...",
     "comments-auto-refresher-enable": "אפשר רענון אוטומטי של תגובה",
     "comments-auto-refresher-pause": "מנע רענון אוטומטי של תגובה",
-    "comments-reply-to": "השב אל",
+    "comments-reply-to": "להשיב ל{{GENDER:$2|$1}}",
     "comments-cancel-reply": "ביטול",
     "comments-sort-by-date": "מיין לפי שם",
     "comments-sort-by-score": "מיין לפי ציון",
