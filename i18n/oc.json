@@ -7,7 +7,7 @@
     "comments-comment": "Comentari",
     "comments-voted-label": "Votat",
     "comments-loading": "Cargament...",
-    "comments-reply-to": "Respondre a",
+    "comments-reply-to": "Respondre a {{GENDER:$2|$1}}",
     "comments-cancel-reply": "Anullar",
     "comments-sort-by-date": "Triar per data",
     "comments-sort-by-score": "Triar per marca",

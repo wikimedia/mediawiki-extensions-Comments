@@ -5,7 +5,8 @@
             "Hzy980512",
             "Shirayuki",
             "TianyinLee",
-            "Yfdyh000"
+            "Yfdyh000",
+            "Liuxinyu970226"
         ]
     },
     "comments-comment": "评论",
@@ -15,7 +16,7 @@
     "comments-loading": "载入中...",
     "comments-auto-refresher-enable": "开启评论自动刷新",
     "comments-auto-refresher-pause": "关闭评论自动刷新",
-    "comments-reply-to": "回复",
+    "comments-reply-to": "回复{{GENDER:$2|$1}}",
     "comments-cancel-reply": "取消",
     "comments-block-warning-anon": "您确定要永久忽略来自此IP地址的所有评论吗？",
     "comments-block-warning-user": "您确定要永久忽略来自用户 $1 的所有评论吗？",

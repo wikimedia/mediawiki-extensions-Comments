@@ -2,7 +2,8 @@
     "@metadata": {
         "authors": [
             "Justincheng12345",
-            "Shirayuki"
+            "Shirayuki",
+            "Simon Shek"
         ]
     },
     "comments-comment": "評論",
@@ -12,7 +13,7 @@
     "comments-loading": "載入中...",
     "comments-auto-refresher-enable": "啟用自動更新評論",
     "comments-auto-refresher-pause": "暫停自動更新評論",
-    "comments-reply-to": "回覆",
+    "comments-reply-to": "回覆{{GENDER:$2|$1}}",
     "comments-cancel-reply": "取消",
     "comments-block-warning-anon": "你確定要按此匿名用戶的IP位址永久忽略其所有意見？",
     "comments-block-warning-user": "你確定要永久忽略$1的所有意見？",

@@ -3,7 +3,8 @@
         "authors": [
             "Jopparn",
             "Tobulos1",
-            "WikiPhoenix"
+            "WikiPhoenix",
+            "Lokal Profil"
         ]
     },
     "comments-comment": "Kommentar",
@@ -13,7 +14,7 @@
     "comments-loading": "Läser in...",
     "comments-auto-refresher-enable": "Aktivera autouppdatering av kommentar",
     "comments-auto-refresher-pause": "Pausa autouppdatering av kommentarer",
-    "comments-reply-to": "Besvara",
+    "comments-reply-to": "Besvara {{GENDER:$2|$1}}",
     "comments-cancel-reply": "Avbryt",
     "comments-block-warning-anon": "Är du säker på att du vill ignorera alla kommentarer från denna anonyma användare permanent (via dess IP-adress)?",
     "comments-block-warning-user": "Är du säker på att du vill ignorera alla kommentarer från användaren $1?",
