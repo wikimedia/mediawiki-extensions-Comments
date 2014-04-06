@@ -7,7 +7,8 @@
             "Ciencia Al Poder",
             "Fitoschido",
             "Ihojose",
-            "Sporeunai"
+            "Sporeunai",
+            "Frammm"
         ]
     },
     "comments-comment": "Comentario",
@@ -17,7 +18,7 @@
     "comments-loading": "Cargando...",
     "comments-auto-refresher-enable": "Habilitar actualización automática de comentarios",
     "comments-auto-refresher-pause": "Pausar actualización automática de comentarios",
-    "comments-reply-to": "Responder a",
+    "comments-reply-to": "Responder a {{GENDER:$2|$1}}",
     "comments-cancel-reply": "Cancelar",
     "comments-block-warning-anon": "¿Estás seguro que deseas ignorar permanentemente todos los comentarios de este usuario anónimo (a través de su dirección IP)?",
     "comments-block-warning-user": "¿Estás seguro de que deseas ignorar permanentemente todos los comentarios del usuario $1?",
