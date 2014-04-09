@@ -9,7 +9,7 @@
     "comments-comment": "Evezhiadenn",
     "comments-voted-label": "Votet",
     "comments-loading": "O kargañ...",
-    "comments-reply-to": "Respont da",
+    "comments-reply-to": "Respont da {{GENDER:$2|$1}}",
     "comments-cancel-reply": "Nullañ",
     "comments-delete-warning": "Ha sur oc'h hoc'h e fell deoc'h dilemel an evezhiadenn-mañ ?",
     "comments-sort-by-date": "Urzhiañ dre zeiziad",
