@@ -4,7 +4,8 @@
             "LFM",
             "Priviet",
             "Yjs5497",
-            "아라"
+            "아라",
+            "Keysuck"
         ]
     },
     "comments-comment": "덧글",
@@ -14,7 +15,7 @@
     "comments-loading": "불러오는 중...",
     "comments-auto-refresher-enable": "덧글 자동 새로 고침 활성화",
     "comments-auto-refresher-pause": "덧글 자동 새로 고침 일시 정지",
-    "comments-reply-to": "답변자",
+    "comments-reply-to": "{{GENDER:$2|$1}}에게 회신하기",
     "comments-cancel-reply": "취소",
     "comments-block-warning-anon": "익명 사용자(IP 주소)에서 모든 덧글을 영구적으로 무시하겠습니까?",
     "comments-block-warning-user": "$1 사용자에서 모든 덧글을 영구적으로 무시하겠습니까?",
