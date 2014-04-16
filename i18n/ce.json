@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Умар"
-        ]
-    },
-    "comments-loading": "Чуйолуш…",
-    "comments-auto-refresher-enable": "Латаде комментареш автоматически карладахар",
-    "comments-auto-refresher-pause": "Сацаде комментареш автоматически карладахар",
-    "comments-reply-to": "Жоп дала {{GENDER:$2|$1}}",
-    "comments-cancel-reply": "Цаоьшу",
-    "comments-submit": "ТӀетоха хьай къамел",
-    "comments-score-text": "Мах хадор",
-    "comments-ignore-cancel": "Цаоьшу",
-    "comments-time-ago": "$1 юха",
-    "comments-time-months": "{{PLURAL:$1|цхьа бутт|$1 беттанаш}}",
-    "comments-time-hours": "{{PLURAL:$1|сахьат}}"
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"comments-loading": "Чуйолуш…",
+	"comments-auto-refresher-enable": "Латаде комментареш автоматически карладахар",
+	"comments-auto-refresher-pause": "Сацаде комментареш автоматически карладахар",
+	"comments-reply-to": "Жоп дала {{GENDER:$2|$1}}",
+	"comments-cancel-reply": "Цаоьшу",
+	"comments-submit": "ТӀетоха хьай къамел",
+	"comments-score-text": "Мах хадор",
+	"comments-ignore-cancel": "Цаоьшу",
+	"comments-time-ago": "$1 юха",
+	"comments-time-months": "{{PLURAL:$1|цхьа бутт|$1 беттанаш}}",
+	"comments-time-hours": "{{PLURAL:$1|сахьат}}"
 }
