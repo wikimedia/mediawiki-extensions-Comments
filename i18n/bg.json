@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"DCLXVI"
 		]
 	},
 	"comments-comment": "Коментар",
+	"comments-loading": "Зареждане...",
 	"comments-cancel-reply": "Отказване",
 	"comments-you": "Вие",
 	"comments-reply": "Отговор",
