@@ -51,7 +51,7 @@
 	"logentry-comments-add": "$1 사용자가 $3에 새 덧글을 남겼습니다",
 	"logentry-comments-delete": "$1 사용자가 $3에 덧글 #$4(을)를 삭제했습니다",
 	"comments-time-ago": "$1 전",
-	"comments-time-months": "{{PLURAL:$1|1달|$1달}}",
+	"comments-time-months": "{{PLURAL:$1|1개월|$1개월}}",
 	"comments-time-days": "{{PLURAL:$1|1일|$1일}}",
 	"comments-time-hours": "{{PLURAL:$1|1시간|$1시간}}",
 	"comments-time-minutes": "{{PLURAL:$1|1분|$1분}}",
