@@ -11,7 +11,7 @@
 	"comments-loading": "Laidin...",
 	"comments-auto-refresher-enable": "Enable comment autæ-refresher",
 	"comments-auto-refresher-pause": "Pause comment autæ-refresher",
-	"comments-reply-to": "Reply til",
+	"comments-reply-to": "Replie tae {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Cancel",
 	"comments-block-warning-anon": "Ar ye sair that ye want tae permanentlie ignore aw comments fae this anonymous uiser (bi waa o thair IP address)?",
 	"comments-block-warning-user": "Ar ye sair that ye want tae permanentlie ignore aw comments fae uiser $1?",
