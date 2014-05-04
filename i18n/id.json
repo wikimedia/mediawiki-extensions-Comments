@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Farras",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"C5st4wr6ch"
 		]
 	},
 	"comments-comment": "Komentar",
+	"comments-db-locked": "<h3>Menambahkan komentar</h3>Basis data saat ini terkunci untuk pemeliharaan database rutin, setelahnya akan kembali ke normal. Silakan periksa kembali nanti!",
 	"comments-loading": "Memuat...",
 	"comments-reply-to": "Balas ke",
 	"comments-cancel-reply": "Batal",
