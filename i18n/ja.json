@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shirayuki"
+			"Shirayuki",
+			"Whym"
 		]
 	},
 	"comments-comment": "コメント",
@@ -11,7 +12,7 @@
 	"comments-loading": "読み込み中...",
 	"comments-auto-refresher-enable": "コメントの自動更新を有効化",
 	"comments-auto-refresher-pause": "コメントの自動更新を一時停止",
-	"comments-reply-to": "返信先",
+	"comments-reply-to": "{{GENDER:$2|$1}への返信",
 	"comments-cancel-reply": "キャンセル",
 	"comments-block-warning-anon": "この匿名利用者 (の IP アドレス) によるコメントすべてを本当に永久的に無視しますか?",
 	"comments-block-warning-user": "利用者 $1 によるコメントすべてを本当に永久的に無視しますか?",

@@ -4,5 +4,10 @@
 			"Iltever"
 		]
 	},
-	"comments-anon-name": "Аноним"
+	"comments-anon-name": "Аноним",
+	"comments-time-ago": "$1 алгъа",
+	"comments-time-days": "{{PLURAL:$1|бир кюн|$1 кюн}}",
+	"comments-time-hours": "{{PLURAL:$1|бир сагъат|$1 сагъат}}",
+	"comments-time-minutes": "{{PLURAL:$1|бир минут|$1 минут}}",
+	"comments-time-seconds": "{{PLURAL:$1|бир секунд|$1 секунд}}"
 }
