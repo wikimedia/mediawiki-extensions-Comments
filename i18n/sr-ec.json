@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Rancher"
+			"Rancher",
+			"Milicevic01"
 		]
 	},
 	"comments-comment": "Коментар",
@@ -32,7 +33,7 @@
 	"comments-time-seconds": "{{PLURAL:$1|један секунд|$1 секунде|$1 секунди}}",
 	"log-show-hide-comments": "$1 дневник коментара",
 	"group-commentadmin": "Администратори коментара",
-	"group-commentadmin-member": "{{GENDER:$1|администратор|администраторка|администратор}} коментара",
+	"group-commentadmin-member": "{{GENDER:$1|администратор|администраторка}} коментара",
 	"grouppage-commentadmin": "{{ns:project}}:Администратори коментара",
 	"right-comment": "слање коментара",
 	"right-commentadmin": "управљање корисничким коментарима"

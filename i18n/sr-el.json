@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Milicevic01"
+		]
+	},
+	"comments-comment": "Komentar",
+	"comments-voted-label": "Glasano",
+	"comments-loading": "Učitavam…",
+	"comments-auto-refresher-enable": "Omogući samoosvežavanje komentara",
+	"comments-auto-refresher-pause": "Onemogući samoosvežavanje komentara",
+	"comments-cancel-reply": "Otkaži",
+	"comments-block-warning-user": "Želite li da trajno zanemarite sve komentare korisnika $1?",
+	"comments-delete-warning": "Želite li da obrišete ovaj komentar?",
+	"comments-sort-by-date": "Poređaj po datumu",
+	"comments-sort-by-score": "Poređaj po bodovima",
+	"comments-show-comment-link": "Prikaži komentar",
+	"comments-manage-blocklist-link": "Upravljaj spiskom zanemarenih",
+	"comments-ignore-message": "Zanemarujete autora ovog komentara",
+	"comments-permalink": "Trajna veza",
+	"comments-ignore-unblock": "Deblokiraj",
+	"comments-ignore-cancel": "Otkaži",
+	"comments-ignore-title": "Spisak zanemarenih komentara",
+	"commentignorelist": "Spisak zanemarenih komentara",
+	"comments-no-comments-of-day": "Nema komentara dana.",
+	"log-name-comments": "Dnevnik komentara",
+	"log-description-comments": "Ovo je dnevnik komentara.",
+	"comments-time-ago": "pre $1",
+	"comments-time-hours": "{{PLURAL:$1|jedan sat|$1 sata|$1 sati}}",
+	"log-show-hide-comments": "$1 dnevnik komentara",
+	"group-commentadmin": "Administratori komentara",
+	"group-commentadmin-member": "{{GENDER:$1|administrator|administratorka}} komentara",
+	"grouppage-commentadmin": "{{ns:project}}:Administratori komentara",
+	"right-comment": "slanje komentara",
+	"right-commentadmin": "upravljanje korisničkim komentarima"
+}
