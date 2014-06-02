@@ -3,13 +3,14 @@
 		"authors": [
 			"Chaduvari",
 			"Ravichandra",
-			"Veeven"
+			"Veeven",
+			"Kiranmayee"
 		]
 	},
 	"comments-comment": "వ్యాఖ్య",
 	"comments-voted-label": "ఓటేశారు",
 	"comments-loading": "లోడవుతోంది...",
-	"comments-reply-to": "వీరికి సమాధానం",
+	"comments-reply-to": "{{GENDER:$2|$1}}కి సమాధానం",
 	"comments-cancel-reply": "రద్దుచేయి",
 	"comments-delete-warning": "మీరు నిజంగానే ఈ వ్యాఖ్యను తొలగించాలని అనుకుంటున్నారా?",
 	"comments-sort-by-date": "తేది ప్రకారం అమర్చు",
