@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wizardist"
+			"Wizardist",
+			"Red Winged Duck"
 		]
 	},
 	"comments-comment": "Камэнтары",
@@ -11,7 +12,7 @@
 	"comments-loading": "Загрузка...",
 	"comments-auto-refresher-enable": "Уключыць аўтаабнаўленьне камэнтараў",
 	"comments-auto-refresher-pause": "Прыпыніць аўтаабнаўленьне камэнтараў",
-	"comments-reply-to": "Адказаць",
+	"comments-reply-to": "Адказаць {{GENDER:$2|удзельніку|удзельніцы}} $1",
 	"comments-cancel-reply": "Скасаваць",
 	"comments-block-warning-anon": "Ці вы ўпэўненыя, што жадаеце ігнараваць усе камэнтары ад гэтага ананіма (паводле IP-адрасу)?",
 	"comments-block-warning-user": "Ці вы ўпэўненыя, што жадаеце ігнараваць усе камэнтары ад удзельніка $1?",
