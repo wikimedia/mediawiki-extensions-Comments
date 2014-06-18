@@ -6,7 +6,8 @@
 			"Shirayuki",
 			"TianyinLee",
 			"Yfdyh000",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Mywood"
 		]
 	},
 	"comments-comment": "评论",
@@ -33,7 +34,7 @@
 	"comments-post": "发表评论",
 	"comments-submit": "添加你的评论",
 	"comments-score-text": "分数",
-	"comments-permalink": "永久链接",
+	"comments-permalink": "固定链接",
 	"comments-delete-link": "删除评论",
 	"comments-anon-name": "匿名用户",
 	"comments-anon-message": "{{SITENAME}}欢迎<b>所有评论</b>。如果您不想匿名，<a href=\"$1\">注册</a>或<a href=\"$2\">登录</a>。它是免费的。",

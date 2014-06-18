@@ -3,7 +3,8 @@
 		"authors": [
 			"Justincheng12345",
 			"Shirayuki",
-			"Simon Shek"
+			"Simon Shek",
+			"Mywood"
 		]
 	},
 	"comments-comment": "評論",
@@ -30,7 +31,7 @@
 	"comments-post": "發表評論",
 	"comments-submit": "添加您的評論",
 	"comments-score-text": "分數",
-	"comments-permalink": "永久鏈接",
+	"comments-permalink": "固定連結",
 	"comments-delete-link": "刪除評論",
 	"comments-anon-name": "匿名用戶",
 	"comments-anon-message": "{{SITENAME}} 歡迎<b>任何評論</b>。若你不希望匿名，免費<a href=\"$1\">註冊</a>或<a href=\"$2\">登入</a>。",
