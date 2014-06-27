@@ -94,10 +94,10 @@ class CommentIgnoreList extends SpecialPage {
 				$user_title = Title::makeTitle( NS_USER, $row->cb_user_name_blocked );
 				$out .= '<li>' . $this->msg(
 					'comments-ignore-item',
-					$user_title->escapeFullURL(),
+					htmlspecialchars( $user_title->getFullURL() ),
 					$user_title->getText(),
 					$lang->timeanddate( $row->cb_date ),
-					$title->escapeFullURL( 'user=' . $user_title->getText() )
+					htmlspecialchars( $title->getFullURL( 'user=' . $user_title->getText() ) )
 				)->text() . '</li>';
 			}
 			$out .= '</ul>';
