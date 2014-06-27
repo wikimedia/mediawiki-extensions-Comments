@@ -833,7 +833,7 @@ class Comment extends ContextSource {
 			$login = SpecialPage::getTitleFor( 'Userlogin' );
 			// Determine a sane returnto URL parameter, or at least try, and
 			// failing that, just take the user to the main page.
-			// Fun fact: the escapeLocalURL() call below used to use
+			// Fun fact: the getLocalURL() call below used to use
 			// $wgOut->getTitle()->getDBkey() but that returns 'GetCommentList'
 			// which is so wrong on so many different levels that I don't know
 			// where to begin...
@@ -1077,7 +1077,7 @@ class Comment extends ContextSource {
 				if( $comment['Comment_user_id'] != 0 ) {
 					$title = Title::makeTitle( NS_USER, $comment['Comment_Username'] );
 
-					$CommentPoster = '<a href="' . $title->escapeFullURL() .
+					$CommentPoster = '<a href="' . htmlspecialchars( $title->getFullURL() ) .
 						'" rel="nofollow">' . $comment['Comment_Username'] . '</a>';
 
 					$CommentReplyTo = $comment['Comment_Username'];
@@ -1164,7 +1164,7 @@ class Comment extends ContextSource {
 					$output .= '<div class="c-ignored-links">' . "\n";
 					$output .= "<a href=\"javascript:void(0);\" data-comment-id=\"{$comment['CommentID']}\">" .
 						wfMessage( 'comments-show-comment-link' )->plain() . '</a> | ';
-					$output .= "<a href=\"{$blockListTitle->escapeFullURL()}\">" .
+					$output .= '<a href="' . htmlspecialchars( $blockListTitle->getFullURL() ) .'">' .
 						wfMessage( 'comments-manage-blocklist-link' )->plain() . '</a>';
 					$output .= '</div>' . "\n";
 					$output .= '</div>' . "\n";
@@ -1244,7 +1244,7 @@ class Comment extends ContextSource {
 				$output .= $this->getCommentText( $comment['Comment_Text'] );
 				$output .= '</div>' . "\n";
 				$output .= '<div class="c-actions">' . "\n";
-				$output .= '<a href="' . $title->escapeFullURL() . "#comment-{$comment['CommentID']}\" rel=\"nofollow\">" .
+				$output .= '<a href="' . htmlspecialchars( $title->getFullURL() ) . "#comment-{$comment['CommentID']}\" rel=\"nofollow\">" .
 					wfMessage( 'comments-permalink' )->plain() . '</a> ';
 				if( $replyRow || $dlt ) {
 					$output .= "{$replyRow} {$dlt}" . "\n";
@@ -1292,8 +1292,8 @@ class Comment extends ContextSource {
 					$register_title = SpecialPage::getTitleFor( 'Userlogin', 'signup' );
 					$output .= '<div class="c-form-message">' . wfMessage(
 						'comments-anon-message',
-						$register_title->escapeFullURL(),
-						$login_title->escapeFullURL()
+						htmlspecialchars( $register_title->getFullURL() ),
+						htmlspecialchars( $login_title->getFullURL() )
 					)->text() . '</div>' . "\n";
 				}
 
