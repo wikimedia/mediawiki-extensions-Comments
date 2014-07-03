@@ -15,7 +15,7 @@
 	"comments-loading": "Завантаження…",
 	"comments-auto-refresher-enable": "Увімкнути автоновлення коментарів",
 	"comments-auto-refresher-pause": "Призупинити автооновлення коментарів",
-	"comments-reply-to": "Відповісти",
+	"comments-reply-to": "Відповісти {{GENDER:$2|користувачу|користувачці}} $1",
 	"comments-cancel-reply": "Скасувати",
 	"comments-block-warning-anon": "Ви дійсно бажаєте постійно ігнорувати коментарі від цього анонімного користувача (за IP-адресою)?",
 	"comments-block-warning-user": "Ви дісно хочете постійно ігнорувати усі коментарі {{GENDER:$1|користувача|користувачки}} $1?",
