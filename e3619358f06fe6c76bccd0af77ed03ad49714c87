@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_d850c2db",
+        "filename": "CommentClass.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1167,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-07-08T23:20:32Z",
+      "side": 1,
+      "message": "Does this work? I thought {} only supports variables or methods called on a variable holding an object. Not global functions.",
+      "revId": "e3619358f06fe6c76bccd0af77ed03ad49714c87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
