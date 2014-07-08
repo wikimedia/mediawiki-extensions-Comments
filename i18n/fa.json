@@ -8,7 +8,8 @@
 			"Omidh",
 			"Reza1615",
 			"Taha",
-			"پاناروما"
+			"پاناروما",
+			"Rtemis"
 		]
 	},
 	"comments-comment": "نظر",
@@ -18,7 +19,7 @@
 	"comments-loading": "در حال بارگذاری...",
 	"comments-auto-refresher-enable": "فعال‌کردن تازه‌کنندهٔ خودکار نظر",
 	"comments-auto-refresher-pause": "متوقف‌کردن تازه‌کنندهٔ خودکار نظر",
-	"comments-reply-to": "پاسخ به",
+	"comments-reply-to": "پاسخ به {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "لغو",
 	"comments-block-warning-anon": "آیا مطمئن هستید که می‌خواهید همهٔ نظرات را از این کاربر ناشناش برای همیشه (از طریق آدرس آی‌پی شان) نادیده بگیرید؟",
 	"comments-block-warning-user": "آیا مطمئنید می‌خواهید همهٔ نظرات از کاربر $1 را برای همیشه نادیده بگیرید؟",
