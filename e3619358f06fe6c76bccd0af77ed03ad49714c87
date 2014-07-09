@@ -16,6 +16,24 @@
       "revId": "e3619358f06fe6c76bccd0af77ed03ad49714c87",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_5cff1f63",
+        "filename": "CommentClass.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1167,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2014-07-09T17:00:38Z",
+      "side": 1,
+      "message": "changed",
+      "parentUuid": "8e28a382_d850c2db",
+      "revId": "e3619358f06fe6c76bccd0af77ed03ad49714c87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
