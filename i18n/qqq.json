@@ -7,7 +7,8 @@
 			"Purodha",
 			"Raymond",
 			"Shirayuki",
-			"Siebrand"
+			"Siebrand",
+			"Liuxinyu970226"
 		]
 	},
 	"comments-comment": "This message might be unused.\n{{Identical|Comment}}",
@@ -17,7 +18,7 @@
 	"comments-loading": "{{Identical|Loading}}",
 	"comments-auto-refresher-enable": "Auto-refresher is a feature where a page with the <code><nowiki><comments /></nowiki></code> tag is automatically refreshed for new comments.\n\nRefer to the [[mw:File:Comments.png|image]] for details.",
 	"comments-auto-refresher-pause": "Auto-refresher is a feature where a page with the <code><nowiki><comments /></nowiki></code> tag is automatically refreshed for new comments.\n\nRefer to the [[mw:File:Comments.png|image]] for details.",
-	"comments-reply-to": "This message contains the user's username whom you're about to reply to. For example, \"Reply to Jack Phoenix\".\n\nFollowed by the link {{msg-mw|Comments-cancel-reply}} and the \"Reply to user X\" form.\n\nParameters:\n* $1 - the user name to whom your are about to reply to\n* $2 - gender of that user",
+	"comments-reply-to": "This message contains the user's username whom you're about to reply to. For example, \"Reply to Jack Phoenix\".\n\nFollowed by the link {{msg-mw|Comments-cancel-reply}} and the \"Reply to user X\" form.\n\nParameters:\n* $1 - the user name to whom your are about to reply to\n* $2 - gender of that user\n{{Identical|Reply to}}",
 	"comments-cancel-reply": "Used as link text in JavaScript code.\n{{Identical|Cancel}}",
 	"comments-block-warning-anon": "{{doc-singularthey}}\nDisplayed in a JavaScript popup alert when the user is about to ignore the comments of an anonymous user.",
 	"comments-block-warning-user": "Displayed in a JavaScript pop-up alert when the user is about to ignore a registered user's comments.\n\nParameters:\n* $1 - the user name of the user whose comments we're about to ignore; can be used for GENDER",
