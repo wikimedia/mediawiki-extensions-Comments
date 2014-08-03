@@ -7,7 +7,8 @@
 			"TianyinLee",
 			"Yfdyh000",
 			"Liuxinyu970226",
-			"Mywood"
+			"Mywood",
+			"Impersonator 1"
 		]
 	},
 	"comments-comment": "评论",
@@ -59,7 +60,7 @@
 	"comments-time-minutes": "{{PLURAL:$1|1分钟|$1分钟}}",
 	"comments-time-seconds": "{{PLURAL:$1|1秒|$1秒}}",
 	"log-show-hide-comments": "$1评论日志",
-	"group-commentadmin": "评论管理员们",
+	"group-commentadmin": "评论管理员",
 	"group-commentadmin-member": "{{GENDER:$1|评论管理员}}",
 	"grouppage-commentadmin": "{{ns:project}}:评论管理员",
 	"right-comment": "提交评论",
