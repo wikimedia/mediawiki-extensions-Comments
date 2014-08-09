@@ -4,7 +4,8 @@
 			"Crt",
 			"Jack Phoenix <jack@countervandalism.net>",
 			"Nedergard",
-			"Nike"
+			"Nike",
+			"Pxos"
 		]
 	},
 	"comments-comment": "Kommentoi",
@@ -13,7 +14,7 @@
 	"comments-loading": "Ladataan...",
 	"comments-auto-refresher-enable": "Ota käyttöön kommenttien automaattinen päivitys",
 	"comments-auto-refresher-pause": "Pysäytä kommenttien automaattinen päivitys",
-	"comments-reply-to": "Vastaa käyttäjälle",
+	"comments-reply-to": "Vastaa käyttäjälle {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Peru",
 	"comments-block-warning-anon": "Oletko varma, että haluat lopullisesti jättää kaikki kommentit huomiotta tältä anonyymiltä käyttäjältä (IP-osoitteensa perusteella)?",
 	"comments-block-warning-user": "Oletko varma, että haluat lopullisesti jättää kaikki kommentit huomiotta käyttäjältä $1?",
@@ -38,7 +39,7 @@
 	"comments-ignore-no-users": "Sinulla ei ole yhtään käyttäjää huomioimattomuuslistallasi.",
 	"comments-ignore-remove-message": "Oletko varma, että haluat huomioida kommentit käyttäjältä <b>$1</b>?",
 	"comments-ignore-unblock": "Poista esto",
-	"comments-ignore-cancel": "Peru",
+	"comments-ignore-cancel": "Peruuta",
 	"comments-ignore-title": "Kommenttien huomioimattomuuslista",
 	"commentignorelist": "Kommenttien huomioimattomuuslista",
 	"comments-no-comments-of-day": "Ei päivän kommentteja.",
