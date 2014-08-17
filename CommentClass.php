@@ -15,67 +15,67 @@ class Comment extends ContextSource {
 	 * @var Integer: page ID (page.page_id) of the page where the <comments />
 	 *               tag is in
 	 */
-	var $PageID = 0;
+	public $PageID = 0;
 
 	/**
 	 * @var Integer: total amount of comments by distinct commenters that the
 	 *               current page has
 	 */
-	var $CommentTotal = 0;
+	public $CommentTotal = 0;
 
 	/**
 	 * @var String: text of the current comment
 	 */
-	var $CommentText = null;
+	public $CommentText = null;
 
-	var $CommentDate = null; // @todo FIXME/CHECKME: unused, remove this?
+	public $CommentDate = null; // @todo FIXME/CHECKME: unused, remove this?
 
 	/**
 	 * @var Integer: internal ID number (Comments.CommentID DB field) of the
 	 *               current comment that we're dealing with
 	 */
-	var $CommentID = 0;
+	public $CommentID = 0;
 
 	/**
 	 * @var Integer: ID of the parent comment, if this is a child comment
 	 */
-	var $CommentParentID = 0;
+	public $CommentParentID = 0;
 
-	var $CommentVote = 0;
+	public $CommentVote = 0;
 
 	/**
 	 * @var Integer: comment score (SUM() of all votes) of the current page
 	 */
-	var $CommentScore = 0;
+	public $CommentScore = 0;
 
 	/**
 	 * @var Integer: if this is _not_ 0, then the comments are ordered by their
 	 *               Comment_Score in descending order
 	 */
-	var $OrderBy = 0;
+	public $OrderBy = 0;
 
 	/**
 	 * @var Integer: maximum amount of comments shown per page before pagination
 	 *               is enabled; also used as the LIMIT for the SQL query
 	 */
-	var $Limit = 100;
+	public $Limit = 100;
 
-	var $PagerLimit = 9;
-	var $CurrentPagerPage = 0;
-	var $Allow = '';
-	var $Voting = '';
+	public $PagerLimit = 9;
+	public $CurrentPagerPage = 0;
+	public $Allow = '';
+	public $Voting = '';
 
 	/**
 	 * @var Boolean: allow positive (plus) votes?
 	 */
-	var $AllowPlus = true;
+	public $AllowPlus = true;
 
 	/**
 	 * @var Boolean: allow negative (minus) votes?
 	 */
-	var $AllowMinus = true;
+	public $AllowMinus = true;
 
-	var $PAGE_QUERY = 'cpage';
+	public $PAGE_QUERY = 'cpage';
 
 	/**
 	 * The following four functions are borrowed
