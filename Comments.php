@@ -24,7 +24,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'Comments',
-	'version' => '3.1.0',
+	'version' => '3.1.1',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix' ),
 	'descriptionmsg' => 'comments-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
@@ -65,20 +65,17 @@ $wgGroupPermissions['autoconfirmed']['commentlinks'] = true;
 // Set up the new special pages
 $dir = __DIR__ . '/';
 $wgMessagesDirs['Comments'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['Comments'] = $dir . 'Comments.i18n.php';
-$wgExtensionMessagesFiles['CommentsMagic'] = $dir . 'Comments.i18n.magic.php';
-$wgAutoloadClasses['Comment'] = $dir . 'CommentClass.php';
-$wgAutoloadClasses['CommentIgnoreList'] = $dir . 'SpecialCommentIgnoreList.php';
-$wgAutoloadClasses['CommentListGet'] = $dir . 'CommentAction.php';
+$wgExtensionMessagesFiles['CommentsMagic'] = __DIR__ . '/Comments.i18n.magic.php';
+$wgAutoloadClasses['Comment'] = __DIR__ . '/CommentClass.php';
+$wgAutoloadClasses['CommentIgnoreList'] = __DIR__ . '/SpecialCommentIgnoreList.php';
+$wgAutoloadClasses['CommentListGet'] = __DIR__ . '/CommentAction.php';
 $wgSpecialPages['CommentIgnoreList'] = 'CommentIgnoreList';
 $wgSpecialPages['CommentListGet'] = 'CommentListGet';
-// Special page group for MW 1.13+
-$wgSpecialPageGroups['CommentIgnoreList'] = 'users';
 
 // Load the AJAX functions required by this extension
-require_once( $dir . 'Comments_AjaxFunctions.php' );
+require_once( __DIR__ . '/Comments_AjaxFunctions.php' );
 
-$wgAutoloadClasses['CommentsLogFormatter'] = $dir . 'CommentsLogFormatter.php';
+$wgAutoloadClasses['CommentsLogFormatter'] = __DIR__ . '/CommentsLogFormatter.php';
 // Add a new log type
 $wgLogTypes[] = 'comments';
 // Default log formatter doesn't support wikilinks (?!?) so we have to have
@@ -95,7 +92,7 @@ $wgFilterLogTypes['comments'] = true;
 $wgCommentsInRecentChanges = false;
 
 // Hooked functions
-$wgAutoloadClasses['CommentsHooks'] = $dir . 'CommentsHooks.php';
+$wgAutoloadClasses['CommentsHooks'] = __DIR__ . '/CommentsHooks.php';
 $wgHooks['ParserFirstCallInit'][] = 'CommentsHooks::onParserFirstCallInit';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'CommentsHooks::onLoadExtensionSchemaUpdates';
 $wgHooks['RenameUserSQL'][] = 'CommentsHooks::onRenameUserSQL';
@@ -105,5 +102,5 @@ $wgHooks['MagicWordwgVariableIDs'][] = 'NumberOfComments::registerNumberOfCommen
 $wgHooks['ParserGetVariableValueSwitch'][] = 'NumberOfComments::getNumberOfCommentsMagic';
 
 // NumberOfComments magic word setup
-$wgAutoloadClasses['NumberOfComments'] = $dir . 'NumberOfComments.php';
-$wgExtensionMessagesFiles['NumberOfCommentsMagic'] = $dir . 'Comments.i18n.magic.php';
+$wgAutoloadClasses['NumberOfComments'] = __DIR__ . '/NumberOfComments.php';
+$wgExtensionMessagesFiles['NumberOfCommentsMagic'] = __DIR__ . '/Comments.i18n.magic.php';
