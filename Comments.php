@@ -7,7 +7,7 @@
  * @author David Pean <david.pean@gmail.com>
  * @author Misza <misza1313[ at ]gmail[ dot ]com>
  * @author Jack Phoenix <jack@countervandalism.net>
- * @copyright Copyright © 2008-2013 David Pean, Misza and Jack Phoenix
+ * @copyright Copyright © 2008-2014 David Pean, Misza and Jack Phoenix
  * @link https://www.mediawiki.org/wiki/Extension:Comments Documentation
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
@@ -31,9 +31,15 @@ $wgExtensionCredits['parserhook'][] = array(
 );
 
 // ResourceLoader support for MediaWiki 1.17+
-$wgResourceModules['ext.comments'] = array(
-	'scripts' => 'Comment.js',
+$wgResourceModules['ext.comments.css'] = array(
 	'styles' => 'Comments.css',
+	'localBasePath' => __DIR__,
+	'remoteExtPath' => 'Comments',
+	'position' => 'top' // available since r85616
+);
+
+$wgResourceModules['ext.comments.js'] = array(
+	'scripts' => 'Comment.js',
 	'messages' => array(
 		'comments-voted-label', 'comments-loading',
 		'comments-auto-refresher-pause', 'comments-auto-refresher-enable',
@@ -42,8 +48,7 @@ $wgResourceModules['ext.comments'] = array(
 		'comments-delete-warning'
 	),
 	'localBasePath' => __DIR__,
-	'remoteExtPath' => 'Comments',
-	'position' => 'top' // available since r85616
+	'remoteExtPath' => 'Comments'
 );
 
 # Configuration variables

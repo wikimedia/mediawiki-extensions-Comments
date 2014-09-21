@@ -48,7 +48,8 @@ class CommentsHooks {
 		}
 
 		// Add required CSS & JS via ResourceLoader
-		$wgOut->addModules( 'ext.comments' );
+		$wgOut->addModuleStyles( 'ext.comments.css' );
+		$wgOut->addModules( 'ext.comments.js' );
 
 		// Parse arguments
 		// The preg_match() lines here are to support the old-style way of
