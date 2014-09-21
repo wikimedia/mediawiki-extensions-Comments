@@ -97,12 +97,12 @@ class Comment extends ContextSource {
 
 	static function getTimeOffset( $time, $timeabrv, $timename ) {
 		$timeStr = ''; // misza: initialize variables, DUMB FUCKS!
-		if( $time[$timeabrv] > 0 ) {
+		if ( $time[$timeabrv] > 0 ) {
 			// Give grep a chance to find the usages:
 			// comments-time-days, comments-time-hours, comments-time-minutes, comments-time-seconds, comments-time-months
 			$timeStr = wfMessage( "comments-time-{$timename}", $time[$timeabrv] )->parse();
 		}
-		if( $timeStr ) {
+		if ( $timeStr ) {
 			$timeStr .= ' ';
 		}
 		return $timeStr;
@@ -121,15 +121,15 @@ class Comment extends ContextSource {
 			$timeStr = $timeStrMo;
 		} else {
 			$timeStr = $timeStrD;
-			if( $timeStr < 2 ) {
+			if ( $timeStr < 2 ) {
 				$timeStr .= $timeStrH;
 				$timeStr .= $timeStrM;
-				if( !$timeStr ) {
+				if ( !$timeStr ) {
 					$timeStr .= $timeStrS;
 				}
 			}
 		}
-		if( !$timeStr ) {
+		if ( !$timeStr ) {
 			$timeStr = wfMessage( 'comments-time-seconds', 1 )->parse();
 		}
 		return $timeStr;
@@ -139,8 +139,8 @@ class Comment extends ContextSource {
 	 * Makes sure that link text is not too long by changing too long links to
 	 * <a href=#>http://www.abc....xyz.html</a>
 	 *
-	 * @param $matches Array
-	 * @return String: shortened URL
+	 * @param array $matches
+	 * @return string Shortened URL
 	 */
 	public static function cutCommentLinkText( $matches ) {
 		$tagOpen = $matches[1];
@@ -150,7 +150,7 @@ class Comment extends ContextSource {
 		$image = preg_match( "/<img src=/i", $linkText );
 		$isURL = ( preg_match( '%^(?:http|https|ftp)://(?:www\.)?.*$%i', $linkText ) ? true : false );
 
-		if( $isURL && !$image && strlen( $linkText ) > 30 ) {
+		if ( $isURL && !$image && strlen( $linkText ) > 30 ) {
 			$start = substr( $linkText, 0, ( 30 / 2 ) - 3 );
 			$end = substr( $linkText, strlen( $linkText ) - ( 30 / 2 ) + 3, ( 30 / 2 ) - 3 );
 			$linkText = trim( $start ) . wfMsg( 'ellipsis' ) . trim( $end );
@@ -161,7 +161,7 @@ class Comment extends ContextSource {
 	/**
 	 * Constructor - set the page ID
 	 *
-	 * @param int $pageID Integer: ID number of the current page
+	 * @param int $pageID ID number of the current page
 	 * @param IContextSource $context
 	 */
 	public function __construct( $pageID, $context = null ) {
@@ -184,22 +184,22 @@ class Comment extends ContextSource {
 		$comment_text = trim( str_replace( '&quot;', "'", $comment_text ) );
 		$comment_text_parts = explode( "\n", $comment_text );
 		$comment_text_fix = '';
-		foreach( $comment_text_parts as $part ) {
+		foreach ( $comment_text_parts as $part ) {
 			$comment_text_fix .= ( ( $comment_text_fix ) ? "\n" : '' ) . trim( $part );
 		}
 
-		if( $this->getTitle()->getArticleID() > 0 ) {
+		if ( $this->getTitle()->getArticleID() > 0 ) {
 			$comment_text = $wgParser->recursiveTagParse( $comment_text_fix );
 		} else {
 			$comment_text = $this->getOutput()->parse( $comment_text_fix );
 		}
 
 		// really bad hack because we want to parse=firstline, but don't want wrapping <p> tags
-		if( substr( $comment_text, 0 , 3 ) == '<p>' ) {
+		if ( substr( $comment_text, 0 , 3 ) == '<p>' ) {
 			$comment_text = substr( $comment_text, 3 );
 		}
 
-		if( substr( $comment_text, strlen( $comment_text ) -4 , 4 ) == '</p>' ) {
+		if ( substr( $comment_text, strlen( $comment_text ) -4 , 4 ) == '</p>' ) {
 			$comment_text = substr( $comment_text, 0, strlen( $comment_text ) -4 );
 		}
 
@@ -217,7 +217,7 @@ class Comment extends ContextSource {
 	/**
 	 * Set comment ID to $commentID.
 	 *
-	 * @param $commentID Integer: comment ID
+	 * @param int $commentID Comment ID
 	 */
 	function setCommentID( $commentID ) {
 		$this->CommentID = intval( $commentID );
@@ -227,29 +227,29 @@ class Comment extends ContextSource {
 	 * Set voting either totally off, or disallow "thumbs down" or disallow
 	 * "thumbs up".
 	 *
-	 * @param $voting String: 'OFF', 'PLUS' or 'MINUS' (will be strtoupper()ed)
+	 * @param string $voting 'OFF', 'PLUS' or 'MINUS' (will be strtoupper()ed)
 	 */
 	function setVoting( $voting ) {
 		$this->Voting = $voting;
 		$voting = strtoupper( $voting );
 
-		if( $voting == 'OFF' ) {
+		if ( $voting == 'OFF' ) {
 			$this->AllowMinus = false;
 			$this->AllowPlus = false;
 		}
-		if( $voting == 'PLUS' ) {
+		if ( $voting == 'PLUS' ) {
 			$this->AllowMinus = false;
 		}
-		if( $voting == 'MINUS' ) {
+		if ( $voting == 'MINUS' ) {
 			$this->AllowPlus = false;
 		}
 	}
 
 	/**
-	 * @param $parentID Integer: parent ID number
+	 * @param int $parentID Parent ID number
 	 */
 	function setCommentParentID( $parentID ) {
-		if( $parentID ) {
+		if ( $parentID ) {
 			$this->CommentParentID = intval( $parentID );
 		} else {
 			$this->CommentParentID = 0;
@@ -259,7 +259,7 @@ class Comment extends ContextSource {
 	/**
 	 * Sets the list of users who are allowed to comment.
 	 *
-	 * @param $allow String: list of users allowed to comment
+	 * @param string $allow List of users allowed to comment
 	 */
 	function setAllow( $allow ) {
 		$this->Allow = $allow;
@@ -268,12 +268,12 @@ class Comment extends ContextSource {
 	/**
 	 * Sets the value of $name to boolean true/false.
 	 *
-	 * @param $name String: variable name
-	 * @param $value String: 'YES', 1 or 'NO' or 0
+	 * @param string $name Variable name
+	 * @param string $value 'YES', 1 or 'NO' or 0
 	 */
 	function setBool( $name, $value ) {
-		if( $value ) {
-			if( strtoupper( $value ) == 'YES' || strtoupper( $value ) == 1 ) {
+		if ( $value ) {
+			if ( strtoupper( $value ) == 'YES' || strtoupper( $value ) == 1 ) {
 				$this->$name = 1;
 			} else {
 				$this->$name = 0;
@@ -284,7 +284,7 @@ class Comment extends ContextSource {
 	/**
 	 * Counts the amount of comments the current page has.
 	 *
-	 * @return Integer: amount of comments
+	 * @return int Amount of comments
 	 */
 	function count() {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -303,7 +303,7 @@ class Comment extends ContextSource {
 	/**
 	 * Gets the total amount of comments
 	 *
-	 * @return Integer
+	 * @return int
 	 */
 	function countTotal() {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -324,8 +324,8 @@ class Comment extends ContextSource {
 	 * Simple spam check -- checks the supplied text against MediaWiki's
 	 * built-in regex-based spam filters
 	 *
-	 * @param $text String: text to check for spam patterns
-	 * @return Boolean: true if it contains spam, otherwise false
+	 * @param string $text Text to check for spam patterns
+	 * @return bool True if it contains spam, otherwise false
 	 */
 	public static function isSpam( $text ) {
 		global $wgSpamRegex, $wgSummarySpamRegex;
@@ -359,8 +359,8 @@ class Comment extends ContextSource {
 	/**
 	 * Checks the supplied text for links
 	 *
-	 * @param $text String: text to check
-	 * @return Boolean: true if it contains links, otherwise false
+	 * @param string $text Text to check
+	 * @return bool True if it contains links, otherwise false
 	 */
 	public static function haveLinks( $text ) {
 		$linkPatterns = array(
@@ -425,7 +425,7 @@ class Comment extends ContextSource {
 	/**
 	 * Gets the score for the comments from the database table Comments_Vote
 	 *
-	 * @return Integer
+	 * @return int
 	 */
 	function getCommentScore() {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -444,8 +444,8 @@ class Comment extends ContextSource {
 	/**
 	 * Gets the vote count for the comments from the database table Comments_Vote
 	 *
-	 * @param $vote Integer: 1 for positive votes, -1 for negative votes
-	 * @return Integer
+	 * @param int $vote 1 for positive votes, -1 for negative votes
+	 * @return int
 	 */
 	function getCommentVoteCount( $vote ) {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -467,7 +467,7 @@ class Comment extends ContextSource {
 	/**
 	 * Gets the ID number of the latest comment for the current page.
 	 *
-	 * @return Integer
+	 * @return int
 	 */
 	function getLatestCommentID() {
 		$LatestCommentID = 0; // Added by misza to fix this retarded function
@@ -491,7 +491,7 @@ class Comment extends ContextSource {
 	function addVote() {
 		global $wgMemc;
 		$dbw = wfGetDB( DB_MASTER );
-		if( $this->UserAlreadyVoted() == false ) {
+		if ( $this->UserAlreadyVoted() == false ) {
 			wfSuppressWarnings();
 			$commentDate = date( 'Y-m-d H:i:s' );
 			wfRestoreWarnings();
@@ -520,14 +520,14 @@ class Comment extends ContextSource {
 			// should perform better than deleting cache completely since Votes happen more frequently
 			$key = wfMemcKey( 'comment', 'list', $this->PageID );
 			$comments = $wgMemc->get( $key );
-			if( $comments ) {
-				foreach( $comments as &$comment ) {
-					if( $comment['CommentID'] == $this->CommentID ) {
+			if ( $comments ) {
+				foreach ( $comments as &$comment ) {
+					if ( $comment['CommentID'] == $this->CommentID ) {
 						$comment['Comment_Score'] = $comment['Comment_Score'] + $this->CommentVote;
-						if( $this->CommentVote == 1 ) {
+						if ( $this->CommentVote == 1 ) {
 							$comment['CommentVotePlus'] = $comment['CommentVotePlus'] + 1;
 						}
-						if( $this->CommentVote == -1 ) {
+						if ( $this->CommentVote == -1 ) {
 							$comment['CommentVoteMinus'] = $comment['CommentVoteMinus'] + 1;
 						}
 					}
@@ -556,7 +556,7 @@ class Comment extends ContextSource {
 	/**
 	 * Checks if the user has already voted for a comment.
 	 *
-	 * @return Boolean: true if user has voted, otherwise false
+	 * @return bool True if user has voted, otherwise false
 	 */
 	function UserAlreadyVoted() {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -577,7 +577,7 @@ class Comment extends ContextSource {
 	}
 
 	function setCommentVote( $vote ) {
-		if( $vote < 0 ) {
+		if ( $vote < 0 ) {
 			$vote = -1;
 		} else {
 			$vote = 1;
@@ -586,8 +586,8 @@ class Comment extends ContextSource {
 	}
 
 	function setOrderBy( $order ) {
-		if( is_numeric( $order ) ) {
-			if( $order == 0 ) {
+		if ( is_numeric( $order ) ) {
+			if ( $order == 0 ) {
 				$order = 0;
 			} else {
 				$order = 1;
@@ -608,7 +608,7 @@ class Comment extends ContextSource {
 		$wgMemc->delete( wfMemcKey( 'comment', 'list', $this->PageID ) );
 
 		$pageTitle = Title::newFromID( $this->PageID );
-		if( is_object( $pageTitle ) ) {
+		if ( is_object( $pageTitle ) ) {
 			$pageTitle->invalidateCache();
 			$pageTitle->purgeSquid();
 		}
@@ -650,15 +650,15 @@ class Comment extends ContextSource {
 	}
 
 	public static function sortCommentList( $x, $y ) {
-		if( $x['thread'] == $y['thread'] ) {
-			if( $x['timestamp'] == $y['timestamp'] ) {
+		if ( $x['thread'] == $y['thread'] ) {
+			if ( $x['timestamp'] == $y['timestamp'] ) {
 				return 0;
-			} elseif( $x['timestamp'] < $y['timestamp'] ) {
+			} elseif ( $x['timestamp'] < $y['timestamp'] ) {
 				return -1;
 			} else {
 				return 1;
 			}
-		} elseif( $x['thread'] < $y['thread'] ) {
+		} elseif ( $x['thread'] < $y['thread'] ) {
 			return -1;
 		} else {
 			return 1;
@@ -668,7 +668,7 @@ class Comment extends ContextSource {
 	/**
 	 * Check what pages the current user has voted.
 	 *
-	 * @return Array: array of comment ID numbers
+	 * @return array Array of comment ID numbers
 	 */
 	public function getCommentVotedList() {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -686,7 +686,7 @@ class Comment extends ContextSource {
 		);
 
 		$voted = array();
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$voted[] = $row->CommentID;
 		}
 
@@ -696,7 +696,7 @@ class Comment extends ContextSource {
 	/**
 	 * Fetches all comments, called by display().
 	 *
-	 * @return Array: array containing every possible bit of information about
+	 * @return array Array containing every possible bit of information about
 	 *                a comment, including score, timestamp and more
 	 */
 	public function getCommentList( $page ) {
@@ -720,12 +720,12 @@ class Comment extends ContextSource {
 		);
 		$params['LIMIT'] = $this->Limit;
 		$params['OFFSET'] = ( $page > 0 ) ? ( ( $page - 1 ) * $this->Limit ) : 0;
-		if( $this->OrderBy != 0 ) {
+		if ( $this->OrderBy != 0 ) {
 			$params['ORDER BY'] = 'Comment_Score DESC';
 		}
 
 		// If SocialProfile is installed, query the user_stats table too.
-		if(
+		if (
 			$dbr->tableExists( 'user_stats' ) &&
 			class_exists( 'UserProfile' )
 		) {
@@ -750,8 +750,8 @@ class Comment extends ContextSource {
 
 		$comments = array();
 
-		foreach( $res as $row ) {
-			if( $row->Comment_Parent_ID == 0 ) {
+		foreach ( $res as $row ) {
+			if ( $row->Comment_Parent_ID == 0 ) {
 				$thread = $row->CommentID;
 			} else {
 				$thread = $row->Comment_Parent_ID;
@@ -767,14 +767,14 @@ class Comment extends ContextSource {
 				'Comment_Score' => $row->Comment_Score,
 				'CommentVotePlus' => $row->CommentVotePlus,
 				'CommentVoteMinus' => $row->CommentVoteMinus,
-				#'AlreadyVoted' => $row->AlreadyVoted, // misza: turned off - no such crap
+				# 'AlreadyVoted' => $row->AlreadyVoted, // misza: turned off - no such crap
 				'Comment_Parent_ID' => $row->Comment_Parent_ID,
 				'thread' => $thread,
 				'timestamp' => $row->timestamp
 			);
 		}
 
-		if( $this->OrderBy == 0 ) {
+		if ( $this->OrderBy == 0 ) {
 			usort( $comments, array( 'Comment', 'sortCommentList' ) );
 		}
 
@@ -784,7 +784,7 @@ class Comment extends ContextSource {
 	/**
 	 * Displays the "Sort by X" form and a link to auto-refresh comments
 	 *
-	 * @return HTML
+	 * @return string HTML
 	 */
 	function displayOrderForm() {
 		$output = '<div class="c-order">
@@ -816,7 +816,7 @@ class Comment extends ContextSource {
 		global $wgExtensionAssetsPath;
 
 		// Blocked users cannot vote, obviously
-		if( $this->getUser()->isBlocked() ) {
+		if ( $this->getUser()->isBlocked() ) {
 			return '';
 		}
 		if ( !$this->getUser()->isAllowed( 'comment' ) ) {
@@ -850,7 +850,7 @@ class Comment extends ContextSource {
 		}
 
 		$imagePath = $wgExtensionAssetsPath . '/Comments/images';
-		if( $voteType == 1 ) {
+		if ( $voteType == 1 ) {
 			$voteLink .= "<img src=\"{$imagePath}/thumbs-up.gif\" border=\"0\" alt=\"+\" /></a>";
 		} else {
 			$voteLink .= "<img src=\"{$imagePath}/thumbs-down.gif\" border=\"0\" alt=\"-\" /></a>";
@@ -862,8 +862,8 @@ class Comment extends ContextSource {
 	/**
 	 * Display pager for the current page.
 	 *
-	 * @param $pagerCurrent Integer: page we are currently paged to
-	 * @param $pagesCount Integer: the maximum page number
+	 * @param int $pagerCurrent Page we are currently paged to
+	 * @param int $pagesCount The maximum page number
 	 */
 	function displayPager( $pagerCurrent, $pagesCount ) {
 		// Middle is used to "center" pages around the current page.
@@ -995,7 +995,7 @@ class Comment extends ContextSource {
 	}
 
 	/**
-	 * @return Integer: the page we are currently paged to
+	 * @return int The page we are currently paged to
 	 */
 	function getCurrentPagerPage() {
 		if ( $this->CurrentPagerPage == 0 ) {
@@ -1033,7 +1033,7 @@ class Comment extends ContextSource {
 		$key = wfMemcKey( 'comment', 'list', $this->PageID );
 		$data = $wgMemc->get( $key );
 
-		if( !$data ) {
+		if ( !$data ) {
 			wfDebug( "Loading comments for page {$this->PageID} from DB\n" );
 			$comments = $this->getCommentList( $pagerCurrent );
 			$wgMemc->set( $key, $comments );
@@ -1044,11 +1044,11 @@ class Comment extends ContextSource {
 
 		// Try cache for voted list for this user
 		$voted = array();
-		if( $this->getUser()->isLoggedIn() ) {
+		if ( $this->getUser()->isLoggedIn() ) {
 			$key = wfMemcKey( 'comment', 'voted', $this->PageID, 'user_id', $this->getUser()->getID() );
 			$data = $wgMemc->get( $key );
 
-			if( !$data ) {
+			if ( !$data ) {
 				$voted = $this->getCommentVotedList();
 				$wgMemc->set( $key, $voted );
 			} else {
@@ -1059,22 +1059,22 @@ class Comment extends ContextSource {
 
 		// Load complete blocked list for logged in user so they don't see their comments
 		$block_list = array();
-		if( $this->getUser()->getID() != 0 ) {
+		if ( $this->getUser()->getID() != 0 ) {
 			$block_list = $this->getBlockList( $this->getUser()->getId() );
 		}
 
 		$AFCounter = 1;
 		$AFBucket = array();
-		if( $comments ) {
+		if ( $comments ) {
 			$pager = $this->displayPager( $pagerCurrent, $pagesCount );
 			$output .= $pager;
 			$output .= '<a id="cfirst" name="cfirst" rel="nofollow"></a>';
-			foreach( $comments as $comment ) {
+			foreach ( $comments as $comment ) {
 				$CommentScore = $comment['Comment_Score'];
 
 				$CommentPosterLevel = '';
 
-				if( $comment['Comment_user_id'] != 0 ) {
+				if ( $comment['Comment_user_id'] != 0 ) {
 					$title = Title::makeTitle( NS_USER, $comment['Comment_Username'] );
 
 					$CommentPoster = '<a href="' . htmlspecialchars( $title->getFullURL() ) .
@@ -1082,7 +1082,7 @@ class Comment extends ContextSource {
 
 					$CommentReplyTo = $comment['Comment_Username'];
 
-					if( $wgUserLevels && class_exists( 'UserLevel' ) ) {
+					if ( $wgUserLevels && class_exists( 'UserLevel' ) ) {
 						$user_level = new UserLevel( $comment['Comment_user_points'] );
 						$CommentPosterLevel = "{$user_level->getLevelName()}";
 					}
@@ -1090,7 +1090,7 @@ class Comment extends ContextSource {
 					$user = User::newFromId( $comment['Comment_user_id'] );
 					$CommentReplyToGender = $user->getOption( 'gender', 'unknown' );
 				} else {
-					if( !array_key_exists( $comment['Comment_Username'], $AFBucket ) ) {
+					if ( !array_key_exists( $comment['Comment_Username'], $AFBucket ) ) {
 						$AFBucket[$comment['Comment_Username']] = $AFCounter;
 						$AFCounter++;
 					}
@@ -1104,8 +1104,8 @@ class Comment extends ContextSource {
 				// Comment delete button for privileged users
 				$dlt = '';
 
-				if( $this->getUser()->isAllowed( 'commentadmin' ) ) {
-					//$dlt = " | <span class=\"c-delete\"><a href=\"javascript:document.commentform.commentid.value={$comment['CommentID']};document.commentform.submit();\">" .
+				if ( $this->getUser()->isAllowed( 'commentadmin' ) ) {
+					// $dlt = " | <span class=\"c-delete\"><a href=\"javascript:document.commentform.commentid.value={$comment['CommentID']};document.commentform.submit();\">" .
 					$dlt = ' | <span class="c-delete">' .
 						'<a href="javascript:void(0);" rel="nofollow" class="comment-delete-link" data-comment-id="' .
 							$comment['CommentID'] . '">' .
@@ -1115,8 +1115,8 @@ class Comment extends ContextSource {
 				// Reply Link (does not appear on child comments)
 				$replyRow = '';
 				if ( $this->getUser()->isAllowed( 'comment' ) ) {
-					if( $comment['Comment_Parent_ID'] == 0 ) {
-						if( $replyRow ) {
+					if ( $comment['Comment_Parent_ID'] == 0 ) {
+						if ( $replyRow ) {
 							$replyRow .= wfMessage( 'pipe-separator' )->plain();
 						}
 						$replyRow .= " | <a href=\"#end\" rel=\"nofollow\" class=\"comments-reply-to\" data-comment-id=\"{$comment['CommentID']}\" data-comments-safe-username=\"" .
@@ -1126,7 +1126,7 @@ class Comment extends ContextSource {
 					}
 				}
 
-				if( $comment['Comment_Parent_ID'] == 0 ) {
+				if ( $comment['Comment_Parent_ID'] == 0 ) {
 					$container_class = 'full';
 					$comment_class = 'f-message';
 				} else {
@@ -1138,7 +1138,7 @@ class Comment extends ContextSource {
 				// that are already not in your block list
 				$block_link = '';
 
-				if(
+				if (
 					$this->getUser()->getID() != 0 && $this->getUser()->getID() != $comment['Comment_user_id'] &&
 					!( in_array( $comment['Comment_Username'], $block_list ) )
 				) {
@@ -1154,7 +1154,7 @@ class Comment extends ContextSource {
 				// along with a link to show the individual comment
 				$hide_comment_style = '';
 
-				if( in_array( $comment['Comment_Username'], $block_list ) ) {
+				if ( in_array( $comment['Comment_Username'], $block_list ) ) {
 					$hide_comment_style = 'display:none;';
 
 					$blockListTitle = SpecialPage::getTitleFor( 'CommentIgnoreList' );
@@ -1164,7 +1164,7 @@ class Comment extends ContextSource {
 					$output .= '<div class="c-ignored-links">' . "\n";
 					$output .= "<a href=\"javascript:void(0);\" data-comment-id=\"{$comment['CommentID']}\">" .
 						wfMessage( 'comments-show-comment-link' )->plain() . '</a> | ';
-					$output .= '<a href="' . htmlspecialchars( $blockListTitle->getFullURL() ) .'">' .
+					$output .= '<a href="' . htmlspecialchars( $blockListTitle->getFullURL() ) . '">' .
 						wfMessage( 'comments-manage-blocklist-link' )->plain() . '</a>';
 					$output .= '</div>' . "\n";
 					$output .= '</div>' . "\n";
@@ -1176,7 +1176,7 @@ class Comment extends ContextSource {
 				$avatar_img = '<img src="' . $wgCommentsDefaultAvatar . '" alt="" border="0" />';
 				// If SocialProfile *is* enabled, then use its wAvatar class
 				// to get the avatars for each commenter
-				if( class_exists( 'wAvatar' ) ) {
+				if ( class_exists( 'wAvatar' ) ) {
 					$avatar = new wAvatar( $comment['Comment_user_id'], 'ml' );
 					$avatar_img = $avatar->getAvatarURL() . "\n";
 				}
@@ -1200,23 +1200,23 @@ class Comment extends ContextSource {
 
 				$output .= '<div class="c-score">' . "\n";
 
-				if( $this->AllowMinus == true || $this->AllowPlus == true ) {
+				if ( $this->AllowMinus == true || $this->AllowPlus == true ) {
 					$output .= '<span class="c-score-title">' .
 						wfMessage( 'comments-score-text' )->plain() .
 						" <span id=\"Comment{$comment['CommentID']}\">{$CommentScore}</span></span>";
 
 					// Voting is possible only when database is unlocked
-					if( !wfReadOnly() ) {
-						if( !in_array( $comment['CommentID'], $voted ) ) {
+					if ( !wfReadOnly() ) {
+						if ( !in_array( $comment['CommentID'], $voted ) ) {
 							// You can only vote for other people's comments,
 							// not for your own
-							if( $this->getUser()->getName() != $comment['Comment_Username'] ) {
+							if ( $this->getUser()->getName() != $comment['Comment_Username'] ) {
 								$output .= "<span id=\"CommentBtn{$comment['CommentID']}\">";
-								if( $this->AllowPlus == true ) {
+								if ( $this->AllowPlus == true ) {
 									$output .= $this->getVoteLink( $comment['CommentID'], 1 );
 								}
 
-								if( $this->AllowMinus == true ) {
+								if ( $this->AllowMinus == true ) {
 									$output .= $this->getVoteLink( $comment['CommentID'], -1 );
 								}
 								$output .= '</span>';
@@ -1246,7 +1246,7 @@ class Comment extends ContextSource {
 				$output .= '<div class="c-actions">' . "\n";
 				$output .= '<a href="' . htmlspecialchars( $title->getFullURL() ) . "#comment-{$comment['CommentID']}\" rel=\"nofollow\">" .
 					wfMessage( 'comments-permalink' )->plain() . '</a> ';
-				if( $replyRow || $dlt ) {
+				if ( $replyRow || $dlt ) {
 					$output .= "{$replyRow} {$dlt}" . "\n";
 				}
 				$output .= '</div>' . "\n";
@@ -1263,12 +1263,12 @@ class Comment extends ContextSource {
 	/**
 	 * Displays the form for adding new comments
 	 *
-	 * @return $output Mixed: HTML output
+	 * @return string HTML output
 	 */
 	function displayForm() {
 		$output = '<form action="" method="post" name="commentform">' . "\n";
 
-		if( $this->Allow ) {
+		if ( $this->Allow ) {
 			$pos = strpos(
 				strtoupper( addslashes( $this->Allow ) ),
 				strtoupper( addslashes( $this->getUser()->getName() ) )
@@ -1276,13 +1276,13 @@ class Comment extends ContextSource {
 		}
 
 		// 'comment' user right is required to add new comments
-		if( !$this->getUser()->isAllowed( 'comment' ) ) {
+		if ( !$this->getUser()->isAllowed( 'comment' ) ) {
 			$output .= wfMessage( 'comments-not-allowed' )->parse();
 		} else {
 			// Blocked users can't add new comments under any conditions...
 			// and maybe there's a list of users who should be allowed to post
 			// comments
-			if( $this->getUser()->isBlocked() == false && ( $this->Allow == '' || $pos !== false ) ) {
+			if ( $this->getUser()->isBlocked() == false && ( $this->Allow == '' || $pos !== false ) ) {
 				$output .= '<div class="c-form-title">' .
 					wfMessage( 'comments-submit' )->plain() . '</div>' . "\n";
 				$output .= '<div id="replyto" class="c-form-reply-to"></div>' . "\n";
@@ -1316,8 +1316,8 @@ class Comment extends ContextSource {
 	/**
 	 * Blocks comments from a user
 	 *
-	 * @param $userId Integer: user ID of the guy whose comments we want to block
-	 * @param $userName Mixed: user name of the same guy
+	 * @param int $userId User ID of the guy whose comments we want to block
+	 * @param mixed $userName User name of the same guy
 	 */
 	public function blockUser( $userId, $userName ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -1342,8 +1342,8 @@ class Comment extends ContextSource {
 	/**
 	 * Fetches the list of blocked users from the database
 	 *
-	 * @param $userId Integer: user ID for whom we're getting the blocks(?)
-	 * @return Array: list of comment-blocked users
+	 * @param int $userId User ID for whom we're getting the blocks(?)
+	 * @return array List of comment-blocked users
 	 */
 	static function getBlockList( $userId ) {
 		$blockList = array();
@@ -1354,7 +1354,7 @@ class Comment extends ContextSource {
 			array( 'cb_user_id' => $userId ),
 			__METHOD__
 		);
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$blockList[] = $row->cb_user_name_blocked;
 		}
 		return $blockList;
@@ -1381,8 +1381,8 @@ class Comment extends ContextSource {
 	/**
 	 * Deletes a user from your personal comment-block list.
 	 *
-	 * @param $userId Integer: your user ID
-	 * @param $userIdBlocked Integer: user ID of the blocked user
+	 * @param int $userId Your user ID
+	 * @param int $userIdBlocked User ID of the blocked user
 	 */
 	public function deleteBlock( $userId, $userIdBlocked ) {
 		$dbw = wfGetDB( DB_MASTER );

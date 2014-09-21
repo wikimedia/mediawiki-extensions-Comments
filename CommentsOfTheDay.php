@@ -5,7 +5,7 @@
  *
  * @file
  * @ingroup Extensions
- * @date 28 July 2013
+ * @date 21 September 2014
  */
 if ( !defined( 'MEDIAWIKI' ) ) {
 	die();
@@ -16,8 +16,8 @@ $wgHooks['ParserFirstCallInit'][] = 'wfCommentsOfTheDay';
 /**
  * Register the new <commentsoftheday /> parser hook with the Parser.
  *
- * @param $parser Parser: instance of Parser (not necessarily $wgParser)
- * @return Boolean: true
+ * @param Parser $parser Instance of Parser
+ * @return bool
  */
 function wfCommentsOfTheDay( &$parser ) {
 	$parser->setHook( 'commentsoftheday', 'getCommentsOfTheDay' );
@@ -27,7 +27,7 @@ function wfCommentsOfTheDay( &$parser ) {
 /**
  * Get comments of the day -- five newest comments within the last 24 hours
  *
- * @return String: HTML
+ * @return string HTML
  */
 function getCommentsOfTheDay( $input, $args, $parser ) {
 	global $wgMemc;

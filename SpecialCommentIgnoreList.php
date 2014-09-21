@@ -26,7 +26,7 @@ class CommentIgnoreList extends SpecialPage {
 	/**
 	 * Show the special page
 	 *
-	 * @param $par Mixed: parameter passed to the page or null
+	 * @param mixed|null $par Parameter passed to the page or null
 	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();
@@ -82,7 +82,8 @@ class CommentIgnoreList extends SpecialPage {
 
 	/**
 	 * Displays the list of users whose comments you're ignoring.
-	 * @return HTML
+	 *
+	 * @return string HTML
 	 */
 	function displayCommentBlockList() {
 		$lang = $this->getLanguage();
@@ -119,7 +120,8 @@ class CommentIgnoreList extends SpecialPage {
 
 	/**
 	 * Asks for a confirmation when you're about to unblock someone's comments.
-	 * @return HTML
+	 *
+	 * @return string HTML
 	 */
 	function confirmCommentBlockDelete() {
 		$user_name = $this->getRequest()->getVal( 'user' );

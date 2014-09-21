@@ -17,7 +17,7 @@ class CommentListGet extends UnlistedSpecialPage {
 	/**
 	 * Show the special page
 	 *
-	 * @param $par Mixed: parameter passed to the page or null
+	 * @param mixed|null $par Parameter passed to the page or null
 	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();
@@ -28,14 +28,14 @@ class CommentListGet extends UnlistedSpecialPage {
 		// Get new Comment list
 		$pid = $request->getInt( 'pid' );
 		$shwform = $request->getVal( 'shwform' );
-		if( $pid ) {
+		if ( $pid ) {
 			$comment = new Comment( $pid, $this->getContext() );
 			$comment->setOrderBy( $request->getInt( 'ord' ) );
-			if( $shwform && $shwform == 1 ) {
+			if ( $shwform && $shwform == 1 ) {
 				$output .= $comment->displayOrderForm(); // misza: added isset check
 			}
 			$output .= $comment->display();
-			if( $shwform && $shwform == 1 ) {
+			if ( $shwform && $shwform == 1 ) {
 				$output .= $comment->displayForm(); // misza: added isset check
 			}
 		}

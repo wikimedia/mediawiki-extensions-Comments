@@ -4,8 +4,8 @@ class NumberOfComments {
 	/**
 	 * Registers NUMBEROFCOMMENTS and NUMPBEROFCOMMENTSPAGE as a valid magic word identifier.
 	 *
-	 * @param $variableIds Array: array of valid magic word identifiers
-	 * @return Boolean
+	 * @param array $variableIds Array of valid magic word identifiers
+	 * @return bool
 	 */
 	public static function registerNumberOfCommentsMagicWord( &$variableIds ) {
 		$variableIds[] = 'NUMBEROFCOMMENTS';
@@ -15,8 +15,9 @@ class NumberOfComments {
 
 	/**
 	 * Hook to setup parser function
+	 *
 	 * @param Parser $parser
-	 * @return boolean
+	 * @return bool
 	 */
 	static function setupNumberOfCommentsPageParser( &$parser ) {
 		$parser->setFunctionHook( 'NUMBEROFCOMMENTSPAGE', 'NumberOfComments::getNumberOfCommentsPageParser', SFH_NO_HASH );
@@ -35,9 +36,9 @@ class NumberOfComments {
 	 *
 	 * @param $parser Parser
 	 * @param $cache
-	 * @param $magicWordId String: magic word identifier
-	 * @param $ret Integer: what to return to the user (in our case, the number of comments)
-	 * @return Boolean
+	 * @param string $magicWordId Magic word identifier
+	 * @param int $ret What to return to the user (in our case, the number of comments)
+	 * @return bool
 	 */
 	public static function getNumberOfCommentsMagic( &$parser, &$cache, &$magicWordId, &$ret ) {
 		global $wgMemc;
@@ -79,9 +80,10 @@ class NumberOfComments {
 
 	/**
 	 * Hook for parser function {{NUMBEROFCOMMENTSPAGE:<page>}}
+	 *
 	 * @param Parser $parser
-	 * @param string $pagename
-	 * @return number
+	 * @param string $pagename Page name
+	 * @return int Amount of comments on the given page
 	 */
 	static function getNumberOfCommentsPageParser( $parser, $pagename ) {
 		$page = Title::newFromText( $pagename );
@@ -97,7 +99,8 @@ class NumberOfComments {
 
 	/**
 	 * Get the actual number of comments
-	 * @param int $pageId: ID of page to get number of comments for
+	 *
+	 * @param int $pageId ID of page to get number of comments for
 	 * @return int
 	 */
 	static function getNumberOfCommentsPage( $pageId ) {
@@ -125,6 +128,7 @@ class NumberOfComments {
 			}
 			$wgMemc->set( $key, $val, 60 * 60 ); // cache for an hour
 		}
+
 		return $val;
 	}
 

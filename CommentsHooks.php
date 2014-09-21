@@ -16,8 +16,8 @@ class CommentsHooks {
 	/**
 	 * Registers the <comments> tag with the Parser.
 	 *
-	 * @param $parser Parser
-	 * @return Boolean
+	 * @param Parser $parser
+	 * @return bool
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
 		$parser->setHook( 'comments', array( 'CommentsHooks', 'displayComments' ) );
@@ -28,9 +28,9 @@ class CommentsHooks {
 	 * Callback function for onParserFirstCallInit().
 	 *
 	 * @param $input
-	 * @param $args Array
-	 * @param $parser Parser
-	 * @return String: HTML
+	 * @param array $args
+	 * @param Parser $parser
+	 * @return string HTML
 	 */
 	public static function displayComments( $input, $args, $parser ) {
 		global $wgOut;
@@ -60,16 +60,16 @@ class CommentsHooks {
 		// whereas the normal, standard MediaWiki style, which this extension
 		// also supports is: <comments allow="Foo,Bar" voting="Plus" />
 		$allow = '';
-		if( preg_match( '/^\s*Allow\s*=\s*(.*)/mi', $input, $matches ) ) {
+		if ( preg_match( '/^\s*Allow\s*=\s*(.*)/mi', $input, $matches ) ) {
 			$allow = htmlspecialchars( $matches[1] );
-		} elseif( !empty( $args['allow'] ) ) {
+		} elseif ( !empty( $args['allow'] ) ) {
 			$allow = $args['allow'];
 		}
 
 		$voting = '';
-		if( preg_match( '/^\s*Voting\s*=\s*(.*)/mi', $input, $matches ) ) {
+		if ( preg_match( '/^\s*Voting\s*=\s*(.*)/mi', $input, $matches ) ) {
 			$voting = htmlspecialchars( $matches[1] );
-		} elseif(
+		} elseif (
 			!empty( $args['voting'] ) &&
 			in_array( strtoupper( $args['voting'] ), array( 'OFF', 'PLUS', 'MINUS' ) )
 		)
@@ -90,7 +90,7 @@ class CommentsHooks {
 
 		// If the database is in read-only mode, display a message informing the
 		// user about that, otherwise allow them to comment
-		if( !wfReadOnly() ) {
+		if ( !wfReadOnly() ) {
 			$output .= $comment->displayForm();
 		} else {
 			$output .= wfMessage( 'comments-db-locked' )->parse();
@@ -128,8 +128,8 @@ class CommentsHooks {
 	 * Adds the three new required database tables into the database when the
 	 * user runs /maintenance/update.php (the core database updater script).
 	 *
-	 * @param $updater DatabaseUpdater
-	 * @return Boolean
+	 * @param DatabaseUpdater $updater
+	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( $updater ) {
 		$dir = dirname( __FILE__ ) . '/';
@@ -152,8 +152,8 @@ class CommentsHooks {
 	/**
 	 * For integration with the Renameuser extension.
 	 *
-	 * @param $renameUserSQL Array
-	 * @return Boolean
+	 * @param RenameuserSQL $renameUserSQL
+	 * @return bool
 	 */
 	public static function onRenameUserSQL( $renameUserSQL ) {
 		$renameUserSQL->tables['Comments'] = array( 'Comment_Username', 'Comment_user_id' );

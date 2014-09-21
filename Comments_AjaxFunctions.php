@@ -20,7 +20,7 @@ function wfCommentSubmit( $page_id, $parent_id, $comment_text, $token ) {
 		return '';
 	}
 
-	if( $comment_text != '' ) {
+	if ( $comment_text != '' ) {
 		// To protect against spam, it's necessary to check the supplied text
 		// against spam filters (but comment admins are allowed to bypass the
 		// spam filters)
@@ -39,7 +39,7 @@ function wfCommentSubmit( $page_id, $parent_id, $comment_text, $token ) {
 		$comment->setCommentParentID( $parent_id );
 		$comment->add();
 
-		if( class_exists( 'UserStatsTrack' ) ) {
+		if ( class_exists( 'UserStatsTrack' ) ) {
 			$stats = new UserStatsTrack( $wgUser->getID(), $wgUser->getName() );
 			$stats->incStatField( 'comment' );
 		}
@@ -63,7 +63,7 @@ function wfCommentVote( $comment_id, $vote_value, $vg, $page_id, $token ) {
 		return '';
 	}
 
-	if( is_numeric( $comment_id ) && is_numeric( $vote_value ) ) {
+	if ( is_numeric( $comment_id ) && is_numeric( $vote_value ) ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'Comments',
@@ -72,7 +72,7 @@ function wfCommentVote( $comment_id, $vote_value, $vg, $page_id, $token ) {
 			__METHOD__
 		);
 		$row = $dbr->fetchObject( $res );
-		if( $row ) {
+		if ( $row ) {
 			$PageID = $row->comment_page_id;
 			$comment = new Comment( $PageID );
 			$comment->CommentID = $comment_id;
@@ -81,14 +81,14 @@ function wfCommentVote( $comment_id, $vote_value, $vg, $page_id, $token ) {
 			$comment->addVote();
 			$out = $comment->getCommentScore();
 
-			if( class_exists( 'UserStatsTrack' ) ) {
+			if ( class_exists( 'UserStatsTrack' ) ) {
 				$stats = new UserStatsTrack( $wgUser->getID(), $wgUser->getName() );
 
 				// Must update stats for user doing the voting
-				if( $vote_value == 1 ) {
+				if ( $vote_value == 1 ) {
 					$stats->incStatField( 'comment_give_plus' );
 				}
-				if( $vote_value == -1 ) {
+				if ( $vote_value == -1 ) {
 					$stats->incStatField( 'comment_give_neg' );
 				}
 
@@ -97,7 +97,7 @@ function wfCommentVote( $comment_id, $vote_value, $vg, $page_id, $token ) {
 				$stats_comment_owner->updateCommentScoreRec( $vote_value );
 
 				$stats_comment_owner->updateTotalPoints();
-				if( $vote_value === 1 ) {
+				if ( $vote_value === 1 ) {
 					$stats_comment_owner->updateWeeklyPoints( $stats_comment_owner->point_values['comment_plus'] );
 					$stats_comment_owner->updateMonthlyPoints( $stats_comment_owner->point_values['comment_plus'] );
 				}
@@ -121,11 +121,11 @@ function wfCommentList( $page_id, $order, $pagerPage ) {
 	$comment = new Comment( $page_id );
 	$comment->setOrderBy( $order );
 	$comment->setCurrentPagerPage( $pagerPage );
-	if( isset( $_POST['shwform'] ) && $_POST['shwform'] == 1 ) {
+	if ( isset( $_POST['shwform'] ) && $_POST['shwform'] == 1 ) {
 		$output .= $comment->displayOrderForm();
 	}
 	$output .= $comment->display();
-	if( isset( $_POST['shwform'] ) && $_POST['shwform'] == 1 ) {
+	if ( isset( $_POST['shwform'] ) && $_POST['shwform'] == 1 ) {
 		$output .= $comment->displayForm();
 	}
 	return $output;
@@ -163,7 +163,7 @@ function wfCommentBlock( $comment_id, $user_id, $token ) {
 	$comment = new Comment( 0 );
 	$comment->blockUser( $user_id, $user_name );
 
-	if( class_exists( 'UserStatsTrack' ) ) {
+	if ( class_exists( 'UserStatsTrack' ) ) {
 		$stats = new UserStatsTrack( $user_id, $user_name );
 		$stats->incStatField( 'comment_ignored' );
 	}
