@@ -6,7 +6,7 @@
 	},
 	"comments-comment": "Comment",
 	"comments-desc": "Eiks <code>&lt;comments&gt;</code> parser huik that permits commentin oan pages",
-	"comments-db-locked": "<h3>Addin comments</h3>The database is nou locked fer routine database maintenance, efter this it will be back til normal. Please check back later!",
+	"comments-db-locked": "<h3>Eikin comments</h3>The database is nou locked fer routine database maintenance, efter this it will be back til normal. Please check back later!",
 	"comments-voted-label": "Voted",
 	"comments-loading": "Laidin...",
 	"comments-auto-refresher-enable": "Enable comment autæ-refresher",
