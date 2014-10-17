@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Hugo.arg"
 		]
 	},
-	"comments-comment": "Komentaras",
+	"comments-comment": "Paaiškinimas",
 	"comments-voted-label": "Balsavo",
 	"comments-loading": "Įkeliama…",
 	"comments-reply-to": "Atsakyti į",
