@@ -58,7 +58,7 @@
 	"comments-time-days": "{{PLURAL:$1|1天|$1天}}",
 	"comments-time-hours": "{{PLURAL:$1|1小时|$1小时}}",
 	"comments-time-minutes": "{{PLURAL:$1|1分钟|$1分钟}}",
-	"comments-time-seconds": "{{PLURAL:$1|1秒|$1秒}}",
+	"comments-time-seconds": "{{PLURAL:$1|$1秒}}",
 	"log-show-hide-comments": "$1评论日志",
 	"group-commentadmin": "评论管理员",
 	"group-commentadmin-member": "{{GENDER:$1|评论管理员}}",
