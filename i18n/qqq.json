@@ -34,7 +34,7 @@
 	"comments-not-allowed": "Shown when the user does not have the \"comment\" user right but a page contains the <code><nowiki><comments /></nowiki></code> tag.",
 	"comments-post": "Button text, clicking on this button submits your comment; refer to the [[mw:File:Comments.png|image]] for details.\n{{Identical|Post comment}}",
 	"comments-submit": "This text is shown above the comment form (the form where you can submit your own comment(s)); refer to the [[mw:File:Comments.png|image]] for details",
-	"comments-score-text": "Followed by the comment's score; refer to the [[mw:File:Comments.png|image]] for details",
+	"comments-score-text": "Followed by the comment's score; refer to the [[mw:File:Comments.png|image]] for details\n{{Identical|Score}}",
 	"comments-permalink": "\"Permalink\" means \"permanent link\" and clicking on it creates what is a permanent link to a comment, at least until a (comment) administrator deletes the comment or the whole page gets deleted or the <code><nowiki><comments /></nowiki></code> tag is removed from it.\n{{Identical|Permalink}}",
 	"comments-delete-link": "Link text; clicking on this deletes the comment (duh)",
 	"comments-anon-name": "Generic name shown for anonymous (not logged in/unregistered) users, since their IP addresses aren't directly exposed.\n{{Identical|Anonymous user}}",
