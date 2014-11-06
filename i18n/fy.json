@@ -6,5 +6,9 @@
 		]
 	},
 	"comments-cancel-reply": "Annulearje",
-	"comments-ignore-cancel": "Annulearje"
+	"comments-ignore-cancel": "Annulearje",
+	"comments-time-ago": "$1 lyn",
+	"comments-time-days": "{{PLURAL:$1|ien dei|$1 dagen}}",
+	"comments-time-minutes": "{{PLURAL:$1|ien minút|$1 minuten}}",
+	"comments-time-seconds": "{{PLURAL:$1|ien sekonde|$1 sekonden}}"
 }
