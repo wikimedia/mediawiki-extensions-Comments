@@ -20,7 +20,7 @@ class NumberOfComments {
 	 * @return bool
 	 */
 	static function setupNumberOfCommentsPageParser( &$parser ) {
-		$parser->setFunctionHook( 'NUMBEROFCOMMENTSPAGE', 'NumberOfComments::getNumberOfCommentsPageParser', SFH_NO_HASH );
+		$parser->setFunctionHook( 'NUMBEROFCOMMENTSPAGE', 'NumberOfComments::getNumberOfCommentsPageParser', Parser::SFH_NO_HASH );
 		return true;
 	}
 
