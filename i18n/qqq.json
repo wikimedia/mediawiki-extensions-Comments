@@ -56,7 +56,7 @@
 	"comments-time-ago": "Parameters:\n* $1 - the duration (e.g. \"{{int:comments-time-minutes|1}} {{int:comments-time-seconds|42}} \"), uses the following messages:\n** {{msg-mw|comments-time-days}}\n** {{msg-mw|comments-time-hours}}\n** {{msg-mw|comments-time-minutes}}\n** {{msg-mw|comments-time-seconds}}\n{{Identical|Ago}}",
 	"comments-time-months": "Used as <code>$1</code> in {{msg-mw|Comments-time-ago}}.\n\nParameters:\n* $1 - number of months\n{{Related|Comments-time}}\n{{Identical|Day}}",
 	"comments-time-days": "Used as <code>$1</code> in {{msg-mw|Comments-time-ago}}.\n\nParameters:\n* $1 - number of days\n{{Related|Comments-time}}\n{{Identical|Day}}",
-	"comments-time-hours": "Used as <code>$1</code> in {{msg-mw|Comments-time-ago}}.\n\nParameters:\n* $1 - number of hours\n{{Related|Comments-time}}",
+	"comments-time-hours": "Used as <code>$1</code> in {{msg-mw|Comments-time-ago}}.\n\nParameters:\n* $1 - number of hours\n{{Related|Comments-time}}\n{{Identical|Hour}}",
 	"comments-time-minutes": "Used as the duration in {{msg-mw|Comments-time-ago}}.\n\nParameters:\n* $1 - number of minutes\n{{Related|Comments-time}}\n{{Identical|Minute}}",
 	"comments-time-seconds": "Used as the duration in {{msg-mw|Comments-time-ago}}.\n\nParameters:\n* $1 - number of seconds\n{{Related|Comments-time}}\n{{Identical|Second}}",
 	"log-show-hide-comments": "For [[Special:Log]]. Parameters:\n* $1 - one of {{msg-mw|Show}} or {{msg-mw|Hide}}\n{{Related|Log-show-hide}}",
