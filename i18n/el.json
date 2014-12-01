@@ -10,7 +10,7 @@
 	"comments-loading": "Φόρτωση...",
 	"comments-auto-refresher-enable": "Ενεργοποίηση αυτόματης ανανέωσης σχολίων",
 	"comments-auto-refresher-pause": "Διακοπή αυτόματης ανανέωσης σχολίων",
-	"comments-reply-to": "Απάντηση σε",
+	"comments-reply-to": "Απάντηση σε {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Ακύρωση",
 	"comments-sort-by-date": "Ταξινόμηση κατά ημερομηνία",
 	"comments-sort-by-score": "Ταξινόμηση κατά βαθμολογία",
