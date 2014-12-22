@@ -7,7 +7,7 @@
 	},
 	"comments-comment": "Kommenteeri",
 	"comments-loading": "Laadimine...",
-	"comments-reply-to": "Vasta kasutajale",
+	"comments-reply-to": "Vasta kasutajale {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Loobu",
 	"comments-block-warning-anon": "Kas oled kindel, et soovid kõiki selle anonüümse kasutaja kommentaare jäädavalt eirata (IP-aadressi põhjal)?",
 	"comments-block-warning-user": "Kas oled kindel, et soovid kõiki kasutaja $1 kommentaare jäädavalt eirata?",
