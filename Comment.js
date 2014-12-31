@@ -22,42 +22,41 @@ var Comment = {
 	 * comment.
 	 */
 	show: function( id ) {
-		jQuery( '#ignore-' + id ).hide( 100 );
-		jQuery( '#comment-' + id ).show( 500 );
+		jQuery( '#ignore-' + id ).hide( 300 );
+		jQuery( '#comment-' + id ).show( 300 );
 	},
 
 	/**
 	 * This function is called whenever a user clicks on the "block" image to
 	 * block another user's comments.
 	 *
-	 * @param user_name String: name of the user whose comments we want to block
-	 * @param user_id Integer: user ID number of the user whose comments we
+	 * @param username String: name of the user whose comments we want to block
+	 * @param userID Integer: user ID number of the user whose comments we
 	 *                         want to block (or 0 for anonymous users)
-	 * @param c_id Integer: comment ID number
+	 * @param commentID Integer: comment ID number
 	 */
-	blockUser: function( user_name, user_id, c_id ) {
+	blockUser: function( username, userID, commentID ) {
 		var message;
-		var token = document.commentform.token.value;
 
 		// Display a different message depending on whether we're blocking an
 		// anonymous user or a registered one.
-		// We could check if user_name is an IP with mw.util.isIPv4Address and
-		// mw.util.isIPv6Address, but that'd be overkill since we know that all
-		// anons have id = 0 in MediaWiki and we expose the user ID via HTML to
-		// this function, so...
-		if ( !user_id || user_id === 0 ) {
+		if ( !userID || userID === 0 ) {
 			message = mw.msg( 'comments-block-warning-anon' );
 		} else {
-			message = mw.msg( 'comments-block-warning-user', user_name );
+			message = mw.msg( 'comments-block-warning-user', username );
 		}
 
-		if ( confirm( message ) ) {
-			sajax_request_type = 'POST';
-			sajax_do_call( 'wfCommentBlock', [ c_id, user_id, token ], function( response ) {
-				jQuery( '#comment-' + c_id ).hide( 2000 );
-				//alert( response.responseText );
-				//window.location.href = window.location;
-			});
+		if ( window.confirm( message ) ) {
+			jQuery.ajax( {
+				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+				data: { 'action': 'commentblock', 'format': 'json', 'commentID': commentID },
+				cache: false
+			} ).done( function( response ) {
+				if ( response.commentblock.ok ) {
+					jQuery( 'a.comments-block-user[data-comments-user-id=' + userID + ']' ).parents( '.c-item' ).hide( 300 )
+					                                                                                            .prev().show( 300 );
+				}
+			} );
 		}
 	},
 
@@ -65,80 +64,60 @@ var Comment = {
 	 * This function is called whenever a user clicks on the "Delete Comment"
 	 * link to delete a comment.
 	 *
-	 * @param c_id Integer: comment ID number
+	 * @param commentID Integer: comment ID number
 	 */
-	deleteComment: function( c_id ) {
-		var pageId = document.commentform.pid.value,
-			token = document.commentform.token.value;
-		if ( confirm( mw.msg( 'comments-delete-warning' ) ) ) {
-			sajax_request_type = 'POST';
-			sajax_do_call( 'wfDeleteComment', [ pageId, c_id, token ], function( response ) {
-				// The commented-out line is original code. I have no clue what
-				// it was supposed to do, but the jQuery gimmick below looks
-				// better, IMHO.
-				//window.location.href = window.location;
-				jQuery( '#comment-' + c_id ).hide( 2000 );
-			});
+	deleteComment: function( commentID ) {
+		if ( window.confirm( mw.msg( 'comments-delete-warning' ) ) ) {
+			jQuery.ajax( {
+				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+				data: { 'action': 'commentdelete', 'format': 'json', 'commentID': commentID },
+				cache: false
+			} ).done( function( response ) {
+				if ( response.commentdelete.ok ) {
+					jQuery( '#comment-' + commentID ).hide( 2000 );
+				}
+			} );
 		}
 	},
 
 	/**
 	 * Vote for a comment.
-	 * Formerly called "cv"
 	 *
-	 * @param cid Integer: comment ID number
-	 * @param vt Integer: vote value
-	 * @param vg
+	 * @param commentID Integer: comment ID number
+	 * @param voteValue Integer: vote value
 	 */
-	vote: function( cid, vt, vg ) {
-		var pageID = document.commentform.pid.value,
-			token = document.commentform.token.value;
-		sajax_request_type = 'POST';
-		sajax_do_call(
-			'wfCommentVote',
-			[ cid, vt, ( ( vg ) ? vg : 0 ), pageID, token ],
-			function( response ) {
-				document.getElementById( 'Comment' + cid ).innerHTML = response.responseText;
-				var img = '<img src="' + mw.config.get( 'wgExtensionAssetsPath' ) + '/Comments/images/voted.svg" alt="" />';
-				document.getElementById( 'CommentBtn' + cid ).innerHTML =
-					img + '<span class="CommentVoted">' +
-					mw.msg( 'comments-voted-label' ) + '</span>';
-			}
-		);
+	vote: function( commentID, voteValue ) {
+		jQuery.ajax( {
+			url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+			data: { 'action': 'commentvote', 'format': 'json', 'commentID': commentID, 'voteValue': voteValue },
+			cache: false
+		} ).done( function( response ) {
+			jQuery( '#comment-' + commentID + ' .c-score' ).html( response.commentvote.html ) // this will still be escaped
+			                                               .html( jQuery( '#comment-' + commentID + ' .c-score' ).text() ); // unescape
+		} );
 	},
 
 	/**
-	 * This is ugly but we have to use this because AJAX function wfCommentList
-	 * doesn't work...thanks, Parser.php
-	 *
-	 * @param pid Integer: page ID
-	 * @param ord Sorting order
-	 * @param end
+	 * @param pageID Integer: page ID
+	 * @param order Sorting order
+	 * @param end Scroll to bottom after?
 	 * @param cpage Integer: comment page number (used for pagination)
 	 */
-	viewComments: function( pid, ord, end, cpage ) {
-		document.commentform.cpage.value = cpage;
+	viewComments: function( pageID, order, end, cpage ) {
+		document.commentForm.cpage.value = cpage;
 		document.getElementById( 'allcomments' ).innerHTML = mw.msg( 'comments-loading' ) + '<br /><br />';
-		var x = sajax_init_object();
-		var url = mw.config.get( 'wgServer' ) + mw.config.get( 'wgScriptPath' ) +
-			'/index.php?title=Special:CommentListGet&pid=' + pid + '&ord=' +
-			ord + '&cpage=' + cpage;
 
-		x.open( 'get', url, true );
-
-		x.onreadystatechange = function() {
-			if ( x.readyState != 4 ) {
-				return;
-			}
-
-			document.getElementById( 'allcomments' ).innerHTML = x.responseText;
+		jQuery.ajax( {
+			url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+			data: { 'action': 'commentlist', 'format': 'json', 'pageID': pageID, 'order': order, 'pagerPage': cpage },
+			cache: false
+		} ).done( function( response ) {
+			document.getElementById( 'allcomments' ).innerHTML = response.commentlist.html;
 			Comment.submitted = 0;
 			if ( end ) {
 				window.location.hash = 'end';
 			}
-		};
-
-		x.send( null );
+		} );
 	},
 
 	/**
@@ -148,30 +127,33 @@ var Comment = {
 		if ( Comment.submitted === 0 ) {
 			Comment.submitted = 1;
 
-			var pidVal = document.commentform.pid.value;
-			var parentId;
-			if ( !document.commentform.comment_parent_id.value ) {
-				parentId = 0;
+			var pageID = document.commentForm.pageId.value;
+			var parentID;
+			if ( !document.commentForm.commentParentId.value ) {
+				parentID = 0;
 			} else {
-				parentId = document.commentform.comment_parent_id.value;
+				parentID = document.commentForm.commentParentId.value;
 			}
-			var commentText = document.commentform.comment_text.value;
-			var token = document.commentform.token.value;
+			var commentText = document.commentForm.commentText.value;
 
-			sajax_request_type = 'POST';
-			sajax_do_call(
-				'wfCommentSubmit',
-				[ pidVal, parentId, commentText, token ],
-				function( response ) {
-					if ( response.responseText === 'ok' ) {
-						document.commentform.comment_text.value = '';
-						Comment.viewComments( document.commentform.pid.value, 0, 1, document.commentform.cpage.value );
-					} else if ( response.responseText != undefined && response.responseText != null && response.responseText != '' ) {
-						alert( response.responseText );
-						Comment.submitted = 0;
+			jQuery.ajax( {
+				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+				data: { 'action': 'commentsubmit', 'format': 'json', 'pageID': pageID, 'parentID': parentID, 'commentText': commentText },
+				cache: false
+			} ).done( function( response ) {
+				if ( response.commentsubmit.ok ) {
+					document.commentForm.commentText.value = '';
+					var end = 1;
+					if ( mw.config.get( 'wgCommentsSortDescending' ) ) {
+						end = 0;
 					}
+					Comment.viewComments( document.commentForm.pageId.value, 0, end, document.commentForm.cpage.value );
+				} else {
+					window.alert( response.responseText );
+					Comment.submitted = 0;
 				}
-			);
+			} );
+
 			Comment.cancelReply();
 		}
 	},
@@ -200,7 +182,7 @@ var Comment = {
 		jQuery( 'div#spy a' ).css( 'font-size', '10px' ).text( msg );
 
 		if ( !Comment.pause ) {
-			Comment.LatestCommentID = document.commentform.lastcommentid.value;
+			Comment.LatestCommentID = document.commentForm.lastCommentId.value;
 			Comment.timer = setTimeout(
 				function() { Comment.checkUpdate(); },
 				Comment.updateDelay
@@ -212,36 +194,34 @@ var Comment = {
 		if ( Comment.isBusy ) {
 			return;
 		}
-		var pid = document.commentform.pid.value;
-		sajax_do_call( 'wfCommentLatestID', [ pid ], function( response ) {
-			Comment.updateResults( response );
-		});
+		var pageID = document.commentForm.pageId.value;
+
+		jQuery.ajax( {
+			url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+			data: { 'action': 'commentlatestid', 'format': 'json', 'pageID': pageID },
+			cache: false
+		} ).done( function( response ) {
+			if ( response.commentlatestid.id ) {
+				// Get last new ID
+				Comment.CurLatestCommentID = response.commentlatestid.id;
+				if ( Comment.CurLatestCommentID !== Comment.LatestCommentID ) {
+					Comment.viewComments( document.commentForm.pageId.value, 0, 1, document.commentForm.cpage.value );
+					Comment.LatestCommentID = Comment.CurLatestCommentID;
+				}
+			}
+
+			Comment.isBusy = false;
+			if ( !Comment.pause ) {
+				clearTimeout( Comment.timer );
+				Comment.timer = setTimeout(
+					function() { Comment.checkUpdate(); },
+					Comment.updateDelay
+				);
+			}
+		} );
+
 		Comment.isBusy = true;
 		return false;
-	},
-
-	updateResults: function( response ) {
-		if ( !response || response.readyState != 4 ) {
-			return;
-		}
-
-		if ( response.status == 200 ) {
-			// Get last new ID
-			Comment.CurLatestCommentID = response.responseText;
-			if ( Comment.CurLatestCommentID != Comment.LatestCommentID ) {
-				Comment.viewComments( document.commentform.pid.value, 0, 1, document.commentform.cpage.value );
-				Comment.LatestCommentID = Comment.CurLatestCommentID;
-			}
-		}
-
-		Comment.isBusy = false;
-		if ( !Comment.pause ) {
-			clearTimeout( Comment.timer );
-			Comment.timer = setTimeout(
-				function() { Comment.checkUpdate(); },
-				Comment.updateDelay
-			);
-		}
 	},
 
 	/**
@@ -256,18 +236,18 @@ var Comment = {
 			mw.msg( 'comments-reply-to', poster, posterGender ) + ' ('
 		);
 		jQuery( '<a>', {
-			href: 'javascript:void(0);',
-			'class': 'comments-cancel-reply-link',
+			class: 'comments-cancel-reply-link',
+			style: 'cursor:pointer',
 			text: mw.msg( 'comments-cancel-reply' )
 		} ).appendTo( '#replyto' );
 		jQuery( '#replyto' ).append( ') <br />' );
 
-		document.commentform.comment_parent_id.value = parentId;
+		document.commentForm.commentParentId.value = parentId;
 	},
 
 	cancelReply: function() {
 		document.getElementById( 'replyto' ).innerHTML = '';
-		document.commentform.comment_parent_id.value = '';
+		document.commentForm.commentParentId.value = '';
 	}
 };
 
@@ -283,67 +263,66 @@ jQuery( document ).ready( function() {
 			mw.config.get( 'wgArticleId' ), // or we could use jQuery( 'input[name="pid"]' ).val(), too
 			jQuery( this ).val(),
 			0,
-			document.commentform.cpage.value
+			document.commentForm.cpage.value
 		);
-	} );
+	} )
 
 	// Comment auto-refresher
-	jQuery( 'body' ).on( 'click', 'div#spy a', function() {
+	.on( 'click', 'div#spy a', function() {
 		Comment.toggleLiveComments( 1 );
-	} );
+	} )
 
 	// Voting links
-	jQuery( 'body' ).on( 'click', 'a#comment-vote-link', function() {
+	.on( 'click', 'a#comment-vote-link', function() {
 		var that = jQuery( this );
 		Comment.vote(
 			that.data( 'comment-id' ),
-			that.data( 'vote-type' ),
-			that.data( 'voting' )
+			that.data( 'vote-type' )
 		);
-	} );
+	} )
 
 	// "Block this user" links
-	jQuery( 'body' ).on( 'click', 'a.comments-block-user', function() {
+	.on( 'click', 'a.comments-block-user', function() {
 		var that = jQuery( this );
 		Comment.blockUser(
 			that.data( 'comments-safe-username' ),
 			that.data( 'comments-user-id' ),
 			that.data( 'comments-comment-id' )
 		);
-	} );
+	} )
 
 	// "Delete Comment" links
-	jQuery( 'body' ).on( 'click', 'a.comment-delete-link', function() {
+	.on( 'click', 'a.comment-delete-link', function() {
 		Comment.deleteComment( jQuery( this ).data( 'comment-id' ) );
-	} );
+	} )
 
 	// "Show this hidden comment" -- comments made by people on the user's
 	// personal block list
-	jQuery( 'body' ).on( 'click', 'div.c-ignored-links a', function() {
+	.on( 'click', 'div.c-ignored-links a', function() {
 		Comment.show( jQuery( this ).data( 'comment-id' ) );
-	} );
+	} )
 
 	// Reply links
-	jQuery( 'body' ).on( 'click', 'a.comments-reply-to', function() {
+	.on( 'click', 'a.comments-reply-to', function() {
 		Comment.reply(
 			jQuery( this ).data( 'comment-id' ),
 			jQuery( this ).data( 'comments-safe-username' ),
 			jQuery( this ).data( 'comments-user-gender' )
 		);
-	} );
+	} )
 
 	// "Reply to <username>" links
-	jQuery( 'body' ).on( 'click', 'a.comments-cancel-reply-link', function() {
+	.on( 'click', 'a.comments-cancel-reply-link', function() {
 		Comment.cancelReply();
-	} );
+	} )
 
 	// Handle clicks on the submit button (previously this was an onclick attr)
-	jQuery( 'body' ).on( 'click', 'div.c-form-button input[type="button"]', function() {
+	.on( 'click', 'div.c-form-button input[type="button"]', function() {
 		Comment.submit();
-	} );
+	} )
 
 	// Change page
-	jQuery( 'body' ).on( 'click', 'li.c-pager-item a.c-pager-link', function() {
+	.on( 'click', 'li.c-pager-item a.c-pager-link', function() {
 		var ord = 0,
 			commentsBody = jQuery( this ).parents( 'div.comments-body:first' );
 
