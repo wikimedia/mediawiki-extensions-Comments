@@ -72,6 +72,7 @@ $dir = __DIR__ . '/';
 $wgMessagesDirs['Comments'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['CommentsMagic'] = __DIR__ . '/Comments.i18n.magic.php';
 $wgAutoloadClasses['Comment'] = __DIR__ . '/CommentClass.php';
+$wgAutoloadClasses['CommentFunctions'] = __DIR__ . '/CommentFunctions.php';
 $wgAutoloadClasses['CommentIgnoreList'] = __DIR__ . '/SpecialCommentIgnoreList.php';
 $wgAutoloadClasses['CommentListGet'] = __DIR__ . '/CommentAction.php';
 $wgSpecialPages['CommentIgnoreList'] = 'CommentIgnoreList';
