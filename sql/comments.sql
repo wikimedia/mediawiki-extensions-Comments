@@ -8,15 +8,11 @@ CREATE TABLE /*_*/Comments (
   `Comment_Date` datetime NOT NULL default '0000-00-00 00:00:00',
   `Comment_Parent_ID` int(11) NOT NULL default 0,
   `Comment_IP` varchar(45) NOT NULL default '',
-  `Comment_Plus_Count` int(11) NOT NULL default 0,
-  `Comment_Minus_Count` int(11) NOT NULL default 0
-) /*$wgDBTableOptions*/;
+); /*$wgDBTableOptions*/;
 
 CREATE INDEX /*i*/comment_page_id_index ON /*_*/Comments (Comment_Page_ID);
 CREATE INDEX /*i*/wiki_user_id ON /*_*/Comments (Comment_user_id);
 CREATE INDEX /*i*/wiki_user_name ON /*_*/Comments (Comment_Username);
-CREATE INDEX /*i*/pluscontidx ON /*_*/Comments (Comment_user_id);
-CREATE INDEX /*i*/miuscountidx ON /*_*/Comments (Comment_Plus_Count);
 CREATE INDEX /*i*/comment_date ON /*_*/Comments (Comment_Minus_Count);
 
 CREATE TABLE /*_*/Comments_Vote (
@@ -26,7 +22,7 @@ CREATE TABLE /*_*/Comments_Vote (
   `Comment_Vote_Score` int(4) NOT NULL default 0,
   `Comment_Vote_Date` datetime NOT NULL default '0000-00-00 00:00:00',
   `Comment_Vote_IP` varchar(45) NOT NULL default ''
-) /*$wgDBTableOptions*/;
+); /*$wgDBTableOptions*/;
 
 CREATE UNIQUE INDEX /*i*/Comments_Vote_user_id_index ON /*_*/Comments_Vote (Comment_Vote_ID,Comment_Vote_Username);
 CREATE INDEX /*i*/Comment_Vote_Score ON /*_*/Comments_Vote (Comment_Vote_Score);
@@ -39,5 +35,5 @@ CREATE TABLE /*_*/Comments_block (
   `cb_user_id_blocked` int(5) default NULL,
   `cb_user_name_blocked` varchar(255) NOT NULL default '',
   `cb_date` datetime default NULL
-) /*$wgDBTableOptions*/;
+); /*$wgDBTableOptions*/;
 CREATE INDEX /*i*/cb_user_id ON /*_*/Comments_block (cb_user_id);
