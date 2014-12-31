@@ -33,7 +33,7 @@ class CommentsHooks {
 	 * @return string HTML
 	 */
 	public static function displayComments( $input, $args, $parser ) {
-		global $wgOut;
+		global $wgOut, $wgCommentsDescendingSort;
 
 		wfProfileIn( __METHOD__ );
 
@@ -73,28 +73,36 @@ class CommentsHooks {
 		} elseif (
 			!empty( $args['voting'] ) &&
 			in_array( strtoupper( $args['voting'] ), array( 'OFF', 'PLUS', 'MINUS' ) )
-		)
-		{
+		) {
 			$voting = $args['voting'];
 		}
 
-		$comment = new Comment( $wgOut->getTitle()->getArticleID() );
-		$comment->setAllow( $allow );
-		$comment->setVoting( $voting );
+		$commentsPage = new CommentsPage( $wgOut->getTitle()->getArticleID(), $wgOut->getContext() );
+		$commentsPage->allow = $allow;
+		$commentsPage->setVoting( $voting );
 
 		$output = '<div class="comments-body">';
-		// This was originally commented out, I don't know why.
-		// Uncommented to prevent E_NOTICE.
-		$output .= $comment->displayOrderForm();
 
-		$output .= '<div id="allcomments">' . $comment->display() . '</div>';
+		if ( $wgCommentsDescendingSort ) { // form before comments
+			if ( !wfReadOnly() ) {
+				$output .= $commentsPage->displayForm();
+			} else {
+				$output .= wfMessage( 'comments-db-locked' )->parse();
+			}
+		}
+
+		$output .= $commentsPage->displayOrderForm();
+
+		$output .= '<div id="allcomments">' . $commentsPage->display() . '</div>';
 
 		// If the database is in read-only mode, display a message informing the
 		// user about that, otherwise allow them to comment
-		if ( !wfReadOnly() ) {
-			$output .= $comment->displayForm();
-		} else {
-			$output .= wfMessage( 'comments-db-locked' )->parse();
+		if ( !$wgCommentsDescendingSort ) { // form after comments
+			if ( !wfReadOnly() ) {
+				$output .= $commentsPage->displayForm();
+			} else {
+				$output .= wfMessage( 'comments-db-locked' )->parse();
+			}
 		}
 
 		$output .= '</div>'; // div.comments-body
