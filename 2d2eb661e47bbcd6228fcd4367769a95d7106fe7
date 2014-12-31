@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6cb3ef_60d3b405",
+        "filename": "CommentsPage.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2014-12-31T17:35:40Z",
+      "side": 1,
+      "message": "Datatype is missing...probably an int.",
+      "revId": "2d2eb661e47bbcd6228fcd4367769a95d7106fe7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6cb3ef_40d8f021",
+        "filename": "CommentsPage.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2014-12-31T17:35:40Z",
+      "side": 1,
+      "message": "Yeah, this is silly, feel free to get rid of it since it\u0027s properly defined a few lines below.",
+      "revId": "2d2eb661e47bbcd6228fcd4367769a95d7106fe7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6cb3ef_a0c9cc56",
+        "filename": "CommentsPage.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2014-12-31T17:35:40Z",
+      "side": 1,
+      "message": "Not introduced by this changeset, but something we should eventually fix: number_format is evil and should not be used as-is; instead Language\u0027s formatNum() should be used instead. Something to fix eventually down the road, I suppose. (Similar code is also present in SocialProfile\u0027s UserStats component at least; probably in a few other places, too.)",
+      "revId": "2d2eb661e47bbcd6228fcd4367769a95d7106fe7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6cb3ef_2005bc7c",
+        "filename": "CommentsPage.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2014-12-31T17:35:40Z",
+      "side": 1,
+      "message": "$wgScriptPath isn\u0027t used, it can go.\n\nAlso, given how many times the user object is used here, I think it should be variabilized, along with the user ID ($this-\u003egetUser()-\u003egetId() is called six times in this whole file, of which five usages are in *this* function.)",
+      "revId": "2d2eb661e47bbcd6228fcd4367769a95d7106fe7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6cb3ef_e0fee465",
+        "filename": "CommentsPage.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2014-12-31T17:35:40Z",
+      "side": 1,
+      "message": "Should probably use $this-\u003emsg() here since this is a ContextSource (unless, for some reason, it doesn\u0027t work...wanna test? ;)",
+      "revId": "2d2eb661e47bbcd6228fcd4367769a95d7106fe7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6cb3ef_00319856",
+        "filename": "CommentsPage.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2014-12-31T17:35:40Z",
+      "side": 1,
+      "message": "One day (maybe not today) we should clean up this i18n message here...$register_title and $login_title could and should both go and the method should be changed from -\u003etext() (raw HTML) to -\u003eparse() (wikitext) or maybe -\u003eescaped(), but updating all the translations would be challenging.",
+      "revId": "2d2eb661e47bbcd6228fcd4367769a95d7106fe7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
