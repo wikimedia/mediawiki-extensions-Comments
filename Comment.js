@@ -30,34 +30,36 @@ var Comment = {
 	 * This function is called whenever a user clicks on the "block" image to
 	 * block another user's comments.
 	 *
-	 * @param user_name String: name of the user whose comments we want to block
-	 * @param user_id Integer: user ID number of the user whose comments we
+	 * @param username String: name of the user whose comments we want to block
+	 * @param userID Integer: user ID number of the user whose comments we
 	 *                         want to block (or 0 for anonymous users)
-	 * @param c_id Integer: comment ID number
+	 * @param commentID Integer: comment ID number
 	 */
-	blockUser: function( user_name, user_id, c_id ) {
+	blockUser: function( username, userID, commentID ) {
 		var message;
-		var token = document.commentform.token.value;
 
 		// Display a different message depending on whether we're blocking an
 		// anonymous user or a registered one.
-		// We could check if user_name is an IP with mw.util.isIPv4Address and
+		// We could check if username is an IP with mw.util.isIPv4Address and
 		// mw.util.isIPv6Address, but that'd be overkill since we know that all
 		// anons have id = 0 in MediaWiki and we expose the user ID via HTML to
 		// this function, so...
-		if ( !user_id || user_id === 0 ) {
+		if ( !userID || userID === 0 ) {
 			message = mw.msg( 'comments-block-warning-anon' );
 		} else {
-			message = mw.msg( 'comments-block-warning-user', user_name );
+			message = mw.msg( 'comments-block-warning-user', username );
 		}
 
 		if ( confirm( message ) ) {
-			sajax_request_type = 'POST';
-			sajax_do_call( 'wfCommentBlock', [ c_id, user_id, token ], function( response ) {
-				jQuery( '#comment-' + c_id ).hide( 2000 );
-				//alert( response.responseText );
-				//window.location.href = window.location;
-			});
+			$.ajax( {
+				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+				data: { 'action': 'commentblock', 'format': 'json', 'commentID': commentID },
+				cache: false
+			} ).done( function( response ) {
+				if ( response.commentblock.ok ) {
+					jQuery('#comment-' + commentID).hide(2000);
+				}
+			} );
 		}
 	},
 
@@ -65,20 +67,19 @@ var Comment = {
 	 * This function is called whenever a user clicks on the "Delete Comment"
 	 * link to delete a comment.
 	 *
-	 * @param c_id Integer: comment ID number
+	 * @param commentID Integer: comment ID number
 	 */
-	deleteComment: function( c_id ) {
-		var pageId = document.commentform.pid.value,
-			token = document.commentform.token.value;
+	deleteComment: function( commentID ) {
 		if ( confirm( mw.msg( 'comments-delete-warning' ) ) ) {
-			sajax_request_type = 'POST';
-			sajax_do_call( 'wfDeleteComment', [ pageId, c_id, token ], function( response ) {
-				// The commented-out line is original code. I have no clue what
-				// it was supposed to do, but the jQuery gimmick below looks
-				// better, IMHO.
-				//window.location.href = window.location;
-				jQuery( '#comment-' + c_id ).hide( 2000 );
-			});
+			$.ajax( {
+				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+				data: { 'action': 'commentdelete', 'format': 'json', 'commentID': commentID },
+				cache: false
+			} ).done( function( response ) {
+				if ( response.commentdelete.ok ) {
+					jQuery('#comment-' + commentID).hide(2000);
+				}
+			} );
 		}
 	},
 
@@ -86,59 +87,44 @@ var Comment = {
 	 * Vote for a comment.
 	 * Formerly called "cv"
 	 *
-	 * @param cid Integer: comment ID number
-	 * @param vt Integer: vote value
-	 * @param vg
+	 * @param commentID Integer: comment ID number
+	 * @param voteValue Integer: vote value
 	 */
-	vote: function( cid, vt, vg ) {
-		var pageID = document.commentform.pid.value,
-			token = document.commentform.token.value;
-		sajax_request_type = 'POST';
-		sajax_do_call(
-			'wfCommentVote',
-			[ cid, vt, ( ( vg ) ? vg : 0 ), pageID, token ],
-			function( response ) {
-				document.getElementById( 'Comment' + cid ).innerHTML = response.responseText;
-				var img = '<img src="' + mw.config.get( 'wgExtensionAssetsPath' ) + '/Comments/images/voted.svg" alt="" />';
-				document.getElementById( 'CommentBtn' + cid ).innerHTML =
-					img + '<span class="CommentVoted">' +
-					mw.msg( 'comments-voted-label' ) + '</span>';
-			}
-		);
+	vote: function( commentID, voteValue ) {
+		$.ajax( {
+			url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+			data: { 'action': 'commentvote', 'format': 'json', 'commentID': commentID, 'voteValue': voteValue },
+			cache: false
+		} ).done( function( response ) {
+			document.getElementById( 'Comment' + commentID ).innerHTML = response.commentvote.score;
+			var img = '<img src="' + mw.config.get( 'wgExtensionAssetsPath' ) + '/Comments/images/voted.svg" alt="" />';
+			document.getElementById( 'CommentBtn' + commentID ).innerHTML =
+				img + '<span class="CommentVoted">' +
+				mw.msg( 'comments-voted-label' ) + '</span>';
+		} );
 	},
 
 	/**
-	 * This is ugly but we have to use this because AJAX function wfCommentList
-	 * doesn't work...thanks, Parser.php
-	 *
-	 * @param pid Integer: page ID
-	 * @param ord Sorting order
-	 * @param end
+	 * @param pageID Integer: page ID
+	 * @param order Sorting order
+	 * @param end @TODO document
 	 * @param cpage Integer: comment page number (used for pagination)
 	 */
-	viewComments: function( pid, ord, end, cpage ) {
+	viewComments: function( pageID, order, end, cpage ) {
 		document.commentform.cpage.value = cpage;
 		document.getElementById( 'allcomments' ).innerHTML = mw.msg( 'comments-loading' ) + '<br /><br />';
-		var x = sajax_init_object();
-		var url = mw.config.get( 'wgServer' ) + mw.config.get( 'wgScriptPath' ) +
-			'/index.php?title=Special:CommentListGet&pid=' + pid + '&ord=' +
-			ord + '&cpage=' + cpage;
 
-		x.open( 'get', url, true );
-
-		x.onreadystatechange = function() {
-			if ( x.readyState != 4 ) {
-				return;
-			}
-
-			document.getElementById( 'allcomments' ).innerHTML = x.responseText;
+		$.ajax( {
+			url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+			data: { 'action': 'commentlist', 'format': 'json', 'pageID': pageID, 'order': order, 'pagerPage': cpage },
+			cache: false
+		} ).done( function( response ) {
+			document.getElementById( 'allcomments' ).innerHTML = response.commentlist.html;
 			Comment.submitted = 0;
 			if ( end ) {
 				window.location.hash = 'end';
 			}
-		};
-
-		x.send( null );
+		} );
 	},
 
 	/**
@@ -148,30 +134,29 @@ var Comment = {
 		if ( Comment.submitted === 0 ) {
 			Comment.submitted = 1;
 
-			var pidVal = document.commentform.pid.value;
-			var parentId;
+			var pageID = document.commentform.pid.value;
+			var parentID;
 			if ( !document.commentform.comment_parent_id.value ) {
-				parentId = 0;
+				parentID = 0;
 			} else {
-				parentId = document.commentform.comment_parent_id.value;
+				parentID = document.commentform.comment_parent_id.value;
 			}
 			var commentText = document.commentform.comment_text.value;
-			var token = document.commentform.token.value;
 
-			sajax_request_type = 'POST';
-			sajax_do_call(
-				'wfCommentSubmit',
-				[ pidVal, parentId, commentText, token ],
-				function( response ) {
-					if ( response.responseText === 'ok' ) {
-						document.commentform.comment_text.value = '';
-						Comment.viewComments( document.commentform.pid.value, 0, 1, document.commentform.cpage.value );
-					} else if ( response.responseText != undefined && response.responseText != null && response.responseText != '' ) {
-						alert( response.responseText );
-						Comment.submitted = 0;
-					}
+			$.ajax( {
+				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+				data: { 'action': 'commentsubmit', 'format': 'json', 'pageID': pageID, 'parentID': parentID, 'commentText': commentText },
+				cache: false
+			} ).done( function( response ) {
+				if ( response.commentsubmit.ok ) {
+					document.commentform.comment_text.value = '';
+					Comment.viewComments( document.commentform.pid.value, 0, 1, document.commentform.cpage.value );
+				} else {
+					alert( response.responseText );
+					Comment.submitted = 0;
 				}
-			);
+			} );
+
 			Comment.cancelReply();
 		}
 	},
@@ -212,36 +197,34 @@ var Comment = {
 		if ( Comment.isBusy ) {
 			return;
 		}
-		var pid = document.commentform.pid.value;
-		sajax_do_call( 'wfCommentLatestID', [ pid ], function( response ) {
-			Comment.updateResults( response );
-		});
+		var pageID = document.commentform.pid.value;
+
+		$.ajax( {
+			url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+			data: { 'action': 'commentlatestid', 'format': 'json', 'pageID': pageID },
+			cache: false
+		} ).done( function( response ) { // @TODO response is now JSON
+			if ( response.commentlatestid.id ) {
+				// Get last new ID
+				Comment.CurLatestCommentID = response.commentlatestid.id;
+				if ( Comment.CurLatestCommentID != Comment.LatestCommentID ) {
+					Comment.viewComments( document.commentform.pid.value, 0, 1, document.commentform.cpage.value );
+					Comment.LatestCommentID = Comment.CurLatestCommentID;
+				}
+			}
+
+			Comment.isBusy = false;
+			if ( !Comment.pause ) {
+				clearTimeout( Comment.timer );
+				Comment.timer = setTimeout(
+					function() { Comment.checkUpdate(); },
+					Comment.updateDelay
+				);
+			}
+		} );
+
 		Comment.isBusy = true;
 		return false;
-	},
-
-	updateResults: function( response ) {
-		if ( !response || response.readyState != 4 ) {
-			return;
-		}
-
-		if ( response.status == 200 ) {
-			// Get last new ID
-			Comment.CurLatestCommentID = response.responseText;
-			if ( Comment.CurLatestCommentID != Comment.LatestCommentID ) {
-				Comment.viewComments( document.commentform.pid.value, 0, 1, document.commentform.cpage.value );
-				Comment.LatestCommentID = Comment.CurLatestCommentID;
-			}
-		}
-
-		Comment.isBusy = false;
-		if ( !Comment.pause ) {
-			clearTimeout( Comment.timer );
-			Comment.timer = setTimeout(
-				function() { Comment.checkUpdate(); },
-				Comment.updateDelay
-			);
-		}
 	},
 
 	/**
@@ -256,8 +239,8 @@ var Comment = {
 			mw.msg( 'comments-reply-to', poster, posterGender ) + ' ('
 		);
 		jQuery( '<a>', {
-			href: 'javascript:void(0);',
-			'class': 'comments-cancel-reply-link',
+			class: 'comments-cancel-reply-link',
+			style: 'cursor:pointer',
 			text: mw.msg( 'comments-cancel-reply' )
 		} ).appendTo( '#replyto' );
 		jQuery( '#replyto' ).append( ') <br />' );
@@ -297,8 +280,7 @@ jQuery( document ).ready( function() {
 		var that = jQuery( this );
 		Comment.vote(
 			that.data( 'comment-id' ),
-			that.data( 'vote-type' ),
-			that.data( 'voting' )
+			that.data( 'vote-type' )
 		);
 	} );
 
