@@ -72,13 +72,15 @@ $dir = __DIR__ . '/';
 $wgMessagesDirs['Comments'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['CommentsMagic'] = __DIR__ . '/Comments.i18n.magic.php';
 $wgAutoloadClasses['Comment'] = __DIR__ . '/CommentClass.php';
+$wgAutoloadClasses['CommentsPage'] = __DIR__ . '/CommentsPage.php';
+$wgAutoloadClasses['CommentFunctions'] = __DIR__ . '/CommentFunctions.php';
 $wgAutoloadClasses['CommentIgnoreList'] = __DIR__ . '/SpecialCommentIgnoreList.php';
 $wgAutoloadClasses['CommentListGet'] = __DIR__ . '/CommentAction.php';
 $wgSpecialPages['CommentIgnoreList'] = 'CommentIgnoreList';
 $wgSpecialPages['CommentListGet'] = 'CommentListGet';
 
 // Load the AJAX functions required by this extension
-require_once( __DIR__ . '/Comments_AjaxFunctions.php' );
+require_once(__DIR__ . '/CommentsAjaxFunctions.php');
 
 $wgAutoloadClasses['CommentsLogFormatter'] = __DIR__ . '/CommentsLogFormatter.php';
 // Add a new log type

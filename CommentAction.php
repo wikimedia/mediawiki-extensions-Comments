@@ -1,6 +1,6 @@
 <?php
 /**
- * If wfCommentList in Comments_AjaxFunctions.php would work properly, this
+ * If wfCommentList in CommentsAjaxFunctions.php would work properly, this
  * silly little special page wouldn't be needed at all. But alas, it doesn't.
  * @file
  * @ingroup Extensions

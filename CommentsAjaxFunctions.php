@@ -24,19 +24,19 @@ function wfCommentSubmit( $page_id, $parent_id, $comment_text, $token ) {
 		// To protect against spam, it's necessary to check the supplied text
 		// against spam filters (but comment admins are allowed to bypass the
 		// spam filters)
-		if ( !$wgUser->isAllowed( 'commentadmin' ) && Comment::isSpam( $comment_text ) ) {
+		if ( !$wgUser->isAllowed( 'commentadmin' ) && CommentFunctions::isSpam( $comment_text ) ) {
 			return wfMessage( 'comments-is-spam' )->plain();
 		}
 
 		// If the comment contains links but the user isn't allowed to post
 		// links, reject the submission
-		if ( !$wgUser->isAllowed( 'commentlinks' ) && Comment::haveLinks( $comment_text ) ) {
+		if ( !$wgUser->isAllowed( 'commentlinks' ) && CommentFunctions::haveLinks( $comment_text ) ) {
 			return wfMessage( 'comments-links-are-forbidden' )->plain();
 		}
 
 		$comment = new Comment( $page_id );
-		$comment->setCommentText( $comment_text );
-		$comment->setCommentParentID( $parent_id );
+		$comment->setText( $comment_text );
+		$comment->setParentID( $parent_id );
 		$comment->add();
 
 		if ( class_exists( 'UserStatsTrack' ) ) {
@@ -79,7 +79,7 @@ function wfCommentVote( $comment_id, $vote_value, $vg, $page_id, $token ) {
 			$comment->setCommentVote( $vote_value );
 			$comment->setVoting( $vg );
 			$comment->addVote();
-			$out = $comment->getCommentScore();
+			$out = $comment->getScore();
 
 			if ( class_exists( 'UserStatsTrack' ) ) {
 				$stats = new UserStatsTrack( $wgUser->getID(), $wgUser->getName() );
@@ -189,7 +189,7 @@ function wfDeleteComment( $pageId, $commentId, $token ) {
 	}
 
 	$comment = new Comment( $pageId );
-	$comment->setCommentID( $commentId );
+	$comment->setId( $commentId );
 	$comment->delete();
 
 	return 'ok';
