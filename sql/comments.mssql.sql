@@ -17,15 +17,11 @@ CREATE TABLE /*$wgDBprefix*/Comments (
   Comment_Date DATETIME NOT NULL default '0000-00-00 00:00:00',
   Comment_Parent_ID INT NOT NULL default 0,
   Comment_IP NVARCHAR(45) NOT NULL default '',
-  Comment_Plus_Count INT NOT NULL default 0,
-  Comment_Minus_Count INT NOT NULL default 0
 ) /*$wgDBTableOptions*/;
 
 CREATE INDEX /*i*/comment_page_id_index ON /*$wgDBprefix*/Comments (Comment_Page_ID);
 CREATE INDEX /*i*/wiki_user_id ON /*$wgDBprefix*/Comments (Comment_user_id);
 CREATE INDEX /*i*/wiki_user_name ON /*$wgDBprefix*/Comments (Comment_Username);
-CREATE INDEX /*i*/pluscontidx ON /*$wgDBprefix*/Comments (Comment_user_id);
-CREATE INDEX /*i*/miuscountidx ON /*$wgDBprefix*/Comments (Comment_Plus_Count);
 CREATE INDEX /*i*/comment_date ON /*$wgDBprefix*/Comments (Comment_Minus_Count);
 
 CREATE TABLE /*$wgDBprefix*/Comments_Vote (
