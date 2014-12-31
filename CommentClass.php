@@ -15,7 +15,7 @@ class Comment extends ContextSource {
 	 * @var Integer: page ID (page.page_id) of the page where the <comments />
 	 *               tag is in
 	 */
-	public $PageID = 0;
+	public $PageID = 0; // @TODO remove, access parent CommentPage
 
 	/**
 	 * @var Integer: total amount of comments by distinct commenters that the
@@ -49,12 +49,6 @@ class Comment extends ContextSource {
 	public $CommentScore = 0;
 
 	/**
-	 * @var Integer: if this is _not_ 0, then the comments are ordered by their
-	 *               Comment_Score in descending order
-	 */
-	public $OrderBy = 0;
-
-	/**
 	 * @var Integer: maximum amount of comments shown per page before pagination
 	 *               is enabled; also used as the LIMIT for the SQL query
 	 */
@@ -77,86 +71,6 @@ class Comment extends ContextSource {
 
 	public $PAGE_QUERY = 'cpage';
 
-	/**
-	 * The following four functions are borrowed
-	 * from includes/wikia/GlobalFunctionsNY.php
-	 */
-	static function dateDiff( $date1, $date2 ) {
-		$dtDiff = $date1 - $date2;
-
-		$totalDays = intval( $dtDiff / ( 24 * 60 * 60 ) );
-		$totalSecs = $dtDiff - ( $totalDays * 24 * 60 * 60 );
-		$dif['mo'] = intval( $totalDays / 30 );
-		$dif['d'] = $totalDays;
-		$dif['h'] = $h = intval( $totalSecs / ( 60 * 60 ) );
-		$dif['m'] = $m = intval( ( $totalSecs - ( $h * 60 * 60 ) ) / 60 );
-		$dif['s'] = $totalSecs - ( $h * 60 * 60 ) - ( $m * 60 );
-
-		return $dif;
-	}
-
-	static function getTimeOffset( $time, $timeabrv, $timename ) {
-		$timeStr = ''; // misza: initialize variables, DUMB FUCKS!
-		if ( $time[$timeabrv] > 0 ) {
-			// Give grep a chance to find the usages:
-			// comments-time-days, comments-time-hours, comments-time-minutes, comments-time-seconds, comments-time-months
-			$timeStr = wfMessage( "comments-time-{$timename}", $time[$timeabrv] )->parse();
-		}
-		if ( $timeStr ) {
-			$timeStr .= ' ';
-		}
-		return $timeStr;
-	}
-
-	static function getTimeAgo( $time ) {
-		$timeArray = self::dateDiff( time(), $time );
-		$timeStr = '';
-		$timeStrMo = self::getTimeOffset( $timeArray, 'mo', 'months' );
-		$timeStrD = self::getTimeOffset( $timeArray, 'd', 'days' );
-		$timeStrH = self::getTimeOffset( $timeArray, 'h', 'hours' );
-		$timeStrM = self::getTimeOffset( $timeArray, 'm', 'minutes' );
-		$timeStrS = self::getTimeOffset( $timeArray, 's', 'seconds' );
-
-		if ( $timeStrMo ) {
-			$timeStr = $timeStrMo;
-		} else {
-			$timeStr = $timeStrD;
-			if ( $timeStr < 2 ) {
-				$timeStr .= $timeStrH;
-				$timeStr .= $timeStrM;
-				if ( !$timeStr ) {
-					$timeStr .= $timeStrS;
-				}
-			}
-		}
-		if ( !$timeStr ) {
-			$timeStr = wfMessage( 'comments-time-seconds', 1 )->parse();
-		}
-		return $timeStr;
-	}
-
-	/**
-	 * Makes sure that link text is not too long by changing too long links to
-	 * <a href=#>http://www.abc....xyz.html</a>
-	 *
-	 * @param array $matches
-	 * @return string Shortened URL
-	 */
-	public static function cutCommentLinkText( $matches ) {
-		$tagOpen = $matches[1];
-		$linkText = $matches[2];
-		$tagClose = $matches[3];
-
-		$image = preg_match( "/<img src=/i", $linkText );
-		$isURL = ( preg_match( '%^(?:http|https|ftp)://(?:www\.)?.*$%i', $linkText ) ? true : false );
-
-		if ( $isURL && !$image && strlen( $linkText ) > 30 ) {
-			$start = substr( $linkText, 0, ( 30 / 2 ) - 3 );
-			$end = substr( $linkText, strlen( $linkText ) - ( 30 / 2 ) + 3, ( 30 / 2 ) - 3 );
-			$linkText = trim( $start ) . wfMsg( 'ellipsis' ) . trim( $end );
-		}
-		return $tagOpen . $linkText . $tagClose;
-	}
 
 	/**
 	 * Constructor - set the page ID
@@ -207,7 +121,7 @@ class Comment extends ContextSource {
 		// this function changes too long links to <a href=#>http://www.abc....xyz.html</a>
 		$comment_text = preg_replace_callback(
 			"/(<a[^>]*>)(.*?)(<\/a>)/i",
-			array( 'Comment', 'cutCommentLinkText' ),
+			array( 'CommentFunctions', 'cutCommentLinkText' ),
 			$comment_text
 		);
 
@@ -301,82 +215,6 @@ class Comment extends ContextSource {
 	}
 
 	/**
-	 * Gets the total amount of comments
-	 *
-	 * @return int
-	 */
-	function countTotal() {
-		$dbr = wfGetDB( DB_SLAVE );
-		$count = 0;
-		$s = $dbr->selectRow(
-			'Comments',
-			array( 'COUNT(*) AS CommentCount' ),
-			array( 'Comment_Page_ID' => $this->PageID ),
-			__METHOD__
-		);
-		if ( $s !== false ) {
-			$count = $s->CommentCount;
-		}
-		return $count;
-	}
-
-	/**
-	 * Simple spam check -- checks the supplied text against MediaWiki's
-	 * built-in regex-based spam filters
-	 *
-	 * @param string $text Text to check for spam patterns
-	 * @return bool True if it contains spam, otherwise false
-	 */
-	public static function isSpam( $text ) {
-		global $wgSpamRegex, $wgSummarySpamRegex;
-
-		$retVal = false;
-		// Allow to hook other anti-spam extensions so that sites that use,
-		// for example, AbuseFilter, Phalanx or SpamBlacklist can add additional
-		// checks
-		wfRunHooks( 'Comments::isSpam', array( &$text, &$retVal ) );
-		if ( $retVal ) {
-			// Should only be true here...
-			return $retVal;
-		}
-
-		// Run text through $wgSpamRegex (and $wgSummarySpamRegex if it has been specified)
-		if ( $wgSpamRegex && preg_match( $wgSpamRegex, $text ) ) {
-			return true;
-		}
-
-		if ( $wgSummarySpamRegex && is_array( $wgSummarySpamRegex ) ) {
-			foreach ( $wgSummarySpamRegex as $spamRegex ) {
-				if ( preg_match( $spamRegex, $text ) ) {
-					return true;
-				}
-			}
-		}
-
-		return $retVal;
-	}
-
-	/**
-	 * Checks the supplied text for links
-	 *
-	 * @param string $text Text to check
-	 * @return bool True if it contains links, otherwise false
-	 */
-	public static function haveLinks( $text ) {
-		$linkPatterns = array(
-			'/(https?)|(ftp):\/\//',
-			'/=\\s*[\'"]?\\s*mailto:/',
-		);
-		foreach ( $linkPatterns as $linkPattern ) {
-			if ( preg_match( $linkPattern, $text ) ) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	/**
 	 * Adds the comment and all necessary info into the Comments table in the
 	 * database.
 	 */
@@ -423,7 +261,7 @@ class Comment extends ContextSource {
 	}
 
 	/**
-	 * Gets the score for the comments from the database table Comments_Vote
+	 * Gets the score for this comment from the database table Comments_Vote
 	 *
 	 * @return int
 	 */
@@ -442,7 +280,7 @@ class Comment extends ContextSource {
 	}
 
 	/**
-	 * Gets the vote count for the comments from the database table Comments_Vote
+	 * Gets the vote count for this comment from the database table Comments_Vote
 	 *
 	 * @param int $vote 1 for positive votes, -1 for negative votes
 	 * @return int
@@ -462,27 +300,6 @@ class Comment extends ContextSource {
 			$voteCount = $s->CommentVoteCount;
 		}
 		return $voteCount;
-	}
-
-	/**
-	 * Gets the ID number of the latest comment for the current page.
-	 *
-	 * @return int
-	 */
-	function getLatestCommentID() {
-		$LatestCommentID = 0; // Added by misza to fix this retarded function
-		$dbr = wfGetDB( DB_SLAVE );
-		$s = $dbr->selectRow(
-			'Comments',
-			array( 'CommentID' ),
-			array( 'Comment_Page_ID' => $this->PageID ),
-			__METHOD__,
-			array( 'ORDER BY' => 'Comment_Date DESC', 'LIMIT' => 1 )
-		);
-		if ( $s !== false ) {
-			$LatestCommentID = $s->CommentID;
-		}
-		return $LatestCommentID;
 	}
 
 	/**
@@ -539,6 +356,11 @@ class Comment extends ContextSource {
 		}
 	}
 
+	/**
+	 * @TODO document
+	 *
+	 * @throws DBUnexpectedError
+	 */
 	function updateCommentVoteStats() {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->update(
@@ -576,6 +398,11 @@ class Comment extends ContextSource {
 		}
 	}
 
+	/**
+	 * @TODO document
+	 *
+	 * @param $vote
+	 */
 	function setCommentVote( $vote ) {
 		if ( $vote < 0 ) {
 			$vote = -1;
@@ -585,17 +412,11 @@ class Comment extends ContextSource {
 		$this->CommentVote = $vote;
 	}
 
-	function setOrderBy( $order ) {
-		if ( is_numeric( $order ) ) {
-			if ( $order == 0 ) {
-				$order = 0;
-			} else {
-				$order = 1;
-			}
-			$this->OrderBy = $order;
-		}
-	}
-
+	/**
+	 * @TODO document
+	 *
+	 * @param $pagerPage
+	 */
 	function setCurrentPagerPage( $pagerPage ) {
 		$this->CurrentPagerPage = intval( $pagerPage );
 	}
@@ -666,7 +487,7 @@ class Comment extends ContextSource {
 	}
 
 	/**
-	 * Check what pages the current user has voted.
+	 * Check what pages the current user has voted. @TODO what? that doesn't make sense in context
 	 *
 	 * @return array Array of comment ID numbers
 	 */
@@ -694,124 +515,12 @@ class Comment extends ContextSource {
 	}
 
 	/**
-	 * Fetches all comments, called by display().
+	 * @TODO document
 	 *
-	 * @return array Array containing every possible bit of information about
-	 *                a comment, including score, timestamp and more
+	 * @param $commentID
+	 * @param $voteType
+	 * @return string
 	 */
-	public function getCommentList( $page ) {
-		$dbr = wfGetDB( DB_SLAVE );
-
-		$tables = array();
-		$fields = array();
-		$params = array();
-		$joinConds = array();
-
-		// Defaults (for non-social wikis)
-		$tables[] = 'Comments';
-		$fields = array(
-			'Comment_Username', 'Comment_IP', 'Comment_Text',
-			'Comment_Date', 'UNIX_TIMESTAMP(Comment_Date) AS timestamp',
-			'Comment_user_id', 'CommentID',
-			'IFNULL(Comment_Plus_Count - Comment_Minus_Count,0) AS Comment_Score',
-			'Comment_Plus_Count AS CommentVotePlus',
-			'Comment_Minus_Count AS CommentVoteMinus', 'Comment_Parent_ID',
-			'CommentID'
-		);
-		$params['LIMIT'] = $this->Limit;
-		$params['OFFSET'] = ( $page > 0 ) ? ( ( $page - 1 ) * $this->Limit ) : 0;
-		if ( $this->OrderBy != 0 ) {
-			$params['ORDER BY'] = 'Comment_Score DESC';
-		}
-
-		// If SocialProfile is installed, query the user_stats table too.
-		if (
-			$dbr->tableExists( 'user_stats' ) &&
-			class_exists( 'UserProfile' )
-		) {
-			$tables[] = 'user_stats';
-			$fields[] = 'stats_total_points';
-			$joinConds = array(
-				'Comments' => array(
-					'LEFT JOIN', 'Comment_user_id = stats_user_id'
-				)
-			);
-		}
-
-		// Perform the query
-		$res = $dbr->select(
-			$tables,
-			$fields,
-			array( 'Comment_Page_ID' => $this->PageID ),
-			__METHOD__,
-			$params,
-			$joinConds
-		);
-
-		$comments = array();
-
-		foreach ( $res as $row ) {
-			if ( $row->Comment_Parent_ID == 0 ) {
-				$thread = $row->CommentID;
-			} else {
-				$thread = $row->Comment_Parent_ID;
-			}
-			$comments[] = array(
-				'Comment_Username' => $row->Comment_Username,
-				'Comment_IP' => $row->Comment_IP,
-				'Comment_Text' => $row->Comment_Text,
-				'Comment_Date' => $row->Comment_Date,
-				'Comment_user_id' => $row->Comment_user_id,
-				'Comment_user_points' => ( isset( $row->stats_total_points ) ? number_format( $row->stats_total_points ) : 0 ),
-				'CommentID' => $row->CommentID,
-				'Comment_Score' => $row->Comment_Score,
-				'CommentVotePlus' => $row->CommentVotePlus,
-				'CommentVoteMinus' => $row->CommentVoteMinus,
-				# 'AlreadyVoted' => $row->AlreadyVoted, // misza: turned off - no such crap
-				'Comment_Parent_ID' => $row->Comment_Parent_ID,
-				'thread' => $thread,
-				'timestamp' => $row->timestamp
-			);
-		}
-
-		if ( $this->OrderBy == 0 ) {
-			usort( $comments, array( 'Comment', 'sortCommentList' ) );
-		}
-
-		return $comments;
-	}
-
-	/**
-	 * Displays the "Sort by X" form and a link to auto-refresh comments
-	 *
-	 * @return string HTML
-	 */
-	function displayOrderForm() {
-		$output = '<div class="c-order">
-			<div class="c-order-select">
-				<form name="ChangeOrder" action="">
-					<select name="TheOrder">
-						<option value="0">' .
-							wfMessage( 'comments-sort-by-date' )->plain() .
-						'</option>
-						<option value="1">' .
-							wfMessage( 'comments-sort-by-score' )->plain() .
-						'</option>
-					</select>
-				</form>
-			</div>
-			<div id="spy" class="c-spy">
-				<a href="javascript:void(0)">' .
-					wfMessage( 'comments-auto-refresher-enable' )->plain() .
-				'</a>
-			</div>
-			<div class="cleared"></div>
-		</div>
-		<br />' . "\n";
-
-		return $output;
-	}
-
 	function getVoteLink( $commentID, $voteType ) {
 		global $wgExtensionAssetsPath;
 
@@ -1194,7 +903,7 @@ class Comment extends ContextSource {
 				$output .= '<div class="c-time">' .
 					wfMessage(
 						'comments-time-ago',
-						self::getTimeAgo( strtotime( $comment['Comment_Date'] ) )
+						CommentFunctions::getTimeAgo( strtotime( $comment['Comment_Date'] ) )
 					)->parse() . '</div>' . "\n";
 				wfRestoreWarnings();
 
