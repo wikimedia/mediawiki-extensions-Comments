@@ -78,21 +78,21 @@ class CommentsHooks {
 			$voting = $args['voting'];
 		}
 
-		$comment = new Comment( $wgOut->getTitle()->getArticleID() );
-		$comment->setAllow( $allow );
-		$comment->setVoting( $voting );
+		$commentsPage = new CommentsPage( $wgOut->getTitle()->getArticleID(), $wgOut->getContext() );
+		$commentsPage->setAllow( $allow );
+		$commentsPage->setVoting( $voting );
 
 		$output = '<div class="comments-body">';
 		// This was originally commented out, I don't know why.
 		// Uncommented to prevent E_NOTICE.
-		$output .= $comment->displayOrderForm();
+		$output .= $commentsPage->displayOrderForm();
 
-		$output .= '<div id="allcomments">' . $comment->display() . '</div>';
+		$output .= '<div id="allcomments">' . $commentsPage->display() . '</div>';
 
 		// If the database is in read-only mode, display a message informing the
 		// user about that, otherwise allow them to comment
 		if ( !wfReadOnly() ) {
-			$output .= $comment->displayForm();
+			$output .= $commentsPage->displayForm();
 		} else {
 			$output .= wfMessage( 'comments-db-locked' )->parse();
 		}
