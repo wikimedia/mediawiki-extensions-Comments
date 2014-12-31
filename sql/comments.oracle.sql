@@ -24,15 +24,15 @@ CREATE TABLE &mw_prefix.Comments (
   Comment_Date TIMESTAMP(6) WITH TIME ZONE NOT NULL,
   Comment_Parent_ID NUMBER NOT NULL DEFAULT 0,
   Comment_IP VARCHAR2(45) NOT NULL,
-  Comment_Plus_Count NUMBER NOT NULL DEFAULT 0,
-  Comment_Minus_Count NUMBER NOT NULL DEFAULT 0
+  /*Comment_Plus_Count NUMBER NOT NULL DEFAULT 0,
+  Comment_Minus_Count NUMBER NOT NULL DEFAULT 0*/
 );
 
 CREATE INDEX &mw_prefix.comment_page_id_index ON &mw_prefix.Comments (Comment_Page_ID);
 CREATE INDEX &mw_prefix.wiki_user_id ON &mw_prefix.Comments (Comment_user_id);
 CREATE INDEX &mw_prefix.wiki_user_name ON &mw_prefix.Comments (Comment_Username);
-CREATE INDEX &mw_prefix.pluscontidx ON &mw_prefix.Comments (Comment_user_id);
-CREATE INDEX &mw_prefix.miuscountidx ON &mw_prefix.Comments (Comment_Plus_Count);
+/*CREATE INDEX &mw_prefix.pluscontidx ON &mw_prefix.Comments (Comment_user_id);
+CREATE INDEX &mw_prefix.miuscountidx ON &mw_prefix.Comments (Comment_Plus_Count);*/
 CREATE INDEX &mw_prefix.comment_date ON &mw_prefix.Comments (Comment_Minus_Count);
 
 ALTER TABLE &mw_prefix.Comments ADD CONSTRAINT &mw_prefix.Comments_pk PRIMARY KEY (CommentID);

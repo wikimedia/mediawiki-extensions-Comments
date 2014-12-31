@@ -72,13 +72,10 @@ $dir = __DIR__ . '/';
 $wgMessagesDirs['Comments'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['CommentsMagic'] = __DIR__ . '/Comments.i18n.magic.php';
 $wgAutoloadClasses['Comment'] = __DIR__ . '/CommentClass.php';
+$wgAutoloadClasses['CommentsPage'] = __DIR__ . '/CommentsPage.php';
+$wgAutoloadClasses['CommentFunctions'] = __DIR__ . '/CommentFunctions.php';
 $wgAutoloadClasses['CommentIgnoreList'] = __DIR__ . '/SpecialCommentIgnoreList.php';
-$wgAutoloadClasses['CommentListGet'] = __DIR__ . '/CommentAction.php';
 $wgSpecialPages['CommentIgnoreList'] = 'CommentIgnoreList';
-$wgSpecialPages['CommentListGet'] = 'CommentListGet';
-
-// Load the AJAX functions required by this extension
-require_once( __DIR__ . '/Comments_AjaxFunctions.php' );
 
 $wgAutoloadClasses['CommentsLogFormatter'] = __DIR__ . '/CommentsLogFormatter.php';
 // Add a new log type
@@ -109,3 +106,17 @@ $wgHooks['ParserGetVariableValueSwitch'][] = 'NumberOfComments::getNumberOfComme
 // NumberOfComments magic word setup
 $wgAutoloadClasses['NumberOfComments'] = __DIR__ . '/NumberOfComments.php';
 $wgExtensionMessagesFiles['NumberOfCommentsMagic'] = __DIR__ . '/Comments.i18n.magic.php';
+
+// API
+$wgAutoloadClasses['CommentBlockAPI'] = __DIR__ . '/api/CommentBlock.api.php';
+$wgAutoloadClasses['CommentDeleteAPI'] = __DIR__ . '/api/CommentDelete.api.php';
+$wgAutoloadClasses['CommentLatestIdAPI'] = __DIR__ . '/api/CommentLatestID.api.php';
+$wgAutoloadClasses['CommentListAPI'] = __DIR__ . '/api/CommentList.api.php';
+$wgAutoloadClasses['CommentSubmitAPI'] = __DIR__ . '/api/CommentSubmit.api.php';
+$wgAutoloadClasses['CommentVoteAPI'] = __DIR__ . '/api/CommentVote.api.php';
+$wgAPIModules['commentblock'] = 'CommentBlockAPI';
+$wgAPIModules['commentdelete'] = 'CommentDeleteAPI';
+$wgAPIModules['commentlatestid'] = 'CommentLatestIdAPI';
+$wgAPIModules['commentlist'] = 'CommentListAPI';
+$wgAPIModules['commentsubmit'] = 'CommentSubmitAPI';
+$wgAPIModules['commentvote'] = 'CommentVoteAPI';
