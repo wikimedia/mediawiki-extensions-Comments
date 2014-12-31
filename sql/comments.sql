@@ -8,15 +8,15 @@ CREATE TABLE /*_*/Comments (
   `Comment_Date` datetime NOT NULL default '0000-00-00 00:00:00',
   `Comment_Parent_ID` int(11) NOT NULL default 0,
   `Comment_IP` varchar(45) NOT NULL default '',
-  `Comment_Plus_Count` int(11) NOT NULL default 0,
-  `Comment_Minus_Count` int(11) NOT NULL default 0
+  /*`Comment_Plus_Count` int(11) NOT NULL default 0,
+  `Comment_Minus_Count` int(11) NOT NULL default 0*/
 ) /*$wgDBTableOptions*/;
 
 CREATE INDEX /*i*/comment_page_id_index ON /*_*/Comments (Comment_Page_ID);
 CREATE INDEX /*i*/wiki_user_id ON /*_*/Comments (Comment_user_id);
 CREATE INDEX /*i*/wiki_user_name ON /*_*/Comments (Comment_Username);
-CREATE INDEX /*i*/pluscontidx ON /*_*/Comments (Comment_user_id);
-CREATE INDEX /*i*/miuscountidx ON /*_*/Comments (Comment_Plus_Count);
+/*CREATE INDEX /*i*/pluscontidx ON /*_*/Comments (Comment_user_id);
+CREATE INDEX /*i*/miuscountidx ON /*_*/Comments (Comment_Plus_Count);*/
 CREATE INDEX /*i*/comment_date ON /*_*/Comments (Comment_Minus_Count);
 
 CREATE TABLE /*_*/Comments_Vote (
