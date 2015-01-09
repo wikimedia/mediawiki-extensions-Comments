@@ -11,7 +11,7 @@
 	"comments-loading": "Stoche a careche…",
 	"comments-auto-refresher-enable": "Abbilite l'aggiornamende automateche de le commende",
 	"comments-auto-refresher-pause": "Firme l'aggiornamende automateche de le commende",
-	"comments-reply-to": "Respunne a",
+	"comments-reply-to": "Respunne a {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Annulle",
 	"comments-block-warning-anon": "Sì secure ca non ge vuè ccu pinze a le commende pe sembre da stu utende anonime (ausanne l'indirizze IP sue)?",
 	"comments-block-warning-user": "Sì secure ca non ge vuè ccu pinze a le commende pe sembre da l'utende $1?",
@@ -32,6 +32,8 @@
 	"comments-delete-link": "Scangille 'u commende",
 	"comments-anon-name": "Utende anonime",
 	"comments-anon-message": "{{SITENAME}} bovègne a <b>tutte le commende</b>. Ce tu non ge vuè essere anonime, <a href=\"$1\">reggistrate</a> o <a href=\"$2\">tràse</a>. Jè libbere.",
+	"comments-links-are-forbidden": "Collegaminde de fore jndr'à le commende sò vietate!",
+	"comments-is-spam": "'U teste scritte d'u commende ha state 'nderpretate cumme rummate.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> a le $3 <a href=\"$4\">(sblocche)</a>",
 	"comments-ignore-no-users": "Non ge stonne utinde bloccate pe mò.",
 	"comments-ignore-remove-message": "Sì secure ca vuè ccu sblocche le commende de l'utende <b>$1</b>?",
@@ -45,6 +47,7 @@
 	"logentry-comments-add": "$1 ave mannate 'nu commende nuève sus a $3",
 	"logentry-comments-delete": "$1 ave scangellate 'u commende #$4 sus a $3",
 	"comments-time-ago": "$1 fà",
+	"comments-time-months": "{{PLURAL:$1|'nu mese|$1 mise}}",
 	"comments-time-days": "{{PLURAL:$1|'nu sciurne|$1 sciurne}}",
 	"comments-time-hours": "{{PLURAL:$1|'n'ore|$1 ore}}",
 	"comments-time-minutes": "{{PLURAL:$1|'nu minute|$1 minute}}",
@@ -54,5 +57,6 @@
 	"group-commentadmin-member": "{{GENDER:$1|amministratore d'u commende}}",
 	"grouppage-commentadmin": "{{ns:project}}:Amministrature d'u commende",
 	"right-comment": "Conferme le commende",
-	"right-commentadmin": "Gestisce le commende de le utinde confermate"
+	"right-commentadmin": "Gestisce le commende de le utinde confermate",
+	"right-commentlinks": "Ause le collegaminde de fore jndr'à le commende"
 }
