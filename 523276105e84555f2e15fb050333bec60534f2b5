@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee703fc5_cdb9c479",
+        "filename": "Comment.js",
+        "patchSetId": 19
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2015-01-14T20:47:47Z",
+      "side": 1,
+      "message": "Debug code?",
+      "revId": "523276105e84555f2e15fb050333bec60534f2b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee703fc5_8db3cc95",
+        "filename": "Comment.js",
+        "patchSetId": 19
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2015-01-14T20:47:47Z",
+      "side": 1,
+      "message": "Is this @todo comment still valid?",
+      "revId": "523276105e84555f2e15fb050333bec60534f2b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae6ac7d6_3759f801",
+        "filename": "CommentClass.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2015-01-14T20:47:47Z",
+      "side": 1,
+      "message": "Minor spacing issue + missing fourth parameter (__METHOD__).",
+      "revId": "523276105e84555f2e15fb050333bec60534f2b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae6ac7d6_97fec4aa",
+        "filename": "CommentClass.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2015-01-14T20:47:47Z",
+      "side": 1,
+      "message": "I\u0027m sure you didn\u0027t introduce this, but man, this is some dumb code we have in here. I wonder if there\u0027s a reason we can\u0027t store the *raw* $row-\u003estats_total_points value in the DB table and call $wgLang-\u003eformatNum() on it when we\u0027re closer to outputting it? (IIRC there are basically no valid usages of number_format() outside core\u0027s language classes, but older code and/or code written by devs not very familiar with MW\u0027s infrastructure might still use it, and most social tools definitely fit both definitions -- back in the day plenty of social tools didn\u0027t even *have* i18n support, let alone proper i18n support!)",
+      "revId": "523276105e84555f2e15fb050333bec60534f2b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae6ac7d6_d71bdc1f",
+        "filename": "CommentClass.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2015-01-14T20:47:47Z",
+      "side": 1,
+      "message": "Should be \"elseif\", as per https://www.mediawiki.org/wiki/Manual:Coding_conventions/PHP#C_borrowings",
+      "revId": "523276105e84555f2e15fb050333bec60534f2b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae6ac7d6_d7d19c28",
+        "filename": "CommentClass.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2015-01-14T20:47:47Z",
+      "side": 1,
+      "message": "Minor nitpicking again, but this is missing the parameter data type (int) between the @param and $voteType (also, you don\u0027t need the colon in there after the parameter name...it was recommended practise at some point, but it\u0027s changed since that; just like how we used to document params like @param $paramName Datatype: description here, but nowadays the recommended format is @param datatype $paramName Description goes here),",
+      "revId": "523276105e84555f2e15fb050333bec60534f2b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae6ac7d6_57a58cb0",
+        "filename": "CommentClass.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2015-01-14T20:47:47Z",
+      "side": 1,
+      "message": "Same doc comment nitpicking as above (but really, it\u0027s not like this is a big deal, just pointing it out).",
+      "revId": "523276105e84555f2e15fb050333bec60534f2b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee703fc5_ad7570ca",
+        "filename": "CommentsPage.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2015-01-14T20:47:47Z",
+      "side": 1,
+      "message": "Should be indented with two, not three, tabs. (Yeah, horrible nitpicking, I know. ;-)",
+      "revId": "523276105e84555f2e15fb050333bec60534f2b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee703fc5_4d7cd4b4",
+        "filename": "CommentsPage.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2015-01-14T20:47:47Z",
+      "side": 1,
+      "message": "Unnecessary tab character.",
+      "revId": "523276105e84555f2e15fb050333bec60534f2b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee703fc5_cd36a400",
+        "filename": "CommentsPage.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2015-01-14T20:47:47Z",
+      "side": 1,
+      "message": "This (or some other closely related method) is buggy. On http://social-tools.wmflabs.org/wiki/Talk:Main_Page there are comments from two anonymous users; the user who commented after wctaiwan\u0027s comment is (on the old version of Comments) \"Anonymous user #1\", and the other anon is \"Anonymous user #2\". With the new version, the person who replied to wctaiwan becomes \"Anonymous user #2\" and the other becomes \"Anonymous user #4\".",
+      "revId": "523276105e84555f2e15fb050333bec60534f2b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee703fc5_005f8314",
+        "filename": "api/CommentVote.api.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2015-01-14T20:47:47Z",
+      "side": 1,
+      "message": "This should use $this-\u003egetUser() instead of the global, as per the other related API modules.",
+      "revId": "523276105e84555f2e15fb050333bec60534f2b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
