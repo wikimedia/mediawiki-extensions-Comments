@@ -172,6 +172,24 @@
     },
     {
       "key": {
+        "uuid": "ae6ac7d6_cc4eebc4",
+        "filename": "CommentsPage.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 410
+      },
+      "writtenOn": "2015-01-15T17:49:39Z",
+      "side": 1,
+      "message": "Can you confirm that instance is up to date (Special:Version doesn\u0027t agree :) ) Also, works fine on my local clone.",
+      "parentUuid": "ee703fc5_cd36a400",
+      "revId": "523276105e84555f2e15fb050333bec60534f2b5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee703fc5_005f8314",
         "filename": "api/CommentVote.api.php",
         "patchSetId": 19
