@@ -410,11 +410,10 @@ class CommentsPage extends ContextSource {
         $bucket = array();
 
         $comments = $this->comments;
-        usort( $comments, 'CommentFunctions::sortTime');
+        usort( $comments, array( 'CommentFunctions', 'sortTime' ) );
 
         foreach ( $comments as $comment ) {
             if (
-                $comment &&
                 !array_key_exists( $comment->username, $bucket ) &&
                 $comment->userID == 0
             ) {
