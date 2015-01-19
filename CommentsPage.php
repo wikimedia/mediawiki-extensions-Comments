@@ -414,6 +414,7 @@ class CommentsPage extends ContextSource {
 
         foreach ( $comments as $comment ) {
             if (
+                $comment &&
                 !array_key_exists( $comment->username, $bucket ) &&
                 $comment->userID == 0
             ) {
