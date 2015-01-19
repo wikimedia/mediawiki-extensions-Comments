@@ -446,7 +446,7 @@ class CommentsPage extends ContextSource {
         }
 
         // Try cache
-        $key = wfMemcKey( 'comment', 'list', $this->id );
+        $key = wfMemcKey( 'comment', 'pagelist', $this->id );
         $data = $wgMemc->get( $key );
 
         if ( !$data ) {
