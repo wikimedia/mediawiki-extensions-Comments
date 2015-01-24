@@ -570,7 +570,7 @@ class CommentsPage extends ContextSource {
      */
     function clearCommentListCache() {
         global $wgMemc;
-        $wgMemc->delete( wfMemcKey( 'comment', 'list', $this->id ) );
+        $wgMemc->delete( wfMemcKey( 'comment', 'pagelist', $this->id ) );
 
         $pageTitle = Title::newFromID( $this->id );
         if ( is_object( $pageTitle ) ) {
