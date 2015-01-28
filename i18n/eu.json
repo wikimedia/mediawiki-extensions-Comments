@@ -5,6 +5,7 @@
 		]
 	},
 	"comments-loading": "Kargatzen...",
+	"comments-reply": "Erantzun",
 	"comments-submit": "Gehitu zure iruzkina",
 	"comments-time-days": "{{PLURAL:$1|egun bat|$1 egun}}",
 	"comments-time-hours": "{{PLURAL:$1|ordu bat|$1 ordu}}",
