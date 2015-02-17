@@ -570,12 +570,13 @@ class CommentsPage extends ContextSource {
      */
     function clearCommentListCache() {
         global $wgMemc;
-        $wgMemc->delete( wfMemcKey( 'comment', 'pagelist', $this->id ) );
+        wfDebug( "Clearing comments for page {$this->id} from cache\n" );
+        $key = wfMemcKey( 'comment', 'pagelist', $this->id );
+        $wgMemc->delete( $key );
 
-        $pageTitle = Title::newFromID( $this->id );
-        if ( is_object( $pageTitle ) ) {
-            $pageTitle->invalidateCache();
-            $pageTitle->purgeSquid();
+        if ( is_object( $this->title ) ) {
+            $this->title->invalidateCache();
+            $this->title->purgeSquid();
         }
     }
 
