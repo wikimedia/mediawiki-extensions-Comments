@@ -8,11 +8,12 @@
 			"Raymond",
 			"Shirayuki",
 			"Siebrand",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Umherirrender"
 		]
 	},
 	"comments-comment": "This message might be unused.\n{{Identical|Comment}}",
-	"comments-desc": "{{desc|name=Comments|url=http://www.mediawiki.org/wiki/Extension:Comments}}",
+	"comments-desc": "{{desc|name=Comments|url=https://www.mediawiki.org/wiki/Extension:Comments}}",
 	"comments-db-locked": "Displayed if a page contains the <code><nowiki><comments /></nowiki></code> tag while the database is locked.",
 	"comments-voted-label": "Shown when you have voted (either thumbs up or thumbs down) for a given comment",
 	"comments-loading": "{{Identical|Loading}}",
