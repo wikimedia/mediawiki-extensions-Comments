@@ -478,7 +478,7 @@ class CommentsPage extends ContextSource {
             }
             $output .= $pager;
         }
-        $output .= '<a id="end" name="end" rel="nofollow"></a>';
+
         return $output;
     }
 
