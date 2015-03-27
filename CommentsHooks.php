@@ -85,6 +85,7 @@ class CommentsHooks {
 		$output = '<div class="comments-body">';
 
 		if ( $wgCommentsSortDescending ) { // form before comments
+			$output .= '<a id="end" name="end" rel="nofollow"></a>';
 			if ( !wfReadOnly() ) {
 				$output .= $commentsPage->displayForm();
 			} else {
@@ -104,6 +105,7 @@ class CommentsHooks {
 			} else {
 				$output .= wfMessage( 'comments-db-locked' )->parse();
 			}
+			$output .= '<a id="end" name="end" rel="nofollow"></a>';
 		}
 
 		$output .= '</div>'; // div.comments-body
