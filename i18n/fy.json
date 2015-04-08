@@ -6,6 +6,7 @@
 		]
 	},
 	"comments-cancel-reply": "Annulearje",
+	"comments-you": "Jo",
 	"comments-ignore-cancel": "Annulearje",
 	"comments-time-ago": "$1 lyn",
 	"comments-time-days": "{{PLURAL:$1|ien dei|$1 dagen}}",
