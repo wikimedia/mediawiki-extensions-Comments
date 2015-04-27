@@ -8,12 +8,13 @@
 			"Fitoschido",
 			"Ihojose",
 			"Sporeunai",
-			"Frammm"
+			"Frammm",
+			"Carlos Cristia"
 		]
 	},
 	"comments-comment": "Comentario",
 	"comments-desc": "Añade el asociador analítico <code>&lt;comments&gt;</code> que permite hacer comentarios en las páginas",
-	"comments-db-locked": "<h3>Agregar comentarios</h3>La base de datos se ha bloqueado para realizar tareas de mantenimiento de rutina. Cuando estos trabajos concluyan, la base de datos volverá a la normalidad. Por favor, regresa más tarde.",
+	"comments-db-locked": "<h3>Agregar comentarios</h3>La base de datos está en este momento bloqueada para realizar tareas rutinarias de mantenimiento. Cuando estos trabajos concluyan, la base de datos volverá a la normalidad. Por favor, regresa más tarde.",
 	"comments-voted-label": "Valorado",
 	"comments-loading": "Cargando...",
 	"comments-auto-refresher-enable": "Habilitar actualización automática de comentarios",
