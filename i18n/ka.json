@@ -7,7 +7,7 @@
 	"comments-comment": "კომენტარი",
 	"comments-voted-label": "ხმა მიცემულია",
 	"comments-loading": "იტვირთება…",
-	"comments-reply-to": "პასუხი",
+	"comments-reply-to": "პასუხი მომხმარებელს {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "გაუქმება",
 	"comments-delete-warning": "დარწმუნებული ხართ, რომ გსურთ ამ კომენტარის წაშლა?",
 	"comments-you": "თქვენ",
