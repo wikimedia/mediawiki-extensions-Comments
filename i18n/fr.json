@@ -3,7 +3,8 @@
 		"authors": [
 			"Crochet.david",
 			"Gomoko",
-			"Linedwell"
+			"Linedwell",
+			"0x010C"
 		]
 	},
 	"comments-comment": "Commenter",
@@ -54,7 +55,7 @@
 	"comments-time-hours": "{{PLURAL:$1|une heure|$1 heures}}",
 	"comments-time-minutes": "{{PLURAL:$1|une minute|$1 minutes}}",
 	"comments-time-seconds": "{{PLURAL:$1|une seconde|$1 seconds}}",
-	"log-show-hide-comments": "journal de commentaires $1",
+	"log-show-hide-comments": "$1 le journal des commentaires",
 	"group-commentadmin": "Administrateurs de commentaires",
 	"group-commentadmin-member": "{{GENDER:$1|administrateur de commentaires|administratrice de commentaires}}",
 	"grouppage-commentadmin": "{{ns:project}}:Administrateurs de commentaires",
