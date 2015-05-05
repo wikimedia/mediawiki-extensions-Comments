@@ -144,7 +144,7 @@ class CommentsHooks {
 	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( $updater ) {
-		$dir = dirname( __FILE__ ) . '/sql/';
+		$dir = __DIR__ . '/sql';
 
 		$dbType = $updater->getDB()->getType();
 		// For non-MySQL/MariaDB/SQLite DBMSes, use the appropriately named file

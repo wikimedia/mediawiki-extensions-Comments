@@ -7,7 +7,7 @@
  * @author David Pean <david.pean@gmail.com>
  * @author Misza <misza1313[ at ]gmail[ dot ]com>
  * @author Jack Phoenix <jack@countervandalism.net>
- * @copyright Copyright © 2008-2014 David Pean, Misza and Jack Phoenix
+ * @copyright Copyright © 2008-2015 David Pean, Misza and Jack Phoenix
  * @link https://www.mediawiki.org/wiki/Extension:Comments Documentation
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
@@ -24,7 +24,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'Comments',
-	'version' => '4.0.2',
+	'version' => '4.0.3',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix', 'Adam Carter/UltrasonicNXT' ),
 	'descriptionmsg' => 'comments-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
