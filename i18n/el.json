@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Glavkos",
-			"ZaDiak"
+			"ZaDiak",
+			"Protnet"
 		]
 	},
 	"comments-comment": "Σχόλιο",
@@ -36,7 +37,7 @@
 	"comments-time-seconds": "{{PLURAL:$1|ένα δευτερόλεπτο|$1 δευτερόλεπτα}}",
 	"log-show-hide-comments": "$1 αρχείο καταγραφής σχολίων",
 	"group-commentadmin": "Διαχειριστές σχολίων",
-	"group-commentadmin-member": "{{GENDER:$1|διαχειριστής σχολίων}}",
+	"group-commentadmin-member": "{{GENDER:$1|διαχειριστής σχολίων|διαχειρίστρια σχολίων}}",
 	"grouppage-commentadmin": "{{ns:project}}:Διαχειριστές σχολίων",
 	"right-comment": "Καταχώρηση σχολίων"
 }
