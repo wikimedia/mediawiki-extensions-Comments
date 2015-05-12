@@ -223,7 +223,7 @@ class CommentFunctions {
     }
 
     /**
-     * Sort the comments ascending
+     * Sort threads ascending
      *
      * @param $x
      * @param $y
@@ -234,15 +234,7 @@ class CommentFunctions {
         // return  1  -  x goes below y
         // return  0  -  order irrelevant (only when x == y)
 
-        if ( $x->thread == $y->thread ) {
-            if ( $x->timestamp == $y->timestamp ) {
-                return 0;
-            } elseif ( $x->timestamp < $y->timestamp ) {
-                return -1;
-            } else {
-                return 1;
-            }
-        } elseif ( $x->thread < $y->thread ) {
+        if ( $x[0]->timestamp < $y[0]->timestamp ) {
             return -1;
         } else {
             return 1;
@@ -250,7 +242,7 @@ class CommentFunctions {
     }
 
     /**
-     * Sort the comments descending
+     * Sort threads descending
      *
      * @param $x
      * @param $y
@@ -261,18 +253,28 @@ class CommentFunctions {
         // return  1  -  x goes below y
         // return  0  -  order irrelevant (only when x == y)
 
-        if ( $x->thread == $y->thread ) {
-            if ( $x->timestamp == $y->timestamp ) {
-                return 0;
-            } elseif ( $x->timestamp < $y->timestamp ) {
-                return -1;
-            } else {
-                return 1;
-            }
-        } elseif ( $x->thread < $y->thread ) {
-            return 1;
-        } else {
+        if ( $x[0]->timestamp > $y[0]->timestamp ) {
             return -1;
+        } else {
+            return 1;
+        }
+    }
+
+    /**
+     * Sort threads by score
+     *
+     * @param $x
+     * @param $y
+     */
+    public static function sortScore( $x, $y ) {
+        // return -1  -  x goes above y
+        // return  1  -  x goes below y
+        // return  0  -  order irrelevant (only when x == y)
+
+        if ( $x[0]->currentScore > $y[0]->currentScore ) {
+            return -1;
+        } else {
+            return 1;
         }
     }
 
