@@ -18,10 +18,9 @@ class CommentsPage extends ContextSource {
     public $orderBy = 0;
 
     /**
-     * @var Integer: maximum amount of comments shown per page before pagination
-     *               is enabled; also used as the LIMIT for the SQL query
+     * @var Integer: maximum amount of threads of comments shown per page before pagination is enabled;
      */
-    public $limit = 100;
+    public $limit = 50;
 
     /**
      * @TODO document
@@ -74,7 +73,8 @@ class CommentsPage extends ContextSource {
     public $title = null;
 
     /**
-     * List of comments on this page.
+     * List of lists of comments on this page.
+     * Each list is a separate 'thread' of comments, with the parent comment first, and any replies following
      * Not populated until display() is called
      *
      * @var array
@@ -158,13 +158,10 @@ class CommentsPage extends ContextSource {
     /**
      * Fetches all comments, called by display().
      *
-     * @param $page: used for paging through results
-     *
      * @return array Array containing every possible bit of information about
      *                a comment, including score, timestamp and more
      */
-    public function getCommentList( $page ) {
-        global $wgCommentsSortDescending;
+    public function getComments() {
         $dbr = wfGetDB( DB_SLAVE );
 
         $tables = array();
@@ -181,11 +178,15 @@ class CommentsPage extends ContextSource {
             'Comment_Parent_ID', 'CommentID', 'Comment_Plus_Count AS CommentVotePlus',
 			'Comment_Minus_Count AS CommentVoteMinus'
         );
-        $params['LIMIT'] = $this->limit;
-        $params['OFFSET'] = ( $page > 0 ) ? ( ( $page - 1 ) * $this->limit ) : 0;
-        if ( $this->orderBy != 0 ) {
+        //$params['LIMIT'] = $this->limit;
+        //$params['OFFSET'] = ( $page > 0 ) ? ( ( $page - 1 ) * $this->limit ) : 0;
+        /*if ( $this->orderBy != 0 ) {
             $params['ORDER BY'] = 'Comment_Score DESC';
-        }
+        } elseif ( $wgCommentsSortDescending ) {
+            $params['ORDER BY'] = 'Comment_Score DESC';
+        } else {
+            $params['ORDER BY'] = 'Comment_Score DESC';
+        }*/
 
         // If SocialProfile is installed, query the user_stats table too.
         if (
@@ -235,15 +236,17 @@ class CommentsPage extends ContextSource {
             $comments[] = new Comment( $this, $this->getContext(), $data );
         }
 
-        if ( $this->orderBy == 0 ) {
-            if ( $wgCommentsSortDescending ) {
-                usort( $comments, 'CommentFunctions::sortDesc' );
+        $commentThreads = array();
+
+        foreach ( $comments as $comment ) {
+            if ( $comment->parentID == 0 ) {
+                $commentThreads[$comment->id] = [$comment];
             } else {
-                usort( $comments, 'CommentFunctions::sortAsc' );
+                $commentThreads[$comment->parentID][] = $comment;
             }
         }
 
-        return $comments;
+        return $commentThreads;
     }
 
     /**
@@ -409,7 +412,12 @@ class CommentsPage extends ContextSource {
         $counter = 1;
         $bucket = array();
 
-        $comments = $this->comments;
+        $commentThreads = $this->comments;
+
+        $comments = []; // convert 2nd threads array to a simple list of comments
+        foreach ( $commentThreads as $thread ) {
+            $comments = array_merge( $comments, $thread );
+        }
         usort( $comments, array( 'CommentFunctions', 'sortTime' ) );
 
         foreach ( $comments as $comment ) {
@@ -426,6 +434,35 @@ class CommentsPage extends ContextSource {
     }
 
     /**
+     * Sort an array of comment threads
+     * @param $threads
+     * @return mixed
+     */
+    function sort( $threads ) {
+        global $wgCommentsSortDescending;
+
+        if ( $this->orderBy ) {
+            usort( $threads, array( 'CommentFunctions', 'sortScore' ) );
+        } elseif ( $wgCommentsSortDescending ) {
+            usort( $threads, array( 'CommentFunctions', 'sortDesc' ) );
+        } else {
+            usort( $threads, array( 'CommentFunctions', 'sortAsc' ) );
+        }
+
+        return $threads;
+    }
+
+    /**
+     * Convert an array of comment threads into an array of pages (arrays) of comment threads
+     * @param $comments
+     * @return array
+     */
+    function page( $comments ) {
+        return array_chunk( $comments, $this->limit );
+    }
+
+
+    /**
      * Display all the comments for the current page.
      * CSS and JS is loaded in Comment.php
      */
@@ -434,31 +471,27 @@ class CommentsPage extends ContextSource {
 
         $output = '';
 
-        // TODO: Try cache
-        wfDebug( "Loading comments count for page {$this->id} from DB\n" );
-        $commentsCount = $this->countTotal();
-        $pagesCount = ( ( $commentsCount % $this->limit ) > 0 )
-            ? ( 1 +  floor( $commentsCount / $this->limit ) ) :  floor( $commentsCount / $this->limit );
-        $pagerCurrent = $this->getCurrentPagerPage( $pagesCount );
-
-        if ( $pagerCurrent > $pagesCount ) {
-            $pagerCurrent = $pagesCount;
-        }
-
         // Try cache
-        $key = wfMemcKey( 'comment', 'pagelist', $this->id );
+        $key = wfMemcKey( 'comment', 'pagethreadlist', $this->id );
         $data = $wgMemc->get( $key );
 
         if ( !$data ) {
             wfDebug( "Loading comments for page {$this->id} from DB\n" );
-            $comments = $this->getCommentList( $pagerCurrent );
-            $wgMemc->set( $key, $comments );
+            $commentThreads = $this->getComments();
+            $wgMemc->set( $key, $commentThreads );
         } else {
             wfDebug( "Loading comments for page {$this->id} from cache\n" );
-            $comments = $data;
+            $commentThreads = $data;
         }
 
-        $this->comments = $comments;
+        $commentThreads = $this->sort( $commentThreads );
+
+        $this->comments = $commentThreads;
+
+        $commentPages = $this->page( $commentThreads );
+        $currentPageNum = $this->getCurrentPagerPage();
+        $numPages = count( $commentPages );
+        $currentPage = $commentPages[$currentPageNum - 1];
 
         // Load complete blocked list for logged in user so they don't see their comments
         $blockList = array();
@@ -466,15 +499,17 @@ class CommentsPage extends ContextSource {
             $blockList = CommentFunctions::getBlockList( $this->getUser()->getId() );
         }
 
-        if ( $comments ) {
-            $pager = $this->displayPager( $pagerCurrent, $pagesCount );
+        if ( $currentPage ) {
+            $pager = $this->displayPager( $currentPageNum, $numPages );
             $output .= $pager;
             $output .= '<a id="cfirst" name="cfirst" rel="nofollow"></a>';
 
             $anonList = $this->getAnonList();
 
-            foreach ( $comments as $comment ) {
-                $output .= $comment->display( $blockList, $anonList );
+            foreach ( $currentPage as $thread ) {
+                foreach ( $thread as $comment ) {
+                    $output .= $comment->display( $blockList, $anonList );
+                }
             }
             $output .= $pager;
         }
@@ -571,7 +606,7 @@ class CommentsPage extends ContextSource {
     function clearCommentListCache() {
         global $wgMemc;
         wfDebug( "Clearing comments for page {$this->id} from cache\n" );
-        $key = wfMemcKey( 'comment', 'pagelist', $this->id );
+        $key = wfMemcKey( 'comment', 'pagethreadlist', $this->id );
         $wgMemc->delete( $key );
 
         if ( is_object( $this->title ) ) {
