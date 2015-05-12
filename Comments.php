@@ -24,7 +24,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'Comments',
-	'version' => '4.0.3',
+	'version' => '4.1.0',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix', 'Adam Carter/UltrasonicNXT' ),
 	'descriptionmsg' => 'comments-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
