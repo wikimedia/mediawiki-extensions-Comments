@@ -35,106 +35,69 @@ function getCommentsOfTheDay( $input, $args, $parser ) {
 	$oneDay = 60 * 60 * 24;
 
 	// Try memcached first
-	$key = wfMemcKey( 'comments-of-the-day', 'standalone-hook' );
+	$key = wfMemcKey( 'comments-of-the-day', 'standalone-hook-new' );
 	$data = $wgMemc->get( $key );
 
 	if ( $data ) { // success, got it from memcached!
-		$commentsOfTheDay = $data;
+		$comments = $data;
 	} elseif ( !$data || $args['nocache'] ) { // just query the DB
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$res = $dbr->select(
 			array( 'Comments', 'page' ),
 			array(
-				'Comment_Username', 'comment_ip', 'comment_text',
-				'comment_date', 'Comment_user_id', 'CommentID',
-				'IFNULL(Comment_Plus_Count - Comment_Minus_Count,0) AS Comment_Score',
-				'Comment_Plus_Count AS CommentVotePlus',
-				'Comment_Minus_Count AS CommentVoteMinus',
-				'Comment_Parent_ID', 'page_title', 'page_namespace'
+				'Comment_Username', 'Comment_IP', 'Comment_Text',
+				'Comment_Date', 'UNIX_TIMESTAMP(Comment_Date) AS timestamp',
+                'Comment_User_Id', 'CommentID', 'Comment_Parent_ID',
+                'Comment_Page_ID'
 			),
 			array(
 				'comment_page_id = page_id',
 				'UNIX_TIMESTAMP(comment_date) > ' . ( time() - ( $oneDay ) )
 			),
-			__METHOD__,
-			array( 'ORDER BY' => '(Comment_Plus_Count) DESC', 'LIMIT' => 5 )
+			__METHOD__
 		);
 
-		$commentsOfTheDay = array();
-		foreach ( $res as $row ) {
-			$commentsOfTheDay[] = array(
-				'username' => $row->Comment_Username,
-				'userid' => $row->Comment_user_id,
-				'score' => $row->CommentVotePlus,
-				'text' => $row->comment_text,
-				'id' => $row->CommentID,
-				'pagens' => $row->page_namespace,
-				'pagetitle' => $row->page_title
-			);
-		}
+        $comments = array();
 
-		$wgMemc->set( $key, $commentsOfTheDay, $oneDay );
+        foreach ( $res as $row ) {
+            if ( $row->Comment_Parent_ID == 0 ) {
+                $thread = $row->CommentID;
+            } else {
+                $thread = $row->Comment_Parent_ID;
+            }
+            $data = array(
+                'Comment_Username' => $row->Comment_Username,
+                'Comment_IP' => $row->Comment_IP,
+                'Comment_Text' => $row->Comment_Text,
+                'Comment_Date' => $row->Comment_Date,
+                'Comment_user_id' => $row->Comment_User_Id,
+                'Comment_user_points' => ( isset( $row->stats_total_points ) ? number_format( $row->stats_total_points ) : 0 ),
+                'CommentID' => $row->CommentID,
+                'Comment_Parent_ID' => $row->Comment_Parent_ID,
+                'thread' => $thread,
+                'timestamp' => $row->timestamp
+            );
+
+            $page = new CommentsPage( $row->Comment_Page_ID, new RequestContext() );
+            $comments[] = new Comment( $page, new RequestContext(), $data );
+        }
+
+        usort( $comments, array( 'CommentFunctions', 'sortCommentScore' ) );
+        $comments = array_slice( $comments, 0, 5 );
+
+		$wgMemc->set( $key, $comments, $oneDay );
 	}
 
-	$comments = '';
+	$commentOutput = '';
 
-	foreach ( $commentsOfTheDay as $commentOfTheDay ) {
-		$title2 = Title::makeTitle(
-			$commentOfTheDay['pagens'],
-			$commentOfTheDay['pagetitle']
-		);
-
-		if ( $commentOfTheDay['userid'] != 0 ) {
-			$title = Title::makeTitle( NS_USER, $commentOfTheDay['username'] );
-			$commentPoster_Display = $commentOfTheDay['username'];
-			$commentPoster = '<a href="' . $title->getFullURL() .
-				'" title="' . $title->getText() . '" rel="nofollow">' .
-				$commentOfTheDay['username'] . '</a>';
-			if ( class_exists( 'wAvatar' ) ) {
-				$avatar = new wAvatar( $commentOfTheDay['userid'], 's' );
-				$commentIcon = $avatar->getAvatarImage();
-			} else {
-				$commentIcon = '';
-			}
-		} else {
-			$commentPoster_Display = wfMessage( 'comments-anon-name' )->plain();
-			$commentPoster = wfMessage( 'comments-anon-name' )->plain();
-			$commentIcon = 'default_s.gif';
-		}
-
-		$avatarHTML = '';
-		if ( class_exists( 'wAvatar' ) ) {
-			global $wgUploadPath;
-			$avatarHTML = '<img src="' . $wgUploadPath . '/avatars/' . $commentIcon .
-			'" alt="" align="middle" style="margin-bottom:8px;" border="0"/>';
-		}
-
-		$comment_text = substr( $commentOfTheDay['text'], 0, 50 - strlen( $commentPoster_Display ) );
-		if ( $comment_text != $commentOfTheDay['text'] ) {
-			$comment_text .= wfMessage( 'ellipsis' )->plain();
-		}
-
-		$comments .= '<div class="cod">';
-		$sign = '';
-		if ( $commentOfTheDay['score'] > 0 ) {
-			$sign = '+';
-		} elseif ( $commentOfTheDay['score'] < 0 ) {
-			$sign = '-'; // this *really* shouldn't be happening...
-		}
-		$comments .= '<span class="cod-score">' . $sign . $commentOfTheDay['score'] .
-			'</span> ' . $avatarHTML .
-			'<span class="cod-poster">' . $commentPoster . '</span>';
-		$comments .= '<span class="cod-comment"><a href="' .
-			$title2->getFullURL() . '#comment-' . $commentOfTheDay['id'] .
-			'" title="' . $title2->getText() . '">' . $comment_text .
-			'</a></span>';
-		$comments .= '</div>';
+	foreach ( $comments as $comment ) {
+        $commentOutput .= $comment->displayForCommentOfTheDay();
 	}
 
 	$output = '';
-	if ( !empty( $comments ) ) {
-		$output .= $comments;
+	if ( !empty( $commentOutput ) ) {
+		$output .= $commentOutput;
 	} else {
 		$output .= wfMessage( 'comments-no-comments-of-day' )->plain();
 	}

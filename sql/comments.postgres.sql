@@ -25,7 +25,6 @@ CREATE TABLE Comments (
 CREATE INDEX comment_page_id_index ON Comments (Comment_Page_ID);
 CREATE INDEX wiki_user_id ON Comments (Comment_user_id);
 CREATE INDEX wiki_user_name ON Comments (Comment_Username);
-CREATE INDEX comment_date ON Comments (Comment_Minus_Count);
 
 CREATE TABLE Comments_Vote (
   Comment_Vote_ID INTEGER NOT NULL DEFAULT 0,

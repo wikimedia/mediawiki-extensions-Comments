@@ -29,7 +29,6 @@ CREATE TABLE &mw_prefix.Comments (
 CREATE INDEX &mw_prefix.comment_page_id_index ON &mw_prefix.Comments (Comment_Page_ID);
 CREATE INDEX &mw_prefix.wiki_user_id ON &mw_prefix.Comments (Comment_user_id);
 CREATE INDEX &mw_prefix.wiki_user_name ON &mw_prefix.Comments (Comment_Username);
-CREATE INDEX &mw_prefix.comment_date ON &mw_prefix.Comments (Comment_Minus_Count);
 
 ALTER TABLE &mw_prefix.Comments ADD CONSTRAINT &mw_prefix.Comments_pk PRIMARY KEY (CommentID);
 
