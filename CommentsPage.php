@@ -173,20 +173,8 @@ class CommentsPage extends ContextSource {
         $fields = array(
             'Comment_Username', 'Comment_IP', 'Comment_Text',
             'Comment_Date', 'UNIX_TIMESTAMP(Comment_Date) AS timestamp',
-            'Comment_user_id', 'CommentID',
-            'IFNULL(Comment_Plus_Count - Comment_Minus_Count,0) AS Comment_Score',
-            'Comment_Parent_ID', 'CommentID', 'Comment_Plus_Count AS CommentVotePlus',
-			'Comment_Minus_Count AS CommentVoteMinus'
+            'Comment_user_id', 'CommentID', 'Comment_Parent_ID',
         );
-        //$params['LIMIT'] = $this->limit;
-        //$params['OFFSET'] = ( $page > 0 ) ? ( ( $page - 1 ) * $this->limit ) : 0;
-        /*if ( $this->orderBy != 0 ) {
-            $params['ORDER BY'] = 'Comment_Score DESC';
-        } elseif ( $wgCommentsSortDescending ) {
-            $params['ORDER BY'] = 'Comment_Score DESC';
-        } else {
-            $params['ORDER BY'] = 'Comment_Score DESC';
-        }*/
 
         // If SocialProfile is installed, query the user_stats table too.
         if (

@@ -279,6 +279,24 @@ class CommentFunctions {
     }
 
     /**
+     * Sort COMMENTS (not threads) by score
+     *
+     * @param $x
+     * @param $y
+     */
+    public static function sortCommentScore( $x, $y ) {
+        // return -1  -  x goes above y
+        // return  1  -  x goes below y
+        // return  0  -  order irrelevant (only when x == y)
+
+        if ( $x->currentScore > $y->currentScore ) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+
+    /**
      * Sort the comments purely by the time, from earliest to latest
      *
      * @param $x

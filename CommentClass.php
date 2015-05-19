@@ -561,6 +561,58 @@ class Comment extends ContextSource {
 		return $output;
 	}
 
+    function displayForCommentOfTheDay() {
+        $output = '';
+
+        $title2 = $this->page->getTitle();
+
+        if ( $this->userID != 0 ) {
+            $title = Title::makeTitle( NS_USER, $this->username );
+            $commentPoster_Display = $this->username;
+            $commentPoster = '<a href="' . $title->getFullURL() . '" title="' . $title->getText() . '" rel="nofollow">' . $this->username . '</a>';
+            if ( class_exists( 'wAvatar' ) ) {
+                $avatar = new wAvatar( $this->userID, 's' );
+                $commentIcon = $avatar->getAvatarImage();
+            } else {
+                $commentIcon = '';
+            }
+        } else {
+            $commentPoster_Display = wfMessage( 'comments-anon-name' )->plain();
+            $commentPoster = wfMessage( 'comments-anon-name' )->plain();
+            $commentIcon = 'default_s.gif';
+        }
+
+        $avatarHTML = '';
+        if ( class_exists( 'wAvatar' ) ) {
+            global $wgUploadPath;
+            $avatarHTML = '<img src="' . $wgUploadPath . '/avatars/' . $commentIcon .
+                '" alt="" align="middle" style="margin-bottom:8px;" border="0"/>';
+        }
+
+        $comment_text = substr( $this->text, 0, 50 - strlen( $commentPoster_Display ) );
+        if ( $comment_text != $this->text ) {
+            $comment_text .= wfMessage( 'ellipsis' )->plain();
+        }
+
+        $output .= '<div class="cod">';
+        $sign = '';
+        if ( $this->currentScore > 0 ) {
+            $sign = '+';
+        } elseif ( $this->currentScore < 0 ) {
+            $sign = '-'; // this *really* shouldn't be happening...
+        }
+        $output .= '<span class="cod-score">' . $sign . $this->currentScore .
+            '</span> ' . $avatarHTML .
+            '<span class="cod-poster">' . $commentPoster . '</span>';
+        $output .= '<span class="cod-comment"><a href="' .
+            $title2->getFullURL() . '#comment-' . $this->id .
+            '" title="' . $title2->getText() . '">' . $comment_text .
+            '</a></span>';
+        $output .= '</div>';
+
+        return $output;
+    }
+
 	/**
 	 * Show the box for if this comment has been ignored
 	 *
