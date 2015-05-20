@@ -22,7 +22,6 @@ CREATE TABLE /*$wgDBprefix*/Comments (
 CREATE INDEX /*i*/comment_page_id_index ON /*$wgDBprefix*/Comments (Comment_Page_ID);
 CREATE INDEX /*i*/wiki_user_id ON /*$wgDBprefix*/Comments (Comment_user_id);
 CREATE INDEX /*i*/wiki_user_name ON /*$wgDBprefix*/Comments (Comment_Username);
-CREATE INDEX /*i*/comment_date ON /*$wgDBprefix*/Comments (Comment_Minus_Count);
 
 CREATE TABLE /*$wgDBprefix*/Comments_Vote (
   Comment_Vote_ID INT NOT NULL default 0,
