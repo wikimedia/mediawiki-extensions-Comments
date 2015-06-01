@@ -18,7 +18,7 @@
 	"comments-db-locked": "<h3> اضافه کردن نظرات </h3> در حال حاضر پایگاه اطلاعاتی برای حفاظت پایگاه اطلاعاتی جاری فقل است، که پی از این به حالت عادی برخواهد گشت.لطفاً بعداً بررسي كنيد!",
 	"comments-voted-label": "رای",
 	"comments-loading": "در حال بارگذاری...",
-	"comments-auto-refresher-enable": "فعال‌کردن تازه‌کنندهٔ خودکار نظر",
+	"comments-auto-refresher-enable": "فعال کردن تازه‌کنندهٔ خودکار نظر",
 	"comments-auto-refresher-pause": "متوقف‌کردن تازه‌کنندهٔ خودکار نظر",
 	"comments-reply-to": "پاسخ به {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "لغو",
