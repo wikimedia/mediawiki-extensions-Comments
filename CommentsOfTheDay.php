@@ -48,8 +48,8 @@ function getCommentsOfTheDay( $input, $args, $parser ) {
 			array(
 				'Comment_Username', 'Comment_IP', 'Comment_Text',
 				'Comment_Date', 'UNIX_TIMESTAMP(Comment_Date) AS timestamp',
-                'Comment_User_Id', 'CommentID', 'Comment_Parent_ID',
-                'Comment_Page_ID'
+				'Comment_User_Id', 'CommentID', 'Comment_Parent_ID',
+				'Comment_Page_ID'
 			),
 			array(
 				'comment_page_id = page_id',
@@ -58,33 +58,33 @@ function getCommentsOfTheDay( $input, $args, $parser ) {
 			__METHOD__
 		);
 
-        $comments = array();
+		$comments = array();
 
-        foreach ( $res as $row ) {
-            if ( $row->Comment_Parent_ID == 0 ) {
-                $thread = $row->CommentID;
-            } else {
-                $thread = $row->Comment_Parent_ID;
-            }
-            $data = array(
-                'Comment_Username' => $row->Comment_Username,
-                'Comment_IP' => $row->Comment_IP,
-                'Comment_Text' => $row->Comment_Text,
-                'Comment_Date' => $row->Comment_Date,
-                'Comment_user_id' => $row->Comment_User_Id,
-                'Comment_user_points' => ( isset( $row->stats_total_points ) ? number_format( $row->stats_total_points ) : 0 ),
-                'CommentID' => $row->CommentID,
-                'Comment_Parent_ID' => $row->Comment_Parent_ID,
-                'thread' => $thread,
-                'timestamp' => $row->timestamp
-            );
+		foreach ( $res as $row ) {
+			if ( $row->Comment_Parent_ID == 0 ) {
+				$thread = $row->CommentID;
+			} else {
+				$thread = $row->Comment_Parent_ID;
+			}
+			$data = array(
+				'Comment_Username' => $row->Comment_Username,
+				'Comment_IP' => $row->Comment_IP,
+				'Comment_Text' => $row->Comment_Text,
+				'Comment_Date' => $row->Comment_Date,
+				'Comment_user_id' => $row->Comment_User_Id,
+				'Comment_user_points' => ( isset( $row->stats_total_points ) ? number_format( $row->stats_total_points ) : 0 ),
+				'CommentID' => $row->CommentID,
+				'Comment_Parent_ID' => $row->Comment_Parent_ID,
+				'thread' => $thread,
+				'timestamp' => $row->timestamp
+			);
 
-            $page = new CommentsPage( $row->Comment_Page_ID, new RequestContext() );
-            $comments[] = new Comment( $page, new RequestContext(), $data );
-        }
+			$page = new CommentsPage( $row->Comment_Page_ID, new RequestContext() );
+			$comments[] = new Comment( $page, new RequestContext(), $data );
+		}
 
-        usort( $comments, array( 'CommentFunctions', 'sortCommentScore' ) );
-        $comments = array_slice( $comments, 0, 5 );
+		usort( $comments, array( 'CommentFunctions', 'sortCommentScore' ) );
+		$comments = array_slice( $comments, 0, 5 );
 
 		$wgMemc->set( $key, $comments, $oneDay );
 	}
@@ -92,7 +92,7 @@ function getCommentsOfTheDay( $input, $args, $parser ) {
 	$commentOutput = '';
 
 	foreach ( $comments as $comment ) {
-        $commentOutput .= $comment->displayForCommentOfTheDay();
+		$commentOutput .= $comment->displayForCommentOfTheDay();
 	}
 
 	$output = '';
