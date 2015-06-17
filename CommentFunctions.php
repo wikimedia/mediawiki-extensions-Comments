@@ -96,7 +96,7 @@ class CommentFunctions {
 		// Allow to hook other anti-spam extensions so that sites that use,
 		// for example, AbuseFilter, Phalanx or SpamBlacklist can add additional
 		// checks
-		wfRunHooks( 'Comments::isSpam', array( &$text, &$retVal ) );
+		Hooks::run( 'Comments::isSpam', array( &$text, &$retVal ) );
 		if ( $retVal ) {
 			// Should only be true here...
 			return $retVal;

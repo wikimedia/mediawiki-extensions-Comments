@@ -351,7 +351,7 @@ class Comment extends ContextSource {
 		$page = new CommentsPage( $page->id, $context );
 		$comment = new Comment( $page, $context, $data );
 
-		wfRunHooks( 'Comment::add', array( $comment, $commentId, $comment->page->id ) );
+		Hooks::run( 'Comment::add', array( $comment, $commentId, $comment->page->id ) );
 
 		return $comment;
 	}
@@ -481,7 +481,7 @@ class Comment extends ContextSource {
 		$this->page->clearCommentListCache();
 
 		// Ping other extensions that may have hooked into this point (i.e. LinkFilter)
-		wfRunHooks( 'Comment::delete', array( $this, $this->id, $this->page->id ) );
+		Hooks::run( 'Comment::delete', array( $this, $this->id, $this->page->id ) );
 	}
 
 	/**
