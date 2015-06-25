@@ -1,0 +1,121 @@
+{
+	"name": "Comments",
+	"version": "4.1.0",
+	"author": [
+		"David Pean",
+		"Misza",
+		"Jack Phoenix",
+		"Adam Carter/UltrasonicNXT"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:Comments",
+	"descriptionmsg": "comments-desc",
+	"type": "parserhook",
+	"GroupPermissions": {
+		"*": {
+			"comment": true
+		},
+		"commentadmin": {
+			"commentadmin": true
+		},
+		"autoconfirmed": {
+			"commentlinks": true
+		}
+	},
+	"AvailableRights": [
+		"comment",
+		"commentadmin",
+		"commentlinks"
+	],
+	"SpecialPages": {
+		"CommentIgnoreList": "CommentIgnoreList"
+	},
+	"LogTypes": [
+		"comments"
+	],
+	"FilterLogTypes": {
+		"comments": true
+	},
+	"LogActionsHandlers": {
+		"comments/add": "CommentsLogFormatter",
+		"comments/delete": "LogFormatter"
+	},
+	"APIModules": {
+		"commentblock": "CommentBlockAPI",
+		"commentdelete": "CommentDeleteAPI",
+		"commentlatestid": "CommentLatestIdAPI",
+		"commentlist": "CommentListAPI",
+		"commentsubmit": "CommentSubmitAPI",
+		"commentvote": "CommentVoteAPI"
+	},
+	"MessagesDirs": {
+		"Comments": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"CommentsMagic": "Comments.i18n.magic.php",
+		"NumberOfCommentsMagic": "Comments.i18n.magic.php"
+	},
+	"AutoloadClasses": {
+		"Comment": "CommentClass.php",
+		"CommentsPage": "CommentsPage.php",
+		"CommentFunctions": "CommentFunctions.php",
+		"CommentIgnoreList": "SpecialCommentIgnoreList.php",
+		"CommentsLogFormatter": "CommentsLogFormatter.php",
+		"CommentsHooks": "CommentsHooks.php",
+		"NumberOfComments": "NumberOfComments.php",
+		"CommentBlockAPI": "api/CommentBlock.api.php",
+		"CommentDeleteAPI": "api/CommentDelete.api.php",
+		"CommentLatestIdAPI": "api/CommentLatestID.api.php",
+		"CommentListAPI": "api/CommentList.api.php",
+		"CommentSubmitAPI": "api/CommentSubmit.api.php",
+		"CommentVoteAPI": "api/CommentVote.api.php"
+	},
+	"ResourceModules": {
+		"ext.comments.css": {
+			"styles": "Comments.css",
+			"position": "top"
+		},
+		"ext.comments.js": {
+			"scripts": "Comment.js",
+			"messages": [
+				"comments-voted-label",
+				"comments-loading",
+				"comments-auto-refresher-pause",
+				"comments-auto-refresher-enable",
+				"comments-cancel-reply",
+				"comments-reply-to",
+				"comments-block-warning-anon",
+				"comments-block-warning-user",
+				"comments-delete-warning"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "Comments"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": [
+			"CommentsHooks::onParserFirstCallInit",
+			"NumberOfComments::setupNumberOfCommentsPageParser"
+		],
+		"LoadExtensionSchemaUpdates": [
+			"CommentsHooks::onLoadExtensionSchemaUpdates"
+		],
+		"RenameUserSQL": [
+			"CommentsHooks::onRenameUserSQL"
+		],
+		"MagicWordwgVariableIDs": [
+			"NumberOfComments::registerNumberOfCommentsMagicWord"
+		],
+		"ParserGetVariableValueSwitch": [
+			"NumberOfComments::getNumberOfCommentsMagic"
+		]
+	},
+	"config": {
+		"CommentsDefaultAvatar": "http://www.shoutwiki.com/w/extensions/SocialProfile/avatars/default_ml.gif",
+		"CommentsSortDescending": false,
+		"CommentsInRecentChanges": false
+	}
+}
