@@ -479,7 +479,12 @@ class CommentsPage extends ContextSource {
 		$commentPages = $this->page( $commentThreads );
 		$currentPageNum = $this->getCurrentPagerPage();
 		$numPages = count( $commentPages );
+		// Suppress random E_NOTICE about "Undefined offset: 0", which seems to
+		// be breaking ProblemReports (at least on my local devbox, not sure
+		// about prod). --Jack Phoenix, 13 July 2015
+		wfSuppressWarnings();
 		$currentPage = $commentPages[$currentPageNum - 1];
+		wfRestoreWarnings();
 
 		// Load complete blocked list for logged in user so they don't see their comments
 		$blockList = array();
