@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jacenty359",
-			"Odie2"
+			"Odie2",
+			"Chrumps"
 		]
 	},
 	"comments-comment": "Komentarz",
@@ -33,6 +34,8 @@
 	"comments-delete-link": "Usuń komentarz",
 	"comments-anon-name": "Anonim",
 	"comments-anon-message": "{{SITENAME}} przyjmuje z zadowoleniem <b>wszystkie komentarze</b>. Jeśli nie chcesz być anonimowy, <a href=\"$1\">zarejestruj się</a> lub <a href=\"$2\">zaloguj</a>.",
+	"comments-links-are-forbidden": "Linki zewnętrzne w komentarzach są zabronione!",
+	"comments-is-spam": "Wysłany tekst komentarza został zinterpretowany jako spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a>, na $3 <a href=\"$4\">(odblokuj)</a>",
 	"comments-ignore-no-users": "Brak obecnie zablokowanych użytkowników.",
 	"comments-ignore-remove-message": "Czy na pewno chcesz odblokować komentarze użytkownika <b>$1</b>?",
