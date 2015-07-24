@@ -20,7 +20,7 @@
 	"comments-auto-refresher-pause": "暫停自動更新評論",
 	"comments-reply-to": "回覆 {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "取消",
-	"comments-block-warning-anon": "您確定要永久忽略所有來自此匿名使用者的評論 (透過 IP 位置)？",
+	"comments-block-warning-anon": "您確定要永久忽略所有來自此匿名使用者的評論 (透過 IP 位址) ？",
 	"comments-block-warning-user": "您確定要永久忽略所有來自使用者 $1 的評論？",
 	"comments-delete-warning": "您確定要刪除此評論？",
 	"comments-sort-by-date": "依日期排序",
