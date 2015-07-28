@@ -55,7 +55,7 @@
 	"log-description-comments": "Este es un registro de los comentarios.",
 	"logentry-comments-add": "$1 publicó un comentario nuevo en $3",
 	"logentry-comments-delete": "$1 eliminó el comentario n.º $4 en $3",
-	"comments-time-ago": "Hace $1",
+	"comments-time-ago": "hace $1",
 	"comments-time-months": "{{PLURAL:$1|un mes|$1 meses}}",
 	"comments-time-days": "{{PLURAL:$1|un día|$1 días}}",
 	"comments-time-hours": "{{PLURAL:$1|una hora|$1 horas}}",
