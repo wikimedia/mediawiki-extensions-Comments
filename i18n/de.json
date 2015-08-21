@@ -3,7 +3,8 @@
 		"authors": [
 			"Gerry",
 			"Kghbln",
-			"Metalhead64"
+			"Metalhead64",
+			"Geitost"
 		]
 	},
 	"comments-comment": "Kommentar",
@@ -55,7 +56,7 @@
 	"comments-time-minutes": "{{PLURAL:$1|einer Minute|$1 Minuten}}",
 	"comments-time-seconds": "{{PLURAL:$1|einer Sekunde|$1 Sekunden}}",
 	"log-show-hide-comments": "Kommentar-Logbuch $1",
-	"group-commentadmin": "Kommentaradministrator",
+	"group-commentadmin": "Kommentaradministratoren",
 	"group-commentadmin-member": "{{GENDER:$1|Kommentaradministrator|Kommentaradministratorin}}",
 	"grouppage-commentadmin": "{{ns:project}}:Kommentaradministratoren",
 	"right-comment": "Kommentar abgeben",
