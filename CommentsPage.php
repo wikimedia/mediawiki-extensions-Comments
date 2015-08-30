@@ -534,7 +534,7 @@ class CommentsPage extends ContextSource {
 			wfMessage( 'comments-auto-refresher-enable' )->plain() .
 			'</a>
 			</div>
-			<div class="cleared"></div>
+			<div class="visualClear"></div>
 		</div>
 		<br />' . "\n";
 

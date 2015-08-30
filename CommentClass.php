@@ -769,7 +769,7 @@ class Comment extends ContextSource {
 		}
 		$output .= '</div>' . "\n";
 		$output .= '</div>' . "\n";
-		$output .= '<div class="cleared"></div>' . "\n";
+		$output .= '<div class="visualClear"></div>' . "\n";
 		$output .= '</div>' . "\n";
 
 		return $output;
