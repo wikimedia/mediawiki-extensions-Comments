@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"comments-comment": "Comentariu",
+	"comments-desc": "Añade l'enganche del analizador <code>&lt;comments&gt;</code> que permite comentar nes páxines",
+	"comments-db-locked": "<h3>Amestar comentarios</h3>Nesti momentu la base de datos ta bloquiada por xeres rutinaries de caltenimientu, depués de les que volverá a la normalidá. Torna más sero.",
+	"comments-voted-label": "Votáu",
+	"comments-loading": "Cargando...",
+	"comments-auto-refresher-enable": "Activar actualización automática de comentarios",
+	"comments-auto-refresher-pause": "Posar l'actualizador automáticu de comentarios",
+	"comments-reply-to": "Responder a {{GENDER:$2|$1}}",
+	"comments-cancel-reply": "Encaboxar",
+	"comments-block-warning-anon": "¿Seguro que quies inorar permanentemente tolos comentarios d'esti usuariu anónimu (al traviés de la so dirección IP)?",
+	"comments-block-warning-user": "¿Seguro que quies inorar permanentemente tolos comentarios {{GENDER:$1|del usuariu|de la usuaria}} $1?",
+	"comments-delete-warning": "¿Seguro que quies desaniciar esti comentariu?",
+	"comments-sort-by-date": "Ordenar por fecha",
+	"comments-sort-by-score": "Ordenar por valoración",
+	"comments-show-comment-link": "Amosar comentariu",
+	"comments-manage-blocklist-link": "Alministrar llista de comentarios inoraos",
+	"comments-ignore-message": "Tas inorando al autor d'esti comentariu",
+	"comments-you": "Tu",
+	"comments-reply": "Responder"
+}
