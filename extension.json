@@ -117,5 +117,6 @@
 		"CommentsDefaultAvatar": "http://www.shoutwiki.com/w/extensions/SocialProfile/avatars/default_ml.gif",
 		"CommentsSortDescending": false,
 		"CommentsInRecentChanges": false
-	}
+	},
+	"manifest_version": 1
 }
