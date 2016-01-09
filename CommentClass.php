@@ -762,8 +762,10 @@ class Comment extends ContextSource {
 		$output .= $this->getText();
 		$output .= '</div>' . "\n";
 		$output .= '<div class="c-actions">' . "\n";
-		$output .= '<a href="' . htmlspecialchars( $this->page->title->getFullURL() ) . "#comment-{$this->id}\" rel=\"nofollow\">" .
+		if ( $this->page->title ) { // for some reason doesn't always exist
+			$output .= '<a href="' . htmlspecialchars( $this->page->title->getFullURL() ) . "#comment-{$this->id}\" rel=\"nofollow\">" .
 			$this->msg( 'comments-permalink' )->plain() . '</a> ';
+		}
 		if ( $replyRow || $dlt ) {
 			$output .= "{$replyRow} {$dlt}" . "\n";
 		}
