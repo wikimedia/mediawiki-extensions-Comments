@@ -14,6 +14,10 @@ class CommentIgnoreList extends SpecialPage {
 		parent::__construct( 'CommentIgnoreList' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	/**
 	 * Group this special page under the correct header in Special:SpecialPages.
 	 *
@@ -42,7 +46,7 @@ class CommentIgnoreList extends SpecialPage {
 		if ( $user->getID() == 0 && $user_name == '' ) {
 			$loginPage = SpecialPage::getTitleFor( 'Userlogin' );
 			$out->redirect( $loginPage->getLocalURL( 'returnto=Special:CommentIgnoreList' ) );
-			return false;
+			return;
 		}
 
 		$out->setPageTitle( $this->msg( 'comments-ignore-title' )->text() );
