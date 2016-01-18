@@ -16,6 +16,24 @@
       "revId": "8a1febda95f6c92cfba9ff8cb31245471dbb3ec3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_a87e1812",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 834
+      },
+      "writtenOn": "2016-01-18T21:13:47Z",
+      "side": 1,
+      "message": "I meant space between \"Bug:\" and \"T123943\" :)",
+      "parentUuid": "6eaa8f54_48a204a5",
+      "revId": "8a1febda95f6c92cfba9ff8cb31245471dbb3ec3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
