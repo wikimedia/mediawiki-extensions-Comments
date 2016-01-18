@@ -27,7 +27,8 @@ $wgExtensionCredits['parserhook'][] = array(
 	'version' => '4.1.1',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix', 'Adam Carter/UltrasonicNXT' ),
 	'descriptionmsg' => 'comments-desc',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
+	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments',
+	'license-name' => 'GPL-2.0+'
 );
 
 // ResourceLoader support for MediaWiki 1.17+
