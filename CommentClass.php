@@ -294,7 +294,7 @@ class Comment extends ContextSource {
 			__METHOD__
 		);
 		$commentId = $dbw->insertId();
-		$dbw->commit(); // misza: added this
+		$dbw->commit( __METHOD__ ); // misza: added this
 		$id = $commentId;
 
 		$page->clearCommentListCache();
@@ -428,7 +428,7 @@ class Comment extends ContextSource {
 				__METHOD__
 			);
 		}
-		$dbw->commit();
+		$dbw->commit( __METHOD__ );
 
 		// update cache for comment list
 		// should perform better than deleting cache completely since Votes happen more frequently
@@ -464,7 +464,7 @@ class Comment extends ContextSource {
 			array( 'Comment_Vote_ID' => $this->id ),
 			__METHOD__
 		);
-		$dbw->commit();
+		$dbw->commit( __METHOD__ );
 
 		// Log the deletion to Special:Log/comments.
 		global $wgCommentsInRecentChanges;
