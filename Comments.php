@@ -12,19 +12,11 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
-/**
- * Protect against register_globals vulnerabilities.
- * This line must be present before any global variable is referenced.
- */
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( "This is not a valid entry point.\n" );
-}
-
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
 	'path' => __FILE__,
 	'name' => 'Comments',
-	'version' => '4.1.0',
+	'version' => '4.2.0',
 	'author' => array( 'David Pean', 'Misza', 'Jack Phoenix', 'Adam Carter/UltrasonicNXT' ),
 	'descriptionmsg' => 'comments-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Comments'
@@ -69,11 +61,11 @@ $wgGroupPermissions['commentadmin']['commentadmin'] = true;
 $wgGroupPermissions['autoconfirmed']['commentlinks'] = true;
 
 // Set up the new special pages
-$dir = __DIR__ . '/';
 $wgMessagesDirs['Comments'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['CommentsMagic'] = __DIR__ . '/Comments.i18n.magic.php';
 $wgAutoloadClasses['Comment'] = __DIR__ . '/CommentClass.php';
 $wgAutoloadClasses['CommentsPage'] = __DIR__ . '/CommentsPage.php';
+$wgAutoloadClasses['CommentsOfTheDay'] = __DIR__ . '/CommentsOfTheDay.php';
 $wgAutoloadClasses['CommentFunctions'] = __DIR__ . '/CommentFunctions.php';
 $wgAutoloadClasses['CommentIgnoreList'] = __DIR__ . '/SpecialCommentIgnoreList.php';
 $wgSpecialPages['CommentIgnoreList'] = 'CommentIgnoreList';
@@ -103,6 +95,8 @@ $wgHooks['RenameUserSQL'][] = 'CommentsHooks::onRenameUserSQL';
 $wgHooks['ParserFirstCallInit'][] = 'NumberOfComments::setupNumberOfCommentsPageParser';
 $wgHooks['MagicWordwgVariableIDs'][] = 'NumberOfComments::registerNumberOfCommentsMagicWord';
 $wgHooks['ParserGetVariableValueSwitch'][] = 'NumberOfComments::getNumberOfCommentsMagic';
+
+$wgHooks['ParserFirstCallInit'][] = 'CommentsOfTheDay::registerTag';
 
 // NumberOfComments magic word setup
 $wgAutoloadClasses['NumberOfComments'] = __DIR__ . '/NumberOfComments.php';
