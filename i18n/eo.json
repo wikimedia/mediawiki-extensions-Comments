@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yekrats"
+			"Yekrats",
+			"Robin van der Vliet"
 		]
 	},
 	"comments-comment": "Komento",
@@ -26,7 +27,7 @@
 	"comments-ignore-no-users": "Estas neniuj uzantoj nune forbaritaj.",
 	"comments-ignore-remove-message": "Ĉu vi certas ke vi volas malforbari komentojn de uzanto <b>$1</b>?",
 	"comments-ignore-unblock": "Malforbari",
-	"comments-ignore-cancel": "Nenio",
+	"comments-ignore-cancel": "Nuligi",
 	"comments-ignore-title": "Ignor-listo de komentoj",
 	"commentignorelist": "Ignor-listo de komentoj",
 	"comments-no-comments-of-day": "Estas neniuj komentoj de la tago.",
