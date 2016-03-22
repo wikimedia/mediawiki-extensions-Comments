@@ -1,4 +1,3 @@
-/*global mw,$*/
 /**
  * JavaScript for the Comments extension.
  * Rewritten by Jack Phoenix <jack@countervandalism.net> to be more
@@ -7,6 +6,7 @@
  * @file
  * @date 6 December 2013
  */
+( function ( $, mw ) {
 var Comment = {
 	submitted: 0,
 	isBusy: false,
@@ -342,3 +342,5 @@ $( document ).ready( function() {
 		);
 	} );
 } );
+
+}( jQuery, mediaWiki ) );
