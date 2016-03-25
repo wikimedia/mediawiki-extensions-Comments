@@ -139,10 +139,16 @@ var Comment = {
 
 			$.ajax( {
 				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
-				data: { 'action': 'commentsubmit', 'format': 'json', 'pageID': pageID, 'parentID': parentID, 'commentText': commentText },
+				data: {
+					'action': 'commentsubmit',
+					'format': 'json',
+					'pageID': pageID,
+					'parentID': parentID,
+					'commentText': commentText
+				},
 				cache: false
 			} ).done( function( response ) {
-				if ( response.commentsubmit.ok ) {
+				if ( response.commentsubmit && response.commentsubmit.ok ) {
 					document.commentForm.commentText.value = '';
 					var end = 1;
 					if ( mw.config.get( 'wgCommentsSortDescending' ) ) {
@@ -150,7 +156,7 @@ var Comment = {
 					}
 					Comment.viewComments( document.commentForm.pageId.value, 0, end, document.commentForm.cpage.value );
 				} else {
-					window.alert( response.responseText );
+					window.alert( response.error.info );
 					Comment.submitted = 0;
 				}
 			} );

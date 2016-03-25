@@ -22,13 +22,13 @@ class CommentSubmitAPI extends ApiBase {
 			// against spam filters (but comment admins are allowed to bypass the
 			// spam filters)
 			if ( !$user->isAllowed( 'commentadmin' ) && CommentFunctions::isSpam( $commentText ) ) {
-				return wfMessage( 'comments-is-spam' )->plain();
+				$this->dieUsage( wfMessage( 'comments-is-spam' )->plain(), 'comments-is-spam' );
 			}
 
 			// If the comment contains links but the user isn't allowed to post
 			// links, reject the submission
 			if ( !$user->isAllowed( 'commentlinks' ) && CommentFunctions::haveLinks( $commentText ) ) {
-				return wfMessage( 'comments-links-are-forbidden' )->plain();
+				$this->dieUsage( wfMessage( 'comments-links-are-forbidden' )->plain(), 'comments-links-are-forbidden' );
 			}
 
 			$page = new CommentsPage( $this->getMain()->getVal( 'pageID' ), $this->getContext() );
