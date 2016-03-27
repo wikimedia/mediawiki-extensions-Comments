@@ -46,7 +46,7 @@
 	"log-name-comments": "Kommenttiloki",
 	"log-description-comments": "Tämä on loki kommenteista.",
 	"comments-time-ago": "$1 sitten",
-	"comments-time-days": "{{PLURAL:$1|päivä|$1 päivää}}",
+	"comments-time-days": "{{PLURAL:$1|yksi päivä|$1 päivää}}",
 	"comments-time-hours": "{{PLURAL:$1|tunti|$1 tuntia}}",
 	"comments-time-minutes": "{{PLURAL:$1|minuutti|$1 minuuttia}}",
 	"comments-time-seconds": "{{PLURAL:$1|sekunti|$1 sekuntia}}",
