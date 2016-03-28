@@ -127,7 +127,6 @@ class Comment extends ContextSource {
 		$this->thread = $data['thread'];
 		$this->timestamp = $data['timestamp'];
 
-
 		$dbr = wfGetDB( DB_SLAVE );
 		$row = $dbr->selectRow(
 			'Comments_Vote',
@@ -235,6 +234,7 @@ class Comment extends ContextSource {
 			$comment_text_fix .= ( ( $comment_text_fix ) ? "\n" : '' ) . trim( $part );
 		}
 
+		$this->getContext()->setTitle( $this->page->title ); // otherwise it'll be "Badtitle/dummy title for API calls set in api.php" which causes fatals in the line below!
 		if ( $this->getTitle()->getArticleID() > 0 ) {
 			$commentText = $wgParser->recursiveTagParse( $comment_text_fix );
 		} else {
@@ -274,6 +274,7 @@ class Comment extends ContextSource {
 	 */
 	static function add( $text, CommentsPage $page, User $user, $parentID ) {
 		global $wgCommentsInRecentChanges;
+
 		$dbw = wfGetDB( DB_MASTER );
 		$context = RequestContext::getMain();
 
@@ -640,7 +641,6 @@ class Comment extends ContextSource {
 
 		return $output;
 	}
-
 
 	/**
 	 * Show the comment
