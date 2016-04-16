@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dj"
+			"Dj",
+			"Wolf Rex"
 		]
 	},
 	"comments-comment": "Megjegyzés",
@@ -43,6 +44,7 @@
 	"log-name-comments": "Megjegyzés napló",
 	"log-description-comments": "Ez a megjegyzések naplója",
 	"comments-time-ago": "$1 ezelőtt",
+	"comments-time-months": "{{PLURAL:$1|egy hónap|$1 hónap}}",
 	"comments-time-days": "{{PLURAL:$1|egy|$1}} nappal",
 	"comments-time-hours": "{{PLURAL:$1|egy|$1}} órával",
 	"comments-time-minutes": "{{PLURAL:$1|egy|$1}} perccel",
@@ -52,5 +54,6 @@
 	"group-commentadmin-member": "{{GENDER:$1|megjegyzés adminisztrátor}}",
 	"grouppage-commentadmin": "{{ns:project}}:Megjegyzés adminisztrátorok",
 	"right-comment": "Megjegyzés küldése",
-	"right-commentadmin": "Felhasználók által küldött megjegyzések adminisztrálása"
+	"right-commentadmin": "Felhasználók által küldött megjegyzések adminisztrálása",
+	"right-commentlinks": "Külső hivatkozások használata hozzászólásokban"
 }
