@@ -53,6 +53,7 @@
 		]
 	},
 	"ExtensionMessagesFiles": {
+		"CommentsAliases": "Comments.alias.php",
 		"CommentsMagic": "Comments.i18n.magic.php",
 		"NumberOfCommentsMagic": "Comments.i18n.magic.php"
 	},

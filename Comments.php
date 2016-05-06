@@ -72,6 +72,8 @@ $wgGroupPermissions['autoconfirmed']['commentlinks'] = true;
 $dir = __DIR__ . '/';
 $wgMessagesDirs['Comments'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['CommentsMagic'] = __DIR__ . '/Comments.i18n.magic.php';
+$wgExtensionMessagesFiles['CommentsAliases'] = __DIR__ . '/Comments.alias.php';
+
 $wgAutoloadClasses['Comment'] = __DIR__ . '/CommentClass.php';
 $wgAutoloadClasses['CommentsPage'] = __DIR__ . '/CommentsPage.php';
 $wgAutoloadClasses['CommentFunctions'] = __DIR__ . '/CommentFunctions.php';
