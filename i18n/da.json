@@ -1,13 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tjernobyl"
+			"Tjernobyl",
+			"Sarrus"
 		]
 	},
 	"comments-comment": "Kommentar",
 	"comments-loading": "Indlæser...",
 	"comments-cancel-reply": "Annuller",
 	"comments-sort-by-date": "Sorter efter dato",
+	"comments-show-comment-link": "Vis kommentar",
 	"comments-you": "Dig",
 	"comments-reply": "Svar",
 	"comments-submit": "Tilføj din kommentar",
