@@ -58,7 +58,7 @@
 	"group-commentadmin": "מנהלי תגובות",
 	"group-commentadmin-member": "{{GENDER:$1|מנהל|מנהלת}} תגובות",
 	"grouppage-commentadmin": "{{ns:project}}:מנהל תגובות",
-	"right-comment": "שלח הערות",
+	"right-comment": "שליחת תגובות",
 	"right-commentadmin": "ניהול תגובות של משתמשים",
 	"right-commentlinks": "שימוש בקישורים חיצוניים בתגובות"
 }
