@@ -4,6 +4,13 @@
 			"פוילישער"
 		]
 	},
+	"comments-comment": "הערה",
+	"comments-loading": "אָנלאָדן...",
+	"comments-reply-to": "ענטפֿערן {{GENDER:$2|$1}}",
+	"comments-cancel-reply": "אַנולירן",
 	"comments-you": "איר",
-	"comments-time-months": "{{PLURAL:$1|איין מאנאַט|$1 מאנאַטן}}"
+	"comments-reply": "אָנרופֿן",
+	"comments-time-months": "{{PLURAL:$1|איין מאנאַט|$1 מאנאַטן}}",
+	"comments-time-hours": "{{PLURAL:$1|איין שעה|$1 שעה׳ן}}",
+	"comments-time-minutes": "{{PLURAL:$1|איין מינוט|$1 מינוט}}"
 }
