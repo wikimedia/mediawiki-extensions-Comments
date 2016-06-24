@@ -4,7 +4,8 @@
 			"Erdemaslancan",
 			"Gorizon",
 			"Mirzali",
-			"Marmase"
+			"Marmase",
+			"Kumkumuk"
 		]
 	},
 	"comments-comment": "Mışewre",
@@ -15,6 +16,7 @@
 	"comments-show-comment-link": "Vatışi bıvin",
 	"comments-you": "Tı",
 	"comments-reply": "Cewab",
+	"comments-login-required": "Qandé vatış dayışi ronıştış icab keno",
 	"comments-post": "Mışewre bırışe",
 	"comments-submit": "Vatışa xo dekere de",
 	"comments-score-text": "Skor",
@@ -22,7 +24,7 @@
 	"comments-delete-link": "Vatışi bestere",
 	"comments-anon-name": "Karbero bêname",
 	"comments-ignore-unblock": "bloqi hewad",
-	"comments-ignore-cancel": "Bıtexelne",
+	"comments-ignore-cancel": "Peyd ke",
 	"log-name-comments": "Qeyda vatışan",
 	"comments-time-ago": "Verdê $1"
 }
