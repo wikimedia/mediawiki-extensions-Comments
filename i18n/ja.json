@@ -3,7 +3,8 @@
 		"authors": [
 			"Shirayuki",
 			"Whym",
-			"Sujiniku"
+			"Sujiniku",
+			"Otokoume"
 		]
 	},
 	"comments-comment": "コメント",
@@ -46,8 +47,8 @@
 	"comments-no-comments-of-day": "今日のコメントはありません。",
 	"log-name-comments": "コメント記録",
 	"log-description-comments": "これはコメントの記録です。",
-	"logentry-comments-add": "$1 が $3 に新しいコメントを投稿",
-	"logentry-comments-delete": "$1 が $3 のコメント #$4 を削除",
+	"logentry-comments-add": "$1 が $3 に新しいコメントを投稿しました",
+	"logentry-comments-delete": "$1 が $3 のコメント #$4 を削除しました",
 	"comments-time-ago": "$1前",
 	"comments-time-months": "{{PLURAL:$1|$1 か月}}",
 	"comments-time-days": "{{PLURAL:$1|$1 日}}",
