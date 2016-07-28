@@ -5,7 +5,9 @@
 			"Gomoko",
 			"Linedwell",
 			"0x010C",
-			"Tuxxic"
+			"Tuxxic",
+			"Mattho69",
+			"Wladek92"
 		]
 	},
 	"comments-comment": "Commenter",
@@ -44,7 +46,7 @@
 	"comments-ignore-unblock": "Débloquer",
 	"comments-ignore-cancel": "Annuler",
 	"comments-ignore-title": "Liste des utilisateurs ignorés",
-	"commentignorelist": "Liste des utilisateurs ignorés",
+	"commentignorelist": "Liste des utilisateurs dont les commentaires sont ignorés",
 	"comments-no-comments-of-day": "Il n’y a pas de commentaire du jour.",
 	"log-name-comments": "Historique des commentaires",
 	"log-description-comments": "Ceci est un journal de commentaires.",
