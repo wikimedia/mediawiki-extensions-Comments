@@ -41,7 +41,7 @@
 	"comments-is-spam": "제출된 글이 스팸으로 판단됩니다.",
 	"comments-ignore-item": "$3에 <a href=\"$1\">$2</a> <a href=\"$4\">(차단 해제)</a>",
 	"comments-ignore-no-users": "현재 차단된 사용자가 없습니다.",
-	"comments-ignore-remove-message": "정말로 <b>$1</b>님의 댓글을 차단 해제하겠습니까?",
+	"comments-ignore-remove-message": "정말로 사용자 <b>$1</b>의 댓글을 차단 해제하겠습니까?",
 	"comments-ignore-unblock": "차단 해제",
 	"comments-ignore-cancel": "취소",
 	"comments-ignore-title": "댓글 무시 목록",
