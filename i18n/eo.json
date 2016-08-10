@@ -40,7 +40,7 @@
 	"comments-time-seconds": "{{PLURAL:$1|$1 sekundo|$1 sekundoj}}",
 	"log-show-hide-comments": "protokolo de komentoj $1",
 	"group-commentadmin": "Administrantoj de komentoj",
-	"group-commentadmin-member": "{{GENDER:$1|administranto de komentoj|administrantino de komentoj}}",
+	"group-commentadmin-member": "{{GENDER:$1|administranto de komentoj}}",
 	"grouppage-commentadmin": "{{ns:project}}:Administrantoj de komentoj",
 	"right-comment": "Publikigi komentojn",
 	"right-commentadmin": "Administri komentaron senditan de komentoj"
