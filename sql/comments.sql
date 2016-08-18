@@ -1,6 +1,6 @@
 -- MySQL/SQLite schema for the Comments extension
 CREATE TABLE /*_*/Comments (
-  CommentID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  CommentID int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   Comment_Page_ID int(11) NOT NULL default 0,
   Comment_user_id int(11) NOT NULL default 0,
   Comment_Username varchar(200) NOT NULL default '',
@@ -28,7 +28,7 @@ CREATE INDEX /*i*/Comment_Vote_Score ON /*_*/Comments_Vote (Comment_Vote_Score);
 CREATE INDEX /*i*/Comment_Vote_user_id ON /*_*/Comments_Vote (Comment_Vote_user_id);
 
 CREATE TABLE /*_*/Comments_block (
-  cb_id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  cb_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   cb_user_id int(5) NOT NULL default 0,
   cb_user_name varchar(255) NOT NULL default '',
   cb_user_id_blocked int(5) default NULL,
