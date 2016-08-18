@@ -449,29 +449,14 @@ class CommentsPage extends ContextSource {
 		return array_chunk( $comments, $this->limit );
 	}
 
-
 	/**
 	 * Display all the comments for the current page.
-	 * CSS and JS is loaded in Comment.php
+	 * CSS and JS is loaded in CommentsHooks.php
 	 */
 	function display() {
-		global $wgMemc;
-
 		$output = '';
 
-		// Try cache
-		$key = wfMemcKey( 'comment', 'pagethreadlist', $this->id );
-		$data = $wgMemc->get( $key );
-
-		if ( !$data ) {
-			wfDebug( "Loading comments for page {$this->id} from DB\n" );
-			$commentThreads = $this->getComments();
-			$wgMemc->set( $key, $commentThreads );
-		} else {
-			wfDebug( "Loading comments for page {$this->id} from cache\n" );
-			$commentThreads = $data;
-		}
-
+		$commentThreads = $this->getComments();
 		$commentThreads = $this->sort( $commentThreads );
 
 		$this->comments = $commentThreads;
@@ -594,13 +579,10 @@ class CommentsPage extends ContextSource {
 	}
 
 	/**
-	 * Purge caches (memcached, parser cache and Squid cache)
+	 * Purge caches (parser cache and Squid cache)
 	 */
 	function clearCommentListCache() {
-		global $wgMemc;
 		wfDebug( "Clearing comments for page {$this->id} from cache\n" );
-		$key = wfMemcKey( 'comment', 'pagethreadlist', $this->id );
-		$wgMemc->delete( $key );
 
 		if ( is_object( $this->title ) ) {
 			$this->title->invalidateCache();
