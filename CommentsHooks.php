@@ -78,7 +78,7 @@ class CommentsHooks {
 			$voting = $args['voting'];
 		}
 
-		$commentsPage = new CommentsPage( $wgOut->getTitle()->getArticleID(), $wgOut->getContext() );
+		$commentsPage = new CommentsPage( $title->getArticleID(), $wgOut->getContext() );
 		$commentsPage->allow = $allow;
 		$commentsPage->setVoting( $voting );
 
