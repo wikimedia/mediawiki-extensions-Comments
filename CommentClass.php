@@ -127,7 +127,6 @@ class Comment extends ContextSource {
 		$this->thread = $data['thread'];
 		$this->timestamp = $data['timestamp'];
 
-
 		$dbr = wfGetDB( DB_SLAVE );
 		$row = $dbr->selectRow(
 			'Comments_Vote',
@@ -300,17 +299,7 @@ class Comment extends ContextSource {
 		$page->clearCommentListCache();
 
 		// Add a log entry.
-		$pageTitle = Title::newFromID( $page->id );
-
-		$logEntry = new ManualLogEntry( 'comments', 'add' );
-		$logEntry->setPerformer( $user );
-		$logEntry->setTarget( $pageTitle );
-		$logEntry->setComment( $text );
-		$logEntry->setParameters( array(
-			'4::commentid' => $commentId
-		) );
-		$logId = $logEntry->insert();
-		$logEntry->publish( $logId, ( $wgCommentsInRecentChanges ? 'rcandudp' : 'udp' ) );
+		self::log( 'add', $user, $page->id, $commentId, $text );
 
 		$dbr = wfGetDB( DB_SLAVE );
 		if (
@@ -467,21 +456,37 @@ class Comment extends ContextSource {
 		$dbw->commit( __METHOD__ );
 
 		// Log the deletion to Special:Log/comments.
-		global $wgCommentsInRecentChanges;
-		$logEntry = new ManualLogEntry( 'comments', 'delete' );
-		$logEntry->setPerformer( $this->getUser() );
-		$logEntry->setTarget( Title::newFromId( $this->page->id ) );
-		$logEntry->setParameters( array(
-			'4::commentid' => $this->id
-		) );
-		$logId = $logEntry->insert();
-		$logEntry->publish( $logId, ( $wgCommentsInRecentChanges ? 'rcandudp' : 'udp' ) );
+		self::log( 'delete', $this->getUser(), $this->page->id, $this->id );
 
 		// Clear memcache & Squid cache
 		$this->page->clearCommentListCache();
 
 		// Ping other extensions that may have hooked into this point (i.e. LinkFilter)
 		Hooks::run( 'Comment::delete', array( $this, $this->id, $this->page->id ) );
+	}
+
+	/**
+	 * Log an action in the comment log.
+	 *
+	 * @param string $action Action to log, can be either 'add' or 'delete'
+	 * @param User $user User who performed the action
+	 * @param int $pageId Page ID of the page that contains the comment thread
+	 * @param int $commentId Comment ID of the affected comment
+	 * @param string $commentText Supplementary log comment, if any
+	 */
+	private static function log( $action, $user, $pageId, $commentId, $commentText = null ) {
+		global $wgCommentsInRecentChanges;
+		$logEntry = new ManualLogEntry( 'comments', $action );
+		$logEntry->setPerformer( $user );
+		$logEntry->setTarget( Title::newFromId( $pageId ) );
+		if ( $commentText !== null ) {
+			$logEntry->setComment( $text );
+		}
+		$logEntry->setParameters( array(
+			'4::commentid' => $commentId
+		) );
+		$logId = $logEntry->insert();
+		$logEntry->publish( $logId, ( $wgCommentsInRecentChanges ? 'rcandudp' : 'udp' ) );
 	}
 
 	/**
@@ -640,7 +645,6 @@ class Comment extends ContextSource {
 
 		return $output;
 	}
-
 
 	/**
 	 * Show the comment
