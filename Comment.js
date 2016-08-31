@@ -48,14 +48,15 @@ var Comment = {
 		}
 
 		if ( window.confirm( message ) ) {
-			$.ajax( {
-				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
-				data: { 'action': 'commentblock', 'format': 'json', 'commentID': commentID },
-				cache: false
+			( new mw.Api() ).postWithToken( 'edit', {
+				action: 'commentblock',
+				format: 'json',
+				commentID: commentID
 			} ).done( function( response ) {
 				if ( response.commentblock.ok ) {
-					$( 'a.comments-block-user[data-comments-user-id=' + userID + ']' ).parents( '.c-item' ).hide( 300 )
-																												.prev().show( 300 );
+					$( 'a.comments-block-user[data-comments-user-id=' + userID + ']' )
+						.parents( '.c-item' ).hide( 300 )
+						.prev().show( 300 );
 				}
 			} );
 		}
@@ -69,10 +70,10 @@ var Comment = {
 	 */
 	deleteComment: function( commentID ) {
 		if ( window.confirm( mw.msg( 'comments-delete-warning' ) ) ) {
-			$.ajax( {
-				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
-				data: { 'action': 'commentdelete', 'format': 'json', 'commentID': commentID },
-				cache: false
+			( new mw.Api() ).postWithToken( 'edit', {
+				action: 'commentdelete',
+				format: 'json',
+				commentID: commentID
 			} ).done( function( response ) {
 				if ( response.commentdelete.ok ) {
 					$( '#comment-' + commentID ).hide( 2000 );
@@ -88,13 +89,15 @@ var Comment = {
 	 * @param voteValue Integer: vote value
 	 */
 	vote: function( commentID, voteValue ) {
-		$.ajax( {
-			url: mw.config.get( 'wgScriptPath' ) + '/api.php',
-			data: { 'action': 'commentvote', 'format': 'json', 'commentID': commentID, 'voteValue': voteValue },
-			cache: false
+		( new mw.Api() ).postWithToken( 'edit', {
+			action: 'commentvote',
+			format: 'json',
+			commentID: commentID,
+			voteValue: voteValue
 		} ).done( function( response ) {
-			$( '#comment-' + commentID + ' .c-score' ).html( response.commentvote.html ) // this will still be escaped
-														   .html( $( '#comment-' + commentID + ' .c-score' ).text() ); // unescape
+			$( '#comment-' + commentID + ' .c-score' )
+				.html( response.commentvote.html ) // this will still be escaped
+				.html( $( '#comment-' + commentID + ' .c-score' ).text() ); // unescape
 		} );
 	},
 
@@ -137,16 +140,12 @@ var Comment = {
 			}
 			var commentText = document.commentForm.commentText.value;
 
-			$.ajax( {
-				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
-				data: {
-					'action': 'commentsubmit',
-					'format': 'json',
-					'pageID': pageID,
-					'parentID': parentID,
-					'commentText': commentText
-				},
-				cache: false
+			( new mw.Api() ).postWithToken( 'edit', {
+				action: 'commentsubmit',
+				format: 'json',
+				pageID: pageID,
+				parentID: parentID,
+				commentText: commentText
 			} ).done( function( response ) {
 				if ( response.commentsubmit && response.commentsubmit.ok ) {
 					document.commentForm.commentText.value = '';

@@ -22,6 +22,14 @@ class CommentDeleteAPI extends ApiBase {
 		return true;
 	}
 
+	public function needsToken() {
+		return 'csrf';
+	}
+
+	public function isWriteMode() {
+		return true;
+	}
+
 	public function getAllowedParams() {
 		return array(
 			'commentID' => array(

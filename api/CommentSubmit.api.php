@@ -46,6 +46,14 @@ class CommentSubmitAPI extends ApiBase {
 		return true;
 	}
 
+	public function needsToken() {
+		return 'csrf';
+	}
+
+	public function isWriteMode() {
+		return true;
+	}
+
 	public function getAllowedParams() {
 		return array(
 			'pageID' => array(
