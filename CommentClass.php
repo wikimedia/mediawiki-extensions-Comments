@@ -480,7 +480,7 @@ class Comment extends ContextSource {
 		$logEntry->setPerformer( $user );
 		$logEntry->setTarget( Title::newFromId( $pageId ) );
 		if ( $commentText !== null ) {
-			$logEntry->setComment( $text );
+			$logEntry->setComment( $commentText );
 		}
 		$logEntry->setParameters( array(
 			'4::commentid' => $commentId
