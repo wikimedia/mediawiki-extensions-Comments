@@ -48,9 +48,8 @@ var Comment = {
 		}
 
 		if ( window.confirm( message ) ) {
-			( new mw.Api() ).postWithToken( 'edit', {
+			( new mw.Api() ).postWithToken( 'csrf', {
 				action: 'commentblock',
-				format: 'json',
 				commentID: commentID
 			} ).done( function( response ) {
 				if ( response.commentblock.ok ) {
@@ -70,9 +69,8 @@ var Comment = {
 	 */
 	deleteComment: function( commentID ) {
 		if ( window.confirm( mw.msg( 'comments-delete-warning' ) ) ) {
-			( new mw.Api() ).postWithToken( 'edit', {
+			( new mw.Api() ).postWithToken( 'csrf', {
 				action: 'commentdelete',
-				format: 'json',
 				commentID: commentID
 			} ).done( function( response ) {
 				if ( response.commentdelete.ok ) {
@@ -89,9 +87,8 @@ var Comment = {
 	 * @param voteValue Integer: vote value
 	 */
 	vote: function( commentID, voteValue ) {
-		( new mw.Api() ).postWithToken( 'edit', {
+		( new mw.Api() ).postWithToken( 'csrf', {
 			action: 'commentvote',
-			format: 'json',
 			commentID: commentID,
 			voteValue: voteValue
 		} ).done( function( response ) {
@@ -140,9 +137,8 @@ var Comment = {
 			}
 			var commentText = document.commentForm.commentText.value;
 
-			( new mw.Api() ).postWithToken( 'edit', {
+			( new mw.Api() ).postWithToken( 'csrf', {
 				action: 'commentsubmit',
-				format: 'json',
 				pageID: pageID,
 				parentID: parentID,
 				commentText: commentText
