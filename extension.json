@@ -80,6 +80,7 @@
 		},
 		"ext.comments.js": {
 			"scripts": "Comment.js",
+			"dependencies": [ "mediawiki.api" ],
 			"messages": [
 				"comments-voted-label",
 				"comments-loading",
