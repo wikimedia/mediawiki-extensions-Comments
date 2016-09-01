@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e93376b_eaa8a276",
+        "filename": "Comment.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-09-01T09:15:37Z",
+      "side": 1,
+      "message": "The token name \u0027edit\u0027 is deprecated. Use \u0027csrf\u0027.",
+      "range": {
+        "startLine": 51,
+        "startChar": 36,
+        "endLine": 51,
+        "endChar": 40
+      },
+      "revId": "afa39f4027d298a9f6d7242a1870766b6568be45",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_0aa6cea7",
+        "filename": "Comment.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-09-01T09:15:37Z",
+      "side": 1,
+      "message": "The token name \u0027edit\u0027 is deprecated. Use \u0027csrf\u0027.",
+      "range": {
+        "startLine": 73,
+        "startChar": 36,
+        "endLine": 73,
+        "endChar": 40
+      },
+      "revId": "afa39f4027d298a9f6d7242a1870766b6568be45",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_2ab2aae4",
+        "filename": "Comment.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-09-01T09:15:37Z",
+      "side": 1,
+      "message": "The token name \u0027edit\u0027 is deprecated. Use \u0027csrf\u0027.",
+      "range": {
+        "startLine": 92,
+        "startChar": 35,
+        "endLine": 92,
+        "endChar": 39
+      },
+      "revId": "afa39f4027d298a9f6d7242a1870766b6568be45",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_4ab7f6d3",
+        "filename": "Comment.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-09-01T09:15:37Z",
+      "side": 1,
+      "message": "The token name \u0027edit\u0027 is deprecated. Use \u0027csrf\u0027.",
+      "range": {
+        "startLine": 143,
+        "startChar": 36,
+        "endLine": 143,
+        "endChar": 40
+      },
+      "revId": "afa39f4027d298a9f6d7242a1870766b6568be45",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_ea4c22e7",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-09-01T09:15:37Z",
+      "side": 1,
+      "message": "Dependency to module \u0027mediawiki.api\u0027 is missing.",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 3
+      },
+      "revId": "afa39f4027d298a9f6d7242a1870766b6568be45",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
