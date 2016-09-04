@@ -7,7 +7,8 @@
 			"0x010C",
 			"Tuxxic",
 			"Mattho69",
-			"Wladek92"
+			"Wladek92",
+			"Urhixidur"
 		]
 	},
 	"comments-comment": "Commenter",
@@ -23,7 +24,7 @@
 	"comments-block-warning-user": "Êtes-vous sûr de vouloir ignorer de façon permanente tous les commentaires de l’utilisateur $1?",
 	"comments-delete-warning": "Êtes-vous sûr de vouloir supprimer ce commentaire?",
 	"comments-sort-by-date": "Trier par date",
-	"comments-sort-by-score": "Trier par score",
+	"comments-sort-by-score": "Trier par pointage",
 	"comments-show-comment-link": "Voir commentaire",
 	"comments-manage-blocklist-link": "Gérer la liste des ignorés",
 	"comments-ignore-message": "Vous ignorez l’auteur de ce commentaire",
@@ -33,7 +34,7 @@
 	"comments-not-allowed": "Vous n'êtes pas autorisé à publier de commentaire.",
 	"comments-post": "Publier le commentaire",
 	"comments-submit": "Ajouter votre commentaire",
-	"comments-score-text": "Score",
+	"comments-score-text": "Pointage",
 	"comments-permalink": "Lien permanent",
 	"comments-delete-link": "Supprimer le commentaire",
 	"comments-anon-name": "Utilisateur anonyme",
