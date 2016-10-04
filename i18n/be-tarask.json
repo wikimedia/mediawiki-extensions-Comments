@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Wizardist",
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Renessaince"
 		]
 	},
 	"comments-comment": "Камэнтары",
@@ -16,7 +17,7 @@
 	"comments-cancel-reply": "Скасаваць",
 	"comments-block-warning-anon": "Ці вы ўпэўненыя, што жадаеце ігнараваць усе камэнтары ад гэтага ананіма (паводле IP-адрасу)?",
 	"comments-block-warning-user": "Ці вы ўпэўненыя, што жадаеце ігнараваць усе камэнтары ад удзельніка $1?",
-	"comments-delete-warning": "Вы ўпэўненыя, што жадаеца выдаліць гэты камэнтар?",
+	"comments-delete-warning": "Вы ўпэўненыя, што жадаеце выдаліць гэты камэнтар?",
 	"comments-sort-by-date": "Сартаваць паводле даты",
 	"comments-sort-by-score": "Сартаваць паводле адзнакі",
 	"comments-show-comment-link": "Паказаць камэнтар",
