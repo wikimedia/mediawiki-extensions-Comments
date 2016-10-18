@@ -4,7 +4,8 @@
 			"Luckas",
 			"SandroHc",
 			"Imperadeiro98",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Hamilton Abreu"
 		]
 	},
 	"comments-comment": "Comentário",
@@ -12,6 +13,8 @@
 	"comments-db-locked": "<h3>A adicionar comentários</h3>A base de dados está atualmente bloqueada para manutenção de rotina. Por favor, verifique novamente mais tarde!",
 	"comments-voted-label": "Votado",
 	"comments-loading": "A carregar…",
+	"comments-auto-refresher-enable": "Ativar a atualização automática de comentários",
+	"comments-auto-refresher-pause": "Parar a atualização automática de comentários",
 	"comments-reply-to": "Responder a {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Cancelar",
 	"comments-block-warning-anon": "Tem a certeza que pretende ignorar permanentemente todos os comentários deste utilizador anónimo (através do seu endereço de IP)?",
@@ -21,7 +24,7 @@
 	"comments-sort-by-score": "Ordenar por pontuação",
 	"comments-show-comment-link": "Mostrar comentário",
 	"comments-manage-blocklist-link": "Gerir lista de ignorados",
-	"comments-ignore-message": "Estás a ignorar o autor deste comentário",
+	"comments-ignore-message": "Está a ignorar o autor deste comentário",
 	"comments-you": "Você",
 	"comments-reply": "Responder",
 	"comments-login-required": "Deve iniciar sessão para adicionar comentários",
@@ -34,7 +37,7 @@
 	"comments-anon-name": "Utilizador anónimo",
 	"comments-anon-message": "{{SITENAME}} agradece <b>todos os comentários</b>. Se não quer ser anónimo, <a href=\"$1\">registe-se</a> ou <a href=\"$2\">inicie a sua sessão</a>. É gratuito.",
 	"comments-links-are-forbidden": "Ligações externas nos comentários são proibidas!",
-	"comments-is-spam": "O texto do comentário enviado foi interpretado como spam.",
+	"comments-is-spam": "O texto do comentário enviado foi interpretado como <i>spam<spam>.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> a $3 <a href=\"$4\">(desbloquear)</a>",
 	"comments-ignore-no-users": "Atualmente, não existem utilizadores bloqueados.",
 	"comments-ignore-remove-message": "Tem a certeza de que pretende desbloquear os comentários do utilizador <b>$1</b>?",
