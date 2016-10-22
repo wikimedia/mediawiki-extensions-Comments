@@ -37,7 +37,7 @@
 	"comments-anon-name": "Utilizador anónimo",
 	"comments-anon-message": "{{SITENAME}} agradece <b>todos os comentários</b>. Se não quer ser anónimo, <a href=\"$1\">registe-se</a> ou <a href=\"$2\">inicie a sua sessão</a>. É gratuito.",
 	"comments-links-are-forbidden": "Ligações externas nos comentários são proibidas!",
-	"comments-is-spam": "O texto do comentário enviado foi interpretado como <i>spam<spam>.",
+	"comments-is-spam": "O texto do comentário enviado foi interpretado como <i>spam</i>.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> a $3 <a href=\"$4\">(desbloquear)</a>",
 	"comments-ignore-no-users": "Atualmente, não existem utilizadores bloqueados.",
 	"comments-ignore-remove-message": "Tem a certeza de que pretende desbloquear os comentários do utilizador <b>$1</b>?",
@@ -57,9 +57,10 @@
 	"comments-time-minutes": "{{PLURAL:$1|um minuto|$1 minutos}}",
 	"comments-time-seconds": "{{PLURAL:$1|um segundo|$1 segundos}}",
 	"log-show-hide-comments": "$1 registo de comentários",
-	"group-commentadmin": "Administradores",
-	"group-commentadmin-member": "{{GENDER:$1|administrador|administradora}}",
+	"group-commentadmin": "Administradores de comentários",
+	"group-commentadmin-member": "{{GENDER:$1|administrador|administradora}} de comentários",
+	"grouppage-commentadmin": "{{ns:project}}:Administradores de comentários",
 	"right-comment": "Enviar comentários",
-	"right-commentadmin": "Administrar comentários enviados pelo utilizador",
+	"right-commentadmin": "Administrar comentários enviados por utilizadores",
 	"right-commentlinks": "Usar ligações externas em comentários"
 }
