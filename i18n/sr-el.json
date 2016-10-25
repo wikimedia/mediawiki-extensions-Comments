@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Сербијана"
 		]
 	},
 	"comments-comment": "Komentar",
@@ -36,6 +37,6 @@
 	"group-commentadmin": "Administratori komentara",
 	"group-commentadmin-member": "{{GENDER:$1|administrator|administratorka}} komentara",
 	"grouppage-commentadmin": "{{ns:project}}:Administratori komentara",
-	"right-comment": "slanje komentara",
+	"right-comment": "Slanje komentara",
 	"right-commentadmin": "upravljanje korisničkim komentarima"
 }
