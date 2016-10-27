@@ -36,6 +36,6 @@
 	"group-commentadmin": "Администратори коментара",
 	"group-commentadmin-member": "{{GENDER:$1|администратор|администраторка}} коментара",
 	"grouppage-commentadmin": "{{ns:project}}:Администратори коментара",
-	"right-comment": "Слање коментара",
+	"right-comment": "слање коментара",
 	"right-commentadmin": "управљање корисничким коментарима"
 }
