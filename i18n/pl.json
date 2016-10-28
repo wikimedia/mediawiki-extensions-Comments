@@ -3,7 +3,8 @@
 		"authors": [
 			"Jacenty359",
 			"Odie2",
-			"Chrumps"
+			"Chrumps",
+			"Woytecr"
 		]
 	},
 	"comments-comment": "Komentarz",
@@ -13,7 +14,7 @@
 	"comments-loading": "Ładowanie...",
 	"comments-auto-refresher-enable": "Włącz automatyczne korygowanie komentarzy",
 	"comments-auto-refresher-pause": "Wstrzymaj automatyczne korygowanie komentarzy",
-	"comments-reply-to": "Odpowiedź",
+	"comments-reply-to": "Odpowiedz {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Anuluj",
 	"comments-block-warning-anon": "Naprawdę chcesz ciągle ignorować komentarze od tego anonimowego użytkownika (adres IP)?",
 	"comments-block-warning-user": "Naprawdę chcesz ciągle ignorować wszystkie komentarze od użytkownika $1?",
@@ -46,6 +47,8 @@
 	"comments-no-comments-of-day": "Dziś brak komentarzy.",
 	"log-name-comments": "Dziennik komentarzy",
 	"log-description-comments": "Jest to dziennik komentarzy.",
+	"logentry-comments-add": "$1 {{GENDER:$2|napisał|napisała}} nowy komentarz na stronie $3",
+	"logentry-comments-delete": "$1 {{GENDER:$2|usunął|usunęła}} komentarz #$4 na stronie $3",
 	"comments-time-ago": "$1 temu",
 	"comments-time-months": "{{PLURAL:$1|jeden miesiąc|$1 miesiące}}",
 	"comments-time-days": "{{PLURAL:$1|dzień|$1 dni}}",
@@ -57,5 +60,6 @@
 	"group-commentadmin-member": "{{GENDER:$1|komentarz administratora}}",
 	"grouppage-commentadmin": "{{ns:project}}:Komentarz administratorów",
 	"right-comment": "Zgłoś komentarze",
-	"right-commentadmin": "Administrowanie wysłanych komentarzy użytkownika"
+	"right-commentadmin": "Administrowanie wysłanych komentarzy użytkownika",
+	"right-commentlinks": "Używanie linków zewnętrznych w komentarzach"
 }
