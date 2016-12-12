@@ -127,25 +127,30 @@ class Comment extends ContextSource {
 		$this->thread = $data['thread'];
 		$this->timestamp = $data['timestamp'];
 
-		$dbr = wfGetDB( DB_SLAVE );
-		$row = $dbr->selectRow(
-			'Comments_Vote',
-			array( 'Comment_Vote_Score' ),
-			array(
-				'Comment_Vote_ID' => $this->id,
-				'Comment_Vote_Username' => $this->getUser()->getName()
-			),
-			__METHOD__
-		);
-		if ( $row !== false ) {
-			$vote = $row->Comment_Vote_Score;
+		if ( isset( $data['current_vote'] ) ) {
+			$vote = $data['current_vote'];
 		} else {
-			$vote = false;
+			$dbr = wfGetDB( DB_SLAVE );
+			$row = $dbr->selectRow(
+				'Comments_Vote',
+				array( 'Comment_Vote_Score' ),
+				array(
+					'Comment_Vote_ID' => $this->id,
+					'Comment_Vote_Username' => $this->getUser()->getName()
+				),
+				__METHOD__
+			);
+			if ( $row !== false ) {
+				$vote = $row->Comment_Vote_Score;
+			} else {
+				$vote = false;
+			}
 		}
 
 		$this->currentVote = $vote;
 
-		$this->currentScore = $this->getScore();
+		$this->currentScore = isset( $data['total_vote'] )
+			? $data['total_vote'] : $this->getScore();
 	}
 
 	public static function newFromID( $id ) {

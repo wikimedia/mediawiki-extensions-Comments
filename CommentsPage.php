@@ -164,17 +164,32 @@ class CommentsPage extends ContextSource {
 	public function getComments() {
 		$dbr = wfGetDB( DB_SLAVE );
 
-		$tables = array();
-		$params = array();
-		$joinConds = array();
-
 		// Defaults (for non-social wikis)
-		$tables[] = 'Comments';
+		$tables = array(
+			'Comments',
+			'vote1' => 'Comments_Vote',
+			'vote2' => 'Comments_Vote',
+		);
 		$fields = array(
 			'Comment_Username', 'Comment_IP', 'Comment_Text',
 			'Comment_Date', 'UNIX_TIMESTAMP(Comment_Date) AS timestamp',
 			'Comment_user_id', 'CommentID', 'Comment_Parent_ID',
+			'vote1.Comment_Vote_Score AS current_vote',
+			'SUM(vote2.Comment_Vote_Score) AS comment_score'
 		);
+		$joinConds = array(
+			// For current user's vote
+			'vote1' => array(
+				'LEFT JOIN',
+				array(
+					'vote1.Comment_Vote_ID = CommentID',
+					'vote1.Comment_Vote_Username' => $this->getUser()->getName()
+				)
+			),
+			// For total vote count
+			'vote2' => array( 'LEFT JOIN', 'vote2.Comment_Vote_ID = CommentID' )
+		);
+		$params = array( 'GROUP BY' => 'CommentID' );
 
 		// If SocialProfile is installed, query the user_stats table too.
 		if (
@@ -183,10 +198,8 @@ class CommentsPage extends ContextSource {
 		) {
 			$tables[] = 'user_stats';
 			$fields[] = 'stats_total_points';
-			$joinConds = array(
-				'Comments' => array(
-					'LEFT JOIN', 'Comment_user_id = stats_user_id'
-				)
+			$joinConds['Comments'] = array(
+				'LEFT JOIN', 'Comment_user_id = stats_user_id'
 			);
 		}
 
@@ -218,7 +231,9 @@ class CommentsPage extends ContextSource {
 				'CommentID' => $row->CommentID,
 				'Comment_Parent_ID' => $row->Comment_Parent_ID,
 				'thread' => $thread,
-				'timestamp' => $row->timestamp
+				'timestamp' => $row->timestamp,
+				'current_vote' => ( isset( $row->current_vote ) ? $row->current_vote : false ),
+				'total_vote' => ( isset( $row->comment_score ) ? $row->comment_score : 0 ),
 			);
 
 			$comments[] = new Comment( $this, $this->getContext(), $data );
