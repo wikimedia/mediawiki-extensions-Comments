@@ -163,3 +163,7 @@ li.c-pager-item {
 	list-style-type: none;
 	padding: 0.5em;
 }
+
+.cod img {
+	margin-bottom: 8px;
+}
