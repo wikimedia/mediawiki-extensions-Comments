@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e0e73b5_cc815bff",
+        "filename": "CommentClass.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2016-12-23T22:15:47Z",
+      "side": 1,
+      "message": "Would have been great to remove `border` as well and make it a CSS property…",
+      "revId": "b6d38d7fe37aec18ff7edbf4ae0e668610cd6459",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
