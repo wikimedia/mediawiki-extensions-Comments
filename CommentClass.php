@@ -596,7 +596,7 @@ class Comment extends ContextSource {
 		if ( class_exists( 'wAvatar' ) ) {
 			global $wgUploadPath;
 			$avatarHTML = '<img src="' . $wgUploadPath . '/avatars/' . $commentIcon .
-				'" alt="" align="middle" style="margin-bottom:8px;" border="0"/>';
+				'" alt="" align="middle" border="0"/>';
 		}
 
 		$comment_text = substr( $this->text, 0, 50 - strlen( $commentPoster_Display ) );
