@@ -49,7 +49,7 @@ class CommentsOfTheDay {
 	 *
 	 * @param bool $skipCache Skip using memcached and fetch data directly from the DB?
 	 * @param int $cacheTime How long to cache the results in memcached? Default is one day (60 * 60 * 24).
-	 * @param array $whereConds Additional WHERE conditions for the SQL clause
+	 * @param array $whereConds WHERE conditions for the SQL clause (if not using the defaults)
 	 * @return array
 	 */
 	public static function get( $skipCache = false, $cacheTime = 86400, $whereConds = array() ) {
@@ -64,6 +64,13 @@ class CommentsOfTheDay {
 		} elseif ( !$data || $skipCache ) { // just query the DB
 			$dbr = wfGetDB( DB_SLAVE );
 
+			if ( empty( $whereConds ) ) {
+				$whereConds = array(
+					'comment_page_id = page_id',
+					'UNIX_TIMESTAMP(comment_date) > ' . ( time() - ( $cacheTime ) )
+				);
+			}
+
 			$res = $dbr->select(
 				array( 'Comments', 'page' ),
 				array(
@@ -72,10 +79,7 @@ class CommentsOfTheDay {
 					'Comment_User_Id', 'CommentID', 'Comment_Parent_ID',
 					'Comment_Page_ID'
 				),
-				array_merge( $whereConds, array(
-					'comment_page_id = page_id',
-					'UNIX_TIMESTAMP(comment_date) > ' . ( time() - ( $cacheTime ) )
-				) ),
+				$whereConds,
 				__METHOD__
 			);
 
