@@ -257,7 +257,7 @@ var Comment = {
 	}
 };
 
-$( document ).ready( function() {
+$( function() {
 	// Important note: these are all using $( 'body' ) as the selector
 	// instead of the class/ID/whatever so that they work after viewComments()
 	// has been called (i.e. so that "Delete comment", reply, etc. links
