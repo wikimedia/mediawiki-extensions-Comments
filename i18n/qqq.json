@@ -9,7 +9,8 @@
 			"Shirayuki",
 			"Siebrand",
 			"Liuxinyu970226",
-			"Umherirrender"
+			"Umherirrender",
+			"Mihir Thakkar"
 		]
 	},
 	"comments-comment": "This message might be unused.\n{{Identical|Comment}}",
@@ -66,5 +67,23 @@
 	"grouppage-commentadmin": "{{doc-group|commentadmin|page}}",
 	"right-comment": "{{doc-right|comment}}",
 	"right-commentadmin": "{{doc-right|commentadmin}}",
-	"right-commentlinks": "{{Doc-right|commentlinks}}"
+	"right-commentlinks": "{{doc-right|commentlinks}}",
+	"apihelp-commentblock-description": "{{doc-apihelp-description|CommentBlock}}",
+	"apihelp-commentblock-param-commentID":"{{doc-apihelp-param|CommentBlock|commentID}}",
+	"apihelp-commentdelete-description": "{{doc-apihelp-description|CommentDelete}}",
+	"apihelp-commentdelete-param-commentID":"{{doc-apihelp-param|CommentDelete|commentID}}",
+	"apihelp-commentlatestid-description": "{{doc-apihelp-description|CommentLatestid}}",
+	"apihelp-commentlatestid-param-pageID":"{{doc-apihelp-param|CommentLatestid|pageID}}",
+	"apihelp-commentlist-description": "{{doc-apihelp-description|CommentList}}",
+	"apihelp-commentlist-param-pageID":"{{doc-apihelp-param|CommentList|pageID}}",
+	"apihelp-commentlist-param-order": "{{doc-apihelp-param|CommentList|order}}",
+	"apihelp-commentlist-param-pagerPage": "{{doc-apihelp-param|CommentList|pagerPage}}",
+	"apihelp-commentlist-param-showForm": "{{doc-apihelp-param|CommentList|showForm}}",
+	"apihelp-commentsubmit-description": "{{doc-apihelp-description|CommentSubmit}}",
+	"apihelp-commentsubmit-param-pageID":"{{doc-apihelp-param|CommentSubmit|pageID}}",
+	"apihelp-commentsubmit-param-parentID": "{{doc-apihelp-param|CommentSubmit|parentID}}",
+	"apihelp-commentsubmit-param-commentText": "{{doc-apihelp-param|CommentSubmit|commentText}}",
+	"apihelp-commentvote-description": "{{doc-apihelp-description|CommentVote}}",
+	"apihelp-commentvote-param-commentID":"{{doc-apihelp-param|CommentVote|commentID}}",
+	"apihelp-commentvote-param-voteValue": "{{doc-apihelp-param|CommentVote|voteValue}}"
 }
