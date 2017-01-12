@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4efb0bce_70f15592",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 3786
+      },
+      "writtenOn": "2017-01-12T23:52:24Z",
+      "side": 1,
+      "message": "Just a minor thing, even though this is unrelated, \"Doc-right\" should be lowercased for consistency so that it\u0027s \"{{doc-right\" instead.",
+      "revId": "95223d0fedc1b49580fb429e9a55be2070e792e7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
