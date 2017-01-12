@@ -9,7 +9,8 @@
 			"Shirayuki",
 			"Siebrand",
 			"Liuxinyu970226",
-			"Umherirrender"
+			"Umherirrender",
+			"Mihir Thakkar"
 		]
 	},
 	"comments-comment": "This message might be unused.\n{{Identical|Comment}}",
@@ -66,5 +67,11 @@
 	"grouppage-commentadmin": "{{doc-group|commentadmin|page}}",
 	"right-comment": "{{doc-right|comment}}",
 	"right-commentadmin": "{{doc-right|commentadmin}}",
-	"right-commentlinks": "{{Doc-right|commentlinks}}"
+	"right-commentlinks": "{{Doc-right|commentlinks}}",
+	"apihelp-commentblock-description": "{{doc-apihelp-description|CommentsBlock}}",
+	"apihelp-commentdelete-description": "{{doc-apihelp-description|CommentsDelete}}",
+	"apihelp-commentlatestid-description": "{{doc-apihelp-description|CommentsLatestid}}",
+	"apihelp-commentlist-description": "{{doc-apihelp-description|CommentsList}}",
+	"apihelp-commentsubmit-description": "{{doc-apihelp-description|CommentsSubmit}}",
+	"apihelp-commentvote-description": "{{doc-apihelp-description|CommentsVote}}"
 }
