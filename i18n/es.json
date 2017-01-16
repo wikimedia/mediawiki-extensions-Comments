@@ -13,6 +13,8 @@
 			"Macofe"
 		]
 	},
+	"apihelp-commentvote-description": "La API commentvote permite votar un comentario tras proporcionar los parámetros siguientes: commentID, voteValue.",
+	"apihelp-commentblock-param-commentID": "Identificador del comentario del usuario que se bloqueará",
 	"comments-comment": "Comentario",
 	"comments-desc": "Añade el asociador analítico <code>&lt;comments&gt;</code> que permite hacer comentarios en las páginas",
 	"comments-db-locked": "<h3>Agregar comentarios</h3>En este momento la base de datos está bloqueada por tareas rutinarias de mantenimiento, luego de los cuales volverá a la normalidad. Regresa más tarde.",
