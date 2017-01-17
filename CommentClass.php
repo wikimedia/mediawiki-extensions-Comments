@@ -169,7 +169,7 @@ class Comment extends ContextSource {
 		$tables[] = 'Comments';
 		$fields = array(
 			'Comment_Username', 'Comment_IP', 'Comment_Text',
-			'Comment_Date', 'UNIX_TIMESTAMP(Comment_Date) AS timestamp',
+			'Comment_Date', 'Comment_Date AS timestamp',
 			'Comment_user_id', 'CommentID', 'Comment_Parent_ID',
 			'CommentID', 'Comment_Page_ID'
 		);
@@ -215,7 +215,7 @@ class Comment extends ContextSource {
 			'CommentID' => $row->CommentID,
 			'Comment_Parent_ID' => $row->Comment_Parent_ID,
 			'thread' => $thread,
-			'timestamp' => $row->timestamp
+			'timestamp' => wfTimestamp( TS_UNIX, $row->timestamp )
 		);
 
 		$page = new CommentsPage( $row->Comment_Page_ID, $context );
