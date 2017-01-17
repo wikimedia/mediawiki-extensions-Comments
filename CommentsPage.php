@@ -172,7 +172,7 @@ class CommentsPage extends ContextSource {
 		);
 		$fields = array(
 			'Comment_Username', 'Comment_IP', 'Comment_Text',
-			'Comment_Date', 'UNIX_TIMESTAMP(Comment_Date) AS timestamp',
+			'Comment_Date', 'Comment_Date AS timestamp',
 			'Comment_user_id', 'CommentID', 'Comment_Parent_ID',
 			'vote1.Comment_Vote_Score AS current_vote',
 			'SUM(vote2.Comment_Vote_Score) AS comment_score'
@@ -231,7 +231,7 @@ class CommentsPage extends ContextSource {
 				'CommentID' => $row->CommentID,
 				'Comment_Parent_ID' => $row->Comment_Parent_ID,
 				'thread' => $thread,
-				'timestamp' => $row->timestamp,
+				'timestamp' => wfTimestamp( TS_UNIX, $row->timestamp ),
 				'current_vote' => ( isset( $row->current_vote ) ? $row->current_vote : false ),
 				'total_vote' => ( isset( $row->comment_score ) ? $row->comment_score : 0 ),
 			);
