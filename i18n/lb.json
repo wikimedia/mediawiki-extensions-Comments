@@ -5,6 +5,8 @@
 			"Soued031"
 		]
 	},
+	"apihelp-commentlist-param-pagerPage": "Nummer vun der Säit vun de Bemierkungen",
+	"apihelp-commentsubmit-param-commentText": "Text vun der Bemierkung",
 	"comments-comment": "Bemierkung",
 	"comments-desc": "Setzt d'Parsererweiderung <code>&lt;comments&gt;</code> derbäi déi et erlaabt fir Säiten ze kommentéieren",
 	"comments-db-locked": "<h3>Bemierkungen derbäisetzen</h3> D'Datebank ass elo wéinst Maintenance-Aarbechte gespaart. Probéiert w.e.g. méi spéit nach eng Kéier.",
