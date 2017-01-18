@@ -60,6 +60,24 @@
     },
     {
       "key": {
+        "uuid": "4efb0bce_28223c51",
+        "filename": "CommentClass.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2017-01-18T03:39:23Z",
+      "side": 1,
+      "message": "Also should use i18n here: wfMessage( \u0027comments-anon-name\u0027 )-\u003einContentLanguage()-\u003etext() instead of hard-coding in \"Anonymous\"",
+      "parentUuid": "4efb0bce_0810a003",
+      "revId": "cb0ce0bb40ebadc1bb7bbb17c8967a7e45cef86e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4efb0bce_680154b9",
         "filename": "CommentClass.php",
         "patchSetId": 1
@@ -71,6 +89,24 @@
       "writtenOn": "2017-01-18T03:29:04Z",
       "side": 1,
       "message": "This should be a i18n message :) You can read https://www.mediawiki.org/wiki/Localisation for more information. You can use the wfMessage() method, and the first parameter it\u0027ll accept is the name of the message, which you can define in en.json (and document in qqq.json as well).",
+      "revId": "cb0ce0bb40ebadc1bb7bbb17c8967a7e45cef86e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_c8196829",
+        "filename": "CommentClass.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2017-01-18T03:39:23Z",
+      "side": 1,
+      "message": "Actually I\u0027m wondering if there\u0027d be a nicer way to do this. When we store text into the DB, we\u0027re forced to choose either the user\u0027s or the wiki\u0027s content language. That\u0027s kinda problematic; I see no reason why these two strings couldn\u0027t be localized properly since one of them is already present in the i18n file, in fact. However, this approach would likely require some additional logic somewhere. I don\u0027t think that you\u0027re allowed to post blank comments by default, so setting the Comment_Text field to \u0027\u0027 (empty string) and later on in some different part of the code showing the i18n\u0027ed messages if Comment_Text \u003d\u003d\u003d \u0027\u0027 would be one solution.\n\nAnyway, you also need to set the Comment_user_id field to 0 here since that\u0027s the standard MediaWiki convention -- user ID 0 represents an anonymous user.",
+      "parentUuid": "4efb0bce_680154b9",
       "revId": "cb0ce0bb40ebadc1bb7bbb17c8967a7e45cef86e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
