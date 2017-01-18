@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4efb0bce_680154b9",
+        "filename": "CommentClass.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 3786
+      },
+      "writtenOn": "2017-01-18T03:29:04Z",
+      "side": 1,
+      "message": "This should be a i18n message :) You can read https://www.mediawiki.org/wiki/Localisation for more information. You can use the wfMessage() method, and the first parameter it\u0027ll accept is the name of the message, which you can define in en.json (and document in qqq.json as well).",
+      "revId": "cb0ce0bb40ebadc1bb7bbb17c8967a7e45cef86e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
