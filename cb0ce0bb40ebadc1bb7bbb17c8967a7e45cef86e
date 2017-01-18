@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "4efb0bce_a8ff4ca6",
+        "filename": "CommentClass.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 3786
+      },
+      "writtenOn": "2017-01-18T03:32:30Z",
+      "side": 1,
+      "message": "This *might* need to be a triple equality operator instead (\u003d\u003d\u003d), checkout https://www.mediawiki.org/wiki/Manual:Coding_conventions/PHP#Equality_operators",
+      "range": {
+        "startLine": 453,
+        "startChar": 23,
+        "endLine": 453,
+        "endChar": 25
+      },
+      "revId": "cb0ce0bb40ebadc1bb7bbb17c8967a7e45cef86e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_0810a003",
+        "filename": "CommentClass.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 3786
+      },
+      "writtenOn": "2017-01-18T03:32:30Z",
+      "side": 1,
+      "message": "Extra space here",
+      "revId": "cb0ce0bb40ebadc1bb7bbb17c8967a7e45cef86e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4efb0bce_680154b9",
         "filename": "CommentClass.php",
         "patchSetId": 1
@@ -13,6 +53,23 @@
       "writtenOn": "2017-01-18T03:29:04Z",
       "side": 1,
       "message": "This should be a i18n message :) You can read https://www.mediawiki.org/wiki/Localisation for more information. You can use the wfMessage() method, and the first parameter it\u0027ll accept is the name of the message, which you can define in en.json (and document in qqq.json as well).",
+      "revId": "cb0ce0bb40ebadc1bb7bbb17c8967a7e45cef86e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_e8f544c8",
+        "filename": "CommentClass.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 3786
+      },
+      "writtenOn": "2017-01-18T03:32:30Z",
+      "side": 1,
+      "message": "Extra space here",
       "revId": "cb0ce0bb40ebadc1bb7bbb17c8967a7e45cef86e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
