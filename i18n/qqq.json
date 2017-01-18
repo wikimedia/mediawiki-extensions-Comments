@@ -30,7 +30,7 @@
 	"apihelp-commentsubmit-param-parentID": "{{doc-apihelp-param|commentsubmit|parentID}}",
 	"apihelp-commentsubmit-param-commentText": "{{doc-apihelp-param|commentsubmit|commentText}}",
 	"apihelp-commentvote-param-commentID": "{{doc-apihelp-param|commentvote|commentID}}",
-	"apihelp-commentvote-param-voteValue": "{{doc-apihelp-param|v|voteValue}}",
+	"apihelp-commentvote-param-voteValue": "{{doc-apihelp-param|commentvote|voteValue}}",
 	"comments-comment": "This message might be unused.\n{{Identical|Comment}}",
 	"comments-desc": "{{desc|name=Comments|url=https://www.mediawiki.org/wiki/Extension:Comments}}",
 	"comments-db-locked": "Displayed if a page contains the <code><nowiki><comments /></nowiki></code> tag while the database is locked.",
