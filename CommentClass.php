@@ -447,17 +447,34 @@ class Comment extends ContextSource {
 	 * Deletes entries from Comments and Comments_Vote tables and clears caches
 	 */
 	function delete() {
+		$commentDate = date( 'Y-m-d H:i:s' );
+
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->delete(
-			'Comments',
-			array( 'CommentID' => $this->id ),
-			__METHOD__
-		);
-		$dbw->delete(
-			'Comments_Vote',
-			array( 'Comment_Vote_ID' => $this->id ),
-			__METHOD__
-		);
+		if ( $this->parentID == 0 ) {
+			// Replace text of parent comment with "This comment is deleted"
+			$dbw->update(
+				'Comments',
+				array(
+					'Comment_Username' => "Anonymous",	
+					'Comment_Text' => "This comment is deleted",
+					'Comment_Parent_ID' => $parentID,
+				),
+				array( 'CommentID' => $this->id ),
+				__METHOD__
+			);
+		} else {
+			// Delete the child comment
+			$dbw->delete(
+				'Comments',
+				array( 'CommentID' => $this->id ),
+				__METHOD__
+			);
+			$dbw->delete(
+				'Comments_Vote',
+				array( 'Comment_Vote_ID' => $this->id ),
+				__METHOD__
+			);	
+		}
 		$dbw->commit( __METHOD__ );
 
 		// Log the deletion to Special:Log/comments.
