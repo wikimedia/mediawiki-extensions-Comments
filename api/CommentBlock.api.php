@@ -21,7 +21,7 @@ class CommentBlockAPI extends ApiBase {
 			$username = $s->comment_username;
 		}
 
-		CommentFunctions::blockUser( $userID, $username );
+		CommentFunctions::blockUser( $this->getUser(), $userID, $username );
 
 		if ( class_exists( 'UserStatsTrack' ) ) {
 			$stats = new UserStatsTrack( $userID, $username );

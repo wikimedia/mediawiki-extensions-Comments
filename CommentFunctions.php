@@ -141,10 +141,11 @@ class CommentFunctions {
 	/**
 	 * Blocks comments from a user
 	 *
+	 * @param User $blocker The user who is blocking someone else's comments
 	 * @param int $userId User ID of the guy whose comments we want to block
 	 * @param mixed $userName User name of the same guy
 	 */
-	public function blockUser( $userId, $userName ) {
+	public static function blockUser( $blocker, $userId, $userName ) {
 		$dbw = wfGetDB( DB_MASTER );
 
 		wfSuppressWarnings(); // E_STRICT bitching
@@ -153,8 +154,8 @@ class CommentFunctions {
 		$dbw->insert(
 			'Comments_block',
 			array(
-				'cb_user_id' => $this->getUser()->getId(),
-				'cb_user_name' => $this->getUser()->getName(),
+				'cb_user_id' => $blocker->getId(),
+				'cb_user_name' => $blocker->getName(),
 				'cb_user_id_blocked' => $userId,
 				'cb_user_name_blocked' => $userName,
 				'cb_date' => $date
