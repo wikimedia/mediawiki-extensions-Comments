@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "4efb0bce_08278060",
+        "filename": "CommentClass.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 3786
+      },
+      "writtenOn": "2017-01-18T03:35:24Z",
+      "side": 1,
+      "message": "Somehow missed it, but this should also be an i18n message too, refer to my earlier comment for learning how to fix it",
+      "parentUuid": "4efb0bce_0810a003",
+      "revId": "cb0ce0bb40ebadc1bb7bbb17c8967a7e45cef86e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4efb0bce_680154b9",
         "filename": "CommentClass.php",
         "patchSetId": 1
