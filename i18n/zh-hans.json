@@ -11,8 +11,10 @@
 			"Impersonator 1"
 		]
 	},
+	"apihelp-commentblock-param-commentID": "由要被封禁的用户所作出评论的评论ID",
 	"apihelp-commentdelete-param-commentID": "要删除的评论的评论ID",
 	"apihelp-commentlatestid-param-pageID": "出现最新评论页面的页面ID",
+	"apihelp-commentlist-param-pageID": "取回评论列表的页面的页面ID",
 	"apihelp-commentlist-param-order": "定义评论以升序还是以降序排列",
 	"apihelp-commentlist-param-pagerPage": "评论页数",
 	"apihelp-commentlist-param-showForm": "显示评论来自",
