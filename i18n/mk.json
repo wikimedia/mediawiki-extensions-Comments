@@ -4,7 +4,9 @@
 			"Bjankuloski06"
 		]
 	},
+	"apihelp-commentlist-param-pagerPage": "Број на страницата на коментарите",
 	"apihelp-commentlist-param-showForm": "Прикажи коментари од",
+	"apihelp-commentsubmit-param-pageID": "Назнака на страницата на која се поднесува коментарот",
 	"comments-comment": "Коментар",
 	"comments-desc": "Додава расчленувачки пресретник <code>&lt;comments&gt;</code> што овозможува коментирање на страниците",
 	"comments-db-locked": "<h3>Давање на коментари</h3>Базата е моментално заклучена за редовно одржување, и потоа ќе се врати во нормална работна состојба. Навратете се подоцна!",
