@@ -4,9 +4,18 @@
 			"Bjankuloski06"
 		]
 	},
+	"apihelp-commentblock-param-commentID": "Назнака на коментарот по корисник што треба да се блокира",
+	"apihelp-commentdelete-param-commentID": "назнака на коментарот што треба да се избрише",
+	"apihelp-commentlatestid-param-pageID": "Назнака на страницата која го има последниот коментар",
+	"apihelp-commentlist-param-pageID": "Назнака на страницата за која се добива список на коментари",
+	"apihelp-commentlist-param-order": "Се задава дали списокот на коментари да биде по нагорен или надолен редослед",
 	"apihelp-commentlist-param-pagerPage": "Број на страницата на коментарите",
 	"apihelp-commentlist-param-showForm": "Прикажи коментари од",
 	"apihelp-commentsubmit-param-pageID": "Назнака на страницата на која се поднесува коментарот",
+	"apihelp-commentsubmit-param-parentID": "Назнака на матичниот коментар",
+	"apihelp-commentsubmit-param-commentText": "Текст на коментарот",
+	"apihelp-commentvote-param-commentID": "Назнака на коментарот за кој се гласа",
+	"apihelp-commentvote-param-voteValue": "Гласовна вредност на коментарот",
 	"comments-comment": "Коментар",
 	"comments-desc": "Додава расчленувачки пресретник <code>&lt;comments&gt;</code> што овозможува коментирање на страниците",
 	"comments-db-locked": "<h3>Давање на коментари</h3>Базата е моментално заклучена за редовно одржување, и потоа ќе се врати во нормална работна состојба. Навратете се подоцна!",
