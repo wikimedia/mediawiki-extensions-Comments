@@ -9,7 +9,6 @@
 	"comments-voted-label": "Balsavo",
 	"comments-loading": "Įkeliama…",
 	"comments-reply-to": "Atsakyti į",
-	"comments-cancel-reply": "Atšaukti",
 	"comments-delete-warning": "Ar tikrai norite ištrinti šį komentarą?",
 	"comments-sort-by-date": "Rūšiuoti pagal datą",
 	"comments-sort-by-score": "Rūšiuoti pagal rezultatą",
@@ -28,8 +27,6 @@
 	"comments-ignore-no-users": "Šiuo metu nėra užblokuotų vartotojų.",
 	"comments-ignore-remove-message": "Ar tikrai norite atblokuoti vartotojo <b>$1</b> komentarus?",
 	"comments-ignore-unblock": "Atblokuoti",
-	"comments-ignore-cancel": "Atšaukti",
 	"log-name-comments": "Komentarų žurnalas",
-	"comments-time-ago": "prieš $1",
 	"right-comment": "Siųsti komentarus"
 }

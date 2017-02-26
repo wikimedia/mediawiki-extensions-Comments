@@ -757,7 +757,7 @@ class Comment extends ContextSource {
 		wfSuppressWarnings(); // E_STRICT bitches about strtotime()
 		$output .= '<div class="c-time">' .
 			wfMessage(
-				'comments-time-ago',
+				'time-ago',
 				CommentFunctions::getTimeAgo( strtotime( $this->date ) )
 			)->parse() . '</div>' . "\n";
 		wfRestoreWarnings();

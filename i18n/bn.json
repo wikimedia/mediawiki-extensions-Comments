@@ -9,11 +9,8 @@
 	"comments-comment": "মন্তব্য",
 	"comments-loading": "লোডিং...",
 	"comments-reply-to": "প্রাপক {{GENDER:$2|$1}}",
-	"comments-cancel-reply": "বাতিল",
 	"comments-show-comment-link": "মন্তব্য দেখাও",
 	"comments-you": "আপনি",
 	"comments-reply": "উত্তর",
-	"comments-score-text": "স্কোর",
-	"comments-ignore-cancel": "বাতিল",
-	"comments-time-ago": "$1 আগে"
+	"comments-score-text": "স্কোর"
 }

@@ -5,10 +5,7 @@
 			"Robin0van0der0vliet"
 		]
 	},
-	"comments-cancel-reply": "Annulearje",
 	"comments-you": "Jo",
-	"comments-ignore-cancel": "Annulearje",
-	"comments-time-ago": "$1 lyn",
 	"comments-time-days": "{{PLURAL:$1|ien dei|$1 dagen}}",
 	"comments-time-hours": "{{PLURAL:$1|ien oere|$1 oere}}",
 	"comments-time-minutes": "{{PLURAL:$1|ien minút|$1 minuten}}",

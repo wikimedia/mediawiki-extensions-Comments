@@ -7,7 +7,6 @@
 	},
 	"comments-comment": "Kommentar",
 	"comments-loading": "Indlæser...",
-	"comments-cancel-reply": "Annuller",
 	"comments-sort-by-date": "Sorter efter dato",
 	"comments-show-comment-link": "Vis kommentar",
 	"comments-you": "Dig",
@@ -16,6 +15,5 @@
 	"comments-score-text": "Point",
 	"comments-permalink": "Permanent henvisning",
 	"comments-delete-link": "Slet kommentar",
-	"comments-anon-name": "Anonym bruger",
-	"comments-ignore-cancel": "Annuller"
+	"comments-anon-name": "Anonym bruger"
 }

@@ -4,6 +4,5 @@
 			"Servien"
 		]
 	},
-	"comments-time-ago": "$1 elejen",
 	"comments-time-months": "{{PLURAL:$1|een maond|$1 maonden}}"
 }
