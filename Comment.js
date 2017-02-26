@@ -244,7 +244,7 @@ var Comment = {
 		$( '<a>', {
 			class: 'comments-cancel-reply-link',
 			style: 'cursor:pointer',
-			text: mw.msg( 'comments-cancel-reply' )
+			text: mw.msg( 'cancel' )
 		} ).appendTo( '#replyto' );
 		$( '#replyto' ).append( ') <br />' );
 

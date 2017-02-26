@@ -7,12 +7,9 @@
 	},
 	"comments-comment": "Şîrove",
 	"comments-loading": "Tê barkirin...",
-	"comments-cancel-reply": "Betal bike",
 	"comments-show-comment-link": "Şîroveyê nîşan bide",
 	"comments-you": "Tu",
 	"comments-reply": "Bersiv bide",
-	"comments-ignore-cancel": "Betal bike",
-	"comments-time-ago": "berî $1",
 	"comments-time-days": "{{PLURAL:$1|rojek|$1 roj}}",
 	"right-comment": "Şîroveyan tomar bike",
 	"right-commentlinks": "Girêdanên derve di nav şîroveyan de bi kar bîne"

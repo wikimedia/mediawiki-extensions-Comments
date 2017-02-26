@@ -10,15 +10,12 @@
 	"comments-comment": "टिप्पणी",
 	"comments-loading": "लोड हो रहा है...",
 	"comments-reply-to": "{{GENDER:$2|$1}} को उत्तर दें",
-	"comments-cancel-reply": "रद्द करें",
 	"comments-show-comment-link": "टीप्पणी दिखाएँ",
 	"comments-you": "आप",
 	"comments-reply": "उत्तर दें",
 	"comments-post": "टिप्पणी पोस्ट करें",
 	"comments-submit": "अपनी टिप्पणी जोड़ें",
 	"comments-score-text": "अंक",
-	"comments-ignore-cancel": "रद्द करें",
 	"log-name-comments": "टिप्पणी लॉग",
-	"comments-time-ago": "$1 पहले",
 	"comments-time-months": "{{PLURAL:$1|एक महीना|$1 महीने}}"
 }

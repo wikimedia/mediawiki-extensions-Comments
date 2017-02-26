@@ -12,7 +12,6 @@
 	"comments-auto-refresher-enable": "Activar actualización automática de comentarios",
 	"comments-auto-refresher-pause": "Posar l'actualizador automáticu de comentarios",
 	"comments-reply-to": "Responder a {{GENDER:$2|$1}}",
-	"comments-cancel-reply": "Encaboxar",
 	"comments-block-warning-anon": "¿Seguro que quies inorar permanentemente tolos comentarios d'esti usuariu anónimu (al traviés de la so dirección IP)?",
 	"comments-block-warning-user": "¿Seguro que quies inorar permanentemente tolos comentarios {{GENDER:$1|del usuariu|de la usuaria}} $1?",
 	"comments-delete-warning": "¿Seguro que quies desaniciar esti comentariu?",

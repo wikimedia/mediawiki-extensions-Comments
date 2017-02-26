@@ -7,7 +7,6 @@
 	"comments-voted-label": "Nobalsots",
 	"comments-loading": "Ielādē…",
 	"comments-reply-to": "Atbildēt uz {{GENDER:$2|$1}}",
-	"comments-cancel-reply": "Atcelt",
 	"comments-sort-by-date": "Kārtot pēc datuma",
 	"comments-sort-by-score": "Kārtot pēc vērtējuma",
 	"comments-show-comment-link": "Parādīt komentāru",
@@ -20,6 +19,5 @@
 	"comments-permalink": "Pastāvīgā saite",
 	"comments-delete-link": "Dzēst komentāru",
 	"comments-anon-name": "Anonīms lietotājs",
-	"comments-ignore-unblock": "Atbloķēt",
-	"comments-ignore-cancel": "Atcelt"
+	"comments-ignore-unblock": "Atbloķēt"
 }
