@@ -3,13 +3,14 @@
 		"authors": [
 			"Firilacroco",
 			"Minisarm",
-			"Stelistcristi"
+			"Stelistcristi",
+			"Strainu"
 		]
 	},
 	"comments-comment": "Comentariu",
 	"comments-voted-label": "Votat",
 	"comments-loading": "Se încarcă...",
-	"comments-reply-to": "Răspundeți utilizatorului",
+	"comments-reply-to": "Răspundeți {{GENDER:$2|utilizatorului|utilizatoarei}} $1",
 	"comments-cancel-reply": "Revocare",
 	"comments-sort-by-date": "Sortare după dată",
 	"comments-sort-by-score": "Sortare după scor",
