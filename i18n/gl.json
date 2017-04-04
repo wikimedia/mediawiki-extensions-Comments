@@ -6,6 +6,7 @@
 			"Vivaelcelta"
 		]
 	},
+	"apihelp-commentsubmit-param-commentText": "Texto do comentario",
 	"comments-comment": "Comentar",
 	"comments-desc": "Engade o asociador analítico <code>&lt;comments&gt;</code> que permite comentar nas páxinas",
 	"comments-db-locked": "<h3>Engadir comentarios</h3>A base de datos está pechada por razóns de mantemento, despois dos cales volverá á normalidade. Volva despois!",
