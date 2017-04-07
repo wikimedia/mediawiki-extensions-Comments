@@ -6,7 +6,13 @@
 			"Vivaelcelta"
 		]
 	},
+	"apihelp-commentdelete-param-commentID": "Identificador (ID) do comentario a borrar",
+	"apihelp-commentlist-param-pagerPage": "Número da páxina de comentarios",
+	"apihelp-commentlist-param-showForm": "Mostrar o formulario de comentarios",
+	"apihelp-commentsubmit-param-pageID": "Identificador (ID) da páxina na que se fai o comentario",
+	"apihelp-commentsubmit-param-parentID": "Identificador (ID) do comentario pai",
 	"apihelp-commentsubmit-param-commentText": "Texto do comentario",
+	"apihelp-commentvote-param-voteValue": "Valor do voto para o comentario",
 	"comments-comment": "Comentar",
 	"comments-desc": "Engade o asociador analítico <code>&lt;comments&gt;</code> que permite comentar nas páxinas",
 	"comments-db-locked": "<h3>Engadir comentarios</h3>A base de datos está pechada por razóns de mantemento, despois dos cales volverá á normalidade. Volva despois!",
