@@ -6,6 +6,7 @@
 			"Vivaelcelta"
 		]
 	},
+	"apihelp-commentblock-param-commentID": "Identificador do comentario do usuario que vai ser bloqueado",
 	"apihelp-commentdelete-param-commentID": "Identificador (ID) do comentario a borrar",
 	"apihelp-commentlist-param-pagerPage": "Número da páxina de comentarios",
 	"apihelp-commentlist-param-showForm": "Mostrar o formulario de comentarios",
