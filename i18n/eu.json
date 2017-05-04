@@ -12,6 +12,8 @@
 	"comments-delete-link": "Ezabatu iruzkina",
 	"comments-anon-name": "Erabiltzaile anonimoa",
 	"comments-ignore-cancel": "Utzi",
+	"comments-time-ago": "Duela $1",
+	"comments-time-months": "{{PLURAL:$1|hilabete bat|$1 hilabete}}",
 	"comments-time-days": "{{PLURAL:$1|egun bat|$1 egun}}",
 	"comments-time-hours": "{{PLURAL:$1|ordu bat|$1 ordu}}",
 	"comments-time-minutes": "{{PLURAL:$1|minutu bat|$1 minutu}}",
