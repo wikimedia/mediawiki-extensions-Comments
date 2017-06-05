@@ -4,6 +4,18 @@
 			"McDutchie"
 		]
 	},
+	"apihelp-commentblock-param-commentID": "ID del commento del usator a blocar",
+	"apihelp-commentdelete-param-commentID": "ID del commento a deler",
+	"apihelp-commentlatestid-param-pageID": "ID del pagina ubi se trova le ultime commento",
+	"apihelp-commentlist-param-pageID": "ID del pagina de ubi proveni le lista de commentos",
+	"apihelp-commentlist-param-order": "Defini si le lista de commentos es in ordine ascendente o descendente",
+	"apihelp-commentlist-param-pagerPage": "Numero de pagina del commento",
+	"apihelp-commentlist-param-showForm": "Monstrar le formulario de commentos",
+	"apihelp-commentsubmit-param-pageID": "ID del pagina ubi submitter le commento",
+	"apihelp-commentsubmit-param-parentID": "ID del commento genitor",
+	"apihelp-commentsubmit-param-commentText": "Texto del commento",
+	"apihelp-commentvote-param-commentID": "ID del commento pro le qual votar",
+	"apihelp-commentvote-param-voteValue": "Valor del voto pro le commento",
 	"comments-comment": "Commento",
 	"comments-desc": "Adde un uncino del analysator syntactic <code>&lt;comments&gt;</code> que permitte commentar paginas",
 	"comments-db-locked": "<h3>Addition de commentos</h3>Le base de datos es presentemente serrate pro mantenentia routinari. Postea illo retornara al functionamento normal. Per favor reveni plus tarde.",
