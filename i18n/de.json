@@ -7,7 +7,10 @@
 			"Geitost"
 		]
 	},
+	"apihelp-commentlist-param-pagerPage": "Kommentarseitenzahl",
 	"apihelp-commentlist-param-showForm": "Zeigt das Kommentarformular",
+	"apihelp-commentsubmit-param-parentID": "Kommentarkennung des übergeordneten Kommentars",
+	"apihelp-commentsubmit-param-commentText": "Kommentartext",
 	"comments-comment": "Kommentar",
 	"comments-desc": "Ergänzt die Parsererweiterung <code>&lt;comments&gt;</code> zum Kommentieren von Seiten",
 	"comments-db-locked": "<h3>Hinzufügen von Kommentaren</h3>Die Datenbank ist momentan aufgrund routinemäßiger Wartungsarbeiten für den Schreibzugriff gesperrt. Bitte probiere es später noch einmal.",
