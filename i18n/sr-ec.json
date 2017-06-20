@@ -31,7 +31,7 @@
 	"comments-time-days": "{{PLURAL:$1|један дан|$1 дана}}",
 	"comments-time-hours": "{{PLURAL:$1|један сат|$1 сата|$1 сати}}",
 	"comments-time-minutes": "{{PLURAL:$1|један минут|$1 минута}}",
-	"comments-time-seconds": "{{PLURAL:$1|један секунд|$1 секунде|$1 секунди}}",
+	"comments-time-seconds": "{{PLURAL:$1|1 секунда|$1 секунде|$1 секунди}}",
 	"log-show-hide-comments": "$1 дневник коментара",
 	"group-commentadmin": "Администратори коментара",
 	"group-commentadmin-member": "{{GENDER:$1|администратор|администраторка}} коментара",
