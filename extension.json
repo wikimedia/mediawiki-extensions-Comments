@@ -1,11 +1,12 @@
 {
 	"name": "Comments",
-	"version": "4.2.1",
+	"version": "4.3",
 	"author": [
 		"David Pean",
 		"Misza",
 		"Jack Phoenix",
-		"Adam Carter/UltrasonicNXT"
+		"Adam Carter/UltrasonicNXT",
+		"Samantha Nguyen"
 	],
 	"license-name": "GPL-2.0+",
 	"url": "https://www.mediawiki.org/wiki/Extension:Comments",
@@ -60,6 +61,7 @@
 	},
 	"AutoloadClasses": {
 		"Comment": "CommentClass.php",
+		"CommentFormTemplate": "form.tmpl.php",
 		"CommentsPage": "CommentsPage.php",
 		"CommentsOfTheDay": "CommentsOfTheDay.php",
 		"CommentFunctions": "CommentFunctions.php",
@@ -77,6 +79,10 @@
 	"ResourceModules": {
 		"ext.comments.css": {
 			"styles": "Comments.css",
+			"position": "top"
+		},
+		"ext.comments.new-form": {
+			"styles": "Comments.less",
 			"position": "top"
 		},
 		"ext.comments.js": {
