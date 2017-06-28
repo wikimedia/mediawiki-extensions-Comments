@@ -35,6 +35,7 @@ class CommentsHooks {
 	public static function displayComments( $input, $args, $parser ) {
 		global $wgOut, $wgCommentsSortDescending;
 
+		$parser->enableOOUI();
 		$parser->disableCache();
 		// If an unclosed <comments> tag is added to a page, the extension will
 		// go to an infinite loop...this protects against that condition.
@@ -46,7 +47,7 @@ class CommentsHooks {
 		}
 
 		// Add required CSS & JS via ResourceLoader
-		$wgOut->addModuleStyles( 'ext.comments.css' );
+		$wgOut->addModuleStyles( array( 'ext.comments.css', 'ext.comments.new-form' ) );
 		$wgOut->addModules( 'ext.comments.js' );
 		$wgOut->addJsConfigVars( array( 'wgCommentsSortDescending' => $wgCommentsSortDescending ) );
 

@@ -318,8 +318,8 @@ $( function() {
 		Comment.cancelReply();
 	} )
 
-	// Handle clicks on the submit button (previously this was an onclick attr)
-	.on( 'click', 'div.c-form-button input[type="button"]', function() {
+	// Handle clicks on the submit button
+	.on( 'click', 'form[name="commentForm"] a[type="button"]', function() {
 		Comment.submit();
 	} )
 
@@ -341,7 +341,7 @@ $( function() {
 			0,
 			$( this ).data( 'cpage' )
 		);
-	} );
+	} )
 } );
 
 }( jQuery, mediaWiki ) );
