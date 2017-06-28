@@ -35,6 +35,7 @@ class CommentsHooks {
 	public static function displayComments( $input, $args, $parser ) {
 		global $wgOut, $wgCommentsSortDescending;
 
+		$parser->enableOOUI();
 		$parser->disableCache();
 		// If an unclosed <comments> tag is added to a page, the extension will
 		// go to an infinite loop...this protects against that condition.
@@ -45,10 +46,11 @@ class CommentsHooks {
 			return self::nonDisplayComments( $input, $args, $parser );
 		}
 
+		$out = $parser->getOutput();
 		// Add required CSS & JS via ResourceLoader
-		$wgOut->addModuleStyles( 'ext.comments.css' );
-		$wgOut->addModules( 'ext.comments.js' );
-		$wgOut->addJsConfigVars( array( 'wgCommentsSortDescending' => $wgCommentsSortDescending ) );
+		$out->addModuleStyles( array( 'ext.comments.css', 'ext.comments.new-form' ) );
+		$out->addModules( array( 'ext.comments.js', 'ext.comments.form' ) );
+		$out->addJsConfigVars( array( 'wgCommentsSortDescending' => $wgCommentsSortDescending ) );
 
 		// Parse arguments
 		// The preg_match() lines here are to support the old-style way of
@@ -76,6 +78,10 @@ class CommentsHooks {
 			$voting = $args['voting'];
 		}
 
+		// @todo FIXME: To hell with this fugly global here! But ParserOutput
+		// isn't a ContextSource so we need something else here...I really hope
+		// we don't have to resort to using RequestContext::getMain(), which is
+		// just a global in disguise. --ashley, 23 July 2017
 		$commentsPage = new CommentsPage( $title->getArticleID(), $wgOut->getContext() );
 		$commentsPage->allow = $allow;
 		$commentsPage->setVoting( $voting );
