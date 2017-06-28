@@ -35,8 +35,6 @@ class CommentsHooks {
 	public static function displayComments( $input, $args, $parser ) {
 		global $wgOut, $wgCommentsSortDescending;
 
-		wfProfileIn( __METHOD__ );
-
 		$parser->disableCache();
 		// If an unclosed <comments> tag is added to a page, the extension will
 		// go to an infinite loop...this protects against that condition.
@@ -109,8 +107,6 @@ class CommentsHooks {
 		}
 
 		$output .= '</div>'; // div.comments-body
-
-		wfProfileOut( __METHOD__ );
 
 		return $output;
 	}
