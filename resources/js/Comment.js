@@ -81,6 +81,28 @@ var Comment = {
 	},
 
 	/**
+	 * Preview the contents of the <textarea> (well, more accurately the
+	 * wikitext given to this function) and show the parsed HTML output in the
+	 * given element.
+	 *
+	 * @param text String: Wikitext to be sent to the API for parsing
+	 * @param targetElement String: ID of the element where
+	 *    the preview text should be inserted
+	 */
+	preview: function ( text, targetElement ) {
+		( new mw.Api() ).get( {
+			action: 'parse',
+			text: text,
+			contentmodel: 'wikitext',
+			disablelimitreport: true // don't need the NewPP report stuff
+		} ).done( function ( data ) {
+			$( '#' + targetElement ).html( data.parse.text['*'] ); //.replace( /\<!\--(.*)-->/, '' );
+		} ).fail( function () {
+			$( '#' + targetElement ).text( mw.msg( 'comments-preview-failed' ) );
+		} );
+	},
+
+	/**
 	 * Vote for a comment.
 	 *
 	 * @param commentID Integer: comment ID number
@@ -318,8 +340,8 @@ $( function() {
 		Comment.cancelReply();
 	} )
 
-	// Handle clicks on the submit button (previously this was an onclick attr)
-	.on( 'click', 'div.c-form-button input[type="button"]', function() {
+	// Handle clicks on the submit button
+	.on( 'click', 'form[name="commentForm"] a[type="button"]', function() {
 		Comment.submit();
 	} )
 
@@ -341,6 +363,29 @@ $( function() {
 			0,
 			$( this ).data( 'cpage' )
 		);
+	} )
+
+	// Switch between edit/preview modes when the relevant tab is clicked
+	.on( 'click', '.tab-item', function() {
+		var linkedElement = '#' + $( this ).attr( 'data-linked-element' );
+		$( this ).addClass( 'tab-item-open' );
+		// parent is parent <li>, siblings is other <li>s
+		$( this ).parent().siblings().find( '.tab-item' ).removeClass( 'tab-item-open' );
+		$( linkedElement ).addClass( 'tab-content-open' );
+		$( linkedElement ).siblings().removeClass( 'tab-content-open' );
+		if ( $( this ).attr( 'data-linked-element' ) === 'item-2' ) {
+			// preview tab was clicked, so render the preview
+			Comment.preview( $( 'textarea#comment' ).val(), $( this ).attr( 'data-linked-element' ) );
+		}
+	} )
+
+	// Character count below the <textarea>
+	.on( 'keyup', 'textarea#comment', function() {
+		// @todo FIXME: Even though submitting a comment clears the <textarea>
+		// it does not reset the count back to 0/1500
+		if ( $( this ).val().length <= $( this )[0].maxLength ) {
+			$( '.character-count' ).text( $( this ).val().length + ' / ' + parseInt( $( this )[0].maxLength ) );
+		}
 	} );
 } );
 
