@@ -1,11 +1,16 @@
 {
 	"name": "Comments",
+<<<<<<< 9fb92e4ba59a3be07e7c5385a8a1ce76f15b5c7b
 	"version": "4.3.1",
+=======
+	"version": "4.4.0",
+>>>>>>> [WIP] Version 4.4.0: redesigned per Samantha's mockup
 	"author": [
 		"David Pean",
 		"Misza",
 		"Jack Phoenix",
-		"Adam Carter/UltrasonicNXT"
+		"Adam Carter/UltrasonicNXT",
+		"Samantha Nguyen"
 	],
 	"license-name": "GPL-2.0+",
 	"url": "https://www.mediawiki.org/wiki/Extension:Comments",
@@ -60,6 +65,7 @@
 	},
 	"AutoloadClasses": {
 		"Comment": "includes/Comment.class.php",
+		"CommentFormTemplate": "includes/templates/CommentForm.template.php",
 		"CommentsPage": "includes/CommentsPage.class.php",
 		"CommentsOfTheDay": "includes/CommentsOfTheDay.class.php",
 		"CommentFunctions": "/includes/CommentFunctions.class.php",
@@ -79,6 +85,10 @@
 			"styles": "resources/css/Comments.css",
 			"position": "top"
 		},
+		"ext.comments.new-form": {
+			"styles": "resources/css/Comments.less",
+			"position": "top"
+		},
 		"ext.comments.js": {
 			"scripts": "resources/js/Comment.js",
 			"dependencies": [ "mediawiki.api" ],
@@ -91,7 +101,23 @@
 				"comments-reply-to",
 				"comments-block-warning-anon",
 				"comments-block-warning-user",
-				"comments-delete-warning"
+				"comments-delete-warning",
+				"comments-preview-failed"
+			]
+		},
+		"ext.comments.form": {
+			"scripts": "resources/js/comments-form-handler.js",
+			"dependencies": [
+				"oojs-ui-core",
+				"oojs-ui-widgets",
+				"oojs-ui.styles.icons-alerts"
+			],
+			"messages": [
+				"comments-preview-failed",
+				"comments-tab-write",
+				"comments-tab-preview",
+				"comments-post",
+				"comments-cancel-reply"
 			]
 		}
 	},
