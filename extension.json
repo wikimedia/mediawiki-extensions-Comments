@@ -1,6 +1,6 @@
 {
 	"name": "Comments",
-	"version": "4.2.1",
+	"version": "4.3.0",
 	"author": [
 		"David Pean",
 		"Misza",
@@ -54,33 +54,33 @@
 		]
 	},
 	"ExtensionMessagesFiles": {
-		"CommentsAliases": "Comments.alias.php",
-		"CommentsMagic": "Comments.i18n.magic.php",
-		"NumberOfCommentsMagic": "Comments.i18n.magic.php"
+		"CommentsAliases": "includes/Comments.alias.php",
+		"CommentsMagic": "includes/Comments.i18n.magic.php",
+		"NumberOfCommentsMagic": "includes/Comments.i18n.magic.php"
 	},
 	"AutoloadClasses": {
-		"Comment": "CommentClass.php",
-		"CommentsPage": "CommentsPage.php",
-		"CommentsOfTheDay": "CommentsOfTheDay.php",
-		"CommentFunctions": "CommentFunctions.php",
-		"CommentIgnoreList": "SpecialCommentIgnoreList.php",
-		"CommentsLogFormatter": "CommentsLogFormatter.php",
-		"CommentsHooks": "CommentsHooks.php",
-		"NumberOfComments": "NumberOfComments.php",
-		"CommentBlockAPI": "api/CommentBlock.api.php",
-		"CommentDeleteAPI": "api/CommentDelete.api.php",
-		"CommentLatestIdAPI": "api/CommentLatestID.api.php",
-		"CommentListAPI": "api/CommentList.api.php",
-		"CommentSubmitAPI": "api/CommentSubmit.api.php",
-		"CommentVoteAPI": "api/CommentVote.api.php"
+		"Comment": "includes/Comment.class.php",
+		"CommentsPage": "includes/CommentsPage.class.php",
+		"CommentsOfTheDay": "includes/CommentsOfTheDay.class.php",
+		"CommentFunctions": "/includes/CommentFunctions.class.php",
+		"CommentIgnoreList": "includes/specials/SpecialCommentIgnoreList.php",
+		"CommentsLogFormatter": "includes/CommentsLogFormatter.class.php",
+		"CommentsHooks": "includes/Comments.hooks.php",
+		"NumberOfComments": "includes/NumberOfComments.class.php",
+		"CommentBlockAPI": "includes/api/CommentBlock.api.php",
+		"CommentDeleteAPI": "includes/api/CommentDelete.api.php",
+		"CommentLatestIdAPI": "includes/api/CommentLatestID.api.php",
+		"CommentListAPI": "includes/api/CommentList.api.php",
+		"CommentSubmitAPI": "includes/api/CommentSubmit.api.php",
+		"CommentVoteAPI": "includes/api/CommentVote.api.php"
 	},
 	"ResourceModules": {
 		"ext.comments.css": {
-			"styles": "Comments.css",
+			"styles": "resources/css/Comments.css",
 			"position": "top"
 		},
 		"ext.comments.js": {
-			"scripts": "Comment.js",
+			"scripts": "resources/js/Comment.js",
 			"dependencies": [ "mediawiki.api" ],
 			"messages": [
 				"comments-voted-label",
