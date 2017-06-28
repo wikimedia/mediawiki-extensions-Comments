@@ -46,7 +46,7 @@ class CommentsHooks {
 		}
 
 		// Add required CSS & JS via ResourceLoader
-		$wgOut->addModuleStyles( 'ext.comments.css' );
+		$wgOut->addModuleStyles( array( 'ext.comments.css', 'ext.comments.new-form' ) );
 		$wgOut->addModules( 'ext.comments.js' );
 		$wgOut->addJsConfigVars( array( 'wgCommentsSortDescending' => $wgCommentsSortDescending ) );
 
