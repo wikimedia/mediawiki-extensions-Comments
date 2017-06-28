@@ -526,7 +526,7 @@ class Comment extends ContextSource {
 				"\" rel=\"nofollow\">";
 		}
 
-		$imagePath = $wgExtensionAssetsPath . '/Comments/images';
+		$imagePath = $wgExtensionAssetsPath . '/Comments/resources/images';
 		if ( $voteType == 1 ) {
 			if ( $this->currentVote == 1 ) {
 				$voteLink .= "<img src=\"{$imagePath}/up-voted.png\" border=\"0\" alt=\"+\" /></a>";
@@ -734,7 +734,7 @@ class Comment extends ContextSource {
 				htmlspecialchars( $this->username, ENT_QUOTES ) .
 				'" data-comments-comment-id="' . $this->id . '" data-comments-user-id="' .
 				$this->userID . "\">
-					<img src=\"{$wgExtensionAssetsPath}/Comments/images/block.svg\" border=\"0\" alt=\"\"/>
+					<img src=\"{$wgExtensionAssetsPath}/Comments/resources/images/block.svg\" border=\"0\" alt=\"\"/>
 				</a>";
 		}
 
