@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e742343_6054e1c9",
+        "filename": "extension.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2017-07-01T19:06:29Z",
+      "side": 1,
+      "message": "Alternatively you could set $wgResourceFileModulesPaths[\u0027localBasePath\u0027] to \"resources\" (on L99) and change $wgResourceFileModulesPaths[\u0027remoteExtPath\u0027] (L100) to \"Comments/resources\", which would allow you to remove \"resources/\" from this line (L79) and L83. But what you are doing currently should work just fine, too.",
+      "range": {
+        "startLine": 79,
+        "startChar": 14,
+        "endLine": 79,
+        "endChar": 24
+      },
+      "revId": "fd74fdce854c5b11b758738696227ca77f57ca60",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
