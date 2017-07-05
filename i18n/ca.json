@@ -3,7 +3,8 @@
 		"authors": [
 			"Arnaugir",
 			"Pitort",
-			"Fitoschido"
+			"Fitoschido",
+			"Ssola"
 		]
 	},
 	"comments-comment": "Comentari",
@@ -28,7 +29,7 @@
 	"comments-delete-link": "Suprimeix el comentari",
 	"comments-anon-name": "Usuari anònim",
 	"comments-ignore-no-users": "No hi ha cap usuari blocat.",
-	"comments-ignore-unblock": "Desbloqueja",
+	"comments-ignore-unblock": "Desbloca",
 	"comments-ignore-cancel": "Cancel·la",
 	"comments-ignore-title": "Llista d'ignorats dels comentaris",
 	"commentignorelist": "Llista d'ignorats dels comentaris",
