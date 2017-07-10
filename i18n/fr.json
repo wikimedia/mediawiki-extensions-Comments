@@ -12,8 +12,11 @@
 		]
 	},
 	"apihelp-commentblock-description": "L'API commentblock permet de bloquer un utilisateur à partir du commentaire dont elle est issue en fournissant les paramètres suivants: CommentID.",
+	"apihelp-commentblock-summary": "L’API commentblock permet de bloquer un utilisateur à partir d’un commentaire dont il est l’auteur, après le remplissage des paramètres suivants : CommentID",
 	"apihelp-commentdelete-description": "L'API commentdelete permet de supprimer un commentaire après avoir fourni les paramètres suivants: CommentID.",
+	"apihelp-commentdelete-summary": "L’API commentdelete permet de supprimer un commentaire après avoir saisi les paramètres suivants : CommentID.",
 	"apihelp-commentlatestid-description": "L'API commentlatestID permet de récupérer le dernier identifiant de commentaire (ID) après avoir fourni les paramètres suivants: pageID",
+	"apihelp-commentlatestid-summary": "L’API commentlatestID permet de récupérer le dernier ID de commentaire après avoir saisi les paramètres suivants : pageID",
 	"apihelp-commentlist-description": "L'API commentlist  recherche les commentaires multiples et les affiche sous forme de liste après avoir fourni les paramètres suivants: pageID, order, pagerPage, and showForm.",
 	"apihelp-commentsubmit-description": "L'API commentsubmit permet de soumettre/poster un commentaire après avoir fourni les paramètres suivants: pageID, parentID, commentText.",
 	"apihelp-commentvote-description": "L'API commentvote permet de voter pour un commentaire après avoir fourni les paramètres suivants:  commentID, voteValue.",
