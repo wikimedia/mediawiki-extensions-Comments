@@ -4,6 +4,8 @@
 			"Joetaras"
 		]
 	},
+	"apihelp-commentlist-param-showForm": "Fà 'ndrucà 'u module de le commende",
+	"apihelp-commentsubmit-param-commentText": "Teste d'u commende",
 	"comments-comment": "Commende",
 	"comments-desc": "Aggiunge <code>&lt;comments&gt;</code> cumme gance analizzatrice ca permette de commendà sus a le pàggene",
 	"comments-db-locked": "<h3>Aggiunde de commende</h3>'U database jè bloccate pe mò pe manutenzione, apprisse ca spicce torne normale. Pe piacere pruève cchiù tarde!",
