@@ -5,7 +5,6 @@
  *
  * @file
  * @ingroup Extensions
- * @date 27 November 2015
  */
 
 class CommentsOfTheDay {
@@ -27,7 +26,8 @@ class CommentsOfTheDay {
 	 * @return string HTML
 	 */
 	public static function getHTML( $input, $args, $parser ) {
-		$comments = self::get( (bool)$args['nocache'] );
+		$skipCache = isset( $args['nocache'] ) && $args['nocache'];
+		$comments = self::get( $skipCache );
 		$commentOutput = '';
 
 		foreach ( $comments as $comment ) {
