@@ -56,7 +56,7 @@ class NumberOfComments {
 				$ret = $data;
 			} else {
 				// Not cached → have to fetch it from the database
-				$dbr = wfGetDB( DB_SLAVE );
+				$dbr = wfGetDB( DB_REPLICA );
 				$commentCount = (int)$dbr->selectField(
 					'Comments',
 					'COUNT(*) AS count',
@@ -112,7 +112,7 @@ class NumberOfComments {
 		if ( $cache ) {
 			$val = intval( $cache );
 		} else {
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 
 			$res = $dbr->selectField(
 				'Comments',

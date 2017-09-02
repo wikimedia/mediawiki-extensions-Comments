@@ -62,7 +62,7 @@ class CommentsOfTheDay {
 		if ( $data ) { // success, got it from memcached!
 			$comments = $data;
 		} elseif ( !$data || $skipCache ) { // just query the DB
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 
 			if ( empty( $whereConds ) ) {
 				$whereConds = array(

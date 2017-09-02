@@ -98,7 +98,7 @@ class CommentsPage extends ContextSource {
 	 * @return int
 	 */
 	function countTotal() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$count = 0;
 		$s = $dbr->selectRow(
 			'Comments',
@@ -119,7 +119,7 @@ class CommentsPage extends ContextSource {
 	 */
 	function getLatestCommentID() {
 		$latestCommentID = 0;
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Comments',
 			array( 'CommentID' ),
@@ -162,7 +162,7 @@ class CommentsPage extends ContextSource {
 	 *				a comment, including score, timestamp and more
 	 */
 	public function getComments() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		// Defaults (for non-social wikis)
 		$tables = array(

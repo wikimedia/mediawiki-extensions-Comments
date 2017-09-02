@@ -130,7 +130,7 @@ class Comment extends ContextSource {
 		if ( isset( $data['current_vote'] ) ) {
 			$vote = $data['current_vote'];
 		} else {
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 			$row = $dbr->selectRow(
 				'Comments_Vote',
 				array( 'Comment_Vote_Score' ),
@@ -155,7 +155,7 @@ class Comment extends ContextSource {
 
 	public static function newFromID( $id ) {
 		$context = RequestContext::getMain();
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		if ( !is_numeric( $id ) || $id == 0 ) {
 			return null;
@@ -306,7 +306,7 @@ class Comment extends ContextSource {
 		// Add a log entry.
 		self::log( 'add', $user, $page->id, $commentId, $text );
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		if (
 			class_exists( 'UserProfile' ) &&
 			$dbr->tableExists( 'user_stats' )
@@ -356,7 +356,7 @@ class Comment extends ContextSource {
 	 * @return string
 	 */
 	function getScore() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$row = $dbr->selectRow(
 			'Comments_Vote',
 			array( 'SUM(Comment_Vote_Score) AS CommentScore' ),

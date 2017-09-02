@@ -9,7 +9,7 @@ class CommentBlockAPI extends ApiBase {
 		}
 
 		// Load user_name and user_id for person we want to block from the comment it originated from
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Comments',
 			array( 'comment_username', 'comment_user_id' ),

@@ -173,7 +173,7 @@ class CommentFunctions {
 	 */
 	static function getBlockList( $userId ) {
 		$blockList = array();
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'Comments_block',
 			'cb_user_name_blocked',
@@ -187,7 +187,7 @@ class CommentFunctions {
 	}
 
 	static function isUserCommentBlocked( $userId, $userIdBlocked ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Comments_block',
 			array( 'cb_id' ),
