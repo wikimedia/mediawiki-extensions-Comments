@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Belkacem77"
+		]
+	},
+	"apihelp-commentblock-description": "API commentblock ad isireg asewḥel n useqdac seg uwennit ansa i d-yekka s umuddu i ɣewwaṛen-agi: CommentID.",
+	"apihelp-commentblock-summary": "API commentblock ad isireg asewḥel n useqdac seg uwennit aida yella d ameskar s umuddu n iɣewwaṛen-agi: CommentID.",
+	"apihelp-commentdelete-description": "API commentdelete ad isireg tukksa deffir umuddu n iɣewwaṛen-agi: CommentID.",
+	"apihelp-commentdelete-summary": "API commentdelete ad isireg tukksa ticki tmuddeḍ iɣewwaṛen-agi: CommentID.",
+	"comments-you": "Kečč",
+	"comments-reply": "Err",
+	"comments-post": "Azen awennit",
+	"comments-submit": "Rnu awennit-ik",
+	"comments-score-text": "Agmuḍ",
+	"comments-permalink": "Aseɣwen yezgan",
+	"comments-delete-link": "Kkes awennit",
+	"comments-anon-name": "Aseqdac udrig"
+}
