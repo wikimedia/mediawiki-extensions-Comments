@@ -4,6 +4,7 @@
 			"Joetaras"
 		]
 	},
+	"apihelp-commentlist-param-pagerPage": "Numere de pàgene de le commende",
 	"apihelp-commentlist-param-showForm": "Fà 'ndrucà 'u module de le commende",
 	"apihelp-commentsubmit-param-commentText": "Teste d'u commende",
 	"comments-comment": "Commende",
