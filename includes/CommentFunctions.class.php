@@ -148,9 +148,9 @@ class CommentFunctions {
 	public static function blockUser( $blocker, $userId, $userName ) {
 		$dbw = wfGetDB( DB_MASTER );
 
-		wfSuppressWarnings(); // E_STRICT bitching
+		MediaWiki\suppressWarnings(); // E_STRICT bitching
 		$date = date( 'Y-m-d H:i:s' );
-		wfRestoreWarnings();
+		MediaWiki\restoreWarnings();
 		$dbw->insert(
 			'Comments_block',
 			array(

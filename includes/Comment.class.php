@@ -281,9 +281,9 @@ class Comment extends ContextSource {
 		$dbw = wfGetDB( DB_MASTER );
 		$context = RequestContext::getMain();
 
-		wfSuppressWarnings();
+		MediaWiki\suppressWarnings();
 		$commentDate = date( 'Y-m-d H:i:s' );
-		wfRestoreWarnings();
+		MediaWiki\restoreWarnings();
 		$dbw->insert(
 			'Comments',
 			array(
@@ -389,9 +389,9 @@ class Comment extends ContextSource {
 			$value = 0;
 		}
 
-		wfSuppressWarnings();
+		MediaWiki\suppressWarnings();
 		$commentDate = date( 'Y-m-d H:i:s' );
-		wfRestoreWarnings();
+		MediaWiki\restoreWarnings();
 
 		if ( $this->currentVote === false ) { // no vote, insert
 			$dbw->insert(
@@ -754,13 +754,13 @@ class Comment extends ContextSource {
 		$output .= "{$commentPoster}";
 		$output .= "<span class=\"c-user-level\">{$commentPosterLevel}</span> {$blockLink}" . "\n";
 
-		wfSuppressWarnings(); // E_STRICT bitches about strtotime()
+		MediaWiki\suppressWarnings(); // E_STRICT bitches about strtotime()
 		$output .= '<div class="c-time">' .
 			wfMessage(
 				'comments-time-ago',
 				CommentFunctions::getTimeAgo( strtotime( $this->date ) )
 			)->parse() . '</div>' . "\n";
-		wfRestoreWarnings();
+		MediaWiki\restoreWarnings();
 
 		$output .= '<div class="c-score">' . "\n";
 		$output .= $this->getScoreHTML();
