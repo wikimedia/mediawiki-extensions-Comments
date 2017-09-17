@@ -5,22 +5,12 @@ class NumberOfComments {
 	 * Registers NUMBEROFCOMMENTS and NUMPBEROFCOMMENTSPAGE as a valid magic word identifier.
 	 *
 	 * @param array $variableIds Array of valid magic word identifiers
-	 * @return bool
+	 * @return bool true
 	 */
-	public static function registerNumberOfCommentsMagicWord( &$variableIds ) {
+	public static function onMagicWordwgVariableIDs( &$variableIds ) {
 		$variableIds[] = 'NUMBEROFCOMMENTS';
 		$variableIds[] = 'NUMBEROFCOMMENTSPAGE';
-		return true;
-	}
 
-	/**
-	 * Hook to setup parser function
-	 *
-	 * @param Parser $parser
-	 * @return bool
-	 */
-	static function setupNumberOfCommentsPageParser( &$parser ) {
-		$parser->setFunctionHook( 'NUMBEROFCOMMENTSPAGE', 'NumberOfComments::getNumberOfCommentsPageParser', Parser::SFH_NO_HASH );
 		return true;
 	}
 
@@ -40,7 +30,7 @@ class NumberOfComments {
 	 * @param int $ret What to return to the user (in our case, the number of comments)
 	 * @return bool
 	 */
-	public static function getNumberOfCommentsMagic( &$parser, &$cache, &$magicWordId, &$ret ) {
+	public static function onParserGetVariableValueSwitch( &$parser, &$cache, &$magicWordId, &$ret ) {
 		global $wgMemc;
 
 		if ( $magicWordId == 'NUMBEROFCOMMENTS' ) {
@@ -85,7 +75,7 @@ class NumberOfComments {
 	 * @param string $pagename Page name
 	 * @return int Amount of comments on the given page
 	 */
-	static function getNumberOfCommentsPageParser( $parser, $pagename ) {
+	static function getParserHandler( $parser, $pagename ) {
 		$page = Title::newFromText( $pagename );
 
 		if ( $page instanceof Title ) {

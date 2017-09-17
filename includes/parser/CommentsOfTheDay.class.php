@@ -10,22 +10,11 @@
 class CommentsOfTheDay {
 
 	/**
-	 * Register the new <commentsoftheday /> parser hook with the Parser.
-	 *
-	 * @param Parser $parser Instance of Parser
-	 * @return bool
-	 */
-	public static function registerTag( &$parser ) {
-		$parser->setHook( 'commentsoftheday', array( __CLASS__, 'getHTML' ) );
-		return true;
-	}
-
-	/**
 	 * Get comments of the day -- five newest comments within the last 24 hours
 	 *
 	 * @return string HTML
 	 */
-	public static function getHTML( $input, $args, $parser ) {
+	public static function getParserHandler( $input, $args, $parser ) {
 		$skipCache = isset( $args['nocache'] ) && $args['nocache'];
 		$comments = self::get( $skipCache );
 		$commentOutput = '';

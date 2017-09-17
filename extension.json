@@ -1,11 +1,12 @@
 {
 	"name": "Comments",
-	"version": "4.3.1",
+	"version": "4.3.2",
 	"author": [
 		"David Pean",
 		"Misza",
 		"Jack Phoenix",
-		"Adam Carter/UltrasonicNXT"
+		"Adam Carter/UltrasonicNXT",
+		"Samantha Nguyen"
 	],
 	"license-name": "GPL-2.0+",
 	"url": "https://www.mediawiki.org/wiki/Extension:Comments",
@@ -61,12 +62,13 @@
 	"AutoloadClasses": {
 		"Comment": "includes/Comment.class.php",
 		"CommentsPage": "includes/CommentsPage.class.php",
-		"CommentsOfTheDay": "includes/CommentsOfTheDay.class.php",
+		"CommentsOfTheDay": "includes/parser/CommentsOfTheDay.class.php",
+		"NumberOfComments": "includes/parser/NumberOfComments.class.php",
+		"DisplayComments": "includes/parser/DisplayComments.class.php",
 		"CommentFunctions": "/includes/CommentFunctions.class.php",
 		"CommentIgnoreList": "includes/specials/SpecialCommentIgnoreList.php",
 		"CommentsLogFormatter": "includes/CommentsLogFormatter.class.php",
 		"CommentsHooks": "includes/Comments.hooks.php",
-		"NumberOfComments": "includes/NumberOfComments.class.php",
 		"CommentBlockAPI": "includes/api/CommentBlock.api.php",
 		"CommentDeleteAPI": "includes/api/CommentDelete.api.php",
 		"CommentLatestIdAPI": "includes/api/CommentLatestID.api.php",
@@ -100,23 +102,11 @@
 		"remoteExtPath": "Comments"
 	},
 	"Hooks": {
-		"ParserFirstCallInit": [
-			"CommentsHooks::onParserFirstCallInit",
-			"NumberOfComments::setupNumberOfCommentsPageParser",
-			"CommentsOfTheDay::registerTag"
-		],
-		"LoadExtensionSchemaUpdates": [
-			"CommentsHooks::onLoadExtensionSchemaUpdates"
-		],
-		"RenameUserSQL": [
-			"CommentsHooks::onRenameUserSQL"
-		],
-		"MagicWordwgVariableIDs": [
-			"NumberOfComments::registerNumberOfCommentsMagicWord"
-		],
-		"ParserGetVariableValueSwitch": [
-			"NumberOfComments::getNumberOfCommentsMagic"
-		]
+		"ParserFirstCallInit": "CommentsHooks::onParserFirstCallInit",
+		"LoadExtensionSchemaUpdates": "CommentsHooks::onLoadExtensionSchemaUpdates",
+		"RenameUserSQL": "CommentsHooks::onRenameUserSQL",
+		"MagicWordwgVariableIDs": "NumberOfComments::onMagicWordwgVariableIDs",
+		"ParserGetVariableValueSwitch": "NumberOfComments::onParserGetVariableValueSwitch"
 	},
 	"config": {
 		"CommentsDefaultAvatar": "http://www.shoutwiki.com/w/extensions/SocialProfile/avatars/default_ml.gif",
