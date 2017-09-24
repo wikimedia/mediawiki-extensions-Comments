@@ -14,6 +14,7 @@ class DisplayComments {
 	public static function getParserHandler( $input, $args, $parser ) {
 		global $wgOut, $wgCommentsSortDescending;
 
+		$parser->enableOOUI();
 		$parser->disableCache();
 		// If an unclosed <comments> tag is added to a page, the extension will
 		// go to an infinite loop...this protects against that condition.
@@ -25,8 +26,8 @@ class DisplayComments {
 		}
 
 		// Add required CSS & JS via ResourceLoader
-		$wgOut->addModuleStyles( 'ext.comments.css' );
-		$wgOut->addModules( 'ext.comments.js' );
+		$wgOut->addModuleStyles( [ 'ext.comments.css', 'ext.comments.form.ooui.styles' ] );
+		$wgOut->addModules( [ 'ext.comments.js', 'ext.comments.form.ooui' ] );
 		$wgOut->addJsConfigVars( array( 'wgCommentsSortDescending' => $wgCommentsSortDescending ) );
 
 		// Parse arguments
