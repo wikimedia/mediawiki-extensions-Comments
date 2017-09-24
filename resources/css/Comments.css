@@ -113,27 +113,12 @@ Besides, ny.css sets it back to 10px anyway, so this way everyone can be happy.
 	margin: -5px 0px 0px 2px
 }
 
-.c-form-title {
-	color: #333;
-	font-weight: bold;
-	font-size: 17px;
-	margin: 0px 0px 5px 0px;
-}
-
 .c-form-message {
 	font-size: 11px;
 	width: 400px;
 	line-height: 13px;
 	color: #666;
 	padding: 5px 0px 10px 0px;
-}
-
-textarea#comment {
-	width: 530px;
-}
-
-.c-form-button {
-	padding: 10px 0px 0px;
 }
 
 .c-order {

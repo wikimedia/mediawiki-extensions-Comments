@@ -1,6 +1,6 @@
 {
 	"name": "Comments",
-	"version": "4.3.2",
+	"version": "4.4.0",
 	"author": [
 		"David Pean",
 		"Misza",
@@ -74,7 +74,8 @@
 		"CommentLatestIdAPI": "includes/api/CommentLatestID.api.php",
 		"CommentListAPI": "includes/api/CommentList.api.php",
 		"CommentSubmitAPI": "includes/api/CommentSubmit.api.php",
-		"CommentVoteAPI": "includes/api/CommentVote.api.php"
+		"CommentVoteAPI": "includes/api/CommentVote.api.php",
+		"FormInterface": "includes/interfaces/FormInterface.php"
 	},
 	"ResourceModules": {
 		"ext.comments.css": {
@@ -95,6 +96,25 @@
 				"comments-block-warning-user",
 				"comments-delete-warning"
 			]
+		},
+		"ext.comments.form.ooui.styles": {
+			"styles": "resources/css/ext.comments.forms.ooui.styles.css",
+			"position": "top"
+		},
+		"ext.comments.form.ooui": {
+			"scripts": "resources/js/ext.comments.form.ooui.js",
+			"dependencies": [
+				"oojs-ui-core",
+				"oojs-ui-widgets",
+				"oojs-ui.styles.icons-alerts"
+			],
+			"messages": [
+				"comments-preview-failed",
+				"comments-tab-write",
+				"comments-tab-preview",
+				"comments-post",
+				"comments-cancel-reply"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -111,7 +131,9 @@
 	"config": {
 		"CommentsDefaultAvatar": "http://www.shoutwiki.com/w/extensions/SocialProfile/avatars/default_ml.gif",
 		"CommentsSortDescending": false,
-		"CommentsInRecentChanges": false
+		"CommentsInRecentChanges": false,
+		"CommentsEnableByteLimit": false,
+		"CommentsByteLimitNumber": ""
 	},
 	"manifest_version": 1
 }
