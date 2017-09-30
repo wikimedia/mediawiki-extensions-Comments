@@ -4,7 +4,7 @@
 			"Умар"
 		]
 	},
-	"comments-comment": "Къамел",
+	"comments-comment": "Коммент",
 	"comments-voted-label": "Кхаж тесна",
 	"comments-loading": "Чуйолуш…",
 	"comments-auto-refresher-enable": "Латаде комментареш автоматически карладахар",
@@ -14,8 +14,8 @@
 	"comments-sort-by-date": "Терхаца нисъе",
 	"comments-you": "Хьо",
 	"comments-reply": "Жоп далар",
-	"comments-post": "Дита къамел",
-	"comments-submit": "ТӀетоха хьай къамел",
+	"comments-post": "Йита коммент",
+	"comments-submit": "ТӀетоха хьай коммент",
 	"comments-score-text": "Мах хадор",
 	"comments-ignore-cancel": "Цаоьшу",
 	"comments-time-ago": "$1 юха",
