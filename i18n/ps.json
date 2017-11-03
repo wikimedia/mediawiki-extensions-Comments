@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"Baloch Khan"
 		]
 	},
 	"comments-comment": "تبصره",
@@ -19,6 +20,7 @@
 	"comments-ignore-cancel": "ناگارل",
 	"log-name-comments": "د تبصرو يادښت",
 	"comments-time-ago": "$1 دمخه",
+	"comments-time-months": "{{PLURAL:$1|۱ مياشت|$1 مياشت}}",
 	"comments-time-days": "{{PLURAL:$1|يو ورځ|$1 ورځې}}",
 	"comments-time-hours": "{{PLURAL:$1|يو ساعت|$1 ساعتونه}}",
 	"comments-time-minutes": "{{PLURAL:$1|يو دقيقه|$1 دقيقې}}",
