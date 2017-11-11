@@ -1,10 +1,7 @@
 /**
  * JavaScript for the Comments extension.
- * Rewritten by Jack Phoenix <jack@countervandalism.net> to be more
- * object-oriented.
  *
  * @file
- * @date 6 December 2013
  */
 ( function ( $, mw ) {
 var Comment = {

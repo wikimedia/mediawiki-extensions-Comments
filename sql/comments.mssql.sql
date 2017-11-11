@@ -6,7 +6,7 @@
 -- Tested at SQLFiddle.com against MS SQL Server 2008 & 2012 and at least this
 -- builds. Doesn't guarantee anything, though.
 --
--- Author: Jack Phoenix <jack@countervandalism.net>
+-- Author: Jack Phoenix
 -- Date: 24 July 2013
 CREATE TABLE /*$wgDBprefix*/Comments (
   CommentID INT NOT NULL PRIMARY KEY IDENTITY(0,1),

@@ -6,7 +6,7 @@
 -- Tested at SQLFiddle.com against PostgreSQL 8.3.20 & 9.1.9 and at least this
 -- builds. Doesn't guarantee anything, though.
 --
--- Author: Jack Phoenix <jack@countervandalism.net>
+-- Author: Jack Phoenix
 -- Date: 24 July 2013
 DROP SEQUENCE IF EXISTS Comments_CommentID_seq CASCADE;
 CREATE SEQUENCE Comments_CommentID_seq MINVALUE 0 START WITH 0;

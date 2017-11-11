@@ -5,7 +5,7 @@
 --
 -- This DOES NOT build at SQLFiddle.com...
 --
--- Author: Jack Phoenix <jack@countervandalism.net>
+-- Author: Jack Phoenix
 -- Date: 24 July 2013
 
 -- No idea if this is needed, but /maintenance/oracle/tables.sql uses it, so I

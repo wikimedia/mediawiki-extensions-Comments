@@ -5,7 +5,7 @@
  *
  * @file
  * @ingroup Extensions
- * @author Jack Phoenix <jack@countervandalism.net>
+ * @author Jack Phoenix
  * @author Alexia E. Smith
  * @copyright (c) 2013 Curse Inc.
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
