@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"පසිඳු කාවින්ද",
-			"DCLXVI"
+			"DCLXVI",
+			"StanProg"
 		]
 	},
 	"comments-comment": "Коментар",
 	"comments-loading": "Зареждане...",
 	"comments-cancel-reply": "Отказване",
+	"comments-sort-by-date": "Сортиране по дата",
 	"comments-you": "Вие",
 	"comments-reply": "Отговор",
 	"comments-score-text": "Точки",
