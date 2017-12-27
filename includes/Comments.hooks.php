@@ -48,9 +48,9 @@ class CommentsHooks {
 			$filename = 'comments.sql';
 		}
 
-		$updater->addExtensionUpdate( array( 'addTable', 'Comments', "{$dir}/{$filename}", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'Comments_Vote', "{$dir}/{$filename}", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'Comments_block', "{$dir}/{$filename}", true ) );
+		$updater->addExtensionTable( 'Comments', "{$dir}/{$filename}" );
+		$updater->addExtensionTable( 'Comments_Vote', "{$dir}/{$filename}" );
+		$updater->addExtensionTable( 'Comments_block', "{$dir}/{$filename}" );
 
 		return true;
 	}
