@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * Comment class
  * Functions for managing comments and everything related to them, including:
@@ -230,7 +233,7 @@ class Comment extends ContextSource {
 	 * @throws MWException
 	 */
 	function getText() {
-		global $wgParser;
+		$parser = MediaWikiServices::getInstance()->getParser();
 
 		$commentText = trim( str_replace( '&quot;', "'", $this->text ) );
 		$comment_text_parts = explode( "\n", $commentText );
@@ -240,7 +243,7 @@ class Comment extends ContextSource {
 		}
 
 		if ( $this->getTitle()->getArticleID() > 0 ) {
-			$commentText = $wgParser->recursiveTagParse( $comment_text_fix );
+			$commentText = $parser->recursiveTagParse( $comment_text_fix );
 		} else {
 			$commentText = $this->getOutput()->parse( $comment_text_fix );
 		}
