@@ -3,9 +3,12 @@
 		"authors": [
 			"Cainamarques",
 			"Luckas",
-			"Nemo bis"
+			"Nemo bis",
+			"Eduardo Addad de Oliveira"
 		]
 	},
+	"apihelp-commentblock-description": "A API commentblock permite bloquear um utilizador a partir de um comentário feito por ele, após preencher os seguintes parâmetros: CommentID.",
+	"comments-desc": "Adiciona ao analisador sintático o ''hook'' <code>&lt;comments&gt;</code> que permite comentar em páginas",
 	"comments-loading": "Carregando...",
 	"comments-reply-to": "Responder a",
 	"comments-cancel-reply": "Cancelar",
