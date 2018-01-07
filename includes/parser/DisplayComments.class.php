@@ -14,7 +14,7 @@ class DisplayComments {
 	public static function getParserHandler( $input, $args, $parser ) {
 		global $wgOut, $wgCommentsSortDescending;
 
-		$parser->disableCache();
+		$parser->getOutput()->updateCacheExpiry( 0 );
 		// If an unclosed <comments> tag is added to a page, the extension will
 		// go to an infinite loop...this protects against that condition.
 		$parser->setHook( 'comments', [ __CLASS__, 'nonDisplayComments' ] );
