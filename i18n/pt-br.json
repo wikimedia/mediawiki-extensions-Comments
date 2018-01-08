@@ -10,7 +10,7 @@
 	"apihelp-commentblock-description": "A API commentblock permite bloquear um utilizador a partir de um comentário feito por ele, após preencher os seguintes parâmetros: CommentID.",
 	"comments-desc": "Adiciona ao analisador sintático o ''hook'' <code>&lt;comments&gt;</code> que permite comentar em páginas",
 	"comments-loading": "Carregando...",
-	"comments-reply-to": "Responder a",
+	"comments-reply-to": "Responder a {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Cancelar",
 	"comments-delete-warning": "Você tem certeza que deseja excluir este comentário?",
 	"comments-sort-by-date": "Ordenar por data",
