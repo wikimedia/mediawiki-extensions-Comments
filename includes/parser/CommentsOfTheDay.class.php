@@ -45,7 +45,7 @@ class CommentsOfTheDay {
 		global $wgMemc;
 
 		// Try memcached first
-		$key = wfMemcKey( 'comments-of-the-day', 'standalone-hook-new' );
+		$key = $wgMemc->makeKey( 'comments-of-the-day', 'standalone-hook-new' );
 		$data = $wgMemc->get( $key );
 
 		if ( $data ) { // success, got it from memcached!

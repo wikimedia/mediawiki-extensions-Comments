@@ -429,7 +429,7 @@ class Comment extends ContextSource {
 
 		// update cache for comment list
 		// should perform better than deleting cache completely since Votes happen more frequently
-		$key = wfMemcKey( 'comment', 'pagethreadlist', $this->page->id );
+		$key = $wgMemc->makeKey( 'comment', 'pagethreadlist', $this->page->id );
 		$comments = $wgMemc->get( $key );
 		if ( $comments ) {
 			foreach ( $comments as &$comment ) {

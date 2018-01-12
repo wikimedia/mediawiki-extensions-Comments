@@ -34,7 +34,7 @@ class NumberOfComments {
 		global $wgMemc;
 
 		if ( $magicWordId == 'NUMBEROFCOMMENTS' ) {
-			$key = wfMemcKey( 'comments', 'magic-word' );
+			$key = $wgMemc->makeKey( 'comments', 'magic-word' );
 			$data = $wgMemc->get( $key );
 			if ( $data != '' ) {
 				// We have it in cache? Oh goody, let's just use the cached value!
@@ -96,7 +96,7 @@ class NumberOfComments {
 	static function getNumberOfCommentsPage( $pageId ) {
 		global $wgMemc;
 
-		$key = wfMemcKey( 'comments', 'numberofcommentspage', $pageId );
+		$key = $wgMemc->makeKey( 'comments', 'numberofcommentspage', $pageId );
 		$cache = $wgMemc->get( $key );
 
 		if ( $cache ) {
