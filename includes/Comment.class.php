@@ -427,19 +427,6 @@ class Comment extends ContextSource {
 		}
 		$dbw->commit( __METHOD__ );
 
-		// update cache for comment list
-		// should perform better than deleting cache completely since Votes happen more frequently
-		$key = $wgMemc->makeKey( 'comment', 'pagethreadlist', $this->page->id );
-		$comments = $wgMemc->get( $key );
-		if ( $comments ) {
-			foreach ( $comments as &$comment ) {
-				if ( $comment->id == $this->id ) {
-					$comment->currentScore = $this->currentScore;
-				}
-			}
-			$wgMemc->set( $key, $comments );
-		}
-
 		$score = $this->getScore();
 
 		$this->currentVote = $value;
