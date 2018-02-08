@@ -9,7 +9,6 @@
 	},
 	"rules": {
 		"quote-props": [ "error", "as-needed", { "keywords": false } ],
-		"indent": "off",
 		"valid-jsdoc": "off"
 	}
 }
