@@ -18,6 +18,8 @@
 		 * presented to the user.
 		 * If the user clicks on it, this function is called to show the hidden
 		 * comment.
+		 *
+		 * @param {string} id
 		 */
 		show: function ( id ) {
 			$( '#ignore-' + id ).hide( 300 );
@@ -28,10 +30,10 @@
 		 * This function is called whenever a user clicks on the "block" image to
 		 * block another user's comments.
 		 *
-		 * @param username String: name of the user whose comments we want to block
-		 * @param userID Integer: user ID number of the user whose comments we
+		 * @param {string} username Name of the user whose comments we want to block
+		 * @param {number} userID User ID number of the user whose comments we
 		 *                         want to block (or 0 for anonymous users)
-		 * @param commentID Integer: comment ID number
+		 * @param {number} commentID Comment ID number
 		 */
 		blockUser: function ( username, userID, commentID ) {
 			var message;
@@ -63,7 +65,7 @@
 		 * This function is called whenever a user clicks on the "Delete Comment"
 		 * link to delete a comment.
 		 *
-		 * @param commentID Integer: comment ID number
+		 * @param {number} commentID Comment ID number
 		 */
 		deleteComment: function ( commentID ) {
 			// eslint-disable-next-line no-alert
@@ -82,8 +84,8 @@
 		/**
 		 * Vote for a comment.
 		 *
-		 * @param commentID Integer: comment ID number
-		 * @param voteValue Integer: vote value
+		 * @param {number} commentID Comment ID number
+		 * @param {number} voteValue Vote value
 		 */
 		vote: function ( commentID, voteValue ) {
 			( new mw.Api() ).postWithToken( 'csrf', {
@@ -98,10 +100,10 @@
 		},
 
 		/**
-		 * @param pageID Integer: page ID
-		 * @param order Sorting order
-		 * @param end Scroll to bottom after?
-		 * @param cpage Integer: comment page number (used for pagination)
+		 * @param {number} pageID Page ID
+		 * @param {string} order Sorting order
+		 * @param {boolean} end Scroll to bottom after?
+		 * @param {number} cpage Comment page number (used for pagination)
 		 */
 		viewComments: function ( pageID, order, end, cpage ) {
 			document.commentForm.cpage.value = cpage;
@@ -166,7 +168,7 @@
 		/**
 		 * Toggle comment auto-refreshing on or off
 		 *
-		 * @param status
+		 * @param {boolean} status
 		 */
 		toggleLiveComments: function ( status ) {
 			var msg;
@@ -235,9 +237,9 @@
 		/**
 		 * Show the "reply to user X" form
 		 *
-		 * @param parentId Integer: parent comment (the one we're replying to) ID
-		 * @param poster String: name of the person whom we're replying to
-		 * @param posterGender String: gender of the person whom we're replying to
+		 * @param {number} parentId Parent comment (the one we're replying to) ID
+		 * @param {string} poster Name of the person whom we're replying to
+		 * @param {string} posterGender Gender of the person whom we're replying to
 		 */
 		reply: function ( parentId, poster, posterGender ) {
 			$( '#replyto' ).text(

@@ -8,7 +8,6 @@
 		"mediaWiki": false
 	},
 	"rules": {
-		"quote-props": [ "error", "as-needed", { "keywords": false } ],
-		"valid-jsdoc": "off"
+		"quote-props": [ "error", "as-needed", { "keywords": false } ]
 	}
 }
