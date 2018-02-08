@@ -1,0 +1,15 @@
+{
+	"extends": "wikimedia",
+	"env": {
+		"browser": true,
+		"jquery": true
+	},
+	"globals": {
+		"mediaWiki": false
+	},
+	"rules": {
+		"quote-props": [ "error", "as-needed", { "keywords": false } ],
+		"indent": "off",
+		"valid-jsdoc": "off"
+	}
+}
