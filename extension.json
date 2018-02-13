@@ -81,8 +81,7 @@
 	},
 	"ResourceModules": {
 		"ext.comments.css": {
-			"styles": "resources/css/Comments.css",
-			"position": "top"
+			"styles": "resources/css/Comments.css"
 		},
 		"ext.comments.js": {
 			"scripts": "resources/js/Comment.js",
