@@ -482,9 +482,9 @@ class CommentsPage extends ContextSource {
 		// Suppress random E_NOTICE about "Undefined offset: 0", which seems to
 		// be breaking ProblemReports (at least on my local devbox, not sure
 		// about prod). --Jack Phoenix, 13 July 2015
-		Wikimedia\suppressWarnings();
+		MediaWiki\suppressWarnings();
 		$currentPage = $commentPages[$currentPageNum - 1];
-		Wikimedia\restoreWarnings();
+		MediaWiki\restoreWarnings();
 
 		// Load complete blocked list for logged in user so they don't see their comments
 		$blockList = array();
