@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Les Meloures"
 		]
 	},
 	"apihelp-commentlist-param-pagerPage": "Nummer vun der Säit vun de Bemierkungen",
@@ -10,7 +11,7 @@
 	"apihelp-commentsubmit-param-commentText": "Text vun der Bemierkung",
 	"comments-comment": "Bemierkung",
 	"comments-desc": "Setzt d'Parsererweiderung <code>&lt;comments&gt;</code> dobäi déi et erlaabt fir Säiten ze kommentéieren",
-	"comments-db-locked": "<h3>Bemierkungen dobäisetzen</h3> D'Datebank ass elo wéinst Maintenance-Aarbechte gespaart. Probéiert w.e.g. méi spéit nach eng Kéier.",
+	"comments-db-locked": "<h3>Bemierkungen derbäisetzen</h3> D'Datebank ass elo wéinst Maintenanceaarbechte gespaart. Probéiert w. e. g. méi spéit nach eng Kéier.",
 	"comments-voted-label": "Ofgestëmmt",
 	"comments-loading": "Lueden...",
 	"comments-auto-refresher-enable": "Automatesch Aktualisatioun vun de Bemierkungen aschalten",
@@ -29,7 +30,7 @@
 	"comments-reply": "Äntwerten",
 	"comments-login-required": "Dir musst ageloggt si fir Bemierkungen dobäizesetzen",
 	"comments-not-allowed": "Dir däerft keng Bemierkungen dobäisetzen.",
-	"comments-post": "Bemierkung dobäisetzen",
+	"comments-post": "Bemierkung derbäisetzen",
 	"comments-submit": "Setzt Är Bemierkung dobäi",
 	"comments-score-text": "Score",
 	"comments-permalink": "Permanentlink",
