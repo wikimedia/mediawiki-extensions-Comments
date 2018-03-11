@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Eitvys200",
-			"Hugo.arg"
+			"Hugo.arg",
+			"Manvydasz"
 		]
 	},
 	"comments-comment": "Paaiškinimas",
 	"comments-voted-label": "Balsavo",
 	"comments-loading": "Įkeliama…",
-	"comments-reply-to": "Atsakyti į",
+	"comments-reply-to": "Atsakyti į {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Atšaukti",
 	"comments-delete-warning": "Ar tikrai norite ištrinti šį komentarą?",
 	"comments-sort-by-date": "Rūšiuoti pagal datą",
