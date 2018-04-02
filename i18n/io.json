@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joao Xavier"
+		]
+	},
+	"comments-time-days": "{{PLURAL:$1|un dio|$1 dii}}"
+}
