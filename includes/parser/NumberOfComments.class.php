@@ -50,7 +50,7 @@ class NumberOfComments {
 				$commentCount = (int)$dbr->selectField(
 					'Comments',
 					'COUNT(*) AS count',
-					array(),
+					[],
 					__METHOD__
 				);
 				wfDebugLog( 'Comments', 'Got the amount of comments from DB' );
@@ -62,7 +62,7 @@ class NumberOfComments {
 			}
 		} elseif ( $magicWordId == 'NUMBEROFCOMMENTSPAGE' ) {
 			$id = $parser->getTitle()->getArticleID();
-			$ret = NumberOfComments::getNumberOfCommentsPage( $id );
+			$ret = self::getNumberOfCommentsPage( $id );
 		}
 
 		return true;
@@ -84,7 +84,7 @@ class NumberOfComments {
 			$id = $parser->getTitle()->getArticleID();
 		}
 
-		return NumberOfComments::getNumberOfCommentsPage( $id );
+		return self::getNumberOfCommentsPage( $id );
 	}
 
 	/**
@@ -107,7 +107,7 @@ class NumberOfComments {
 			$res = $dbr->selectField(
 				'Comments',
 				'COUNT(*)',
-				array( 'Comment_Page_ID' => $pageId ),
+				[ 'Comment_Page_ID' => $pageId ],
 				__METHOD__
 			);
 

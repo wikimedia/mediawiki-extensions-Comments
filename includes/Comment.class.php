@@ -136,11 +136,11 @@ class Comment extends ContextSource {
 			$dbr = wfGetDB( DB_REPLICA );
 			$row = $dbr->selectRow(
 				'Comments_Vote',
-				array( 'Comment_Vote_Score' ),
-				array(
+				[ 'Comment_Vote_Score' ],
+				[
 					'Comment_Vote_ID' => $this->id,
 					'Comment_Vote_Username' => $this->getUser()->getName()
-				),
+				],
 				__METHOD__
 			);
 			if ( $row !== false ) {
@@ -164,18 +164,18 @@ class Comment extends ContextSource {
 			return null;
 		}
 
-		$tables = array();
-		$params = array();
-		$joinConds = array();
+		$tables = [];
+		$params = [];
+		$joinConds = [];
 
 		// Defaults (for non-social wikis)
 		$tables[] = 'Comments';
-		$fields = array(
+		$fields = [
 			'Comment_Username', 'Comment_IP', 'Comment_Text',
 			'Comment_Date', 'Comment_Date AS timestamp',
 			'Comment_user_id', 'CommentID', 'Comment_Parent_ID',
 			'CommentID', 'Comment_Page_ID'
-		);
+		];
 
 		// If SocialProfile is installed, query the user_stats table too.
 		if (
@@ -184,18 +184,18 @@ class Comment extends ContextSource {
 		) {
 			$tables[] = 'user_stats';
 			$fields[] = 'stats_total_points';
-			$joinConds = array(
-				'Comments' => array(
+			$joinConds = [
+				'Comments' => [
 					'LEFT JOIN', 'Comment_user_id = stats_user_id'
-				)
-			);
+				]
+			];
 		}
 
 		// Perform the query
 		$res = $dbr->select(
 			$tables,
 			$fields,
-			array( 'CommentID' => $id ),
+			[ 'CommentID' => $id ],
 			__METHOD__,
 			$params,
 			$joinConds
@@ -208,7 +208,7 @@ class Comment extends ContextSource {
 		} else {
 			$thread = $row->Comment_Parent_ID;
 		}
-		$data = array(
+		$data = [
 			'Comment_Username' => $row->Comment_Username,
 			'Comment_IP' => $row->Comment_IP,
 			'Comment_Text' => $row->Comment_Text,
@@ -219,7 +219,7 @@ class Comment extends ContextSource {
 			'Comment_Parent_ID' => $row->Comment_Parent_ID,
 			'thread' => $thread,
 			'timestamp' => wfTimestamp( TS_UNIX, $row->timestamp )
-		);
+		];
 
 		$page = new CommentsPage( $row->Comment_Page_ID, $context );
 
@@ -249,19 +249,19 @@ class Comment extends ContextSource {
 		}
 
 		// really bad hack because we want to parse=firstline, but don't want wrapping <p> tags
-		if ( substr( $commentText, 0 , 3 ) == '<p>' ) {
+		if ( substr( $commentText, 0, 3 ) == '<p>' ) {
 			$commentText = substr( $commentText, 3 );
 		}
 
-		if ( substr( $commentText, strlen( $commentText ) -4 , 4 ) == '</p>' ) {
-			$commentText = substr( $commentText, 0, strlen( $commentText ) -4 );
+		if ( substr( $commentText, strlen( $commentText ) - 4, 4 ) == '</p>' ) {
+			$commentText = substr( $commentText, 0, strlen( $commentText ) - 4 );
 		}
 
 		// make sure link text is not too long (will overflow)
 		// this function changes too long links to <a href=#>http://www.abc....xyz.html</a>
 		$commentText = preg_replace_callback(
 			"/(<a[^>]*>)(.*?)(<\/a>)/i",
-			array( 'CommentFunctions', 'cutCommentLinkText' ),
+			[ 'CommentFunctions', 'cutCommentLinkText' ],
 			$commentText
 		);
 
@@ -272,12 +272,12 @@ class Comment extends ContextSource {
 	 * Adds the comment and all necessary info into the Comments table in the
 	 * database.
 	 *
-	 * @param string $text: text of the comment
-	 * @param CommentsPage $page: container page
-	 * @param User $user: user commenting
-	 * @param int $parentID: ID of parent comment, if this is a reply
+	 * @param string $text text of the comment
+	 * @param CommentsPage $page container page
+	 * @param User $user user commenting
+	 * @param int $parentID ID of parent comment, if this is a reply
 	 *
-	 * @return Comment: the added comment
+	 * @return Comment the added comment
 	 */
 	static function add( $text, CommentsPage $page, User $user, $parentID ) {
 		global $wgCommentsInRecentChanges;
@@ -289,7 +289,7 @@ class Comment extends ContextSource {
 		MediaWiki\restoreWarnings();
 		$dbw->insert(
 			'Comments',
-			array(
+			[
 				'Comment_Page_ID' => $page->id,
 				'Comment_Username' => $user->getName(),
 				'Comment_user_id' => $user->getId(),
@@ -297,7 +297,7 @@ class Comment extends ContextSource {
 				'Comment_Date' => $commentDate,
 				'Comment_Parent_ID' => $parentID,
 				'Comment_IP' => $_SERVER['REMOTE_ADDR']
-			),
+			],
 			__METHOD__
 		);
 		$commentId = $dbw->insertId();
@@ -317,7 +317,7 @@ class Comment extends ContextSource {
 			$res = $dbr->select( // need this data for seeding a Comment object
 				'user_stats',
 				'stats_total_points',
-				array( 'stats_user_id' => $user->getId() ),
+				[ 'stats_user_id' => $user->getId() ],
 				__METHOD__
 			);
 
@@ -332,7 +332,7 @@ class Comment extends ContextSource {
 		} else {
 			$thread = $parentID;
 		}
-		$data = array(
+		$data = [
 			'Comment_Username' => $user->getName(),
 			'Comment_IP' => $context->getRequest()->getIP(),
 			'Comment_Text' => $text,
@@ -343,12 +343,12 @@ class Comment extends ContextSource {
 			'Comment_Parent_ID' => $parentID,
 			'thread' => $thread,
 			'timestamp' => strtotime( $commentDate )
-		);
+		];
 
 		$page = new CommentsPage( $page->id, $context );
 		$comment = new Comment( $page, $context, $data );
 
-		Hooks::run( 'Comment::add', array( $comment, $commentId, $comment->page->id ) );
+		Hooks::run( 'Comment::add', [ $comment, $commentId, $comment->page->id ] );
 
 		return $comment;
 	}
@@ -362,8 +362,8 @@ class Comment extends ContextSource {
 		$dbr = wfGetDB( DB_REPLICA );
 		$row = $dbr->selectRow(
 			'Comments_Vote',
-			array( 'SUM(Comment_Vote_Score) AS CommentScore' ),
-			array( 'Comment_Vote_ID' => $this->id ),
+			[ 'SUM(Comment_Vote_Score) AS CommentScore' ],
+			[ 'Comment_Vote_ID' => $this->id ],
 			__METHOD__
 		);
 		$score = '0';
@@ -399,29 +399,29 @@ class Comment extends ContextSource {
 		if ( $this->currentVote === false ) { // no vote, insert
 			$dbw->insert(
 				'Comments_Vote',
-				array(
+				[
 					'Comment_Vote_id' => $this->id,
 					'Comment_Vote_Username' => $this->getUser()->getName(),
 					'Comment_Vote_user_id' => $this->getUser()->getId(),
 					'Comment_Vote_Score' => $value,
 					'Comment_Vote_Date' => $commentDate,
 					'Comment_Vote_IP' => $_SERVER['REMOTE_ADDR']
-				),
+				],
 				__METHOD__
 			);
 		} else { // already a vote, update
 			$dbw->update(
 				'Comments_Vote',
-				array(
+				[
 					'Comment_Vote_Score' => $value,
 					'Comment_Vote_Date' => $commentDate,
 					'Comment_Vote_IP' => $_SERVER['REMOTE_ADDR']
-				),
-				array(
+				],
+				[
 					'Comment_Vote_id' => $this->id,
 					'Comment_Vote_Username' => $this->getUser()->getName(),
 					'Comment_Vote_user_id' => $this->getUser()->getId(),
-				),
+				],
 				__METHOD__
 			);
 		}
@@ -440,12 +440,12 @@ class Comment extends ContextSource {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete(
 			'Comments',
-			array( 'CommentID' => $this->id ),
+			[ 'CommentID' => $this->id ],
 			__METHOD__
 		);
 		$dbw->delete(
 			'Comments_Vote',
-			array( 'Comment_Vote_ID' => $this->id ),
+			[ 'Comment_Vote_ID' => $this->id ],
 			__METHOD__
 		);
 		$dbw->commit( __METHOD__ );
@@ -457,7 +457,7 @@ class Comment extends ContextSource {
 		$this->page->clearCommentListCache();
 
 		// Ping other extensions that may have hooked into this point (i.e. LinkFilter)
-		Hooks::run( 'Comment::delete', array( $this, $this->id, $this->page->id ) );
+		Hooks::run( 'Comment::delete', [ $this, $this->id, $this->page->id ] );
 	}
 
 	/**
@@ -477,9 +477,9 @@ class Comment extends ContextSource {
 		if ( $commentText !== null ) {
 			$logEntry->setComment( $commentText );
 		}
-		$logEntry->setParameters( array(
+		$logEntry->setParameters( [
 			'4::commentid' => $commentId
-		) );
+		] );
 		$logId = $logEntry->insert();
 		$logEntry->publish( $logId, ( $wgCommentsInRecentChanges ? 'rcandudp' : 'udp' ) );
 	}
@@ -512,7 +512,7 @@ class Comment extends ContextSource {
 
 			$voteLink .=
 				"<a href=\"" .
-				htmlspecialchars( $login->getLocalURL( array( 'returnto' => $returnTo ) ) ) .
+				htmlspecialchars( $login->getLocalURL( [ 'returnto' => $returnTo ] ) ) .
 				"\" rel=\"nofollow\">";
 		}
 
@@ -644,7 +644,7 @@ class Comment extends ContextSource {
 	/**
 	 * Show the comment
 	 *
-	 * @param bool $hide: if true, comment is returned but hidden (display:none)
+	 * @param bool $hide if true, comment is returned but hidden (display:none)
 	 * @param $containerClass
 	 * @param $blockList
 	 * @param $anonList

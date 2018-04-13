@@ -8,7 +8,7 @@
  * @author Jack Phoenix
  * @author Alexia E. Smith
  * @copyright (c) 2013 Curse Inc.
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license GPL-2.0-or-later
  * @link https://www.mediawiki.org/wiki/Extension:Comments Documentation
  */
 
@@ -42,7 +42,7 @@ class CommentsHooks {
 
 		$dbType = $updater->getDB()->getType();
 		// For non-MySQL/MariaDB/SQLite DBMSes, use the appropriately named file
-		if ( !in_array( $dbType, array( 'mysql', 'sqlite' ) ) ) {
+		if ( !in_array( $dbType, [ 'mysql', 'sqlite' ] ) ) {
 			$filename = "comments.{$dbType}.sql";
 		} else {
 			$filename = 'comments.sql';
@@ -62,10 +62,10 @@ class CommentsHooks {
 	 * @return bool
 	 */
 	public static function onRenameUserSQL( $renameUserSQL ) {
-		$renameUserSQL->tables['Comments'] = array( 'Comment_Username', 'Comment_user_id' );
-		$renameUserSQL->tables['Comments_Vote'] = array( 'Comment_Vote_Username', 'Comment_Vote_user_id' );
-		$renameUserSQL->tables['Comments_block'] = array( 'cb_user_name', 'cb_user_id' );
-		$renameUserSQL->tables['Comments_block'] = array( 'cb_user_name_blocked', 'cb_user_id_blocked' );
+		$renameUserSQL->tables['Comments'] = [ 'Comment_Username', 'Comment_user_id' ];
+		$renameUserSQL->tables['Comments_Vote'] = [ 'Comment_Vote_Username', 'Comment_Vote_user_id' ];
+		$renameUserSQL->tables['Comments_block'] = [ 'cb_user_name', 'cb_user_id' ];
+		$renameUserSQL->tables['Comments_block'] = [ 'cb_user_name_blocked', 'cb_user_id_blocked' ];
 		return true;
 	}
 }

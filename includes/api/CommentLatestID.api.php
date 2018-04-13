@@ -12,11 +12,11 @@ class CommentLatestIdAPI extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'pageID' => array(
+		return [
+			'pageID' => [
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => 'int'
-			)
-		);
+			]
+		];
 	}
 }

@@ -21,12 +21,12 @@ class CommentFunctions {
 
 	static function getTimeOffset( $time, $timeabrv, $timename ) {
 		$timeStr = ''; // misza: initialize variables, DUMB FUCKS!
-		if( $time[$timeabrv] > 0 ) {
+		if ( $time[$timeabrv] > 0 ) {
 			// Give grep a chance to find the usages:
 			// comments-time-days, comments-time-hours, comments-time-minutes, comments-time-seconds, comments-time-months
 			$timeStr = wfMessage( "comments-time-{$timename}", $time[$timeabrv] )->parse();
 		}
-		if( $timeStr ) {
+		if ( $timeStr ) {
 			$timeStr .= ' ';
 		}
 		return $timeStr;
@@ -45,15 +45,15 @@ class CommentFunctions {
 			$timeStr = $timeStrMo;
 		} else {
 			$timeStr = $timeStrD;
-			if( $timeStr < 2 ) {
+			if ( $timeStr < 2 ) {
 				$timeStr .= $timeStrH;
 				$timeStr .= $timeStrM;
-				if( !$timeStr ) {
+				if ( !$timeStr ) {
 					$timeStr .= $timeStrS;
 				}
 			}
 		}
-		if( !$timeStr ) {
+		if ( !$timeStr ) {
 			$timeStr = wfMessage( 'comments-time-seconds', 1 )->parse();
 		}
 		return $timeStr;
@@ -64,7 +64,7 @@ class CommentFunctions {
 	 * <a href=#>http://www.abc....xyz.html</a>
 	 *
 	 * @param $matches Array
-	 * @return String: shortened URL
+	 * @return String shortened URL
 	 */
 	public static function cutCommentLinkText( $matches ) {
 		$tagOpen = $matches[1];
@@ -74,7 +74,7 @@ class CommentFunctions {
 		$image = preg_match( "/<img src=/i", $linkText );
 		$isURL = ( preg_match( '%^(?:http|https|ftp)://(?:www\.)?.*$%i', $linkText ) ? true : false );
 
-		if( $isURL && !$image && strlen( $linkText ) > 30 ) {
+		if ( $isURL && !$image && strlen( $linkText ) > 30 ) {
 			$start = substr( $linkText, 0, ( 30 / 2 ) - 3 );
 			$end = substr( $linkText, strlen( $linkText ) - ( 30 / 2 ) + 3, ( 30 / 2 ) - 3 );
 			$linkText = trim( $start ) . wfMessage( 'ellipsis' )->escaped() . trim( $end );
@@ -87,7 +87,7 @@ class CommentFunctions {
 	 * built-in regex-based spam filters
 	 *
 	 * @param $text String: text to check for spam patterns
-	 * @return Boolean: true if it contains spam, otherwise false
+	 * @return Boolean true if it contains spam, otherwise false
 	 */
 	public static function isSpam( $text ) {
 		global $wgSpamRegex, $wgSummarySpamRegex;
@@ -96,7 +96,7 @@ class CommentFunctions {
 		// Allow to hook other anti-spam extensions so that sites that use,
 		// for example, AbuseFilter, Phalanx or SpamBlacklist can add additional
 		// checks
-		Hooks::run( 'Comments::isSpam', array( &$text, &$retVal ) );
+		Hooks::run( 'Comments::isSpam', [ &$text, &$retVal ] );
 		if ( $retVal ) {
 			// Should only be true here...
 			return $retVal;
@@ -122,13 +122,13 @@ class CommentFunctions {
 	 * Checks the supplied text for links
 	 *
 	 * @param $text String: text to check
-	 * @return Boolean: true if it contains links, otherwise false
+	 * @return Boolean true if it contains links, otherwise false
 	 */
 	public static function haveLinks( $text ) {
-		$linkPatterns = array(
+		$linkPatterns = [
 			'/(https?)|(ftp):\/\//',
 			'/=\\s*[\'"]?\\s*mailto:/',
-		);
+		];
 		foreach ( $linkPatterns as $linkPattern ) {
 			if ( preg_match( $linkPattern, $text ) ) {
 				return true;
@@ -153,13 +153,13 @@ class CommentFunctions {
 		MediaWiki\restoreWarnings();
 		$dbw->insert(
 			'Comments_block',
-			array(
+			[
 				'cb_user_id' => $blocker->getId(),
 				'cb_user_name' => $blocker->getName(),
 				'cb_user_id_blocked' => $userId,
 				'cb_user_name_blocked' => $userName,
 				'cb_date' => $date
-			),
+			],
 			__METHOD__
 		);
 		$dbw->commit( __METHOD__ );
@@ -172,12 +172,12 @@ class CommentFunctions {
 	 * @return array List of comment-blocked users
 	 */
 	static function getBlockList( $userId ) {
-		$blockList = array();
+		$blockList = [];
 		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'Comments_block',
 			'cb_user_name_blocked',
-			array( 'cb_user_id' => $userId ),
+			[ 'cb_user_id' => $userId ],
 			__METHOD__
 		);
 		foreach ( $res as $row ) {
@@ -190,11 +190,11 @@ class CommentFunctions {
 		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Comments_block',
-			array( 'cb_id' ),
-			array(
+			[ 'cb_id' ],
+			[
 				'cb_user_id' => $userId,
 				'cb_user_id_blocked' => $userIdBlocked
-			),
+			],
 			__METHOD__
 		);
 		if ( $s !== false ) {
@@ -214,10 +214,10 @@ class CommentFunctions {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete(
 			'Comments_block',
-			array(
+			[
 				'cb_user_id' => $userId,
 				'cb_user_id_blocked' => $userIdBlocked
-			),
+			],
 			__METHOD__
 		);
 		$dbw->commit( __METHOD__ );

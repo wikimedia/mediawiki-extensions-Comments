@@ -58,15 +58,15 @@ class CommentVoteAPI extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'commentID' => array(
+		return [
+			'commentID' => [
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => 'integer'
-			),
-			'voteValue' => array(
+			],
+			'voteValue' => [
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => 'integer'
-			),
-		);
+			],
+		];
 	}
 }

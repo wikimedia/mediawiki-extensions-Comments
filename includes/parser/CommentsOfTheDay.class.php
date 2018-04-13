@@ -41,7 +41,7 @@ class CommentsOfTheDay {
 	 * @param array $whereConds WHERE conditions for the SQL clause (if not using the defaults)
 	 * @return array
 	 */
-	public static function get( $skipCache = false, $cacheTime = 86400, $whereConds = array() ) {
+	public static function get( $skipCache = false, $cacheTime = 86400, $whereConds = [] ) {
 		global $wgMemc;
 
 		// Try memcached first
@@ -54,24 +54,24 @@ class CommentsOfTheDay {
 			$dbr = wfGetDB( DB_REPLICA );
 
 			if ( empty( $whereConds ) ) {
-				$whereConds = array(
+				$whereConds = [
 					'Comment_Page_ID = page_id',
 					'UNIX_TIMESTAMP(Comment_Date) > ' . ( time() - ( $cacheTime ) )
-				);
+				];
 			}
 
 			$res = $dbr->select(
-				array( 'Comments', 'page' ),
-				array(
+				[ 'Comments', 'page' ],
+				[
 					'Comment_Username', 'Comment_IP', 'Comment_Text',
 					'Comment_Date', 'Comment_User_Id', 'CommentID',
 					'Comment_Parent_ID', 'Comment_Page_ID'
-				),
+				],
 				$whereConds,
 				__METHOD__
 			);
 
-			$comments = array();
+			$comments = [];
 
 			foreach ( $res as $row ) {
 				if ( $row->Comment_Parent_ID == 0 ) {
@@ -79,7 +79,7 @@ class CommentsOfTheDay {
 				} else {
 					$thread = $row->Comment_Parent_ID;
 				}
-				$data = array(
+				$data = [
 					'Comment_Username' => $row->Comment_Username,
 					'Comment_IP' => $row->Comment_IP,
 					'Comment_Text' => $row->Comment_Text,
@@ -91,13 +91,13 @@ class CommentsOfTheDay {
 					'Comment_Parent_ID' => $row->Comment_Parent_ID,
 					'thread' => $thread,
 					'timestamp' => wfTimestamp( TS_UNIX, $row->Comment_Date )
-				);
+				];
 
 				$page = new CommentsPage( $row->Comment_Page_ID, new RequestContext() );
 				$comments[] = new Comment( $page, new RequestContext(), $data );
 			}
 
-			usort( $comments, array( 'CommentFunctions', 'sortCommentScore' ) );
+			usort( $comments, [ 'CommentFunctions', 'sortCommentScore' ] );
 			$comments = array_slice( $comments, 0, 5 );
 
 			$wgMemc->set( $key, $comments, $cacheTime );

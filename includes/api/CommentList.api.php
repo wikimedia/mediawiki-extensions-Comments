@@ -22,23 +22,23 @@ class CommentListAPI extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'pageID' => array(
+		return [
+			'pageID' => [
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => 'integer'
-			),
-			'order' => array(
+			],
+			'order' => [
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => 'boolean'
-			),
-			'pagerPage' => array(
+			],
+			'pagerPage' => [
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => 'integer'
-			),
-			'showForm' => array(
+			],
+			'showForm' => [
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_TYPE => 'integer'
-			)
-		);
+			]
+		];
 	}
 }

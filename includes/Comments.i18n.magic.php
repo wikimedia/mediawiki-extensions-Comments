@@ -3,10 +3,10 @@
  *  Magic words for extension.
  */
 
-$magicWords = array();
+$magicWords = [];
 
 /** English (English) */
-$magicWords['en'] = array(
-	'NUMBEROFCOMMENTS' => array( 0, 'NUMBEROFCOMMENTS' ),
-	'NUMBEROFCOMMENTSPAGE' => array( 0, 'NUMBEROFCOMMENTSPAGE' ),
-);
+$magicWords['en'] = [
+	'NUMBEROFCOMMENTS' => [ 0, 'NUMBEROFCOMMENTS' ],
+	'NUMBEROFCOMMENTSPAGE' => [ 0, 'NUMBEROFCOMMENTSPAGE' ],
+];

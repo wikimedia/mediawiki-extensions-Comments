@@ -79,14 +79,14 @@ class CommentsPage extends ContextSource {
 	 *
 	 * @var array
 	 */
-	public $comments = array();
+	public $comments = [];
 
 	/**
 	 * Constructor
 	 *
 	 * @param $pageID: current page ID
 	 */
-	function __construct ( $pageID, $context ) {
+	function __construct( $pageID, $context ) {
 		$this->id = $pageID;
 		$this->setContext( $context );
 		$this->title = Title::newFromID( $pageID );
@@ -102,8 +102,8 @@ class CommentsPage extends ContextSource {
 		$count = 0;
 		$s = $dbr->selectRow(
 			'Comments',
-			array( 'COUNT(*) AS CommentCount' ),
-			array( 'Comment_Page_ID' => $this->id ),
+			[ 'COUNT(*) AS CommentCount' ],
+			[ 'Comment_Page_ID' => $this->id ],
 			__METHOD__
 		);
 		if ( $s !== false ) {
@@ -122,10 +122,10 @@ class CommentsPage extends ContextSource {
 		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Comments',
-			array( 'CommentID' ),
-			array( 'Comment_Page_ID' => $this->id ),
+			[ 'CommentID' ],
+			[ 'Comment_Page_ID' => $this->id ],
 			__METHOD__,
-			array( 'ORDER BY' => 'Comment_Date DESC', 'LIMIT' => 1 )
+			[ 'ORDER BY' => 'Comment_Date DESC', 'LIMIT' => 1 ]
 		);
 		if ( $s !== false ) {
 			$latestCommentID = $s->CommentID;
@@ -159,37 +159,37 @@ class CommentsPage extends ContextSource {
 	 * Fetches all comments, called by display().
 	 *
 	 * @return array Array containing every possible bit of information about
-	 *				a comment, including score, timestamp and more
+	 * 				a comment, including score, timestamp and more
 	 */
 	public function getComments() {
 		$dbr = wfGetDB( DB_REPLICA );
 
 		// Defaults (for non-social wikis)
-		$tables = array(
+		$tables = [
 			'Comments',
 			'vote1' => 'Comments_Vote',
 			'vote2' => 'Comments_Vote',
-		);
-		$fields = array(
+		];
+		$fields = [
 			'Comment_Username', 'Comment_IP', 'Comment_Text',
 			'Comment_Date', 'Comment_Date AS timestamp',
 			'Comment_user_id', 'CommentID', 'Comment_Parent_ID',
 			'vote1.Comment_Vote_Score AS current_vote',
 			'SUM(vote2.Comment_Vote_Score) AS comment_score'
-		);
-		$joinConds = array(
+		];
+		$joinConds = [
 			// For current user's vote
-			'vote1' => array(
+			'vote1' => [
 				'LEFT JOIN',
-				array(
+				[
 					'vote1.Comment_Vote_ID = CommentID',
 					'vote1.Comment_Vote_Username' => $this->getUser()->getName()
-				)
-			),
+				]
+			],
 			// For total vote count
-			'vote2' => array( 'LEFT JOIN', 'vote2.Comment_Vote_ID = CommentID' )
-		);
-		$params = array( 'GROUP BY' => 'CommentID' );
+			'vote2' => [ 'LEFT JOIN', 'vote2.Comment_Vote_ID = CommentID' ]
+		];
+		$params = [ 'GROUP BY' => 'CommentID' ];
 
 		// If SocialProfile is installed, query the user_stats table too.
 		if (
@@ -198,22 +198,22 @@ class CommentsPage extends ContextSource {
 		) {
 			$tables[] = 'user_stats';
 			$fields[] = 'stats_total_points';
-			$joinConds['Comments'] = array(
+			$joinConds['Comments'] = [
 				'LEFT JOIN', 'Comment_user_id = stats_user_id'
-			);
+			];
 		}
 
 		// Perform the query
 		$res = $dbr->select(
 			$tables,
 			$fields,
-			array( 'Comment_Page_ID' => $this->id ),
+			[ 'Comment_Page_ID' => $this->id ],
 			__METHOD__,
 			$params,
 			$joinConds
 		);
 
-		$comments = array();
+		$comments = [];
 
 		foreach ( $res as $row ) {
 			if ( $row->Comment_Parent_ID == 0 ) {
@@ -221,7 +221,7 @@ class CommentsPage extends ContextSource {
 			} else {
 				$thread = $row->Comment_Parent_ID;
 			}
-			$data = array(
+			$data = [
 				'Comment_Username' => $row->Comment_Username,
 				'Comment_IP' => $row->Comment_IP,
 				'Comment_Text' => $row->Comment_Text,
@@ -234,16 +234,16 @@ class CommentsPage extends ContextSource {
 				'timestamp' => wfTimestamp( TS_UNIX, $row->timestamp ),
 				'current_vote' => ( isset( $row->current_vote ) ? $row->current_vote : false ),
 				'total_vote' => ( isset( $row->comment_score ) ? $row->comment_score : 0 ),
-			);
+			];
 
 			$comments[] = new Comment( $this, $this->getContext(), $data );
 		}
 
-		$commentThreads = array();
+		$commentThreads = [];
 
 		foreach ( $comments as $comment ) {
 			if ( $comment->parentID == 0 ) {
-				$commentThreads[$comment->id] = array( $comment );
+				$commentThreads[$comment->id] = [ $comment ];
 			} else {
 				$commentThreads[$comment->parentID][] = $comment;
 			}
@@ -274,7 +274,7 @@ class CommentsPage extends ContextSource {
 	 * @param int $pagerCurrent Page we are currently paged to
 	 * @param int $pagesCount The maximum page number
 	 *
-	 * @return string: the links for paging through pages of comments
+	 * @return string the links for paging through pages of comments
 	 */
 	function displayPager( $pagerCurrent, $pagesCount ) {
 		// Middle is used to "center" pages around the current page.
@@ -307,12 +307,12 @@ class CommentsPage extends ContextSource {
 				$output .= '<li class="c-pager-item c-pager-previous">' .
 					Html::rawElement(
 						'a',
-						array(
+						[
 							'rel' => 'nofollow',
 							'class' => 'c-pager-link',
 							'href' => '#cfirst',
 							'data-' . $this->pageQuery => ( $pagerCurrent - 1 ),
-						),
+						],
 						'&lt;'
 					) .
 					'</li>';
@@ -323,12 +323,12 @@ class CommentsPage extends ContextSource {
 				$output .= '<li class="c-pager-item c-pager-first">' .
 					Html::rawElement(
 						'a',
-						array(
+						[
 							'rel' => 'nofollow',
 							'class' => 'c-pager-link',
 							'href' => '#cfirst',
 							'data-' . $this->pageQuery => 1,
-						),
+						],
 						1
 					) .
 					'</li>';
@@ -349,12 +349,12 @@ class CommentsPage extends ContextSource {
 						$output .= '<li class="c-pager-item">' .
 							Html::rawElement(
 								'a',
-								array(
+								[
 									'rel' => 'nofollow',
 									'class' => 'c-pager-link',
 									'href' => '#cfirst',
 									'data-' . $this->pageQuery => $i,
-								),
+								],
 								$i
 							) .
 							'</li>';
@@ -371,12 +371,12 @@ class CommentsPage extends ContextSource {
 				$output .= '<li class="c-pager-item c-pager-last">' .
 					Html::rawElement(
 						'a',
-						array(
+						[
 							'rel' => 'nofollow',
 							'class' => 'c-pager-link',
 							'href' => '#cfirst',
 							'data-' . $this->pageQuery => $pagesCount,
-						),
+						],
 						$pagesCount
 					) .
 					'</li>';
@@ -387,12 +387,12 @@ class CommentsPage extends ContextSource {
 				$output .= '<li class="c-pager-item c-pager-next">' .
 					Html::rawElement(
 						'a',
-						array(
+						[
 							'rel' => 'nofollow',
 							'class' => 'c-pager-link',
 							'href' => '#cfirst',
 							'data-' . $this->pageQuery => ( $pagerCurrent + 1 ),
-						),
+						],
 						'&gt;'
 					) .
 					'</li>';
@@ -413,15 +413,15 @@ class CommentsPage extends ContextSource {
 	 */
 	function getAnonList() {
 		$counter = 1;
-		$bucket = array();
+		$bucket = [];
 
 		$commentThreads = $this->comments;
 
-		$comments = array(); // convert 2nd threads array to a simple list of comments
+		$comments = []; // convert 2nd threads array to a simple list of comments
 		foreach ( $commentThreads as $thread ) {
 			$comments = array_merge( $comments, $thread );
 		}
-		usort( $comments, array( 'CommentFunctions', 'sortTime' ) );
+		usort( $comments, [ 'CommentFunctions', 'sortTime' ] );
 
 		foreach ( $comments as $comment ) {
 			if (
@@ -445,11 +445,11 @@ class CommentsPage extends ContextSource {
 		global $wgCommentsSortDescending;
 
 		if ( $this->orderBy ) {
-			usort( $threads, array( 'CommentFunctions', 'sortScore' ) );
+			usort( $threads, [ 'CommentFunctions', 'sortScore' ] );
 		} elseif ( $wgCommentsSortDescending ) {
-			usort( $threads, array( 'CommentFunctions', 'sortDesc' ) );
+			usort( $threads, [ 'CommentFunctions', 'sortDesc' ] );
 		} else {
-			usort( $threads, array( 'CommentFunctions', 'sortAsc' ) );
+			usort( $threads, [ 'CommentFunctions', 'sortAsc' ] );
 		}
 
 		return $threads;
@@ -487,7 +487,7 @@ class CommentsPage extends ContextSource {
 		MediaWiki\restoreWarnings();
 
 		// Load complete blocked list for logged in user so they don't see their comments
-		$blockList = array();
+		$blockList = [];
 		if ( $this->getUser()->getID() != 0 ) {
 			$blockList = CommentFunctions::getBlockList( $this->getUser()->getId() );
 		}

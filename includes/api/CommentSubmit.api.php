@@ -55,19 +55,19 @@ class CommentSubmitAPI extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'pageID' => array(
+		return [
+			'pageID' => [
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => 'integer'
-			),
-			'parentID' => array(
+			],
+			'parentID' => [
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_TYPE => 'integer'
-			),
-			'commentText' => array(
+			],
+			'commentText' => [
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => 'string'
-			)
-		);
+			]
+		];
 	}
 }

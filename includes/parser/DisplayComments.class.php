@@ -27,7 +27,7 @@ class DisplayComments {
 		// Add required CSS & JS via ResourceLoader
 		$wgOut->addModuleStyles( 'ext.comments.css' );
 		$wgOut->addModules( 'ext.comments.js' );
-		$wgOut->addJsConfigVars( array( 'wgCommentsSortDescending' => $wgCommentsSortDescending ) );
+		$wgOut->addJsConfigVars( [ 'wgCommentsSortDescending' => $wgCommentsSortDescending ] );
 
 		// Parse arguments
 		// The preg_match() lines here are to support the old-style way of
@@ -50,7 +50,7 @@ class DisplayComments {
 			$voting = htmlspecialchars( $matches[1] );
 		} elseif (
 			!empty( $args['voting'] ) &&
-			in_array( strtoupper( $args['voting'] ), array( 'OFF', 'PLUS', 'MINUS' ) )
+			in_array( strtoupper( $args['voting'] ), [ 'OFF', 'PLUS', 'MINUS' ] )
 		) {
 			$voting = $args['voting'];
 		}
@@ -91,7 +91,7 @@ class DisplayComments {
 	}
 
 	public static function nonDisplayComments( $input, $args, $parser ) {
-		$attr = array();
+		$attr = [];
 
 		foreach ( $args as $name => $value ) {
 			$attr[] = htmlspecialchars( $name ) . '="' . htmlspecialchars( $value ) . '"';
