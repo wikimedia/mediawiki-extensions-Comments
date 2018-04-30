@@ -4,5 +4,6 @@
 			"Joao Xavier"
 		]
 	},
-	"comments-time-days": "{{PLURAL:$1|un dio|$1 dii}}"
+	"comments-time-days": "{{PLURAL:$1|un dio|$1 dii}}",
+	"comments-time-hours": "{{PLURAL:$1|$1 horo|$1 hori}}"
 }
