@@ -111,7 +111,7 @@ class Comment extends ContextSource {
 	 * Constructor - set the page ID
 	 *
 	 * @param $page CommentsPage: ID number of the current page
-	 * @param IContextSource $context
+	 * @param IContextSource|null $context
 	 * @param $data: straight from the DB about the comment
 	 */
 	public function __construct( CommentsPage $page, $context = null, $data ) {
@@ -467,7 +467,7 @@ class Comment extends ContextSource {
 	 * @param User $user User who performed the action
 	 * @param int $pageId Page ID of the page that contains the comment thread
 	 * @param int $commentId Comment ID of the affected comment
-	 * @param string $commentText Supplementary log comment, if any
+	 * @param string|null $commentText Supplementary log comment, if any
 	 */
 	static function log( $action, $user, $pageId, $commentId, $commentText = null ) {
 		global $wgCommentsInRecentChanges;
