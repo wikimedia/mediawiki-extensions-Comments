@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Adam-Yourist"
+		]
+	},
+	"comments-time-days": "{{PLURAL:$1|ди}}"
+}
