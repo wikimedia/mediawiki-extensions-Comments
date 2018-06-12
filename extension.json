@@ -55,26 +55,26 @@
 		]
 	},
 	"ExtensionMessagesFiles": {
-		"CommentsAliases": "includes/Comments.alias.php",
-		"CommentsMagic": "includes/Comments.i18n.magic.php",
-		"NumberOfCommentsMagic": "includes/Comments.i18n.magic.php"
+		"CommentsAliases": "Comments.i18n.alias.php",
+		"CommentsMagic": "Comments.i18n.magic.php",
+		"NumberOfCommentsMagic": "Comments.i18n.magic.php"
 	},
 	"AutoloadClasses": {
-		"Comment": "includes/Comment.class.php",
-		"CommentsPage": "includes/CommentsPage.class.php",
-		"CommentsOfTheDay": "includes/parser/CommentsOfTheDay.class.php",
-		"NumberOfComments": "includes/parser/NumberOfComments.class.php",
-		"DisplayComments": "includes/parser/DisplayComments.class.php",
-		"CommentFunctions": "/includes/CommentFunctions.class.php",
-		"CommentIgnoreList": "includes/specials/SpecialCommentIgnoreList.php",
-		"CommentsLogFormatter": "includes/CommentsLogFormatter.class.php",
-		"CommentsHooks": "includes/Comments.hooks.php",
-		"CommentBlockAPI": "includes/api/CommentBlock.api.php",
-		"CommentDeleteAPI": "includes/api/CommentDelete.api.php",
-		"CommentLatestIdAPI": "includes/api/CommentLatestID.api.php",
-		"CommentListAPI": "includes/api/CommentList.api.php",
-		"CommentSubmitAPI": "includes/api/CommentSubmit.api.php",
-		"CommentVoteAPI": "includes/api/CommentVote.api.php"
+		"Comment": "includes/Comment.php",
+		"CommentsPage": "includes/CommentsPage.php",
+		"CommentsOfTheDay": "includes/parser/CommentsOfTheDay.php",
+		"NumberOfComments": "includes/parser/NumberOfComments.php",
+		"DisplayComments": "includes/parser/DisplayComments.php",
+		"CommentFunctions": "/includes/CommentFunctions.php",
+		"CommentIgnoreList": "includes/specials/CommentIgnoreList.php",
+		"CommentsLogFormatter": "includes/CommentsLogFormatter.php",
+		"CommentsHooks": "includes/CommentsHooks.php",
+		"CommentBlockAPI": "includes/api/CommentBlockAPI.php",
+		"CommentDeleteAPI": "includes/api/CommentDeleteAPI.php",
+		"CommentLatestIdAPI": "includes/api/CommentLatestIdAPI.php",
+		"CommentListAPI": "includes/api/CommentListAPI.php",
+		"CommentSubmitAPI": "includes/api/CommentSubmitAPI.php",
+		"CommentVoteAPI": "includes/api/CommentVoteAPI.php"
 	},
 	"ResourceModules": {
 		"ext.comments.css": {
