@@ -65,7 +65,6 @@
 	"AutoloadClasses": {
 		"Comment": "includes/Comment.php",
 		"CommentsPage": "includes/CommentsPage.php",
-		"CommentsOfTheDay": "includes/parser/CommentsOfTheDay.php",
 		"NumberOfComments": "includes/parser/NumberOfComments.php",
 		"DisplayComments": "includes/parser/DisplayComments.php",
 		"CommentFunctions": "/includes/CommentFunctions.php",

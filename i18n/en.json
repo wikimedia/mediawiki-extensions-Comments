@@ -66,7 +66,6 @@
 	"comments-ignore-cancel": "Cancel",
 	"comments-ignore-title": "Comment ignore list",
 	"commentignorelist": "Comment ignore list",
-	"comments-no-comments-of-day": "There are no comments of the day.",
 	"log-name-comments": "Comments log",
 	"log-description-comments": "This is a log of comments.",
 	"logentry-comments-add": "$1 posted a new comment on $3",

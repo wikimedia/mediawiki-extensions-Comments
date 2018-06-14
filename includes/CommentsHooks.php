@@ -16,14 +16,12 @@ class CommentsHooks {
 	/**
 	 * Registers the following tags and magic words:
 	 * - <comments />
-	 * - <commentsoftheday />
 	 * - NUMBEROFCOMMENTSPAGE
 	 *
 	 * @param Parser $parser
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
 		$parser->setHook( 'comments', [ 'DisplayComments', 'getParserHandler' ] );
-		$parser->setHook( 'commentsoftheday', [ 'CommentsOfTheDay', 'getParserHandler' ] );
 		$parser->setFunctionHook( 'NUMBEROFCOMMENTSPAGE', 'NumberOfComments::getParserHandler', Parser::SFH_NO_HASH );
 	}
 
