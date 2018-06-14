@@ -42,7 +42,6 @@
 	"comments-ignore-cancel": "Peruuta",
 	"comments-ignore-title": "Kommenttien huomioimattomuuslista",
 	"commentignorelist": "Kommenttien huomioimattomuuslista",
-	"comments-no-comments-of-day": "Ei päivän kommentteja.",
 	"log-name-comments": "Kommenttiloki",
 	"log-description-comments": "Tämä on loki kommenteista.",
 	"comments-time-ago": "$1 sitten",

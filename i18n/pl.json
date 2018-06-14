@@ -44,7 +44,6 @@
 	"comments-ignore-cancel": "Anuluj",
 	"comments-ignore-title": "Lista ignorowanych komentarzy",
 	"commentignorelist": "Lista ignorowanych komentarzy",
-	"comments-no-comments-of-day": "Dziś brak komentarzy.",
 	"log-name-comments": "Dziennik komentarzy",
 	"log-description-comments": "Jest to dziennik komentarzy.",
 	"logentry-comments-add": "$1 {{GENDER:$2|napisał|napisała}} nowy komentarz na stronie $3",

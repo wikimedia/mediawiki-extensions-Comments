@@ -60,7 +60,6 @@
 	"comments-ignore-cancel": "Cancelar",
 	"comments-ignore-title": "Lista de comentarios ignorados",
 	"commentignorelist": "Lista de comentarios ignorados",
-	"comments-no-comments-of-day": "No hay ningún comentario del día.",
 	"log-name-comments": "Registro de comentarios",
 	"log-description-comments": "Este es un registro de los comentarios.",
 	"logentry-comments-add": "$1 publicó un comentario nuevo en $3",

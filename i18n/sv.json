@@ -68,7 +68,6 @@
 	"comments-ignore-cancel": "Avbryt",
 	"comments-ignore-title": "Ignoreringslista för kommentarer",
 	"commentignorelist": "Ignoreringslista för kommentarer",
-	"comments-no-comments-of-day": "Det finns inga kommentarer idag.",
 	"log-name-comments": "Kommentarlogg",
 	"log-description-comments": "Detta är en logg för kommentarer.",
 	"logentry-comments-add": "$1 har postat en ny kommentar på $3",

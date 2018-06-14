@@ -74,7 +74,6 @@
 	"comments-ignore-cancel": "取消",
 	"comments-ignore-title": "評論忽略清單",
 	"commentignorelist": "評論忽略清單",
-	"comments-no-comments-of-day": "當天沒有任何評論。",
 	"log-name-comments": "評論日誌",
 	"log-description-comments": "此為評論的日誌。",
 	"logentry-comments-add": "$1 已發表新的評論於 $3",

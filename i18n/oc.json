@@ -27,7 +27,6 @@
 	"comments-ignore-cancel": "Anullar",
 	"comments-ignore-title": "Lista dels comentaris ignorats",
 	"commentignorelist": "Lista dels comentaris ignorats",
-	"comments-no-comments-of-day": "I a pas de comentari del jorn.",
 	"log-name-comments": "Istoric dels comentaris",
 	"comments-time-ago": "I a $1",
 	"comments-time-months": "{{PLURAL:$1|un mes|$1 meses}}",

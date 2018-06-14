@@ -46,7 +46,6 @@
 	"comments-ignore-cancel": "취소",
 	"comments-ignore-title": "댓글 무시 목록",
 	"commentignorelist": "댓글 무시 목록",
-	"comments-no-comments-of-day": "오늘의 댓글이 없습니다.",
 	"log-name-comments": "댓글 기록",
 	"log-description-comments": "댓글의 기록입니다.",
 	"logentry-comments-add": "$1님이 $3에 새 댓글을 남겼습니다",

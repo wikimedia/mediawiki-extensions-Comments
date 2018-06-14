@@ -65,7 +65,6 @@
 	"comments-ignore-cancel": "إلغاء",
 	"comments-ignore-title": "قائمة تجاهل التعليقات",
 	"commentignorelist": "قائمة تجاهل التعليقات",
-	"comments-no-comments-of-day": "لا توجد تعليقات اليوم.",
 	"log-name-comments": "سجل التعليقات",
 	"log-description-comments": "هذا هو سجل التعليقات.",
 	"logentry-comments-add": "$1 نشر 1 تعليقا جديدا على $3",

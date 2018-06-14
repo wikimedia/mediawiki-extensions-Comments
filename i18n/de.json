@@ -58,7 +58,6 @@
 	"comments-ignore-cancel": "Abbrechen",
 	"comments-ignore-title": "Ignorierliste zu Kommentaren",
 	"commentignorelist": "Ignorierliste zu Kommentaren",
-	"comments-no-comments-of-day": "Es gibt keinen Kommentar des Tages.",
 	"log-name-comments": "Kommentar-Logbuch",
 	"log-description-comments": "Dies ist ein Logbuch von Kommentaren.",
 	"logentry-comments-add": "$1 hinterließ einen neuen Kommentar auf $3",

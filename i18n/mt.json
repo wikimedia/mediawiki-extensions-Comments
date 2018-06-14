@@ -34,7 +34,6 @@
 	"comments-ignore-no-users": "M'hemm l-ebda utent li huwa attwalment imblukkat.",
 	"comments-ignore-remove-message": "Inti ċert li tixtieq tiżblokka l-kummenti tal-utent <b>$1</b>?",
 	"comments-ignore-unblock": "Żblokka",
-	"comments-no-comments-of-day": "M'hemm l-ebda kummenti tal-ġurnata.",
 	"log-name-comments": "Reġistru tal-kummenti",
 	"log-description-comments": "Dan huwa reġistru tal-kummenti."
 }

@@ -46,7 +46,6 @@
 	"comments-ignore-cancel": "Отменить",
 	"comments-ignore-title": "Список тех, чьи комментарии игнорируются",
 	"commentignorelist": "Список игнорируемых комментаторов",
-	"comments-no-comments-of-day": "Нет комментариев дня.",
 	"log-name-comments": "Журнал комментариев",
 	"log-description-comments": "Это журнал комментариев.",
 	"logentry-comments-add": "$1 опубликовал новый комментарий на $3",

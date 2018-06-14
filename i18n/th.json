@@ -42,7 +42,6 @@
 	"comments-ignore-cancel": "ยกเลิก",
 	"comments-ignore-title": "รายการความเห็นที่เพิกเฉย",
 	"commentignorelist": "รายการความเห็นที่เพิกเฉย",
-	"comments-no-comments-of-day": "ไม่มีความเห็นประจำวัน",
 	"log-name-comments": "ปูมความเห็น",
 	"log-description-comments": "นี่คือปูมบันทึกความเห็น",
 	"logentry-comments-add": "$1 ฝากความเห็นใหม่ใน $3",

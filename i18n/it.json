@@ -42,7 +42,6 @@
 	"comments-ignore-cancel": "Annulla",
 	"comments-ignore-title": "Lista ignorati dei commenti",
 	"commentignorelist": "Lista ignorati dei commenti",
-	"comments-no-comments-of-day": "Non sono presenti commenti del giorno.",
 	"log-name-comments": "Commenti",
 	"log-description-comments": "Di seguito sono elencati i commenti.",
 	"logentry-comments-add": "$1 ha pubblicato un nuovo commento su $3",

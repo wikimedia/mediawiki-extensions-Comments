@@ -44,7 +44,6 @@
 	"comments-ignore-cancel": "キャンセル",
 	"comments-ignore-title": "コメント無視リスト",
 	"commentignorelist": "コメント無視リスト",
-	"comments-no-comments-of-day": "今日のコメントはありません。",
 	"log-name-comments": "コメント記録",
 	"log-description-comments": "これはコメントの記録です。",
 	"logentry-comments-add": "$1 が $3 に新しいコメントを投稿しました",
