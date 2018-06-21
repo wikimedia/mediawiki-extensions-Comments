@@ -4,6 +4,12 @@
 			"Servien"
 		]
 	},
+	"comments-auto-refresher-enable": "Automaties biewarken van reaksies inschakelen",
+	"comments-auto-refresher-pause": "Automatisch biewarken van reaksies pauzeren",
+	"comments-reply-to": "Reageren op {{GENDER:$2|$1}}",
+	"comments-cancel-reply": "Aofbreken",
+	"comments-you": "Jie",
+	"comments-reply": "Antwoorden",
 	"comments-time-ago": "$1 elejen",
 	"comments-time-months": "{{PLURAL:$1|een maond|$1 maonden}}"
 }
