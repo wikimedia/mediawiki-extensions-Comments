@@ -282,6 +282,7 @@ class Comment extends ContextSource {
 	static function add( $text, CommentsPage $page, User $user, $parentID ) {
 		global $wgCommentsInRecentChanges;
 		$dbw = wfGetDB( DB_MASTER );
+		$dbw->startAtomic( __METHOD__ );
 		$context = RequestContext::getMain();
 
 		MediaWiki\suppressWarnings();
@@ -301,7 +302,7 @@ class Comment extends ContextSource {
 			__METHOD__
 		);
 		$commentId = $dbw->insertId();
-		$dbw->commit( __METHOD__ ); // misza: added this
+		$dbw->endAtomic( __METHOD__ ); // misza: added this
 		$id = $commentId;
 
 		$page->clearCommentListCache();
