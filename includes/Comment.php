@@ -281,6 +281,7 @@ class Comment extends ContextSource {
 	 */
 	static function add( $text, CommentsPage $page, User $user, $parentID ) {
 		global $wgCommentsInRecentChanges;
+
 		$dbw = wfGetDB( DB_MASTER );
 		$context = RequestContext::getMain();
 
@@ -301,7 +302,6 @@ class Comment extends ContextSource {
 			__METHOD__
 		);
 		$commentId = $dbw->insertId();
-		$dbw->commit( __METHOD__ ); // misza: added this
 		$id = $commentId;
 
 		$page->clearCommentListCache();
@@ -425,7 +425,6 @@ class Comment extends ContextSource {
 				__METHOD__
 			);
 		}
-		$dbw->commit( __METHOD__ );
 
 		$score = $this->getScore();
 
@@ -438,6 +437,7 @@ class Comment extends ContextSource {
 	 */
 	function delete() {
 		$dbw = wfGetDB( DB_MASTER );
+		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete(
 			'Comments',
 			[ 'CommentID' => $this->id ],
@@ -448,7 +448,7 @@ class Comment extends ContextSource {
 			[ 'Comment_Vote_ID' => $this->id ],
 			__METHOD__
 		);
-		$dbw->commit( __METHOD__ );
+		$dbw->endAtomic( __METHOD__ );
 
 		// Log the deletion to Special:Log/comments.
 		self::log( 'delete', $this->getUser(), $this->page->id, $this->id );
