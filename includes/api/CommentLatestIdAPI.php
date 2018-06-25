@@ -3,6 +3,9 @@
 class CommentLatestIdAPI extends ApiBase {
 
 	public function execute() {
+		// To avoid API warning, register the parameter used to bust browser cache
+		$this->getMain()->getVal( '_' );
+
 		$pageID = $this->getMain()->getVal( 'pageID' );
 
 		$commentsPage = new CommentsPage( $pageID, RequestContext::getMain() );
@@ -15,7 +18,7 @@ class CommentLatestIdAPI extends ApiBase {
 		return [
 			'pageID' => [
 				ApiBase::PARAM_REQUIRED => true,
-				ApiBase::PARAM_TYPE => 'int'
+				ApiBase::PARAM_TYPE => 'integer'
 			]
 		];
 	}
