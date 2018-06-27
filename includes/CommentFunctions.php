@@ -162,7 +162,6 @@ class CommentFunctions {
 			],
 			__METHOD__
 		);
-		$dbw->commit( __METHOD__ );
 	}
 
 	/**
@@ -220,7 +219,6 @@ class CommentFunctions {
 			],
 			__METHOD__
 		);
-		$dbw->commit( __METHOD__ );
 	}
 
 	/**
