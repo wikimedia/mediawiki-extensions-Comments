@@ -3,10 +3,11 @@
 class CommentVoteAPI extends ApiBase {
 
 	public function execute() {
+		$user = $this->getUser();
 		// Blocked users cannot vote, obviously, and neither can those users without the necessary privileges
 		if (
-			$this->getUser()->isBlocked() ||
-			!$this->getUser()->isAllowed( 'comment' ) ||
+			$user->isBlocked() ||
+			!$user->isAllowed( 'comment' ) ||
 			wfReadOnly()
 		) {
 			return '';
@@ -22,7 +23,7 @@ class CommentVoteAPI extends ApiBase {
 			$html = htmlspecialchars( $html );
 
 			if ( class_exists( 'UserStatsTrack' ) ) {
-				$stats = new UserStatsTrack( $this->getUser()->getID(), $this->getUser()->getName() );
+				$stats = new UserStatsTrack( $user->getId(), $user->getName() );
 
 				// Must update stats for user doing the voting
 				if ( $voteValue == 1 ) {

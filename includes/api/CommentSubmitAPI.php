@@ -36,7 +36,7 @@ class CommentSubmitAPI extends ApiBase {
 			Comment::add( $commentText, $page, $user, $this->getMain()->getVal( 'parentID' ) );
 
 			if ( class_exists( 'UserStatsTrack' ) ) {
-				$stats = new UserStatsTrack( $user->getID(), $user->getName() );
+				$stats = new UserStatsTrack( $user->getId(), $user->getName() );
 				$stats->incStatField( 'comment' );
 			}
 		}

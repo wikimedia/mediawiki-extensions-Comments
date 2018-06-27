@@ -43,7 +43,7 @@ class CommentIgnoreList extends SpecialPage {
 		 * Redirect anonymous users to Login Page
 		 * It will automatically return them to the CommentIgnoreList page
 		 */
-		if ( $user->getID() == 0 && $user_name == '' ) {
+		if ( $user->getId() == 0 && $user_name == '' ) {
 			$loginPage = SpecialPage::getTitleFor( 'Userlogin' );
 			$out->redirect( $loginPage->getLocalURL( 'returnto=Special:CommentIgnoreList' ) );
 			return;
@@ -70,7 +70,7 @@ class CommentIgnoreList extends SpecialPage {
 					$user_id = 0;
 				}
 
-				CommentFunctions::deleteBlock( $user->getID(), $user_id );
+				CommentFunctions::deleteBlock( $user->getId(), $user_id );
 				if ( $user_id && class_exists( 'UserStatsTrack' ) ) {
 					$stats = new UserStatsTrack( $user_id, $user_name );
 					$stats->decStatField( 'comment_ignored' );
@@ -97,7 +97,7 @@ class CommentIgnoreList extends SpecialPage {
 		$res = $dbr->select(
 			'Comments_block',
 			[ 'cb_user_name_blocked', 'cb_date' ],
-			[ 'cb_user_id' => $this->getUser()->getID() ],
+			[ 'cb_user_id' => $this->getUser()->getId() ],
 			__METHOD__,
 			[ 'ORDER BY' => 'cb_user_name' ]
 		);

@@ -337,7 +337,7 @@ class Comment extends ContextSource {
 			'Comment_IP' => $context->getRequest()->getIP(),
 			'Comment_Text' => $text,
 			'Comment_Date' => $commentDate,
-			'Comment_user_id' => $user->getID(),
+			'Comment_user_id' => $user->getId(),
 			'Comment_user_points' => $userPoints,
 			'CommentID' => $id,
 			'Comment_Parent_ID' => $parentID,
@@ -665,7 +665,7 @@ class Comment extends ContextSource {
 		$blockLink = '';
 
 		if (
-			$this->getUser()->getID() != 0 && $this->getUser()->getID() != $this->userID &&
+			$this->getUser()->getId() != 0 && $this->getUser()->getId() != $this->userID &&
 			!( in_array( $this->userID, $blockList ) )
 		) {
 			$blockLink = '<a href="javascript:void(0);" rel="nofollow" class="comments-block-user" data-comments-safe-username="' .
