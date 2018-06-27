@@ -90,5 +90,6 @@
 	"grouppage-commentadmin": "{{doc-group|commentadmin|page}}",
 	"right-comment": "{{doc-right|comment}}",
 	"right-commentadmin": "{{doc-right|commentadmin}}",
-	"right-commentlinks": "{{doc-right|commentlinks}}"
+	"right-commentlinks": "{{doc-right|commentlinks}}",
+	"right-comment-delete-own": "{{doc-right|comment-delete-own}}"
 }

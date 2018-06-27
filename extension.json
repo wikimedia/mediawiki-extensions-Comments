@@ -1,6 +1,6 @@
 {
 	"name": "Comments",
-	"version": "4.4.1",
+	"version": "4.4.2",
 	"author": [
 		"David Pean",
 		"Misza",
@@ -29,7 +29,8 @@
 	"AvailableRights": [
 		"comment",
 		"commentadmin",
-		"commentlinks"
+		"commentlinks",
+		"comment-delete-own"
 	],
 	"SpecialPages": {
 		"CommentIgnoreList": "CommentIgnoreList"
