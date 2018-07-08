@@ -82,7 +82,8 @@ class Comment extends ContextSource {
 	public $userID = 0;
 
 	/**
-	 * @TODO document
+	 * The amount of points the user has; fetched from the user_stats table if
+	 * SocialProfile is installed, otherwise this remains 0
 	 *
 	 * @var int
 	 */
@@ -110,9 +111,9 @@ class Comment extends ContextSource {
 	/**
 	 * Constructor - set the page ID
 	 *
-	 * @param $page CommentsPage: ID number of the current page
+	 * @param CommentsPage $page ID number of the current page
 	 * @param IContextSource|null $context
-	 * @param $data: straight from the DB about the comment
+	 * @param array $data Straight from the DB about the comment
 	 */
 	public function __construct( CommentsPage $page, $context = null, $data ) {
 		$this->page = $page;
@@ -280,8 +281,6 @@ class Comment extends ContextSource {
 	 * @return Comment the added comment
 	 */
 	static function add( $text, CommentsPage $page, User $user, $parentID ) {
-		global $wgCommentsInRecentChanges;
-
 		$dbw = wfGetDB( DB_MASTER );
 		$context = RequestContext::getMain();
 
@@ -376,10 +375,9 @@ class Comment extends ContextSource {
 	/**
 	 * Adds a vote for a comment if the user hasn't voted for said comment yet.
 	 *
-	 * @param $value int: upvote or downvote (1 or -1)
+	 * @param int $value Upvote or downvote (1 or -1)
 	 */
 	function vote( $value ) {
-		global $wgMemc;
 		$dbw = wfGetDB( DB_MASTER );
 
 		if ( $value < -1 ) { // limit to range -1 -> 0 -> 1
@@ -537,9 +535,9 @@ class Comment extends ContextSource {
 	/**
 	 * Show the HTML for this comment and ignore section
 	 *
-	 * @param array $blockList list of users the current user has blocked
-	 * @param array $anonList map of ip addresses to names like anon#1, anon#2
-	 * @return string html
+	 * @param array $blockList List of users the current user has blocked
+	 * @param array $anonList Map of IP addresses to names like anon#1, anon#2
+	 * @return string HTML
 	 */
 	function display( $blockList, $anonList ) {
 		if ( $this->parentID == 0 ) {
@@ -592,10 +590,10 @@ class Comment extends ContextSource {
 	/**
 	 * Show the comment
 	 *
-	 * @param bool $hide if true, comment is returned but hidden (display:none)
-	 * @param $containerClass
-	 * @param $blockList
-	 * @param $anonList
+	 * @param bool $hide If true, comment is returned but hidden (display:none)
+	 * @param string $containerClass
+	 * @param array $blockList
+	 * @param array $anonList
 	 * @return string
 	 */
 	function showComment( $hide = false, $containerClass, $blockList, $anonList ) {
