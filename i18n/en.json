@@ -76,7 +76,7 @@
 	"comments-time-hours": "{{PLURAL:$1|one hour|$1 hours}}",
 	"comments-time-minutes": "{{PLURAL:$1|one minute|$1 minutes}}",
 	"comments-time-seconds": "{{PLURAL:$1|one second|$1 seconds}}",
-	"log-show-hide-comments": "$1 comment log",
+	"logeventslist-comments-log": "Comment log",
 	"group-commentadmin": "Comment administrators",
 	"group-commentadmin-member": "{{GENDER:$1|comment administrator}}",
 	"grouppage-commentadmin": "{{ns:project}}:Comment administrators",

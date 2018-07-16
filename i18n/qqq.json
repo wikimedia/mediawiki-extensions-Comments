@@ -84,7 +84,7 @@
 	"comments-time-hours": "Used as <code>$1</code> in {{msg-mw|Comments-time-ago}}.\n\nParameters:\n* $1 - number of hours\n{{Related|Comments-time}}\n{{Identical|Hour}}",
 	"comments-time-minutes": "Used as the duration in {{msg-mw|Comments-time-ago}}.\n\nParameters:\n* $1 - number of minutes\n{{Related|Comments-time}}\n{{Identical|Minute}}",
 	"comments-time-seconds": "Used as the duration in {{msg-mw|Comments-time-ago}}.\n\nParameters:\n* $1 - number of seconds\n{{Related|Comments-time}}\n{{Identical|Second}}",
-	"log-show-hide-comments": "For [[Special:Log]]. Parameters:\n* $1 - one of {{msg-mw|Show}} or {{msg-mw|Hide}}\n{{Related|Log-show-hide}}",
+	"logeventslist-comments-log": "Comment log option label on [[Special:Log]]",
 	"group-commentadmin": "Shown on [[Special:ListUsers]]. Members of this group can delete other users' comments.\n{{doc-group|commentadmin}}",
 	"group-commentadmin-member": "Member of the Comment Administrators (commentadmin) group, shown on [[Special:ListUsers]].\n{{doc-group|commentadmin|member}}",
 	"grouppage-commentadmin": "{{doc-group|commentadmin|page}}",
