@@ -4,11 +4,12 @@
 			"Jacenty359",
 			"Odie2",
 			"Chrumps",
-			"Woytecr"
+			"Woytecr",
+			"Railfail536"
 		]
 	},
 	"comments-comment": "Komentarz",
-	"comments-desc": "Dodaje parser <code>&lt;comments&gt;</code> (komentarzy), który umożliwia komentowanie na stronach",
+	"comments-desc": "Dodaje tag <code>&lt;comments&gt;</code> (komentarzy), który umożliwia komentowanie na stronach",
 	"comments-db-locked": "<h3>Dodawanie komentarzy</h3>Baza danych jest zablokowana z powodu rutynowej konserwacji. Prosimy spróbować ponownie później!",
 	"comments-voted-label": "Zagłosowało",
 	"comments-loading": "Ładowanie...",
