@@ -86,6 +86,7 @@
 	"comments-time-minutes": "$1 分鍾",
 	"comments-time-seconds": "$1 秒",
 	"log-show-hide-comments": "$1評論日誌",
+	"logeventslist-comments-log": "評論日誌",
 	"group-commentadmin": "評論管理員",
 	"group-commentadmin-member": "{{GENDER:$1|評論管理員}}",
 	"grouppage-commentadmin": "{{ns:project}}:Comment administrators",

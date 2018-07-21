@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"ⵕⴰⵊⵉ"
+			"ⵕⴰⵊⵉ",
+			"Mdb897"
 		]
 	},
 	"comments-comment": "ⴰⵅⴼⴰⵡⴰⵍ",
 	"comments-cancel-reply": "ⵙⵔ",
 	"comments-reply": "ⵔⴰⵔ",
 	"comments-ignore-cancel": "ⵙⵔ",
-	"logentry-comments-delete": "$1 ⵉⴽⴽⵙ ⴰⵅⴼⴰⵡⴰⵍ #$4 ⴷⵉ $3"
+	"logentry-comments-delete": "$1 ⵉⴽⴽⵙ ⴰⵅⴼⴰⵡⴰⵍ #$4 ⴷⵉ $3",
+	"logeventslist-comments-log": "ⴰⵣⵎⵎⴻⵎ ⵉ ⵉⵅⴼⴰⵡⴰⵍⵏ"
 }

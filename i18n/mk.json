@@ -76,6 +76,7 @@
 	"comments-time-minutes": "{{PLURAL:$1|една минута|$1 минути}}",
 	"comments-time-seconds": "{{PLURAL:$1|една секунда|$1 секунди}}",
 	"log-show-hide-comments": "$1 дневник на коментари",
+	"logeventslist-comments-log": "Дневник на коментари",
 	"group-commentadmin": "Администратори на коментари",
 	"group-commentadmin-member": "{{GENDER:$1|администратор на коментари}}",
 	"grouppage-commentadmin": "{{ns:project}}:Администратори на коментари",

@@ -57,6 +57,7 @@
 	"comments-time-minutes": "{{PLURAL:$1|1분|$1분}}",
 	"comments-time-seconds": "{{PLURAL:$1|1초|$1초}}",
 	"log-show-hide-comments": "$1 댓글 기록",
+	"logeventslist-comments-log": "댓글 기록",
 	"group-commentadmin": "댓글 관리자",
 	"group-commentadmin-member": "{{GENDER:$1|댓글 관리자}}",
 	"grouppage-commentadmin": "{{ns:project}}:댓글 관리자",

@@ -6,7 +6,8 @@
 			"Okras",
 			"Ole Yves",
 			"SimonLitt",
-			"Stjn"
+			"Stjn",
+			"Vlad5250"
 		]
 	},
 	"apihelp-commentsubmit-param-commentText": "Текст комментария",
@@ -58,6 +59,7 @@
 	"comments-time-minutes": "{{PLURAL:$1|$1 минуту|$1 минуты|$1 минут}}",
 	"comments-time-seconds": "{{PLURAL:$1|$1 секунду|$1 секунды|$1 секунд}}",
 	"log-show-hide-comments": "$1 комментарий из журнала",
+	"logeventslist-comments-log": "Журнал комментариев",
 	"group-commentadmin": "Модераторы комментариев",
 	"group-commentadmin-member": "{{GENDER:$1|модератор комментариев}}",
 	"grouppage-commentadmin": "{{ns:project}}:Модераторы комментариев",
