@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Stephenwanjau"
+			"Stephenwanjau",
+			"Rance"
 		]
 	},
 	"comments-loading": "Inapakiwa...",
@@ -11,5 +12,6 @@
 	"comments-submit": "Ongeza maoni yako",
 	"comments-delete-link": "Futa maoni",
 	"comments-ignore-cancel": "Ghairi",
-	"log-name-comments": "Kumbukumbu ya maoni"
+	"log-name-comments": "Kumbukumbu ya maoni",
+	"logeventslist-comments-log": "taarifa ya maoni"
 }
