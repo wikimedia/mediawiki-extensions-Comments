@@ -16,5 +16,6 @@
 	"comments-reply": "উত্তর",
 	"comments-score-text": "স্কোর",
 	"comments-ignore-cancel": "বাতিল",
-	"comments-time-ago": "$1 আগে"
+	"comments-time-ago": "$1 আগে",
+	"logeventslist-comments-log": "মন্তব্যের লগ"
 }
