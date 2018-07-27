@@ -79,6 +79,7 @@
 	"comments-time-minutes": "{{PLURAL:$1|en minut|$1 minuter}}",
 	"comments-time-seconds": "{{PLURAL:$1|en sekund|$1 sekunder}}",
 	"log-show-hide-comments": "$1 kommentarlogg",
+	"logeventslist-comments-log": "Kommentarslogg",
 	"group-commentadmin": "Kommentaradministratörer",
 	"group-commentadmin-member": "{{GENDER:$1|kommentaradministratör}}",
 	"grouppage-commentadmin": "{{ns:project}}:Kommentaradministratörer",

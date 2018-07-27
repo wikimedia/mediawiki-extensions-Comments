@@ -80,6 +80,7 @@
 	"comments-time-minutes": "{{PLURAL:$1|דקה|$1 דקות}}",
 	"comments-time-seconds": "{{PLURAL:$1|שנייה|$1 שניות}}",
 	"log-show-hide-comments": "$1 יומן תגובות",
+	"logeventslist-comments-log": "יומן תגובות",
 	"group-commentadmin": "מנהלי תגובות",
 	"group-commentadmin-member": "{{GENDER:$1|מנהל|מנהלת}} תגובות",
 	"grouppage-commentadmin": "{{ns:project}}:מנהל תגובות",
