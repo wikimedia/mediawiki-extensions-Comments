@@ -9,8 +9,6 @@
 		<exclude name="MediaWiki.Commenting.FunctionComment.ParamNameNoMatch" />
 		<exclude name="MediaWiki.Usage.AssignmentInReturn.AssignmentInReturn" />
 		<exclude name="MediaWiki.Usage.ExtendClassUsage.FunctionVarUsage" />
-		<exclude name="MediaWiki.VariableAnalysis.UnusedGlobalVariables.UnusedGlobal$wgCommentsInRecentChanges" />
-		<exclude name="MediaWiki.VariableAnalysis.UnusedGlobalVariables.UnusedGlobal$wgMemc" />
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
 	</rule>
