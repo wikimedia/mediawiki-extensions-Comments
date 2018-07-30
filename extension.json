@@ -1,6 +1,6 @@
 {
 	"name": "Comments",
-	"version": "4.4.1",
+	"version": "4.4.2",
 	"author": [
 		"David Pean",
 		"Misza",
@@ -80,7 +80,11 @@
 	},
 	"ResourceModules": {
 		"ext.comments.css": {
-			"styles": "resources/css/Comments.css"
+			"styles": "resources/css/Comments.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
 		},
 		"ext.comments.js": {
 			"scripts": "resources/js/Comment.js",
@@ -95,6 +99,10 @@
 				"comments-block-warning-anon",
 				"comments-block-warning-user",
 				"comments-delete-warning"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
 			]
 		}
 	},
