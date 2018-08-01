@@ -12,9 +12,10 @@ class DisplayComments {
 	 * @return string HTML
 	 */
 	public static function getParserHandler( $input, $args, $parser ) {
-		global $wgOut, $wgCommentsSortDescending;
+		global $wgCommentsSortDescending;
 
-		$parser->getOutput()->updateCacheExpiry( 0 );
+		$po = $parser->getOutput();
+		$po->updateCacheExpiry( 0 );
 		// If an unclosed <comments> tag is added to a page, the extension will
 		// go to an infinite loop...this protects against that condition.
 		$parser->setHook( 'comments', [ __CLASS__, 'nonDisplayComments' ] );
@@ -25,9 +26,9 @@ class DisplayComments {
 		}
 
 		// Add required CSS & JS via ResourceLoader
-		$wgOut->addModuleStyles( 'ext.comments.css' );
-		$wgOut->addModules( 'ext.comments.js' );
-		$wgOut->addJsConfigVars( [ 'wgCommentsSortDescending' => $wgCommentsSortDescending ] );
+		$po->addModuleStyles( 'ext.comments.css' );
+		$po->addModules( 'ext.comments.js' );
+		$po->addJsConfigVars( [ 'wgCommentsSortDescending' => $wgCommentsSortDescending ] );
 
 		// Parse arguments
 		// The preg_match() lines here are to support the old-style way of
@@ -55,7 +56,14 @@ class DisplayComments {
 			$voting = $args['voting'];
 		}
 
-		$commentsPage = new CommentsPage( $title->getArticleID(), $wgOut->getContext() );
+		// Create a new context to execute the CommentsPage
+		$context = new RequestContext;
+		$context->setTitle( $title );
+		$context->setRequest( new FauxRequest() );
+		$context->setUser( $parser->getUser() );
+		$context->setLanguage( $parser->getTargetLanguage() );
+
+		$commentsPage = new CommentsPage( $title->getArticleID(), $context );
 		$commentsPage->allow = $allow;
 		$commentsPage->setVoting( $voting );
 
