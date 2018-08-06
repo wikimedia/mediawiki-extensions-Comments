@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dr Lotus Black"
+		]
+	},
+	"apihelp-commentsubmit-param-commentText": "မှတ်ချက်စာသား",
+	"comments-comment": "မှတ်ချက်",
+	"comments-cancel-reply": "မလုပ်တော့ပါ",
+	"comments-delete-warning": "ဤမှတ်ချက်အား ဖျက်ရန် သေချာပါသလား",
+	"comments-sort-by-date": "နေ့စွဲအလိုက် စီရန်",
+	"comments-sort-by-score": "ရမှတ်အလိုက် စီရန်",
+	"comments-show-comment-link": "မှတ်ချက်ပြရန်",
+	"comments-ignore-cancel": "မလုပ်တော့ပါ",
+	"comments-time-ago": "$1 အကြာက",
+	"comments-time-months": "{{PLURAL:$1|တစ်လ|$1 လများ}}",
+	"comments-time-days": "{{PLURAL:$1|တစ်ရက်|$1 ရက်များ}}",
+	"comments-time-hours": "{{PLURAL:$1|တစ်နာရီ|$1 နာရီများ}}",
+	"comments-time-minutes": "{{PLURAL:$1|တစ်မိနစ်|$1 မိနစ်များ}}",
+	"comments-time-seconds": "{{PLURAL:$1|တစ်စက္ကန့်|$1 စက္ကန့်များ}}",
+	"group-commentadmin": "မှတ်ချက် အက်ဒမင်",
+	"group-commentadmin-member": "{{GENDER:$1|မှတ်ချက် အက်ဒမင်}}",
+	"grouppage-commentadmin": "{{ns:project}}:မှတ်ချက် အက်ဒမင်များ"
+}

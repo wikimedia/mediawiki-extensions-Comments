@@ -4,7 +4,8 @@
 			"Rancher",
 			"Milicevic01",
 			"Сербијана",
-			"Obsuser"
+			"Obsuser",
+			"BadDog"
 		]
 	},
 	"comments-comment": "Коментар",
@@ -25,14 +26,14 @@
 	"comments-ignore-cancel": "Откажи",
 	"comments-ignore-title": "Списак занемарених коментара",
 	"commentignorelist": "Списак занемарених коментара",
-	"log-name-comments": "Дневник коментара",
-	"log-description-comments": "Ово је дневник коментара.",
+	"log-name-comments": "Евиденција коментара",
+	"log-description-comments": "Ово је евиденција коментара.",
 	"comments-time-ago": "пре $1",
 	"comments-time-days": "{{PLURAL:$1|један дан|$1 дана}}",
 	"comments-time-hours": "{{PLURAL:$1|један сат|$1 сата|$1 сати}}",
 	"comments-time-minutes": "{{PLURAL:$1|један минут|$1 минута}}",
 	"comments-time-seconds": "{{PLURAL:$1|1 секунд|$1 секунда|$1 секунди}}",
-	"log-show-hide-comments": "$1 дневник коментара",
+	"log-show-hide-comments": "$1 евиденција коментара",
 	"group-commentadmin": "Администратори коментара",
 	"group-commentadmin-member": "{{GENDER:$1|администратор|администраторка}} коментара",
 	"grouppage-commentadmin": "{{ns:project}}:Администратори коментара",
