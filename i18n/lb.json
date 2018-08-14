@@ -14,7 +14,7 @@
 	"comments-db-locked": "<h3>Bemierkungen derbäisetzen</h3> D'Datebank ass elo wéinst Maintenanceaarbechte gespaart. Probéiert w. e. g. méi spéit nach eng Kéier.",
 	"comments-voted-label": "Ofgestëmmt",
 	"comments-loading": "Lueden...",
-	"comments-auto-refresher-enable": "Automatesch Aktualisatioun vun de Bemierkungen aschalten",
+	"comments-auto-refresher-enable": "Automatesch Aktualiséierung vun de Bemierkungen aschalten",
 	"comments-auto-refresher-pause": "Automatesch Aktualisatioun vun de Bemierkungen ausschalten",
 	"comments-reply-to": "Äntwert fir {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Ofbriechen",
