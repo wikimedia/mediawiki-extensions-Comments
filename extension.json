@@ -67,7 +67,7 @@
 		"CommentsPage": "includes/CommentsPage.php",
 		"NumberOfComments": "includes/parser/NumberOfComments.php",
 		"DisplayComments": "includes/parser/DisplayComments.php",
-		"CommentFunctions": "/includes/CommentFunctions.php",
+		"CommentFunctions": "includes/CommentFunctions.php",
 		"CommentIgnoreList": "includes/specials/CommentIgnoreList.php",
 		"CommentsLogFormatter": "includes/CommentsLogFormatter.php",
 		"CommentsHooks": "includes/CommentsHooks.php",
