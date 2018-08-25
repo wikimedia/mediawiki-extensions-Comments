@@ -406,7 +406,7 @@ class CommentsPage extends ContextSource {
 
 	/**
 	 * Get this list of anon commenters in the given list of comments,
-	 * and return a mapped array of IP adressess to the the number anon poster
+	 * and return a mapped array of IP adressess to the number anon poster
 	 * (so anon posters can be called Anon#1, Anon#2, etc
 	 *
 	 * @return array
