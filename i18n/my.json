@@ -11,6 +11,7 @@
 	"comments-sort-by-date": "နေ့စွဲအလိုက် စီရန်",
 	"comments-sort-by-score": "ရမှတ်အလိုက် စီရန်",
 	"comments-show-comment-link": "မှတ်ချက်ပြရန်",
+	"comments-permalink": "ပုံသေလိပ်စာ",
 	"comments-ignore-cancel": "မလုပ်တော့ပါ",
 	"comments-time-ago": "$1 အကြာက",
 	"comments-time-months": "{{PLURAL:$1|တစ်လ|$1 လများ}}",
