@@ -37,7 +37,7 @@
 	"comments-delete-link": "댓글 삭제",
 	"comments-anon-name": "익명 사용자",
 	"comments-anon-message": "{{SITENAME}}은(는) <b>모든 댓글</b>을 환영합니다. 익명을 원하지 않으면 <a href=\"$1\">등록</a>하거나 <a href=\"$2\">로그인</a>하세요. 무료입니다.",
-	"comments-links-are-forbidden": "댓글 안의 바깥 링크는 접근 거부입니다!",
+	"comments-links-are-forbidden": "댓글 안의 외부 링크는 금지됩니다!",
 	"comments-is-spam": "제출된 글이 스팸으로 판단됩니다.",
 	"comments-ignore-item": "$3에 <a href=\"$1\">$2</a> <a href=\"$4\">(차단 해제)</a>",
 	"comments-ignore-no-users": "현재 차단된 사용자가 없습니다.",
@@ -63,5 +63,5 @@
 	"grouppage-commentadmin": "{{ns:project}}:댓글 관리자",
 	"right-comment": "댓글 제출",
 	"right-commentadmin": "사용자가 제출한 댓글 관리",
-	"right-commentlinks": "바깥 링크를 사용해 댓글 남기기"
+	"right-commentlinks": "댓글에 외부 링크 사용하기"
 }
