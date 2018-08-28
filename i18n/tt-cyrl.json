@@ -4,5 +4,19 @@
 			"Ильнар"
 		]
 	},
-	"comments-time-ago": "$1 элек"
+	"comments-voted-label": "Тавыш бирде",
+	"comments-loading": "Йөкләү...",
+	"comments-cancel-reply": "Баш тарту",
+	"comments-you": "Сез",
+	"comments-reply": "Җавап бирергә",
+	"comments-score-text": "Билге",
+	"comments-permalink": "Даими сылтама",
+	"comments-ignore-unblock": "Блоктан алу",
+	"comments-ignore-cancel": "Баш тарту",
+	"comments-time-ago": "$1 элек",
+	"comments-time-months": "{{PLURAL:$1|бер ай|$1 ай}}",
+	"comments-time-days": "{{PLURAL:$1|бер көн|$1 көн}}",
+	"comments-time-hours": "{{PLURAL:$1|бер сәгать|$1 сәгать}}",
+	"comments-time-minutes": "{{PLURAL:$1|бер минут|$1 минут}}",
+	"comments-time-seconds": "{{PLURAL:$1|бер секунд|$1 секунд}}"
 }
