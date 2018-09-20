@@ -5,11 +5,10 @@
  * @file
  * @ingroup Extensions
  */
-// @codingStandardsIgnoreFile
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English */
-$specialPageAliases['en'] = array(
-	'CommentIgnoreList' => array( 'CommentIgnoreList' ),
-);
+$specialPageAliases['en'] = [
+	'CommentIgnoreList' => [ 'CommentIgnoreList' ],
+];
