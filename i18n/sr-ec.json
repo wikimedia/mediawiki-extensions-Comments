@@ -26,7 +26,7 @@
 	"comments-ignore-cancel": "Откажи",
 	"comments-ignore-title": "Списак занемарених коментара",
 	"commentignorelist": "Списак занемарених коментара",
-	"log-name-comments": "Евиденција коментара",
+	"log-name-comments": "Дневник коментара",
 	"log-description-comments": "Ово је дневник коментара.",
 	"comments-time-ago": "пре $1",
 	"comments-time-days": "{{PLURAL:$1|један дан|$1 дана}}",
