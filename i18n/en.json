@@ -83,5 +83,6 @@
 	"grouppage-commentadmin": "{{ns:project}}:Comment administrators",
 	"right-comment": "Submit comments",
 	"right-commentadmin": "Administrate user-submitted comments",
-	"right-commentlinks": "Use external links in comments"
+	"right-commentlinks": "Use external links in comments",
+	"right-comment-delete-own": "Delete own comments"
 }

@@ -4,17 +4,21 @@ class CommentDeleteAPI extends ApiBase {
 
 	public function execute() {
 		$user = $this->getUser();
+
+		$comment = Comment::newFromID( $this->getMain()->getVal( 'commentID' ) );
 		// Blocked users cannot delete comments, and neither can unprivileged ones.
 		// Also check for database read-only status
 		if (
 			$user->isBlocked() ||
-			!$user->isAllowed( 'commentadmin' ) ||
+			!(
+				$user->isAllowed( 'commentadmin' ) ||
+				$user->isAllowed( 'comment-delete-own' ) && $comment->isOwner( $user )
+			) ||
 			wfReadOnly()
 		) {
 			return true;
 		}
 
-		$comment = Comment::newFromID( $this->getMain()->getVal( 'commentID' ) );
 		$comment->delete();
 
 		$result = $this->getResult();

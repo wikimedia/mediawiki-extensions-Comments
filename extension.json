@@ -29,7 +29,8 @@
 	"AvailableRights": [
 		"comment",
 		"commentadmin",
-		"commentlinks"
+		"commentlinks",
+		"comment-delete-own"
 	],
 	"SpecialPages": {
 		"CommentIgnoreList": "CommentIgnoreList"

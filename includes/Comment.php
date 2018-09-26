@@ -124,10 +124,10 @@ class Comment extends ContextSource {
 		$this->ip = $data['Comment_IP'];
 		$this->text = $data['Comment_Text'];
 		$this->date = $data['Comment_Date'];
-		$this->userID = $data['Comment_user_id'];
+		$this->userID = (int)$data['Comment_user_id'];
 		$this->userPoints = $data['Comment_user_points'];
-		$this->id = $data['CommentID'];
-		$this->parentID = $data['Comment_Parent_ID'];
+		$this->id = (int)$data['CommentID'];
+		$this->parentID = (int)$data['Comment_Parent_ID'];
 		$this->thread = $data['thread'];
 		$this->timestamp = $data['timestamp'];
 
@@ -225,6 +225,16 @@ class Comment extends ContextSource {
 		$page = new CommentsPage( $row->Comment_Page_ID, $context );
 
 		return new Comment( $page, $context, $data );
+	}
+
+	/**
+	 * Is the given User the owner (author) of this comment?
+	 *
+	 * @param User $user
+	 * @return bool
+	 */
+	public function isOwner( User $user ) {
+		return ( $this->username === $user->getName() && $this->userID === $user->getId() );
 	}
 
 	/**
@@ -629,9 +639,16 @@ class Comment extends ContextSource {
 		}
 
 		// Comment delete button for privileged users
+		$userObj = $this->getUser();
 		$dlt = '';
 
-		if ( $this->getUser()->isAllowed( 'commentadmin' ) ) {
+		if (
+			$userObj->isAllowed( 'commentadmin' ) ||
+			// Allow users to delete their own comments if that feature is enabled in
+			// site configuration
+			// @see https://phabricator.wikimedia.org/T147796
+			$userObj->isAllowed( 'comment-delete-own' ) && $this->isOwner( $userObj )
+		) {
 			$dlt = ' | <span class="c-delete">' .
 				'<a href="javascript:void(0);" rel="nofollow" class="comment-delete-link" data-comment-id="' .
 				$this->id . '">' .
@@ -640,7 +657,7 @@ class Comment extends ContextSource {
 
 		// Reply Link (does not appear on child comments)
 		$replyRow = '';
-		if ( $this->getUser()->isAllowed( 'comment' ) ) {
+		if ( $userObj->isAllowed( 'comment' ) ) {
 			if ( $this->parentID == 0 ) {
 				if ( $replyRow ) {
 					$replyRow .= wfMessage( 'pipe-separator' )->plain();
@@ -663,7 +680,7 @@ class Comment extends ContextSource {
 		$blockLink = '';
 
 		if (
-			$this->getUser()->getId() != 0 && $this->getUser()->getId() != $this->userID &&
+			$userObj->getId() != 0 && $userObj->getId() != $this->userID &&
 			!( in_array( $this->userID, $blockList ) )
 		) {
 			$blockLink = '<a href="javascript:void(0);" rel="nofollow" class="comments-block-user" data-comments-safe-username="' .
