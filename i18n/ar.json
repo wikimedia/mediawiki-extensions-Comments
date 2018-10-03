@@ -83,5 +83,6 @@
 	"grouppage-commentadmin": "{{ns:project}}:إداريو التعليقات",
 	"right-comment": "تقديم التعليقات",
 	"right-commentadmin": "إدارة التعليقات التي أرسلها المستخدم",
-	"right-commentlinks": "استخدام الروابط الخارجية في التعليقات"
+	"right-commentlinks": "استخدام الروابط الخارجية في التعليقات",
+	"right-comment-delete-own": "حذف التعليقات الخاصة"
 }

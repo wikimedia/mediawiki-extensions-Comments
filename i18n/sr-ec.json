@@ -38,5 +38,6 @@
 	"group-commentadmin-member": "{{GENDER:$1|администратор|администраторка}} коментара",
 	"grouppage-commentadmin": "{{ns:project}}:Администратори коментара",
 	"right-comment": "слање коментара",
-	"right-commentadmin": "управљање корисничким коментарима"
+	"right-commentadmin": "управљање корисничким коментарима",
+	"right-comment-delete-own": "брисање сопственох коментара"
 }

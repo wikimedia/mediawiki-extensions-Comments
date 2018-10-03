@@ -75,5 +75,6 @@
 	"grouppage-commentadmin": "{{ns:project}}:Kommentaradministratoren",
 	"right-comment": "Kommentar abgeben",
 	"right-commentadmin": "Benutzerkommentare verwalten",
-	"right-commentlinks": "Weblinks in Kommentaren verwenden"
+	"right-commentlinks": "Weblinks in Kommentaren verwenden",
+	"right-comment-delete-own": "Eigene Kommentare löschen"
 }

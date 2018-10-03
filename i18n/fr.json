@@ -89,5 +89,6 @@
 	"grouppage-commentadmin": "{{ns:project}}:Administrateurs de commentaires",
 	"right-comment": "Publier les commentaires",
 	"right-commentadmin": "Administrer les commentaires soumis par les utilisateurs",
-	"right-commentlinks": "Utiliser les liens externes dans les commentaires"
+	"right-commentlinks": "Utiliser les liens externes dans les commentaires",
+	"right-comment-delete-own": "Supprimer vos propres commentaires"
 }

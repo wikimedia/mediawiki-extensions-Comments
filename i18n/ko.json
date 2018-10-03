@@ -63,5 +63,6 @@
 	"grouppage-commentadmin": "{{ns:project}}:댓글 관리자",
 	"right-comment": "댓글 제출",
 	"right-commentadmin": "사용자가 제출한 댓글 관리",
-	"right-commentlinks": "댓글에 외부 링크 사용하기"
+	"right-commentlinks": "댓글에 외부 링크 사용하기",
+	"right-comment-delete-own": "자신의 댓글 삭제"
 }

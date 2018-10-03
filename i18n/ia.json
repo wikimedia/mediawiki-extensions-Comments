@@ -69,5 +69,6 @@
 	"grouppage-commentadmin": "{{ns:project}}:Administratores de commentos",
 	"right-comment": "Submitter commentos",
 	"right-commentadmin": "Administrar commentos submittite per usatores",
-	"right-commentlinks": "Usar ligamines externe in commentos"
+	"right-commentlinks": "Usar ligamines externe in commentos",
+	"right-comment-delete-own": "Deler le proprie commentos"
 }

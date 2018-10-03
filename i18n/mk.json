@@ -82,5 +82,6 @@
 	"grouppage-commentadmin": "{{ns:project}}:Администратори на коментари",
 	"right-comment": "Поднесување на коментари",
 	"right-commentadmin": "Раководење со кориснички коментари",
-	"right-commentlinks": "Употреба на надворешни врски во коментарите"
+	"right-commentlinks": "Употреба на надворешни врски во коментарите",
+	"right-comment-delete-own": "Бришење на сопствени коментари"
 }

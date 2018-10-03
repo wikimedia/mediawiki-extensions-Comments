@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Tjernobyl",
-			"Sarrus"
+			"Sarrus",
+			"Saederup92"
 		]
 	},
 	"comments-comment": "Kommentar",
@@ -17,5 +18,9 @@
 	"comments-permalink": "Permanent henvisning",
 	"comments-delete-link": "Slet kommentar",
 	"comments-anon-name": "Anonym bruger",
-	"comments-ignore-cancel": "Annuller"
+	"comments-ignore-cancel": "Annuller",
+	"comments-time-days": "{{PLURAL:$1|en dag|$1 dage}}",
+	"comments-time-hours": "{{PLURAL:$1|en time|$1 timer}}",
+	"comments-time-minutes": "{{PLURAL:$1|et minut|$1 minutter}}",
+	"comments-time-seconds": "{{PLURAL:$1|et sekund|$1 sekunder}}"
 }

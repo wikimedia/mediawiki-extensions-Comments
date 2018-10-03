@@ -59,5 +59,6 @@
 	"grouppage-commentadmin": "{{ns:project}}:Amministratori di commenti",
 	"right-comment": "Invia commenti",
 	"right-commentadmin": "Gestisce i commenti inviati dagli utenti",
-	"right-commentlinks": "Usa collegamenti esterni nei commenti"
+	"right-commentlinks": "Usa collegamenti esterni nei commenti",
+	"right-comment-delete-own": "Cancella i propri commenti"
 }

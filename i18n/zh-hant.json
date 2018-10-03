@@ -92,5 +92,6 @@
 	"grouppage-commentadmin": "{{ns:project}}:Comment administrators",
 	"right-comment": "送出評論",
 	"right-commentadmin": "管理使用者送出的評論",
-	"right-commentlinks": "在評論中使用外部連結"
+	"right-commentlinks": "在評論中使用外部連結",
+	"right-comment-delete-own": "刪除自有的評論"
 }

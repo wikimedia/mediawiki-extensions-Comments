@@ -6,7 +6,8 @@
 			"Base",
 			"RLuts",
 			"Ата",
-			"Piramidion"
+			"Piramidion",
+			"Vlad5250"
 		]
 	},
 	"apihelp-commentblock-description": "Commentblock API дозволяє заблокувати користувача за коментарем, за яким його можна відстежити, заповнивши такий параметр: CommentID.",
@@ -86,5 +87,6 @@
 	"grouppage-commentadmin": "{{ns:project}}:Адміністратори коментарів",
 	"right-comment": "робити коментарі",
 	"right-commentadmin": "Адмініструвати надіслані користувачами коментарі",
-	"right-commentlinks": "Вживати зовнішні посилання у коментарях"
+	"right-commentlinks": "Вживати зовнішні посилання у коментарях",
+	"right-comment-delete-own": "вилучення власних коментарів"
 }

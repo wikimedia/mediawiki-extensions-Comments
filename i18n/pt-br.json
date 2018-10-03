@@ -85,5 +85,6 @@
 	"grouppage-commentadmin": "{{ns:project}}:Administradores de comentários",
 	"right-comment": "Enviar comentários",
 	"right-commentadmin": "Administrar comentários enviados por utilizadores",
-	"right-commentlinks": "Usar hiperligações externas em comentários"
+	"right-commentlinks": "Usar hiperligações externas em comentários",
+	"right-comment-delete-own": "Excluir seus próprios comentários"
 }
