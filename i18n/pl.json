@@ -61,5 +61,6 @@
 	"grouppage-commentadmin": "{{ns:project}}:Komentarz administratorów",
 	"right-comment": "Zgłoś komentarze",
 	"right-commentadmin": "Administrowanie wysłanych komentarzy użytkownika",
-	"right-commentlinks": "Używanie linków zewnętrznych w komentarzach"
+	"right-commentlinks": "Używanie linków zewnętrznych w komentarzach",
+	"right-comment-delete-own": "Usuwanie własnych komentarzy"
 }
