@@ -37,14 +37,18 @@ class CommentsHooks {
 		$dbType = $updater->getDB()->getType();
 		// For non-MySQL/MariaDB/SQLite DBMSes, use the appropriately named file
 		if ( !in_array( $dbType, [ 'mysql', 'sqlite' ] ) ) {
-			$filename = "comments.{$dbType}.sql";
+			$comments = "comments.{$dbType}.sql";
+			$comments_vote = "comments_vote.{$dbType}.sql";
+			$comments_block = "comments_block.{$dbType}.sql";
 		} else {
-			$filename = 'comments.sql';
+			$comments = 'comments.sql';
+			$comments_vote = 'comments_vote.sql';
+			$comments_block = 'comments_block.sql';
 		}
 
-		$updater->addExtensionTable( 'Comments', "{$dir}/{$filename}" );
-		$updater->addExtensionTable( 'Comments_Vote', "{$dir}/{$filename}" );
-		$updater->addExtensionTable( 'Comments_block', "{$dir}/{$filename}" );
+		$updater->addExtensionTable( 'Comments', "{$dir}/{$comments}" );
+		$updater->addExtensionTable( 'Comments_Vote', "{$dir}/{$comments_vote}" );
+		$updater->addExtensionTable( 'Comments_block', "{$dir}/{$comments_block}" );
 	}
 
 	/**
