@@ -16,6 +16,7 @@
 	"apihelp-commentlist-description": "Die commentlist-API ruft mehrere Kommentare ab und gibt sie als Liste aus nach dem Ausfüllen der folgenden Parameter: pageID, order, pagerPage und showForm.",
 	"apihelp-commentlist-summary": "Die commentlist-API ruft mehrere Kommentare ab und gibt sie als Liste aus nach dem Ausfüllen der folgenden Parameter: pageID, order, pagerPage und showForm.",
 	"apihelp-commentdelete-param-commentID": "Kennung des Kommentars, der gelöscht werden soll.",
+	"apihelp-commentlatestid-param-pageID": "Kennung der Seite, auf der sich der letzte Kommentar befindet.",
 	"apihelp-commentlist-param-pagerPage": "Kommentarseitenzahl",
 	"apihelp-commentlist-param-showForm": "Zeigt das Kommentarformular",
 	"apihelp-commentsubmit-param-parentID": "Kommentarkennung des übergeordneten Kommentars",
