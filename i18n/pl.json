@@ -5,7 +5,8 @@
 			"Odie2",
 			"Chrumps",
 			"Woytecr",
-			"Railfail536"
+			"Railfail536",
+			"Kpalion"
 		]
 	},
 	"comments-comment": "Komentarz",
@@ -13,8 +14,8 @@
 	"comments-db-locked": "<h3>Dodawanie komentarzy</h3>Baza danych jest zablokowana z powodu rutynowej konserwacji. Prosimy spróbować ponownie później!",
 	"comments-voted-label": "Zagłosowało",
 	"comments-loading": "Ładowanie…",
-	"comments-auto-refresher-enable": "Włącz automatyczne korygowanie komentarzy",
-	"comments-auto-refresher-pause": "Wstrzymaj automatyczne korygowanie komentarzy",
+	"comments-auto-refresher-enable": "Włącz automatyczne odświeżanie komentarzy",
+	"comments-auto-refresher-pause": "Wstrzymaj automatyczne odświeżanie komentarzy",
 	"comments-reply-to": "Odpowiedz {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Anuluj",
 	"comments-block-warning-anon": "Naprawdę chcesz ciągle ignorować komentarze od tego anonimowego użytkownika (adres IP)?",
