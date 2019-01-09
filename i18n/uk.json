@@ -82,6 +82,7 @@
 	"comments-time-minutes": "$1 {{PLURAL:$1|хвилину|хвилини|хвилин}}",
 	"comments-time-seconds": "$1 {{PLURAL:$1|секунду|секунди|секунд}}",
 	"log-show-hide-comments": "$1 журнал коментарів",
+	"logeventslist-comments-log": "Журнал коментарів",
 	"group-commentadmin": "Адміністратор коментарів",
 	"group-commentadmin-member": "{{GENDER:$1|адміністратор коментарів|адміністраторка коментрарів}}",
 	"grouppage-commentadmin": "{{ns:project}}:Адміністратори коментарів",
