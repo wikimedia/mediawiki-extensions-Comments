@@ -26,5 +26,7 @@
 	"comments-ignore-unblock": "bloqi hewad",
 	"comments-ignore-cancel": "Bıtexelne",
 	"log-name-comments": "Qeyda vatışan",
-	"comments-time-ago": "Verdê $1"
+	"comments-time-ago": "Verdê $1",
+	"comments-time-days": "{{PLURAL:$1|yew roce|$1 roci}}",
+	"comments-time-hours": "{{PLURAL:$1|yew saete|$1 saeti}}"
 }
