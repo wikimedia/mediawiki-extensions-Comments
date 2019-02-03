@@ -21,6 +21,7 @@
 	"apihelp-commentlist-param-showForm": "Zeigt das Kommentarformular",
 	"apihelp-commentsubmit-param-parentID": "Kommentarkennung des übergeordneten Kommentars",
 	"apihelp-commentsubmit-param-commentText": "Kommentartext",
+	"apihelp-commentvote-param-commentID": "Kennung des Kommentars, für den abgestimmt wurde.",
 	"apihelp-commentvote-param-voteValue": "Abstimmungswert für den Kommentar",
 	"comments-comment": "Kommentar",
 	"comments-desc": "Ergänzt die Parsererweiterung <code>&lt;comments&gt;</code> zum Kommentieren von Seiten",
