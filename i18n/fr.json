@@ -8,7 +8,8 @@
 			"Tuxxic",
 			"Mattho69",
 			"Wladek92",
-			"Urhixidur"
+			"Urhixidur",
+			"Fitoschido"
 		]
 	},
 	"apihelp-commentblock-description": "L'API commentblock permet de bloquer un utilisateur à partir du commentaire dont elle est issue en fournissant les paramètres suivants: CommentID.",
@@ -45,7 +46,7 @@
 	"comments-reply-to": "Répondre à {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Annuler",
 	"comments-block-warning-anon": "Êtes-vous sûr de vouloir ignorer de façon permanente tous les commentaires de cet utilisateur anonyme (via son adresse IP)?",
-	"comments-block-warning-user": "Êtes-vous sûr de vouloir ignorer de façon permanente tous les commentaires de l’utilisateur $1?",
+	"comments-block-warning-user": "Êtes-vous sûr de vouloir ignorer de façon permanente tous les commentaires de l’{{GENDER:$1|utilisateur|utilisatrice}} $1?",
 	"comments-delete-warning": "Êtes-vous sûr de vouloir supprimer ce commentaire?",
 	"comments-sort-by-date": "Trier par date",
 	"comments-sort-by-score": "Trier par pointage",
