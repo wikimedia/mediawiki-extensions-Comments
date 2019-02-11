@@ -516,11 +516,16 @@ class Comment extends ContextSource {
 				'" data-voting="' . $this->page->voting . '" href="javascript:void(0);">';
 		} else {
 			$login = SpecialPage::getTitleFor( 'Userlogin' ); // Anonymous users need to log in before they can vote
-			$returnTo = $this->page->title->getPrefixedDBkey(); // Determine a sane returnto URL parameter
+			$urlParams = [];
+			// @todo FIXME: *when* and *why* is this null?
+			if ( $this->page->title instanceof Title ) {
+				$returnTo = $this->page->title->getPrefixedDBkey(); // Determine a sane returnto URL parameter
+				$urlParams = [ 'returnto' => $returnTo ];
+			}
 
 			$voteLink .=
 				"<a href=\"" .
-				htmlspecialchars( $login->getLocalURL( [ 'returnto' => $returnTo ] ) ) .
+				htmlspecialchars( $login->getLocalURL( $urlParams ) ) .
 				"\" rel=\"nofollow\">";
 		}
 
