@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Dj",
-			"Wolf Rex"
+			"Wolf Rex",
+			"R-Joe"
 		]
 	},
 	"comments-comment": "Megjegyzés",
@@ -12,7 +13,7 @@
 	"comments-loading": "Betöltés…",
 	"comments-auto-refresher-enable": "Automatikus megjegyzés frissítő engedélyezése",
 	"comments-auto-refresher-pause": "Automatikus megjegyzés frissítő felfüggesztése",
-	"comments-reply-to": "Válasz",
+	"comments-reply-to": "Válasz {{GENDER:$2|$1}} felé",
 	"comments-cancel-reply": "Mégse",
 	"comments-block-warning-anon": "Biztos, hogy véglegesen figyelmen kívül hagyod ezen névtelen szerkesztő valamennyi megjegyzéseit (az IP-címe alapján)?",
 	"comments-block-warning-user": "Biztos, hogy véglegesen figyelmen kívül hagyod $1 valamennyi megjegyzését?",
