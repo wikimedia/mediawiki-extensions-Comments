@@ -81,8 +81,12 @@
 	"group-commentadmin": "Comment administrators",
 	"group-commentadmin-member": "{{GENDER:$1|comment administrator}}",
 	"grouppage-commentadmin": "{{ns:project}}:Comment administrators",
+	"action-comment": "submit comments",
 	"right-comment": "Submit comments",
+	"action-commentadmin": "administrate user-submitted comments",
 	"right-commentadmin": "Administrate user-submitted comments",
+	"action-commentlinks": "use external links in comments",
 	"right-commentlinks": "Use external links in comments",
+	"action-comment-delete-own": "delete own comments",
 	"right-comment-delete-own": "Delete own comments"
 }

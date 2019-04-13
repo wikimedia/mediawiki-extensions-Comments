@@ -89,8 +89,12 @@
 	"group-commentadmin": "Shown on [[Special:ListUsers]]. Members of this group can delete other users' comments.\n{{doc-group|commentadmin}}",
 	"group-commentadmin-member": "Member of the Comment Administrators (commentadmin) group, shown on [[Special:ListUsers]].\n{{doc-group|commentadmin|member}}",
 	"grouppage-commentadmin": "{{doc-group|commentadmin|page}}",
+	"action-comment": "{{doc-action|comment}}",
 	"right-comment": "{{doc-right|comment}}",
+	"action-commentadmin": "{{doc-action|commentadmin}}",
 	"right-commentadmin": "{{doc-right|commentadmin}}",
+	"action-commentlinks": "{{doc-action|commentlinks}}",
 	"right-commentlinks": "{{doc-right|commentlinks}}",
+	"action-comment-delete-own": "{{doc-action|comment-delete-own}}",
 	"right-comment-delete-own": "{{doc-right|comment-delete-own}}"
 }
