@@ -79,8 +79,12 @@
 	"group-commentadmin": "Kommentaradministratoren",
 	"group-commentadmin-member": "{{GENDER:$1|Kommentaradministrator|Kommentaradministratorin}}",
 	"grouppage-commentadmin": "{{ns:project}}:Kommentaradministratoren",
+	"action-comment": "Kommentare abzugeben",
 	"right-comment": "Kommentar abgeben",
+	"action-commentadmin": "Benutzerkommentare zu verwalten",
 	"right-commentadmin": "Benutzerkommentare verwalten",
+	"action-commentlinks": "Weblinks in Kommentaren zu verwenden",
 	"right-commentlinks": "Weblinks in Kommentaren verwenden",
+	"action-comment-delete-own": "eigene Kommentare zu löschen",
 	"right-comment-delete-own": "Eigene Kommentare löschen"
 }
