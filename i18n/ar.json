@@ -81,8 +81,12 @@
 	"group-commentadmin": "إداريو التعليقات",
 	"group-commentadmin-member": "{{GENDER:$1|إداري تعليقات|إدارية تعليقات}}",
 	"grouppage-commentadmin": "{{ns:project}}:إداريو التعليقات",
+	"action-comment": "تقديم التعليقات",
 	"right-comment": "تقديم التعليقات",
+	"action-commentadmin": "إدارة التعليقات التي أرسلها المستخدم",
 	"right-commentadmin": "إدارة التعليقات التي أرسلها المستخدم",
+	"action-commentlinks": "استخدام الروابط الخارجية في التعليقات",
 	"right-commentlinks": "استخدام الروابط الخارجية في التعليقات",
+	"action-comment-delete-own": "حذف التعليقات الخاصة",
 	"right-comment-delete-own": "حذف التعليقات الخاصة"
 }

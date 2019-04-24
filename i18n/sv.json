@@ -85,6 +85,8 @@
 	"grouppage-commentadmin": "{{ns:project}}:Kommentaradministratörer",
 	"right-comment": "Skicka kommentarer",
 	"right-commentadmin": "Administrera kommentarer som användare har skickat",
+	"action-commentlinks": "använda externa länkar i kommentarer",
 	"right-commentlinks": "Använd externa länkar i kommentarer",
+	"action-comment-delete-own": "radera egna kommentarer",
 	"right-comment-delete-own": "Radera egna kommentarer"
 }

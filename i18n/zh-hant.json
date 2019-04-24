@@ -90,8 +90,12 @@
 	"group-commentadmin": "評論管理員",
 	"group-commentadmin-member": "{{GENDER:$1|評論管理員}}",
 	"grouppage-commentadmin": "{{ns:project}}:Comment administrators",
+	"action-comment": "送出評論",
 	"right-comment": "送出評論",
+	"action-commentadmin": "管理使用者送出的評論",
 	"right-commentadmin": "管理使用者送出的評論",
+	"action-commentlinks": "在評論中使用外部連結",
 	"right-commentlinks": "在評論中使用外部連結",
+	"action-comment-delete-own": "刪除擁有的評論",
 	"right-comment-delete-own": "刪除自有的評論"
 }

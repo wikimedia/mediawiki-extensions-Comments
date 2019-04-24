@@ -61,8 +61,12 @@
 	"group-commentadmin": "Komentarz administratorów",
 	"group-commentadmin-member": "{{GENDER:$1|komentarz administratora}}",
 	"grouppage-commentadmin": "{{ns:project}}:Komentarz administratorów",
+	"action-comment": "publikowania komentarzy",
 	"right-comment": "Publikowanie komentarzy",
+	"action-commentadmin": "administrowania komentarzy opublikowanych przez użytkownika",
 	"right-commentadmin": "Administrowanie komentarzy opublikowanych przez użytkownika",
+	"action-commentlinks": "używania linków zewnętrznych w komentarzach",
 	"right-commentlinks": "Używanie linków zewnętrznych w komentarzach",
+	"action-comment-delete-own": "usuwania własnych komentarzy",
 	"right-comment-delete-own": "Usuwanie własnych komentarzy"
 }

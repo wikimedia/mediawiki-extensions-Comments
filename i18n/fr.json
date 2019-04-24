@@ -88,8 +88,12 @@
 	"group-commentadmin": "Administrateurs de commentaires",
 	"group-commentadmin-member": "{{GENDER:$1|administrateur de commentaires|administratrice de commentaires}}",
 	"grouppage-commentadmin": "{{ns:project}}:Administrateurs de commentaires",
+	"action-comment": "soumettre les commentaires",
 	"right-comment": "Publier les commentaires",
+	"action-commentadmin": "administrer les commentaires soumis par l’utilisateur",
 	"right-commentadmin": "Administrer les commentaires soumis par les utilisateurs",
+	"action-commentlinks": "utiliser des liens externes dans les commentaires",
 	"right-commentlinks": "Utiliser les liens externes dans les commentaires",
+	"action-comment-delete-own": "supprimer vos propres commentaires",
 	"right-comment-delete-own": "Supprimer vos propres commentaires"
 }
