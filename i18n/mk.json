@@ -81,8 +81,12 @@
 	"group-commentadmin": "Администратори на коментари",
 	"group-commentadmin-member": "{{GENDER:$1|администратор на коментари}}",
 	"grouppage-commentadmin": "{{ns:project}}:Администратори на коментари",
+	"action-comment": "поднесување на коментари",
 	"right-comment": "Поднесување на коментари",
+	"action-commentadmin": "раководење со кориснички коментари",
 	"right-commentadmin": "Раководење со кориснички коментари",
+	"action-commentlinks": "употреба на надворешни врски во коментарите",
 	"right-commentlinks": "Употреба на надворешни врски во коментарите",
+	"action-comment-delete-own": "бришење на сопствени коментари",
 	"right-comment-delete-own": "Бришење на сопствени коментари"
 }

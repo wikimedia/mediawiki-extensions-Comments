@@ -84,8 +84,12 @@
 	"group-commentadmin": "Administradores de comentários",
 	"group-commentadmin-member": "{{GENDER:$1|administrador|administradora}} de comentários",
 	"grouppage-commentadmin": "{{ns:project}}:Administradores de comentários",
+	"action-comment": "enviar comentários",
 	"right-comment": "Enviar comentários",
+	"action-commentadmin": "administrar comentários enviados por utilizadores",
 	"right-commentadmin": "Administrar comentários enviados por utilizadores",
+	"action-commentlinks": "usar hiperligações externas em comentários",
 	"right-commentlinks": "Usar hiperligações externas em comentários",
-	"right-comment-delete-own": "Eliminar comentários próprios"
+	"action-comment-delete-own": "eliminar comentários do próprio",
+	"right-comment-delete-own": "Eliminar comentários do próprio"
 }
