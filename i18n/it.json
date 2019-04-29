@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Darth Kule"
+			"Darth Kule",
+			"Senpremì"
 		]
 	},
 	"comments-comment": "Commento",
@@ -57,8 +58,12 @@
 	"group-commentadmin": "Amministratori dei commenti",
 	"group-commentadmin-member": "{{GENDER:$1|amministratore|amministratrice|amministratore/trice}} di commenti",
 	"grouppage-commentadmin": "{{ns:project}}:Amministratori di commenti",
+	"action-comment": "inviare commenti",
 	"right-comment": "Invia commenti",
+	"action-commentadmin": "amministrare i commenti inseriti dagli utenti",
 	"right-commentadmin": "Gestisce i commenti inviati dagli utenti",
+	"action-commentlinks": "usare collegamenti esterni nei commenti",
 	"right-commentlinks": "Usa collegamenti esterni nei commenti",
+	"action-comment-delete-own": "cancellare i tuoi commenti",
 	"right-comment-delete-own": "Cancella i propri commenti"
 }
