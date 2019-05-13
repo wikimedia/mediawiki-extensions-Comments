@@ -30,7 +30,7 @@
 	"comments-ignore-unblock": "నిరోధాన్ని ఎత్తివేయి",
 	"comments-ignore-cancel": "రద్దుచేయి",
 	"log-name-comments": "వ్యాఖ్యల చిట్టా",
-	"log-description-comments": "ఇది వ్యాఖ్యల యొక్క చిట్టా.",
+	"log-description-comments": "ఇది వ్యాఖ్యల చిట్టా.",
 	"comments-time-ago": "$1 క్రితం",
 	"comments-time-months": "{{PLURAL:$1|ఒక నెల|$1 నెలల}}",
 	"comments-time-days": "{{PLURAL:$1|ఒక రోజు|$1 రోజుల}}",
