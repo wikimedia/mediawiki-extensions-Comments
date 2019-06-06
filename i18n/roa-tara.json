@@ -4,6 +4,8 @@
 			"Joetaras"
 		]
 	},
+	"apihelp-commentblock-param-commentID": "ID d'u commende de quidde de l'utende ca ha state bloccate",
+	"apihelp-commentdelete-param-commentID": "ID d'u commende de quidde da scangellà",
 	"apihelp-commentlist-param-pagerPage": "Numere de pàgene de le commende",
 	"apihelp-commentlist-param-showForm": "Fà 'ndrucà 'u module de le commende",
 	"apihelp-commentsubmit-param-commentText": "Teste d'u commende",
