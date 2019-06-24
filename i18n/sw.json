@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Stephenwanjau",
-			"Rance"
+			"Rance",
+			"Yasen igra"
 		]
 	},
 	"comments-loading": "Inapakiwa...",
@@ -13,5 +14,6 @@
 	"comments-delete-link": "Futa maoni",
 	"comments-ignore-cancel": "Ghairi",
 	"log-name-comments": "Kumbukumbu ya maoni",
+	"comments-time-days": "{{PLURAL:$1|siku moja|siku $1}}",
 	"logeventslist-comments-log": "taarifa ya maoni"
 }
