@@ -5,7 +5,7 @@ CREATE TABLE /*_*/Comments (
   Comment_user_id int(11) NOT NULL default 0,
   Comment_Username varchar(200) NOT NULL default '',
   Comment_Text text NOT NULL,
-  Comment_Date datetime NOT NULL default '0000-00-00 00:00:00',
+  Comment_Date datetime NOT NULL default '1970-01-01 00:00:01',
   Comment_Parent_ID int(11) NOT NULL default 0,
   Comment_IP varchar(45) NOT NULL default ''
 ) /*$wgDBTableOptions*/;
