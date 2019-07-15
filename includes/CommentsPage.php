@@ -153,6 +153,84 @@ class CommentsPage extends ContextSource {
 		if ( $voting == 'MINUS' ) {
 			$this->allowPlus = false;
 		}
+
+		$existingValue = $this->getVoting();
+		$pageId = $this->id;
+		// $pageId is 0 by default and thus also 0 when _creating_ a new page
+		// We don't want any junk entries with pp_page = 0 get inserted into
+		// the DB, hence why we're using a DeferredUpdate here
+		if ( $voting !== '' && $existingValue !== $voting && $pageId > 0 ) {
+			$caller = __METHOD__;
+			DeferredUpdates::addCallableUpdate( function () use ( $pageId, $voting ) {
+				$dbw = wfGetDB( DB_MASTER );
+				$dbw->upsert(
+					'page_props',
+					[
+						'pp_page' => $pageId,
+						'pp_propname' => 'comments-voting'
+					],
+					[],
+					[
+						'pp_value' => $voting
+					],
+					$caller
+				);
+			} );
+		}
+	}
+
+	/**
+	 * Get voting info about the current page, i.e. are upvotes enabled?
+	 * What about downvotes?
+	 *
+	 * @return string 'OFF' (if voting is disabled entirely), 'PLUS' if only
+	 *  upvotes are allowed, 'MINUS' if only downvotes are allowed
+	 */
+	function getVoting() {
+		$dbr = wfGetDB( DB_REPLICA );
+		$voting = $dbr->selectField(
+			'page_props',
+			'pp_value',
+			[
+				'pp_page' => $this->id,
+				'pp_propname' => 'comments-voting'
+			],
+			__METHOD__
+		);
+		return $voting;
+	}
+
+	/**
+	 * Is the given type of votes (upvotes or downvotes) enabled for the current page?
+	 *
+	 * @param string $voteType 'up' or 'down'
+	 * @return bool
+	 */
+	function isVoteEnabled( $voteType = 'up' ) {
+		$voting = $this->getVoting();
+		if ( $voting == 'OFF' ) {
+			// All votes are disabled for the comments on the current page
+			return false;
+		}
+		if ( $voting == 'PLUS' ) {
+			// Downvotes are disabled
+			if ( $voteType === 'up' ) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		if ( $voting == 'MINUS' ) {
+			// Upvotes are disabled
+			if ( $voteType === 'down' ) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		// We should never hit this, but just in case if we do, make sure to
+		// return _something_...
+		return true;
 	}
 
 	/**

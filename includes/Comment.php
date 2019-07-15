@@ -752,7 +752,7 @@ class Comment extends ContextSource {
 	function getScoreHTML() {
 		$output = '';
 
-		if ( $this->page->allowMinus == true || $this->page->allowPlus == true ) {
+		if ( $this->page->isVoteEnabled( 'down' ) || $this->page->isVoteEnabled( 'up' ) ) {
 			$output .= '<span class="c-score-title">' .
 				wfMessage( 'comments-score-text' )->plain() .
 				" <span id=\"Comment{$this->id}\">{$this->currentScore}</span></span>";
@@ -762,11 +762,11 @@ class Comment extends ContextSource {
 				// You can only vote for other people's comments, not for your own
 				if ( $this->getUser()->getName() != $this->username ) {
 					$output .= "<span id=\"CommentBtn{$this->id}\">";
-					if ( $this->page->allowPlus == true ) {
+					if ( $this->page->isVoteEnabled( 'up' ) ) {
 						$output .= $this->getVoteLink( 1 );
 					}
 
-					if ( $this->page->allowMinus == true ) {
+					if ( $this->page->isVoteEnabled( 'down' ) ) {
 						$output .= $this->getVoteLink( -1 );
 					}
 					$output .= '</span>';
