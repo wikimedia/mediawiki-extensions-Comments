@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Geopoet"
+			"Geopoet",
+			"Brazal.dang"
 		]
 	},
 	"comments-comment": "Komento",
@@ -11,7 +12,7 @@
 	"comments-loading": "Ikinakarga...",
 	"comments-auto-refresher-enable": "Paganahon an awtomatikong pagpanumpayan nin komento",
 	"comments-auto-refresher-pause": "Iuntok nguna an awtomatikong pagpanumpayan nin komento",
-	"comments-reply-to": "Magsimbag sa",
+	"comments-reply-to": "Magsimbag sa {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Kanselaron",
 	"comments-block-warning-anon": "Segurado ka daw na muya mo na permanenteng pabayaan an gabos na mga komento na gikan sa dae pa nabibistong paragamit na ini (sa paagi kan saiyang estada nin IP)?",
 	"comments-block-warning-user": "Segurado ka daw na muya mo na permanenteng pabayaan an gabos na mga komento na gikan sa dae pa nabibistong paragamit na si $1?",
