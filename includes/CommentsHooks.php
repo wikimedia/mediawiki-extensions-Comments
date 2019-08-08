@@ -26,6 +26,41 @@ class CommentsHooks {
 	}
 
 	/**
+	 * For the Echo extension: register our new presentation model with Echo so
+	 * Echo knows how it should display our notifications in it.
+	 *
+	 * @param array $notifications Echo notifications
+	 * @param array $notificationCategories Echo notification categories
+	 * @param array $icons Icon details
+	 */
+	public static function onBeforeCreateEchoEvent( &$notifications, &$notificationCategories, &$icons ) {
+		$notifications['mention-comment'] = [
+			'presentation-model' => 'EchoMentionCommentPresentationModel'
+		];
+		$notificationCategories['mention-comment'] = [
+			'priority' => 4,
+			'tooltip' => 'echo-pref-tooltip-mention-comment',
+		];
+
+		$notifications['mention-comment'] = [
+			'category' => 'mention',
+			'group' => 'interactive',
+			'section' => 'alert',
+			'presentation-model' => 'EchoMentionCommentPresentationModel',
+			'user-locators' => [
+				[
+					'EchoUserLocator::locateFromEventExtra',
+					[
+						'mentioned-users'
+					]
+				]
+			],
+			// @todo FIXME: I've no clue if this is still actually used/needed...
+			'bundle' => [ 'web' => true, 'email' => true ],
+		];
+	}
+
+	/**
 	 * Adds the three new required database tables into the database when the
 	 * user runs /maintenance/update.php (the core database updater script).
 	 *
