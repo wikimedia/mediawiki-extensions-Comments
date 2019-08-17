@@ -3,11 +3,12 @@
 		"authors": [
 			"Dj",
 			"Wolf Rex",
-			"R-Joe"
+			"R-Joe",
+			"Bináris"
 		]
 	},
 	"comments-comment": "Megjegyzés",
-	"comments-desc": "Hozzáadja a <code>&lt;comments&gt;</code> tag-et, és lehetőséget biztosít megjegyzéseket fűzni a lapokhoz",
+	"comments-desc": "Hozzáadja a <code>&lt;comments&gt;</code> taget, és lehetőséget biztosít, hogy megjegyzéseket fűzzünk a lapokhoz",
 	"comments-db-locked": "<h3>Megjegyzések hozzáadása</h3>Az adatbázis jelenleg rutin karbantartás miatt zárolt, amely után ismét normál állapotba került. Kérlek próbáld meg később!",
 	"comments-voted-label": "Szavazott",
 	"comments-loading": "Betöltés…",
