@@ -4,7 +4,8 @@
 			"Jopparn",
 			"Tobulos1",
 			"WikiPhoenix",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Skalman"
 		]
 	},
 	"apihelp-commentblock-description": "API:et commentblock gör det möjligt att blockera en användare från kommentaren den kommer ifrån efter att följande parametrar fylls i: CommentID",
@@ -83,7 +84,9 @@
 	"group-commentadmin": "Kommentaradministratörer",
 	"group-commentadmin-member": "{{GENDER:$1|kommentaradministratör}}",
 	"grouppage-commentadmin": "{{ns:project}}:Kommentaradministratörer",
+	"action-comment": "skicka kommentarer",
 	"right-comment": "Skicka kommentarer",
+	"action-commentadmin": "administrera kommentarer från användare",
 	"right-commentadmin": "Administrera kommentarer som användare har skickat",
 	"action-commentlinks": "använda externa länkar i kommentarer",
 	"right-commentlinks": "Använd externa länkar i kommentarer",
