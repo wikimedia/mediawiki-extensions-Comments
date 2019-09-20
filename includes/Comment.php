@@ -357,9 +357,190 @@ class Comment extends ContextSource {
 		$page = new CommentsPage( $page->id, $context );
 		$comment = new Comment( $page, $context, $data );
 
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'Echo' ) ) {
+			global $wgEchoMentionOnChanges;
+			if ( !$wgEchoMentionOnChanges ) {
+				return;
+			}
+			// Modified copypasta of EchoDiscussionParser#generateEventsForRevision with less Revision-ism!
+			// (Awful pun is awful, sorry about that.)
+			// EchoDiscussionParser#getChangeInterpretationForRevision is *way*, way too Revision-ist for
+			// our tastes. DO NOT WANT!
+			$title = Title::newFromId( $page->id );
+
+			// EchoDiscussionParser#getUserLinks is private, because of course it is.
+			// Here we go once again...
+			$getUserLinks = function ( $content, Title $title ) {
+				$output = EchoDiscussionParser::parseNonEditWikitext( $content, new Article( $title ) );
+				$links = $output->getLinks();
+
+				if ( !isset( $links[NS_USER] ) || !is_array( $links[NS_USER] ) ) {
+					return false;
+				}
+
+				return $links[NS_USER];
+			};
+
+			// stolen from EchoDiscussionParser#generateEventsForRevision
+			$action = [];
+			$action['old_content'] = '';
+			$action['new_content'] = $text;
+			$userLinks = array_diff_key(
+				$getUserLinks( $action['new_content'], $title ) ?: [],
+				$getUserLinks( $action['old_content'], $title ) ?: []
+			);
+			$header = $text;
+
+			self::generateMentionEvents(
+				$header, $userLinks, $action['new_content'], $title, $user,
+				$comment, $commentId
+			);
+		}
+
 		Hooks::run( 'Comment::add', [ $comment, $commentId, $comment->page->id ] );
 
 		return $comment;
+	}
+
+	/**
+	 * For an action taken on a talk page, notify users whose user pages are linked.
+	 *
+	 * @note Literally stolen from Echo's EchoDiscussionParser (@REL1_33) and
+	 * modified to be less Revision-centric.
+	 *
+	 * @param string $header The subject line for the discussion.
+	 * @param int[] $userLinks
+	 * @param string $content The content of the post, as a wikitext string.
+	 * @param Title $title
+	 * @param User $agent The user who made the comment.
+	 * @param Comment $comment
+	 * @param int $commentId
+	 */
+	public static function generateMentionEvents(
+		$header,
+		$userLinks,
+		$content,
+		Title $title,
+		// Revision $revision,
+		User $agent,
+		Comment $comment,
+		$commentId
+	) {
+		global $wgEchoMaxMentionsCount, $wgEchoMentionStatusNotifications;
+
+		// $title = $revision->getTitle();
+		if ( !$title ) {
+			return;
+		}
+		$revId = $title->getLatestRevID();
+		// Comments are often short. These Echo-isms mutilate $content into an empty string.
+		// We don't want that to happen.
+		// $content = EchoDiscussionParser::stripHeader( $content );
+		// $content = EchoDiscussionParser::stripSignature( $content, $title );
+		if ( !$userLinks ) {
+			return;
+		}
+
+		// WHY IS EVERYTHING PRIVATE?! WTF.
+		$r = new ReflectionMethod( 'EchoDiscussionParser', 'getUserMentions' );
+		$r->setAccessible( true );
+		$userMentions = $r->invoke( $r, $title, $agent->getId(), $userLinks );
+		// $userMentions = EchoDiscussionParser::getUserMentions( $title, $agent->getId(), $userLinks );
+		// $overallMentionsCount = EchoDiscussionParser::getOverallUserMentionsCount( $userMentions );
+		$overallMentionsCount = count( $userMentions, COUNT_RECURSIVE ) - count( $userMentions );
+		if ( $overallMentionsCount === 0 ) {
+			return;
+		}
+
+		$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
+
+		if ( $overallMentionsCount > $wgEchoMaxMentionsCount ) {
+			if ( $wgEchoMentionStatusNotifications ) {
+				EchoEvent::create( [
+					'type' => 'mention-failure-too-many',
+					'title' => $title,
+					'extra' => [
+						'max-mentions' => $wgEchoMaxMentionsCount,
+						'section-title' => $header,
+						'comment-id' => $commentId, // added
+						'notifyAgent' => true
+					],
+					'agent' => $agent,
+				] );
+				$stats->increment( 'echo.event.mention.notification.failure-too-many' );
+			}
+			return;
+		}
+
+		if ( $userMentions['validMentions'] ) {
+			EchoEvent::create( [
+				'type' => 'mention-comment',
+				'title' => $title,
+				'extra' => [
+					'content' => $content,
+					'section-title' => $header,
+					'revid' => $revId,
+					'comment-id' => $commentId, // added
+					'mentioned-users' => $userMentions['validMentions'],
+				],
+				'agent' => $agent,
+			] );
+		}
+
+		if ( $wgEchoMentionStatusNotifications ) {
+			// TODO batch?
+			foreach ( $userMentions['validMentions'] as $mentionedUserId ) {
+				EchoEvent::create( [
+					'type' => 'mention-success',
+					'title' => $title,
+					'extra' => [
+						'subject-name' => User::newFromId( $mentionedUserId )->getName(),
+						'section-title' => $header,
+						'revid' => $revId,
+						'comment-id' => $commentId, // added
+						'notifyAgent' => true
+					],
+					'agent' => $agent,
+				] );
+				$stats->increment( 'echo.event.mention.notification.success' );
+			}
+
+			// TODO batch?
+			foreach ( $userMentions['anonymousUsers'] as $anonymousUser ) {
+				EchoEvent::create( [
+					'type' => 'mention-failure',
+					'title' => $title,
+					'extra' => [
+						'failure-type' => 'user-anonymous',
+						'subject-name' => $anonymousUser,
+						'section-title' => $header,
+						'revid' => $revId,
+						'comment-id' => $commentId, // added
+						'notifyAgent' => true
+					],
+					'agent' => $agent,
+				] );
+				$stats->increment( 'echo.event.mention.notification.failure-user-anonymous' );
+			}
+
+			// TODO batch?
+			foreach ( $userMentions['unknownUsers'] as $unknownUser ) {
+				EchoEvent::create( [
+					'type' => 'mention-failure',
+					'title' => $title,
+					'extra' => [
+						'failure-type' => 'user-unknown',
+						'subject-name' => $unknownUser,
+						'section-title' => $header,
+						'revid' => $revId,
+						'comment-id' => $commentId, // added
+						'notifyAgent' => true
+					],
+					'agent' => $agent,
+				] );
+				$stats->increment( 'echo.event.mention.notification.failure-user-unknown' );
+			}
+		}
 	}
 
 	/**
