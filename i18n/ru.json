@@ -7,7 +7,8 @@
 			"Ole Yves",
 			"SimonLitt",
 			"Stjn",
-			"Vlad5250"
+			"Vlad5250",
+			"Katunchik"
 		]
 	},
 	"apihelp-commentblock-description": "Приложение для блокировки комментариев позволяет заблокировать участника от комментирования, который возник после заполнения следующих параметров: CommentID.",
@@ -52,6 +53,9 @@
 	"comments-ignore-cancel": "Отменить",
 	"comments-ignore-title": "Список тех, чьи комментарии игнорируются",
 	"commentignorelist": "Список игнорируемых комментаторов",
+	"echo-category-title-mention-comment": "Упоминания в комментариях",
+	"echo-pref-tooltip-mention-comment": "Уведомлять меня, когда кто-то ссылается на мою страницу пользователя в комментарии.",
+	"notification-header-mention-comment": "$1 {{GENDER:$2|упомянуты}} {{GENDER:$3|вы}} в [[$4#comment-$5|a comment]] в <strong>$4</strong>.",
 	"log-name-comments": "Журнал комментариев",
 	"log-description-comments": "Это журнал комментариев.",
 	"logentry-comments-add": "$1 опубликовал новый комментарий на $3",

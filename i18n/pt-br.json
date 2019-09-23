@@ -4,7 +4,8 @@
 			"Cainamarques",
 			"Luckas",
 			"Nemo bis",
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"Luanafaro"
 		]
 	},
 	"apihelp-commentblock-description": "A API commentblock permite bloquear um utilizador a partir de um comentário feito por ele, após preencher os seguintes parâmetros: CommentID.",
@@ -68,6 +69,8 @@
 	"comments-ignore-cancel": "Cancelar",
 	"comments-ignore-title": "Lista de comentários ignorados",
 	"commentignorelist": "Lista de comentários ignorados",
+	"echo-category-title-mention-comment": "Menciona nos comentários",
+	"echo-pref-tooltip-mention-comment": "Notificar-me quando alguém acessar a minha página de usuário em um comentário.",
 	"log-name-comments": "Registro de comentários",
 	"log-description-comments": "Este é um registro de comentários.",
 	"logentry-comments-add": "$1 publicou um novo comentário em $3",
