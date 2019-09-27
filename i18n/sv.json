@@ -69,6 +69,7 @@
 	"comments-ignore-cancel": "Avbryt",
 	"comments-ignore-title": "Ignoreringslista för kommentarer",
 	"commentignorelist": "Ignoreringslista för kommentarer",
+	"notification-header-mention-comment": "$1 {{GENDER:$2|nämnde}} {{GENDER:$3|dig}} i [[$4#comment-$5|en kommentar]] på <strong>$4</strong>.",
 	"log-name-comments": "Kommentarlogg",
 	"log-description-comments": "Detta är en logg för kommentarer.",
 	"logentry-comments-add": "$1 har postat en ny kommentar på $3",
