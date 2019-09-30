@@ -11,7 +11,8 @@
 			"Frammm",
 			"Carlos Cristia",
 			"Macofe",
-			"Dgstranz"
+			"Dgstranz",
+			"Madamebiblio"
 		]
 	},
 	"apihelp-commentvote-description": "La API commentvote permite votar un comentario tras proporcionar los parámetros siguientes: commentID, voteValue.",
@@ -60,6 +61,7 @@
 	"comments-ignore-cancel": "Cancelar",
 	"comments-ignore-title": "Lista de comentarios ignorados",
 	"commentignorelist": "Lista de comentarios ignorados",
+	"echo-category-title-mention-comment": "Menciona en comentarios",
 	"log-name-comments": "Registro de comentarios",
 	"log-description-comments": "Este es un registro de los comentarios.",
 	"logentry-comments-add": "$1 publicó un comentario nuevo en $3",
