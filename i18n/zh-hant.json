@@ -11,7 +11,8 @@
 			"LNDDYL",
 			"Sanmosa",
 			"Kly",
-			"A2093064"
+			"A2093064",
+			"Xiplus"
 		]
 	},
 	"apihelp-commentblock-description": "評論封鎖 API 允許在填完以下參數後來封鎖建立該評論的使用者：評論 ID",
