@@ -7,7 +7,8 @@
 			"RLuts",
 			"Ата",
 			"Piramidion",
-			"Vlad5250"
+			"Vlad5250",
+			"Movses"
 		]
 	},
 	"apihelp-commentblock-description": "Commentblock API дозволяє заблокувати користувача за коментарем, за яким його можна відстежити, заповнивши такий параметр: CommentID.",
@@ -71,6 +72,9 @@
 	"comments-ignore-cancel": "Скасувати",
 	"comments-ignore-title": "Список коментарів, що ігноруються",
 	"commentignorelist": "Список коментарів, що ігноруються",
+	"echo-category-title-mention-comment": "Згадки у коментарях",
+	"echo-pref-tooltip-mention-comment": "Повідомляти мене, коли хтось посилається на мою сторінку користувача у коментарі.",
+	"notification-header-mention-comment": "$1 {{GENDER:$2|згадав|згадала}} {{GENDER:$3|вас}} у [[$4#comment-$5|коментарі]] в <strong>$4</strong>.",
 	"log-name-comments": "Журнал коментарів",
 	"log-description-comments": "Це журнал коментарів.",
 	"logentry-comments-add": "$1 {{GENDER:$1|додав|додала}} новий коментар на сторінку $3",
