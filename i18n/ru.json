@@ -54,7 +54,7 @@
 	"comments-ignore-title": "Список тех, чьи комментарии игнорируются",
 	"commentignorelist": "Список игнорируемых комментаторов",
 	"echo-category-title-mention-comment": "Упоминания в комментариях",
-	"echo-pref-tooltip-mention-comment": "Уведомлять меня, когда кто-то ссылается на мою страницу пользователя в комментарии.",
+	"echo-pref-tooltip-mention-comment": "Править список причин",
 	"notification-header-mention-comment": "$1 {{GENDER:$2|упомянуты}} {{GENDER:$3|вы}} в [[$4#comment-$5|a comment]] в <strong>$4</strong>.",
 	"log-name-comments": "Журнал комментариев",
 	"log-description-comments": "Это журнал комментариев.",
