@@ -1,18 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ильнар"
+			"Ильнар",
+			"Ерней"
 		]
 	},
 	"comments-voted-label": "Тавыш бирде",
-	"comments-loading": "Йөкләү...",
-	"comments-cancel-reply": "Баш тарту",
+	"comments-loading": "Төяү бара…",
+	"comments-cancel-reply": "Кире алу",
 	"comments-you": "Сез",
 	"comments-reply": "Җавап бирергә",
 	"comments-score-text": "Билге",
 	"comments-permalink": "Даими сылтама",
 	"comments-ignore-unblock": "Блоктан алу",
-	"comments-ignore-cancel": "Баш тарту",
+	"comments-ignore-cancel": "Кире алу",
 	"comments-time-ago": "$1 элек",
 	"comments-time-months": "{{PLURAL:$1|бер ай|$1 ай}}",
 	"comments-time-days": "{{PLURAL:$1|бер көн|$1 көн}}",
