@@ -71,6 +71,7 @@
 	"commentignorelist": "Lista de comentários ignorados",
 	"echo-category-title-mention-comment": "Menciona nos comentários",
 	"echo-pref-tooltip-mention-comment": "Notificar-me quando alguém acessar a minha página de usuário em um comentário.",
+	"notification-header-mention-comment": "$1 {{GENDER:$2|mencionou}} {{GENDER:$3|você}} em [[$4#comment-$5|um comentário]] em <strong>$4</strong>.",
 	"log-name-comments": "Registro de comentários",
 	"log-description-comments": "Este é um registro de comentários.",
 	"logentry-comments-add": "$1 publicou um novo comentário em $3",
