@@ -8,7 +8,7 @@
 		]
 	},
 	"comments-comment": "মন্তব্য",
-	"comments-loading": "লোডিং...",
+	"comments-loading": "লোড করা হচ্ছে...",
 	"comments-reply-to": "প্রাপক {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "বাতিল",
 	"comments-show-comment-link": "মন্তব্য দেখাও",
