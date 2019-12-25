@@ -22,6 +22,30 @@
       "revId": "ee2e78680375ab6043affcc4480d2acc1e9bbdec",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2719f772_1f5d98d7",
+        "filename": "Comments.i18n.alias.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4879
+      },
+      "writtenOn": "2019-12-25T23:07:06Z",
+      "side": 1,
+      "message": "Oh, ok. Will do.",
+      "parentUuid": "2deb5bfb_0ca673af",
+      "range": {
+        "startLine": 18,
+        "startChar": 27,
+        "endLine": 18,
+        "endChar": 57
+      },
+      "revId": "ee2e78680375ab6043affcc4480d2acc1e9bbdec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
