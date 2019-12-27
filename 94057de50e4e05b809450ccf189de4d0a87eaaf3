@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b1e4e81c_1a9cc40e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-12-27T22:57:43Z",
+      "side": 1,
+      "message": "Please split into multiple lines when they are this long (https://www.mediawiki.org/wiki/Gerrit/Commit_message_guidelines)",
+      "revId": "94057de50e4e05b809450ccf189de4d0a87eaaf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7bfeb94_5a7552a9",
+        "filename": "resources/js/Comment.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-12-27T22:57:43Z",
+      "side": 1,
+      "message": "Should `pst` also be true here, so that any transformations are applied, like expanding ~~~~ ?",
+      "range": {
+        "startLine": 135,
+        "startChar": 5,
+        "endLine": 135,
+        "endChar": 23
+      },
+      "revId": "94057de50e4e05b809450ccf189de4d0a87eaaf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "26224895_4f531e7f",
+        "filename": "resources/js/Comment.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-12-27T22:57:43Z",
+      "side": 1,
+      "message": "Suggest also specifying `prop\u003dtext`, don\u0027t need langlinks, categories, links, templates, etc.",
+      "range": {
+        "startLine": 137,
+        "startChar": 4,
+        "endLine": 137,
+        "endChar": 15
+      },
+      "revId": "94057de50e4e05b809450ccf189de4d0a87eaaf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
