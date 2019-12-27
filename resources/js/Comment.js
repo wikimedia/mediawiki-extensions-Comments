@@ -123,6 +123,28 @@
 		},
 
 		/**
+		 * Preview the contents of the <textarea> (more accurately the
+		 * wikitext given to this function) and show the parsed HTML
+		 * output in the given element.
+		 *
+		 * @param text {string} Wikitext to be sent to the API for parsing
+		 * @param selector {string} jQuery selector for selecting the element
+		 * where the preview text should be inserted
+		 */
+		preview: function ( text, selector ) {
+			( new mw.Api() ).get( {
+				action: 'parse',
+				text: text,
+				contentmodel: 'wikitext',
+				disablelimitreport: true // don't need the NewPP report stuff
+			} ).done( function ( data ) {
+				$( selector ).html( data.parse.text['*'] );
+			} ).fail( function () {
+				$( selector ).text( mw.msg( 'comments-preview-failed' ) );
+			} );
+		},
+
+		/**
 		 * Submit a new comment.
 		 */
 		submit: function () {
@@ -328,8 +350,65 @@
 			} )
 
 			// Handle clicks on the submit button (previously this was an onclick attr)
-			.on( 'click', 'div.c-form-button input[type="button"]', function () {
+			.on( 'click', 'div.c-form-button input[name="wpSubmitComment"]', function () {
 				Comment.submit();
+				// 1) Make comment text <s>great</s> editable again (in case if the user
+				// previewed their comment first and only then hit the "post comment" button)
+				$( '#comment' ).prop( 'disabled', '' );
+				// 2) Clear the preview area
+				$( '.comment-preview-note' ).remove();
+				$( 'form[name="commentForm"] .comment-preview' ).html( '' );
+			} )
+
+			// Handle clicks on the preview button
+			.on( 'click', 'div.c-form-button input[name="wpPreview"]', function () {
+				var textareaText = $( '#comment' ).val(),
+					previewing = ( $( '#comment' ).prop( 'disabled' ) === true );
+
+				// Note: This code has to be here, it won't work from the .click handler below,
+				// after calling Comment.preview. Some JavaScript guru can properly explain
+				// *why* that is so, I merely observed it and observed that putting the code
+				// here makes the feature work as intended, which is good enough for me!
+				if ( previewing ) {
+					// When we are already previewing some user-given text and the user clicks on the
+					// "Show preview" button, then actually labeled "Continue editing", we want to do
+					// two things:
+					// 1) Make comment text <s>great</s> editable again
+					$( '#comment' ).prop( 'disabled', '' );
+					// 2) Clear the preview area
+					$( '.comment-preview-note' ).remove();
+					$( 'form[name="commentForm"] .comment-preview' ).html( '' );
+				}
+
+				if ( textareaText !== '' && !previewing ) {
+					// Disable editing the text in the textarea element until the user
+					// chooses to continue editing
+					$( '#comment' ).prop( 'disabled', true );
+
+					// Insert the "This is just a preview" text before the preview, but only once!
+					if ( $( 'form[name="commentForm"] .comment-preview' ).html() === '' ) {
+						$( 'form[name="commentForm"] .comment-preview' ).before(
+							'<div class="comment-preview-note">' +
+							mw.msg( 'previewnote' ) +
+							'</div>'
+						);
+					}
+
+					// Call the API to render the text given by the user into pretty wikitext!
+					Comment.preview(
+						textareaText,
+						'form[name="commentForm"] .comment-preview'
+					);
+
+					// Change the text of the "Show preview" button from "Show preview" to "Continue editing"
+					// when we are already previewing something, and make it so that upon clicking on this
+					// button the button text is changed back to "Show preview"
+					$( '.c-form-button input[name="wpPreview"]' )
+						.val( mw.msg( 'comments-continue-editing-btn' ) )
+						.click( function ( e ) {
+							$( this ).val( mw.msg( 'showpreview' ) );
+						} );
+				}
 			} )
 
 			// Change page

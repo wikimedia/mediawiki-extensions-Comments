@@ -38,6 +38,7 @@
 	"apihelp-commentvote-param-commentID": "{{doc-apihelp-param|commentvote|commentID}}",
 	"apihelp-commentvote-param-voteValue": "{{doc-apihelp-param|commentvote|voteValue}}",
 	"comments-comment": "This message might be unused.\n{{Identical|Comment}}",
+	"comments-continue-editing-btn": "Shown as a button text; when the user clicks on the \"preview\" button, the text of which is initially {{msg-mw|showpreview}}, once the preview has been rendered, the button text is changed to this; if the user clicks on this button, they will be able to edit their comment further.",
 	"comments-desc": "{{desc|name=Comments|url=https://www.mediawiki.org/wiki/Extension:Comments}}",
 	"comments-db-locked": "Displayed if a page contains the <code><nowiki><comments /></nowiki></code> tag while the database is locked.",
 	"comments-voted-label": "Shown when you have voted (either thumbs up or thumbs down) for a given comment",

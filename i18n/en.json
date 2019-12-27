@@ -30,6 +30,7 @@
 	"apihelp-commentvote-param-commentID": "Comment ID of the comment that is voted for",
 	"apihelp-commentvote-param-voteValue": "Vote value for the comment",
 	"comments-comment": "Comment",
+	"comments-continue-editing-btn": "Continue editing",
 	"comments-desc": "Adds <code>&lt;comments&gt;</code> parser hook that allows commenting on pages",
 	"comments-db-locked": "<h3>Adding comments</h3>The database is currently locked for routine database maintenance, after which it will be back to normal. Please check back later!",
 	"comments-voted-label": "Voted",
