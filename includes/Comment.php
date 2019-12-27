@@ -331,7 +331,11 @@ class Comment extends ContextSource {
 			);
 
 			$row = $res->fetchObject();
-			$userPoints = number_format( $row->stats_total_points );
+			if ( $row ) {
+				$userPoints = number_format( $row->stats_total_points );
+			} else {
+				$userPoints = 0;
+			}
 		} else {
 			$userPoints = 0;
 		}
