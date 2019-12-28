@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e43f406c_b21736cc",
+        "filename": "includes/Comment.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-12-28T20:58:08Z",
+      "side": 1,
+      "message": "Note this is not public any more in the current master, because we reverted the change that made this private implementation detail public in the Echo extension. Considering this method doesn\u0027t do much anyway, I suggest to copy paste the code and call Parser::parse() directly, without relying on Echo.",
+      "range": {
+        "startLine": 374,
+        "startChar": 14,
+        "endLine": 374,
+        "endChar": 56
+      },
+      "revId": "56f3ce75fd34937623d01f79cc6de894c29c4868",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
