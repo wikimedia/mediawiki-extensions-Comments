@@ -375,7 +375,7 @@ class Comment extends ContextSource {
 			// EchoDiscussionParser#getUserLinks is private, because of course it is.
 			// Here we go once again...
 			$getUserLinks = function ( $content, Title $title ) {
-				$output = EchoDiscussionParser::parseNonEditWikitext( $content, new Article( $title ) );
+				$output = self::parseNonEditWikitext( $content, new Article( $title ) );
 				$links = $output->getLinks();
 
 				if ( !isset( $links[NS_USER] ) || !is_array( $links[NS_USER] ) ) {
@@ -404,6 +404,30 @@ class Comment extends ContextSource {
 		Hooks::run( 'Comment::add', [ $comment, $commentId, $comment->page->id ] );
 
 		return $comment;
+	}
+
+	/**
+	 * It's like Article::prepareTextForEdit,
+	 *  but not for editing (old wikitext usually)
+	 * Stolen from AbuseFilterVariableHolder
+	 *
+	 * @param string $wikitext
+	 * @param Article $article
+	 *
+	 * @return ParserOutput
+	 */
+	private static function parseNonEditWikitext( $wikitext, Article $article ) {
+		static $cache = [];
+		$cacheKey = md5( $wikitext ) . ':' . $article->getTitle()->getPrefixedText();
+		if ( isset( $cache[$cacheKey] ) ) {
+			return $cache[$cacheKey];
+		}
+		$parser = MediaWiki\MediaWikiServices::getInstance()->getParser();
+		$options = new ParserOptions;
+		$options->setTidy( true );
+		$output = $parser->parse( $wikitext, $article->getTitle(), $options );
+		$cache[$cacheKey] = $output;
+		return $output;
 	}
 
 	/**
