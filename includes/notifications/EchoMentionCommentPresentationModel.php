@@ -8,6 +8,19 @@
 class EchoMentionCommentPresentationModel extends EchoMentionPresentationModel {
 
 	/**
+	 * @var EchoPresentationModelSection
+	 */
+	private $section;
+
+	/**
+	 * @inheritDoc
+	 */
+	protected function __construct( EchoEvent $event, Language $language, User $user, $distributionType ) {
+		parent::__construct( $event, $language, $user, $distributionType );
+		$this->section = new EchoPresentationModelSection( $event, $user, $language );
+	}
+
+	/**
 	 * @return string The symbolic icon name as defined in $wgEchoNotificationIcons
 	 */
 	public function getIconType() {
@@ -105,7 +118,7 @@ class EchoMentionCommentPresentationModel extends EchoMentionPresentationModel {
 	public function getPrimaryLink() {
 		return [
 			// Need FullURL so the section is included
-			'url' => $this->getTitleWithSection()->getFullURL(),
+			'url' => $this->section->getTitleWithSection()->getFullURL(),
 			'label' => $this->msg( 'notification-link-text-view-mention' )->text()
 		];
 	}
