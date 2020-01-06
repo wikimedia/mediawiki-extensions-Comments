@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41cbb8c6_bf832425",
+        "filename": "includes/Comment.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2020-01-06T09:03:26Z",
+      "side": 1,
+      "message": "Is it really necessary to introduce in-memory caching here? How many comments can be added in a single HTTP request? Is it even possible to process more than one comment at a time?",
+      "range": {
+        "startLine": 420,
+        "startChar": 2,
+        "endLine": 420,
+        "endChar": 15
+      },
+      "revId": "ccf3d2f7e67bdb16212e80f189b7a196a61f09d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
