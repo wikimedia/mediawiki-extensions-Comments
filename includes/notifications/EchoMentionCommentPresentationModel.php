@@ -105,7 +105,7 @@ class EchoMentionCommentPresentationModel extends EchoMentionPresentationModel {
 	public function getPrimaryLink() {
 		return [
 			// Need FullURL so the section is included
-			'url' => $this->getTitleWithSection()->getFullURL(),
+			'url' => $this->section->getTitleWithSection()->getFullURL(),
 			'label' => $this->msg( 'notification-link-text-view-mention' )->text()
 		];
 	}
