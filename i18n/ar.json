@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"ديفيد",
-			"Meno25"
+			"Meno25",
+			"Sonic N800"
 		]
 	},
 	"apihelp-commentblock-description": "تسمح API Commentblock بمنع مستخدم من التعليق الذي تم إنشاؤه من بعد ملء الوسائط التالية: CommentID.",
@@ -73,7 +74,7 @@
 	"log-description-comments": "هذا هو سجل التعليقات.",
 	"logentry-comments-add": "$1 نشر 1 تعليقا جديدا على $3",
 	"logentry-comments-delete": "$1 حذف التعليق #$4 على $3",
-	"comments-time-ago": "منذ $1",
+	"comments-time-ago": "قبل $1",
 	"comments-time-months": "{{PLURAL:$1||شهر واحد|$1 شهور}}",
 	"comments-time-days": "{{PLURAL:$1||يوم واحد|$1 أيام}}",
 	"comments-time-hours": "{{PLURAL:$1|ساعة واحدة|$1 ساعات}}",
