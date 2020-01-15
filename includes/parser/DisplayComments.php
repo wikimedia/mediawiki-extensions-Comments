@@ -110,7 +110,7 @@ class DisplayComments {
 			$output .= ' ' . implode( ' ', $attr );
 		}
 
-		if ( !is_null( $input ) ) {
+		if ( $input !== null ) {
 			$output .= '&gt;' . htmlspecialchars( $input ) . '&lt;/comments&gt;';
 		} else {
 			$output .= ' /&gt;';

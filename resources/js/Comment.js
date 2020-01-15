@@ -46,7 +46,6 @@
 				message = mw.msg( 'comments-block-warning-user', username );
 			}
 
-			// eslint-disable-next-line no-alert
 			if ( window.confirm( message ) ) {
 				( new mw.Api() ).postWithToken( 'csrf', {
 					action: 'commentblock',
@@ -68,7 +67,6 @@
 		 * @param {number} commentID Comment ID number
 		 */
 		deleteComment: function ( commentID ) {
-			// eslint-disable-next-line no-alert
 			if ( window.confirm( mw.msg( 'comments-delete-warning' ) ) ) {
 				( new mw.Api() ).postWithToken( 'csrf', {
 					action: 'commentdelete',
@@ -155,7 +153,6 @@
 						}
 						Comment.viewComments( document.commentForm.pageId.value, 0, end, document.commentForm.cpage.value );
 					} else {
-						// eslint-disable-next-line no-alert
 						window.alert( response.error.info );
 						Comment.submitted = 0;
 					}
