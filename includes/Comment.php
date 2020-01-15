@@ -256,7 +256,7 @@ class Comment extends ContextSource {
 		if ( $this->getTitle()->getArticleID() > 0 ) {
 			$commentText = $parser->recursiveTagParse( $comment_text_fix );
 		} else {
-			$commentText = $this->getOutput()->parse( $comment_text_fix );
+			$commentText = $this->getOutput()->parseAsContent( $comment_text_fix );
 		}
 
 		// really bad hack because we want to parse=firstline, but don't want wrapping <p> tags
