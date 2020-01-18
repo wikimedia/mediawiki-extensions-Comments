@@ -70,7 +70,6 @@ class CommentsHooks {
 		$dir = __DIR__ . '/../sql';
 
 		$dbType = $updater->getDB()->getType();
-		// For non-MySQL/MariaDB/SQLite DBMSes, use the appropriately named file
 		if ( !in_array( $dbType, [ 'mysql', 'sqlite' ] ) ) {
 			$comments = "comments.{$dbType}.sql";
 			$comments_vote = "comments_vote.{$dbType}.sql";
