@@ -1,0 +1,1 @@
+ALTER TABLE "Comments_block" ADD COLUMN cb_actor INTEGER NOT NULL;
