@@ -34,7 +34,7 @@ class CommentVoteAPI extends ApiBase {
 				}
 
 				// Also must update the stats for user receiving the vote
-				$stats_comment_owner = new UserStatsTrack( $comment->userID, $comment->username );
+				$stats_comment_owner = new UserStatsTrack( $comment->user->getId(), $comment->user->getName() );
 				$stats_comment_owner->updateCommentScoreRec( $voteValue );
 
 				$stats_comment_owner->updateTotalPoints();

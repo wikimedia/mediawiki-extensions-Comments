@@ -61,6 +61,12 @@ class Comment extends ContextSource {
 	public $currentScore = '0';
 
 	/**
+	 * User (object) who posted the comment
+	 * @var User
+	 */
+	public $user;
+
+	/**
 	 * Username of the user who posted the comment
 	 *
 	 * @var string
@@ -75,11 +81,11 @@ class Comment extends ContextSource {
 	public $ip = '';
 
 	/**
-	 * ID of the user who posted the comment
+	 * Actor ID of the user who posted the comment
 	 *
 	 * @var int
 	 */
-	public $userID = 0;
+	public $actorID = 0;
 
 	/**
 	 * The amount of points the user has; fetched from the user_stats table if
@@ -120,11 +126,14 @@ class Comment extends ContextSource {
 
 		$this->setContext( $context );
 
-		$this->username = $data['Comment_Username'];
+		$this->actorID = (int)$data['Comment_actor'];
+
+		$this->user = $commenter = User::newFromActorId( $data['Comment_actor'] );
+
+		$this->username = $commenter->getName();
 		$this->ip = $data['Comment_IP'];
 		$this->text = $data['Comment_Text'];
 		$this->date = $data['Comment_Date'];
-		$this->userID = (int)$data['Comment_user_id'];
 		$this->userPoints = $data['Comment_user_points'];
 		$this->id = (int)$data['CommentID'];
 		$this->parentID = (int)$data['Comment_Parent_ID'];
@@ -140,7 +149,7 @@ class Comment extends ContextSource {
 				[ 'Comment_Vote_Score' ],
 				[
 					'Comment_Vote_ID' => $this->id,
-					'Comment_Vote_Username' => $this->getUser()->getName()
+					'Comment_Vote_actor' => $this->getUser()->getActorId()
 				],
 				__METHOD__
 			);
@@ -157,6 +166,12 @@ class Comment extends ContextSource {
 			? $data['total_vote'] : $this->getScore();
 	}
 
+	/**
+	 * Create a new Comment object from a comment ID.
+	 *
+	 * @param int $id Comment ID, must not be zero
+	 * @return null|Comment Null on failure, Comment object on success
+	 */
 	public static function newFromID( $id ) {
 		$context = RequestContext::getMain();
 		$dbr = wfGetDB( DB_REPLICA );
@@ -172,10 +187,9 @@ class Comment extends ContextSource {
 		// Defaults (for non-social wikis)
 		$tables[] = 'Comments';
 		$fields = [
-			'Comment_Username', 'Comment_IP', 'Comment_Text',
+			'Comment_actor', 'Comment_IP', 'Comment_Text',
 			'Comment_Date', 'Comment_Date AS timestamp',
-			'Comment_user_id', 'CommentID', 'Comment_Parent_ID',
-			'CommentID', 'Comment_Page_ID'
+			'CommentID', 'Comment_Parent_ID', 'Comment_Page_ID'
 		];
 
 		// If SocialProfile is installed, query the user_stats table too.
@@ -187,7 +201,7 @@ class Comment extends ContextSource {
 			$fields[] = 'stats_total_points';
 			$joinConds = [
 				'Comments' => [
-					'LEFT JOIN', 'Comment_user_id = stats_user_id'
+					'LEFT JOIN', 'Comment_actor = stats_actor'
 				]
 			];
 		}
@@ -210,11 +224,10 @@ class Comment extends ContextSource {
 			$thread = $row->Comment_Parent_ID;
 		}
 		$data = [
-			'Comment_Username' => $row->Comment_Username,
+			'Comment_actor' => $row->Comment_actor,
 			'Comment_IP' => $row->Comment_IP,
 			'Comment_Text' => $row->Comment_Text,
 			'Comment_Date' => $row->Comment_Date,
-			'Comment_user_id' => $row->Comment_user_id,
 			'Comment_user_points' => ( isset( $row->stats_total_points ) ? number_format( $row->stats_total_points ) : 0 ),
 			'CommentID' => $row->CommentID,
 			'Comment_Parent_ID' => $row->Comment_Parent_ID,
@@ -234,14 +247,13 @@ class Comment extends ContextSource {
 	 * @return bool
 	 */
 	public function isOwner( User $user ) {
-		return ( $this->username === $user->getName() && $this->userID === $user->getId() );
+		return ( $this->actorID === $user->getActorId() );
 	}
 
 	/**
 	 * Parse and return the text for this comment
 	 *
-	 * @return mixed|string
-	 * @throws MWException
+	 * @return string
 	 */
 	function getText() {
 		$parser = MediaWikiServices::getInstance()->getParser();
@@ -283,14 +295,14 @@ class Comment extends ContextSource {
 	 * Adds the comment and all necessary info into the Comments table in the
 	 * database.
 	 *
-	 * @param string $text text of the comment
-	 * @param CommentsPage $page container page
-	 * @param User $user user commenting
+	 * @param string $text Text of the comment
+	 * @param CommentsPage $page Container page
+	 * @param User $user User commenting
 	 * @param int $parentID ID of parent comment, if this is a reply
 	 *
 	 * @return Comment the added comment
 	 */
-	static function add( $text, CommentsPage $page, User $user, $parentID ) {
+	public static function add( $text, CommentsPage $page, User $user, $parentID ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$context = RequestContext::getMain();
 
@@ -301,8 +313,7 @@ class Comment extends ContextSource {
 			'Comments',
 			[
 				'Comment_Page_ID' => $page->id,
-				'Comment_Username' => $user->getName(),
-				'Comment_user_id' => $user->getId(),
+				'Comment_actor' => $user->getActorId(),
 				'Comment_Text' => $text,
 				'Comment_Date' => $commentDate,
 				'Comment_Parent_ID' => $parentID,
@@ -326,7 +337,7 @@ class Comment extends ContextSource {
 			$res = $dbr->select( // need this data for seeding a Comment object
 				'user_stats',
 				'stats_total_points',
-				[ 'stats_user_id' => $user->getId() ],
+				[ 'stats_actor' => $user->getActorId() ],
 				__METHOD__
 			);
 
@@ -346,11 +357,10 @@ class Comment extends ContextSource {
 			$thread = $parentID;
 		}
 		$data = [
-			'Comment_Username' => $user->getName(),
+			'Comment_actor' => $user->getActorId(),
 			'Comment_IP' => $context->getRequest()->getIP(),
 			'Comment_Text' => $text,
 			'Comment_Date' => $commentDate,
-			'Comment_user_id' => $user->getId(),
 			'Comment_user_points' => $userPoints,
 			'CommentID' => $id,
 			'Comment_Parent_ID' => $parentID,
@@ -618,8 +628,7 @@ class Comment extends ContextSource {
 				'Comments_Vote',
 				[
 					'Comment_Vote_id' => $this->id,
-					'Comment_Vote_Username' => $this->getUser()->getName(),
-					'Comment_Vote_user_id' => $this->getUser()->getId(),
+					'Comment_Vote_actor' => $this->getUser()->getActorId(),
 					'Comment_Vote_Score' => $value,
 					'Comment_Vote_Date' => $commentDate,
 					'Comment_Vote_IP' => $_SERVER['REMOTE_ADDR']
@@ -636,8 +645,7 @@ class Comment extends ContextSource {
 				],
 				[
 					'Comment_Vote_id' => $this->id,
-					'Comment_Vote_Username' => $this->getUser()->getName(),
-					'Comment_Vote_user_id' => $this->getUser()->getId(),
+					'Comment_Vote_actor' => $this->getUser()->getActorId(),
 				],
 				__METHOD__
 			);
@@ -830,24 +838,22 @@ class Comment extends ContextSource {
 
 		$commentPosterLevel = '';
 
-		if ( $this->userID != 0 ) {
-			$title = Title::makeTitle( NS_USER, $this->username );
+		if ( !$this->user->isAnon() ) {
+			$commentPoster = '<a href="' . htmlspecialchars( $this->user->getUserPage()->getFullURL(), ENT_QUOTES ) .
+				'" rel="nofollow">' . htmlspecialchars( $this->user->getName(), ENT_QUOTES ) . '</a>';
 
-			$commentPoster = '<a href="' . htmlspecialchars( $title->getFullURL() ) .
-				'" rel="nofollow">' . $this->username . '</a>';
-
-			$CommentReplyTo = $this->username;
+			$CommentReplyTo = $this->user->getName();
 
 			if ( $wgUserLevels && class_exists( 'UserLevel' ) ) {
 				$user_level = new UserLevel( $this->userPoints );
 				$commentPosterLevel = "{$user_level->getLevelName()}";
 			}
 
-			$user = User::newFromId( $this->userID );
+			$user = User::newFromId( $this->user->getId() );
 			$CommentReplyToGender = $user->getOption( 'gender', 'unknown' );
 		} else {
 			$anonMsg = $this->msg( 'comments-anon-name' )->inContentLanguage()->plain();
-			$commentPoster = $anonMsg . ' #' . $anonList[$this->username];
+			$commentPoster = $anonMsg . ' #' . $anonList[$this->user->getName()];
 			$CommentReplyTo = $anonMsg;
 			$CommentReplyToGender = 'unknown'; // Undisclosed gender as anon user
 		}
@@ -894,13 +900,14 @@ class Comment extends ContextSource {
 		$blockLink = '';
 
 		if (
-			$userObj->getId() != 0 && $userObj->getId() != $this->userID &&
-			!( in_array( $this->userID, $blockList ) )
+			$userObj->isLoggedIn() &&
+			$userObj->getActorId() != $this->actorID &&
+			!( in_array( $this->user->getId(), $blockList ) )
 		) {
 			$blockLink = '<a href="javascript:void(0);" rel="nofollow" class="comments-block-user" data-comments-safe-username="' .
 				htmlspecialchars( $this->username, ENT_QUOTES ) .
 				'" data-comments-comment-id="' . $this->id . '" data-comments-user-id="' .
-				$this->userID . "\">
+				$this->user->getId() . "\">
 					<img src=\"{$wgExtensionAssetsPath}/Comments/resources/images/block.svg\" border=\"0\" alt=\"\"/>
 				</a>";
 		}
@@ -910,7 +917,7 @@ class Comment extends ContextSource {
 		$avatarImg = '<img src="' . $wgCommentsDefaultAvatar . '" alt="" border="0" />';
 		// If SocialProfile *is* enabled, then use its wAvatar class to get the avatars for each commenter
 		if ( class_exists( 'wAvatar' ) ) {
-			$avatar = new wAvatar( $this->userID, 'ml' );
+			$avatar = new wAvatar( $this->user->getId(), 'ml' );
 			$avatarImg = $avatar->getAvatarURL() . "\n";
 		}
 
@@ -969,7 +976,7 @@ class Comment extends ContextSource {
 			// Voting is possible only when database is unlocked
 			if ( !wfReadOnly() ) {
 				// You can only vote for other people's comments, not for your own
-				if ( $this->getUser()->getName() != $this->username ) {
+				if ( $this->getUser()->getActorId() != $this->actorID ) {
 					$output .= "<span id=\"CommentBtn{$this->id}\">";
 					if ( $this->page->allowPlus == true ) {
 						$output .= $this->getVoteLink( 1 );

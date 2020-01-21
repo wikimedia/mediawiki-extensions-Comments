@@ -171,9 +171,14 @@ class CommentsPage extends ContextSource {
 			'vote2' => 'Comments_Vote',
 		];
 		$fields = [
-			'Comment_Username', 'Comment_IP', 'Comment_Text',
+			'Comment_IP', 'Comment_Text', 'Comment_actor',
 			'Comment_Date', 'Comment_Date AS timestamp',
-			'Comment_user_id', 'CommentID', 'Comment_Parent_ID',
+			'CommentID', 'Comment_Parent_ID',
+			// @todo FIXME: this and the stats_total_points are buggy on PostgreSQL
+			// Skizzerz says that the whole query is bugged in general but MySQL "helpfully"
+			// ignores the bugginess and returns potentially incorrect results
+			// I just lazily slapped current_vote (and stats_total_points in the "if SP is installed" loop)
+			// to the GROUP BY condition to try to remedy this. --ashley, 17 January 2020
 			'vote1.Comment_Vote_Score AS current_vote',
 			'SUM(vote2.Comment_Vote_Score) AS comment_score'
 		];
@@ -183,13 +188,13 @@ class CommentsPage extends ContextSource {
 				'LEFT JOIN',
 				[
 					'vote1.Comment_Vote_ID = CommentID',
-					'vote1.Comment_Vote_Username' => $this->getUser()->getName()
+					'vote1.Comment_Vote_actor' => $this->getUser()->getActorId()
 				]
 			],
 			// For total vote count
 			'vote2' => [ 'LEFT JOIN', 'vote2.Comment_Vote_ID = CommentID' ]
 		];
-		$params = [ 'GROUP BY' => 'CommentID' ];
+		$params = [ 'GROUP BY' => 'CommentID, current_vote' ];
 
 		// If SocialProfile is installed, query the user_stats table too.
 		if (
@@ -199,8 +204,9 @@ class CommentsPage extends ContextSource {
 			$tables[] = 'user_stats';
 			$fields[] = 'stats_total_points';
 			$joinConds['Comments'] = [
-				'LEFT JOIN', 'Comment_user_id = stats_user_id'
+				'LEFT JOIN', 'Comment_actor = stats_actor'
 			];
+			$params['GROUP BY'] .= ', stats_total_points';
 		}
 
 		// Perform the query
@@ -222,11 +228,11 @@ class CommentsPage extends ContextSource {
 				$thread = $row->Comment_Parent_ID;
 			}
 			$data = [
-				'Comment_Username' => $row->Comment_Username,
+				'Comment_actor' => $row->Comment_actor,
 				'Comment_IP' => $row->Comment_IP,
 				'Comment_Text' => $row->Comment_Text,
 				'Comment_Date' => $row->Comment_Date,
-				'Comment_user_id' => $row->Comment_user_id,
+				'Comment_actor' => $row->Comment_actor,
 				'Comment_user_points' => ( isset( $row->stats_total_points ) ? number_format( $row->stats_total_points ) : 0 ),
 				'CommentID' => $row->CommentID,
 				'Comment_Parent_ID' => $row->Comment_Parent_ID,
@@ -425,8 +431,8 @@ class CommentsPage extends ContextSource {
 
 		foreach ( $comments as $comment ) {
 			if (
-				!array_key_exists( $comment->username, $bucket ) &&
-				$comment->userID == 0
+				!array_key_exists( $comment->user->getName(), $bucket ) &&
+				$comment->user->isAnon()
 			) {
 				$bucket[$comment->username] = $counter;
 				$counter++;
@@ -488,8 +494,8 @@ class CommentsPage extends ContextSource {
 
 		// Load complete blocked list for logged in user so they don't see their comments
 		$blockList = [];
-		if ( $this->getUser()->getId() != 0 ) {
-			$blockList = CommentFunctions::getBlockList( $this->getUser()->getId() );
+		if ( $this->getUser()->isLoggedIn() ) {
+			$blockList = CommentFunctions::getBlockList( $this->getUser() );
 		}
 
 		if ( $currentPage ) {
