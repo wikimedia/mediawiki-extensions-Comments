@@ -40,6 +40,8 @@
 	"apihelp-commentvote-param-commentID": "所要投票用的評論之評論 ID",
 	"apihelp-commentvote-param-voteValue": "對於評論的投票評比",
 	"comments-comment": "評論",
+	"comments-continue-editing-btn": "繼續編輯",
+	"comments-preview-failed": "預覽失敗，請再重試。",
 	"comments-desc": "增加 <code>&lt;comments&gt;</code> 語法分析器連結，允許在頁面上發表評論",
 	"comments-db-locked": "<h3>增加評論</h3>資料庫因例行性維護目前已鎖定，待維護作業完成後會恢復正常。請稍後再檢查一次。",
 	"comments-voted-label": "已投票",

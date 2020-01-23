@@ -30,6 +30,8 @@
 	"apihelp-commentvote-param-commentID": "Назнака на коментарот за кој се гласа",
 	"apihelp-commentvote-param-voteValue": "Гласовна вредност на коментарот",
 	"comments-comment": "Коментар",
+	"comments-continue-editing-btn": "Продолжи со уредување",
+	"comments-preview-failed": "Прегледот не успеа. Обидете се повторно.",
 	"comments-desc": "Додава расчленувачки пресретник <code>&lt;comments&gt;</code> што овозможува коментирање на страниците",
 	"comments-db-locked": "<h3>Давање на коментари</h3>Базата е моментално заклучена за редовно одржување, и потоа ќе се врати во нормална работна состојба. Навратете се подоцна!",
 	"comments-voted-label": "Гласано",

@@ -33,6 +33,8 @@
 	"apihelp-commentvote-param-commentID": "Identificador do comentário que foi votado",
 	"apihelp-commentvote-param-voteValue": "Valor do voto para o comentário",
 	"comments-comment": "Comentário",
+	"comments-continue-editing-btn": "Continuar editando",
+	"comments-preview-failed": "A Pre-visualização falhou. Por favor, tente novamente.",
 	"comments-desc": "Adiciona ao analisador sintático o ''hook'' <code>&lt;comments&gt;</code> que permite comentar em páginas",
 	"comments-db-locked": "<h3>A adicionar comentários</h3>A base de dados está bloqueada para manutenção de rotina, após a qual voltará ao normal. Volte mais tarde, por favor!",
 	"comments-voted-label": "Votado",
