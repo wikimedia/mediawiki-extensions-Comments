@@ -30,6 +30,8 @@
 	"apihelp-commentvote-param-commentID": "Kommentar-ID-en til kommentaren det skal stemmes på",
 	"apihelp-commentvote-param-voteValue": "Stemmeverdi for kommentaren",
 	"comments-comment": "Kommentar",
+	"comments-continue-editing-btn": "Fortsett å redigere",
+	"comments-preview-failed": "Forhåndsvisning mislyktes. Prøv igjen.",
 	"comments-desc": "Legger til parserkroken <code>&lty;comments&gt;</code> som gjør det mulig å kommentere på sider",
 	"comments-db-locked": "<h3>Legg til kommentarer</h3>\nDatabasen er for tiden låst for planlagt vedlikehold, og blir snart tilgjengelig igjen. Sjekk igjen senere!",
 	"comments-voted-label": "Stemt",

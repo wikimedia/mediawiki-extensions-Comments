@@ -10,6 +10,7 @@
 	"apihelp-commentlist-param-showForm": "De Formulaire fir d'Bemierkunge weisen",
 	"apihelp-commentsubmit-param-commentText": "Text vun der Bemierkung",
 	"comments-comment": "Bemierkung",
+	"comments-continue-editing-btn": "Virufuere mat Änneren",
 	"comments-desc": "Setzt d'Parsererweiderung <code>&lt;comments&gt;</code> dobäi déi et erlaabt fir Säiten ze kommentéieren",
 	"comments-db-locked": "<h3>Bemierkungen derbäisetzen</h3> D'Datebank ass elo wéinst Maintenanceaarbechte gespaart. Probéiert w. e. g. méi spéit nach eng Kéier.",
 	"comments-voted-label": "Ofgestëmmt",
