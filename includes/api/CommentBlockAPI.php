@@ -12,20 +12,24 @@ class CommentBlockAPI extends ApiBase {
 		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Comments',
-			[ 'comment_username', 'comment_user_id' ],
+			[ 'Comment_actor' ],
 			[ 'CommentID' => $this->getMain()->getVal( 'commentID' ) ],
 			__METHOD__
 		);
 		if ( $s !== false ) {
-			$userID = $s->comment_user_id;
-			$username = $s->comment_username;
-		}
+			$blockedUser = User::newFromActorId( $s->comment_actor );
 
-		CommentFunctions::blockUser( $this->getUser(), $userID, $username );
+			if ( $blockedUser && $blockedUser instanceof User ) {
+				CommentFunctions::blockUser( $this->getUser(), $blockedUser );
 
-		if ( class_exists( 'UserStatsTrack' ) ) {
-			$stats = new UserStatsTrack( $userID, $username );
-			$stats->incStatField( 'comment_ignored' );
+				if ( class_exists( 'UserStatsTrack' ) ) {
+					$userID = $blockedUser->getId();
+					$username = $blockedUser->getName();
+
+					$stats = new UserStatsTrack( $userID, $username );
+					$stats->incStatField( 'comment_ignored' );
+				}
+			}
 		}
 
 		$result = $this->getResult();

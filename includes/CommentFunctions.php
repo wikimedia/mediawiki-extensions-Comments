@@ -5,7 +5,7 @@ class CommentFunctions {
 	 * The following four functions are borrowed
 	 * from includes/wikia/GlobalFunctionsNY.php
 	 */
-	static function dateDiff( $date1, $date2 ) {
+	public static function dateDiff( $date1, $date2 ) {
 		$dtDiff = $date1 - $date2;
 
 		$totalDays = intval( $dtDiff / ( 24 * 60 * 60 ) );
@@ -19,7 +19,7 @@ class CommentFunctions {
 		return $dif;
 	}
 
-	static function getTimeOffset( $time, $timeabrv, $timename ) {
+	public static function getTimeOffset( $time, $timeabrv, $timename ) {
 		$timeStr = ''; // misza: initialize variables, DUMB FUCKS!
 		if ( $time[$timeabrv] > 0 ) {
 			// Give grep a chance to find the usages:
@@ -32,7 +32,7 @@ class CommentFunctions {
 		return $timeStr;
 	}
 
-	static function getTimeAgo( $time ) {
+	public static function getTimeAgo( $time ) {
 		$timeArray = self::dateDiff( time(), $time );
 		$timeStr = '';
 		$timeStrMo = self::getTimeOffset( $timeArray, 'mo', 'months' );
@@ -142,10 +142,9 @@ class CommentFunctions {
 	 * Blocks comments from a user
 	 *
 	 * @param User $blocker The user who is blocking someone else's comments
-	 * @param int $userId User ID of the guy whose comments we want to block
-	 * @param mixed $userName User name of the same guy
+	 * @param User $blocked User whose comments we want to block
 	 */
-	public static function blockUser( $blocker, $userId, $userName ) {
+	public static function blockUser( $blocker, $blocked ) {
 		$dbw = wfGetDB( DB_MASTER );
 
 		Wikimedia\suppressWarnings(); // E_STRICT bitching
@@ -154,10 +153,8 @@ class CommentFunctions {
 		$dbw->insert(
 			'Comments_block',
 			[
-				'cb_user_id' => $blocker->getId(),
-				'cb_user_name' => $blocker->getName(),
-				'cb_user_id_blocked' => $userId,
-				'cb_user_name_blocked' => $userName,
+				'cb_actor' => $blocker->getActorId(),
+				'cb_actor_blocked' => $blocked->getActorId(),
 				'cb_date' => $date
 			],
 			__METHOD__
@@ -167,32 +164,41 @@ class CommentFunctions {
 	/**
 	 * Fetches the list of blocked users from the database
 	 *
-	 * @param int $userId User ID for whom we're getting the blocks(?)
-	 * @return array List of comment-blocked users
+	 * @param User $user User whose block list we're loading
+	 * @return array List of comment-blocked users' user names
 	 */
-	static function getBlockList( $userId ) {
+	public static function getBlockList( $user ) {
 		$blockList = [];
 		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'Comments_block',
-			'cb_user_name_blocked',
-			[ 'cb_user_id' => $userId ],
+			'cb_actor_blocked',
+			[ 'cb_actor' => $user->getActorId() ],
 			__METHOD__
 		);
 		foreach ( $res as $row ) {
-			$blockList[] = $row->cb_user_name_blocked;
+			$blocked = User::newFromActorId( $row->cb_actor_blocked );
+			if ( $blocked ) {
+				$blockList[] = $blocked->getName();
+			}
 		}
 		return $blockList;
 	}
 
-	static function isUserCommentBlocked( $userId, $userIdBlocked ) {
+	/**
+	 * @todo Apparently unused as of 3 January 2020
+	 * @param User $user Has this user...
+	 * @param User $blocked ...blocked comments from this user?
+	 * @return bool True if they have
+	 */
+	public static function isUserCommentBlocked( $user, $blocked ) {
 		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
 			'Comments_block',
 			[ 'cb_id' ],
 			[
-				'cb_user_id' => $userId,
-				'cb_user_id_blocked' => $userIdBlocked
+				'cb_actor' => $user->getActorId(),
+				'cb_actor_blocked' => $blocked->getActorId()
 			],
 			__METHOD__
 		);
@@ -206,16 +212,16 @@ class CommentFunctions {
 	/**
 	 * Deletes a user from your personal comment-block list.
 	 *
-	 * @param int $userId Your user ID
-	 * @param int $userIdBlocked User ID of the blocked user
+	 * @param User $user User object who is deleting a block list entry
+	 * @param User $blockedUser User object representing the blocked user (whose entry is being deleted)
 	 */
-	public static function deleteBlock( $userId, $userIdBlocked ) {
+	public static function deleteBlock( $user, $blockedUser ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete(
 			'Comments_block',
 			[
-				'cb_user_id' => $userId,
-				'cb_user_id_blocked' => $userIdBlocked
+				'cb_actor' => $user->getActorId(),
+				'cb_actor_blocked' => $blockedUser->getActorId()
 			],
 			__METHOD__
 		);

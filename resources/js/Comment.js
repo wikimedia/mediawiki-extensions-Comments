@@ -266,7 +266,7 @@
 		 */
 		reply: function ( parentId, poster, posterGender ) {
 			$( '#replyto' ).text(
-				mw.msg( 'comments-reply-to', poster, posterGender ) + ' ('
+				mw.message( 'comments-reply-to', poster, posterGender ).parse() + ' ('
 			);
 			$( '<a>', {
 				class: 'comments-cancel-reply-link',

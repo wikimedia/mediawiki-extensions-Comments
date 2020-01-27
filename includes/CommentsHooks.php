@@ -69,12 +69,16 @@ class CommentsHooks {
 	public static function onLoadExtensionSchemaUpdates( $updater ) {
 		$dir = __DIR__ . '/../sql';
 
-		$dbType = $updater->getDB()->getType();
-		// For non-MySQL/MariaDB/SQLite DBMSes, use the appropriately named file
+		$db = $updater->getDB();
+		$dbType = $db->getType();
+
+		// For non-MySQL/MariaDB/SQLite DBMSes, use the appropriately named files
+		$patchFileSuffix = '';
 		if ( !in_array( $dbType, [ 'mysql', 'sqlite' ] ) ) {
 			$comments = "comments.{$dbType}.sql";
 			$comments_vote = "comments_vote.{$dbType}.sql";
 			$comments_block = "comments_block.{$dbType}.sql";
+			$patchFileSuffix = '.' . $dbType; // e.g. ".postgres"
 		} else {
 			$comments = 'comments.sql';
 			$comments_vote = 'comments_vote.sql';
@@ -84,17 +88,63 @@ class CommentsHooks {
 		$updater->addExtensionTable( 'Comments', "{$dir}/{$comments}" );
 		$updater->addExtensionTable( 'Comments_Vote', "{$dir}/{$comments_vote}" );
 		$updater->addExtensionTable( 'Comments_block', "{$dir}/{$comments_block}" );
-	}
 
-	/**
-	 * For integration with the Renameuser extension.
-	 *
-	 * @param RenameuserSQL $renameUserSQL
-	 */
-	public static function onRenameUserSQL( $renameUserSQL ) {
-		$renameUserSQL->tables['Comments'] = [ 'Comment_Username', 'Comment_user_id' ];
-		$renameUserSQL->tables['Comments_Vote'] = [ 'Comment_Vote_Username', 'Comment_Vote_user_id' ];
-		$renameUserSQL->tables['Comments_block'] = [ 'cb_user_name', 'cb_user_id' ];
-		$renameUserSQL->tables['Comments_block'] = [ 'cb_user_name_blocked', 'cb_user_id_blocked' ];
+		// Actor support
+		if ( !$db->fieldExists( 'Comments', 'Comment_actor', __METHOD__ ) ) {
+			// 1) add new actor columns
+			$updater->addExtensionField( 'Comments', 'Comment_actor', "$dir/patches/actor/add-Comment_actor{$patchFileSuffix}.sql" );
+			// 2) add the corresponding indexes
+			$updater->addExtensionIndex( 'Comments', 'wiki_actor', "$dir/patches/actor/add-wiki_actor_index.sql" );
+			// 3) populate the new column with data
+			$updater->addExtensionUpdate( [
+				'runMaintenance',
+				'MigrateOldCommentsUserColumnsToActor',
+				"$dir/../maintenance/migrateOldCommentsUserColumnsToActor.php"
+			] );
+			// 4) drop old columns & indexes
+			$updater->dropExtensionField( 'Comments', 'Comment_user_id', "$dir/patches/actor/drop-Comment_user_id.sql" );
+			$updater->dropExtensionField( 'Comments', 'Comment_Username', "$dir/patches/actor/drop-Comment_Username.sql" );
+			$updater->dropExtensionIndex( 'Comments', 'wiki_user_id', "$dir/patches/actor/drop-wiki_user_id-index.sql" );
+			$updater->dropExtensionIndex( 'Comments', 'wiki_user_name', "$dir/patches/actor/drop-wiki_user_name-index.sql" );
+		}
+
+		if ( !$db->fieldExists( 'Comments_block', 'cb_actor', __METHOD__ ) ) {
+			// 1) add new actor columns
+			$updater->addExtensionField( 'Comments_block', 'cb_actor', "$dir/patches/actor/add-cb_actor{$patchFileSuffix}.sql" );
+			$updater->addExtensionField( 'Comments_block', 'cb_actor_blocked', "$dir/patches/actor/add-cb_actor_blocked{$patchFileSuffix}.sql" );
+			// 2) add the corresponding indexes
+			$updater->addExtensionIndex( 'Comments_block', 'cb_actor', "$dir/patches/actor/add-cb_actor-index.sql" );
+			// 3) populate the new column with data
+			$updater->addExtensionUpdate( [
+				'runMaintenance',
+				'MigrateOldCommentsBlockUserColumnsToActor',
+				"$dir/../maintenance/migrateOldCommentsBlockUserColumnsToActor.php"
+			] );
+			// 4) drop old columns & indexes
+			$updater->dropExtensionField( 'Comments_block', 'cb_user_id', "$dir/patches/actor/drop-cb_user_id.sql" );
+			$updater->dropExtensionField( 'Comments_block', 'cb_user_name', "$dir/patches/actor/drop-cb_user_name.sql" );
+			$updater->dropExtensionField( 'Comments_block', 'cb_user_id_blocked', "$dir/patches/actor/drop-cb_user_id_blocked.sql" );
+			$updater->dropExtensionField( 'Comments_block', 'cb_user_name_blocked', "$dir/patches/actor/drop-cb_user_name_blocked.sql" );
+			$updater->dropExtensionIndex( 'Comments_block', 'cb_user_id', "$dir/patches/actor/drop-cb_user_id-index.sql" );
+		}
+
+		if ( !$db->fieldExists( 'Comments_Vote', 'Comment_Vote_actor', __METHOD__ ) ) {
+			// 1) add new actor columns
+			$updater->addExtensionField( 'Comments_Vote', 'Comment_Vote_actor', "$dir/patches/actor/add-Comment_Vote_actor{$patchFileSuffix}.sql" );
+			// 2) add the corresponding indexes
+			$updater->addExtensionIndex( 'Comments_Vote', 'Comments_Vote_actor_index', "$dir/patches/actor/add-Comment_Vote_unique_actor_index.sql" );
+			$updater->addExtensionIndex( 'Comments_Vote', 'Comment_Vote_actor', "$dir/patches/actor/add-Comment_Vote_actor-index.sql" );
+			// 3) populate the new column with data
+			$updater->addExtensionUpdate( [
+				'runMaintenance',
+				'MigrateOldCommentsVoteUserColumnsToActor',
+				"$dir/../maintenance/migrateOldCommentsVoteUserColumnsToActor.php"
+			] );
+			// 4) drop old columns & indexes
+			$updater->dropExtensionField( 'Comments_Vote', 'Comment_Vote_user_id', "$dir/patches/actor/drop-Comment_Vote_user_id.sql" );
+			$updater->dropExtensionField( 'Comments_Vote', 'Comment_Vote_Username', "$dir/patches/actor/drop-Comment_Vote_Username.sql" );
+			$updater->dropExtensionField( 'Comments_Vote', 'Comments_Vote_user_id_index', "$dir/patches/actor/drop-Comments_Vote_user_id_index.sql" );
+			$updater->dropExtensionIndex( 'Comments_Vote', 'Comment_Vote_user_id', "$dir/patches/actor/drop-Comment_Vote_user_id-index.sql" );
+		}
 	}
 }

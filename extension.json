@@ -1,6 +1,6 @@
 {
 	"name": "Comments",
-	"version": "4.7.0",
+	"version": "4.8.0",
 	"author": [
 		"David Pean",
 		"Misza",
@@ -13,7 +13,7 @@
 	"descriptionmsg": "comments-desc",
 	"type": "parserhook",
 	"requires": {
-		"MediaWiki": ">= 1.32.0"
+		"MediaWiki": ">= 1.34.0"
 	},
 	"GroupPermissions": {
 		"*": {
@@ -68,6 +68,9 @@
 		"NumberOfCommentsMagic": "Comments.i18n.magic.php"
 	},
 	"AutoloadClasses": {
+		"MigrateOldCommentsBlockUserColumnsToActor": "maintenance/migrateOldCommentsBlockUserColumnsToActor.php",
+		"MigrateOldCommentsUserColumnsToActor": "maintenance/migrateOldCommentsUserColumnsToActor.php",
+		"MigrateOldCommentsVoteUserColumnsToActor": "maintenance/migrateOldCommentsVoteUserColumnsToActor.php",
 		"Comment": "includes/Comment.php",
 		"CommentsPage": "includes/CommentsPage.php",
 		"NumberOfComments": "includes/parser/NumberOfComments.php",
@@ -94,7 +97,10 @@
 		},
 		"ext.comments.js": {
 			"scripts": "resources/js/Comment.js",
-			"dependencies": [ "mediawiki.api" ],
+			"dependencies": [
+				"mediawiki.api",
+				"mediawiki.jqueryMsg"
+			],
 			"messages": [
 				"comments-voted-label",
 				"comments-loading",
@@ -123,7 +129,6 @@
 		"BeforeCreateEchoEvent": "CommentsHooks::onBeforeCreateEchoEvent",
 		"ParserFirstCallInit": "CommentsHooks::onParserFirstCallInit",
 		"LoadExtensionSchemaUpdates": "CommentsHooks::onLoadExtensionSchemaUpdates",
-		"RenameUserSQL": "CommentsHooks::onRenameUserSQL",
 		"MagicWordwgVariableIDs": "NumberOfComments::onMagicWordwgVariableIDs",
 		"ParserGetVariableValueSwitch": "NumberOfComments::onParserGetVariableValueSwitch"
 	},

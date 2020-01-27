@@ -62,6 +62,7 @@ class CommentIgnoreList extends SpecialPage {
 					$out->addWikiMsg( 'sessionfailure' );
 					return;
 				}
+
 				$user_name = htmlspecialchars_decode( $user_name );
 				$user_id = User::idFromName( $user_name );
 				// Anons can be comment-blocked, but idFromName returns nothing
@@ -69,12 +70,18 @@ class CommentIgnoreList extends SpecialPage {
 				if ( !$user_id ) {
 					$user_id = 0;
 				}
+				$blockedUser = User::newFromName( $user_name );
 
-				CommentFunctions::deleteBlock( $user->getId(), $user_id );
+				if ( $blockedUser instanceof User ) {
+					CommentFunctions::deleteBlock( $user, $blockedUser );
+				}
+
+				// Update social statistics
 				if ( $user_id && class_exists( 'UserStatsTrack' ) ) {
 					$stats = new UserStatsTrack( $user_id, $user_name );
 					$stats->decStatField( 'comment_ignored' );
 				}
+
 				$output .= $this->displayCommentBlockList();
 			} else {
 				$output .= $this->confirmCommentBlockDelete();
@@ -89,23 +96,28 @@ class CommentIgnoreList extends SpecialPage {
 	 *
 	 * @return string HTML
 	 */
-	function displayCommentBlockList() {
+	private function displayCommentBlockList() {
 		$lang = $this->getLanguage();
 		$title = $this->getPageTitle();
 
 		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
-			'Comments_block',
-			[ 'cb_user_name_blocked', 'cb_date' ],
-			[ 'cb_user_id' => $this->getUser()->getId() ],
+			[ 'Comments_block', 'actor' ],
+			[ 'cb_actor_blocked', 'cb_date' ],
+			[ 'cb_actor' => $this->getUser()->getActorId() ],
 			__METHOD__,
-			[ 'ORDER BY' => 'cb_user_name' ]
+			[ 'ORDER BY' => 'actor_name' ],
+			[ 'actor' => [ 'JOIN', 'actor_id = cb_actor' ] ]
 		);
 
 		if ( $dbr->numRows( $res ) > 0 ) {
 			$out = '<ul>';
 			foreach ( $res as $row ) {
-				$user_title = Title::makeTitle( NS_USER, $row->cb_user_name_blocked );
+				$user = User::newFromActorId( $row->cb_actor_blocked );
+				if ( !$user ) {
+					continue;
+				}
+				$user_title = $user->getUserPage();
 				$out .= '<li>' . $this->msg(
 					'comments-ignore-item',
 					htmlspecialchars( $user_title->getFullURL() ),
@@ -127,7 +139,7 @@ class CommentIgnoreList extends SpecialPage {
 	 *
 	 * @return string HTML
 	 */
-	function confirmCommentBlockDelete() {
+	private function confirmCommentBlockDelete() {
 		$user_name = $this->getRequest()->getVal( 'user' );
 
 		$out = '<div class="comment_blocked_user">' .
