@@ -1,0 +1,7 @@
+Code-Review+2: Libraryupgrader <tools.libraryupgrader@tools.wmflabs.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Tue, 28 Jan 2020 07:50:54 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/567800
+Project: mediawiki/extensions/Comments
+Branch: refs/heads/master
