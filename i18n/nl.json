@@ -8,10 +8,13 @@
 			"SPQRobin",
 			"Siebrand",
 			"Wiki13",
-			"Southparkfan"
+			"Southparkfan",
+			"Elroy"
 		]
 	},
 	"comments-comment": "Reactie",
+	"comments-continue-editing-btn": "Doorgaan met bewerken",
+	"comments-preview-failed": "Het voorbeeld weergeven is mislukt. Probeer het opnieuw.",
 	"comments-desc": "Voegt de parserhook <code>&lt;comments&gt;</code> toe die het mogelijk maakt te reageren op pagina's",
 	"comments-db-locked": "<h3>Reacties toevoegen</h3>De database is gesloten voor onderhoud. Probeer het later opnieuw.",
 	"comments-voted-label": "Gestemd",

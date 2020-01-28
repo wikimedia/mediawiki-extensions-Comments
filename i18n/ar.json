@@ -3,7 +3,8 @@
 		"authors": [
 			"ديفيد",
 			"Meno25",
-			"Sonic N800"
+			"Sonic N800",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
 	"apihelp-commentblock-description": "تسمح API Commentblock بمنع مستخدم من التعليق الذي تم إنشاؤه من بعد ملء الوسائط التالية: CommentID.",
@@ -31,6 +32,8 @@
 	"apihelp-commentvote-param-commentID": "معرف التعليق للتعليق الذي تم التصويت له",
 	"apihelp-commentvote-param-voteValue": "قيمة التصويت للتعليق",
 	"comments-comment": "تعليق",
+	"comments-continue-editing-btn": "مواصلة التعديل",
+	"comments-preview-failed": "تعذرت المعاينة. حاول مرة أخرى.",
 	"comments-desc": "يضيف خطاف المحلل <code>&lt;comments&gt;</code> الذي يسمح بالتعليق على الصفحات",
 	"comments-db-locked": "<h3>إضافة التعليقات</h3>قاعدة البيانات مقفلة حاليا لصيانة قاعدة البيانات الروتينية، وبعد ذلك ستعود إلى وضعها الطبيعي; يُرجَى التحقق مرة أخرى في وقت لاحق!",
 	"comments-voted-label": "تم التصويت",
