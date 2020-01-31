@@ -33,6 +33,7 @@
 	"apihelp-commentvote-param-commentID": "Kommentar-ID för kommentar som ska röstas",
 	"apihelp-commentvote-param-voteValue": "Röstvärde för kommentaren",
 	"comments-comment": "Kommentar",
+	"comments-continue-editing-btn": "Fortsätt redigera",
 	"comments-desc": "Lägger till parserkroken <code>&lt;comments&gt;</code> som tillåter kommentarer på sidor",
 	"comments-db-locked": "<h3>Lägga till kommentarer</h3>Databasen är för tillfället låst för rutinerat underhåll, och kommer att fungera normalt när det är klart. Var god kom tillbaka senare!",
 	"comments-voted-label": "Röstade",
