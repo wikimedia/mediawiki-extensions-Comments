@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Naudefj"
+			"Naudefj",
+			"Joris Darlington Quarshie"
 		]
 	},
 	"comments-comment": "Opmerking",
+	"comments-continue-editing-btn": "Gaan voort met redigering",
+	"comments-preview-failed": "Voorskou misluk. Probeer asseblief weer.",
 	"comments-voted-label": "Gestem",
 	"comments-loading": "Laai...",
 	"comments-cancel-reply": "Kanselleer",

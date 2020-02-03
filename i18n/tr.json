@@ -29,6 +29,8 @@
 	"apihelp-commentvote-param-commentID": "Yorum için oy verilen yorumun kimliği",
 	"apihelp-commentvote-param-voteValue": "Yorum için oy değeri",
 	"comments-comment": "Yorum",
+	"comments-continue-editing-btn": "Düzenlemeye devam et",
+	"comments-preview-failed": "Önizleme başarısız oldu. Lütfen tekrar deneyin.",
 	"comments-desc": "Sayfalarda yorum yapmaya izin veren <code>&lt;comments&gt;</code> ayrıştırıcı kancası ekler",
 	"comments-db-locked": "<h3>Yorum ekleme</h3>Veritabanı şu anda rutin veritabanı bakımı için kilitlenmiş ve ardından normale dönecektir. Lütfen daha sonra tekrar kontrol edin!",
 	"comments-voted-label": "Oylandı",
