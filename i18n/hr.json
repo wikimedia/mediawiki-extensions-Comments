@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bugoslav"
+			"Bugoslav",
+			"Neptune, the Mystic"
 		]
 	},
+	"comments-continue-editing-btn": "Nastavi s uređivanjem",
 	"comments-reply-to": "Odgovori {{GENDER:$2|suradniku $1|suradnici $1}}"
 }

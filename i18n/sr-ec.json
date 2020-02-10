@@ -9,6 +9,8 @@
 		]
 	},
 	"comments-comment": "Коментар",
+	"comments-continue-editing-btn": "Настави са уређивањем",
+	"comments-preview-failed": "Преглед није успео. Покушајте поново.",
 	"comments-voted-label": "Гласано",
 	"comments-loading": "Учитавам…",
 	"comments-auto-refresher-enable": "Омогући самоосвежавање коментара",
