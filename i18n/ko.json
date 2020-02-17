@@ -10,6 +10,7 @@
 		]
 	},
 	"comments-comment": "댓글",
+	"comments-continue-editing-btn": "편집 계속",
 	"comments-desc": "문서에 댓글을 허용하는 <code>&lt;comments&gt;</code> 파서 훅을 추가합니다",
 	"comments-db-locked": "<h3>댓글 추가</h3>데이터베이스가 현재 정기적인 데이터베이스 유지 관리를 위해 잠겨 있으며 이후 정상으로 돌아옵니다. 나중에 다시 확인하세요!",
 	"comments-voted-label": "투표함",
