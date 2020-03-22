@@ -51,11 +51,44 @@ class MigrateOldCommentsVoteUserColumnsToActor extends LoggedUpdateMaintenance {
 			// Why is this loop here? Because Postgres was being weird, that's why.
 			return true;
 		}
+
+		// Copypasted code from AJAXPoll's migration script, written by Ostrzyciel
+		// Find missing anonymous actors and insert them to the actor table
+		// Do not attempt doing it with an insertSelect, it's apparently incompatible with postgres
+		$res = $dbw->select(
+			[
+				'Comments_Vote',
+				'actor'
+			],
+			[ 'Comment_Vote_Username' ],
+			[
+				'Comments_Vote_user_id' => 0,
+				'actor_id IS NULL'
+			],
+			__METHOD__,
+			[ 'DISTINCT' ],
+			[
+				'actor' => [ 'LEFT JOIN', [ 'actor_name = Comment_Vote_Username' ] ]
+			]
+		);
+
+		$toInsert = [];
+
+		foreach ( $res as $row ) {
+			$toInsert[] = [ 'actor_name' => $row->Comment_Vote_Username ];
+		}
+
+		if ( !empty( $toInsert ) ) {
+			$dbw->insert( 'actor', $toInsert, __METHOD__ );
+		}
+		// End copypasta
+
 		$dbw->query(
 			// @codingStandardsIgnoreLine
 			"UPDATE {$dbw->tableName( 'Comments_Vote' )} SET Comment_Vote_actor=(SELECT actor_id FROM {$dbw->tableName( 'actor' )} WHERE actor_user=Comment_Vote_user_id AND actor_name=Comment_Vote_Username)",
 			__METHOD__
 		);
+
 		return true;
 	}
 }
