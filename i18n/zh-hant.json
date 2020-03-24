@@ -12,7 +12,8 @@
 			"Sanmosa",
 			"Kly",
 			"A2093064",
-			"Xiplus"
+			"Xiplus",
+			"铁桶"
 		]
 	},
 	"apihelp-commentblock-description": "評論封鎖 API 允許在填完以下參數後來封鎖建立該評論的使用者：評論 ID",
@@ -74,7 +75,7 @@
 	"comments-ignore-item": "<a href=\"$1\">$2</a> 於 $3 <a href=\"$4\">(解除封鎖)</a>",
 	"comments-ignore-no-users": "目前沒有使用者被封鎖。",
 	"comments-ignore-remove-message": "您確定要取消封鎖使用者 <b>$1</b> 的評論？",
-	"comments-ignore-unblock": "解除封鎖",
+	"comments-ignore-unblock": "解封",
 	"comments-ignore-cancel": "取消",
 	"comments-ignore-title": "評論忽略清單",
 	"commentignorelist": "評論忽略清單",
