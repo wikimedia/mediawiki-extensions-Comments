@@ -43,7 +43,7 @@ class NumberOfComments {
 					'Got the amount of comments from memcached'
 				);
 				// return value
-				$ret = $data;
+				$ret = $cache[$magicWordId] = $data;
 			} else {
 				// Not cached → have to fetch it from the database
 				$dbr = wfGetDB( DB_REPLICA );
@@ -58,11 +58,11 @@ class NumberOfComments {
 				// (86400 = seconds in a day)
 				$wgMemc->set( $key, $commentCount, 86400 );
 				// ...and return the value to the user
-				$ret = $commentCount;
+				$ret = $cache[$magicWordId] = $commentCount;
 			}
 		} elseif ( $magicWordId == 'NUMBEROFCOMMENTSPAGE' ) {
 			$id = $parser->getTitle()->getArticleID();
-			$ret = self::getNumberOfCommentsPage( $id );
+			$ret = $cache[$magicWordId] = self::getNumberOfCommentsPage( $id );
 		}
 
 		return true;
