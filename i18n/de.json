@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Geitost",
 			"Gerry",
 			"Kghbln",
-			"Metalhead64",
-			"Geitost"
+			"Metalhead64"
 		]
 	},
 	"apihelp-commentblock-description": "Die commentblock-API erlaubt das Sperren eines Benutzers, von dem der Kommentar stammt, nach dem Ausfüllen der folgenden Parameter: CommentID.",

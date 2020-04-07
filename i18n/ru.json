@@ -2,13 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Kaganer",
+			"Katunchik",
 			"Lockal",
 			"Okras",
 			"Ole Yves",
 			"SimonLitt",
 			"Stjn",
-			"Vlad5250",
-			"Katunchik"
+			"Vlad5250"
 		]
 	},
 	"apihelp-commentblock-description": "Приложение для блокировки комментариев позволяет заблокировать участника от комментирования, который возник после заполнения следующих параметров: CommentID.",

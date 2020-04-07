@@ -4,15 +4,15 @@
 			"AndreyWiki",
 			"Armando-Martin",
 			"Bernardom",
-			"Ciencia Al Poder",
-			"Fitoschido",
-			"Ihojose",
-			"Sporeunai",
-			"Frammm",
 			"Carlos Cristia",
-			"Macofe",
+			"Ciencia Al Poder",
 			"Dgstranz",
-			"Madamebiblio"
+			"Fitoschido",
+			"Frammm",
+			"Ihojose",
+			"Macofe",
+			"Madamebiblio",
+			"Sporeunai"
 		]
 	},
 	"apihelp-commentvote-description": "La API commentvote permite votar un comentario tras proporcionar los parámetros siguientes: commentID, voteValue.",

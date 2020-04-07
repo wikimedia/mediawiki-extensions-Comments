@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hamilton Abreu",
+			"Imperadeiro98",
 			"Luckas",
 			"SandroHc",
-			"Imperadeiro98",
-			"Vitorvicentevalente",
-			"Hamilton Abreu"
+			"Vitorvicentevalente"
 		]
 	},
 	"apihelp-commentblock-description": "A API commentblock permite bloquear um utilizador a partir de um comentário feito por ele, depois de preencher os seguintes parâmetros: CommentID.",

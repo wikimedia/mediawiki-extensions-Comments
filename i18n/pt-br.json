@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Cainamarques",
-			"Luckas",
-			"Nemo bis",
 			"Eduardo Addad de Oliveira",
-			"Luanafaro"
+			"Luanafaro",
+			"Luckas",
+			"Nemo bis"
 		]
 	},
 	"apihelp-commentblock-description": "A API commentblock permite bloquear um utilizador a partir de um comentário feito por ele, após preencher os seguintes parâmetros: CommentID.",

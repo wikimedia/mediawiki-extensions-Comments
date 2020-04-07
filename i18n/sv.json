@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Jopparn",
-			"Tobulos1",
-			"WikiPhoenix",
 			"Lokal Profil",
-			"Skalman"
+			"Skalman",
+			"Tobulos1",
+			"WikiPhoenix"
 		]
 	},
 	"apihelp-commentblock-description": "API:et commentblock gör det möjligt att blockera en användare från kommentaren den kommer ifrån efter att följande parametrar fylls i: CommentID",

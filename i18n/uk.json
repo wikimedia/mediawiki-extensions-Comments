@@ -4,11 +4,11 @@
 			"Ahonc",
 			"Andriykopanytsia",
 			"Base",
-			"RLuts",
-			"Ата",
+			"Movses",
 			"Piramidion",
+			"RLuts",
 			"Vlad5250",
-			"Movses"
+			"Ата"
 		]
 	},
 	"apihelp-commentblock-description": "Commentblock API дозволяє заблокувати користувача за коментарем, за яким його можна відстежити, заповнивши такий параметр: CommentID.",

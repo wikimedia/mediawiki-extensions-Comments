@@ -1,17 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
+			"0x010C",
 			"Crochet.david",
+			"Fitoschido",
 			"Gomoko",
 			"Linedwell",
-			"0x010C",
-			"Tuxxic",
 			"Mattho69",
-			"Wladek92",
+			"Thibaut120094",
+			"Tuxxic",
 			"Urhixidur",
-			"Fitoschido",
 			"Verdy p",
-			"Thibaut120094"
+			"Wladek92"
 		]
 	},
 	"apihelp-commentblock-description": "L’API <tt>commentblock</tt> permet de bloquer un utilisateur à partir du commentaire dont il est l’auteur en fournissant les paramètres suivants : <tt>CommentID</tt>.",
