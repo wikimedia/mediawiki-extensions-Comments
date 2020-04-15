@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"comments-you": "Դուք",
+	"comments-ignore-cancel": "Չեղարկել",
+	"comments-time-months": "{{PLURAL:$1|մեկ ամիս|$1 ամիսներ}}"
+}
