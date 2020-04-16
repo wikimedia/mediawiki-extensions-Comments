@@ -3,11 +3,6 @@
 class CommentBlockAPI extends ApiBase {
 
 	public function execute() {
-		// Do nothing when the database is in read-only mode
-		if ( wfReadOnly() ) {
-			return true;
-		}
-
 		// Load user_name and user_id for person we want to block from the comment it originated from
 		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
