@@ -7,8 +7,7 @@ class CommentVoteAPI extends ApiBase {
 		// Blocked users cannot vote, obviously, and neither can those users without the necessary privileges
 		if (
 			$user->isBlocked() ||
-			!$user->isAllowed( 'comment' ) ||
-			wfReadOnly()
+			!$user->isAllowed( 'comment' )
 		) {
 			return '';
 		}

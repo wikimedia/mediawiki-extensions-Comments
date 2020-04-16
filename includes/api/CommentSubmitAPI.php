@@ -9,8 +9,7 @@ class CommentSubmitAPI extends ApiBase {
 		// forgeries (CSRF)
 		if (
 			$user->isBlocked() ||
-			!$user->isAllowed( 'comment' ) ||
-			wfReadOnly()
+			!$user->isAllowed( 'comment' )
 		) {
 			return true;
 		}
