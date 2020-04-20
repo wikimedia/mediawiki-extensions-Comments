@@ -4,6 +4,7 @@
 			"Amire80",
 			"Guycn2",
 			"Ofrahod",
+			"Steeve815",
 			"חיים",
 			"ערן"
 		]
@@ -33,6 +34,7 @@
 	"apihelp-commentvote-param-commentID": "מזהה התגובה שעליה תבוצע ההצבעה",
 	"apihelp-commentvote-param-voteValue": "ערך ההצבעה עבור התגובה",
 	"comments-comment": "תגובה",
+	"comments-continue-editing-btn": "להמשיך לערוך",
 	"comments-desc": "הוספת התג <code>&lt;comments&gt;</code> המאפשר להגיב על דפים",
 	"comments-db-locked": "<h3>הוספת תגובות</h3>בסיס הנתונים נעול כעת עקב תחזוקה שגרתית, שאחריה האתר ישוב לקדמותו. נא לבדוק שוב מאוחר יותר!",
 	"comments-voted-label": "הצבעת",
@@ -69,6 +71,8 @@
 	"comments-ignore-cancel": "ביטול",
 	"comments-ignore-title": "רשימת התעלמות בתגובות",
 	"commentignorelist": "רשימת התעלמות בתגובות",
+	"echo-category-title-mention-comment": "אזכורים בהערות",
+	"notification-header-mention-comment": "$1 {{GENDER:$2|הזכיר|הזכירה}} {{GENDER:$3|אותך}} ב[[$4#comment-$5|הערה]] בדף <strong>$4</strong>.",
 	"log-name-comments": "יומן תגובות",
 	"log-description-comments": "זהו יומן של התגובות.",
 	"logentry-comments-add": "$1 פרסם תגובה חדשה בדף $3",
