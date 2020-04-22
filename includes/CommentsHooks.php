@@ -18,7 +18,7 @@ class CommentsHooks {
 	 * - <comments />
 	 * - NUMBEROFCOMMENTSPAGE
 	 *
-	 * @param Parser $parser
+	 * @param Parser &$parser
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
 		$parser->setHook( 'comments', [ 'DisplayComments', 'getParserHandler' ] );
@@ -29,9 +29,9 @@ class CommentsHooks {
 	 * For the Echo extension: register our new presentation model with Echo so
 	 * Echo knows how it should display our notifications in it.
 	 *
-	 * @param array $notifications Echo notifications
-	 * @param array $notificationCategories Echo notification categories
-	 * @param array $icons Icon details
+	 * @param array &$notifications Echo notifications
+	 * @param array &$notificationCategories Echo notification categories
+	 * @param array &$icons Icon details
 	 */
 	public static function onBeforeCreateEchoEvent( &$notifications, &$notificationCategories, &$icons ) {
 		$notifications['mention-comment'] = [
