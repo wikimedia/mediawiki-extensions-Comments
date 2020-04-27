@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ameisenigel",
 			"Geitost",
 			"Gerry",
 			"Kghbln",
@@ -28,6 +29,8 @@
 	"apihelp-commentvote-param-commentID": "Kennung des Kommentars, für den abgestimmt wurde.",
 	"apihelp-commentvote-param-voteValue": "Abstimmungswert für den Kommentar",
 	"comments-comment": "Kommentar",
+	"comments-continue-editing-btn": "Weiter bearbeiten",
+	"comments-preview-failed": "Vorschau fehlgeschlagen. Bitte erneut versuchen.",
 	"comments-desc": "Ergänzt die Parsererweiterung <code>&lt;comments&gt;</code> zum Kommentieren von Seiten",
 	"comments-db-locked": "<h3>Hinzufügen von Kommentaren</h3>Die Datenbank ist momentan aufgrund routinemäßiger Wartungsarbeiten für den Schreibzugriff gesperrt. Bitte probiere es später noch einmal.",
 	"comments-voted-label": "Abgestimmt",
@@ -64,6 +67,9 @@
 	"comments-ignore-cancel": "Abbrechen",
 	"comments-ignore-title": "Ignorierliste zu Kommentaren",
 	"commentignorelist": "Ignorierliste zu Kommentaren",
+	"echo-category-title-mention-comment": "Erwähnungen in Kommentaren",
+	"echo-pref-tooltip-mention-comment": "Benachrichtige mich, wenn jemand in einem Kommentar auf meine Benutzerseite verlinkt.",
+	"notification-header-mention-comment": "$1 {{GENDER:$2|erwähnte}} {{GENDER:$3|dich}} in [[$4#comment-$5|einem Kommentar]] auf <strong>$4</strong>.",
 	"log-name-comments": "Kommentar-Logbuch",
 	"log-description-comments": "Dies ist ein Logbuch von Kommentaren.",
 	"logentry-comments-add": "$1 hinterließ einen neuen Kommentar auf $3",
