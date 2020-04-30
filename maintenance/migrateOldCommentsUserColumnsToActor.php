@@ -93,6 +93,9 @@ class MigrateOldCommentsUserColumnsToActor extends LoggedUpdateMaintenance {
 		foreach ( $res as $row ) {
 			$user = new User();
 			$user->setName( $row->Comment_Username );
+			if ( !$user->getId() ) {
+				return;
+			}
 			$dbw->update(
 				'Comments',
 				[
