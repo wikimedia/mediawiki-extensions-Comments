@@ -89,17 +89,47 @@ class MigrateOldCommentsBlockUserColumnsToActor extends LoggedUpdateMaintenance 
 		}
 		// End copypasta
 
-		$dbw->query(
-			// @codingStandardsIgnoreLine
-			"UPDATE {$dbw->tableName( 'Comments_block' )} SET cb_actor=(SELECT actor_id FROM {$dbw->tableName( 'actor' )} WHERE actor_user=cb_user_id AND actor_name=cb_user_name)",
-			__METHOD__
+		$res = $dbw->select(
+			'Comments_block',
+			[
+				'cb_user_name'
+			]
 		);
+		foreach ( $res as $row ) {
+			$user = User::newFromName( $row->cb_user_name );
+			if ( !$user ) {
+				return;
+			}
+			$dbw->update(
+				'Comments_block',
+				[
+					'cb_actor' => $user->getActorId()
+				],
+ 				[
+					'cb_user_name' => $row->cb_user_name
+				]
+			);
+		}
 
-		$dbw->query(
-			// @codingStandardsIgnoreLine
-			"UPDATE {$dbw->tableName( 'Comments_block' )} SET cb_actor_blocked=(SELECT actor_id FROM {$dbw->tableName( 'actor' )} WHERE actor_user=cb_user_id_blocked AND actor_name=cb_user_name_blocked)",
-			__METHOD__
+		$res = $dbw->select(
+			'Comments_block',
+			[
+				'cb_user_name_blocked'
+			]
 		);
+		foreach ( $res as $row ) {
+			$user = new User();
+			$user->setName( $row->cb_user_name_blocked );
+			$dbw->update(
+				'Comments_block',
+				[
+					'cb_actor_blocked' => $user->getActorId( $dbw )
+				],
+				[
+					'cb_user_name_blocked' => $row->cb_user_name_blocked
+				]
+			);
+		}
 
 		return true;
 	}
