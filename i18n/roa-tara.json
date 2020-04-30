@@ -29,6 +29,8 @@
 	"apihelp-commentvote-param-commentID": "CommentID d'u commende ca ha state votate",
 	"apihelp-commentvote-param-voteValue": "Vote 'u valore pu commende",
 	"comments-comment": "Commende",
+	"comments-continue-editing-btn": "Condinue a cangià",
+	"comments-preview-failed": "Andeprime fallite. Pruève arrete.",
 	"comments-desc": "Aggiunge <code>&lt;comments&gt;</code> cumme gance analizzatrice ca permette de commendà sus a le pàggene",
 	"comments-db-locked": "<h3>Aggiunde de commende</h3>'U database jè bloccate pe mò pe manutenzione, apprisse ca spicce torne normale. Pe piacere pruève cchiù tarde!",
 	"comments-voted-label": "Vutate",
