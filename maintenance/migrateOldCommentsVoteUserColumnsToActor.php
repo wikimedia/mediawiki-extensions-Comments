@@ -90,8 +90,11 @@ class MigrateOldCommentsVoteUserColumnsToActor extends LoggedUpdateMaintenance {
 			]
 		);
 		foreach ( $res as $row ) {
-			$user = new User();
-			$user->setName( $row->Comment_Vote_Username );
+			$ip = User::isIP( $row->Comment_Vote_Username );
+			$user = User::newFromName( $row->Comment_Vote_Username, !$ip );
+			if ( !$user || !$user->getId() ) {
+				continue;
+			}
 			$dbw->update(
 				'Comments_Vote',
 				[
