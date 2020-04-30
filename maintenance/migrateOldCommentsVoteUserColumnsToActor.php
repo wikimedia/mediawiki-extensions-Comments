@@ -62,7 +62,7 @@ class MigrateOldCommentsVoteUserColumnsToActor extends LoggedUpdateMaintenance {
 			],
 			[ 'Comment_Vote_Username' ],
 			[
-				'Comments_Vote_user_id' => 0,
+				'Comment_Vote_user_id' => 0,
 				'actor_id IS NULL'
 			],
 			__METHOD__,
