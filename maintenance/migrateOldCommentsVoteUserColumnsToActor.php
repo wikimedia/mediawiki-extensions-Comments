@@ -83,11 +83,24 @@ class MigrateOldCommentsVoteUserColumnsToActor extends LoggedUpdateMaintenance {
 		}
 		// End copypasta
 
-		$dbw->query(
-			// @codingStandardsIgnoreLine
-			"UPDATE {$dbw->tableName( 'Comments_Vote' )} SET Comment_Vote_actor=(SELECT actor_id FROM {$dbw->tableName( 'actor' )} WHERE actor_user=Comment_Vote_user_id AND actor_name=Comment_Vote_Username)",
-			__METHOD__
+		$res = $dbw->select(
+			'Comments_Vote',
+			[
+				'Comment_Vote_Username'
+			]
 		);
+		foreach ( $res as $row ) {
+			$user = User::newFromName( $row->Comment_Vote_Username );
+			if ( !$user ) {
+				return;
+			}
+			$dbw->update(
+				'Comments_Vote',
+				[
+					'Comment_Vote_actor' => $user->getActorId()
+				]
+			);
+		}
 
 		return true;
 	}
