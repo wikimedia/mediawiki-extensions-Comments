@@ -91,13 +91,13 @@ class MigrateOldCommentsBlockUserColumnsToActor extends LoggedUpdateMaintenance 
 
 		$dbw->query(
 			// @codingStandardsIgnoreLine
-			"UPDATE {$dbw->tableName( 'Comments_block' )} SET cb_actor=(SELECT actor_id FROM {$dbw->tableName( 'actor' )} WHERE actor_user=cb_user_id AND actor_name=cb_user_name)",
+			"UPDATE {$dbw->tableName( 'Comments_block' )} SET cb_actor=(SELECT actor_id FROM {$dbw->tableName( 'actor' )} WHERE actor_name=cb_user_name)",
 			__METHOD__
 		);
 
 		$dbw->query(
 			// @codingStandardsIgnoreLine
-			"UPDATE {$dbw->tableName( 'Comments_block' )} SET cb_actor_blocked=(SELECT actor_id FROM {$dbw->tableName( 'actor' )} WHERE actor_user=cb_user_id_blocked AND actor_name=cb_user_name_blocked)",
+			"UPDATE {$dbw->tableName( 'Comments_block' )} SET cb_actor_blocked=(SELECT actor_id FROM {$dbw->tableName( 'actor' )} WHERE actor_name=cb_user_name_blocked)",
 			__METHOD__
 		);
 

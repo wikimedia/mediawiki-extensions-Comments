@@ -85,7 +85,7 @@ class MigrateOldCommentsVoteUserColumnsToActor extends LoggedUpdateMaintenance {
 
 		$dbw->query(
 			// @codingStandardsIgnoreLine
-			"UPDATE {$dbw->tableName( 'Comments_Vote' )} SET Comment_Vote_actor=(SELECT actor_id FROM {$dbw->tableName( 'actor' )} WHERE actor_user=Comment_Vote_user_id AND actor_name=Comment_Vote_Username)",
+			"UPDATE {$dbw->tableName( 'Comments_Vote' )} SET Comment_Vote_actor=(SELECT actor_id FROM {$dbw->tableName( 'actor' )} WHERE actor_name=Comment_Vote_Username)",
 			__METHOD__
 		);
 
