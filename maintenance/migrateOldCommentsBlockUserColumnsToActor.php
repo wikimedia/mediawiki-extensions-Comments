@@ -96,8 +96,9 @@ class MigrateOldCommentsBlockUserColumnsToActor extends LoggedUpdateMaintenance 
 			]
 		);
 		foreach ( $res as $row ) {
-			$user = User::newFromName( $row->cb_user_name );
-			if ( !$user ) {
+			$user = new User();
+			$user->setName( $row->cb_user_name );
+			if ( !$user->getId() ) {
 				return;
 			}
 			$dbw->update(
@@ -118,8 +119,11 @@ class MigrateOldCommentsBlockUserColumnsToActor extends LoggedUpdateMaintenance 
 			]
 		);
 		foreach ( $res as $row ) {
-			$user = new User();
-			$user->setName( $row->cb_user_name_blocked );
+			$ip = User::isIP( $row->cb_user_name_blocked );
+			$user = User::newFromName( $row->cb_user_name_blocked, $ip );
+			if ( !$user->getId() ) {
+				continue;
+			}
 			$dbw->update(
 				'Comments_block',
 				[
