@@ -92,20 +92,21 @@ class MigrateOldCommentsBlockUserColumnsToActor extends LoggedUpdateMaintenance 
 		$res = $dbw->select(
 			'Comments_block',
 			[
-				'cb_user_name'
-			]
+				'cb_user_id', 'cb_user_name'
+			],
+			'',
+			__METHOD__,
+			[ 'DISTINCT' ]
 		);
 		foreach ( $res as $row ) {
-			$user = User::newFromName( $row->cb_user_name );
-			if ( !$user ) {
-				return;
-			}
+			$user = User::newFromAnyId( $row->cb_user_id, $row->cb_user_name, null );
 			$dbw->update(
 				'Comments_block',
 				[
 					'cb_actor' => $user->getActorId()
 				],
 				[
+					'cb_user_id' => $row->cb_user_id,
 					'cb_user_name' => $row->cb_user_name
 				]
 			);
@@ -114,18 +115,21 @@ class MigrateOldCommentsBlockUserColumnsToActor extends LoggedUpdateMaintenance 
 		$res = $dbw->select(
 			'Comments_block',
 			[
-				'cb_user_name_blocked'
-			]
+				'cb_user_id_blocked', 'cb_user_name_blocked'
+			],
+			'',
+			__METHOD__,
+			[ 'DISTINCT' ]
 		);
 		foreach ( $res as $row ) {
-			$user = new User();
-			$user->setName( $row->cb_user_name_blocked );
+			$user = User::newFromAnyId( $row->cb_user_id_blocked, $row->cb_user_name_blocked, null );
 			$dbw->update(
 				'Comments_block',
 				[
 					'cb_actor_blocked' => $user->getActorId( $dbw )
 				],
 				[
+					'cb_user_id_blocked' => $row->cb_user_id_blocked,
 					'cb_user_name_blocked' => $row->cb_user_name_blocked
 				]
 			);
