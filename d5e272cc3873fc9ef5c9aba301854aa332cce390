@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "eb3328ce_d0126252",
+        "filename": "maintenance/migrateOldCommentsBlockUserColumnsToActor.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2020-05-04T08:18:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "755c4905_47cf0f28",
+      "revId": "d5e272cc3873fc9ef5c9aba301854aa332cce390",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dc05526e_1145c3ac",
         "filename": "maintenance/migrateOldCommentsBlockUserColumnsToActor.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2020-05-03T21:32:58Z",
       "side": 1,
       "message": "Shouldn\u0027t there be a !$user check?",
+      "revId": "d5e272cc3873fc9ef5c9aba301854aa332cce390",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f35ceff_35c9ed11",
+        "filename": "maintenance/migrateOldCommentsBlockUserColumnsToActor.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2020-05-04T08:18:22Z",
+      "side": 1,
+      "message": "No. This static function always returns a User object. The validity of the \"user\" is not checked until getActorId gets called (which was the current situation anyway)",
+      "parentUuid": "dc05526e_1145c3ac",
       "revId": "d5e272cc3873fc9ef5c9aba301854aa332cce390",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
