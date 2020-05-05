@@ -104,7 +104,7 @@ class MigrateOldCommentsBlockUserColumnsToActor extends LoggedUpdateMaintenance 
 			$dbw->update(
 				'Comments_block',
 				[
-					'cb_actor' => $user->getActorId()
+					'cb_actor' => $user->getActorId( $dbw )
 				],
 				[
 					'cb_user_id' => $row->cb_user_id,
