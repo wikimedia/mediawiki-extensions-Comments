@@ -142,8 +142,8 @@ class CommentsHooks {
 			] );
 			// 4) drop old columns & indexes
 			$updater->dropExtensionField( 'Comments_Vote', 'Comment_Vote_user_id', "$dir/patches/actor/drop-Comment_Vote_user_id.sql" );
+			$updater->dropExtensionIndex( 'Comments_Vote', 'Comments_Vote_user_id_index', "$dir/patches/actor/drop-Comments_Vote_user_id_index.sql" );
 			$updater->dropExtensionField( 'Comments_Vote', 'Comment_Vote_Username', "$dir/patches/actor/drop-Comment_Vote_Username.sql" );
-			$updater->dropExtensionField( 'Comments_Vote', 'Comments_Vote_user_id_index', "$dir/patches/actor/drop-Comments_Vote_user_id_index.sql" );
 			$updater->dropExtensionIndex( 'Comments_Vote', 'Comment_Vote_user_id', "$dir/patches/actor/drop-Comment_Vote_user_id-index.sql" );
 		}
 	}
