@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class NumberOfComments {
 	/**
 	 * Registers NUMBEROFCOMMENTS and NUMPBEROFCOMMENTSPAGE as a valid magic word identifier.
@@ -31,11 +33,10 @@ class NumberOfComments {
 	 * @return bool
 	 */
 	public static function onParserGetVariableValueSwitch( $parser, &$cache, $magicWordId, &$ret ) {
-		global $wgMemc;
-
 		if ( $magicWordId == 'NUMBEROFCOMMENTS' ) {
-			$key = $wgMemc->makeKey( 'comments', 'magic-word' );
-			$data = $wgMemc->get( $key );
+			$wanCache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+			$key = $wanCache->makeKey( 'comments', 'magic-word' );
+			$data = $wanCache->get( $key );
 			if ( $data != '' ) {
 				// We have it in cache? Oh goody, let's just use the cached value!
 				wfDebugLog(
@@ -56,7 +57,7 @@ class NumberOfComments {
 				wfDebugLog( 'Comments', 'Got the amount of comments from DB' );
 				// Store the count in cache...
 				// (86400 = seconds in a day)
-				$wgMemc->set( $key, $commentCount, 86400 );
+				$wanCache->set( $key, $commentCount, 86400 );
 				// ...and return the value to the user
 				$ret = $cache[$magicWordId] = $commentCount;
 			}
@@ -94,13 +95,12 @@ class NumberOfComments {
 	 * @return int
 	 */
 	static function getNumberOfCommentsPage( $pageId ) {
-		global $wgMemc;
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$key = $cache->makeKey( 'comments', 'numberofcommentspage', $pageId );
+		$cachedValue = $cache->get( $key );
 
-		$key = $wgMemc->makeKey( 'comments', 'numberofcommentspage', $pageId );
-		$cache = $wgMemc->get( $key );
-
-		if ( $cache ) {
-			$val = intval( $cache );
+		if ( $cachedValue ) {
+			$val = intval( $cachedValue );
 		} else {
 			$dbr = wfGetDB( DB_REPLICA );
 
@@ -116,7 +116,8 @@ class NumberOfComments {
 			} else {
 				$val = intval( $res );
 			}
-			$wgMemc->set( $key, $val, 60 * 60 ); // cache for an hour
+
+			$cache->set( $key, $val, 60 * 60 ); // cache for an hour
 		}
 
 		return $val;
