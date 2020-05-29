@@ -84,7 +84,7 @@ class CommentsPage extends ContextSource {
 	/**
 	 * Constructor
 	 *
-	 * @param $pageID: current page ID
+	 * @param $pageID current page ID
 	 */
 	function __construct( $pageID, $context ) {
 		$this->id = $pageID;

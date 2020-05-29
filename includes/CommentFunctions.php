@@ -87,7 +87,7 @@ class CommentFunctions {
 	 * built-in regex-based spam filters
 	 *
 	 * @param $text String: text to check for spam patterns
-	 * @return Boolean true if it contains spam, otherwise false
+	 * @return bool true if it contains spam, otherwise false
 	 */
 	public static function isSpam( $text ) {
 		global $wgSpamRegex, $wgSummarySpamRegex;
@@ -122,7 +122,7 @@ class CommentFunctions {
 	 * Checks the supplied text for links
 	 *
 	 * @param $text String: text to check
-	 * @return Boolean true if it contains links, otherwise false
+	 * @return bool true if it contains links, otherwise false
 	 */
 	public static function haveLinks( $text ) {
 		$linkPatterns = [
