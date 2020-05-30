@@ -46,6 +46,30 @@
       "revId": "11a110abeb49d7e3dcb9dd90b32a43f8774f12e2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9935377_2042882b",
+        "filename": "includes/CommentsPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2020-05-30T11:13:50Z",
+      "side": 1,
+      "message": "\u003e So is $pageId\n\nTrue, but IMHO this doesn\u0027t mean that new annotations should be wrong, too.\n\n \u003e - wasn\u0027t quite sure what it was, and didn\u0027t want to\n \u003e do too much to the bot commit\n\nAFAICS, phpcs was already passing in PS1, so this addition wasn\u0027t really necessary, and cannot be considered a part of the bot commit. Personally, I wouldn\u0027t have approved this addition alone in CR.",
+      "parentUuid": "df8cbbce_d2dae23d",
+      "range": {
+        "startLine": 88,
+        "startChar": 2,
+        "endLine": 88,
+        "endChar": 19
+      },
+      "revId": "11a110abeb49d7e3dcb9dd90b32a43f8774f12e2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
