@@ -6,7 +6,7 @@ class DisplayComments {
 	 * Callback function for onParserFirstCallInit(),
 	 * displays comments.
 	 *
-	 * @param $input
+	 * @param string $input
 	 * @param array $args
 	 * @param Parser $parser
 	 * @return string HTML

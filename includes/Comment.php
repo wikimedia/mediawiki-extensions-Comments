@@ -795,7 +795,7 @@ class Comment extends ContextSource {
 	 * Show the box for if this comment has been ignored
 	 *
 	 * @param bool $hide
-	 * @param $containerClass
+	 * @param string $containerClass
 	 * @return string
 	 */
 	function showIgnore( $hide = false, $containerClass ) {

@@ -26,8 +26,8 @@ class NumberOfComments {
 	 * NumberOfComments::getNumberOfCommentsPage to get the number of comments
 	 * for this article.
 	 *
-	 * @param $parser Parser
-	 * @param &$cache
+	 * @param Parser $parser
+	 * @param array &$cache
 	 * @param string $magicWordId Magic word identifier
 	 * @param string|int &$ret What to return to the user (in our case, the number of comments)
 	 * @return bool

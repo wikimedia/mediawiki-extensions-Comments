@@ -84,8 +84,8 @@ class CommentsPage extends ContextSource {
 	/**
 	 * Constructor
 	 *
-	 * @param $pageID current page ID
-	 * @param $context
+	 * @param int $pageID current page ID
+	 * @param IContextSource $context
 	 */
 	function __construct( $pageID, $context ) {
 		$this->id = $pageID;
@@ -445,7 +445,7 @@ class CommentsPage extends ContextSource {
 
 	/**
 	 * Sort an array of comment threads
-	 * @param $threads
+	 * @param array $threads
 	 * @return mixed
 	 */
 	function sort( $threads ) {
@@ -464,7 +464,7 @@ class CommentsPage extends ContextSource {
 
 	/**
 	 * Convert an array of comment threads into an array of pages (arrays) of comment threads
-	 * @param $comments
+	 * @param array $comments
 	 * @return array
 	 */
 	function page( $comments ) {
@@ -474,6 +474,7 @@ class CommentsPage extends ContextSource {
 	/**
 	 * Display all the comments for the current page.
 	 * CSS and JS is loaded in CommentsHooks.php
+	 * @return string
 	 */
 	function display() {
 		$output = '';

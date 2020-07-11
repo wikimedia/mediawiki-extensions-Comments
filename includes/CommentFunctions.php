@@ -4,6 +4,9 @@ class CommentFunctions {
 	/**
 	 * The following four functions are borrowed
 	 * from includes/wikia/GlobalFunctionsNY.php
+	 * @param int $date1
+	 * @param int $date2
+	 * @return array
 	 */
 	public static function dateDiff( $date1, $date2 ) {
 		$dtDiff = $date1 - $date2;
@@ -63,8 +66,8 @@ class CommentFunctions {
 	 * Makes sure that link text is not too long by changing too long links to
 	 * <a href=#>http://www.abc....xyz.html</a>
 	 *
-	 * @param $matches Array
-	 * @return String shortened URL
+	 * @param array $matches
+	 * @return string shortened URL
 	 */
 	public static function cutCommentLinkText( $matches ) {
 		$tagOpen = $matches[1];
@@ -86,7 +89,7 @@ class CommentFunctions {
 	 * Simple spam check -- checks the supplied text against MediaWiki's
 	 * built-in regex-based spam filters
 	 *
-	 * @param $text String: text to check for spam patterns
+	 * @param string $text text to check for spam patterns
 	 * @return bool true if it contains spam, otherwise false
 	 */
 	public static function isSpam( $text ) {
@@ -121,7 +124,7 @@ class CommentFunctions {
 	/**
 	 * Checks the supplied text for links
 	 *
-	 * @param $text String: text to check
+	 * @param string $text text to check
 	 * @return bool true if it contains links, otherwise false
 	 */
 	public static function haveLinks( $text ) {
@@ -230,8 +233,8 @@ class CommentFunctions {
 	/**
 	 * Sort threads ascending
 	 *
-	 * @param $x
-	 * @param $y
+	 * @param array $x
+	 * @param array $y
 	 * @return int
 	 */
 	public static function sortAsc( $x, $y ) {
@@ -249,8 +252,8 @@ class CommentFunctions {
 	/**
 	 * Sort threads descending
 	 *
-	 * @param $x
-	 * @param $y
+	 * @param array $x
+	 * @param array $y
 	 * @return int
 	 */
 	public static function sortDesc( $x, $y ) {
@@ -268,8 +271,9 @@ class CommentFunctions {
 	/**
 	 * Sort threads by score
 	 *
-	 * @param $x
-	 * @param $y
+	 * @param array $x
+	 * @param array $y
+	 * @return int
 	 */
 	public static function sortScore( $x, $y ) {
 		// return -1  -  x goes above y
@@ -286,8 +290,8 @@ class CommentFunctions {
 	/**
 	 * Sort the comments purely by the time, from earliest to latest
 	 *
-	 * @param $x
-	 * @param $y
+	 * @param array $x
+	 * @param array $y
 	 * @return int
 	 */
 	public static function sortTime( $x, $y ) {
