@@ -5,13 +5,24 @@ class CommentSubmitAPI extends ApiBase {
 	public function execute() {
 		$user = $this->getUser();
 		// Blocked users cannot submit new comments, and neither can those users
-		// without the necessary privileges. Also prevent obvious cross-site request
-		// forgeries (CSRF)
+		// without the necessary privileges.
 		if (
 			$user->isBlocked() ||
 			!$user->isAllowed( 'comment' )
 		) {
 			return true;
+		}
+
+		// Check title existence early on so that we don't throw fatals in Comment#log
+		// when we're trying to write a log action pertaining to a now-deleted page
+		// or somesuch. (T258275)
+		$pageID = $this->getMain()->getVal( 'pageID' );
+		$title = Title::newFromId( $pageID );
+		if ( !$title instanceof Title ) {
+			$this->dieWithError(
+				[ 'nosuchpageid', $pageID ],
+				'comments-missing-page'
+			);
 		}
 
 		$commentText = $this->getMain()->getVal( 'commentText' );
@@ -36,7 +47,7 @@ class CommentSubmitAPI extends ApiBase {
 				);
 			}
 
-			$page = new CommentsPage( $this->getMain()->getVal( 'pageID' ), $this->getContext() );
+			$page = new CommentsPage( $pageID, $this->getContext() );
 
 			Comment::add( $commentText, $page, $user, $this->getMain()->getVal( 'parentID' ) );
 
