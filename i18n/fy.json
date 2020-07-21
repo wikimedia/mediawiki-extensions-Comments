@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Kening Aldgilles",
+			"PiefPafPier",
 			"Robin van der Vliet",
 			"Robin0van0der0vliet"
 		]
@@ -11,7 +12,7 @@
 	"comments-ignore-cancel": "Annulearje",
 	"comments-time-ago": "$1 lyn",
 	"comments-time-days": "{{PLURAL:$1|ien dei|$1 dagen}}",
-	"comments-time-hours": "{{PLURAL:$1|ien oere|$1 oere}}",
+	"comments-time-hours": "{{PLURAL:$1|ien oere|$1 oeren}}",
 	"comments-time-minutes": "{{PLURAL:$1|ien minút|$1 minuten}}",
 	"comments-time-seconds": "{{PLURAL:$1|ien sekonde|$1 sekonden}}"
 }
