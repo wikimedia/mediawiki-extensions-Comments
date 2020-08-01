@@ -158,7 +158,7 @@ class CommentFunctions {
 			[
 				'cb_actor' => $blocker->getActorId(),
 				'cb_actor_blocked' => $blocked->getActorId(),
-				'cb_date' => $date
+				'cb_date' => $dbw->timestamp( $date )
 			],
 			__METHOD__
 		);
