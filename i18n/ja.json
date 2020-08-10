@@ -8,6 +8,7 @@
 		]
 	},
 	"comments-comment": "コメント",
+	"comments-continue-editing-btn": "編集を続行",
 	"comments-desc": "ページにコメントできるようにする、パーサー フック <code>&lt;comments&gt;</code> を追加する",
 	"comments-db-locked": "<h3>コメントの追加</h3>データベースは現在、定期的なデータベース保守作業のためロックされており、終わりしだい正常に戻ります。あとで再度お試しください。",
 	"comments-voted-label": "投票済",
