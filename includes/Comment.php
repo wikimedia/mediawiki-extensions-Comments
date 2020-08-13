@@ -434,7 +434,6 @@ class Comment extends ContextSource {
 		}
 		$parser = MediaWiki\MediaWikiServices::getInstance()->getParser();
 		$options = new ParserOptions( $article->getContext()->getUser() );
-		$options->setTidy( true );
 		$output = $parser->parse( $wikitext, $article->getTitle(), $options );
 		$cache[$cacheKey] = $output;
 		return $output;
