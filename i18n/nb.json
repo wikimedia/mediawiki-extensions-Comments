@@ -78,7 +78,7 @@
 	"comments-time-ago": "for $1 siden",
 	"comments-time-months": "{{PLURAL:$1|én måned|$1 måneder}}",
 	"comments-time-days": "{{PLURAL:$1|én dag|$1 dager}}",
-	"comments-time-hours": "{{PLURAL:$1|én itme|$1 timer}}",
+	"comments-time-hours": "{{PLURAL:$1|én time|$1 timer}}",
 	"comments-time-minutes": "{{PLURAL:$1|ett minutt|$1 minutter}}",
 	"comments-time-seconds": "{{PLURAL:$1|ett sekund|$1 sekunder}}",
 	"log-show-hide-comments": "$1 kommentarlogg",
