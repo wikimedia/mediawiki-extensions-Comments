@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"Vito Genovese"
 		]
 	},
 	"apihelp-commentblock-description": "Commentblock API'si, bir kullanıcının aşağıdaki parametreleri doldurduktan sonra yaptığı yorumdan engellenmesine izin verir: CommentID.",
@@ -41,7 +42,7 @@
 	"comments-reply-to": "{{GENDER:$2|$1}} kullanıcıya yanıt verin",
 	"comments-cancel-reply": "İptal",
 	"comments-block-warning-anon": "Bu anonim kullanıcıdan gelen tüm yorumları (IP adresleriyle) kalıcı olarak yok saymak istediğinizden emin misiniz?",
-	"comments-block-warning-user": "$1 kullanıcısından gelen tüm yorumları kalıcı olarak yoksaymak istediğinizden emin misiniz?",
+	"comments-block-warning-user": "$1 adlı kullanıcının tüm yorumlarını kalıcı olarak yoksaymak istediğinizden emin misiniz?",
 	"comments-delete-warning": "Bu yorumu silmek istediğinizden emin misiniz?",
 	"comments-sort-by-date": "Tarihe göre sırala",
 	"comments-sort-by-score": "Skora göre sırala",
