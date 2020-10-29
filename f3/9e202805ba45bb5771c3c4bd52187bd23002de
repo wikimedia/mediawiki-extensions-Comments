@@ -1,0 +1,8 @@
+Verified+1: Libraryupgrader <tools.libraryupgrader@tools.wmflabs.org>
+Verified+2: jenkins-bot
+Code-Review+2: DannyS712 <DannyS712.enwiki@gmail.com>
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 29 Oct 2020 14:48:32 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Comments/+/637324
+Project: mediawiki/extensions/Comments
+Branch: refs/heads/master
