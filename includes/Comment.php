@@ -15,18 +15,18 @@ use MediaWiki\MediaWikiServices;
  */
 class Comment extends ContextSource {
 	/**
-	 * @var CommentsPage: page of the page the <comments /> tag is in
+	 * @var CommentsPage page of the page the <comments /> tag is in
 	 */
 	public $page = null;
 
 	/**
-	 * @var Integer: total amount of comments by distinct commenters that the
+	 * @var int total amount of comments by distinct commenters that the
 	 *               current page has
 	 */
 	public $commentTotal = 0;
 
 	/**
-	 * @var String: text of the current comment
+	 * @var string text of the current comment
 	 */
 	public $text = null;
 
@@ -38,25 +38,25 @@ class Comment extends ContextSource {
 	public $date = null;
 
 	/**
-	 * @var Integer: internal ID number (Comments.CommentID DB field) of the
+	 * @var int internal ID number (Comments.CommentID DB field) of the
 	 *               current comment that we're dealing with
 	 */
 	public $id = 0;
 
 	/**
-	 * @var Integer: ID of the parent comment, if this is a child comment
+	 * @var int ID of the parent comment, if this is a child comment
 	 */
 	public $parentID = 0;
 
 	/**
 	 * The current vote from this user on this comment
 	 *
-	 * @var int|boolean: false if no vote, otherwise -1, 0, or 1
+	 * @var int|bool false if no vote, otherwise -1, 0, or 1
 	 */
 	public $currentVote = false;
 
 	/**
-	 * @var string: comment score (SUM() of all votes) of the current comment
+	 * @var string comment score (SUM() of all votes) of the current comment
 	 */
 	public $currentScore = '0';
 

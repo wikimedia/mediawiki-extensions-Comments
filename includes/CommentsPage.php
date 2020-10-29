@@ -7,18 +7,18 @@
 class CommentsPage extends ContextSource {
 
 	/**
-	 * @var Integer: page ID (page.page_id) of this page.
+	 * @var int page ID (page.page_id) of this page.
 	 */
 	public $id = 0;
 
 	/**
-	 * @var Integer: if this is _not_ 0, then the comments are ordered by their
+	 * @var int if this is _not_ 0, then the comments are ordered by their
 	 *			   Comment_Score in descending order
 	 */
 	public $orderBy = 0;
 
 	/**
-	 * @var Integer: maximum amount of threads of comments shown per page before pagination is enabled;
+	 * @var int maximum amount of threads of comments shown per page before pagination is enabled;
 	 */
 	public $limit = 50;
 
@@ -51,12 +51,12 @@ class CommentsPage extends ContextSource {
 	public $voting = '';
 
 	/**
-	 * @var Boolean: allow positive (plus) votes?
+	 * @var bool allow positive (plus) votes?
 	 */
 	public $allowPlus = true;
 
 	/**
-	 * @var Boolean: allow negative (minus) votes?
+	 * @var bool allow negative (minus) votes?
 	 */
 	public $allowMinus = true;
 
@@ -68,7 +68,7 @@ class CommentsPage extends ContextSource {
 	public $pageQuery = 'cpage';
 
 	/**
-	 * @var Title: title object for this page
+	 * @var Title title object for this page
 	 */
 	public $title = null;
 
