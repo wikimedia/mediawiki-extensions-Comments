@@ -432,7 +432,7 @@ class Comment extends ContextSource {
 		if ( isset( $cache[$cacheKey] ) ) {
 			return $cache[$cacheKey];
 		}
-		$parser = MediaWiki\MediaWikiServices::getInstance()->getParser();
+		$parser = MediaWikiServices::getInstance()->getParser();
 		$options = new ParserOptions( $article->getContext()->getUser() );
 		$output = $parser->parse( $wikitext, $article->getTitle(), $options );
 		$cache[$cacheKey] = $output;
