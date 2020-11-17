@@ -3,9 +3,23 @@
 	width: 530px;
 }
 
+@media screen and (max-width: 768px) {
+	.full {
+		max-width: 100%;
+	}
+}
+
 .reply {
 	margin-left: 70px !important;
 	width: 460px;
+}
+
+@media screen and (max-width: 768px) {
+	.reply {
+		/* This should be sufficient enough to visually distinguish replies on mobile, I hope */
+		margin-left: 15% !important;
+		max-width: 100%;
+	}
 }
 
 .c-item {
@@ -94,6 +108,23 @@ Besides, ny.css sets it back to 10px anyway, so this way everyone can be happy.
 	z-index: 4;
 }
 
+@media screen and (max-width: 768px) {
+	.f-message,
+	.r-message {
+		max-width: 100%;
+	}
+
+	.c-score {
+		/* Absolute positioning is bad...at least when there isn't enough
+		 * screen space to position the elements the way they were meant to be
+		 * positioned. This is hardly ideal but at least this way the score
+		 * container element won't overlap with all the other elements nearby.
+		 * Better solutions are more than welcome!
+		 */
+		position: unset;
+	}
+}
+
 .c-score-title {
 	margin: 0px 10px 0px 0px;
 }
@@ -130,6 +161,16 @@ Besides, ny.css sets it back to 10px anyway, so this way everyone can be happy.
 
 textarea#comment {
 	width: 530px;
+}
+
+@media screen and (max-width: 768px) {
+	.c-form-message {
+		max-width: 100%;
+	}
+
+	textarea#comment {
+		max-width: 100%;
+	}
 }
 
 .c-form-button {
