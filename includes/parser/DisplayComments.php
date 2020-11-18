@@ -20,11 +20,6 @@ class DisplayComments {
 		// go to an infinite loop...this protects against that condition.
 		$parser->setHook( 'comments', [ __CLASS__, 'nonDisplayComments' ] );
 
-		$title = $parser->getTitle();
-		if ( $title->getArticleID() == 0 && $title->getDBkey() == 'CommentListGet' ) {
-			return self::nonDisplayComments( $input, $args, $parser );
-		}
-
 		// Add required CSS & JS via ResourceLoader
 		$po->addModuleStyles( 'ext.comments.css' );
 		$po->addModules( 'ext.comments.js' );
@@ -56,6 +51,7 @@ class DisplayComments {
 			$voting = $args['voting'];
 		}
 
+		$title = $parser->getTitle();
 		// Create a new context to execute the CommentsPage
 		$context = new RequestContext;
 		$context->setTitle( $title );
