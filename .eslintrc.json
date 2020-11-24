@@ -18,6 +18,7 @@
 			{
 				"keywords": false
 			}
-		]
+		],
+		"vars-on-top": "off"
 	}
 }
