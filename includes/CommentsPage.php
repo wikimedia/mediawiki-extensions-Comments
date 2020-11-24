@@ -555,7 +555,13 @@ class CommentsPage extends ContextSource {
 	 * @return string HTML output
 	 */
 	function displayForm() {
-		$output = '<form action="" method="post" name="commentForm">' . "\n";
+		$url = htmlspecialchars(
+			SpecialPage::getTitleFor( 'CommentAction' )->getFullURL( [
+				'action' => 3,
+			] ),
+			ENT_QUOTES
+		);
+		$output = '<form action="' . $url . '" method="post" name="commentForm">' . "\n";
 
 		if ( $this->allow ) {
 			$pos = strpos(
@@ -588,7 +594,7 @@ class CommentsPage extends ContextSource {
 				$output .= '<textarea name="commentText" id="comment" rows="5" cols="64"></textarea>' . "\n";
 				$output .= '<div class="comment-preview"></div>';
 				$output .= '<div class="c-form-button">';
-				$output .= '<input type="button" value="' . wfMessage( 'comments-post' )->escaped() .
+				$output .= '<input type="submit" value="' . wfMessage( 'comments-post' )->escaped() .
 					'" class="site-button" name="wpSubmitComment" />' . "\n";
 				$output .= '<input type="button" value="' . wfMessage( 'showpreview' )->escaped() .
 					'" class="site-button" name="wpPreview" />';

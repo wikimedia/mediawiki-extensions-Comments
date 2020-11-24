@@ -216,6 +216,12 @@ class Comment extends ContextSource {
 			$joinConds
 		);
 
+		// This is a static constructor method, people can throw utter shit at it.
+		// Don't leak out all the memory and then some in such case.
+		if ( $dbr->numRows( $res ) === 0 ) {
+			return null;
+		}
+
 		$row = $res->fetchObject();
 
 		if ( $row->Comment_Parent_ID == 0 ) {
@@ -717,19 +723,31 @@ class Comment extends ContextSource {
 	function getVoteLink( $voteType ) {
 		global $wgExtensionAssetsPath;
 
+		$user = $this->getUser();
 		// Blocked users cannot vote, obviously
-		if ( $this->getUser()->isBlocked() ) {
+		if ( $user->isBlocked() ) {
 			return '';
 		}
-		if ( !$this->getUser()->isAllowed( 'comment' ) ) {
+
+		if ( !$user->isAllowed( 'comment' ) ) {
 			return '';
 		}
 
 		$voteLink = '';
-		if ( $this->getUser()->isLoggedIn() ) {
+		if ( $user->isLoggedIn() ) {
+			$url = htmlspecialchars(
+				SpecialPage::getTitleFor( 'CommentAction' )->getFullURL( [
+					'action' => 1,
+					'commentid' => $this->id,
+					'vt' => $voteType,
+					'token' => $user->getEditToken()
+					// 'voting' => $this->page->voting
+				] ),
+				ENT_QUOTES
+			);
 			$voteLink .= '<a id="comment-vote-link" data-comment-id="' .
 				$this->id . '" data-vote-type="' . $voteType .
-				'" data-voting="' . $this->page->voting . '" href="javascript:void(0);">';
+				'" data-voting="' . $this->page->voting . '" href="' . $url . '">';
 		} else {
 			$login = SpecialPage::getTitleFor( 'Userlogin' ); // Anonymous users need to log in before they can vote
 			$urlParams = [];
@@ -868,8 +886,12 @@ class Comment extends ContextSource {
 			// @see https://phabricator.wikimedia.org/T147796
 			$userObj->isAllowed( 'comment-delete-own' ) && $this->isOwner( $userObj )
 		) {
+			$commentActionURL = htmlspecialchars( SpecialPage::getTitleFor( 'CommentAction' )->getFullURL( [
+				'action' => 5,
+				'commentid' => $this->id
+			] ), ENT_QUOTES );
 			$dlt = ' | <span class="c-delete">' .
-				'<a href="javascript:void(0);" rel="nofollow" class="comment-delete-link" data-comment-id="' .
+				'<a href="' . $commentActionURL . '" rel="nofollow" class="comment-delete-link" data-comment-id="' .
 				$this->id . '">' .
 				$this->msg( 'comments-delete-link' )->plain() . '</a></span>';
 		}
@@ -903,7 +925,15 @@ class Comment extends ContextSource {
 			$userObj->getActorId() != $this->actorID &&
 			!( in_array( $this->user->getId(), $blockList ) )
 		) {
-			$blockLink = '<a href="javascript:void(0);" rel="nofollow" class="comments-block-user" data-comments-safe-username="' .
+			// No-JS users can block others' comments via the special page; for JS users, the JS
+			// file takes care of this by sending a request to the API instead
+			$blockListPageURL = SpecialPage::getTitleFor( 'CommentIgnoreList' )->getFullURL( [
+				'action' => 'add-block',
+				'user' => $this->username,
+				'commentID' => $this->id
+			] );
+			$blockLink = '<a href="' . htmlspecialchars( $blockListPageURL, ENT_QUOTES ) .
+				'" rel="nofollow" class="comments-block-user" data-comments-safe-username="' .
 				htmlspecialchars( $this->username, ENT_QUOTES ) .
 				'" data-comments-comment-id="' . $this->id . '" data-comments-user-id="' .
 				$this->user->getId() . "\">

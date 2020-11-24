@@ -187,6 +187,18 @@ textarea#comment {
 	margin: 0px 0px 0px 10px;
 }
 
+/**
+ * Hide a few things which require JS from no-JS users, namely:
+ * - comments auto-refresher
+ * - "Sort by" drop-down menu
+ * - preview button
+ */
+.client-nojs .c-spy,
+.client-nojs div.comments-body .c-order,
+.client-nojs form[name="commentForm"] input[name="wpPreview"] {
+	display: none;
+}
+
 .c-order-select {
 	float: left;
 }

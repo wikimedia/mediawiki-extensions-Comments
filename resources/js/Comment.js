@@ -307,7 +307,8 @@
 			} )
 
 			// Voting links
-			.on( 'click', 'a#comment-vote-link', function () {
+			.on( 'click', 'a#comment-vote-link', function ( e ) {
+				e.preventDefault();
 				var that = $( this );
 				Comment.vote(
 					that.data( 'comment-id' ),
@@ -316,7 +317,8 @@
 			} )
 
 			// "Block this user" links
-			.on( 'click', 'a.comments-block-user', function () {
+			.on( 'click', 'a.comments-block-user', function ( e ) {
+				e.preventDefault();
 				var that = $( this );
 				Comment.blockUser(
 					that.data( 'comments-safe-username' ),
@@ -326,7 +328,8 @@
 			} )
 
 			// "Delete Comment" links
-			.on( 'click', 'a.comment-delete-link', function () {
+			.on( 'click', 'a.comment-delete-link', function ( e ) {
+				e.preventDefault();
 				Comment.deleteComment( $( this ).data( 'comment-id' ) );
 			} )
 
@@ -351,7 +354,8 @@
 			} )
 
 			// Handle clicks on the submit button (previously this was an onclick attr)
-			.on( 'click', 'div.c-form-button input[name="wpSubmitComment"]', function () {
+			.on( 'click', 'div.c-form-button input[name="wpSubmitComment"]', function ( e ) {
+				e.preventDefault();
 				Comment.submit();
 				// 1) Make comment text <s>great</s> editable again (in case if the user
 				// previewed their comment first and only then hit the "post comment" button)
