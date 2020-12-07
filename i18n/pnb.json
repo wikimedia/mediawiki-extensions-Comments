@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Abbas dhothar"
+		]
+	},
+	"comments-time-days": "{{PLURAL:$1|اک دن|$1 دناں}}"
+}
