@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Class for Comments methods that are not specific to one comments,
  * but specific to one comment-using page
@@ -557,6 +559,7 @@ class CommentsPage extends ContextSource {
 	function displayForm() {
 		$output = '<form action="" method="post" name="commentForm">' . "\n";
 
+		$pos = false;
 		if ( $this->allow ) {
 			$pos = strpos(
 				strtoupper( addslashes( $this->allow ) ),
@@ -564,44 +567,56 @@ class CommentsPage extends ContextSource {
 			);
 		}
 
+		$user = $this->getUser();
+
+		// Use these for the block/global block check below
+		$context = RequestContext::getMain();
+		$userContext = $context->getUser();
+		$language = $context->getLanguage();
+		$ip = $context->getRequest()->getIP();
+
 		// 'comment' user right is required to add new comments
+		// Also check for users block status
 		if ( !$this->getUser()->isAllowed( 'comment' ) ) {
 			$output .= wfMessage( 'comments-not-allowed' )->parse();
+		} elseif ( $user->isBlocked() ) {
+			$output .= MediaWikiServices::getInstance()->getBlockErrorFormatter()
+				->getMessage( $user->getBlock(), $userContext, $language, $ip )
+				->toString();
+		} elseif ( $user->isBlockedGlobally() ) {
+			$output .= MediaWikiServices::getInstance()->getBlockErrorFormatter()
+				->getMessage( $user->getGlobalBlock(), $userContext, $language, $ip )
+				->toString();
 		} else {
-			// Blocked users can't add new comments under any conditions...
-			// and maybe there's a list of users who should be allowed to post
-			// comments
-			if ( $this->getUser()->isBlocked() == false && ( $this->allow == '' || $pos !== false ) ) {
-				$output .= '<div class="c-form-title">' . wfMessage( 'comments-submit' )->plain() . '</div>' . "\n";
-				$output .= '<div id="replyto" class="c-form-reply-to"></div>' . "\n";
-				// Show a message to anons, prompting them to register or log in
-				if ( !$this->getUser()->isLoggedIn() ) {
-					$login_title = SpecialPage::getTitleFor( 'Userlogin' );
-					$register_title = SpecialPage::getTitleFor( 'Userlogin', 'signup' );
-					$output .= '<div class="c-form-message">' . wfMessage(
-							'comments-anon-message',
-							htmlspecialchars( $register_title->getFullURL() ),
-							htmlspecialchars( $login_title->getFullURL() )
-						)->text() . '</div>' . "\n";
-				}
-
-				$output .= '<textarea name="commentText" id="comment" rows="5" cols="64"></textarea>' . "\n";
-				$output .= '<div class="comment-preview"></div>';
-				$output .= '<div class="c-form-button">';
-				$output .= '<input type="button" value="' . wfMessage( 'comments-post' )->escaped() .
-					'" class="site-button" name="wpSubmitComment" />' . "\n";
-				$output .= '<input type="button" value="' . wfMessage( 'showpreview' )->escaped() .
-					'" class="site-button" name="wpPreview" />';
-				$output .= '</div>' . "\n";
+			$output .= '<div class="c-form-title">' . wfMessage( 'comments-submit' )->plain() . '</div>' . "\n";
+			$output .= '<div id="replyto" class="c-form-reply-to"></div>' . "\n";
+			// Show a message to anons, prompting them to register or log in
+			if ( !$user->isLoggedIn() ) {
+				$loginTitle = SpecialPage::getTitleFor( 'Userlogin' );
+				$registerTitle = SpecialPage::getTitleFor( 'Userlogin', 'signup' );
+				$output .= '<div class="c-form-message">' . wfMessage(
+						'comments-anon-message',
+						htmlspecialchars( $registerTitle->getFullURL() ),
+						htmlspecialchars( $loginTitle->getFullURL() )
+					)->text() . '</div>' . "\n";
 			}
-			$output .= '<input type="hidden" name="action" value="purge" />' . "\n";
-			$output .= '<input type="hidden" name="pageId" value="' . $this->id . '" />' . "\n";
-			$output .= '<input type="hidden" name="commentid" />' . "\n";
-			$output .= '<input type="hidden" name="lastCommentId" value="' . $this->getLatestCommentID() . '" />' . "\n";
-			$output .= '<input type="hidden" name="commentParentId" />' . "\n";
-			$output .= '<input type="hidden" name="' . $this->pageQuery . '" value="' . $this->getCurrentPagerPage() . '" />' . "\n";
-			$output .= Html::hidden( 'token', $this->getUser()->getEditToken() );
+
+			$output .= '<textarea name="commentText" id="comment" rows="5" cols="64"></textarea>' . "\n";
+			$output .= '<div class="comment-preview"></div>';
+			$output .= '<div class="c-form-button">';
+			$output .= '<input type="button" value="' . wfMessage( 'comments-post' )->escaped() .
+				'" class="site-button" name="wpSubmitComment" />' . "\n";
+			$output .= '<input type="button" value="' . wfMessage( 'showpreview' )->escaped() .
+				'" class="site-button" name="wpPreview" />';
+			$output .= '</div>' . "\n";
 		}
+		$output .= '<input type="hidden" name="action" value="purge" />' . "\n";
+		$output .= '<input type="hidden" name="pageId" value="' . $this->id . '" />' . "\n";
+		$output .= '<input type="hidden" name="commentid" />' . "\n";
+		$output .= '<input type="hidden" name="lastCommentId" value="' . $this->getLatestCommentID() . '" />' . "\n";
+		$output .= '<input type="hidden" name="commentParentId" />' . "\n";
+		$output .= '<input type="hidden" name="' . $this->pageQuery . '" value="' . $this->getCurrentPagerPage() . '" />' . "\n";
+		$output .= Html::hidden( 'token', $this->getUser()->getEditToken() );
 		$output .= '</form>' . "\n";
 		return $output;
 	}
