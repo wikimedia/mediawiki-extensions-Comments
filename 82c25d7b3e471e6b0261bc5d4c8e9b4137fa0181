@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9201c398_85d35db2",
+        "filename": "includes/Comment.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2020-12-22T20:44:47Z",
+      "side": 1,
+      "message": "missing ()",
+      "range": {
+        "startLine": 724,
+        "startChar": 27,
+        "endLine": 724,
+        "endChar": 28
+      },
+      "revId": "82c25d7b3e471e6b0261bc5d4c8e9b4137fa0181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2adc6aae_1dbfb03f",
+        "filename": "includes/CommentsPage.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2020-12-22T20:44:47Z",
+      "side": 1,
+      "message": "There\u0027s no real reason to bother renaming these variables in this patch, though I do agree that this portion of the code could do with some serious cleanup -- namely instead of using PHP to build these URLs and passing them to the \"comments-anon-message\", said i18n msg could just use [[wikitext]] to build links to [[Special:UserLogin]] and [[Special:CreateAccount]] (that\u0027s how old this code is -- back then Special:CreateAccount wasn\u0027t a thing and Special:UserLogin/signup was the signup form name!).",
+      "range": {
+        "startLine": 595,
+        "startChar": 4,
+        "endLine": 596,
+        "endChar": 71
+      },
+      "revId": "82c25d7b3e471e6b0261bc5d4c8e9b4137fa0181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f217b54b_5c642d4b",
+        "filename": "includes/api/CommentDeleteAPI.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2020-12-22T20:44:47Z",
+      "side": 1,
+      "message": "getBlock",
+      "range": {
+        "startLine": 17,
+        "startChar": 29,
+        "endLine": 17,
+        "endChar": 34
+      },
+      "revId": "82c25d7b3e471e6b0261bc5d4c8e9b4137fa0181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fae38b6_3eee11da",
+        "filename": "includes/api/CommentSubmitAPI.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2020-12-22T20:44:47Z",
+      "side": 1,
+      "message": "getBlock",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 10,
+        "endChar": 34
+      },
+      "revId": "82c25d7b3e471e6b0261bc5d4c8e9b4137fa0181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc5f12bb_9348cd2e",
+        "filename": "includes/api/CommentVoteAPI.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2020-12-22T20:44:47Z",
+      "side": 1,
+      "message": "getBlock",
+      "range": {
+        "startLine": 9,
+        "startChar": 29,
+        "endLine": 9,
+        "endChar": 34
+      },
+      "revId": "82c25d7b3e471e6b0261bc5d4c8e9b4137fa0181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
