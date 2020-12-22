@@ -4,12 +4,14 @@ class CommentVoteAPI extends ApiBase {
 
 	public function execute() {
 		$user = $this->getUser();
-		// Blocked users cannot vote, obviously, and neither can those users without the necessary privileges
-		if (
-			$user->isBlocked() ||
-			!$user->isAllowed( 'comment' )
-		) {
-			return '';
+		// Blocked users cannot vote, obviously,
+		// and neither can those users without the necessary privileges
+		if ( $user->isBlocked() ) {
+			$this->dieBlocked( $user->getBlock() );
+		} elseif ( $user->isBlockedGlobally() ) {
+			$this->dieBlocked( $user->getGlobalBlock() );
+		} elseif ( !$user->isAllowed( 'comment' ) ) {
+			$this->dieWithError( 'comments-not-allowed' );
 		}
 
 		$comment = Comment::newFromID( $this->getMain()->getVal( 'commentID' ) );

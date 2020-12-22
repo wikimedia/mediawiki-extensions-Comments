@@ -717,16 +717,22 @@ class Comment extends ContextSource {
 	function getVoteLink( $voteType ) {
 		global $wgExtensionAssetsPath;
 
+		$user = $this->getUser();
+
 		// Blocked users cannot vote, obviously
-		if ( $this->getUser()->isBlocked() ) {
-			return '';
-		}
-		if ( !$this->getUser()->isAllowed( 'comment' ) ) {
+		if ( $user->isBlocked() ||
+			$user->isBlockedGlobally() ||
+			!$user->isAllowed( 'comment' )
+		) {
 			return '';
 		}
 
 		$voteLink = '';
+<<<<<<< HEAD   (96a2d9 build: Updating browserslist to 4.16.6)
 		if ( $this->getUser()->isLoggedIn() ) {
+=======
+		if ( $user->isRegistered() ) {
+>>>>>>> CHANGE (25f14d Check for if the user is globally blocked)
 			$voteLink .= '<a id="comment-vote-link" data-comment-id="' .
 				$this->id . '" data-vote-type="' . $voteType .
 				'" data-voting="' . $this->page->voting . '" href="javascript:void(0);">';
