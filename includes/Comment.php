@@ -717,16 +717,18 @@ class Comment extends ContextSource {
 	function getVoteLink( $voteType ) {
 		global $wgExtensionAssetsPath;
 
+		$user = $this->getUser();
+
 		// Blocked users cannot vote, obviously
-		if ( $this->getUser()->isBlocked() ) {
-			return '';
-		}
-		if ( !$this->getUser()->isAllowed( 'comment' ) ) {
+		if ( $user->isBlocked() ||
+			$user->isBlockedGlobally() ||
+			!$user->isAllowed( 'comment' )
+		) {
 			return '';
 		}
 
 		$voteLink = '';
-		if ( $this->getUser()->isLoggedIn() ) {
+		if ( $user->isLoggedIn() ) {
 			$voteLink .= '<a id="comment-vote-link" data-comment-id="' .
 				$this->id . '" data-vote-type="' . $voteType .
 				'" data-voting="' . $this->page->voting . '" href="javascript:void(0);">';
