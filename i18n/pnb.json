@@ -4,6 +4,9 @@
 			"Abbas dhothar"
 		]
 	},
+	"comments-cancel-reply": "رد کرو",
 	"comments-sort-by-date": "تریخ وار چُنو",
-	"comments-time-days": "{{PLURAL:$1|اک دن|$1 دناں}}"
+	"comments-ignore-cancel": "رد کرو",
+	"comments-time-days": "{{PLURAL:$1|اک دن|$1 دناں}}",
+	"comments-time-seconds": "$1 {{PLURAL:$1|سکنٹ}}"
 }
