@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4eb48385_d94debea",
+        "filename": "includes/Comment.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2020-12-22T20:48:28Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "9201c398_85d35db2",
+      "range": {
+        "startLine": 724,
+        "startChar": 27,
+        "endLine": 724,
+        "endChar": 28
+      },
+      "revId": "82c25d7b3e471e6b0261bc5d4c8e9b4137fa0181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2adc6aae_1dbfb03f",
         "filename": "includes/CommentsPage.php",
         "patchSetId": 8
@@ -45,6 +69,30 @@
       "revId": "82c25d7b3e471e6b0261bc5d4c8e9b4137fa0181",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0246313_a5d96284",
+        "filename": "includes/CommentsPage.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2020-12-22T20:48:28Z",
+      "side": 1,
+      "message": "Reverted back to the old style.",
+      "parentUuid": "2adc6aae_1dbfb03f",
+      "range": {
+        "startLine": 595,
+        "startChar": 4,
+        "endLine": 596,
+        "endChar": 71
+      },
+      "revId": "82c25d7b3e471e6b0261bc5d4c8e9b4137fa0181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "d327586a_36d685c7",
+        "filename": "includes/api/CommentDeleteAPI.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2020-12-22T20:48:28Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "f217b54b_5c642d4b",
+      "range": {
+        "startLine": 17,
+        "startChar": 29,
+        "endLine": 17,
+        "endChar": 34
+      },
+      "revId": "82c25d7b3e471e6b0261bc5d4c8e9b4137fa0181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5fae38b6_3eee11da",
         "filename": "includes/api/CommentSubmitAPI.php",
         "patchSetId": 8
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "4959f321_744d492d",
+        "filename": "includes/api/CommentSubmitAPI.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2020-12-22T20:48:28Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "5fae38b6_3eee11da",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 10,
+        "endChar": 34
+      },
+      "revId": "82c25d7b3e471e6b0261bc5d4c8e9b4137fa0181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bc5f12bb_9348cd2e",
         "filename": "includes/api/CommentVoteAPI.php",
         "patchSetId": 8
@@ -114,6 +210,30 @@
       "revId": "82c25d7b3e471e6b0261bc5d4c8e9b4137fa0181",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61e02451_6aeb8ace",
+        "filename": "includes/api/CommentVoteAPI.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2020-12-22T20:48:28Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "bc5f12bb_9348cd2e",
+      "range": {
+        "startLine": 9,
+        "startChar": 29,
+        "endLine": 9,
+        "endChar": 34
+      },
+      "revId": "82c25d7b3e471e6b0261bc5d4c8e9b4137fa0181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
