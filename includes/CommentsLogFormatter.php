@@ -35,6 +35,7 @@ class CommentsLogFormatter extends WikitextLogFormatter {
 
 		// Bad things happens if the numbers are not in correct order
 		ksort( $params );
-		return $this->parsedParameters = $params;
+		$this->parsedParameters = $params;
+		return $params;
 	}
 }
