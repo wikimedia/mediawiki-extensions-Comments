@@ -87,10 +87,32 @@ class CommentsPage extends ContextSource {
 	 * @param int $pageID current page ID
 	 * @param IContextSource $context
 	 */
-	function __construct( $pageID, $context ) {
+	public function __construct( $pageID, $context ) {
 		$this->id = $pageID;
 		$this->setContext( $context );
 		$this->title = Title::newFromID( $pageID );
+	}
+
+	/**
+	 * Set voting either totally off, or disallow "thumbs down" or disallow
+	 * "thumbs up".
+	 *
+	 * @param string $voting 'OFF', 'PLUS' or 'MINUS' (will be strtoupper()ed)
+	 */
+	public function setVoting( $voting ) {
+		$this->voting = $voting;
+		$voting = strtoupper( $voting );
+
+		if ( $voting == 'OFF' ) {
+			$this->allowMinus = false;
+			$this->allowPlus = false;
+		}
+		if ( $voting == 'PLUS' ) {
+			$this->allowMinus = false;
+		}
+		if ( $voting == 'MINUS' ) {
+			$this->allowPlus = false;
+		}
 	}
 
 	/**
@@ -98,7 +120,7 @@ class CommentsPage extends ContextSource {
 	 *
 	 * @return int
 	 */
-	function countTotal() {
+	public function countTotal() {
 		$dbr = wfGetDB( DB_REPLICA );
 		$count = 0;
 		$s = $dbr->selectRow(
@@ -118,7 +140,7 @@ class CommentsPage extends ContextSource {
 	 *
 	 * @return int
 	 */
-	function getLatestCommentID() {
+	public function getLatestCommentID() {
 		$latestCommentID = 0;
 		$dbr = wfGetDB( DB_REPLICA );
 		$s = $dbr->selectRow(
@@ -135,124 +157,57 @@ class CommentsPage extends ContextSource {
 	}
 
 	/**
-	 * Set voting either totally off, or disallow "thumbs down" or disallow
-	 * "thumbs up".
-	 *
-	 * @param string $voting 'OFF', 'PLUS' or 'MINUS' (will be strtoupper()ed)
-	 */
-	function setVoting( $voting ) {
-		$this->voting = $voting;
-		$voting = strtoupper( $voting );
-
-		if ( $voting == 'OFF' ) {
-			$this->allowMinus = false;
-			$this->allowPlus = false;
-		}
-		if ( $voting == 'PLUS' ) {
-			$this->allowMinus = false;
-		}
-		if ( $voting == 'MINUS' ) {
-			$this->allowPlus = false;
-		}
-	}
-
-	/**
 	 * Fetches all comments, called by display().
 	 *
 	 * @return array Array containing every possible bit of information about
 	 * 				a comment, including score, timestamp and more
 	 */
-	public function getComments() {
-		$dbr = wfGetDB( DB_REPLICA );
-
-		// Defaults (for non-social wikis)
-		$tables = [
-			'Comments',
-			'vote1' => 'Comments_Vote',
-			'vote2' => 'Comments_Vote',
-		];
-		$fields = [
-			'Comment_IP', 'Comment_Text', 'Comment_actor',
-			'Comment_Date', 'Comment_Date AS timestamp',
-			'CommentID', 'Comment_Parent_ID',
-			// @todo FIXME: this and the stats_total_points are buggy on PostgreSQL
-			// Skizzerz says that the whole query is bugged in general but MySQL "helpfully"
-			// ignores the bugginess and returns potentially incorrect results
-			// I just lazily slapped current_vote (and stats_total_points in the "if SP is installed" loop)
-			// to the GROUP BY condition to try to remedy this. --ashley, 17 January 2020
-			'vote1.Comment_Vote_Score AS current_vote',
-			'SUM(vote2.Comment_Vote_Score) AS comment_score'
-		];
-		$joinConds = [
-			// For current user's vote
-			'vote1' => [
-				'LEFT JOIN',
-				[
-					'vote1.Comment_Vote_ID = CommentID',
-					'vote1.Comment_Vote_actor' => $this->getUser()->getActorId()
-				]
-			],
-			// For total vote count
-			'vote2' => [ 'LEFT JOIN', 'vote2.Comment_Vote_ID = CommentID' ]
-		];
-		$params = [ 'GROUP BY' => 'CommentID, current_vote' ];
-
-		// If SocialProfile is installed, query the user_stats table too.
-		if (
-			class_exists( 'UserProfile' ) &&
-			$dbr->tableExists( 'user_stats' )
-		) {
-			$tables[] = 'user_stats';
-			$fields[] = 'stats_total_points';
-			$joinConds['Comments'] = [
-				'LEFT JOIN', 'Comment_actor = stats_actor'
-			];
-			$params['GROUP BY'] .= ', stats_total_points';
-		}
-
-		// Perform the query
-		$res = $dbr->select(
-			$tables,
-			$fields,
-			[ 'Comment_Page_ID' => $this->id ],
-			__METHOD__,
-			$params,
-			$joinConds
-		);
-
+	public function getCommentsThreads() {
+		$commentThreads = [];
+		$commentsData = [];
 		$comments = [];
 
-		foreach ( $res as $row ) {
-			if ( $row->Comment_Parent_ID == 0 ) {
-				$thread = $row->CommentID;
-			} else {
-				$thread = $row->Comment_Parent_ID;
-			}
-			$data = [
-				'Comment_actor' => $row->Comment_actor,
-				'Comment_IP' => $row->Comment_IP,
-				'Comment_Text' => $row->Comment_Text,
-				'Comment_Date' => $row->Comment_Date,
-				'Comment_actor' => $row->Comment_actor,
-				'Comment_user_points' => ( isset( $row->stats_total_points ) ? number_format( $row->stats_total_points ) : 0 ),
-				'CommentID' => $row->CommentID,
-				'Comment_Parent_ID' => $row->Comment_Parent_ID,
-				'thread' => $thread,
-				'timestamp' => wfTimestamp( TS_UNIX, $row->timestamp ),
-				'current_vote' => ( isset( $row->current_vote ) ? $row->current_vote : false ),
-				'total_vote' => ( isset( $row->comment_score ) ? $row->comment_score : 0 ),
-			];
+		// Try to fetch page comments from cache first
+		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+		$cacheKey = $cache->makeKey(
+			'comments',
+			$this->id,
+			$this->getCurrentPagerPage(),
+			$this->getSort()
+		);
+		$cachedValue = $cache->get( $cacheKey );
+		if ( !$cachedValue ) {
+			// Fetch comments data from database if cache was not hit
+			$commentsData = $this->getCommentsDataFromDatabase();
+			$cache->set( $cacheKey, $commentsData );
+		} else {
+			// Get comments data from cache if it was hit
+			$commentsData = $cachedValue;
+		}
 
+		// Build Comment's from data array
+		foreach ( $commentsData as $data ) {
 			$comments[] = new Comment( $this, $this->getContext(), $data );
 		}
 
-		$commentThreads = [];
-
+		// Build top comments array
 		foreach ( $comments as $comment ) {
 			if ( $comment->parentID == 0 ) {
-				$commentThreads[$comment->id] = [ $comment ];
-			} else {
+				$commentThreads[$comment->id][] = $comment;
+			}
+		}
+
+		// Build threads array
+		foreach ( $comments as $comment ) {
+			if ( $comment->parentID != 0 ) {
 				$commentThreads[$comment->parentID][] = $comment;
+			}
+		}
+
+		// Sort replies, always descending
+		foreach ( $commentThreads as &$thread ) {
+			if ( count( $thread ) ) {
+				usort( $thread, [ 'CommentFunctions', 'sortDescComments' ] );
 			}
 		}
 
@@ -263,7 +218,7 @@ class CommentsPage extends ContextSource {
 	 * @return int The page we are currently paged to
 	 * not used for any API calls
 	 */
-	function getCurrentPagerPage() {
+	public function getCurrentPagerPage() {
 		if ( $this->currentPagerPage == 0 ) {
 			$this->currentPagerPage = $this->getRequest()->getInt( $this->pageQuery, 1 );
 
@@ -283,7 +238,7 @@ class CommentsPage extends ContextSource {
 	 *
 	 * @return string the links for paging through pages of comments
 	 */
-	function displayPager( $pagerCurrent, $pagesCount ) {
+	public function displayPager( $pagerCurrent, $pagesCount ) {
 		// Middle is used to "center" pages around the current page.
 		$pager_middle = ceil( $this->pagerLimit / 2 );
 		// first is the first page listed by this pager piece (re quantity)
@@ -418,7 +373,7 @@ class CommentsPage extends ContextSource {
 	 *
 	 * @return array
 	 */
-	function getAnonList() {
+	public function getAnonList() {
 		$counter = 1;
 		$bucket = [];
 
@@ -444,55 +399,18 @@ class CommentsPage extends ContextSource {
 	}
 
 	/**
-	 * Sort an array of comment threads
-	 * @param array $threads
-	 * @return mixed
-	 */
-	function sort( $threads ) {
-		global $wgCommentsSortDescending;
-
-		if ( $this->orderBy ) {
-			usort( $threads, [ 'CommentFunctions', 'sortScore' ] );
-		} elseif ( $wgCommentsSortDescending ) {
-			usort( $threads, [ 'CommentFunctions', 'sortDesc' ] );
-		} else {
-			usort( $threads, [ 'CommentFunctions', 'sortAsc' ] );
-		}
-
-		return $threads;
-	}
-
-	/**
-	 * Convert an array of comment threads into an array of pages (arrays) of comment threads
-	 * @param array $comments
-	 * @return array
-	 */
-	function page( $comments ) {
-		return array_chunk( $comments, $this->limit );
-	}
-
-	/**
 	 * Display all the comments for the current page.
 	 * CSS and JS is loaded in CommentsHooks.php
 	 * @return string
 	 */
-	function display() {
+	public function display() {
 		$output = '';
 
-		$commentThreads = $this->getComments();
-		$commentThreads = $this->sort( $commentThreads );
-
+		$commentThreads = $this->getCommentsThreads();
 		$this->comments = $commentThreads;
 
-		$commentPages = $this->page( $commentThreads );
 		$currentPageNum = $this->getCurrentPagerPage();
-		$numPages = count( $commentPages );
-		// Suppress random E_NOTICE about "Undefined offset: 0", which seems to
-		// be breaking ProblemReports (at least on my local devbox, not sure
-		// about prod). --Jack Phoenix, 13 July 2015
-		Wikimedia\suppressWarnings();
-		$currentPage = $commentPages[$currentPageNum - 1];
-		Wikimedia\restoreWarnings();
+		$numPages = (int)ceil( $this->countTotal() / $this->limit );
 
 		// Load complete blocked list for logged in user so they don't see their comments
 		$blockList = [];
@@ -500,20 +418,18 @@ class CommentsPage extends ContextSource {
 			$blockList = CommentFunctions::getBlockList( $this->getUser() );
 		}
 
-		if ( $currentPage ) {
-			$pager = $this->displayPager( $currentPageNum, $numPages );
-			$output .= $pager;
-			$output .= '<a id="cfirst" name="cfirst" rel="nofollow"></a>';
+		$pager = $this->displayPager( $currentPageNum, $numPages );
+		$output .= $pager;
+		$output .= '<a id="cfirst" name="cfirst" rel="nofollow"></a>';
 
-			$anonList = $this->getAnonList();
+		$anonList = $this->getAnonList();
 
-			foreach ( $currentPage as $thread ) {
-				foreach ( $thread as $comment ) {
-					$output .= $comment->display( $blockList, $anonList );
-				}
+		foreach ( $commentThreads as $thread ) {
+			foreach ( $thread as $comment ) {
+				$output .= $comment->display( $blockList, $anonList );
 			}
-			$output .= $pager;
 		}
+		$output .= $pager;
 
 		return $output;
 	}
@@ -523,7 +439,7 @@ class CommentsPage extends ContextSource {
 	 *
 	 * @return string HTML
 	 */
-	function displayOrderForm() {
+	public function displayOrderForm() {
 		$output = '<div class="c-order">
 			<div class="c-order-select">
 				<form name="ChangeOrder" action="">
@@ -554,7 +470,7 @@ class CommentsPage extends ContextSource {
 	 *
 	 * @return string HTML output
 	 */
-	function displayForm() {
+	public function displayForm() {
 		$output = '<form action="" method="post" name="commentForm">' . "\n";
 
 		if ( $this->allow ) {
@@ -567,6 +483,7 @@ class CommentsPage extends ContextSource {
 		// 'comment' user right is required to add new comments
 		if ( !$this->getUser()->isAllowed( 'comment' ) ) {
 			$output .= wfMessage( 'comments-not-allowed' )->parse();
+			$output .= '<input type="hidden" name="lastCommentId" value="' . $this->getLatestCommentID() . '" />' . "\n";
 		} else {
 			// Blocked users can't add new comments under any conditions...
 			// and maybe there's a list of users who should be allowed to post
@@ -609,13 +526,138 @@ class CommentsPage extends ContextSource {
 	/**
 	 * Purge caches (parser cache and Squid cache)
 	 */
-	function clearCommentListCache() {
+	public function clearCommentListCache() {
 		wfDebug( "Clearing comments for page {$this->id} from cache\n" );
-
-		if ( is_object( $this->title ) ) {
-			$this->title->invalidateCache();
-			$this->title->purgeSquid();
+		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+		// Delete all possible keys for the page
+		// @TODO: this duplicates values returned by getSort()
+		$sorts = [ 'comment_score DESC', 'timestamp DESC', 'timestamp ASC' ];
+		$pages = (int)ceil( $this->countTotal() / $this->limit );
+		$keys = [];
+		foreach ( $sorts as $sort ) {
+			for ( $page = 0; $page <= $pages; $page++ ) {
+				$keys[] = $cache->makeKey(
+					'comments',
+					$this->id,
+					$page,
+					$sort
+				);
+			}
 		}
+		$cache->deleteMulti( $keys );
+	}
+
+	/**
+	 * Builds sort part of query depending on options set
+	 * @return string Sort ordering to use as the ORDER BY statement in an SQL query
+	 */
+	private function getSort() {
+		global $wgCommentsSortDescending;
+
+		if ( $this->orderBy ) {
+			return 'comment_score DESC';
+		} elseif ( $wgCommentsSortDescending ) {
+			return 'timestamp DESC';
+		} else {
+			return 'timestamp ASC';
+		}
+	}
+
+	/**
+	 * Fetches comments data from database
+	 * @return array
+	 */
+	private function getCommentsDataFromDatabase() {
+		$dbr = wfGetDB( DB_REPLICA );
+		// Defaults (for non-social wikis)
+		$tables = [
+			'Comments',
+			'vote1' => 'Comments_Vote',
+			'vote2' => 'Comments_Vote',
+		];
+		$fields = [
+			'Comment_IP', 'Comment_Text', 'Comment_actor',
+			'Comment_Date', 'Comment_Date AS timestamp',
+			'CommentID', 'Comment_Parent_ID',
+			// @todo FIXME: this and the stats_total_points are buggy on PostgreSQL
+			// Skizzerz says that the whole query is bugged in general but MySQL "helpfully"
+			// ignores the bugginess and returns potentially incorrect results
+			// I just lazily slapped current_vote (and stats_total_points in the "if SP is installed" loop)
+			// to the GROUP BY condition to try to remedy this. --ashley, 17 January 2020
+			'vote1.Comment_Vote_Score AS current_vote',
+			'SUM(vote2.Comment_Vote_Score) AS comment_score'
+		];
+		$joinConds = [
+			// For current user's vote
+			'vote1' => [
+				'LEFT JOIN',
+				[
+					'vote1.Comment_Vote_ID = CommentID',
+					'vote1.Comment_Vote_actor' => $this->getUser()->getActorId()
+				]
+			],
+			// For total vote count
+			'vote2' => [ 'LEFT JOIN', 'vote2.Comment_Vote_ID = CommentID' ]
+		];
+		$params = [ 'GROUP BY' => 'CommentID, current_vote' ];
+
+		// If SocialProfile is installed, query the user_stats table too.
+		if (
+			class_exists( 'UserProfile' ) &&
+			$dbr->tableExists( 'user_stats' )
+		) {
+			$tables[] = 'user_stats';
+			$fields[] = 'stats_total_points';
+			$joinConds['Comments'] = [
+				'LEFT JOIN', 'Comment_actor = stats_actor'
+			];
+			$params['GROUP BY'] .= ', stats_total_points';
+		}
+
+		// Sort
+		$params['ORDER BY'] = $this->getSort();
+
+		// Limit amount of comments being queried based on
+		// per page limit and current page offset
+		$params['LIMIT'] = $this->limit;
+		$params['OFFSET'] = ( $this->currentPagerPage - 1 ) * $this->limit;
+
+		// Perform the query
+		$res = $dbr->select(
+			$tables,
+			$fields,
+			[ 'Comment_Page_ID' => $this->id ],
+			__METHOD__,
+			$params,
+			$joinConds
+		);
+
+		$commentsData = [];
+
+		foreach ( $res as $row ) {
+			if ( $row->Comment_Parent_ID == 0 ) {
+				$thread = $row->CommentID;
+			} else {
+				$thread = $row->Comment_Parent_ID;
+			}
+			$data = [
+				'Comment_actor' => $row->Comment_actor,
+				'Comment_IP' => $row->Comment_IP,
+				'Comment_Text' => $row->Comment_Text,
+				'Comment_Date' => $row->Comment_Date,
+				'Comment_user_points' => ( isset( $row->stats_total_points ) ? number_format( $row->stats_total_points ) : 0 ),
+				'CommentID' => $row->CommentID,
+				'Comment_Parent_ID' => $row->Comment_Parent_ID,
+				'thread' => $thread,
+				'timestamp' => wfTimestamp( TS_UNIX, $row->timestamp ),
+				'current_vote' => ( isset( $row->current_vote ) ? $row->current_vote : false ),
+				'total_vote' => ( isset( $row->comment_score ) ? $row->comment_score : 0 ),
+			];
+
+			$commentsData[] = $data;
+		}
+
+		return $commentsData;
 	}
 
 }

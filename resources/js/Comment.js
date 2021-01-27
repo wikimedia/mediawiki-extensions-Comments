@@ -3,6 +3,9 @@
  *
  * @file
  */
+/* eslint-disable indent */
+// Because what the linter expects is obviously wrong, as any developer looking at this
+// file can tell you.
 ( function ( $, mw ) {
 	var Comment = {
 		submitted: 0,
@@ -12,6 +15,8 @@
 		LatestCommentID: '',
 		CurLatestCommentID: '',
 		pause: 0,
+		currentPage: 1,
+		currentArticleID: mw.config.get( 'wgArticleId' ),
 
 		/**
 		 * When a comment's author is ignored, "Show Comment" link will be
@@ -97,19 +102,43 @@
 			} );
 		},
 
+		initialize: function () {
+			$.ajax( {
+				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+				data: {
+					action: 'commentlist',
+					format: 'json',
+					pageID: this.currentArticleID,
+					order: 1,
+					pagerPage: 1,
+					showForm: 1
+				},
+				cache: false
+			} ).done( function ( response ) {
+				document.getElementById( 'comments-body' ).innerHTML = response.commentlist.html;
+			} );
+		},
+
 		/**
-		 * @param {number} pageID Page ID
 		 * @param {string} order Sorting order
 		 * @param {boolean} end Scroll to bottom after?
-		 * @param {number} cpage Comment page number (used for pagination)
 		 */
-		viewComments: function ( pageID, order, end, cpage ) {
-			document.commentForm.cpage.value = cpage;
+		viewComments: function ( order, end ) {
+			if ( typeof document.commentForm.cpage !== 'undefined' ) {
+				document.commentForm.cpage.value = this.currentPage;
+			}
+
 			document.getElementById( 'allcomments' ).innerHTML = mw.msg( 'comments-loading' ) + '<br /><br />';
 
 			$.ajax( {
 				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
-				data: { action: 'commentlist', format: 'json', pageID: pageID, order: order, pagerPage: cpage },
+				data: {
+					action: 'commentlist',
+					pageID: this.currentArticleID,
+					order: order,
+					pagerPage: this.currentPage,
+					format: 'json'
+				},
 				cache: false
 			} ).done( function ( response ) {
 				document.getElementById( 'allcomments' ).innerHTML = response.commentlist.html;
@@ -177,7 +206,10 @@
 						if ( mw.config.get( 'wgCommentsSortDescending' ) ) {
 							end = 0;
 						}
-						Comment.viewComments( document.commentForm.pageId.value, 0, end, document.commentForm.cpage.value );
+						Comment.viewComments(
+							0,
+							end
+						);
 					} else {
 						window.alert( response.error.info );
 						Comment.submitted = 0;
@@ -222,23 +254,27 @@
 		},
 
 		checkUpdate: function () {
-			var pageID;
-
 			if ( Comment.isBusy ) {
 				return;
 			}
-			pageID = document.commentForm.pageId.value;
 
 			$.ajax( {
 				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
-				data: { action: 'commentlatestid', format: 'json', pageID: pageID },
+				data: {
+					action: 'commentlatestid',
+					format: 'json',
+					pageID: this.currentArticleID
+				},
 				cache: false
 			} ).done( function ( response ) {
 				if ( response.commentlatestid.id ) {
 					// Get last new ID
 					Comment.CurLatestCommentID = response.commentlatestid.id;
 					if ( Comment.CurLatestCommentID !== Comment.LatestCommentID ) {
-						Comment.viewComments( document.commentForm.pageId.value, 0, 1, document.commentForm.cpage.value );
+						Comment.viewComments(
+							0,
+							1
+						);
 						Comment.LatestCommentID = Comment.CurLatestCommentID;
 					}
 				}
@@ -282,7 +318,8 @@
 			document.getElementById( 'replyto' ).innerHTML = '';
 			document.commentForm.commentParentId.value = '';
 		}
-	};
+	},
+	$CommentsWrapper = $( '#comments-body' );
 
 	$( function () {
 		// Important note: these are all using $( 'body' ) as the selector
@@ -294,10 +331,8 @@
 		$( 'body' )
 			.on( 'change', 'select[name="TheOrder"]', function () {
 				Comment.viewComments(
-					mw.config.get( 'wgArticleId' ), // or we could use $( 'input[name="pid"]' ).val(), too
 					$( this ).val(),
-					0,
-					document.commentForm.cpage.value
+					0
 				);
 			} )
 
@@ -371,9 +406,9 @@
 				// *why* that is so, I merely observed it and observed that putting the code
 				// here makes the feature work as intended, which is good enough for me!
 				if ( previewing ) {
-					// When we are already previewing some user-given text and the user clicks on the
-					// "Show preview" button, then actually labeled "Continue editing", we want to do
-					// two things:
+					// When we are already previewing some user-given text and the user clicks on
+					// the "Show preview" button, then actually labeled "Continue editing", we want
+					// to do two things:
 					// 1) Make comment text <s>great</s> editable again
 					$( '#comment' ).prop( 'disabled', '' );
 					// 2) Clear the preview area
@@ -401,9 +436,10 @@
 						'form[name="commentForm"] .comment-preview'
 					);
 
-					// Change the text of the "Show preview" button from "Show preview" to "Continue editing"
-					// when we are already previewing something, and make it so that upon clicking on this
-					// button the button text is changed back to "Show preview"
+					// Change the text of the "Show preview" button from "Show preview" to
+					// "Continue editing" when we are already previewing something, and make it so
+					// that upon clicking on this button the button text is changed back
+					// to "Show preview"
 					$( '.c-form-button input[name="wpPreview"]' )
 						.val( mw.msg( 'comments-continue-editing-btn' ) )
 						.click( function () {
@@ -424,13 +460,17 @@
 					}
 				}
 
+				Comment.currentPage = parseInt( $( this ).data( 'cpage' ) );
+
 				Comment.viewComments(
-					mw.config.get( 'wgArticleId' ), // or we could use $( 'input[name="pid"]' ).val(), too
 					ord,
-					0,
-					$( this ).data( 'cpage' )
+					0
 				);
 			} );
 	} );
+
+	if ( $CommentsWrapper.length ) {
+		Comment.initialize();
+	}
 
 }( jQuery, mediaWiki ) );

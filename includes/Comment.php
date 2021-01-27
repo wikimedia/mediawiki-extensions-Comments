@@ -140,6 +140,8 @@ class Comment extends ContextSource {
 		$this->thread = $data['thread'];
 		$this->timestamp = $data['timestamp'];
 
+		// @TODO: this does not look OK to additionally query the vote data here
+		//			it's probably better to do it within the Comment::newFromID down below
 		if ( isset( $data['current_vote'] ) ) {
 			$vote = $data['current_vote'];
 		} else {
@@ -162,6 +164,7 @@ class Comment extends ContextSource {
 
 		$this->currentVote = $vote;
 
+		// @TODO: same as above for current_vote
 		$this->currentScore = isset( $data['total_vote'] )
 			? $data['total_vote'] : $this->getScore();
 	}
@@ -205,6 +208,8 @@ class Comment extends ContextSource {
 				]
 			];
 		}
+
+		// @TODO: we probably need to also query voting data here
 
 		// Perform the query
 		$res = $dbr->select(
@@ -779,13 +784,9 @@ class Comment extends ContextSource {
 
 		$output = '';
 
-		if ( in_array( $this->username, $blockList ) ) {
-			$output .= $this->showIgnore( false, $container_class );
-			$output .= $this->showComment( true, $container_class, $blockList, $anonList );
-		} else {
-			$output .= $this->showIgnore( true, $container_class );
-			$output .= $this->showComment( false, $container_class, $blockList, $anonList );
-		}
+		$isBlocked = in_array( $this->username, $blockList );
+		$output .= $this->showIgnore( !$isBlocked, $container_class );
+		$output .= $this->showComment( $isBlocked, $container_class, $blockList, $anonList );
 
 		return $output;
 	}
@@ -828,7 +829,7 @@ class Comment extends ContextSource {
 	 * @return string
 	 */
 	function showComment( $hide = false, $containerClass, $blockList, $anonList ) {
-		global $wgUserLevels, $wgExtensionAssetsPath;
+		global $wgUserLevels, $wgExtensionAssetsPath, $wgCommentsDefaultAvatar;
 
 		$style = '';
 		if ( $hide ) {
@@ -897,7 +898,6 @@ class Comment extends ContextSource {
 		// Display Block icon for logged in users for comments of users
 		// that are already not in your block list
 		$blockLink = '';
-
 		if (
 			$userObj->isLoggedIn() &&
 			$userObj->getActorId() != $this->actorID &&
@@ -912,7 +912,6 @@ class Comment extends ContextSource {
 		}
 
 		// Default avatar image, if SocialProfile extension isn't enabled
-		global $wgCommentsDefaultAvatar;
 		$avatarImg = '<img src="' . $wgCommentsDefaultAvatar . '" alt="" border="0" />';
 		// If SocialProfile *is* enabled, then use its wAvatar class to get the avatars for each commenter
 		if ( class_exists( 'wAvatar' ) ) {
