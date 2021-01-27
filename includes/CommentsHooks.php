@@ -61,6 +61,15 @@ class CommentsHooks {
 	}
 
 	/**
+	 * Purges comments caches on article purge action
+	 * @param Article &$article
+	 */
+	public static function onArticlePurge( &$article ) {
+		$cp = new CommentsPage( $article->getId(), $article->getContext() );
+		$cp->clearCommentListCache();
+	}
+
+	/**
 	 * Adds the three new required database tables into the database when the
 	 * user runs /maintenance/update.php (the core database updater script).
 	 *
