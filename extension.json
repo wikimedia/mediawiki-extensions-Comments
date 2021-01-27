@@ -89,7 +89,10 @@
 	},
 	"ResourceModules": {
 		"ext.comments.css": {
-			"styles": "resources/css/Comments.css",
+			"styles": [
+				"resources/css/Loader.css",
+				"resources/css/Comments.css"
+			],
 			"targets": [
 				"desktop",
 				"mobile"
@@ -99,7 +102,8 @@
 			"scripts": "resources/js/Comment.js",
 			"dependencies": [
 				"mediawiki.api",
-				"mediawiki.jqueryMsg"
+				"mediawiki.jqueryMsg",
+				"mediawiki.user"
 			],
 			"messages": [
 				"comments-voted-label",
@@ -130,7 +134,8 @@
 		"ParserFirstCallInit": "CommentsHooks::onParserFirstCallInit",
 		"LoadExtensionSchemaUpdates": "CommentsHooks::onLoadExtensionSchemaUpdates",
 		"MagicWordwgVariableIDs": "NumberOfComments::onMagicWordwgVariableIDs",
-		"ParserGetVariableValueSwitch": "NumberOfComments::onParserGetVariableValueSwitch"
+		"ParserGetVariableValueSwitch": "NumberOfComments::onParserGetVariableValueSwitch",
+		"ArticlePurge": "CommentsHooks::onArticlePurge"
 	},
 	"config": {
 		"CommentsDefaultAvatar": "http://www.shoutwiki.com/w/extensions/SocialProfile/avatars/default_ml.gif",
