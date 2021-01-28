@@ -81,6 +81,36 @@
 				}
 			},
 
+			edit: function ( commentID ) {
+				var commentText, $comment;
+				$comment = $( '#comment-' + commentID );
+				commentText = $comment.find( 'textarea' ).val();
+				Comment.toggleEditMode();
+				$comment.find( '.c-comment' ).html( '<span class="loader"></span>' );
+				( new mw.Api() ).postWithToken( 'csrf', {
+					action: 'commentedit',
+					commentID: commentID,
+					commentText: commentText,
+					pageID: this.currentPage
+				} ).done( function ( response ) {
+					if ( response.commentedit.ok ) {
+						$comment.find( '.c-comment' ).html( response.commentedit.ok );
+					}
+				} );
+			},
+
+			toggleEditMode: function ( commentID ) {
+				var commentText, $comment;
+				$( '.c-item' ).removeClass( 'c-item--edit-mode' );
+				if ( typeof commentID !== 'undefined' ) {
+					$comment = $( '#comment-' + commentID );
+					$comment.addClass( 'c-item--edit-mode' );
+					commentText = $comment.find( '.c-comment' ).html();
+					commentText = commentText.replace( /^\s+|\s+$/g, '' );
+					$comment.find( 'textarea' ).val( commentText );
+				}
+			},
+
 			/**
 			 * Vote for a comment.
 			 *
@@ -360,6 +390,21 @@
 			// "Delete Comment" links
 			.on( 'click', 'a.comment-delete-link', function () {
 				Comment.deleteComment( $( this ).data( 'comment-id' ) );
+			} )
+
+			.on( 'click', 'a.comments-edit', function ( e ) {
+				e.preventDefault();
+				Comment.toggleEditMode( $( this ).data( 'comment-id' ) );
+			} )
+
+			.on( 'click', 'button.c-comment-edit-form-cancel', function ( e ) {
+				e.preventDefault();
+				Comment.toggleEditMode();
+			} )
+
+			.on( 'click', 'button.c-comment-edit-form-save', function ( e ) {
+				e.preventDefault();
+				Comment.edit( $( this ).data( 'comment-id' ) );
 			} )
 
 			// "Show this hidden comment" -- comments made by people on the user's
