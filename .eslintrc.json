@@ -12,13 +12,6 @@
 		"mediaWiki": false
 	},
 	"rules": {
-		"quote-props": [
-			"error",
-			"as-needed",
-			{
-				"keywords": false
-			}
-		],
 		"vars-on-top": "off"
 	}
 }
