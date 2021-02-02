@@ -12,6 +12,7 @@
 		"mediaWiki": false
 	},
 	"rules": {
-		"vars-on-top": "off"
+		"vars-on-top": "off",
+		"compat/compat": "warn"
 	}
 }
