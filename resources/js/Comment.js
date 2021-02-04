@@ -345,14 +345,15 @@
 				document.getElementById( 'replyto' ).innerHTML = '';
 				document.commentForm.commentParentId.value = '';
 			}
-		},
-		$CommentsWrapper = $( '#comments-body' );
+		};
 
 	$( function () {
 		// Important note: these are all using $( 'body' ) as the selector
 		// instead of the class/ID/whatever so that they work after viewComments()
 		// has been called (i.e. so that "Delete comment", reply, etc. links
 		// continue working after you've submitted a comment yourself)
+
+		var $CommentsWrapper = $( '#comments-body' );
 
 		// "Sort by X" feature
 		$( 'body' )
@@ -509,10 +510,11 @@
 					0
 				);
 			} );
-	} );
 
-	if ( $CommentsWrapper.length ) {
-		Comment.initialize();
-	}
+		if ( $CommentsWrapper.length ) {
+			Comment.initialize();
+		}
+
+	} );
 
 }( jQuery, mediaWiki ) );
