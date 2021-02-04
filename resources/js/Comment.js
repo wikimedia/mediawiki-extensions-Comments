@@ -5,354 +5,359 @@
  */
 ( function ( $, mw ) {
 	var Comment = {
-			submitted: 0,
-			isBusy: false,
-			timer: '', // has to have an initial value...
-			updateDelay: 7000,
-			LatestCommentID: '',
-			CurLatestCommentID: '',
-			pause: 0,
-			currentPage: 1,
-			currentArticleID: mw.config.get( 'wgArticleId' ),
+		submitted: 0,
+		isBusy: false,
+		timer: '', // has to have an initial value...
+		updateDelay: 7000,
+		LatestCommentID: '',
+		CurLatestCommentID: '',
+		pause: 0,
+		currentPage: 1,
+		currentArticleID: mw.config.get( 'wgArticleId' ),
 
-			/**
-			 * When a comment's author is ignored, "Show Comment" link will be
-			 * presented to the user.
-			 * If the user clicks on it, this function is called to show the hidden
-			 * comment.
-			 *
-			 * @param {string} id
-			 */
-			show: function ( id ) {
-				$( '#ignore-' + id ).hide( 300 );
-				$( '#comment-' + id ).show( 300 );
-			},
+		/**
+		 * When a comment's author is ignored, "Show Comment" link will be
+		 * presented to the user.
+		 * If the user clicks on it, this function is called to show the hidden
+		 * comment.
+		 *
+		 * @param {string} id
+		 */
+		show: function ( id ) {
+			$( '#ignore-' + id ).hide( 300 );
+			$( '#comment-' + id ).show( 300 );
+		},
 
-			/**
-			 * This function is called whenever a user clicks on the "block" image to
-			 * block another user's comments.
-			 *
-			 * @param {string} username Name of the user whose comments we want to block
-			 * @param {number} userID User ID number of the user whose comments we
-			 *                         want to block (or 0 for anonymous users)
-			 * @param {number} commentID Comment ID number
-			 */
-			blockUser: function ( username, userID, commentID ) {
-				var message;
+		/**
+		 * This function is called whenever a user clicks on the "block" image to
+		 * block another user's comments.
+		 *
+		 * @param {string} username Name of the user whose comments we want to block
+		 * @param {number} userID User ID number of the user whose comments we
+		 *                         want to block (or 0 for anonymous users)
+		 * @param {number} commentID Comment ID number
+		 */
+		blockUser: function ( username, userID, commentID ) {
+			var message;
 
-				// Display a different message depending on whether we're blocking an
-				// anonymous user or a registered one.
-				if ( !userID || userID === 0 ) {
-					message = mw.msg( 'comments-block-warning-anon' );
-				} else {
-					message = mw.msg( 'comments-block-warning-user', username );
+			// Display a different message depending on whether we're blocking an
+			// anonymous user or a registered one.
+			if ( !userID || userID === 0 ) {
+				message = mw.msg( 'comments-block-warning-anon' );
+			} else {
+				message = mw.msg( 'comments-block-warning-user', username );
+			}
+
+			if ( window.confirm( message ) ) {
+				( new mw.Api() ).postWithToken( 'csrf', {
+					action: 'commentblock',
+					commentID: commentID
+				} ).done( function ( response ) {
+					if ( response.commentblock.ok ) {
+						$( 'a.comments-block-user[data-comments-user-id=' + userID + ']' )
+							.parents( '.c-item' ).hide( 300 )
+							.prev().show( 300 );
+					}
+				} );
+			}
+		},
+
+		/**
+		 * This function is called whenever a user clicks on the "Delete Comment"
+		 * link to delete a comment.
+		 *
+		 * @param {number} commentID Comment ID number
+		 */
+		deleteComment: function ( commentID ) {
+			if ( window.confirm( mw.msg( 'comments-delete-warning' ) ) ) {
+				( new mw.Api() ).postWithToken( 'csrf', {
+					action: 'commentdelete',
+					commentID: commentID
+				} ).done( function ( response ) {
+					if ( response.commentdelete.ok ) {
+						$( '#comment-' + commentID ).hide( 2000 );
+					}
+				} );
+			}
+		},
+
+		edit: function ( commentID ) {
+			var commentText, $comment;
+			$comment = $( '#comment-' + commentID );
+			commentText = $comment.find( 'textarea' ).val();
+			if ( !commentText.length ) {
+				return;
+			}
+			Comment.toggleEditMode();
+			$comment.find( '.c-comment' ).html( '<span class="loader"></span>' );
+			( new mw.Api() ).postWithToken( 'csrf', {
+				action: 'commentedit',
+				commentID: commentID,
+				commentText: commentText,
+				pageID: this.currentArticleID
+			} ).done( function ( response ) {
+				if ( response.commentedit.ok ) {
+					$comment.find( '.c-comment' ).html( response.commentedit.ok );
 				}
+			} );
+		},
 
-				if ( window.confirm( message ) ) {
-					( new mw.Api() ).postWithToken( 'csrf', {
-						action: 'commentblock',
-						commentID: commentID
-					} ).done( function ( response ) {
-						if ( response.commentblock.ok ) {
-							$( 'a.comments-block-user[data-comments-user-id=' + userID + ']' )
-								.parents( '.c-item' ).hide( 300 )
-								.prev().show( 300 );
-						}
-					} );
-				}
-			},
-
-			/**
-			 * This function is called whenever a user clicks on the "Delete Comment"
-			 * link to delete a comment.
-			 *
-			 * @param {number} commentID Comment ID number
-			 */
-			deleteComment: function ( commentID ) {
-				if ( window.confirm( mw.msg( 'comments-delete-warning' ) ) ) {
-					( new mw.Api() ).postWithToken( 'csrf', {
-						action: 'commentdelete',
-						commentID: commentID
-					} ).done( function ( response ) {
-						if ( response.commentdelete.ok ) {
-							$( '#comment-' + commentID ).hide( 2000 );
-						}
-					} );
-				}
-			},
-
-			edit: function ( commentID ) {
-				var commentText, $comment;
+		toggleEditMode: function ( commentID ) {
+			var $comment;
+			$( '.c-item' ).removeClass( 'c-item--edit-mode' );
+			if ( typeof commentID !== 'undefined' ) {
 				$comment = $( '#comment-' + commentID );
-				commentText = $comment.find( 'textarea' ).val();
-				if ( !commentText.length ) {
-					return;
+				$comment.addClass( 'c-item--edit-mode' );
+			}
+		},
+
+		/**
+		 * Vote for a comment.
+		 *
+		 * @param {number} commentID Comment ID number
+		 * @param {number} voteValue Vote value
+		 */
+		vote: function ( commentID, voteValue ) {
+			( new mw.Api() ).postWithToken( 'csrf', {
+				action: 'commentvote',
+				commentID: commentID,
+				voteValue: voteValue
+			} ).done( function ( response ) {
+				$( '#comment-' + commentID + ' .c-score' )
+					.html( response.commentvote.html ) // this will still be escaped
+					.html( $( '#comment-' + commentID + ' .c-score' ).text() ); // unescape
+			} );
+		},
+
+		initialize: function () {
+			$.ajax( {
+				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+				data: {
+					action: 'commentlist',
+					format: 'json',
+					pageID: this.currentArticleID,
+					order: 1,
+					pagerPage: 1,
+					showForm: 1
+				},
+				cache: false
+			} ).done( function ( response ) {
+				document.getElementById( 'comments-body' ).innerHTML = response.commentlist.html;
+			} );
+		},
+
+		/**
+		 * @param {string} order Sorting order
+		 * @param {boolean} end Scroll to bottom after?
+		 */
+		viewComments: function ( order, end ) {
+			if ( typeof document.commentForm.cpage !== 'undefined' ) {
+				document.commentForm.cpage.value = this.currentPage;
+			}
+
+			document.getElementById( 'allcomments' ).innerHTML = mw.msg( 'comments-loading' ) + '<br /><br />';
+
+			$.ajax( {
+				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+				data: {
+					action: 'commentlist',
+					pageID: this.currentArticleID,
+					order: order,
+					pagerPage: this.currentPage,
+					format: 'json'
+				},
+				cache: false
+			} ).done( function ( response ) {
+				document.getElementById( 'allcomments' ).innerHTML = response.commentlist.html;
+				Comment.submitted = 0;
+				if ( end ) {
+					window.location.hash = 'end';
 				}
-				Comment.toggleEditMode();
-				$comment.find( '.c-comment' ).html( '<span class="loader"></span>' );
+			} );
+		},
+
+		/**
+		 * Preview the contents of the <textarea> (more accurately the
+		 * wikitext given to this function) and show the parsed HTML
+		 * output in the given element.
+		 *
+		 * @param {string} text Wikitext to be sent to the API for parsing
+		 * @param {string} selector jQuery selector for selecting the element
+		 * where the preview text should be inserted
+		 */
+		preview: function ( text, selector ) {
+			( new mw.Api() ).get( {
+				action: 'parse',
+				text: text,
+				// do pre-save transformation to expand pipe tricks
+				// (e.g. [[Template:FooBar|]] to [[Template:FooBar|FooBar]]) and the like
+				pst: true,
+				prop: 'text',
+				contentmodel: 'wikitext',
+				disablelimitreport: true // don't need the NewPP report stuff
+			} ).done( function ( data ) {
+				$( selector ).html( data.parse.text[ '*' ] );
+			} ).fail( function () {
+				$( selector ).text( mw.msg( 'comments-preview-failed' ) );
+			} );
+		},
+
+		/**
+		 * Submit a new comment.
+		 */
+		submit: function () {
+			var pageID, parentID, commentText;
+
+			if ( Comment.submitted === 0 ) {
+				Comment.submitted = 1;
+
+				pageID = document.commentForm.pageId.value;
+				if ( !document.commentForm.commentParentId.value ) {
+					parentID = 0;
+				} else {
+					parentID = document.commentForm.commentParentId.value;
+				}
+				commentText = document.commentForm.commentText.value;
+
 				( new mw.Api() ).postWithToken( 'csrf', {
-					action: 'commentedit',
-					commentID: commentID,
-					commentText: commentText,
-					pageID: this.currentArticleID
+					action: 'commentsubmit',
+					pageID: pageID,
+					parentID: parentID,
+					commentText: commentText
 				} ).done( function ( response ) {
-					if ( response.commentedit.ok ) {
-						$comment.find( '.c-comment' ).html( response.commentedit.ok );
-					}
-				} );
-			},
+					var end;
 
-			toggleEditMode: function ( commentID ) {
-				var $comment;
-				$( '.c-item' ).removeClass( 'c-item--edit-mode' );
-				if ( typeof commentID !== 'undefined' ) {
-					$comment = $( '#comment-' + commentID );
-					$comment.addClass( 'c-item--edit-mode' );
-				}
-			},
-
-			/**
-			 * Vote for a comment.
-			 *
-			 * @param {number} commentID Comment ID number
-			 * @param {number} voteValue Vote value
-			 */
-			vote: function ( commentID, voteValue ) {
-				( new mw.Api() ).postWithToken( 'csrf', {
-					action: 'commentvote',
-					commentID: commentID,
-					voteValue: voteValue
-				} ).done( function ( response ) {
-					$( '#comment-' + commentID + ' .c-score' )
-						.html( response.commentvote.html ) // this will still be escaped
-						.html( $( '#comment-' + commentID + ' .c-score' ).text() ); // unescape
-				} );
-			},
-
-			initialize: function () {
-				$.ajax( {
-					url: mw.config.get( 'wgScriptPath' ) + '/api.php',
-					data: {
-						action: 'commentlist',
-						format: 'json',
-						pageID: this.currentArticleID,
-						order: 1,
-						pagerPage: 1,
-						showForm: 1
-					},
-					cache: false
-				} ).done( function ( response ) {
-					document.getElementById( 'comments-body' ).innerHTML = response.commentlist.html;
-				} );
-			},
-
-			/**
-			 * @param {string} order Sorting order
-			 * @param {boolean} end Scroll to bottom after?
-			 */
-			viewComments: function ( order, end ) {
-				if ( typeof document.commentForm.cpage !== 'undefined' ) {
-					document.commentForm.cpage.value = this.currentPage;
-				}
-
-				document.getElementById( 'allcomments' ).innerHTML = mw.msg( 'comments-loading' ) + '<br /><br />';
-
-				$.ajax( {
-					url: mw.config.get( 'wgScriptPath' ) + '/api.php',
-					data: {
-						action: 'commentlist',
-						pageID: this.currentArticleID,
-						order: order,
-						pagerPage: this.currentPage,
-						format: 'json'
-					},
-					cache: false
-				} ).done( function ( response ) {
-					document.getElementById( 'allcomments' ).innerHTML = response.commentlist.html;
-					Comment.submitted = 0;
-					if ( end ) {
-						window.location.hash = 'end';
-					}
-				} );
-			},
-
-			/**
-			 * Preview the contents of the <textarea> (more accurately the
-			 * wikitext given to this function) and show the parsed HTML
-			 * output in the given element.
-			 *
-			 * @param {string} text Wikitext to be sent to the API for parsing
-			 * @param {string} selector jQuery selector for selecting the element
-			 * where the preview text should be inserted
-			 */
-			preview: function ( text, selector ) {
-				( new mw.Api() ).get( {
-					action: 'parse',
-					text: text,
-					// do pre-save transformation to expand pipe tricks
-					// (e.g. [[Template:FooBar|]] to [[Template:FooBar|FooBar]]) and the like
-					pst: true,
-					prop: 'text',
-					contentmodel: 'wikitext',
-					disablelimitreport: true // don't need the NewPP report stuff
-				} ).done( function ( data ) {
-					$( selector ).html( data.parse.text[ '*' ] );
-				} ).fail( function () {
-					$( selector ).text( mw.msg( 'comments-preview-failed' ) );
-				} );
-			},
-
-			/**
-			 * Submit a new comment.
-			 */
-			submit: function () {
-				var pageID, parentID, commentText;
-
-				if ( Comment.submitted === 0 ) {
-					Comment.submitted = 1;
-
-					pageID = document.commentForm.pageId.value;
-					if ( !document.commentForm.commentParentId.value ) {
-						parentID = 0;
-					} else {
-						parentID = document.commentForm.commentParentId.value;
-					}
-					commentText = document.commentForm.commentText.value;
-
-					( new mw.Api() ).postWithToken( 'csrf', {
-						action: 'commentsubmit',
-						pageID: pageID,
-						parentID: parentID,
-						commentText: commentText
-					} ).done( function ( response ) {
-						var end;
-
-						if ( response.commentsubmit && response.commentsubmit.ok ) {
-							document.commentForm.commentText.value = '';
-							end = 1;
-							if ( mw.config.get( 'wgCommentsSortDescending' ) ) {
-								end = 0;
-							}
-							Comment.viewComments(
-								0,
-								end
-							);
-						} else {
-							window.alert( response.error.info );
-							Comment.submitted = 0;
+					if ( response.commentsubmit && response.commentsubmit.ok ) {
+						document.commentForm.commentText.value = '';
+						end = 1;
+						if ( mw.config.get( 'wgCommentsSortDescending' ) ) {
+							end = 0;
 						}
-					} );
-
-					Comment.cancelReply();
-				}
-			},
-
-			/**
-			 * Toggle comment auto-refreshing on or off
-			 *
-			 * @param {boolean} status
-			 */
-			toggleLiveComments: function ( status ) {
-				var msg;
-
-				if ( status ) {
-					Comment.pause = 0;
-				} else {
-					Comment.pause = 1;
-				}
-				if ( status ) {
-					msg = mw.msg( 'comments-auto-refresher-pause' );
-				} else {
-					msg = mw.msg( 'comments-auto-refresher-enable' );
-				}
-
-				$( 'body' ).on( 'click', 'div#spy a', function () {
-					Comment.toggleLiveComments( ( status ) ? 0 : 1 );
+						Comment.viewComments(
+							0,
+							end
+						);
+					} else {
+						window.alert( response.error.info );
+						Comment.submitted = 0;
+					}
 				} );
-				$( 'div#spy a' ).css( 'font-size', '10px' ).text( msg );
 
+				Comment.cancelReply();
+			}
+		},
+
+		/**
+		 * Toggle comment auto-refreshing on or off
+		 *
+		 * @param {boolean} status
+		 */
+		toggleLiveComments: function ( status ) {
+			var msg;
+
+			if ( status ) {
+				Comment.pause = 0;
+			} else {
+				Comment.pause = 1;
+			}
+			if ( status ) {
+				msg = mw.msg( 'comments-auto-refresher-pause' );
+			} else {
+				msg = mw.msg( 'comments-auto-refresher-enable' );
+			}
+
+			$( 'body' ).on( 'click', 'div#spy a', function () {
+				Comment.toggleLiveComments( ( status ) ? 0 : 1 );
+			} );
+			$( 'div#spy a' ).css( 'font-size', '10px' ).text( msg );
+
+			if ( !Comment.pause ) {
+				Comment.LatestCommentID = document.commentForm.lastCommentId.value;
+				Comment.timer = setTimeout(
+					function () {
+						Comment.checkUpdate();
+					},
+					Comment.updateDelay
+				);
+			}
+		},
+
+		checkUpdate: function () {
+			if ( Comment.isBusy ) {
+				return;
+			}
+
+			$.ajax( {
+				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
+				data: {
+					action: 'commentlatestid',
+					format: 'json',
+					pageID: this.currentArticleID
+				},
+				cache: false
+			} ).done( function ( response ) {
+				if ( response.commentlatestid.id ) {
+					// Get last new ID
+					Comment.CurLatestCommentID = response.commentlatestid.id;
+					if ( Comment.CurLatestCommentID !== Comment.LatestCommentID ) {
+						Comment.viewComments(
+							0,
+							1
+						);
+						Comment.LatestCommentID = Comment.CurLatestCommentID;
+					}
+				}
+
+				Comment.isBusy = false;
 				if ( !Comment.pause ) {
-					Comment.LatestCommentID = document.commentForm.lastCommentId.value;
+					clearTimeout( Comment.timer );
 					Comment.timer = setTimeout(
-						function () { Comment.checkUpdate(); },
+						function () {
+							Comment.checkUpdate();
+						},
 						Comment.updateDelay
 					);
 				}
-			},
+			} );
 
-			checkUpdate: function () {
-				if ( Comment.isBusy ) {
-					return;
-				}
-
-				$.ajax( {
-					url: mw.config.get( 'wgScriptPath' ) + '/api.php',
-					data: {
-						action: 'commentlatestid',
-						format: 'json',
-						pageID: this.currentArticleID
-					},
-					cache: false
-				} ).done( function ( response ) {
-					if ( response.commentlatestid.id ) {
-						// Get last new ID
-						Comment.CurLatestCommentID = response.commentlatestid.id;
-						if ( Comment.CurLatestCommentID !== Comment.LatestCommentID ) {
-							Comment.viewComments(
-								0,
-								1
-							);
-							Comment.LatestCommentID = Comment.CurLatestCommentID;
-						}
-					}
-
-					Comment.isBusy = false;
-					if ( !Comment.pause ) {
-						clearTimeout( Comment.timer );
-						Comment.timer = setTimeout(
-							function () { Comment.checkUpdate(); },
-							Comment.updateDelay
-						);
-					}
-				} );
-
-				Comment.isBusy = true;
-				return false;
-			},
-
-			/**
-			 * Show the "reply to user X" form
-			 *
-			 * @param {number} parentId Parent comment (the one we're replying to) ID
-			 * @param {string} poster Name of the person whom we're replying to
-			 * @param {string} posterGender Gender of the person whom we're replying to
-			 */
-			reply: function ( parentId, poster, posterGender ) {
-				$( '#replyto' ).text(
-					mw.message( 'comments-reply-to', poster, posterGender ).parse() + ' ('
-				);
-				$( '<a>', {
-					class: 'comments-cancel-reply-link',
-					style: 'cursor:pointer',
-					text: mw.msg( 'comments-cancel-reply' )
-				} ).appendTo( '#replyto' );
-				$( '#replyto' ).append( ') <br />' );
-
-				document.commentForm.commentParentId.value = parentId;
-			},
-
-			cancelReply: function () {
-				document.getElementById( 'replyto' ).innerHTML = '';
-				document.commentForm.commentParentId.value = '';
-			}
+			Comment.isBusy = true;
+			return false;
 		},
-		$CommentsWrapper = $( '#comments-body' );
+
+		/**
+		 * Show the "reply to user X" form
+		 *
+		 * @param {number} parentId Parent comment (the one we're replying to) ID
+		 * @param {string} poster Name of the person whom we're replying to
+		 * @param {string} posterGender Gender of the person whom we're replying to
+		 */
+		reply: function ( parentId, poster, posterGender ) {
+			$( '#replyto' ).text(
+				mw.message( 'comments-reply-to', poster, posterGender ).parse() + ' ('
+			);
+			$( '<a>', {
+				class: 'comments-cancel-reply-link',
+				style: 'cursor:pointer',
+				text: mw.msg( 'comments-cancel-reply' )
+			} ).appendTo( '#replyto' );
+			$( '#replyto' ).append( ') <br />' );
+
+			document.commentForm.commentParentId.value = parentId;
+		},
+
+		cancelReply: function () {
+			document.getElementById( 'replyto' ).innerHTML = '';
+			document.commentForm.commentParentId.value = '';
+		}
+	};
 
 	$( function () {
 		// Important note: these are all using $( 'body' ) as the selector
 		// instead of the class/ID/whatever so that they work after viewComments()
 		// has been called (i.e. so that "Delete comment", reply, etc. links
 		// continue working after you've submitted a comment yourself)
+
+		var $CommentsWrapper = $( '#comments-body' );
 
 		// "Sort by X" feature
 		$( 'body' )
@@ -509,10 +514,11 @@
 					0
 				);
 			} );
-	} );
 
-	if ( $CommentsWrapper.length ) {
-		Comment.initialize();
-	}
+		if ( $CommentsWrapper.length ) {
+			Comment.initialize();
+		}
+
+	} );
 
 }( jQuery, mediaWiki ) );
