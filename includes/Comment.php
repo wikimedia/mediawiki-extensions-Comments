@@ -300,7 +300,7 @@ class Comment extends ContextSource {
 	 * @param User $user User commenting
 	 * @param int $parentID ID of parent comment, if this is a reply
 	 *
-	 * @return Comment the added comment
+	 * @return Comment|null the added comment
 	 */
 	public static function add( $text, CommentsPage $page, User $user, $parentID ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -374,7 +374,7 @@ class Comment extends ContextSource {
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'Echo' ) ) {
 			global $wgEchoMentionOnChanges;
 			if ( !$wgEchoMentionOnChanges ) {
-				return;
+				return null;
 			}
 			// Modified copypasta of EchoDiscussionParser#generateEventsForRevision with less Revision-ism!
 			// (Awful pun is awful, sorry about that.)
