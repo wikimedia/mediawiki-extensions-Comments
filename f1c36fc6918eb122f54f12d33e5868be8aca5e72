@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "205d711d_02686a4d",
+        "filename": "includes/CommentsPage.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2021-02-10T11:35:32Z",
+      "side": 1,
+      "message": "Since the return value of this method is used for the SQL query ORDER BY statement, DESC and ASC should be capitalized here, presumably, unless there\u0027s a very good reason to not do that (which should be documented if so).",
+      "range": {
+        "startLine": 558,
+        "startChar": 25,
+        "endLine": 558,
+        "endChar": 29
+      },
+      "revId": "f1c36fc6918eb122f54f12d33e5868be8aca5e72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fbbcb3b_a5fcf91f",
+        "filename": "includes/parser/DisplayComments.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2021-02-10T11:35:32Z",
+      "side": 1,
+      "message": "Any particular reason to use rawElement over element here?",
+      "range": {
+        "startLine": 65,
+        "startChar": 9,
+        "endLine": 65,
+        "endChar": 19
+      },
+      "revId": "f1c36fc6918eb122f54f12d33e5868be8aca5e72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4289d4e2_e1393144",
+        "filename": "includes/parser/DisplayComments.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2021-02-10T11:35:32Z",
+      "side": 1,
+      "message": "Should(n\u0027t) this be i18n\u0027ed? (Also should probably have three periods instead of two.)",
+      "range": {
+        "startLine": 70,
+        "startChar": 7,
+        "endLine": 70,
+        "endChar": 27
+      },
+      "revId": "f1c36fc6918eb122f54f12d33e5868be8aca5e72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "78571dac_fe26c050",
+        "filename": "resources/js/Comment.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2021-02-10T11:35:32Z",
+      "side": 1,
+      "message": "Was there any particular reason to increase the indentation level by one? As far as I can see, the original indentation was correct, and this indentation level change is making the diff a lot \"noisier\". (Temporarily changing gerrit preferences to exclude whitespace changes makes this diff a lot more readable.)",
+      "range": {
+        "startLine": 8,
+        "startChar": 2,
+        "endLine": 8,
+        "endChar": 3
+      },
+      "revId": "f1c36fc6918eb122f54f12d33e5868be8aca5e72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
