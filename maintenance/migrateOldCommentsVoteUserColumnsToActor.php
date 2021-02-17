@@ -3,6 +3,9 @@
  * @file
  * @ingroup Maintenance
  */
+
+use MediaWiki\MediaWikiServices;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
@@ -95,10 +98,16 @@ class MigrateOldCommentsVoteUserColumnsToActor extends LoggedUpdateMaintenance {
 		);
 		foreach ( $res as $row ) {
 			$user = User::newFromAnyId( $row->Comment_Vote_user_id, $row->Comment_Vote_Username, null );
+			if ( interface_exists( '\MediaWiki\User\ActorNormalization' ) ) {
+				// MW 1.36+
+				$actorId = MediaWikiServices::getInstance()->getActorNormalization()->acquireActorId( $user );
+			} else {
+				$actorId = $user->getActorId( $dbw );
+			}
 			$dbw->update(
 				'Comments_Vote',
 				[
-					'Comment_Vote_actor' => $user->getActorId( $dbw )
+					'Comment_Vote_actor' => $actorId
 				],
 				[
 					'Comment_Vote_user_id' => $row->Comment_Vote_user_id,

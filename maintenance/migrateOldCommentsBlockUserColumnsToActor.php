@@ -3,6 +3,9 @@
  * @file
  * @ingroup Maintenance
  */
+
+use MediaWiki\MediaWikiServices;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
@@ -101,10 +104,16 @@ class MigrateOldCommentsBlockUserColumnsToActor extends LoggedUpdateMaintenance 
 		);
 		foreach ( $res as $row ) {
 			$user = User::newFromAnyId( $row->cb_user_id, $row->cb_user_name, null );
+			if ( interface_exists( '\MediaWiki\User\ActorNormalization' ) ) {
+				// MW 1.36+
+				$actorId = MediaWikiServices::getInstance()->getActorNormalization()->acquireActorId( $user );
+			} else {
+				$actorId = $user->getActorId( $dbw );
+			}
 			$dbw->update(
 				'Comments_block',
 				[
-					'cb_actor' => $user->getActorId( $dbw )
+					'cb_actor' => $actorId
 				],
 				[
 					'cb_user_id' => $row->cb_user_id,
@@ -125,10 +134,16 @@ class MigrateOldCommentsBlockUserColumnsToActor extends LoggedUpdateMaintenance 
 		);
 		foreach ( $res as $row ) {
 			$user = User::newFromAnyId( $row->cb_user_id_blocked, $row->cb_user_name_blocked, null );
+			if ( interface_exists( '\MediaWiki\User\ActorNormalization' ) ) {
+				// MW 1.36+
+				$actorId = MediaWikiServices::getInstance()->getActorNormalization()->acquireActorId( $user );
+			} else {
+				$actorId = $user->getActorId( $dbw );
+			}
 			$dbw->update(
 				'Comments_block',
 				[
-					'cb_actor_blocked' => $user->getActorId( $dbw )
+					'cb_actor_blocked' => $$actorId
 				],
 				[
 					'cb_user_id_blocked' => $row->cb_user_id_blocked,
