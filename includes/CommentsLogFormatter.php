@@ -26,7 +26,7 @@ class CommentsLogFormatter extends WikitextLogFormatter {
 		$commentId = $params[3]; // = $4, because array numbering starts from 0
 
 		$params[0] = Message::rawParam( $this->getPerformerElement() );
-		$params[1] = $this->canView( LogPage::DELETED_USER ) ? $entry->getPerformer()->getName() : '';
+		$params[1] = $this->canView( LogPage::DELETED_USER ) ? $entry->getPerformerIdentity()->getName() : '';
 		$title = $entry->getTarget();
 		if ( $title instanceof Title ) { // healthy paranoia
 			$title->setFragment( '#comment-' . $commentId );
