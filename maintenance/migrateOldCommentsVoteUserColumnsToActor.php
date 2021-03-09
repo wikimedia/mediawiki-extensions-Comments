@@ -100,7 +100,7 @@ class MigrateOldCommentsVoteUserColumnsToActor extends LoggedUpdateMaintenance {
 			$user = User::newFromAnyId( $row->Comment_Vote_user_id, $row->Comment_Vote_Username, null );
 			if ( interface_exists( '\MediaWiki\User\ActorNormalization' ) ) {
 				// MW 1.36+
-				$actorId = MediaWikiServices::getInstance()->getActorNormalization()->acquireActorId( $user );
+				$actorId = MediaWikiServices::getInstance()->getActorNormalization()->acquireActorId( $user, $dbw );
 			} else {
 				$actorId = $user->getActorId( $dbw );
 			}
