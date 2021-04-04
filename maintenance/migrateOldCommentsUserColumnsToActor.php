@@ -20,8 +20,8 @@ require_once "$IP/maintenance/Maintenance.php";
 class MigrateOldCommentsUserColumnsToActor extends LoggedUpdateMaintenance {
 	public function __construct() {
 		parent::__construct();
-		// @codingStandardsIgnoreLine
-		$this->addDescription( 'Migrates data from old _user_name/_user_id columns in the Comments table to the new actor column.' );
+		$this->addDescription( 'Migrates data from old _user_name/_user_id columns in the Comments table ' .
+			'to the new actor column.' );
 	}
 
 	/**
