@@ -182,6 +182,20 @@
 						window.alert( response.error.info );
 						Comment.submitted = 0;
 					}
+				} ).fail( function ( response ) {
+					// response is the error code from CommentSubmitAPI.php, i.e. one of these:
+					// comments-missing-page, comments-is-spam or comments-links-are-forbidden
+					var msg;
+					if ( response === 'comments-missing-page' ) {
+						// 'comments-missing-page' is not (yet?) an i18n msg, just a key
+						// this corresponds to CommentSubmitAPI.php's behavior 1:1
+						msg = mw.msg( 'apierror-nosuchpageid', pageID );
+					} else {
+						// response is either comments-is-spam or comments-links-are-forbidden i18n msg
+						msg = mw.msg( response );
+					}
+					window.alert( msg );
+					Comment.submitted = 0;
 				} );
 
 				Comment.cancelReply();

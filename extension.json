@@ -112,6 +112,9 @@
 				"comments-block-warning-user",
 				"comments-delete-warning",
 				"comments-continue-editing-btn",
+				"apierror-nosuchpageid",
+				"comments-is-spam",
+				"comments-links-are-forbidden",
 				"showpreview",
 				"previewnote"
 			],
