@@ -13,7 +13,7 @@
 	"descriptionmsg": "comments-desc",
 	"type": "parserhook",
 	"requires": {
-		"MediaWiki": ">= 1.35.0"
+		"MediaWiki": ">= 1.36.0"
 	},
 	"GroupPermissions": {
 		"*": {

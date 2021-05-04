@@ -48,7 +48,7 @@ class MigrateOldCommentsBlockUserColumnsToActor extends LoggedUpdateMaintenance 
 	 * @return bool True to log the update as done
 	 */
 	protected function doDBUpdates() {
-		$dbw = $this->getDB( DB_MASTER );
+		$dbw = $this->getDB( DB_PRIMARY );
 		if ( !$dbw->fieldExists( 'Comments_block', 'cb_user_id', __METHOD__ ) ) {
 			// Old field's been dropped already so nothing to do here...
 			// Why is this loop here? Because Postgres was being weird, that's why.
