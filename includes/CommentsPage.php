@@ -496,7 +496,7 @@ class CommentsPage extends ContextSource {
 
 		// Load complete blocked list for logged in user so they don't see their comments
 		$blockList = [];
-		if ( $this->getUser()->isLoggedIn() ) {
+		if ( $this->getUser()->isRegistered() ) {
 			$blockList = CommentFunctions::getBlockList( $this->getUser() );
 		}
 
@@ -575,7 +575,7 @@ class CommentsPage extends ContextSource {
 				$output .= '<div class="c-form-title">' . wfMessage( 'comments-submit' )->plain() . '</div>' . "\n";
 				$output .= '<div id="replyto" class="c-form-reply-to"></div>' . "\n";
 				// Show a message to anons, prompting them to register or log in
-				if ( !$this->getUser()->isLoggedIn() ) {
+				if ( !$this->getUser()->isRegistered() ) {
 					$login_title = SpecialPage::getTitleFor( 'Userlogin' );
 					$register_title = SpecialPage::getTitleFor( 'Userlogin', 'signup' );
 					$output .= '<div class="c-form-message">' . wfMessage(

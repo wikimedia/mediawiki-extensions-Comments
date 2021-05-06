@@ -726,7 +726,7 @@ class Comment extends ContextSource {
 		}
 
 		$voteLink = '';
-		if ( $this->getUser()->isLoggedIn() ) {
+		if ( $this->getUser()->isRegistered() ) {
 			$voteLink .= '<a id="comment-vote-link" data-comment-id="' .
 				$this->id . '" data-vote-type="' . $voteType .
 				'" data-voting="' . $this->page->voting . '" href="javascript:void(0);">';
@@ -899,7 +899,7 @@ class Comment extends ContextSource {
 		$blockLink = '';
 
 		if (
-			$userObj->isLoggedIn() &&
+			$userObj->isRegistered() &&
 			$userObj->getActorId() != $this->actorID &&
 			!( in_array( $this->user->getId(), $blockList ) )
 		) {
