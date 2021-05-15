@@ -148,7 +148,7 @@ class CommentFunctions {
 	 * @param User $blocked User whose comments we want to block
 	 */
 	public static function blockUser( $blocker, $blocked ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		Wikimedia\suppressWarnings(); // E_STRICT bitching
 		$date = date( 'Y-m-d H:i:s' );
@@ -219,7 +219,7 @@ class CommentFunctions {
 	 * @param User $blockedUser User object representing the blocked user (whose entry is being deleted)
 	 */
 	public static function deleteBlock( $user, $blockedUser ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->delete(
 			'Comments_block',
 			[
