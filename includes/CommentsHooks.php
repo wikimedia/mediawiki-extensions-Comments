@@ -89,10 +89,12 @@ class CommentsHooks {
 		$updater->addExtensionTable( 'Comments_Vote', "{$dir}/{$comments_vote}" );
 		$updater->addExtensionTable( 'Comments_block', "{$dir}/{$comments_block}" );
 
+		// Check lowercase normalized version for postgres
+		$caseSensitivDb = $dbType !== 'postgres';
 		// Actor support
-		if ( !$db->fieldExists( 'Comments', 'Comment_actor', __METHOD__ ) ) {
+		if ( !$db->fieldExists( 'Comments', $caseSensitivDb ? 'Comment_actor' : 'comment_actor', __METHOD__ ) ) {
 			// 1) add new actor columns
-			$updater->addExtensionField( 'Comments', 'Comment_actor', "$dir/patches/actor/add-Comment_actor{$patchFileSuffix}.sql" );
+			$updater->addExtensionField( 'Comments', $caseSensitivDb ? 'Comment_actor' : 'comment_actor', "$dir/patches/actor/add-Comment_actor{$patchFileSuffix}.sql" );
 			// 2) add the corresponding indexes
 			$updater->addExtensionIndex( 'Comments', 'wiki_actor', "$dir/patches/actor/add-wiki_actor_index.sql" );
 			// 3) populate the new column with data
@@ -128,12 +130,12 @@ class CommentsHooks {
 			$updater->dropExtensionIndex( 'Comments_block', 'cb_user_id', "$dir/patches/actor/drop-cb_user_id-index.sql" );
 		}
 
-		if ( !$db->fieldExists( 'Comments_Vote', 'Comment_Vote_actor', __METHOD__ ) ) {
+		if ( !$db->fieldExists( 'Comments_Vote', $caseSensitivDb ? 'Comment_Vote_actor' : 'comment_vote_actor', __METHOD__ ) ) {
 			// 1) add new actor columns
-			$updater->addExtensionField( 'Comments_Vote', 'Comment_Vote_actor', "$dir/patches/actor/add-Comment_Vote_actor{$patchFileSuffix}.sql" );
+			$updater->addExtensionField( 'Comments_Vote', $caseSensitivDb ? 'Comment_Vote_actor' : 'comment_vote_actor', "$dir/patches/actor/add-Comment_Vote_actor{$patchFileSuffix}.sql" );
 			// 2) add the corresponding indexes
-			$updater->addExtensionIndex( 'Comments_Vote', 'Comments_Vote_actor_index', "$dir/patches/actor/add-Comment_Vote_unique_actor_index.sql" );
-			$updater->addExtensionIndex( 'Comments_Vote', 'Comment_Vote_actor', "$dir/patches/actor/add-Comment_Vote_actor-index.sql" );
+			$updater->addExtensionIndex( 'Comments_Vote', $caseSensitivDb ? 'Comments_Vote_actor_index' : 'comments_vote_actor_index', "$dir/patches/actor/add-Comment_Vote_unique_actor_index.sql" );
+			$updater->addExtensionIndex( 'Comments_Vote', $caseSensitivDb ? 'Comment_Vote_actor' : 'comment_vote_actor', "$dir/patches/actor/add-Comment_Vote_actor-index.sql" );
 			// 3) populate the new column with data
 			$updater->addExtensionUpdate( [
 				'runMaintenance',

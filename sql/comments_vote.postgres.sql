@@ -7,6 +7,6 @@ CREATE TABLE "Comments_Vote" (
   Comment_Vote_IP TEXT NOT NULL DEFAULT ''
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS Comments_Vote_actor_index ON Comments_Vote (Comment_Vote_ID,Comment_Vote_actor);
-CREATE INDEX IF NOT EXISTS Comment_Vote_Score ON Comments_Vote (Comment_Vote_Score);
-CREATE INDEX IF NOT EXISTS Comment_Vote_actor ON Comments_Vote (Comment_Vote_actor);
+CREATE UNIQUE INDEX IF NOT EXISTS Comments_Vote_actor_index ON "Comments_Vote" (Comment_Vote_ID,Comment_Vote_actor);
+CREATE INDEX IF NOT EXISTS Comment_Vote_Score ON "Comments_Vote" (Comment_Vote_Score);
+CREATE INDEX IF NOT EXISTS Comment_Vote_actor ON "Comments_Vote" (Comment_Vote_actor);
