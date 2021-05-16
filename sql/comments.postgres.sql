@@ -12,5 +12,5 @@ CREATE TABLE "Comments" (
   Comment_IP TEXT NOT NULL DEFAULT ''
 );
 
-CREATE INDEX IF NOT EXISTS comment_page_id_index ON Comments (Comment_Page_ID);
-CREATE INDEX IF NOT EXISTS wiki_actor ON Comments (Comment_actor);
+CREATE INDEX IF NOT EXISTS comment_page_id_index ON "Comments" (Comment_Page_ID);
+CREATE INDEX IF NOT EXISTS wiki_actor ON "Comments" (Comment_actor);
