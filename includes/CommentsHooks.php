@@ -89,8 +89,10 @@ class CommentsHooks {
 		$updater->addExtensionTable( 'Comments_Vote', "{$dir}/{$comments_vote}" );
 		$updater->addExtensionTable( 'Comments_block', "{$dir}/{$comments_block}" );
 
+		// Check lowercase normalized version for postgres and sqlite
+		$lowerCaseColumns = in_array( $dbType, [ 'postgres', 'sqlite' ] );
 		// Actor support
-		if ( !$db->fieldExists( 'Comments', 'Comment_actor', __METHOD__ ) ) {
+		if ( !$db->fieldExists( 'Comments', $lowerCaseColumns ? 'comment_actor' : 'Comment_actor', __METHOD__ ) ) {
 			// 1) add new actor columns
 			$updater->addExtensionField( 'Comments', 'Comment_actor', "$dir/patches/actor/add-Comment_actor{$patchFileSuffix}.sql" );
 			// 2) add the corresponding indexes
@@ -128,7 +130,7 @@ class CommentsHooks {
 			$updater->dropExtensionIndex( 'Comments_block', 'cb_user_id', "$dir/patches/actor/drop-cb_user_id-index.sql" );
 		}
 
-		if ( !$db->fieldExists( 'Comments_Vote', 'Comment_Vote_actor', __METHOD__ ) ) {
+		if ( !$db->fieldExists( 'Comments_Vote', $lowerCaseColumns ? 'comment_Vote_actor' : 'Comment_Vote_actor', __METHOD__ ) ) {
 			// 1) add new actor columns
 			$updater->addExtensionField( 'Comments_Vote', 'Comment_Vote_actor', "$dir/patches/actor/add-Comment_Vote_actor{$patchFileSuffix}.sql" );
 			// 2) add the corresponding indexes

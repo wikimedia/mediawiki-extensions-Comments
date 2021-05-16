@@ -9,4 +9,4 @@ CREATE TABLE "Comments_block" (
   cb_date TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
-CREATE INDEX IF NOT EXISTS cb_actor ON Comments_block (cb_actor);
+CREATE INDEX IF NOT EXISTS cb_actor ON "Comments_block" (cb_actor);
