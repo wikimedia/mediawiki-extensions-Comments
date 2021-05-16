@@ -1,5 +1,5 @@
-DROP SEQUENCE IF EXISTS Comments_block_cb_id_seq CASCADE;
-CREATE SEQUENCE Comments_block_cb_id_seq;
+DROP SEQUENCE IF EXISTS "Comments_block_cb_id_seq" CASCADE;
+CREATE SEQUENCE "Comments_block_cb_id_seq";
 
 -- Need to quote the name so that it doesn't get normalized to lowercase
 CREATE TABLE "Comments_block" (
@@ -9,4 +9,4 @@ CREATE TABLE "Comments_block" (
   cb_date TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
-CREATE INDEX IF NOT EXISTS cb_actor ON Comments_block (cb_actor);
+CREATE INDEX IF NOT EXISTS cb_actor ON "Comments_block" (cb_actor);

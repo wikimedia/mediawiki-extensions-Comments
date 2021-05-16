@@ -1,5 +1,5 @@
-DROP SEQUENCE IF EXISTS Comments_CommentID_seq CASCADE;
-CREATE SEQUENCE Comments_CommentID_seq;
+DROP SEQUENCE IF EXISTS "Comments_CommentID_seq" CASCADE;
+CREATE SEQUENCE "Comments_CommentID_seq";
 
 -- Need to quote the name so that it doesn't get normalized to lowercase
 CREATE TABLE "Comments" (
@@ -12,5 +12,5 @@ CREATE TABLE "Comments" (
   Comment_IP TEXT NOT NULL DEFAULT ''
 );
 
-CREATE INDEX IF NOT EXISTS comment_page_id_index ON Comments (Comment_Page_ID);
-CREATE INDEX IF NOT EXISTS wiki_actor ON Comments (Comment_actor);
+CREATE INDEX IF NOT EXISTS comment_page_id_index ON "Comments" (Comment_Page_ID);
+CREATE INDEX IF NOT EXISTS wiki_actor ON "Comments" (Comment_actor);
