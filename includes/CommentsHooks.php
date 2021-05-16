@@ -90,9 +90,9 @@ class CommentsHooks {
 		$updater->addExtensionTable( 'Comments_block', "{$dir}/{$comments_block}" );
 
 		// Actor support
-		if ( !$db->fieldExists( 'Comments', 'Comment_actor', __METHOD__ ) ) {
+		if ( !$db->fieldExists( 'Comments', 'comment_actor', __METHOD__ ) ) {
 			// 1) add new actor columns
-			$updater->addExtensionField( 'Comments', 'Comment_actor', "$dir/patches/actor/add-Comment_actor{$patchFileSuffix}.sql" );
+			$updater->addExtensionField( 'Comments', 'comment_actor', "$dir/patches/actor/add-Comment_actor{$patchFileSuffix}.sql" );
 			// 2) add the corresponding indexes
 			$updater->addExtensionIndex( 'Comments', 'wiki_actor', "$dir/patches/actor/add-wiki_actor_index.sql" );
 			// 3) populate the new column with data
