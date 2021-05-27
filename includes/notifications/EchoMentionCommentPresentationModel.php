@@ -133,7 +133,7 @@ class EchoMentionCommentPresentationModel extends EchoMentionPresentationModel {
 		$title = $this->event->getTitle();
 
 		if ( $this->event->getExtraParam( 'comment-id' ) ) {
-			$url = $title->getLocalURL() . '#comment-' . $this->event->getExtraParam( 'comment-id' );
+			$url = $title->getFullURL() . '#comment-' . $this->event->getExtraParam( 'comment-id' );
 			$viewChangesLink = [
 				'url' => $url,
 				'label' => $this->msg( 'notification-link-text-view-mention', $this->getViewingUserForGender() )->text(),
