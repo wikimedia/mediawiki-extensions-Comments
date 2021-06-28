@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"comments-time-days": "{{PLURAL:$1|nu jornu|$1 jorna}}"
+}
