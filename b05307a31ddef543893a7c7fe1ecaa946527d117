@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5657e53a_20971644",
+        "filename": "includes/CommentsPage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2021-07-02T13:31:43Z",
+      "side": 1,
+      "message": "you can use -\u003eparse() to make it easier to read (and more common)",
+      "range": {
+        "startLine": 582,
+        "startChar": 6,
+        "endLine": 582,
+        "endChar": 14
+      },
+      "revId": "b05307a31ddef543893a7c7fe1ecaa946527d117",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
