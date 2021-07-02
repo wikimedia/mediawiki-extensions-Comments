@@ -579,11 +579,11 @@ class CommentsPage extends ContextSource {
 		if ( $user->isBlocked() ) {
 			$output .= MediaWikiServices::getInstance()->getBlockErrorFormatter()
 				->getMessage( $user->getBlock(), $userContext, $language, $ip )
-				->toString();
+				->parse();
 		} elseif ( $user->isBlockedGlobally() ) {
 			$output .= MediaWikiServices::getInstance()->getBlockErrorFormatter()
 				->getMessage( $user->getGlobalBlock(), $userContext, $language, $ip )
-				->toString();
+				->parse();
 		} elseif ( !$this->getUser()->isAllowed( 'comment' ) ) {
 			// 'comment' user right is required to add new comments
 			$output .= wfMessage( 'comments-not-allowed' )->parse();
