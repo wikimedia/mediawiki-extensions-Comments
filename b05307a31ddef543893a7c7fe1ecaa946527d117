@@ -22,6 +22,30 @@
       "revId": "b05307a31ddef543893a7c7fe1ecaa946527d117",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d10a6cc_0e4e7c91",
+        "filename": "includes/CommentsPage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 7357
+      },
+      "writtenOn": "2021-07-03T21:17:10Z",
+      "side": 1,
+      "message": "Done, thanks!",
+      "parentUuid": "5657e53a_20971644",
+      "range": {
+        "startLine": 582,
+        "startChar": 6,
+        "endLine": 582,
+        "endChar": 14
+      },
+      "revId": "b05307a31ddef543893a7c7fe1ecaa946527d117",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
