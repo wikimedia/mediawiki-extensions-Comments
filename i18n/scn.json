@@ -4,5 +4,7 @@
 			"Ajeje Brazorf"
 		]
 	},
+	"comments-cancel-reply": "Annulla",
+	"comments-ignore-cancel": "Annulla",
 	"comments-time-days": "{{PLURAL:$1|nu jornu|$1 jorna}}"
 }
