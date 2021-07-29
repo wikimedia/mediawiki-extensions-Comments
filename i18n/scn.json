@@ -6,5 +6,6 @@
 	},
 	"comments-cancel-reply": "Annulla",
 	"comments-ignore-cancel": "Annulla",
+	"comments-time-ago": "$1 fa",
 	"comments-time-days": "{{PLURAL:$1|nu jornu|$1 jorna}}"
 }
