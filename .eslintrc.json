@@ -12,7 +12,6 @@
 		"mediaWiki": false
 	},
 	"rules": {
-		"vars-on-top": "off",
 		"compat/compat": "warn"
 	}
 }
