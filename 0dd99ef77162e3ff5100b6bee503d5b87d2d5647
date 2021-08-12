@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fd6f8aa_66f45177",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4879
+      },
+      "writtenOn": "2021-08-12T08:51:54Z",
+      "side": 1,
+      "message": "I will take care about banana tests.",
+      "revId": "0dd99ef77162e3ff5100b6bee503d5b87d2d5647",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
