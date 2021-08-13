@@ -8,5 +8,6 @@
 	"comments-ignore-cancel": "Annulla",
 	"comments-time-ago": "$1 fa",
 	"comments-time-days": "{{PLURAL:$1|nu jornu|$1 jorna}}",
+	"comments-time-hours": "{{PLURAL:$1|na ura|$1 uri}}",
 	"comments-time-minutes": "{{PLURAL:$1|un minutu|$1 minuti}}"
 }
