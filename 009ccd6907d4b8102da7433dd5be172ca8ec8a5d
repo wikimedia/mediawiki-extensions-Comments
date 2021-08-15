@@ -34,6 +34,23 @@
       "parentUuid": "eef4c8fd_4ecde118",
       "revId": "009ccd6907d4b8102da7433dd5be172ca8ec8a5d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd373d93_ede289a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2021-08-15T16:18:25Z",
+      "side": 1,
+      "message": "It should be noted that now the \"Sort by\" drop-down menu appears (by default) *below* the comment submission form\u0027s \"Post comment\" and \"Show preview\" buttons. It\u0027s a regression of some sort but not big enough to warrant fully reverting this patch. I should probably ticket that issue...",
+      "revId": "009ccd6907d4b8102da7433dd5be172ca8ec8a5d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
