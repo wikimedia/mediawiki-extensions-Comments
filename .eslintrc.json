@@ -12,6 +12,8 @@
 		"mediaWiki": false
 	},
 	"rules": {
-		"compat/compat": "warn"
+		"compat/compat": "warn",
+		"max-len": "off",
+		"mediawiki/msg-doc": "off"
 	}
 }
