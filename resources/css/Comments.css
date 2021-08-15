@@ -3,7 +3,7 @@
 	width: 530px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and ( max-width: 768px ) {
 	.full {
 		max-width: 100%;
 	}
@@ -14,7 +14,7 @@
 	width: 460px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and ( max-width: 768px ) {
 	.reply {
 		/* This should be sufficient enough to visually distinguish replies on mobile, I hope */
 		margin-left: 15% !important;
@@ -25,9 +25,10 @@
 .c-item {
 	position: relative;
 	border-bottom: 1px solid #dcdcdc;
-/* this works for Monaco, but not for Monobook.
-Besides, ny.css sets it back to 10px anyway, so this way everyone can be happy.
-	padding: 0px 0px 10px 0px;*/
+	/* this works for Monaco, but not for Monobook.
+	Besides, ny.css sets it back to 10px anyway, so this way everyone can be happy.
+	padding: 0px 0px 10px 0px;
+	*/
 	padding: 0px 0px 35px 0px;
 	margin: 0px 0px 15px 0px;
 }
@@ -87,6 +88,7 @@ Besides, ny.css sets it back to 10px anyway, so this way everyone can be happy.
 	border-bottom: 1px solid #dcdcdc;
 }
 
+/* stylelint-disable-next-line block-no-empty */
 .c-ignored-links a {
 }
 
@@ -108,7 +110,7 @@ Besides, ny.css sets it back to 10px anyway, so this way everyone can be happy.
 	z-index: 4;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and ( max-width: 768px ) {
 	.f-message,
 	.r-message {
 		max-width: 100%;
@@ -136,12 +138,12 @@ Besides, ny.css sets it back to 10px anyway, so this way everyone can be happy.
 }
 
 .c-delete a {
-	color: red !important;
+	color: #f00 !important;
 }
 
 .c-score img {
 	vertical-align: middle;
-	margin: -5px 0px 0px 2px
+	margin: -5px 0px 0px 2px;
 }
 
 .c-form-title {
@@ -163,7 +165,7 @@ textarea#comment {
 	width: 530px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and ( max-width: 768px ) {
 	.c-form-message {
 		max-width: 100%;
 	}
