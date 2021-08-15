@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eef4c8fd_4ecde118",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2021-08-15T14:07:08Z",
+      "side": 1,
+      "message": "@Zoranzoki21: Indeed, that is because I disabled the offending lint rule in PS7 inline in Comment.js. Mind you, I have no idea *why* CI thinks the code should be indented one line more, but this is a quick and easy fix that finally allows me to hit the +2 button on this patch.",
+      "revId": "009ccd6907d4b8102da7433dd5be172ca8ec8a5d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
