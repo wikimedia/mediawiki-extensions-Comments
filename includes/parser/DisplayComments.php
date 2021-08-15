@@ -4,18 +4,21 @@ class DisplayComments {
 
 	/**
 	 * Callback function for onParserFirstCallInit(),
-	 * displays comments.
+	 * this callback only displays comments section placeholder
+	 * the rest is being done via JavaScript by calling an API endpoint
 	 *
 	 * @param string $input
 	 * @param array $args
 	 * @param Parser $parser
+	 *
 	 * @return string HTML
+	 * @throws MWException
 	 */
 	public static function getParserHandler( $input, $args, $parser ) {
 		global $wgCommentsSortDescending;
 
 		$po = $parser->getOutput();
-		$po->updateCacheExpiry( 0 );
+
 		// If an unclosed <comments> tag is added to a page, the extension will
 		// go to an infinite loop...this protects against that condition.
 		$parser->setHook( 'comments', [ __CLASS__, 'nonDisplayComments' ] );
@@ -51,49 +54,30 @@ class DisplayComments {
 			$voting = $args['voting'];
 		}
 
-		$title = $parser->getTitle();
-		// Create a new context to execute the CommentsPage
-		$context = new RequestContext;
-		$context->setTitle( $title );
-		$context->setRequest( new FauxRequest() );
-		$context->setUser( $parser->getUser() );
-		$context->setLanguage( $parser->getTargetLanguage() );
-
-		$commentsPage = new CommentsPage( $title->getArticleID(), $context );
-		$commentsPage->allow = $allow;
-		$commentsPage->setVoting( $voting );
-
-		$output = '<div class="comments-body">';
-
-		if ( $wgCommentsSortDescending ) { // form before comments
-			$output .= '<a id="end" rel="nofollow"></a>';
-			if ( !wfReadOnly() ) {
-				$output .= $commentsPage->displayForm();
-			} else {
-				$output .= wfMessage( 'comments-db-locked' )->parse();
-			}
-		}
-
-		$output .= $commentsPage->displayOrderForm();
-
-		$output .= '<div id="allcomments">' . $commentsPage->display() . '</div>';
-
-		// If the database is in read-only mode, display a message informing the
-		// user about that, otherwise allow them to comment
-		if ( !$wgCommentsSortDescending ) { // form after comments
-			if ( !wfReadOnly() ) {
-				$output .= $commentsPage->displayForm();
-			} else {
-				$output .= wfMessage( 'comments-db-locked' )->parse();
-			}
-			$output .= '<a id="end" rel="nofollow"></a>';
-		}
-
-		$output .= '</div>'; // div.comments-body
-
-		return $output;
+		return Html::rawElement(
+			'div',
+			[
+				'class' => 'comments-body',
+				'id' => 'comments-body',
+				'data-voting' => $voting,
+				'data-allow' => $allow
+			],
+			Html::rawElement(
+				'span',
+				[
+					'class' => 'loader'
+				]
+			) . 'Loading comments...'
+		);
 	}
 
+	/**
+	 * @param string $input
+	 * @param string[] $args
+	 * @param Parser $parser
+	 *
+	 * @return string
+	 */
 	public static function nonDisplayComments( $input, $args, $parser ) {
 		$attr = [];
 

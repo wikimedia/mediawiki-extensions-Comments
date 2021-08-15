@@ -231,6 +231,21 @@ class CommentFunctions {
 	}
 
 	/**
+	 * Sort comments descending
+	 *
+	 * @param Comment $x
+	 * @param Comment $y
+	 * @return int
+	 */
+	public static function sortDescComments( $x, $y ) {
+		if ( $x->timestamp < $y->timestamp ) {
+			return -1;
+		} else {
+			return 1;
+		}
+	}
+
+	/**
 	 * Sort threads ascending
 	 *
 	 * @param array $x
