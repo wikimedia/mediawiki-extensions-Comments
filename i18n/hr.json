@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Bugoslav",
+			"Ivi104",
 			"Neptune, the Mystic"
 		]
 	},
 	"comments-continue-editing-btn": "Nastavi s uređivanjem",
+	"comments-desc": "Dodaje parserski okidač <code>&lt;comments&gt;</code> koji dopušta komentare na stranicama.",
 	"comments-reply-to": "Odgovori {{GENDER:$2|suradniku $1|suradnici $1}}"
 }
