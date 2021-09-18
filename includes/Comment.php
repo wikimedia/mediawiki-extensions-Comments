@@ -308,7 +308,7 @@ class Comment extends ContextSource {
 	 * @return Comment|null the added comment
 	 */
 	public static function add( $text, CommentsPage $page, User $user, $parentID ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$context = RequestContext::getMain();
 
 		Wikimedia\suppressWarnings();
@@ -611,7 +611,7 @@ class Comment extends ContextSource {
 	 * @param int $value Upvote or downvote (1 or -1)
 	 */
 	function vote( $value ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		if ( $value < -1 ) { // limit to range -1 -> 0 -> 1
 			$value = -1;
@@ -665,7 +665,7 @@ class Comment extends ContextSource {
 	 * Deletes entries from Comments and Comments_Vote tables and clears caches
 	 */
 	function delete() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete(
 			'Comments',
