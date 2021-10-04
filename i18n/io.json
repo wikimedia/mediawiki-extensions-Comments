@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"JSantos",
 			"Joao Xavier"
 		]
 	},
+	"comments-comment": "Komento",
 	"comments-loading": "Karganta...",
 	"comments-cancel-reply": "Anular",
 	"comments-sort-by-date": "Ordenar segun dato",
