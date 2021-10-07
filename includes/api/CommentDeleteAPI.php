@@ -12,8 +12,15 @@ class CommentDeleteAPI extends ApiBase {
 			$user->isAllowed( 'comment-delete-own' ) && $comment->isOwner( $user )
 		);
 
+		if ( method_exists( Authority::class, 'getBlock' ) ) {
+			// MW 1.37+
+			$isBlocked = $user->getBlock();
+		} else {
+			$isBlocked = $user->isBlocked();
+		}
+
 		// Blocked users cannot delete comments, and neither can unprivileged ones.
-		if ( $user->isBlocked() && !$userCheck ) {
+		if ( $isBlocked && !$userCheck ) {
 			$this->dieBlocked( $user->getBlock() );
 		} elseif ( $user->isBlockedGlobally() && !$userCheck ) {
 			$this->dieBlocked( $user->getGlobalBlock() );

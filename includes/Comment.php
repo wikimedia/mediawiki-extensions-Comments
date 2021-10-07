@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\Authority;
 
 /**
  * Comment class
@@ -724,11 +725,15 @@ class Comment extends ContextSource {
 
 		$user = $this->getUser();
 
+		if ( method_exists( Authority::class, 'getBlock' ) ) {
+			// MW 1.37+
+			$isBlocked = $user->getBlock();
+		} else {
+			$isBlocked = $user->isBlocked();
+		}
+
 		// Blocked users cannot vote, obviously
-		if ( $user->isBlocked() ||
-			$user->isBlockedGlobally() ||
-			!$user->isAllowed( 'comment' )
-		) {
+		if ( $isBlocked || $user->isBlockedGlobally() || !$user->isAllowed( 'comment' ) ) {
 			return '';
 		}
 

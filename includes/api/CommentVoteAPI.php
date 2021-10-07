@@ -1,12 +1,22 @@
 <?php
 
+use MediaWiki\Permissions\Authority;
+
 class CommentVoteAPI extends ApiBase {
 
 	public function execute() {
 		$user = $this->getUser();
+
+		if ( method_exists( Authority::class, 'getBlock' ) ) {
+			// MW 1.37+
+			$isBlocked = $user->getBlock();
+		} else {
+			$isBlocked = $user->isBlocked();
+		}
+
 		// Blocked users cannot vote, obviously,
 		// and neither can those users without the necessary privileges
-		if ( $user->isBlocked() ) {
+		if ( $isBlocked ) {
 			$this->dieBlocked( $user->getBlock() );
 		} elseif ( $user->isBlockedGlobally() ) {
 			$this->dieBlocked( $user->getGlobalBlock() );

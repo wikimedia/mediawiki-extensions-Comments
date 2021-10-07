@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\Authority;
 
 /**
  * Class for Comments methods that are not specific to one comments,
@@ -491,8 +492,15 @@ class CommentsPage extends ContextSource {
 		$language = $context->getLanguage();
 		$ip = $context->getRequest()->getIP();
 
+		if ( method_exists( Authority::class, 'getBlock' ) ) {
+			// MW 1.37+
+			$isBlocked = $user->getBlock();
+		} else {
+			$isBlocked = $user->isBlocked();
+		}
+
 		// Check users block status
-		if ( $user->isBlocked() ) {
+		if ( $isBlocked ) {
 			$output .= MediaWikiServices::getInstance()->getBlockErrorFormatter()
 				->getMessage( $user->getBlock(), $userContext, $language, $ip )
 				->parse();
