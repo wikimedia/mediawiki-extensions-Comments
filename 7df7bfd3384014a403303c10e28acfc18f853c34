@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9605f571_eef2019d",
+        "filename": "includes/api/CommentVoteAPI.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2021-10-10T10:47:42Z",
+      "side": 1,
+      "message": "Hmm, this statement is absent from CommentSubmitAPI.php and CommentDeleteAPI.php...surely it oughta be present there, too?\n\nLikewise, I\u0027m curious to know how this\u0027ll behave on the LTS release, 1.35; I presume the class isn\u0027t there and hasn\u0027t been backported \u0026 won\u0027t be backported? (As per https://www.mediawiki.org/wiki/Social_tools/MediaWiki_compatibility Comments, together with other social tools extensions, targets LTS compatibility firstly and foremostly; forwards-compatibility with newer MWs using if-else loops is *totally* fine and very much welcome, as long as LTS compat isn\u0027t broken!)",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 36
+      },
+      "revId": "7df7bfd3384014a403303c10e28acfc18f853c34",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
