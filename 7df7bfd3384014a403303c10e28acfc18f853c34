@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "649c0387_a7d8c559",
+        "filename": "includes/api/CommentDeleteAPI.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2021-10-11T15:18:59Z",
+      "side": 1,
+      "message": "If you keep using $user \u003d $this-\u003egetUser() above, you don\u0027t have to check the version, since User::getBlock() has existed for a long time.\n\nIdeally, we should replace all $this-\u003egetUser() with $this-\u003egetAuthority(). But that is harder to do in a backwards compatible way.",
+      "revId": "7df7bfd3384014a403303c10e28acfc18f853c34",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9605f571_eef2019d",
         "filename": "includes/api/CommentVoteAPI.php",
         "patchSetId": 1
