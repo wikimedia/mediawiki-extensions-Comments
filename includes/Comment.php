@@ -627,33 +627,23 @@ class Comment extends ContextSource {
 		$commentDate = date( 'Y-m-d H:i:s' );
 		Wikimedia\restoreWarnings();
 
-		if ( $this->currentVote === false ) { // no vote, insert
-			$dbw->insert(
-				'Comments_Vote',
-				[
-					'Comment_Vote_id' => $this->id,
-					'Comment_Vote_actor' => $this->getUser()->getActorId(),
-					'Comment_Vote_Score' => $value,
-					'Comment_Vote_Date' => $commentDate,
-					'Comment_Vote_IP' => $_SERVER['REMOTE_ADDR']
-				],
-				__METHOD__
-			);
-		} else { // already a vote, update
-			$dbw->update(
-				'Comments_Vote',
-				[
-					'Comment_Vote_Score' => $value,
-					'Comment_Vote_Date' => $commentDate,
-					'Comment_Vote_IP' => $_SERVER['REMOTE_ADDR']
-				],
-				[
-					'Comment_Vote_id' => $this->id,
-					'Comment_Vote_actor' => $this->getUser()->getActorId(),
-				],
-				__METHOD__
-			);
-		}
+		$dbw->upsert(
+			'Comments_Vote',
+			[
+				'Comment_Vote_id' => $this->id,
+				'Comment_Vote_actor' => $this->getUser()->getActorId(),
+				'Comment_Vote_Score' => $value,
+				'Comment_Vote_Date' => $commentDate,
+				'Comment_Vote_IP' => $_SERVER['REMOTE_ADDR']
+			],
+			[ 'Comment_Vote_id', 'Comment_Vote_actor' ],
+			[
+				'Comment_Vote_Score' => $value,
+				'Comment_Vote_Date' => $commentDate,
+				'Comment_Vote_IP' => $_SERVER['REMOTE_ADDR']
+			],
+			__METHOD__
+		);
 
 		$score = $this->getScore();
 
