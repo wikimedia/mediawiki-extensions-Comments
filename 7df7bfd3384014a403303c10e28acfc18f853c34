@@ -57,6 +57,30 @@
       },
       "revId": "7df7bfd3384014a403303c10e28acfc18f853c34",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "181f35bb_70cae71e",
+        "filename": "includes/api/CommentVoteAPI.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8550
+      },
+      "writtenOn": "2021-10-19T16:01:24Z",
+      "side": 1,
+      "message": "Will fix it.",
+      "parentUuid": "9605f571_eef2019d",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 36
+      },
+      "revId": "7df7bfd3384014a403303c10e28acfc18f853c34",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
