@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "076af738_47c8ff5c",
+        "filename": "includes/api/CommentDeleteAPI.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8550
+      },
+      "writtenOn": "2021-10-19T16:01:02Z",
+      "side": 1,
+      "message": "You are right I can use User::getBlock. But I think that it is better to use getBlock from Authority. What is your opinion?",
+      "parentUuid": "649c0387_a7d8c559",
+      "revId": "7df7bfd3384014a403303c10e28acfc18f853c34",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9605f571_eef2019d",
         "filename": "includes/api/CommentVoteAPI.php",
         "patchSetId": 1
