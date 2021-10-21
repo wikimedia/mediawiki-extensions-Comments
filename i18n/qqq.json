@@ -31,6 +31,7 @@
 	"apihelp-commentsubmit-param-commentText": "{{doc-apihelp-param|commentsubmit|commentText}}",
 	"apihelp-commentvote-param-commentID": "{{doc-apihelp-param|commentvote|commentID}}",
 	"apihelp-commentvote-param-voteValue": "{{doc-apihelp-param|commentvote|voteValue}}",
+	"apihelp-commentedit-summary": "{{doc-apihelp-summary|commentedit}}",
 	"comments-comment": "This message might be unused.\n{{Identical|Comment}}",
 	"comments-continue-editing-btn": "Shown as a button text; when the user clicks on the \"preview\" button, the text of which is initially {{msg-mw|showpreview}}, once the preview has been rendered, the button text is changed to this; if the user clicks on this button, they will be able to edit their comment further.",
 	"comments-preview-failed": "Error given when previewing the wikitext of the comment fails.",
@@ -52,6 +53,9 @@
 	"comments-ignore-message": "Shown in the output of the <comments /> tag instead of the person's comment if you're ignoring the said person.",
 	"comments-you": "Refer to the [[mw:File:Comments.png|image]] for details.\n{{Identical|You}}",
 	"comments-reply": "{{Identical|Reply}}",
+	"comments-edit": "{{Identical|Edit}}",
+	"comments-edit-cancel": "{{Identical|Cancel}}",
+	"comments-edit-save": "{{Identical|Save}}",
 	"comments-login-required": "Shown when the user does not have the \"comment\" user right and they are logged out but a page contains the <code><nowiki><comments /></nowiki></code> tag.",
 	"comments-not-allowed": "Shown when the user does not have the \"comment\" user right but a page contains the <code><nowiki><comments /></nowiki></code> tag.",
 	"comments-post": "Button text, clicking on this button submits your comment; refer to the [[mw:File:Comments.png|image]] for details.\n{{Identical|Post comment}}",
@@ -63,6 +67,7 @@
 	"comments-anon-message": "Call-to-action (CTA) message shown above the comment form to anonymous users, encouraging them to register for an account if they don't have one or to log in if they already have an account.",
 	"comments-links-are-forbidden": "Error message shown to the user if they tried to post a comment that contains external links and they don't have the commentlinks user right.",
 	"comments-is-spam": "Error message shown to the user if they try to post a comment that matches the spam filter and they're not a member of the commentadmin group.",
+	"comments-missing-text": "Error message shown to the user if an empty comment is submitted.",
 	"comments-ignore-item": "Shown on Special:CommentIgnoreList. Parameters:\n* $1 - the URL to the blocked user's user page\n* $2 - the name of the blocked user\n* $3 - the timestamp (when the user was blocked) (format: Y-m-d H:i:s)\n* $4 - the URL to the unblock form",
 	"comments-ignore-no-users": "Shown on Special:CommentIgnoreList if you haven't blocked anyone's comments.",
 	"comments-ignore-remove-message": "Confirmation message, shown when the user is about to unblock someone's comments on Special:CommentIgnoreList.\n\nParameters:\n* $1 - the username of the user whose comments the user has blocked",
@@ -77,6 +82,7 @@
 	"log-description-comments": "Explanation of the comments log, shown on [[Special:Log/comments]].",
 	"logentry-comments-add": "Parameters:\n* $1 - contains the user name + talk/block/contribs links, as is the standard with log entries nowadays\n* $2 - (Optional) username, for <nowiki>{{GENDER}}</nowiki> support\n* $3 - a wikilink to the page where the comment was posted; it contains a fragment that directly points to the new comment in question, i.e. [[Talk:Main Page#comment-10]] (the number is the internal comment identifier)",
 	"logentry-comments-delete": "Parameters:\n* $1 - contains the user name + talk/block/contribs links, as is the standard with log entries nowadays\n* $2 - (Optional) username, for <nowiki>{{GENDER}}</nowiki> support\n* $3 - a wikilink to the page where the comment was originally posted (and as opposed to the {{msg-mw|Logentry-comments-add}} message, it does '''not''' contain a fragment)\n* $4 - the internal comment ID",
+	"logentry-comments-edit": "Parameters:\n* $1 - contains the user name + talk/block/contribs links, as is the standard with log entries nowadays\n* $2 - (Optional) username, for <nowiki>{{GENDER}}</nowiki> support\n* $3 - a wikilink to the page where the comment was edited (and as opposed to the {{msg-mw|Logentry-comments-add}} message, it does '''not''' contain a fragment)\n* $4 - the internal comment ID",
 	"comments-time-ago": "Parameters:\n* $1 - the duration (e.g. \"{{int:comments-time-minutes|1}} {{int:comments-time-seconds|42}} \"), uses the following messages:\n** {{msg-mw|comments-time-days}}\n** {{msg-mw|comments-time-hours}}\n** {{msg-mw|comments-time-minutes}}\n** {{msg-mw|comments-time-seconds}}\n{{Identical|Ago}}",
 	"comments-time-months": "Used as <code>$1</code> in {{msg-mw|Comments-time-ago}}.\n\nParameters:\n* $1 - number of months\n{{Related|Comments-time}}\n{{Identical|Day}}",
 	"comments-time-days": "Used as <code>$1</code> in {{msg-mw|Comments-time-ago}}.\n\nParameters:\n* $1 - number of days\n{{Related|Comments-time}}\n{{Identical|Day}}",
@@ -95,5 +101,8 @@
 	"action-commentlinks": "{{doc-action|commentlinks}}",
 	"right-commentlinks": "{{doc-right|commentlinks}}",
 	"action-comment-delete-own": "{{doc-action|comment-delete-own}}",
-	"right-comment-delete-own": "{{doc-right|comment-delete-own}}"
+	"right-comment-delete-own": "{{doc-right|comment-delete-own}}",
+	"action-comment-edit-own": "De facto '''unused''' and will never be shown to the end-user in any case!\n\n{{doc-action|comment-edit-own}}",
+	"right-comment-edit-own": "{{doc-right|comment-edit-own}}",
+	"comments-edit-permissiondenied": "Error message shown to users who do not have permission to edit a comment."
 }
