@@ -6,7 +6,7 @@ class CommentSubmitAPI extends ApiBase {
 		$user = $this->getUser();
 		// Blocked users cannot submit new comments, and neither can those users
 		// without the necessary privileges.
-		if ( $user->isBlocked() ) {
+		if ( $user->getBlock() ) {
 			$this->dieBlocked( $user->getBlock() );
 		} elseif ( $user->isBlockedGlobally() ) {
 			$this->dieBlocked( $user->getGlobalBlock() );

@@ -13,7 +13,7 @@ class CommentDeleteAPI extends ApiBase {
 		);
 
 		// Blocked users cannot delete comments, and neither can unprivileged ones.
-		if ( $user->isBlocked() && !$userCheck ) {
+		if ( $user->getBlock() && !$userCheck ) {
 			$this->dieBlocked( $user->getBlock() );
 		} elseif ( $user->isBlockedGlobally() && !$userCheck ) {
 			$this->dieBlocked( $user->getGlobalBlock() );

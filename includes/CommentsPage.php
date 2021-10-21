@@ -492,7 +492,7 @@ class CommentsPage extends ContextSource {
 		$ip = $context->getRequest()->getIP();
 
 		// Check users block status
-		if ( $user->isBlocked() ) {
+		if ( $user->getBlock() ) {
 			$output .= MediaWikiServices::getInstance()->getBlockErrorFormatter()
 				->getMessage( $user->getBlock(), $userContext, $language, $ip )
 				->parse();

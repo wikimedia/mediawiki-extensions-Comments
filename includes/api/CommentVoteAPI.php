@@ -6,7 +6,7 @@ class CommentVoteAPI extends ApiBase {
 		$user = $this->getUser();
 		// Blocked users cannot vote, obviously,
 		// and neither can those users without the necessary privileges
-		if ( $user->isBlocked() ) {
+		if ( $user->getBlock() ) {
 			$this->dieBlocked( $user->getBlock() );
 		} elseif ( $user->isBlockedGlobally() ) {
 			$this->dieBlocked( $user->getGlobalBlock() );
