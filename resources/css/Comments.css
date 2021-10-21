@@ -211,3 +211,26 @@ li.c-pager-item {
 .cod img {
 	margin-bottom: 8px;
 }
+
+/* Comment editing form */
+.c-comment-edit-form {
+	display: none;
+}
+
+.c-comment-edit-form textarea {
+	margin-bottom: 8px;
+	min-height: 100px;
+}
+
+.c-item.c-item--edit-mode .c-comment-edit-form {
+	display: block;
+	margin-bottom: 8px;
+}
+
+.c-item.c-item--edit-mode .c-actions {
+	display: none;
+}
+
+.c-item.c-item--edit-mode .c-comment {
+	display: none;
+}
