@@ -5,9 +5,10 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Notifications\DiscussionParser;
 use MediaWiki\Extension\Notifications\Model\Event as EchoEvent;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Parser\ParserOptions;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use Wikimedia\AtEase\AtEase;
 
 /**
@@ -314,9 +315,9 @@ class Comment extends ContextSource {
 	 * @param User $user User commenting
 	 * @param int $parentID ID of parent comment, if this is a reply
 	 *
-	 * @return Comment|null the added comment
+	 * @return Comment the added comment
 	 */
-	public static function add( $text, CommentsPage $page, User $user, $parentID ) {
+	public static function add( $text, CommentsPage $page, User $user, $parentID ): self {
 		$dbw = self::getDBHandle( 'write' );
 		$context = RequestContext::getMain();
 
@@ -385,26 +386,7 @@ class Comment extends ContextSource {
 		$page = new CommentsPage( $page->id, $context );
 		$comment = new Comment( $page, $context, $data );
 
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'Echo' ) ) {
-			global $wgEchoMentionOnChanges;
-			if ( !$wgEchoMentionOnChanges ) {
-				return null;
-			}
-			// Modified copypasta of Echo's DiscussionParser#generateEventsForRevision with less Revision-ism!
-			// (Awful pun is awful, sorry about that.)
-			// Echo's DiscussionParser#getChangeInterpretationForRevision is *way*, way too Revision-ist for
-			// our tastes. DO NOT WANT!
-			$title = Title::newFromId( $page->id );
-
-			// stolen from MediaWiki\Extension\Notifications\DiscussionParser\DiscussionParser#generateEventsForRevision
-			$userLinks = DiscussionParser::getUserLinks( $text, $title );
-			$header = $text;
-
-			self::generateMentionEvents(
-				$header, $userLinks, $text, $title, $user,
-				$comment, $commentId
-			);
-		}
+		$comment->doEchoNotifications( $user );
 
 		MediaWikiServices::getInstance()->getHookContainer()->run( 'Comment::add', [ $comment, $commentId, $comment->page->id ] );
 
@@ -412,26 +394,69 @@ class Comment extends ContextSource {
 	}
 
 	/**
-	 * It's like Article::prepareTextForEdit,
-	 *  but not for editing (old wikitext usually)
-	 * Stolen from AbuseFilterVariableHolder
+	 * Edit a comment's text as the supplied user.
 	 *
-	 * @param string $wikitext
-	 * @param Article $article
-	 *
-	 * @return ParserOutput
+	 * @param string $text New comment text
+	 * @param User $user User (object) performing the edit action
+	 * @return Comment The edited comment object for chaining
 	 */
-	private static function parseNonEditWikitext( $wikitext, Article $article ) {
-		static $cache = [];
-		$cacheKey = md5( $wikitext ) . ':' . $article->getTitle()->getPrefixedText();
-		if ( isset( $cache[$cacheKey] ) ) {
-			return $cache[$cacheKey];
+	public function edit( string $text, User $user ): self {
+		$dbw = self::getDBHandle( 'write' );
+		$oldText = $this->text;
+
+		$dbw->newUpdateQueryBuilder()
+			->update( 'Comments' )
+			->set( [ 'Comment_Text' => $text ] )
+			->where( [ 'CommentID' => $this->id ] )
+			->caller( __METHOD__ )->execute();
+
+		$this->page->clearCommentListCache();
+
+		// Add a log entry.
+		self::log( 'edit', $user, $this->page->id, $this->id, $text );
+
+		$this->text = $text;
+		$this->doEchoNotifications( $user, $oldText );
+
+		$hookContainer = MediaWikiServices::getInstance()->getHookContainer();
+		$hookContainer->run( 'Comment::edit', [ $this, $this->id, $this->page->id ] );
+
+		return $this;
+	}
+
+	/**
+	 * Send notifications if users are mentioned in the text.  If it's edited
+	 * text, only send if the user was added in the edit.
+	 */
+	public function doEchoNotifications( User $user, ?string $oldText = null ) {
+		if (
+			!ExtensionRegistry::getInstance()->isLoaded( 'Echo' )
+			|| !$this->getConfig()->get( 'EchoMentionOnChanges' )
+		) {
+			return;
 		}
-		$parser = MediaWikiServices::getInstance()->getParser();
-		$options = new ParserOptions( $article->getContext()->getUser() );
-		$output = $parser->parse( $wikitext, $article->getTitle(), $options );
-		$cache[$cacheKey] = $output;
-		return $output;
+
+		// Modified copypasta of Echo's DiscussionParser#generateEventsForRevision with less Revision-ism!
+		// (Awful pun is awful, sorry about that.)
+		// Echo's DiscussionParser#getChangeInterpretationForRevision is *way*, way too Revision-ist for
+		// our tastes. DO NOT WANT!
+		$title = Title::newFromId( $this->page->id );
+
+		// modified from DiscussionParser::generateEventsForRevision
+		if ( $oldText !== null ) {
+			$userLinks = array_diff_key(
+				DiscussionParser::getUserLinks( $this->text, $title ),
+				DiscussionParser::getUserLinks( $oldText, $title )
+			);
+		} else {
+			$userLinks = DiscussionParser::getUserLinks( $this->text, $title );
+		}
+		$header = $this->text;
+
+		self::generateMentionEvents(
+			$header, $userLinks, $this->text, $title, $user,
+			$this, $this->id
+		);
 	}
 
 	/**
@@ -888,6 +913,17 @@ class Comment extends ContextSource {
 			}
 		}
 
+		// Edit link for comment authors (if they are allowed to edit their comments) and
+		// for comment admins
+		$editRow = '';
+		if (
+			( $this->isOwner( $userObj ) && $userObj->isAllowed( 'comment-edit-own' ) )
+			|| $userObj->isAllowed( 'commentadmin' )
+		) {
+			$editRow .= "| <a href=\"\" rel=\"nofollow\" class=\"comments-edit\" data-comment-id=\"{$this->id}\">" .
+						wfMessage( 'comments-edit' )->escaped() . "</a>";
+		}
+
 		if ( $this->parentID == 0 ) {
 			$comment_class = 'f-message';
 		} else {
@@ -941,10 +977,22 @@ class Comment extends ContextSource {
 		$output .= "<div class=\"c-comment {$comment_class}\">" . "\n";
 		$output .= $this->getText();
 		$output .= '</div>' . "\n";
+
+		$output .= '<div class="c-comment-edit-form">';
+		$output .= '<textarea>' . htmlspecialchars( $this->text ) . '</textarea>';
+		$output .= "<button class=\"c-comment-edit-form-save\" data-comment-id=\"{$this->id}\">" .
+				   wfMessage( 'comments-edit-save' )->escaped() . '</button> ';
+		$output .= '<button class="c-comment-edit-form-cancel">' .
+				   wfMessage( 'comments-edit-cancel' )->escaped() . '</button>';
+		$output .= '</div>';
+
 		$output .= '<div class="c-actions">' . "\n";
 		if ( $this->page->title ) { // for some reason doesn't always exist
 			$output .= '<a href="' . htmlspecialchars( $this->page->title->getFullURL() ) . "#comment-{$this->id}\" rel=\"nofollow\">" .
 			$this->msg( 'comments-permalink' )->escaped() . '</a> ';
+		}
+		if ( $editRow ) {
+			$output .= $editRow . "\n";
 		}
 		if ( $replyRow || $dlt ) {
 			$output .= "{$replyRow} {$dlt}" . "\n";
