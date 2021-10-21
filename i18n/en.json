@@ -23,6 +23,7 @@
 	"apihelp-commentsubmit-param-commentText": "Comment Text",
 	"apihelp-commentvote-param-commentID": "Comment ID of the comment that is voted for",
 	"apihelp-commentvote-param-voteValue": "Vote value for the comment",
+	"apihelp-commentedit-summary": "The commentedit API allows to edit an existing comment's text",
 	"comments-comment": "Comment",
 	"comments-continue-editing-btn": "Continue editing",
 	"comments-preview-failed": "Previewing failed. Please try again.",
@@ -44,6 +45,9 @@
 	"comments-ignore-message": "You are ignoring the author of this comment",
 	"comments-you": "You",
 	"comments-reply": "Reply",
+	"comments-edit": "Edit",
+	"comments-edit-cancel": "Cancel",
+	"comments-edit-save": "Save",
 	"comments-login-required": "You must be logged in to add comments",
 	"comments-not-allowed": "You are not allowed to post comments.",
 	"comments-post": "Post comment",
@@ -69,6 +73,7 @@
 	"log-description-comments": "This is a log of comments.",
 	"logentry-comments-add": "$1 posted a new comment on $3",
 	"logentry-comments-delete": "$1 deleted comment #$4 on $3",
+	"logentry-comments-edit": "$1 edited comment #$4 on $3",
 	"comments-time-ago": "$1 ago",
 	"comments-time-months": "{{PLURAL:$1|one month|$1 months}}",
 	"comments-time-days": "{{PLURAL:$1|one day|$1 days}}",
@@ -87,5 +92,7 @@
 	"action-commentlinks": "use external links in comments",
 	"right-commentlinks": "Use external links in comments",
 	"action-comment-delete-own": "delete own comments",
-	"right-comment-delete-own": "Delete own comments"
+	"right-comment-delete-own": "Delete own comments",
+	"action-comment-edit-own": "edit own comments",
+	"right-comment-edit-own": "Edit own comments"
 }

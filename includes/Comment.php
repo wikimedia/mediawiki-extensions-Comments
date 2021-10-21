@@ -412,6 +412,85 @@ class Comment extends ContextSource {
 	}
 
 	/**
+	 * Edit a comment's text as the supplied user.
+	 *
+	 * @param string $text New comment text
+	 * @param User $user User (object) performing the edit action
+	 * @return Comment The edited comment object for chaining
+	 */
+	public function edit( $text, User $user ) {
+		$dbw = wfGetDB( DB_PRIMARY );
+
+		// Wikimedia\suppressWarnings();
+		// $commentDate = date( 'Y-m-d H:i:s' );
+		// Wikimedia\restoreWarnings();
+
+		$dbw->update(
+			'Comments',
+			[
+				'Comment_Text' => $text,
+				// 'Comment_Date' => $dbw->timestamp( $commentDate ),
+				// 'Comment_IP' => $_SERVER['REMOTE_ADDR']
+			],
+			[
+				'CommentID' => $this->id
+			],
+			__METHOD__
+		);
+
+		$this->page->clearCommentListCache();
+
+		// Add a log entry.
+		self::log( 'edit', $user, $this->page->id, $this->id, $text );
+
+		$this->text = $text;
+
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'Echo' ) ) {
+			global $wgEchoMentionOnChanges;
+			if ( !$wgEchoMentionOnChanges ) {
+				return;
+			}
+			// Modified copypasta of EchoDiscussionParser#generateEventsForRevision with less Revision-ism!
+			// (Awful pun is awful, sorry about that.)
+			// EchoDiscussionParser#getChangeInterpretationForRevision is *way*, way too Revision-ist for
+			// our tastes. DO NOT WANT!
+			$title = Title::newFromId( $this->page->id );
+
+			// EchoDiscussionParser#getUserLinks is private, because of course it is.
+			// Here we go once again...
+			$getUserLinks = function ( $content, Title $title ) {
+				$output = self::parseNonEditWikitext( $content, new Article( $title ) );
+				$links = $output->getLinks();
+
+				if ( !isset( $links[NS_USER] ) || !is_array( $links[NS_USER] ) ) {
+					return false;
+				}
+
+				return $links[NS_USER];
+			};
+
+			// stolen from EchoDiscussionParser#generateEventsForRevision
+			$action = [];
+			$action['old_content'] = '';
+			$action['new_content'] = $text;
+			$userLinks = array_diff_key(
+				$getUserLinks( $action['new_content'], $title ) ?: [],
+				$getUserLinks( $action['old_content'], $title ) ?: []
+			);
+			$header = $text;
+
+			self::generateMentionEvents(
+				$header, $userLinks, $action['new_content'], $title, $user,
+				$this, $this->id
+			);
+		}
+
+		Hooks::run( 'Comment::edit', [ $this, $this->id, $this->page->id ] );
+
+		return $this;
+	}
+
+	/**
 	 * It's like Article::prepareTextForEdit,
 	 *  but not for editing (old wikitext usually)
 	 * Stolen from AbuseFilterVariableHolder
@@ -888,6 +967,17 @@ class Comment extends ContextSource {
 			}
 		}
 
+		// Edit link for comment authors (if they are allowed to edit their comments) and
+		// for comment admins
+		$editRow = '';
+		if (
+			$this->isOwner( $userObj ) && $userObj->isAllowed( 'comment-edit-own' ) ||
+			$userObj->isAllowed( 'commentadmin' )
+		) {
+			$editRow .= "| <a href=\"\" rel=\"nofollow\" class=\"comments-edit\" data-comment-id=\"{$this->id}\">" .
+						wfMessage( 'comments-edit' )->plain() . "</a>";
+		}
+
 		if ( $this->parentID == 0 ) {
 			$comment_class = 'f-message';
 		} else {
@@ -941,10 +1031,22 @@ class Comment extends ContextSource {
 		$output .= "<div class=\"c-comment {$comment_class}\">" . "\n";
 		$output .= $this->getText();
 		$output .= '</div>' . "\n";
+
+		$output .= '<div class="c-comment-edit-form">';
+		$output .= '<textarea>' . $this->text . '</textarea>';
+		$output .= "<button class=\"c-comment-edit-form-save\" data-comment-id=\"{$this->id}\">" .
+				   wfMessage( 'comments-edit-save' )->plain() . '</button> ';
+		$output .= '<button class="c-comment-edit-form-cancel">' .
+				   wfMessage( 'comments-edit-cancel' )->plain() . '</button>';
+		$output .= '</div>';
+
 		$output .= '<div class="c-actions">' . "\n";
 		if ( $this->page->title ) { // for some reason doesn't always exist
 			$output .= '<a href="' . htmlspecialchars( $this->page->title->getFullURL() ) . "#comment-{$this->id}\" rel=\"nofollow\">" .
 			$this->msg( 'comments-permalink' )->escaped() . '</a> ';
+		}
+		if ( $editRow ) {
+			$output .= $editRow . "\n";
 		}
 		if ( $replyRow || $dlt ) {
 			$output .= "{$replyRow} {$dlt}" . "\n";
