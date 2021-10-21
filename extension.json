@@ -1,6 +1,6 @@
 {
 	"name": "Comments",
-	"version": "4.9.1",
+	"version": "4.10",
 	"author": [
 		"David Pean",
 		"Misza",
@@ -47,11 +47,13 @@
 	},
 	"LogActionsHandlers": {
 		"comments/add": "CommentsLogFormatter",
-		"comments/delete": "LogFormatter"
+		"comments/delete": "LogFormatter",
+		"comments/edit": "LogFormatter"
 	},
 	"APIModules": {
 		"commentblock": "CommentBlockAPI",
 		"commentdelete": "CommentDeleteAPI",
+		"commentedit": "CommentEditAPI",
 		"commentlatestid": "CommentLatestIdAPI",
 		"commentlist": "CommentListAPI",
 		"commentsubmit": "CommentSubmitAPI",
@@ -84,6 +86,7 @@
 		"CommentLatestIdAPI": "includes/api/CommentLatestIdAPI.php",
 		"CommentListAPI": "includes/api/CommentListAPI.php",
 		"CommentSubmitAPI": "includes/api/CommentSubmitAPI.php",
+		"CommentEditAPI": "includes/api/CommentEditAPI.php",
 		"CommentVoteAPI": "includes/api/CommentVoteAPI.php",
 		"EchoMentionCommentPresentationModel": "includes/notifications/EchoMentionCommentPresentationModel.php"
 	},
