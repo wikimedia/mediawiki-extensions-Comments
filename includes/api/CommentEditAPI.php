@@ -2,7 +2,7 @@
 
 use Wikimedia\ParamValidator\ParamValidator;
 
-class CommentSubmitAPI extends CommentSubmitBase {
+class CommentEditAPI extends CommentSubmitBase {
 
 	public function execute() {
 		$main = $this->getMain();
@@ -15,18 +15,19 @@ class CommentSubmitAPI extends CommentSubmitBase {
 		$this->checkBlocks( $user );
 		$this->validateCommentText( $commentText, $user, $pageID );
 
-		$page = new CommentsPage( $pageID, $this->getContext() );
+		$comment = Comment::newFromID( $main->getVal( 'commentID' ) );
 
-		Comment::add( $commentText, $page, $user, $main->getVal( 'parentID' ) );
-
-		if ( class_exists( 'UserStatsTrack' ) ) {
-			$stats = new UserStatsTrack( $user->getId(), $user->getName() );
-			$stats->incStatField( 'comment' );
+		// Do not allow the edit action if the user is not the comment owner (or have no edit rights)
+		// and also not a comments admin
+		$canEditOwn = $comment->isOwner( $user ) && $user->isAllowed( 'comment-edit-own' );
+		if ( !( $canEditOwn || $user->isAllowed( 'commentadmin' ) ) ) {
+			$this->dieWithError( 'comments-edit-permissiondenied' );
 		}
 
-		$result = $this->getResult();
-		$result->addValue( $this->getModuleName(), 'ok', 'ok' );
+		$comment->edit( $commentText, $user );
 
+		$result = $this->getResult();
+		$result->addValue( $this->getModuleName(), 'ok', $comment->getText() );
 		return true;
 	}
 
@@ -44,8 +45,8 @@ class CommentSubmitAPI extends CommentSubmitBase {
 				ParamValidator::PARAM_REQUIRED => true,
 				ParamValidator::PARAM_TYPE => 'integer'
 			],
-			'parentID' => [
-				ParamValidator::PARAM_REQUIRED => false,
+			'commentID' => [
+				ParamValidator::PARAM_REQUIRED => true,
 				ParamValidator::PARAM_TYPE => 'integer'
 			],
 			'commentText' => [
@@ -54,4 +55,5 @@ class CommentSubmitAPI extends CommentSubmitBase {
 			]
 		];
 	}
+
 }

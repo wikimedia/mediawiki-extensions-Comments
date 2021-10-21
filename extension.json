@@ -31,7 +31,8 @@
 		"comment",
 		"commentadmin",
 		"commentlinks",
-		"comment-delete-own"
+		"comment-delete-own",
+		"comment-edit-own"
 	],
 	"DefaultUserOptions": {
 		"echo-subscriptions-web-mention-comment": true,
@@ -53,7 +54,8 @@
 	},
 	"LogActionsHandlers": {
 		"comments/add": "CommentsLogFormatter",
-		"comments/delete": "LogFormatter"
+		"comments/delete": "LogFormatter",
+		"comments/edit": "CommentsLogFormatter"
 	},
 	"APIModules": {
 		"commentblock": {
@@ -63,6 +65,7 @@
 			]
 		},
 		"commentdelete": "CommentDeleteAPI",
+		"commentedit": "CommentEditAPI",
 		"commentlatestid": "CommentLatestIdAPI",
 		"commentlist": {
 			"class": "CommentListAPI",
@@ -100,6 +103,8 @@
 		"CommentLatestIdAPI": "includes/api/CommentLatestIdAPI.php",
 		"CommentListAPI": "includes/api/CommentListAPI.php",
 		"CommentSubmitAPI": "includes/api/CommentSubmitAPI.php",
+		"CommentSubmitBase": "includes/api/CommentSubmitBase.php",
+		"CommentEditAPI": "includes/api/CommentEditAPI.php",
 		"CommentVoteAPI": "includes/api/CommentVoteAPI.php",
 		"EchoMentionCommentPresentationModel": "includes/notifications/EchoMentionCommentPresentationModel.php"
 	},
