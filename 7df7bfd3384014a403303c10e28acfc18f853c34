@@ -54,6 +54,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a304a1d_3089e25e",
+        "filename": "includes/api/CommentDeleteAPI.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8550
+      },
+      "writtenOn": "2021-10-21T14:12:56Z",
+      "side": 1,
+      "message": "User::getBlock was used.",
+      "parentUuid": "753e3aef_0d9ef23a",
+      "revId": "7df7bfd3384014a403303c10e28acfc18f853c34",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9605f571_eef2019d",
