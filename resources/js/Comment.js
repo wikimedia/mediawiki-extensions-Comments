@@ -84,6 +84,53 @@
 		},
 
 		/**
+		 * Send a modified comment's new text to the backend and display backend-supplied
+		 * response to the user.
+		 *
+		 * @param {number} commentID ID of the comment to edit
+		 */
+		edit: function ( commentID ) {
+			var commentText, $comment;
+			$comment = $( '#comment-' + commentID );
+			commentText = $comment.find( 'textarea' ).val();
+			if ( !commentText.length ) {
+				return;
+			}
+			Comment.toggleEditMode();
+			$comment.find( '.c-comment' ).html( '<span class="loader"></span>' );
+
+			( new mw.Api() ).postWithToken( 'csrf', {
+				action: 'commentedit',
+				commentID: commentID,
+				commentText: commentText,
+				pageID: this.currentArticleID
+			} ).done( function ( response ) {
+				if ( response.commentedit.ok ) {
+					$comment.find( '.c-comment' ).html( response.commentedit.ok );
+				} else {
+					window.alert( response.error.info );
+				}
+			} ).fail( function ( textStatus, response ) {
+				var msg = response.code || response.error.info || textStatus;
+				window.alert( mw.msg( msg ) );
+			} );
+		},
+
+		/**
+		 * Enable the editing mode for a supplied comment.
+		 *
+		 * @param {number} commentID ID of the comment to edit
+		 */
+		toggleEditMode: function ( commentID ) {
+			var $comment;
+			$( '.c-item' ).removeClass( 'c-item--edit-mode' );
+			if ( typeof commentID !== 'undefined' ) {
+				$comment = $( '#comment-' + commentID );
+				$comment.addClass( 'c-item--edit-mode' );
+			}
+		},
+
+		/**
 		 * Vote for a comment.
 		 *
 		 * @param {number} commentID Comment ID number
@@ -403,6 +450,22 @@
 			// "Delete Comment" links
 			.on( 'click', 'a.comment-delete-link', function () {
 				Comment.deleteComment( $( this ).data( 'comment-id' ) );
+			} )
+
+			// Comment editing feature -- "Edit"/"Cancel"/"Save" links/buttons
+			.on( 'click', 'a.comments-edit', function ( e ) {
+				e.preventDefault();
+				Comment.toggleEditMode( $( this ).data( 'comment-id' ) );
+			} )
+
+			.on( 'click', 'button.c-comment-edit-form-cancel', function ( e ) {
+				e.preventDefault();
+				Comment.toggleEditMode();
+			} )
+
+			.on( 'click', 'button.c-comment-edit-form-save', function ( e ) {
+				e.preventDefault();
+				Comment.edit( $( this ).data( 'comment-id' ) );
 			} )
 
 			// "Show this hidden comment" -- comments made by people on the user's
