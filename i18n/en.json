@@ -58,7 +58,7 @@
 	"comments-permalink": "Permalink",
 	"comments-delete-link": "Delete comment",
 	"comments-anon-name": "Anonymous user",
-	"comments-anon-message": "{{SITENAME}} welcomes <b>all comments</b>. If you do not want to be anonymous, <a href=\"$1\">register</a> or <a href=\"$2\">log in</a>. It is free.",
+	"comments-anon-message": "{{SITENAME}} welcomes '''all comments'''. If you do not want to be anonymous, [[Special:CreateAccount|register]] or [[Special:UserLogin|log in]]. It is free.",
 	"comments-links-are-forbidden": "External links in comments are forbidden!",
 	"comments-is-spam": "Submitted text of the comment was interpreted as spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> on $3 <a href=\"$4\">(unblock)</a>",

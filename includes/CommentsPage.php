@@ -509,13 +509,8 @@ class CommentsPage extends ContextSource {
 			$output .= '<div id="replyto" class="c-form-reply-to"></div>' . "\n";
 			// Show a message to anons, prompting them to register or log in
 			if ( !$user->isRegistered() ) {
-				$login_title = SpecialPage::getTitleFor( 'Userlogin' );
-				$register_title = SpecialPage::getTitleFor( 'Userlogin', 'signup' );
-				$output .= '<div class="c-form-message">' . wfMessage(
-						'comments-anon-message',
-						htmlspecialchars( $register_title->getFullURL() ),
-						htmlspecialchars( $login_title->getFullURL() )
-					)->text() . '</div>' . "\n";
+				$output .= '<div class="c-form-message">' .
+					wfMessage( 'comments-anon-message' )->parse() . '</div>' . "\n";
 			}
 
 			$output .= '<textarea name="commentText" id="comment" rows="5" cols="64"></textarea>' . "\n";

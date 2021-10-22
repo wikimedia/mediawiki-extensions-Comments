@@ -66,7 +66,7 @@
 	"comments-permalink": "\"Permalink\" means \"permanent link\" and clicking on it creates what is a permanent link to a comment, at least until a (comment) administrator deletes the comment or the whole page gets deleted or the <code><nowiki><comments /></nowiki></code> tag is removed from it.\n{{Identical|Permalink}}",
 	"comments-delete-link": "Link text; clicking on this deletes the comment (duh)",
 	"comments-anon-name": "Generic name shown for anonymous (not logged in/unregistered) users, since their IP addresses aren't directly exposed.\n{{Identical|Anonymous user}}",
-	"comments-anon-message": "Shown above the comment form to anonymous users.\nParameters:\n* $1 - the URL to [[Special:UserLogin]]\n* $2 - the URL to [[Special:UserLogin/signup]]",
+	"comments-anon-message": "Call-to-action (CTA) message shown above the comment form to anonymous users, encouraging them to register for an account if they don't have one or to log in if they already have an account.",
 	"comments-links-are-forbidden": "Error message shown to the user if they tried to post a comment that contains external links and they don't have the commentlinks user right.",
 	"comments-is-spam": "Error message shown to the user if they try to post a comment that matches the spam filter and they're not a member of the commentadmin group.",
 	"comments-ignore-item": "Shown on Special:CommentIgnoreList. Parameters:\n* $1 - the URL to the blocked user's user page\n* $2 - the name of the blocked user\n* $3 - the timestamp (when the user was blocked) (format: Y-m-d H:i:s)\n* $4 - the URL to the unblock form",
