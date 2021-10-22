@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e64ffaf_4e25e6d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4879
+      },
+      "writtenOn": "2021-10-22T08:59:03Z",
+      "side": 1,
+      "message": "Be free to add АкцијаКоментара, Акција_коментара for sr-ec and AkcijaKomentara, Akcija_komentara for sr-el.",
+      "revId": "029201d6defe0974f448d0295e0f5eec59951dd4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
