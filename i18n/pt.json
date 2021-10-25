@@ -3,6 +3,7 @@
 		"authors": [
 			"Hamilton Abreu",
 			"Imperadeiro98",
+			"Jack Phoenix",
 			"Luckas",
 			"Mansil alfalb",
 			"SandroHc",
@@ -62,7 +63,7 @@
 	"comments-permalink": "Hiperligação permanente",
 	"comments-delete-link": "Eliminar comentário",
 	"comments-anon-name": "Utilizador anónimo",
-	"comments-anon-message": "A wiki {{SITENAME}} agradece <b>todos os comentários</b>. Se não quer ser anónimo, <a href=\"$1\">registe-se</a> ou <a href=\"$2\">inicie a sua sessão</a>. É gratuito.",
+	"comments-anon-message": "A wiki {{SITENAME}} agradece '''todos os comentários'''. Se não quer ser anónimo, [[Special:CreateAccount|registe-se]] ou [[Special:UserLogin|inicie a sua sessão]]. É gratuito.",
 	"comments-links-are-forbidden": "Não são permitidas hiperligações externas nos comentários!",
 	"comments-is-spam": "O texto do comentário enviado foi interpretado como <i>spam</i>.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> a $3 <a href=\"$4\">(desbloquear)</a>",

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Elisardojm",
+			"Jack Phoenix",
 			"Toliño",
 			"Vivaelcelta"
 		]
@@ -41,7 +42,7 @@
 	"comments-permalink": "Ligazón permanente",
 	"comments-delete-link": "Borrar o comentario",
 	"comments-anon-name": "Usuario anónimo",
-	"comments-anon-message": "{{SITENAME}} agradece <b>todos os comentarios</b>. Se non quere ser anónimo, <a href=\"$1\">rexístrese</a> ou <a href=\"$2\">acceda ao sistema</a>. É gratuíto.",
+	"comments-anon-message": "{{SITENAME}} agradece '''todos os comentarios'''. Se non quere ser anónimo, [[Special:CreateAccount|rexístrese]] ou [[Special:UserLogin|acceda ao sistema]]. É gratuíto.",
 	"comments-links-are-forbidden": "Están prohibidas as ligazóns externas nos comentarios!",
 	"comments-is-spam": "O texto enviado no comentario foi interpretado como publicidade.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> o $3 <a href=\"$4\">(desbloquear)</a>",

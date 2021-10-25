@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Octahedron80",
 			"XthemeCore"
 		]
@@ -32,7 +33,7 @@
 	"comments-permalink": "ลิงก์ถาวร",
 	"comments-delete-link": "ลบความเห็น",
 	"comments-anon-name": "ผู้ใช้นิรนาม",
-	"comments-anon-message": "{{SITENAME}} ต้อนรับ<b>ทุกความเห็น</b> ถ้าคุณไม่ต้องการแสดงเป็นนิรนาม กรุณา<a href=\"$1\">ลงทะเบียน</a>หรือ<a href=\"$2\">ล็อกอิน</a> ไม่มีค่าใช้จ่าย",
+	"comments-anon-message": "{{SITENAME}} ต้อนรับ'''ทุกความเห็น''' ถ้าคุณไม่ต้องการแสดงเป็นนิรนาม กรุณา[[Special:CreateAccount|ลงทะเบียน]]หรือ[[Special:UserLogin|ล็อกอิน]] ไม่มีค่าใช้จ่าย",
 	"comments-links-are-forbidden": "ห้ามใส่ลิงก์ภายนอกในความเห็น",
 	"comments-is-spam": "ข้อความในความเห็นที่ส่งมามีลักษณะเป็นสแปม",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> เมื่อ $3 <a href=\"$4\">(ปลดบล็อก)</a>",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"John Reid"
 		]
 	},
@@ -31,7 +32,7 @@
 	"comments-permalink": "Permalink",
 	"comments-delete-link": "Delyte comment",
 	"comments-anon-name": "Anonymous uiser",
-	"comments-anon-message": "{{SITENAME}} weelcomes <b>aw comments</b>. Gif ye dinna want tae be anonymous, <a href=\"$1\">register</a> or <a href=\"$2\">log in</a>. It's free.",
+	"comments-anon-message": "{{SITENAME}} weelcomes '''aw comments'''. Gif ye dinna want tae be anonymous, [[Special:CreateAccount|register]] or [[Special:UserLogin|log in]]. It's free.",
 	"comments-links-are-forbidden": "External links in comments ar forbidden!",
 	"comments-is-spam": "Submitted tex o the comment wis interpreted aes spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> oan $3 <a href=\"$4\">(onblock)</a>",

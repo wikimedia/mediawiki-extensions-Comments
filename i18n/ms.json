@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anakmalaysia"
+			"Anakmalaysia",
+			"Jack Phoenix"
 		]
 	},
 	"comments-comment": "Komen",
@@ -31,7 +32,7 @@
 	"comments-permalink": "Pautan kekal",
 	"comments-delete-link": "Padamkan komen",
 	"comments-anon-name": "Pengguna awanama",
-	"comments-anon-message": "{{SITENAME}} mengalu-alukan <b>semua komen</b>. Jika anda tidak mahu berawanama, sila <a href=\"$1\">daftar</a> atau <a href=\"$2\">log masuk</a>. Percuma.",
+	"comments-anon-message": "{{SITENAME}} mengalu-alukan '''semua komen'''. Jika anda tidak mahu berawanama, sila [[Special:CreateAccount|daftar]] atau [[Special:UserLogin|log masuk]]. Percuma.",
 	"comments-links-are-forbidden": "Pautan luar dilarang dalam komen!",
 	"comments-is-spam": "Teks komen yang dihantar ini ditafsir sebagai spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> pada $3 <a href=\"$4\">(nyahsekat)</a>",

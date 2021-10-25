@@ -4,6 +4,7 @@
 			"C5st4wr6ch",
 			"Daud I.F. Argana",
 			"Farras",
+			"Jack Phoenix",
 			"William Surya Permana",
 			"පසිඳු කාවින්ද"
 		]
@@ -60,7 +61,7 @@
 	"comments-permalink": "Pranala permanen",
 	"comments-delete-link": "Hapus komentar",
 	"comments-anon-name": "Pengguna anonim",
-	"comments-anon-message": "{{SITENAME}} menerima <b>segala komentar</b>. Jika Anda tidak ingin menjadi seorang anonim, silakan <a href=\"$1\">daftar</a> atau <a href=\"$2\">masuk log</a>. Gratis.",
+	"comments-anon-message": "{{SITENAME}} menerima '''segala komentar'''. Jika Anda tidak ingin menjadi seorang anonim, silakan [[Special:CreateAccount|daftar]] atau [[Special:UserLogin|masuk log]]. Gratis.",
 	"comments-links-are-forbidden": "Pranala luar pada komentar tidak diizinkan!",
 	"comments-is-spam": "Teks komentar yang dikirimkan dianggap sebagai spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> pada $3 <a href=\"$4\">(batalkan pemblokiran)</a>",

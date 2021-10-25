@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Kghbln"
 		]
 	},
@@ -12,6 +13,6 @@
 	"comments-you": " Sie",
 	"comments-login-required": "Sie müssen angemeldet sein, um Kommentare hinzufügen zu können.",
 	"comments-not-allowed": "Sie sind nicht berechtigt Kommentare hinzuzufügen.",
-	"comments-anon-message": "{{SITENAME}} freut sich über <b>alle Kommentare</b>. Sofern Sie nicht anonym bleiben möchten, <a href=\"$1\">registrieren Sie sich bitte</a> oder <a href=\"$2\">melden Sie sich an</a>.",
+	"comments-anon-message": "{{SITENAME}} freut sich über '''alle Kommentare'''. Sofern Sie nicht anonym bleiben möchten, [[Special:CreateAccount|registrieren Sie sich bitte]] oder [[Special:UserLogin|melden Sie sich an]].",
 	"comments-ignore-remove-message": "Sind Sie sicher, dass Sie die Kommentare von Benutzer <b>$1</b> wieder freigeben möchten?"
 }

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Kaganer",
 			"Katunchik",
 			"Lockal",
@@ -43,7 +44,7 @@
 	"comments-permalink": "Постоянная ссылка",
 	"comments-delete-link": "Удалить комментарий",
 	"comments-anon-name": "Анонимный участник",
-	"comments-anon-message": "На сайте {{SITENAME}} приветствуются <b>все комментарии</b>. Если вы не хотите быть анонимным, <a href=\"$1\">зарегистрируйтесь</a> или <a href=\"$2\">представьтесь</a>. Это бесплатно.",
+	"comments-anon-message": "На сайте {{SITENAME}} приветствуются '''все комментарии'''. Если вы не хотите быть анонимным, [[Special:CreateAccount|зарегистрируйтесь]] или [[Special:UserLogin|представьтесь]]. Это бесплатно.",
 	"comments-links-are-forbidden": "Внешние ссылки в комментариях запрещены!",
 	"comments-is-spam": "Представленный текст комментария был воспринят как спам.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> на $3 <a href=\"$4\">(разблокировать)</a>",

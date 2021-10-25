@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Meno25",
 			"Sonic N800",
 			"ديفيد",
@@ -60,7 +61,7 @@
 	"comments-permalink": "وصلة دائمة",
 	"comments-delete-link": "حذف التعليق",
 	"comments-anon-name": "مستخدم مجهول",
-	"comments-anon-message": "يرحب {{SITENAME}} <b>بجميع التعليقات</b>، إذا كنت لا تريد أن تكون مجهولا، <a href=\"$1\"> قم بالتسجيل</a> أو <a href=\"$2\">سجل الدخول</a>، إنه مجاني.",
+	"comments-anon-message": "يرحب {{SITENAME}} '''بجميع التعليقات'''، إذا كنت لا تريد أن تكون مجهولا، [[Special:CreateAccount| قم بالتسجيل]] أو [[Special:UserLogin|سجل الدخول]]، إنه مجاني.",
 	"comments-links-are-forbidden": "الروابط الخارجية في التعليقات ممنوعة!",
 	"comments-is-spam": "تم تفسير نص التعليقات المقدم على أنه رسالة غير مرغوب فيها.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> on $3 <a href=\"$4\">(إلغاء المنع)</a>",

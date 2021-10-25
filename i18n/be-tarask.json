@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Red Winged Duck",
 			"Renessaince",
 			"Wizardist"
@@ -33,7 +34,7 @@
 	"comments-permalink": "Сталая спасылка",
 	"comments-delete-link": "Выдаліць камэнтар",
 	"comments-anon-name": "Ананімны ўдзельнік",
-	"comments-anon-message": "{{SITENAME}} вітае <b>ўсіх камэнтатараў</b>. Калі вы не жадаеце хаваць сваю асобу, <a href=\"$1\">зарэгіструйцеся</a> ці <a href=\"$2\">ўвайдзіце</a>. Гэта бясплатна.",
+	"comments-anon-message": "{{SITENAME}} вітае '''ўсіх камэнтатараў'''. Калі вы не жадаеце хаваць сваю асобу, [[Special:CreateAccount|зарэгіструйцеся]] ці [[Special:UserLogin|ўвайдзіце]]. Гэта бясплатна.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a>, $3 <a href=\"$4\">(разблякаваць)</a>",
 	"comments-ignore-no-users": "Цяпер ніводны ўдзельнік не заблякаваны.",
 	"comments-ignore-remove-message": "Вы ўпэўненыя, што жадаеце зноў бачыць камэнтары <b>$1</b>?",

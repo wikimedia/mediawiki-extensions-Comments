@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Borichèt",
-			"Dragonòt"
+			"Dragonòt",
+			"Jack Phoenix"
 		]
 	},
 	"comments-comment": "Coment",
@@ -32,7 +33,7 @@
 	"comments-permalink": "Colegament përmanent",
 	"comments-delete-link": "Scancelé ël coment",
 	"comments-anon-name": "Utent anònim",
-	"comments-anon-message": "{{SITENAME}} a aceta <b>tùit ij coment</b>. Se chiel a veul nen esse anònim, ch'as <a href=\"$1\">argistra</a> o ch'a <a href=\"$2\">intra ant ël sistema</a>. A l'é a gràtis.",
+	"comments-anon-message": "{{SITENAME}} a aceta '''tùit ij coment'''. Se chiel a veul nen esse anònim, ch'as [[Special:CreateAccount|argistra]] o ch'a [[Special:UserLogin|intra ant ël sistema]]. A l'é a gràtis.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> dzor $3 <a href=\"$4\">(dësblòca)</a>",
 	"comments-ignore-no-users": "A-i é pa gnun utent blocà al moment.",
 	"comments-ignore-remove-message": "Ses-to sigur ëd vorèj dësbloché ij coment ëd l'utent <b>$1</b>?",

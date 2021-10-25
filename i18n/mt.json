@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chrisportelli",
+			"Jack Phoenix",
 			"ToniSant"
 		]
 	},
@@ -30,7 +31,7 @@
 	"comments-permalink": "Ħolqa permanenti",
 	"comments-delete-link": "Ħassar il-kumment",
 	"comments-anon-name": "Utent anonimu",
-	"comments-anon-message": "{{SITENAME}} tilqa' il-<b>kummenti kollha</b>. Jekk ma tridx li tibqa' anonimu, <a href=\"$1\">irreġistra</a> jew <a href=\"$2\">idħol fil-kont</a>. Dan huwa b'xejn.",
+	"comments-anon-message": "{{SITENAME}} tilqa' il-'''kummenti kollha'''. Jekk ma tridx li tibqa' anonimu, [[Special:CreateAccount|irreġistra]] jew [[Special:UserLogin|idħol fil-kont]]. Dan huwa b'xejn.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> nhar il-$3 <a href=\"$4\">(żblokka)</a>",
 	"comments-ignore-no-users": "M'hemm l-ebda utent li huwa attwalment imblukkat.",
 	"comments-ignore-remove-message": "Inti ċert li tixtieq tiżblokka l-kummenti tal-utent <b>$1</b>?",

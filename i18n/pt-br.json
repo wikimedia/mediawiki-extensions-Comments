@@ -4,6 +4,7 @@
 			"Cainamarques",
 			"Eduardo Addad de Oliveira",
 			"Eduardoaddad",
+			"Jack Phoenix",
 			"Luanafaro",
 			"Luckas",
 			"Nemo bis"
@@ -62,7 +63,7 @@
 	"comments-permalink": "Link permanente",
 	"comments-delete-link": "Apagar comentário",
 	"comments-anon-name": "Usuário anônimo",
-	"comments-anon-message": "A wiki {{SITENAME}} agradece <b>todos os comentários</b>. Se não quer ser anónimo, <a href=\"$1\">registe-se</a> ou <a href=\"$2\">inicie a sua sessão</a>. É gratuito.",
+	"comments-anon-message": "A wiki {{SITENAME}} agradece '''todos os comentários'''. Se não quer ser anónimo, [[Special:CreateAccount|registe-se]] ou [[Special:UserLogin|inicie a sua sessão]]. É gratuito.",
 	"comments-links-are-forbidden": "Não são permitidas hiperligações externas nos comentários!",
 	"comments-is-spam": "O texto do comentário enviado foi interpretado como <i>spam</i>.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> a $3 <a href=\"$4\">(desbloquear)</a>",

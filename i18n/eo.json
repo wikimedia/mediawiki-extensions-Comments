@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Robin van der Vliet",
 			"Yekrats"
 		]
@@ -23,7 +24,7 @@
 	"comments-permalink": "Konstanta ligilo",
 	"comments-delete-link": "Forigi komenton",
 	"comments-anon-name": "Anonimulo",
-	"comments-anon-message": "{{SITENAME}} bonvenas <b>ĉiujn komentojn</b>. Se vi ne volas esti anonima, <a href=\"$1\">registri</a> aŭ <a href=\"$2\">ensaluti</a>. Estas senpage.",
+	"comments-anon-message": "{{SITENAME}} bonvenas '''ĉiujn komentojn'''. Se vi ne volas esti anonima, [[Special:CreateAccount|registri]] aŭ [[Special:UserLogin|ensaluti]]. Estas senpage.",
 	"comments-ignore-no-users": "Estas neniuj uzantoj nune forbaritaj.",
 	"comments-ignore-remove-message": "Ĉu vi certas ke vi volas malforbari komentojn de uzanto <b>$1</b>?",
 	"comments-ignore-unblock": "Malforbari",

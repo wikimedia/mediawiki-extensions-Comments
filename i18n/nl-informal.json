@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Siebrand"
 		]
 	},
@@ -11,6 +12,6 @@
 	"comments-you": "Jij",
 	"comments-login-required": "Je moet aangemeld zijn om reacties toe te kunnen voegen",
 	"comments-not-allowed": "Je mag niet reageren.",
-	"comments-anon-message": "{{SITENAME}} verwelkomt <b>alle reacties</b>. Als je niet anoniem wilt zijn, <a href=\"$1\">Registreer</a> je dan of <a href=\"$2\">meld je aan</a>.",
+	"comments-anon-message": "{{SITENAME}} verwelkomt '''alle reacties'''. Als je niet anoniem wilt zijn, [[Special:CreateAccount|Registreer]] je dan of [[Special:UserLogin|meld je aan]].",
 	"comments-ignore-remove-message": "Weet je zeker dat je de reacties van <b>$1</b> weer wilt zien?"
 }

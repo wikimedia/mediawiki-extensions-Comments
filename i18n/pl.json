@@ -5,6 +5,7 @@
 			"Jacenty359",
 			"Kpalion",
 			"Odie2",
+			"Ostrzyciel",
 			"Rail",
 			"Railfail536",
 			"Woytecr"
@@ -37,7 +38,7 @@
 	"comments-permalink": "Stałe łącze",
 	"comments-delete-link": "Usuń komentarz",
 	"comments-anon-name": "Anonim",
-	"comments-anon-message": "{{SITENAME}} przyjmuje z zadowoleniem <b>wszystkie komentarze</b>. Jeśli nie chcesz być anonimowy, <a href=\"$1\">zarejestruj się</a> lub <a href=\"$2\">zaloguj</a>.",
+	"comments-anon-message": "{{SITENAME}} przyjmuje z zadowoleniem '''wszystkie komentarze'''. Jeśli nie chcesz być anonimowy, [[Special:CreateAccount|zarejestruj się za darmo]] lub [[Special:UserLogin|zaloguj]].",
 	"comments-links-are-forbidden": "Linki zewnętrzne w komentarzach są zabronione!",
 	"comments-is-spam": "Wysłany tekst komentarza został zinterpretowany jako spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a>, na $3 <a href=\"$4\">(odblokuj)</a>",

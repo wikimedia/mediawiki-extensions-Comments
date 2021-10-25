@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Michawiki"
 		]
 	},
@@ -31,7 +32,7 @@
 	"comments-permalink": "Trajny wótkaz",
 	"comments-delete-link": "Komentar lašowaś",
 	"comments-anon-name": "Anonymny wužywaŕ",
-	"comments-anon-message": "{{SITENAME}} wjaseli se wó <b>wšych komentarach</b>. Jolic njocoš anonymny byś, <a href=\"$1\">zregistrěruj se</a> abo <a href=\"$2\">pśizjaw se</a>. To jo dermo.",
+	"comments-anon-message": "{{SITENAME}} wjaseli se wó '''wšych komentarach'''. Jolic njocoš anonymny byś, [[Special:CreateAccount|zregistrěruj se]] abo [[Special:UserLogin|pśizjaw se]]. To jo dermo.",
 	"comments-links-are-forbidden": "Eksterne wótkaze su w komentarach zakazane!",
 	"comments-is-spam": "Wótpósłany komentarowy tekst jo se ako spam interpretěrował.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> $3 <a href=\"$4\">(wótblokěrowaś)</a>",

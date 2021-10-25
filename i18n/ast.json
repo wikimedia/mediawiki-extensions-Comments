@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Xuacu"
 		]
 	},
@@ -36,7 +37,7 @@
 	"comments-permalink": "Enllaz permanente",
 	"comments-delete-link": "Desaniciar comentariu",
 	"comments-anon-name": "Usuariu anónimu",
-	"comments-anon-message": "{{SITENAME}} valora <b>tolos comentarios</b>. Si nun quies ser anónimu, <a href=\"$1\">rexístrate</a> o <a href=\"$2\">anicia sesión</a>. Ye gratis.",
+	"comments-anon-message": "{{SITENAME}} valora '''tolos comentarios'''. Si nun quies ser anónimu, [[Special:CreateAccount|rexístrate]] o [[Special:UserLogin|anicia sesión]]. Ye gratis.",
 	"comments-links-are-forbidden": "Nun se permite poner enllaces esternos nos comentarios",
 	"comments-is-spam": "El testu del comentariu unviáu interpretóse como spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> el $3 <a href=\"$4\">(desbloquiar)</a>",

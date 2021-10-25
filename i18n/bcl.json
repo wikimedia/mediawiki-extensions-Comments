@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Brazal.dang",
-			"Geopoet"
+			"Geopoet",
+			"Jack Phoenix"
 		]
 	},
 	"comments-comment": "Komento",
@@ -32,7 +33,7 @@
 	"comments-permalink": "Permanente-na-sugpon",
 	"comments-delete-link": "Puraon an komento",
 	"comments-anon-name": "Dai midbid na paragamit",
-	"comments-anon-message": "{{SITENAME}} maogmang minatugot <b>sa gabos na mga komento</b>. Kun ika habo na dae midbid, <a href=\"$1\">magparehistro</a> o baya <a href=\"$2\">maglaog</a>. Ini tabi libre.",
+	"comments-anon-message": "{{SITENAME}} maogmang minatugot '''sa gabos na mga komento'''. Kun ika habo na dae midbid, [[Special:CreateAccount|magparehistro]] o baya [[Special:UserLogin|maglaog]]. Ini tabi libre.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> kan $3 <a href=\"$4\">(dae kubkubon)</a>",
 	"comments-ignore-no-users": "Mayo nin mga paragamit na sa ngunyan pinagkubkob.",
 	"comments-ignore-remove-message": "Segurado ka na muya mo na dae na pagkubkubon an mga komento kan paragamit na si <b>$1</b>?",

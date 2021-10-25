@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"McDutchie"
 		]
 	},
@@ -57,7 +58,7 @@
 	"comments-permalink": "Permaligamine",
 	"comments-delete-link": "Deler commento",
 	"comments-anon-name": "Usator anonyme",
-	"comments-anon-message": "{{SITENAME}} accepta <b>omne commentos</b>. Si tu non vole esser anonyme, <a href=\"$1\">crea un conto</a> o <a href=\"$2\">aperi session</a>. Es gratuite.",
+	"comments-anon-message": "{{SITENAME}} accepta '''omne commentos'''. Si tu non vole esser anonyme, [[Special:CreateAccount|crea un conto]] o [[Special:UserLogin|aperi session]]. Es gratuite.",
 	"comments-links-are-forbidden": "Ligamines externe non es permittite in commentos.",
 	"comments-is-spam": "Le texto submittite del commento ha essite interpretate como spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> le $3 <a href=\"$4\">(disblocar)</a>",

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bjankuloski06",
+			"Jack Phoenix",
 			"Vlad5250"
 		]
 	},
@@ -58,7 +59,7 @@
 	"comments-permalink": "Постојана врска",
 	"comments-delete-link": "Избриши коментар",
 	"comments-anon-name": "Анонимен корисник",
-	"comments-anon-message": "На {{SITENAME}} се добредојдени <b>секакви коментари</b>.  Ако не сакате да бидете анонимни, <a href=\"$1\">зачленете се</a> или <a href=\"$2\">најавете се</a>. Бесплатно е.",
+	"comments-anon-message": "На {{SITENAME}} се добредојдени '''секакви коментари'''. Ако не сакате да бидете анонимни, [[Special:CreateAccount|зачленете се]] или [[Special:UserLogin|најавете се]]. Бесплатно е.",
 	"comments-links-are-forbidden": "Во коментарите се забранети надворешни врски!",
 	"comments-is-spam": "Поднесениот текст на коментарот беше протолкуван како спам.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> на $3 <a href=\"$4\">(одблокирај)</a>",

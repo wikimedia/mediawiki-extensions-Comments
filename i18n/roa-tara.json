@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Joetaras"
 		]
 	},
@@ -57,7 +58,7 @@
 	"comments-permalink": "Collegamende permanende",
 	"comments-delete-link": "Scangille 'u commende",
 	"comments-anon-name": "Utende anonime",
-	"comments-anon-message": "{{SITENAME}} bovègne a <b>tutte le commende</b>. Ce tu non ge vuè essere anonime, <a href=\"$1\">reggistrate</a> o <a href=\"$2\">tràse</a>. Jè libbere.",
+	"comments-anon-message": "{{SITENAME}} bovègne a '''tutte le commende'''. Ce tu non ge vuè essere anonime, [[Special:CreateAccount|reggistrate]] o [[Special:UserLogin|tràse]]. Jè libbere.",
 	"comments-links-are-forbidden": "Collegaminde de fore jndr'à le commende sò vietate!",
 	"comments-is-spam": "'U teste scritte d'u commende ha state 'nderpretate cumme rummate.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> a le $3 <a href=\"$4\">(sblocche)</a>",

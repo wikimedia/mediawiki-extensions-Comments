@@ -3,6 +3,7 @@
 		"authors": [
 			"Bináris",
 			"Dj",
+			"Jack Phoenix",
 			"R-Joe",
 			"Wolf Rex"
 		]
@@ -34,7 +35,7 @@
 	"comments-permalink": "Permalink",
 	"comments-delete-link": "Megjegyzés törlése",
 	"comments-anon-name": "Névtelen felhasználó",
-	"comments-anon-message": "{{SITENAME}} üdvözöl <b>minden hozzászólást</b>. Ha nem akarsz névtelene lenni, <a href=\"$1\">regisztrálj</a> vagy <a href=\"$2\">jelentkezz be</a>. Ez ingyenes.",
+	"comments-anon-message": "{{SITENAME}} üdvözöl '''minden hozzászólást'''. Ha nem akarsz névtelene lenni, [[Special:CreateAccount|regisztrálj]] vagy [[Special:UserLogin|jelentkezz be]]. Ez ingyenes.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> $3 <a href=\"$4\">(felold)</a>",
 	"comments-ignore-no-users": "Jelenleg nincs blokkolt felhasználó.",
 	"comments-ignore-remove-message": "Biztos, hogy meg akarod szüntetni <b>$1</b> felhasználó megjegyzéseinek a blokkolását?",

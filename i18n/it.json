@@ -3,6 +3,7 @@
 		"authors": [
 			"Beta16",
 			"Darth Kule",
+			"Jack Phoenix",
 			"Senpremì"
 		]
 	},
@@ -35,7 +36,7 @@
 	"comments-permalink": "Link permanente",
 	"comments-delete-link": "Elimina commento",
 	"comments-anon-name": "Utente anonimo",
-	"comments-anon-message": "{{SITENAME}} accetta <b>tutti i commenti</b>. Se non vuoi restare anonimo, <a href=\"$1\">registrati</a> o <a href=\"$2\">accedi</a>. È gratuito.",
+	"comments-anon-message": "{{SITENAME}} accetta '''tutti i commenti'''. Se non vuoi restare anonimo, [[Special:CreateAccount|registrati]] o [[Special:UserLogin|accedi]]. È gratuito.",
 	"comments-links-are-forbidden": "I collegamenti esterni nei commenti sono vietati!",
 	"comments-is-spam": "Il testo del commento inviato è stato interpretato come spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> il $3 <a href=\"$4\">(sblocca)</a>",

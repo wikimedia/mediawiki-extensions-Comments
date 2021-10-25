@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Michawiki"
 		]
 	},
@@ -31,7 +32,7 @@
 	"comments-permalink": "Trajny wotkaz",
 	"comments-delete-link": "Komentar zhašeć",
 	"comments-anon-name": "Anonymny wužiwar",
-	"comments-anon-message": "{{SITENAME}} wjeseli so wo <b>wšěch komentarach</b>. Jeli nochceš anonymny być, <a href=\"$1\">registruj so</a> abo <a href=\"$2\">přizjew so</a>. To je zadarmo.",
+	"comments-anon-message": "{{SITENAME}} wjeseli so wo '''wšěch komentarach'''. Jeli nochceš anonymny być, [[Special:CreateAccount|registruj so]] abo [[Special:UserLogin|přizjew so]]. To je zadarmo.",
 	"comments-links-are-forbidden": "Eksterne wotkazy su w komentarach zakazane!",
 	"comments-is-spam": "Wotpósłany komentarowy tekst je so jako spam interpretował.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> $3 <a href=\"$4\">(wotblokować)</a>",

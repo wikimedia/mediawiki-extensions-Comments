@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"David1010"
+			"David1010",
+			"Jack Phoenix"
 		]
 	},
 	"comments-comment": "კომენტარი",
@@ -18,7 +19,7 @@
 	"comments-permalink": "მუდმივი ბმული",
 	"comments-delete-link": "კომენტარის წაშლა",
 	"comments-anon-name": "ანონიმური მომხმარებელი",
-	"comments-anon-message": "{{SITENAME}} მიესალმება <b>ყველა კომენტარს</b>. თუ თქვენ არ გსურთ იყოთ ანონიმი, <a href=\"$1\">დარეგისტრირდით</a> ან <a href=\"$2\">შედით სისტემაში</a>. ეს უფასოა.",
+	"comments-anon-message": "{{SITENAME}} მიესალმება '''ყველა კომენტარს'''. თუ თქვენ არ გსურთ იყოთ ანონიმი, [[Special:CreateAccount|დარეგისტრირდით]] ან [[Special:UserLogin|შედით სისტემაში]]. ეს უფასოა.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> $3-ზე <a href=\"$4\">(განბლოკვა)</a>",
 	"comments-ignore-remove-message": "დარწმუნებული ხართ, რომ გსურთ განბლოკოთ მომხმარებელ <b>$1</b>-ის კომენტარი?",
 	"comments-ignore-unblock": "განბლოკვა",

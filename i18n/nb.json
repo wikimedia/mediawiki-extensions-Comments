@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Cocu",
+			"Jack Phoenix",
 			"Jon Harald Søby"
 		]
 	},
@@ -58,7 +59,7 @@
 	"comments-permalink": "Permanent lenke",
 	"comments-delete-link": "Slett kommentar",
 	"comments-anon-name": "Anonym bruker",
-	"comments-anon-message": "{{SITENAME}} ønsker <b>alle kommentarer</b> velkommen. <a href=\"$1\">Registrer deg</a> eller <a href=\"$2>logg inn</a> hvis du ikke ønsker å være anonym. Det er gratis.",
+	"comments-anon-message": "{{SITENAME}} ønsker '''alle kommentarer''' velkommen. [[Special:CreateAccount|Registrer deg]] eller [[Special:UserLogin|logg inn]] hvis du ikke ønsker å være anonym. Det er gratis.",
 	"comments-links-are-forbidden": "Eksterne lenker i kommentarer er forbudt!",
 	"comments-is-spam": "Teksten i kommentaren ble tolket som spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> $3 <a href=\"$4\">(avblokker)</a>",

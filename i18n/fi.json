@@ -36,7 +36,7 @@
 	"comments-permalink": "Ikilinkki",
 	"comments-delete-link": "Poista kommentti",
 	"comments-anon-name": "Anonyymi käyttäjä",
-	"comments-anon-message": "{{SITENAME}} toivottaa tervetulleeksi <b>kaikki kommentit</b>.  Jos et halua olla anonyymi, <a href=\"$1\">rekisteröidy</a> tai <a href=\"$2\">kirjaudu sisään</a>.  Se on ilmaista.",
+	"comments-anon-message": "{{SITENAME}} toivottaa tervetulleeksi '''kaikki kommentit'''. Jos et halua olla anonyymi, [[Special:CreateAccount|rekisteröidy]] tai [[Special:UserLogin|kirjaudu sisään]]. Se on ilmaista.",
 	"comments-links-are-forbidden": "Ulkoiset linkit kommenteissa ovat kiellettyjä!",
 	"comments-is-spam": "Lähetetyn kommentin teksti tulkittiin roskapostiksi.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a>; $3 <a href=\"$4\">(poista huomioimattomuuslistalta)</a>",

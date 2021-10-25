@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Otokoume",
 			"Shirayuki",
 			"Sujiniku",
@@ -36,7 +37,7 @@
 	"comments-permalink": "固定リンク",
 	"comments-delete-link": "コメントを削除",
 	"comments-anon-name": "匿名利用者",
-	"comments-anon-message": "{{SITENAME}}は<b>すべてのコメント</b>を歓迎します。匿名で投稿したくない場合は、<a href=\"$1\">アカウント作成</a>または<a href=\"$2\">ログイン</a>してください。無料です。",
+	"comments-anon-message": "{{SITENAME}}は'''すべてのコメント'''を歓迎します。匿名で投稿したくない場合は、[[Special:CreateAccount|アカウント作成]]または[[Special:UserLogin|ログイン]]してください。無料です。",
 	"comments-links-are-forbidden": "コメント内での外部リンクの使用は禁止されています。",
 	"comments-is-spam": "投稿したコメントの本文はスパムと判定されました。",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> - $3 <a href=\"$4\">(ブロック解除)</a>",

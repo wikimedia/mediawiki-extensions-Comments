@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Jopparn",
 			"Lokal Profil",
 			"Skalman",
@@ -60,7 +61,7 @@
 	"comments-permalink": "Permanent länk",
 	"comments-delete-link": "Radera kommentar",
 	"comments-anon-name": "Anonym användare",
-	"comments-anon-message": "{{SITENAME}} välkomnar <b>alla kommentarer</b>. Om du inte vill vara anonym kan du <a href=\"$1\">registrera</a> eller <a href=\"$2\">logga in</a>. Det är gratis.",
+	"comments-anon-message": "{{SITENAME}} välkomnar '''alla kommentarer'''. Om du inte vill vara anonym kan du [[Special:CreateAccount|registrera]] eller [[Special:UserLogin|logga in]]. Det är gratis.",
 	"comments-links-are-forbidden": "Externa länkar i kommentarer är förbjudna!",
 	"comments-is-spam": "Texten i kommentaren tolkades som spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> den $3 <a href=\"$4\">(ta bort blockering)</a>",

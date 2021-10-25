@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"A Chinese Wikipedian",
+			"GuoPC",
 			"Hydra",
 			"Hzy980512",
 			"Impersonator 1",
@@ -67,7 +68,7 @@
 	"comments-permalink": "固定链接",
 	"comments-delete-link": "删除评论",
 	"comments-anon-name": "匿名用户",
-	"comments-anon-message": "{{SITENAME}}欢迎<b>所有评论</b>。如果您不想匿名，<a href=\"$1\">注册</a>或<a href=\"$2\">登录</a>。它是免费的。",
+	"comments-anon-message": "{{SITENAME}}欢迎'''所有评论'''。如果您不想匿名，请[[Special:CreateAccount|注册]]或[[Special:UserLogin|登录]]。它是免费的。",
 	"comments-links-are-forbidden": "评论中禁止外部链接！",
 	"comments-is-spam": "提交的评论文本像是垃圾信息。",
 	"comments-ignore-item": "<a href=\"$1\">$2</a>于$3 <a href=\"$4\">（解封）</a>",

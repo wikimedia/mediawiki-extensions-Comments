@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"EileenSanda"
+			"EileenSanda",
+			"Jack Phoenix"
 		]
 	},
 	"comments-comment": "Viðmerk",
@@ -14,7 +15,7 @@
 	"comments-you": "Tú",
 	"comments-reply": "Svara",
 	"comments-anon-name": "Dulnevndur brúkari",
-	"comments-anon-message": "{{SITENAME}} vil gjarna hava <b>viðmerkingar</b>. Um tú ikki vilt vera dulnevnd/ur, so kanst tú <a href=\"$1\">skráseta teg</a> ella <a href=\"$2\">rita inn</a>. Tað er ókeypis.",
+	"comments-anon-message": "{{SITENAME}} vil gjarna hava '''viðmerkingar'''. Um tú ikki vilt vera dulnevnd/ur, so kanst tú [[Special:CreateAccount|skráseta teg]] ella [[Special:UserLogin|rita inn]]. Tað er ókeypis.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> hin $3 <a href=\"$4\">(tak sperring burtur)</a>",
 	"comments-time-ago": "$1 síðan",
 	"comments-time-days": "{{PLURAL:$1|ein dagur|$1 dagar}}",

@@ -10,6 +10,7 @@
 			"Fitoschido",
 			"Frammm",
 			"Ihojose",
+			"Jack Phoenix",
 			"Macofe",
 			"Madamebiblio",
 			"Sporeunai"
@@ -51,7 +52,7 @@
 	"comments-permalink": "Enlace permanente",
 	"comments-delete-link": "Borrar comentario",
 	"comments-anon-name": "Usuario anónimo",
-	"comments-anon-message": "{{SITENAME}} valora <b>todos los comentarios</b>. Si no quieres ser un usuario anónimo, <a href=\"$1\">regístrate</a> o <a href=\"$2\">inicia sesión</a>. Es gratis.",
+	"comments-anon-message": "{{SITENAME}} valora '''todos los comentarios'''. Si no quieres ser un usuario anónimo, [[Special:CreateAccount|regístrate]] o [[Special:UserLogin|inicia sesión]]. Es gratis.",
 	"comments-links-are-forbidden": "¡No está permitido poner enlaces externos en los comentarios!",
 	"comments-is-spam": "El texto enviado en el comentario ha sido interpretado como spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> el $3 <a href=\"$4\">(desbloquear)</a>",

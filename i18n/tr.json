@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
+			"Jack Phoenix",
 			"MuratTheTurkish",
 			"Vito Genovese"
 		]
@@ -59,7 +60,7 @@
 	"comments-permalink": "Kalıcı bağlantı",
 	"comments-delete-link": "Yorumu sil",
 	"comments-anon-name": "Anonim kullanıcı",
-	"comments-anon-message": "{{SITENAME}}, <b>tüm yorumları</b> memnuniyetle karşılıyor. Anonim olmak istemiyorsanız, <a href=\"$1\">kaydolun</a> veya <a href=\"$2\">oturum açın</a>. Bedava.",
+	"comments-anon-message": "{{SITENAME}}, '''tüm yorumları''' memnuniyetle karşılıyor. Anonim olmak istemiyorsanız, [[Special:CreateAccount|kaydolun]] veya [[Special:UserLogin|oturum açın]]. Bedava.",
 	"comments-links-are-forbidden": "Yorumlardaki harici bağlantılar yasaktır!",
 	"comments-is-spam": "Yorumun gönderilen metni spam olarak yorumlandı.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> $3 saatinde <a href=\"$4\">(engeli kaldır)</a>",
