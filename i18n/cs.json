@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Fraxinus.cs",
 			"Vks"
 		]
 	},
 	"comments-cancel-reply": "Zrušit",
+	"comments-anon-message": "{{SITENAME}} uvítá '''všechny komentáře'''. Pokud si nepřejete být anonymním uživatelem, [[Special:CreateAccount|zaregistrujte se]] nebo [[Special:UserLogin|se přihlaste]]. Je to zdarma.",
 	"comments-ignore-unblock": "Odblokovat",
 	"log-name-comments": "Protokol o komentářích",
 	"comments-time-ago": "před $1",
