@@ -26,8 +26,8 @@ class CommentListAPI extends ApiBase {
 		if ( $isFirstLoad ) {
 			$anchor .= '<a id="end" rel="nofollow"></a>';
 			if ( !wfReadOnly() ) {
-				$form .= $commentsPage->displayForm();
 				$form .= $commentsPage->displayOrderForm();
+				$form .= $commentsPage->displayForm();
 			} else {
 				$form = wfMessage( 'comments-db-locked' )->parse();
 			}
