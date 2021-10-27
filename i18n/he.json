@@ -62,7 +62,7 @@
 	"comments-permalink": "קישור קבוע",
 	"comments-delete-link": "מחיקת התגובה",
 	"comments-anon-name": "משתמש אנונימי",
-	"comments-anon-message": "אתר {{SITENAME}} מקבל בברכה את '''כל התגובות'''. אם אתם לא רוצים להיות אלמוניים, [[Special:CreateAccount|הירשמו]] או [[Special:UserLogin|היכנסו לחשבון]]. זה בחינם.",
+	"comments-anon-message": "אתר {{SITENAME}} מקבל בברכה את '''כל התגובות'''. אם לא התכוונת להיות אלמוני, [[Special:CreateAccount|נא להירשם]] או [[Special:UserLogin|להיכנס לחשבון]]. זה חינם.",
 	"comments-links-are-forbidden": "אין להוסיף קישורים חיצוניים בתגובות!",
 	"comments-is-spam": "טקסט מסוים בתגובה שלך זוהה כספאם.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> ב־$3 <a href=\"$4\">(ביטול חסימה)</a>",
