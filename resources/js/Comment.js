@@ -102,6 +102,10 @@
 			} );
 		},
 
+		/**
+		 * Called on DOM ready; loads the list of comments via AJAX by querying the API
+		 * and injects the results into #comments-body
+		 */
 		initialize: function () {
 			$.ajax( {
 				url: mw.config.get( 'wgScriptPath' ) + '/api.php',
@@ -116,6 +120,8 @@
 				cache: false
 			} ).done( function ( response ) {
 				document.getElementById( 'comments-body' ).innerHTML = response.commentlist.html;
+				// Move the "Sort by <date/score>" menu *above* all the comments, as it oughta be (T292893)
+				$( '.c-order' ).prependTo( '#comments-body' );
 			} );
 		},
 
