@@ -122,6 +122,11 @@
 				document.getElementById( 'comments-body' ).innerHTML = response.commentlist.html;
 				// Move the "Sort by <date/score>" menu *above* all the comments, as it oughta be (T292893)
 				$( '.c-order' ).prependTo( '#comments-body' );
+				// This looks awfully silly but seems to be needed to have the permalink feature
+				// (at least partially?) working (T295567)
+				if ( window.location.hash !== '' ) {
+					window.location.hash = window.location.hash;
+				}
 			} );
 		},
 
