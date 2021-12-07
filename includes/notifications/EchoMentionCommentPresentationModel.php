@@ -5,6 +5,9 @@
  * @file
  * @date 8 August 2019
  */
+
+use MediaWiki\Revision\RevisionRecord;
+
 class EchoMentionCommentPresentationModel extends EchoMentionPresentationModel {
 
 	/**
@@ -93,7 +96,7 @@ class EchoMentionCommentPresentationModel extends EchoMentionPresentationModel {
 	 */
 	public function getBodyMessage() {
 		$content = $this->event->getExtraParam( 'content' );
-		if ( $content && $this->userCan( Revision::DELETED_TEXT ) ) {
+		if ( $content && $this->userCan( RevisionRecord::DELETED_TEXT ) ) {
 			$msg = $this->msg( 'notification-body-mention' );
 			$msg->plaintextParams(
 				EchoDiscussionParser::getTextSnippet(
