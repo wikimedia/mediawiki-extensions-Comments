@@ -3,7 +3,8 @@
 		"authors": [
 			"Les Meloures",
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Jack Phoenix"
 		]
 	},
 	"apihelp-commentlist-param-pagerPage": "Nummer vun der Säit vun de Bemierkungen",
@@ -29,8 +30,8 @@
 	"comments-ignore-message": "Dir ignoréiert den Auteur vun dëser Bemierkung",
 	"comments-you": "Dir",
 	"comments-reply": "Äntwerten",
-	"comments-login-required": "Dir musst ageloggt si fir Bemierkungen dobäizesetzen",
-	"comments-not-allowed": "Dir däerft keng Bemierkungen dobäisetzen.",
+	"comments-login-required": "Dir musst ageloggt si fir Bemierkungen derbäizesetzen",
+	"comments-not-allowed": "Dir däerft keng Bemierkungen derbäisetzen.",
 	"comments-post": "Bemierkung derbäisetzen",
 	"comments-submit": "Setzt Är Bemierkung derbäi",
 	"comments-score-text": "Score",

@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Mdb897",
-			"ⵕⴰⵊⵉ"
+			"ⵕⴰⵊⵉ",
+			"Brahim-essaidi"
 		]
 	},
 	"comments-comment": "ⴰⵅⴼⴰⵡⴰⵍ",
 	"comments-cancel-reply": "ⵙⵔ",
 	"comments-reply": "ⵔⴰⵔ",
 	"comments-ignore-cancel": "ⵙⵔ",
-	"logentry-comments-delete": "$1 ⵉⴽⴽⵙ ⴰⵅⴼⴰⵡⴰⵍ #$4 ⴷⵉ $3",
+	"logentry-comments-delete": "ⵉⴽⴽⵙ $1 ⴰⵅⴼⴰⵡⴰⵍ #$4 ⴷⵉ $3",
 	"logeventslist-comments-log": "ⵜⴰⵎⵙⵙⴽⵜⵉⵜ ⵏ ⵉⵅⴼⴰⵡⴰⵍⵏ"
 }

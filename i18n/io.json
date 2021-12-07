@@ -1,12 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Joao Xavier"
+			"Joao Xavier",
+			"JSantos"
 		]
 	},
+	"comments-comment": "Komento",
+	"comments-loading": "Karganta...",
 	"comments-cancel-reply": "Anular",
 	"comments-sort-by-date": "Ordenar segun dato",
 	"comments-sort-by-score": "Ordinar segun nombro di punti",
+	"comments-reply": "Respondar",
+	"comments-permalink": "Permananta ligilo",
+	"comments-ignore-unblock": "Desblokusar",
 	"comments-ignore-cancel": "Anular",
 	"comments-time-ago": "$1 ante nun",
 	"comments-time-months": "{{PLURAL:$1|1 monato|$1 monati}}",

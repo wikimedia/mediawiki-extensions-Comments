@@ -1,9 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"McDutchie"
+			"McDutchie",
+			"Jack Phoenix"
 		]
 	},
+	"apihelp-commentblock-description": "Le API <tt>commentblock</tt> permitte blocar un usator a partir del commento de que illo es le autor post fornir le parametros sequente: <tt>CommentID</tt>.",
+	"apihelp-commentblock-summary": "Le API <tt>commentblock</tt> permitte blocar un usator a partir del commento de que illo es le autor post fornir le parametros sequente: <tt>CommentID</tt>.",
+	"apihelp-commentdelete-description": "Le API <tt>commentdelete</tt> permitte deler un commento post completar le sequente parametros: <tt>CommentID</tt>.",
+	"apihelp-commentdelete-summary": "Le API <tt>commentdelete</tt> permitte deler un commento post completar le sequente parametros: <tt>CommentID</tt>.",
+	"apihelp-commentlatestid-description": "Le API <tt>commentlatestID</tt> permitte recuperar le ultime ID de commento post completar le sequente parametros: <tt>pageID</tt>.",
+	"apihelp-commentlatestid-summary": "Le API <tt>commentlatestID</tt> permitte recuperar le ultime ID de commento post completar le sequente parametros: <tt>pageID</tt>.",
+	"apihelp-commentlist-description": "Le API <tt>commentlist</tt> recupera plure commentos e los produce in forma de lista post completar le sequente parametros: <tt>pageID</tt>, <tt>order</tt>, <tt>pagerPage</tt> e <tt>showForm</tt>.",
+	"apihelp-commentlist-summary": "Le API <tt>commentlist</tt> recupera plure commentos e los produce in forma de lista post completar le sequente parametros: <tt>pageID</tt>, <tt>order</tt>, <tt>pagerPage</tt> e <tt>showForm</tt>.",
+	"apihelp-commentsubmit-description": "Le API <tt>commentsubmit<tt> permitte submitter/publicar un commento post completar le sequente parametros: <tt>pageID</tt>, <tt>parentID</tt> e <tt>commentText</tt>.",
+	"apihelp-commentsubmit-summary": "Le API <tt>commentsubmit<tt> permitte submitter/publicar un commento post completar le sequente parametros: <tt>pageID</tt>, <tt>parentID</tt> e <tt>commentText</tt>.",
+	"apihelp-commentvote-description": "Le API <tt>commentvote<tt> permitte votar pro/contra un commento post completar le sequente parametros: <tt>commentID</tt> e <tt>voteValue</tt>.",
+	"apihelp-commentvote-summary": "Le API <tt>commentvote<tt> permitte votar pro/contra un commento post completar le sequente parametros: <tt>commentID</tt> e <tt>voteValue</tt>.",
 	"apihelp-commentblock-param-commentID": "ID del commento del usator a blocar",
 	"apihelp-commentdelete-param-commentID": "ID del commento a deler",
 	"apihelp-commentlatestid-param-pageID": "ID del pagina ubi se trova le ultime commento",
@@ -17,6 +30,8 @@
 	"apihelp-commentvote-param-commentID": "ID del commento pro le qual votar",
 	"apihelp-commentvote-param-voteValue": "Valor del voto pro le commento",
 	"comments-comment": "Commento",
+	"comments-continue-editing-btn": "Continuar a modificar",
+	"comments-preview-failed": "Previsualisation fallite. Per favor, reproba.",
 	"comments-desc": "Adde un uncino del analysator syntactic <code>&lt;comments&gt;</code> que permitte commentar paginas",
 	"comments-db-locked": "<h3>Addition de commentos</h3>Le base de datos es presentemente serrate pro mantenentia routinari. Postea illo retornara al functionamento normal. Per favor reveni plus tarde.",
 	"comments-voted-label": "Votate",
@@ -67,11 +82,16 @@
 	"comments-time-minutes": "{{PLURAL:$1|un minuta|$1 minutas}}",
 	"comments-time-seconds": "{{PLURAL:$1|un secunda|$1 secundas}}",
 	"log-show-hide-comments": "$1 le registro de commentos",
+	"logeventslist-comments-log": "Registro de commentos",
 	"group-commentadmin": "Administratores de commentos",
 	"group-commentadmin-member": "{{GENDER:$1|administrator de commentos}}",
 	"grouppage-commentadmin": "{{ns:project}}:Administratores de commentos",
+	"action-comment": "submitter commentos",
 	"right-comment": "Submitter commentos",
+	"action-commentadmin": "administrar commentos submittite per usatores",
 	"right-commentadmin": "Administrar commentos submittite per usatores",
+	"action-commentlinks": "usar ligamines externe in commentos",
 	"right-commentlinks": "Usar ligamines externe in commentos",
+	"action-comment-delete-own": "deler tu proprie commentos",
 	"right-comment-delete-own": "Deler le proprie commentos"
 }
