@@ -4,7 +4,9 @@
 			"Kareyac"
 		]
 	},
+	"comments-cancel-reply": "Չեղարկել",
 	"comments-you": "Դուք",
+	"comments-ignore-unblock": "Ապաարգելափակել",
 	"comments-ignore-cancel": "Չեղարկել",
 	"comments-time-months": "{{PLURAL:$1|մեկ ամիս|$1 ամիսներ}}"
 }

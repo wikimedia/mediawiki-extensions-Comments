@@ -9,7 +9,9 @@
 			"SPQRobin",
 			"Siebrand",
 			"Southparkfan",
-			"Wiki13"
+			"Wiki13",
+			"Jack Phoenix",
+			"Romaine"
 		]
 	},
 	"comments-comment": "Reactie",
@@ -62,6 +64,7 @@
 	"comments-time-minutes": "{{PLURAL:$1|Eén minuut|$1 minuten}}",
 	"comments-time-seconds": "{{PLURAL:$1|Eén seconde|$1 seconden}}",
 	"log-show-hide-comments": "Opmerkingenlogboek $1",
+	"logeventslist-comments-log": "Commentaarlogboek",
 	"group-commentadmin": "Reactiebeheerders",
 	"group-commentadmin-member": "{{GENDER:$1|Opmerkingenbeheerder}}",
 	"grouppage-commentadmin": "{{ns:project}}:Opmerkingenbeheerders",

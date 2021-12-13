@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrisportelli"
+			"Chrisportelli",
+			"Jack Phoenix",
+			"ToniSant"
 		]
 	},
 	"comments-comment": "Kumment",
@@ -35,5 +37,6 @@
 	"comments-ignore-remove-message": "Inti ċert li tixtieq tiżblokka l-kummenti tal-utent <b>$1</b>?",
 	"comments-ignore-unblock": "Żblokka",
 	"log-name-comments": "Reġistru tal-kummenti",
-	"log-description-comments": "Dan huwa reġistru tal-kummenti."
+	"log-description-comments": "Dan huwa reġistru tal-kummenti.",
+	"comments-time-days": "{{PLURAL:$1|jum|$1 jiem}}"
 }

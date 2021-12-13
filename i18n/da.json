@@ -7,9 +7,13 @@
 		]
 	},
 	"comments-comment": "Kommentar",
+	"comments-continue-editing-btn": "Fortsæt med at redigere",
+	"comments-voted-label": "Stemt",
 	"comments-loading": "Indlæser...",
+	"comments-reply-to": "Svar til {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Annuller",
 	"comments-sort-by-date": "Sorter efter dato",
+	"comments-sort-by-score": "Sorter efter score",
 	"comments-show-comment-link": "Vis kommentar",
 	"comments-you": "Dig",
 	"comments-reply": "Svar",
@@ -18,10 +22,17 @@
 	"comments-permalink": "Permanent henvisning",
 	"comments-delete-link": "Slet kommentar",
 	"comments-anon-name": "Anonym bruger",
+	"comments-ignore-unblock": "Ophæv blokering",
 	"comments-ignore-cancel": "Annuller",
+	"comments-time-ago": "for $1 siden",
+	"comments-time-months": "{{PLURAL:$1|en måned|$1 måneder}}",
 	"comments-time-days": "{{PLURAL:$1|en dag|$1 dage}}",
 	"comments-time-hours": "{{PLURAL:$1|en time|$1 timer}}",
 	"comments-time-minutes": "{{PLURAL:$1|et minut|$1 minutter}}",
 	"comments-time-seconds": "{{PLURAL:$1|et sekund|$1 sekunder}}",
-	"action-comment": "Indsend kommentarer"
+	"action-comment": "Indsend kommentarer",
+	"action-commentlinks": "bruge eksterne henvisninger i kommentarer",
+	"right-commentlinks": "Bruge eksterne henvisninger i kommentarer",
+	"action-comment-delete-own": "slette egne kommentarer",
+	"right-comment-delete-own": "Slette egne kommentarer"
 }

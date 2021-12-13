@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"comments-comment": "Cummentu",
+	"comments-cancel-reply": "Annulla",
+	"comments-show-comment-link": "Ammustra cummentu",
+	"comments-you": "Tu",
+	"comments-submit": "Agghiunci lu tò cummentu",
+	"comments-delete-link": "Cancella cummentu",
+	"comments-anon-name": "Utenti anònimu",
+	"comments-ignore-cancel": "Annulla",
+	"logentry-comments-delete": "$1 cancillau lu cummentu #$4 supra $3",
+	"comments-time-ago": "$1 fa",
+	"comments-time-months": "{{PLURAL:$1|nu misi|$1 misi}}",
+	"comments-time-days": "{{PLURAL:$1|nu jornu|$1 jorna}}",
+	"comments-time-hours": "{{PLURAL:$1|na ura|$1 uri}}",
+	"comments-time-minutes": "{{PLURAL:$1|un minutu|$1 minuti}}",
+	"comments-time-seconds": "{{PLURAL:$1|nu sicunnu|$1 sicunni}}",
+	"log-show-hide-comments": "$1 riggistru dî cummenti",
+	"group-commentadmin-member": "{{GENDER:$1|amministraturi di cummenti|amministratrici di cummenti|amministraturi/trici di cummenti}}",
+	"grouppage-commentadmin": "{{ns:project}}:Amministratura di cummenti",
+	"action-comment-delete-own": "cancillari li tò cummenti",
+	"right-comment-delete-own": "Cancella li sò cummenti"
+}

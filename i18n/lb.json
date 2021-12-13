@@ -3,7 +3,8 @@
 		"authors": [
 			"Les Meloures",
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Jack Phoenix"
 		]
 	},
 	"apihelp-commentlist-param-pagerPage": "Nummer vun der Säit vun de Bemierkungen",
@@ -19,7 +20,7 @@
 	"comments-auto-refresher-pause": "Automatesch Aktualisatioun vun de Bemierkungen ausschalten",
 	"comments-reply-to": "Äntwert fir {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Ofbriechen",
-	"comments-block-warning-anon": "Sidd Dir sécher datt Dir definitiv all Bemierkunge vun dësem anonyme Benotzer (iwwer seng IP-Adress) ignoréiere wëllt?",
+	"comments-block-warning-anon": "Sidd Dir sécher datt Dir definitiv all Bemierkunge vun dësem anonymme Benotzer (iwwer seng IP-Adress) ignoréiere wëllt?",
 	"comments-block-warning-user": "Sidd Dir sécher datt Dir definitiv all Bemierkunge vum Benotzer $1 ignoréiere wëllt?",
 	"comments-delete-warning": "Sidd Dir sécher datt Dir dës Bemierkung läsche wëllt?",
 	"comments-sort-by-date": "Nom Datum zortéieren",
@@ -29,14 +30,14 @@
 	"comments-ignore-message": "Dir ignoréiert den Auteur vun dëser Bemierkung",
 	"comments-you": "Dir",
 	"comments-reply": "Äntwerten",
-	"comments-login-required": "Dir musst ageloggt si fir Bemierkungen dobäizesetzen",
-	"comments-not-allowed": "Dir däerft keng Bemierkungen dobäisetzen.",
+	"comments-login-required": "Dir musst ageloggt si fir Bemierkungen derbäizesetzen",
+	"comments-not-allowed": "Dir däerft keng Bemierkungen derbäisetzen.",
 	"comments-post": "Bemierkung derbäisetzen",
 	"comments-submit": "Setzt Är Bemierkung derbäi",
 	"comments-score-text": "Score",
 	"comments-permalink": "Permanentlink",
 	"comments-delete-link": "Bemierkung läschen",
-	"comments-anon-name": "Anonyme Benotzer",
+	"comments-anon-name": "Anonymme Benotzer",
 	"comments-anon-message": "{{SITENAME}} freet sech iwwer <b>all Bemierkungen</b>. Wann Dir net anonym bleiwe wëllt, <a href=\"$1\">da mellt Iech wgl. un</a> oder <a href=\"$2\">loggt Iech an</a>. Et ass gratis.",
 	"comments-links-are-forbidden": "Extern Linken a Bemierkunge si verbueden!",
 	"comments-is-spam": "Den Text vun der Bemierkung gouf als Spam interpretéiert.",

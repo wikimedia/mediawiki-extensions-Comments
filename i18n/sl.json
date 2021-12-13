@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"comments-loading": "Nalaganje ...",
+	"comments-cancel-reply": "Prekliči",
+	"comments-ignore-cancel": "Prekliči",
+	"comments-time-minutes": "{{PLURAL:$1|ena minuta|dve minuti|$1 minute|$1 minut}}"
+}

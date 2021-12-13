@@ -8,6 +8,7 @@
 		]
 	},
 	"comments-comment": "వ్యాఖ్య",
+	"comments-continue-editing-btn": "దిద్దుబాటు కొనసాగించండి",
 	"comments-voted-label": "ఓటేశారు",
 	"comments-loading": "లోడవుతోంది...",
 	"comments-reply-to": "{{GENDER:$2|$1}}కి సమాధానం",

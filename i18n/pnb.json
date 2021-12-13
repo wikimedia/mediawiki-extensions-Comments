@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Abbas dhothar"
+		]
+	},
+	"comments-cancel-reply": "رد کرو",
+	"comments-sort-by-date": "تریخ وار چُنو",
+	"comments-ignore-cancel": "رد کرو",
+	"comments-time-months": "{{PLURAL:$1|مہینہ|$1 مہینے}}",
+	"comments-time-days": "{{PLURAL:$1|اک دن|$1 دناں}}",
+	"comments-time-seconds": "$1 {{PLURAL:$1|سکنٹ}}"
+}

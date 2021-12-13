@@ -4,10 +4,13 @@
 			"Otokoume",
 			"Shirayuki",
 			"Sujiniku",
-			"Whym"
+			"Whym",
+			"Jack Phoenix",
+			"Waki285"
 		]
 	},
 	"comments-comment": "コメント",
+	"comments-continue-editing-btn": "編集を続行",
 	"comments-desc": "ページにコメントできるようにする、パーサー フック <code>&lt;comments&gt;</code> を追加する",
 	"comments-db-locked": "<h3>コメントの追加</h3>データベースは現在、定期的なデータベース保守作業のためロックされており、終わりしだい正常に戻ります。あとで再度お試しください。",
 	"comments-voted-label": "投票済",
@@ -44,6 +47,7 @@
 	"comments-ignore-cancel": "キャンセル",
 	"comments-ignore-title": "コメント無視リスト",
 	"commentignorelist": "コメント無視リスト",
+	"notification-header-mention-comment": "<strong>$4</strong>の[[$4#comment-$5|コメント]]の$1{{GENDER:$2|言及}} {{GENDER:$3| あなた}}。",
 	"log-name-comments": "コメント記録",
 	"log-description-comments": "これはコメントの記録です。",
 	"logentry-comments-add": "$1 が $3 に新しいコメントを投稿しました",
@@ -55,11 +59,16 @@
 	"comments-time-minutes": "{{PLURAL:$1|$1 分}}",
 	"comments-time-seconds": "{{PLURAL:$1|$1 秒}}",
 	"log-show-hide-comments": "コメント記録を$1",
+	"logeventslist-comments-log": "コメント記録",
 	"group-commentadmin": "コメント管理者",
 	"group-commentadmin-member": "{{GENDER:$1|コメント管理者}}",
 	"grouppage-commentadmin": "{{ns:project}}:コメント管理者",
+	"action-comment": "コメントの投稿",
 	"right-comment": "コメントを投稿",
+	"action-commentadmin": "利用者が投稿したコメントの管理",
 	"right-commentadmin": "利用者が投稿したコメントを管理",
+	"action-commentlinks": "コメント内での外部リンクの使用",
 	"right-commentlinks": "コメント内で外部リンクを使用",
+	"action-comment-delete-own": "自分のコメントの削除",
 	"right-comment-delete-own": "自身のコメントを削除"
 }
