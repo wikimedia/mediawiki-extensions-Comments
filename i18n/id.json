@@ -5,7 +5,8 @@
 			"Daud I.F. Argana",
 			"Farras",
 			"William Surya Permana",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Jack Phoenix"
 		]
 	},
 	"apihelp-commentblock-description": "API commentblock memungkinkan memblokir seorang pengguna yang mengirimkan suatu komentar setelah mengisi parameter berikut: CommentID.",
@@ -26,6 +27,7 @@
 	"apihelp-commentlist-param-pageID": "ID Halaman dari halaman dari mana daftar komentarnya diperoleh",
 	"apihelp-commentlist-param-order": "Menetapkan apakah daftar komentar urutannya menaik atau menurun",
 	"apihelp-commentlist-param-pagerPage": "Nomor halaman komentar",
+	"apihelp-commentlist-param-showForm": "Menampilkan formulir komentar",
 	"apihelp-commentsubmit-param-pageID": "ID Halaman dari halaman di mana komentarnya dikirimkan",
 	"apihelp-commentsubmit-param-parentID": "ID Komentar dari komentar induk",
 	"apihelp-commentsubmit-param-commentText": "Teks Komentar",
