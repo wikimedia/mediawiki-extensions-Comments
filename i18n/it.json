@@ -8,7 +8,7 @@
 		]
 	},
 	"comments-comment": "Commento",
-	"comments-continue-editing-btn": "Continuare a modificare",
+	"comments-continue-editing-btn": "Continua a modificare",
 	"comments-preview-failed": "Anteprima fallita. Riprova.",
 	"comments-desc": "Aggiunge l'hook del parser <code>&lt;comments&gt;</code> che permette di scrivere commenti sulle pagine",
 	"comments-db-locked": "<h3>Aggiunta di commenti</h3>Il database è attualmente bloccato per la manutenzione ordinaria, dopo la quale tornerà alla normalità. Riprovare più tardi.",
