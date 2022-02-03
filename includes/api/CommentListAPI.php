@@ -2,6 +2,23 @@
 
 class CommentListAPI extends ApiBase {
 
+	/** @var ReadOnlyMode */
+	private $readOnlyMode;
+
+	/**
+	 * @param ApiMain $mainModule
+	 * @param string $moduleName
+	 * @param ReadOnlyMode $readOnlyMode
+	 */
+	public function __construct(
+		ApiMain $mainModule,
+		$moduleName,
+		ReadOnlyMode $readOnlyMode
+	) {
+		parent::__construct( $mainModule, $moduleName );
+		$this->readOnlyMode = $readOnlyMode;
+	}
+
 	public function execute() {
 		global $wgCommentsSortDescending;
 
@@ -25,7 +42,7 @@ class CommentListAPI extends ApiBase {
 		// For the first call we add extra markup like anchors, form and comments block wrapper
 		if ( $isFirstLoad ) {
 			$anchor .= '<a id="end" rel="nofollow"></a>';
-			if ( !wfReadOnly() ) {
+			if ( !$this->readOnlyMode->isReadOnly() ) {
 				$form .= $commentsPage->displayOrderForm();
 				$form .= $commentsPage->displayForm();
 			} else {

@@ -974,7 +974,7 @@ class Comment extends ContextSource {
 				" <span id=\"Comment{$this->id}\">{$this->currentScore}</span></span>";
 
 			// Voting is possible only when database is unlocked
-			if ( !wfReadOnly() ) {
+			if ( !MediaWikiServices::getInstance()->getReadOnlyMode()->isReadOnly() ) {
 				// You can only vote for other people's comments, not for your own
 				if ( $this->getUser()->getActorId() != $this->actorID ) {
 					$output .= "<span id=\"CommentBtn{$this->id}\">";

@@ -53,7 +53,12 @@
 		"commentblock": "CommentBlockAPI",
 		"commentdelete": "CommentDeleteAPI",
 		"commentlatestid": "CommentLatestIdAPI",
-		"commentlist": "CommentListAPI",
+		"commentlist": {
+			"class": "CommentListAPI",
+			"services": [
+				"ReadOnlyMode"
+			]
+		},
 		"commentsubmit": "CommentSubmitAPI",
 		"commentvote": "CommentVoteAPI"
 	},
