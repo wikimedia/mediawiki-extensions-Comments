@@ -45,7 +45,7 @@
 	"comments-desc": "Ajoute le greffon d’analyseur <code>&lt;comments&gt;</code> qui permet de commenter les pages",
 	"comments-db-locked": "<h3>Ajout de commentaires</h3>\nLa base de données est actuellement verrouillée pour une maintenance de routine, après quoi elle reviendra à la normale. Veuillez revenir plus tard !",
 	"comments-voted-label": "Voté",
-	"comments-loading": "Chargement...",
+	"comments-loading": "Chargement en cours...",
 	"comments-auto-refresher-enable": "Activer l’actualisation automatique des commentaires",
 	"comments-auto-refresher-pause": "Mettre en pause l’actualisation automatique des commentaires",
 	"comments-reply-to": "Répondre à {{GENDER:$2|}}$1",
