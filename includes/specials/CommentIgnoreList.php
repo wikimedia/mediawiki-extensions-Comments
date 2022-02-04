@@ -119,7 +119,7 @@ class CommentIgnoreList extends SpecialPage {
 			[ 'actor' => [ 'JOIN', 'actor_id = cb_actor' ] ]
 		);
 
-		if ( $dbr->numRows( $res ) > 0 ) {
+		if ( $res->numRows() > 0 ) {
 			$out = '<ul>';
 			foreach ( $res as $row ) {
 				$user = User::newFromActorId( $row->cb_actor_blocked );
