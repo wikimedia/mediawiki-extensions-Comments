@@ -70,6 +70,33 @@ class CommentsHooks {
 	}
 
 	/**
+	 * Extension registration callback which does some AbuseFilter-related magic.
+	 *
+	 * @note "Borrowed" from ArticleFeedbackv5.
+	 * @see https://phabricator.wikimedia.org/T301083
+	 */
+	public static function registerExtension() {
+		global $wgAbuseFilterValidGroups, $wgAbuseFilterEmergencyDisableThreshold, $wgAbuseFilterEmergencyDisableCount, $wgAbuseFilterEmergencyDisableAge;
+		global $wgAbuseFilterActions;
+		global $wgCommentsAbuseFilterGroup;
+
+		// Note: it's too early to use ExtensionRegistry->isLoaded()
+		if ( $wgAbuseFilterActions !== null ) {
+			if ( $wgCommentsAbuseFilterGroup != 'default' ) {
+				// Add a custom filter group for AbuseFilter
+				$wgAbuseFilterValidGroups[] = $wgCommentsAbuseFilterGroup;
+				// set abusefilter emergency disable values for comments
+				$wgAbuseFilterEmergencyDisableThreshold[$wgCommentsAbuseFilterGroup] = 0.10;
+				$wgAbuseFilterEmergencyDisableCount[$wgCommentsAbuseFilterGroup] = 50;
+				$wgAbuseFilterEmergencyDisableAge[$wgCommentsAbuseFilterGroup] = 86400; // One day.
+			}
+			$wgAbuseFilterActions += [
+				'comment' => true
+			];
+		}
+	}
+
+	/**
 	 * Adds the three new required database tables into the database when the
 	 * user runs /maintenance/update.php (the core database updater script).
 	 *

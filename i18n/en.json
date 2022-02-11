@@ -61,6 +61,7 @@
 	"comments-anon-message": "{{SITENAME}} welcomes '''all comments'''. If you do not want to be anonymous, [[Special:CreateAccount|register]] or [[Special:UserLogin|log in]]. It is free.",
 	"comments-links-are-forbidden": "External links in comments are forbidden!",
 	"comments-is-spam": "Submitted text of the comment was interpreted as spam.",
+	"comments-is-filtered": "Submitted text of the comment matched one or more anti-spam filters.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> on $3 <a href=\"$4\">(unblock)</a>",
 	"comments-ignore-no-users": "There are no users currently blocked.",
 	"comments-ignore-remove-message": "Are you sure you want to unblock user <b>$1</b>'s comments?",

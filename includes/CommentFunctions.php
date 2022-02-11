@@ -142,6 +142,62 @@ class CommentFunctions {
 	}
 
 	/**
+	 * Does the supplied text contain abuse, as determined by AbuseFilter?
+	 *
+	 * @note This borrows a _lot_ of GPL-licensed code from the ArticleFeedbackv5
+	 * extension's AbuseFilter interoperability code.
+	 *
+	 * @see https://phabricator.wikimedia.org/T301083
+	 *
+	 * @param int $pageID Page ID
+	 * @param User $user User who is trying to submit a comment
+	 * @param string $text User-supplied text to check for abusiveness
+	 * @return Status[]|bool Boolean false if no match or AF is not installed, else an array of error Status objects
+	 */
+	public static function isAbusive( $pageID, $user, $text ) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Abuse Filter' ) ) {
+			// AF not installed? Aww dang...nothing for us to do here, then.
+			// Assume the best in such case...
+			return false;
+		}
+
+		global $wgCommentsAbuseFilterGroup;
+
+		// Set up variables
+		$title = Title::newFromID( $pageID );
+		if ( !$title ) {
+			return false;
+		}
+
+		if ( class_exists( MediaWiki\Extension\AbuseFilter\AbuseFilterServices::class ) ) {
+			// post-1.35
+			$gen = MediaWiki\Extension\AbuseFilter\AbuseFilterServices::getVariableGeneratorFactory()->newGenerator();
+			$afClass = MediaWiki\Extension\AbuseFilter\AbuseFilter::class;
+		} else {
+			// 1.35 only
+			$gen = new MediaWiki\Extension\AbuseFilter\VariableGenerator\VariableGenerator(
+				new AbuseFilterVariableHolder()
+			);
+			$afClass = AbuseFilter::class;
+		}
+
+		$vars = $gen->addUserVars( $user )->addTitleVars( $title, 'page' )->getVariableHolder();
+		$vars->setVar( 'SUMMARY', 'Comment via the Comments extension' );
+		$vars->setVar( 'ACTION', 'comment' );
+		$vars->setVar( 'new_wikitext', $text );
+		$vars->setLazyLoadVar( 'new_size', 'length', [ 'length-var' => 'new_wikitext' ] );
+
+		$status = $afClass::filterAction(
+			$vars,
+			$title,
+			$wgCommentsAbuseFilterGroup,
+			$user
+		);
+
+		return $status->isOK() ? false : $status->getErrorsArray();
+	}
+
+	/**
 	 * Blocks comments from a user
 	 *
 	 * @param User $blocker The user who is blocking someone else's comments

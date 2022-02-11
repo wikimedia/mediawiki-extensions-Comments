@@ -48,6 +48,16 @@ class CommentSubmitAPI extends ApiBase {
 				);
 			}
 
+			// AbuseFilter check (T301083)
+			if ( !$user->isAllowed( 'commentadmin' ) && CommentFunctions::isAbusive( $pageID, $user, $commentText ) ) {
+				// Could also show a more precise error message by checking the return
+				// value of ::isAbusive(), but this'll do...
+				$this->dieWithError(
+					$this->msg( 'comments-is-filtered' )->plain(),
+					'comments-is-filtered'
+				);
+			}
+
 			$page = new CommentsPage( $pageID, $this->getContext() );
 
 			Comment::add( $commentText, $page, $user, $this->getMain()->getVal( 'parentID' ) );

@@ -69,6 +69,7 @@
 	"comments-anon-message": "Call-to-action (CTA) message shown above the comment form to anonymous users, encouraging them to register for an account if they don't have one or to log in if they already have an account.",
 	"comments-links-are-forbidden": "Error message shown to the user if they tried to post a comment that contains external links and they don't have the commentlinks user right.",
 	"comments-is-spam": "Error message shown to the user if they try to post a comment that matches the spam filter and they're not a member of the commentadmin group.",
+	"comments-is-filtered": "Error message shown to the user if their comment's text matches one or more defined [[mw:Extension:AbuseFilter|AbuseFilter filters]].",
 	"comments-ignore-item": "Shown on Special:CommentIgnoreList. Parameters:\n* $1 - the URL to the blocked user's user page\n* $2 - the name of the blocked user\n* $3 - the timestamp (when the user was blocked) (format: Y-m-d H:i:s)\n* $4 - the URL to the unblock form",
 	"comments-ignore-no-users": "Shown on Special:CommentIgnoreList if you haven't blocked anyone's comments.",
 	"comments-ignore-remove-message": "Confirmation message, shown when the user is about to unblock someone's comments on Special:CommentIgnoreList.\n\nParameters:\n* $1 - the username of the user whose comments the user has blocked",
