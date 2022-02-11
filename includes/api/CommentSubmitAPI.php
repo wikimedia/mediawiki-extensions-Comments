@@ -34,7 +34,7 @@ class CommentSubmitAPI extends ApiBase {
 			// spam filters)
 			if ( !$user->isAllowed( 'commentadmin' ) && CommentFunctions::isSpam( $commentText ) ) {
 				$this->dieWithError(
-					$this->msg( 'comments-is-spam' )->plain(),
+					$this->msg( 'comments-is-spam' ),
 					'comments-is-spam'
 				);
 			}
@@ -43,9 +43,15 @@ class CommentSubmitAPI extends ApiBase {
 			// links, reject the submission
 			if ( !$user->isAllowed( 'commentlinks' ) && CommentFunctions::haveLinks( $commentText ) ) {
 				$this->dieWithError(
-					$this->msg( 'comments-links-are-forbidden' )->plain(),
+					$this->msg( 'comments-links-are-forbidden' ),
 					'comments-links-are-forbidden'
 				);
+			}
+
+			// AbuseFilter check (T301083)
+			$abuseStatus = CommentFunctions::isAbusive( $pageID, $user, $commentText );
+			if ( !$user->isAllowed( 'commentadmin' ) && !$abuseStatus->isOK() ) {
+				$this->dieStatus( $abuseStatus );
 			}
 
 			$page = new CommentsPage( $pageID, $this->getContext() );

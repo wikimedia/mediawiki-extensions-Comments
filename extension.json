@@ -1,6 +1,6 @@
 {
 	"name": "Comments",
-	"version": "4.9.1",
+	"version": "5.0",
 	"author": [
 		"David Pean",
 		"Misza",
@@ -15,6 +15,7 @@
 	"requires": {
 		"MediaWiki": ">= 1.35.3"
 	},
+	"callback": "CommentsHooks::registerExtension",
 	"GroupPermissions": {
 		"*": {
 			"comment": true
@@ -146,9 +147,22 @@
 		"ArticlePurge": "CommentsHooks::onArticlePurge"
 	},
 	"config": {
-		"CommentsDefaultAvatar": "http://www.shoutwiki.com/w/extensions/SocialProfile/avatars/default_ml.gif",
-		"CommentsSortDescending": false,
-		"CommentsInRecentChanges": false
+		"CommentsDefaultAvatar": {
+			"description": "URL to the default avatar image when the SocialProfile extension is NOT installed and thus its avatars aren't usable",
+			"value": "http://www.shoutwiki.com/w/extensions/SocialProfile/avatars/default_ml.gif"
+		},
+		"CommentsSortDescending": {
+			"description": "Sort comments in descending order?",
+			"value": false
+		},
+		"CommentsInRecentChanges": {
+			"description": "Display the additions and deletions of comments in the list of recent changes?",
+			"value": false
+		},
+		"CommentsAbuseFilterGroup": {
+			"description": "This is the custom group name for AbuseFilter for when the AbuseFilter extension is enabled. It ensures that AbuseFilter only pulls the filters related to Comments. If you would like AbuseFilter to pull all of the filters, enter 'default' here.",
+			"value": "comment"
+		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }

@@ -226,17 +226,25 @@
 						window.alert( response.error.info );
 						Comment.submitted = 0;
 					}
-				} ).fail( function ( response ) {
-					// response is the error code from CommentSubmitAPI.php, i.e. one of these:
+				} ).fail( function ( textStatus, response ) {
+					// textStatus is the error code from CommentSubmitAPI.php, i.e. one of these:
 					// comments-missing-page, comments-is-spam or comments-links-are-forbidden
+					// (and when AbuseFilter is installed, it can be e.g. abusefilter-disallowed as well)
+					// response is the fuller object with code and info properties
 					var msg;
-					if ( response === 'comments-missing-page' ) {
+					if ( textStatus === 'comments-missing-page' ) {
 						// 'comments-missing-page' is not (yet?) an i18n msg, just a key
 						// this corresponds to CommentSubmitAPI.php's behavior 1:1
 						msg = mw.msg( 'apierror-nosuchpageid', pageID );
+					} else if (
+						response.code === 'comments-is-spam' ||
+						response.code === 'comments-links-are-forbidden'
+					) {
+						msg = mw.msg( response.code );
 					} else {
-						// response is either comments-is-spam or comments-links-are-forbidden i18n msg
-						msg = mw.msg( response );
+						// AbuseFilter case - response is whatever AF bubbled up and caused dieStatus()
+						// to be triggered in CommentSubmitAPI.php; seems to be a string like "abusefilter-disallowed"
+						msg = response.error.info;
 					}
 					window.alert( msg );
 					Comment.submitted = 0;
