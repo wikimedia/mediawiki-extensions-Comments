@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8183fcdd_bc49e643",
+        "filename": "includes/CommentFunctions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2022-02-11T11:27:36Z",
+      "side": 1,
+      "message": "This should be lowercase (also \u0027ACTION\u0027 below), the uppercase here is just a leftover from very old versions of AF.",
+      "range": {
+        "startLine": 185,
+        "startChar": 18,
+        "endLine": 185,
+        "endChar": 25
+      },
+      "revId": "1d4a2c50ab87157e4936ba4ffe77523b175d4734",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02aed457_4eca2b2f",
+        "filename": "includes/CommentFunctions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2022-02-11T11:27:36Z",
+      "side": 1,
+      "message": "This was deprecated in 1.34, you should use FilterRunnerFactory instead (and you probably need to check if the class exists for BC)",
+      "range": {
+        "startLine": 190,
+        "startChar": 22,
+        "endLine": 190,
+        "endChar": 34
+      },
+      "revId": "1d4a2c50ab87157e4936ba4ffe77523b175d4734",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44341a08_c607929b",
+        "filename": "includes/api/CommentSubmitAPI.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2022-02-11T11:27:36Z",
+      "side": 1,
+      "message": "I think if you make ::isAbusive() return a Status object, you can just pass it to dieStatus() and it should report the whole error to the user.",
+      "range": {
+        "startLine": 53,
+        "startChar": 5,
+        "endLine": 54,
+        "endChar": 48
+      },
+      "revId": "1d4a2c50ab87157e4936ba4ffe77523b175d4734",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
