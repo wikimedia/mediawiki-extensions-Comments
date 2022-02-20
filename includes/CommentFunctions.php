@@ -142,6 +142,67 @@ class CommentFunctions {
 	}
 
 	/**
+	 * Does the supplied text contain abuse, as determined by AbuseFilter?
+	 *
+	 * @note This borrows a _lot_ of GPL-licensed code from the ArticleFeedbackv5
+	 * extension's AbuseFilter interoperability code.
+	 *
+	 * @see https://phabricator.wikimedia.org/T301083
+	 *
+	 * @param int $pageID Page ID
+	 * @param User $user User who is trying to submit a comment
+	 * @param string $text User-supplied text to check for abusiveness
+	 * @return Status Status object; good when AF is not installed or initiating a Title fails, otherwise
+	 *  whatever AF says the Status is
+	 */
+	public static function isAbusive( $pageID, $user, $text ) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Abuse Filter' ) ) {
+			// AF not installed? Aww dang...nothing for us to do here, then.
+			// Assume the best in such case...
+			return Status::newGood();
+		}
+
+		global $wgCommentsAbuseFilterGroup;
+
+		// Set up variables
+		$title = Title::newFromID( $pageID );
+		if ( !$title ) {
+			return Status::newGood();
+		}
+
+		if ( class_exists( MediaWiki\Extension\AbuseFilter\AbuseFilterServices::class ) ) {
+			// post-1.35
+			$gen = MediaWiki\Extension\AbuseFilter\AbuseFilterServices::getVariableGeneratorFactory()->newGenerator();
+			$runnerFactory = MediaWiki\Extension\AbuseFilter\AbuseFilterServices::getFilterRunnerFactory();
+		} else {
+			// 1.35 only
+			$gen = new MediaWiki\Extension\AbuseFilter\VariableGenerator\VariableGenerator(
+				new AbuseFilterVariableHolder()
+			);
+		}
+
+		$vars = $gen->addUserVars( $user )->addTitleVars( $title, 'page' )->getVariableHolder();
+		$vars->setVar( 'summary', 'Comment via the Comments extension' );
+		$vars->setVar( 'action', 'comment' );
+		$vars->setVar( 'new_wikitext', $text );
+		$vars->setLazyLoadVar( 'new_size', 'length', [ 'length-var' => 'new_wikitext' ] );
+
+		if ( class_exists( MediaWiki\Extension\AbuseFilter\FilterRunnerFactory::class ) ) {
+			$status = $runnerFactory->newRunner(
+				$user,
+				$title,
+				$vars,
+				$wgCommentsAbuseFilterGroup
+			)->run();
+		} else {
+			// 1.35 only
+			$status = ( new AbuseFilterRunner( $user, $title, $vars, $wgCommentsAbuseFilterGroup ) )->run();
+		}
+
+		return $status;
+	}
+
+	/**
 	 * Blocks comments from a user
 	 *
 	 * @param User $blocker The user who is blocking someone else's comments
