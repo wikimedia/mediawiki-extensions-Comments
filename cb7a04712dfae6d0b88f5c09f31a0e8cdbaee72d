@@ -16,6 +16,46 @@
       "message": "@Daimona: Thanks for the swift review! PS2 should address the concerns you mentioned (thanks for pointing them out btw, I had somehow totally missed that AbuseFilter#filterAction was deprecated in MW 1.34); can you take another look and see if this is good to go? Cheers! 😊",
       "revId": "cb7a04712dfae6d0b88f5c09f31a0e8cdbaee72d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "372f3c82_9b652714",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2022-02-20T11:20:18Z",
+      "side": 1,
+      "message": "Seems sane at a cursory glance. Haven\u0027t tested though :)",
+      "revId": "cb7a04712dfae6d0b88f5c09f31a0e8cdbaee72d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a16e6b3_bb46acbc",
+        "filename": "includes/api/CommentSubmitAPI.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2022-02-20T11:20:18Z",
+      "side": 1,
+      "message": "Nit: I think you could split the conditional for better performance, i.e.\n\n  if ( !$user-\u003eisAllowed ) {\n     $abuseStatus \u003d ...;\n     if ( !$abuseStatus-\u003eisOK() ) {\n        dieStatus\n     }\n  }",
+      "range": {
+        "startLine": 52,
+        "startChar": 3,
+        "endLine": 55,
+        "endChar": 4
+      },
+      "revId": "cb7a04712dfae6d0b88f5c09f31a0e8cdbaee72d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
