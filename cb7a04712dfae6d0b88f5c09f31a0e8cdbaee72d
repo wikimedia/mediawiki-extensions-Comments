@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2aa1083_2bb7751a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2022-02-20T09:46:39Z",
+      "side": 1,
+      "message": "@Daimona: Thanks for the swift review! PS2 should address the concerns you mentioned (thanks for pointing them out btw, I had somehow totally missed that AbuseFilter#filterAction was deprecated in MW 1.34); can you take another look and see if this is good to go? Cheers! 😊",
+      "revId": "cb7a04712dfae6d0b88f5c09f31a0e8cdbaee72d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
