@@ -6,7 +6,9 @@
 			"Ofrahod",
 			"Steeve815",
 			"חיים",
-			"ערן"
+			"ערן",
+			"Jack Phoenix",
+			"לואיקה"
 		]
 	},
 	"apihelp-commentblock-description": "באמצעות ה־API&rlm; \"commentblock\" ניתן לחסום משתמש מתגובה. יש למלא את הפרמטר CommentID.",
@@ -51,7 +53,7 @@
 	"comments-show-comment-link": "הצגת התגובה",
 	"comments-manage-blocklist-link": "ניהול רשימת ההתעלמות",
 	"comments-ignore-message": "בחרת להתעלם מהמפרסם של התגובה הזאת",
-	"comments-you": "{{GENDER:|אתה|את}}",
+	"comments-you": "{{GENDER:|אתה|את|אתם}}",
 	"comments-reply": "תשובה",
 	"comments-login-required": "יש להיכנס לחשבון כדי להוסיף תגובות",
 	"comments-not-allowed": "אין באפשרותך לפרסם תגובות.",
