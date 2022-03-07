@@ -40,7 +40,7 @@
 	"apihelp-commentvote-param-commentID": "Identifiant (ID) du commentaire pour lequel on a voté",
 	"apihelp-commentvote-param-voteValue": "Valeur du vote pour le commentaire",
 	"comments-comment": "Commenter",
-	"comments-continue-editing-btn": "Continuer à modifier",
+	"comments-continue-editing-btn": "Continuer les modifications",
 	"comments-preview-failed": "Échec de l’aperçu. Veuillez réessayer.",
 	"comments-desc": "Ajoute le greffon d’analyseur <code>&lt;comments&gt;</code> qui permet de commenter les pages",
 	"comments-db-locked": "<h3>Ajout de commentaires</h3>\nLa base de données est actuellement verrouillée pour une maintenance de routine, après quoi elle reviendra à la normale. Veuillez revenir plus tard !",
