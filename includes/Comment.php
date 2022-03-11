@@ -387,31 +387,12 @@ class Comment extends ContextSource {
 			// our tastes. DO NOT WANT!
 			$title = Title::newFromId( $page->id );
 
-			// EchoDiscussionParser#getUserLinks is private, because of course it is.
-			// Here we go once again...
-			$getUserLinks = function ( $content, Title $title ) {
-				$output = self::parseNonEditWikitext( $content, new Article( $title ) );
-				$links = $output->getLinks();
-
-				if ( !isset( $links[NS_USER] ) || !is_array( $links[NS_USER] ) ) {
-					return false;
-				}
-
-				return $links[NS_USER];
-			};
-
 			// stolen from EchoDiscussionParser#generateEventsForRevision
-			$action = [];
-			$action['old_content'] = '';
-			$action['new_content'] = $text;
-			$userLinks = array_diff_key(
-				$getUserLinks( $action['new_content'], $title ) ?: [],
-				$getUserLinks( $action['old_content'], $title ) ?: []
-			);
+			$userLinks = EchoDiscussionParser::getUserLinks( $text, $title );
 			$header = $text;
 
 			self::generateMentionEvents(
-				$header, $userLinks, $action['new_content'], $title, $user,
+				$header, $userLinks, $text, $title, $user,
 				$comment, $commentId
 			);
 		}
@@ -483,11 +464,7 @@ class Comment extends ContextSource {
 			return;
 		}
 
-		// WHY IS EVERYTHING PRIVATE?! WTF.
-		$r = new ReflectionMethod( 'EchoDiscussionParser', 'getUserMentions' );
-		$r->setAccessible( true );
-		$userMentions = $r->invoke( $r, $title, $agent->getId(), $userLinks );
-		// $userMentions = EchoDiscussionParser::getUserMentions( $title, $agent->getId(), $userLinks );
+		$userMentions = EchoDiscussionParser::getUserMentions( $title, $agent->getId(), $userLinks );
 		// $overallMentionsCount = EchoDiscussionParser::getOverallUserMentionsCount( $userMentions );
 		$overallMentionsCount = count( $userMentions, COUNT_RECURSIVE ) - count( $userMentions );
 		if ( $overallMentionsCount === 0 ) {
