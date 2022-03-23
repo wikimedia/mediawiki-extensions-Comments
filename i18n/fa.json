@@ -11,7 +11,9 @@
 			"Reza1615",
 			"Rtemis",
 			"Taha",
-			"پاناروما"
+			"پاناروما",
+			"Beginneruser",
+			"Jack Phoenix"
 		]
 	},
 	"apihelp-commentblock-param-commentID": "شناسهٔ نظری که توسط کاربر مورد نظر برای قطع دسترسی ارسال شده‌است",
@@ -80,7 +82,7 @@
 	"log-show-hide-comments": "سیاههٔ نظرات $1",
 	"logeventslist-comments-log": "سیاههٔ نظر",
 	"group-commentadmin": "مدیران نظرات",
-	"group-commentadmin-member": "{{GENDER:$1|سرپرست نظرات}}",
+	"group-commentadmin-member": "{{GENDER:$1|مدیریت نظرات}}",
 	"grouppage-commentadmin": "{{ns:project}}: سرپرستان نظرات",
 	"action-comment": "ارسال نظرات",
 	"right-comment": "ارسال نظرات",
