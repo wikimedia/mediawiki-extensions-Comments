@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\AtEase\AtEase;
 
 /**
  * Comment class
@@ -311,9 +312,9 @@ class Comment extends ContextSource {
 		$dbw = wfGetDB( DB_PRIMARY );
 		$context = RequestContext::getMain();
 
-		Wikimedia\suppressWarnings();
+		AtEase::suppressWarnings();
 		$commentDate = date( 'Y-m-d H:i:s' );
-		Wikimedia\restoreWarnings();
+		AtEase::restoreWarnings();
 		$dbw->insert(
 			'Comments',
 			[
@@ -600,7 +601,7 @@ class Comment extends ContextSource {
 			$value = 0;
 		}
 
-		Wikimedia\suppressWarnings();
+		AtEase::suppressWarnings();
 		$commentDate = date( 'Y-m-d H:i:s' );
 		Wikimedia\restoreWarnings();
 
@@ -905,13 +906,13 @@ class Comment extends ContextSource {
 		$output .= "{$commentPoster}";
 		$output .= "<span class=\"c-user-level\">{$commentPosterLevel}</span> {$blockLink}" . "\n";
 
-		Wikimedia\suppressWarnings(); // E_STRICT bitches about strtotime()
+		AtEase::suppressWarnings(); // E_STRICT bitches about strtotime()
 		$output .= '<div class="c-time">' .
 			wfMessage(
 				'comments-time-ago',
 				CommentFunctions::getTimeAgo( strtotime( $this->date ) )
 			)->parse() . '</div>' . "\n";
-		Wikimedia\restoreWarnings();
+		AtEase::restoreWarnings();
 
 		$output .= '<div class="c-score">' . "\n";
 		$output .= $this->getScoreHTML();

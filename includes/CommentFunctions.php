@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\AtEase\AtEase;
+
 class CommentFunctions {
 	/**
 	 * The following four functions are borrowed
@@ -211,9 +213,9 @@ class CommentFunctions {
 	public static function blockUser( $blocker, $blocked ) {
 		$dbw = wfGetDB( DB_PRIMARY );
 
-		Wikimedia\suppressWarnings(); // E_STRICT bitching
+		AtEase::suppressWarnings(); // E_STRICT bitching
 		$date = date( 'Y-m-d H:i:s' );
-		Wikimedia\restoreWarnings();
+		AtEase::restoreWarnings();
 		$dbw->insert(
 			'Comments_block',
 			[
