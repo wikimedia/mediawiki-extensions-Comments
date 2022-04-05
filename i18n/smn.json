@@ -4,5 +4,5 @@
 			"Seipinne"
 		]
 	},
-	"comments-time-days": "{{PLURAL:$1|ohtâ peivi|$1 peivid}}"
+	"comments-time-days": "{{PLURAL:$1|ohtâ peivi|$1 peeivi|$1 peeivi|$1 peivid}}"
 }
