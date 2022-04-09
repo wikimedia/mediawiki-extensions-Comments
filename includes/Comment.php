@@ -603,7 +603,7 @@ class Comment extends ContextSource {
 
 		AtEase::suppressWarnings();
 		$commentDate = date( 'Y-m-d H:i:s' );
-		Wikimedia\restoreWarnings();
+		AtEase::restoreWarnings();
 
 		if ( $this->currentVote === false ) { // no vote, insert
 			$dbw->insert(
