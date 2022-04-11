@@ -24,7 +24,7 @@
 	"apihelp-commentlist-description": "L’API <kbd>commentlist</kbd> permet de lister les différents commentaires d’une page en fournissant les paramètres suivants : <kbd>pageID</kbd>, <kbd>order</kbd>, <kbd>pagerPage</kbd> et <kbd>showForm</kbd>.",
 	"apihelp-commentlist-summary": "L’API <kbd>commentlist</kbd> permet de lister les différents commentaires d’une page en fournissant les paramètres suivants : <kbd>pageID</kbd>, <kbd>order</kbd>, <kbd>pagerPage</kbd> et <kbd>showForm</kbd>.",
 	"apihelp-commentsubmit-description": "L’API <kbd>commentsubmit<kbd> permet de soumettre/publier un commentaire en fournissant les paramètres suivants : <kbd>pageID</kbd>, <kbd>parentID</kbd> et <kbd>commentText</kbd>.",
-	"apihelp-commentsubmit-summary": "L’API <kbd>commentsubmit<kbd> permet de soumettre / publier un commentaire en fournissant les paramètres suivants : <kbd>pageID</kbd>, <kbd>parentID</kbd> et <kbd>commentText</kbd>.",
+	"apihelp-commentsubmit-summary": "L’API <kbd>commentsubmit</kbd> permet de soumettre / publier un commentaire en fournissant les paramètres suivants : <kbd>pageID</kbd>, <kbd>parentID</kbd> et <kbd>commentText</kbd>.",
 	"apihelp-commentvote-description": "L’API <kbd>commentvote<kbd> permet de voter pour un commentaire en fournissant les paramètres suivants : <kbd>commentID</kbd> et <kbd>voteValue</kbd>.",
 	"apihelp-commentvote-summary": "L’API <tt>commentvote</tt> permet de voter sur un commentaire en fournissant les paramètres suivants : <tt>commentID</tt> et <tt>voteValue</tt>.",
 	"apihelp-commentblock-param-commentID": "Identifiant (ID) du commentaire posté par l’utilisateur à bloquer",
