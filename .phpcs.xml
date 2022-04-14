@@ -3,6 +3,10 @@
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="Generic.Files.LineLength.TooLong" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.NotPunctuationVarType" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.NotShortBoolVar" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.NotShortIntVar" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.UppercasePrimitiveStringVar" />
 		<exclude name="MediaWiki.Usage.AssignmentInReturn.AssignmentInReturn" />
 		<exclude name="MediaWiki.Usage.ExtendClassUsage.FunctionConfigUsage" />
 		<exclude name="MediaWiki.Usage.ExtendClassUsage.FunctionVarUsage" />
