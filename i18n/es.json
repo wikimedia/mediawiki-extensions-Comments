@@ -7,6 +7,7 @@
 			"Carlos Cristia",
 			"Ciencia Al Poder",
 			"Dgstranz",
+			"DiegoAmbrocio",
 			"Fitoschido",
 			"Frammm",
 			"Ihojose",
@@ -26,6 +27,8 @@
 	"apihelp-commentsubmit-param-parentID": "Identificador del comentario padre",
 	"apihelp-commentsubmit-param-commentText": "Texto del comentario",
 	"comments-comment": "Comentario",
+	"comments-continue-editing-btn": "Seguir editando",
+	"comments-preview-failed": "La vista previa ha fallado. Por favor, inténtelo de nuevo.",
 	"comments-desc": "Añade el asociador analítico <code>&lt;comments&gt;</code> que permite hacer comentarios en las páginas",
 	"comments-db-locked": "<h3>Agregar comentarios</h3>En este momento la base de datos está bloqueada por tareas rutinarias de mantenimiento, luego de los cuales volverá a la normalidad. Regresa más tarde.",
 	"comments-voted-label": "Valorado",
@@ -63,6 +66,7 @@
 	"comments-ignore-title": "Lista de comentarios ignorados",
 	"commentignorelist": "Lista de comentarios ignorados",
 	"echo-category-title-mention-comment": "Menciona en comentarios",
+	"echo-pref-tooltip-mention-comment": "Notifícame cuando alguien enlace mi página de usuario en un comentario.",
 	"log-name-comments": "Registro de comentarios",
 	"log-description-comments": "Este es un registro de los comentarios.",
 	"logentry-comments-add": "$1 publicó un comentario nuevo en $3",
@@ -78,7 +82,12 @@
 	"group-commentadmin": "Administradores de comentarios",
 	"group-commentadmin-member": "{{GENDER:$1|administrador de comentarios|administradora de comentarios|administrador de comentarios}}",
 	"grouppage-commentadmin": "{{ns:project}}:Administradores de comentarios",
+	"action-comment": "enviar comentarios",
 	"right-comment": "Enviar comentarios",
+	"action-commentadmin": "administrar los comentarios enviados por los usuarios",
 	"right-commentadmin": "Administrar los comentarios enviados por los usuarios",
-	"right-commentlinks": "Usar enlaces externos en comentarios"
+	"action-commentlinks": "utilizar enlaces externos en los comentarios",
+	"right-commentlinks": "Usar enlaces externos en comentarios",
+	"action-comment-delete-own": "borrar comentarios propios",
+	"right-comment-delete-own": "Borrar comentarios propios"
 }
