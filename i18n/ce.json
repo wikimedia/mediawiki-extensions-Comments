@@ -22,7 +22,7 @@
 	"comments-time-ago": "$1 йуха",
 	"comments-time-months": "{{PLURAL:$1|цхьа бутт|$1 беттанаш}}",
 	"comments-time-days": "{{PLURAL:$1|де}}",
-	"comments-time-hours": "{{PLURAL:$1|сахьат}}",
+	"comments-time-hours": "{{PLURAL:$1|сахьт}}",
 	"comments-time-minutes": "{{PLURAL:$1|$1 минот}}",
 	"comments-time-seconds": "{{PLURAL:$1|$1 секунд}}"
 }
