@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Akapochtli"
+			"Akapochtli",
+			"Languaeditor"
 		]
 	},
-	"comments-cancel-reply": "Moxitiniz",
-	"comments-ignore-cancel": "Moxitiniz"
+	"comments-cancel-reply": "Xikxolewa",
+	"comments-ignore-cancel": "Xikxolewa"
 }
