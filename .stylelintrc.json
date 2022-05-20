@@ -4,6 +4,7 @@
 		"declaration-no-important": null,
 		"declaration-property-unit-disallowed-list": null,
 		"length-zero-no-unit": null,
-		"selector-max-id": null
+		"selector-max-id": null,
+		"declaration-block-no-duplicate-properties": null
 	}
 }
