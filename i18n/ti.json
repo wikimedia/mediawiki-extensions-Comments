@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joanmp17"
+		]
+	},
+	"comments-time-ago": "ቅድሚ $1",
+	"comments-time-months": "{{PLURAL:$1|ሓደ ወርሒ|$1 ኣዋርሕ}}",
+	"comments-time-days": "{{PLURAL:$1|ሓደ መዓልቲ|$1 መዓልታት}}",
+	"comments-time-hours": "{{PLURAL:$1|ሓደ ሰዓት|$1 ሰዓታት}}",
+	"comments-time-minutes": "{{PLURAL:$1|ሓንቲ ደቒቕ|$1 ደቓይቕ}}",
+	"comments-time-seconds": "{{PLURAL:$1|ሓደ ካልኢት|$1 ካልኢታት}}"
+}
