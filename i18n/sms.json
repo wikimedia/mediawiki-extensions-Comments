@@ -4,8 +4,13 @@
 			"Yupik"
 		]
 	},
+	"comments-comment": "Kommentââʹst",
+	"comments-show-comment-link": "Čuäʹjet kommeeʹnt",
 	"comments-reply": "Vaʹstted",
+	"comments-login-required": "Ton õõlǥak leeʹd sizz ǩeeʹrjtõõttâm, jõs haaʹlääk kommeeʹntid lââʹzzted",
 	"comments-submit": "Lââʹzzet kommeeʹnt",
 	"comments-permalink": "Põõšši liŋkk",
-	"comments-delete-link": "Jaukkâd kommeeʹnt"
+	"comments-delete-link": "Jaukkâd kommeeʹnt",
+	"action-comment": "kommeeʹntid vuõltteed",
+	"right-comment": "Kommeeʹntid vuõltteed"
 }
