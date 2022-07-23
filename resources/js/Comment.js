@@ -273,7 +273,7 @@
 				msg = mw.msg( 'comments-auto-refresher-enable' );
 			}
 
-			$( 'body' ).on( 'click', 'div#spy a', function () {
+			$( document.body ).on( 'click', 'div#spy a', function () {
 				Comment.toggleLiveComments( ( status ) ? 0 : 1 );
 			} );
 			$( 'div#spy a' ).css( 'font-size', '10px' ).text( msg );
@@ -355,7 +355,7 @@
 	};
 
 	$( function () {
-		// Important note: these are all using $( 'body' ) as the selector
+		// Important note: these are all using $( document.body ) as the selector
 		// instead of the class/ID/whatever so that they work after viewComments()
 		// has been called (i.e. so that "Delete comment", reply, etc. links
 		// continue working after you've submitted a comment yourself)
@@ -363,7 +363,7 @@
 		var $CommentsWrapper = $( '#comments-body' );
 
 		// "Sort by X" feature
-		$( 'body' )
+		$( document.body )
 			.on( 'change', 'select[name="TheOrder"]', function () {
 				Comment.viewComments(
 					$( this ).val(),
