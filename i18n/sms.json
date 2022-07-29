@@ -12,6 +12,10 @@
 	"comments-permalink": "Põõšši liŋkk",
 	"comments-delete-link": "Jaukkâd kommeeʹnt",
 	"comments-anon-name": "Nõõmteʹmes õõʹnni",
+	"comments-time-months": "{{PLURAL:$1|õhtt määnpââʹjj|$1 määnpââʹj|$1 määnpââʹjjed}}",
+	"comments-time-hours": "{{PLURAL:$1|õhtt čiâss|$1 čiâss|$1 čiâssâd}}",
+	"comments-time-minutes": "{{PLURAL:$1|õhtt minutt|$1 minuutt|$1 minuttâd}}",
+	"comments-time-seconds": "{{PLURAL:$1|õhtt sekuntt|$1 sekuunt|$1 sekunttâd}}",
 	"action-comment": "kommeeʹntid vuõltteed",
 	"right-comment": "Kommeeʹntid vuõltteed"
 }
