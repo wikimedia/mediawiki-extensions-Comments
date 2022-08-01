@@ -47,7 +47,7 @@
 	"comments-ignore-cancel": "キャンセル",
 	"comments-ignore-title": "コメント無視リスト",
 	"commentignorelist": "コメント無視リスト",
-	"notification-header-mention-comment": "<strong>$4</strong>の[[$4#comment-$5|コメント]]の$1{{GENDER:$2|言及}} {{GENDER:$3| あなた}}。",
+	"notification-header-mention-comment": "$1 が <strong>$4</strong> の[[$4#comment-$5|コメント]]で{{GENDER:$3|あなた}}に{{GENDER:$2|言及しました}}。",
 	"log-name-comments": "コメント記録",
 	"log-description-comments": "これはコメントの記録です。",
 	"logentry-comments-add": "$1 が $3 に新しいコメントを投稿しました",
