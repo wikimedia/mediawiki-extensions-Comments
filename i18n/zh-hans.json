@@ -11,7 +11,8 @@
 			"Shirayuki",
 			"TianyinLee",
 			"Yfdyh000",
-			"佛壁灯"
+			"佛壁灯",
+			"GuoPC"
 		]
 	},
 	"apihelp-commentblock-description": "评论封禁API允许封禁用户的评论权，它在填写以下参数后出现：评论ID。",
@@ -44,7 +45,7 @@
 	"comments-desc": "增加<code>&lt;comments&gt;</code>解析器钩，允许在页面上发表评论",
 	"comments-db-locked": "<h3>添加评论</h3>数据库当前因正在进行日常维护而被锁定，过会它会恢复正常。请稍后再来！",
 	"comments-voted-label": "已投票",
-	"comments-loading": "载入中...",
+	"comments-loading": "加载中…",
 	"comments-auto-refresher-enable": "开启评论自动刷新",
 	"comments-auto-refresher-pause": "关闭评论自动刷新",
 	"comments-reply-to": "回复{{GENDER:$2|$1}}",
