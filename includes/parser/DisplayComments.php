@@ -24,8 +24,8 @@ class DisplayComments {
 		$parser->setHook( 'comments', [ __CLASS__, 'nonDisplayComments' ] );
 
 		// Add required CSS & JS via ResourceLoader
-		$po->addModuleStyles( 'ext.comments.css' );
-		$po->addModules( 'ext.comments.js' );
+		$po->addModuleStyles( [ 'ext.comments.css' ] );
+		$po->addModules( [ 'ext.comments.js' ] );
 		$po->addJsConfigVars( [ 'wgCommentsSortDescending' => $wgCommentsSortDescending ] );
 
 		// Parse arguments
