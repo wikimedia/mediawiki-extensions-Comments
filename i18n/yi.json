@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Pacha Tchernof",
 			"פוילישער"
 		]
 	},
@@ -10,6 +11,7 @@
 	"comments-cancel-reply": "אַנולירן",
 	"comments-you": "איר",
 	"comments-reply": "אָנרופֿן",
+	"comments-ignore-cancel": "אַנולירן",
 	"comments-time-months": "{{PLURAL:$1|איין מאנאַט|$1 מאנאַטן}}",
 	"comments-time-hours": "{{PLURAL:$1|איין שעה|$1 שעה׳ן}}",
 	"comments-time-minutes": "{{PLURAL:$1|איין מינוט|$1 מינוט}}"
