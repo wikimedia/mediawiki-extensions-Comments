@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nirajan pant"
+			"Nirajan pant",
+			"Bada Kaji"
 		]
 	},
+	"comments-reply": "जवाफ दिनुहोस्",
 	"logeventslist-comments-log": "टिप्पणी गतिविधि"
 }
