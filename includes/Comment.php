@@ -830,7 +830,8 @@ class Comment extends ContextSource {
 			}
 
 			$user = User::newFromId( $this->user->getId() );
-			$CommentReplyToGender = $user->getOption( 'gender', 'unknown' );
+			$CommentReplyToGender = MediaWikiServices::getInstance()->getUserOptionsLookup()
+				->getOption( $user, 'gender', 'unknown' );
 		} else {
 			$anonMsg = $this->msg( 'comments-anon-name' )->inContentLanguage()->plain();
 			$commentPoster = $anonMsg . ' #' . $anonList[$this->user->getName()];
