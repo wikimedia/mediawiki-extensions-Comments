@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Olve Utne"
+		]
+	},
+	"comments-comment": "Målgedibme",
+	"comments-show-comment-link": "Vuosedä målgedimev",
+	"comments-post": "Pussti målgedimev",
+	"comments-delete-link": "Gádodä målgedimev",
+	"log-show-hide-comments": "$1 målgedimlåggå",
+	"group-commentadmin": "Målgedimháldadiejje",
+	"group-commentadmin-member": "{{GENDER:$1|målgedimháldadäjje}}",
+	"action-comment": "säddi målgedimijt"
+}

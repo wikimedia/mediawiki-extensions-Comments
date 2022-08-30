@@ -5,6 +5,7 @@
 		]
 	},
 	"comments-comment": "Kommentââʹst",
+	"comments-cancel-reply": "Jõõsk",
 	"comments-show-comment-link": "Čuäʹjet kommeeʹnt",
 	"comments-reply": "Vaʹstted",
 	"comments-login-required": "Ton õõlǥak leeʹd sizz ǩeeʹrjtõõttâm, jõs haaʹlääk kommeeʹntid lââʹzzted",
@@ -12,6 +13,7 @@
 	"comments-permalink": "Põõšši liŋkk",
 	"comments-delete-link": "Jaukkâd kommeeʹnt",
 	"comments-anon-name": "Nõõmteʹmes õõʹnni",
+	"comments-ignore-cancel": "Jõõsk",
 	"comments-time-months": "{{PLURAL:$1|õhtt määnpââʹjj|$1 määnpââʹj|$1 määnpââʹjjed}}",
 	"comments-time-days": "{{PLURAL:$1|õhtt peiʹvv|$1 peeiʹv|$1 peiʹvved}}",
 	"comments-time-hours": "{{PLURAL:$1|õhtt čiâss|$1 čiâss|$1 čiâssâd}}",
