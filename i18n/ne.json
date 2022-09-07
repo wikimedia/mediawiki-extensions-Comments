@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Nirajan pant",
-			"Bada Kaji"
+			"Bada Kaji",
+			"बडा काजी"
 		]
 	},
 	"comments-reply": "जवाफ दिनुहोस्",
+	"comments-ignore-unblock": "निषेध खारेज गर्नुहोस्",
 	"logeventslist-comments-log": "टिप्पणी गतिविधि"
 }
