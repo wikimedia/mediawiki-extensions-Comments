@@ -6,6 +6,7 @@
 	},
 	"comments-loading": "Nalaganje ...",
 	"comments-cancel-reply": "Prekliči",
+	"comments-ignore-unblock": "Odblokiraj",
 	"comments-ignore-cancel": "Prekliči",
 	"comments-time-hours": "{{PLURAL:$1|ena ura|$1 uri|$1 ure|$1 ur}}",
 	"comments-time-minutes": "{{PLURAL:$1|ena minuta|dve minuti|$1 minute|$1 minut}}"
