@@ -10,6 +10,7 @@
 	"comments-comment": "Komentar",
 	"comments-loading": "Nalaganje ...",
 	"comments-cancel-reply": "Prekliči",
+	"comments-login-required": "Za dodajanje komentarjev morate biti prijavljeni",
 	"comments-ignore-unblock": "Odblokiraj",
 	"comments-ignore-cancel": "Prekliči",
 	"comments-time-months": "{{PLURAL:$1|en mesec|$1 meseca|$1 meseci|$1 mesecev}}",
