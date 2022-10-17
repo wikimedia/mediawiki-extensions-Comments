@@ -7,6 +7,7 @@
 	"apihelp-commentlatestid-description": "API commentlatestID omogoča po izpolnitvi parametra <var>pageID</var> pridobitev ID-ja zadnjega komentarja",
 	"apihelp-commentlatestid-summary": "API commentlatestID omogoča po izpolnitvi parametra <var>pageID</var> pridobitev ID-ja zadnjega komentarja",
 	"apihelp-commentlatestid-param-pageID": "ID strani, na kateri je zadnji komentar",
+	"comments-comment": "Komentar",
 	"comments-loading": "Nalaganje ...",
 	"comments-cancel-reply": "Prekliči",
 	"comments-ignore-unblock": "Odblokiraj",
