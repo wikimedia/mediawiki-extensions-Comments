@@ -37,6 +37,7 @@
 	"apihelp-commentvote-param-voteValue": "ערך ההצבעה עבור התגובה",
 	"comments-comment": "תגובה",
 	"comments-continue-editing-btn": "להמשיך לערוך",
+	"comments-preview-failed": "התצוגה המקדימה נכשלה! נא לנסות שוב.",
 	"comments-desc": "הוספת התג <code>&lt;comments&gt;</code> המאפשר להגיב על דפים",
 	"comments-db-locked": "<h3>הוספת תגובות</h3>בסיס הנתונים נעול כעת עקב תחזוקה שגרתית, שאחריה האתר ישוב לקדמותו. נא לבדוק שוב מאוחר יותר!",
 	"comments-voted-label": "הצבעת",
@@ -74,6 +75,7 @@
 	"comments-ignore-title": "רשימת התעלמות בתגובות",
 	"commentignorelist": "רשימת התעלמות בתגובות",
 	"echo-category-title-mention-comment": "אזכורים בהערות",
+	"echo-pref-tooltip-mention-comment": "להודיע לי כאשר מישהו מקשר לדף המשתמש שלי בתגובה.",
 	"notification-header-mention-comment": "$1 {{GENDER:$2|הזכיר|הזכירה}} {{GENDER:$3|אותך}} ב[[$4#comment-$5|הערה]] בדף <strong>$4</strong>.",
 	"log-name-comments": "יומן תגובות",
 	"log-description-comments": "זהו יומן של התגובות.",
@@ -92,6 +94,10 @@
 	"grouppage-commentadmin": "{{ns:project}}:מנהל תגובות",
 	"action-comment": "לשלוח תגובות",
 	"right-comment": "שליחת תגובות",
+	"action-commentadmin": "לנהל תגובות שנשלחו על־ידי משתמשים",
 	"right-commentadmin": "ניהול תגובות של משתמשים",
-	"right-commentlinks": "שימוש בקישורים חיצוניים בתגובות"
+	"action-commentlinks": "להשתמש בקישורים חיצוניים בתגובות",
+	"right-commentlinks": "שימוש בקישורים חיצוניים בתגובות",
+	"action-comment-delete-own": "למחוק תגובות עצמיות",
+	"right-comment-delete-own": "מחיקת תגובות עצמיות"
 }
