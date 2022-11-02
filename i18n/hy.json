@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
+	"comments-loading": "Բեռնում...",
 	"comments-cancel-reply": "Չեղարկել",
 	"comments-you": "Դուք",
 	"comments-ignore-unblock": "Ապաարգելափակել",
