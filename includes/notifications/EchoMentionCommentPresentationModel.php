@@ -13,7 +13,7 @@ class EchoMentionCommentPresentationModel extends EchoMentionPresentationModel {
 	/**
 	 * @var EchoPresentationModelSection
 	 */
-	private $section;
+	protected $section;
 
 	/**
 	 * @inheritDoc
