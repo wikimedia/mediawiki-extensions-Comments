@@ -14,6 +14,7 @@
 			"Shirayuki",
 			"Simon Shek",
 			"Xiplus",
+			"捍粵者",
 			"铁桶"
 		]
 	},
@@ -35,7 +36,7 @@
 	"apihelp-commentlist-param-pageID": "評論清單所取得頁面的頁面 ID",
 	"apihelp-commentlist-param-order": "定義評論清單為升序或降序排序",
 	"apihelp-commentlist-param-pagerPage": "評論頁面號碼",
-	"apihelp-commentlist-param-showForm": "顯示評論來自於",
+	"apihelp-commentlist-param-showForm": "顯示評論表格",
 	"apihelp-commentsubmit-param-pageID": "所提交評論的該頁面之頁面 ID",
 	"apihelp-commentsubmit-param-parentID": "父評論的評論 ID",
 	"apihelp-commentsubmit-param-commentText": "評論文字",
