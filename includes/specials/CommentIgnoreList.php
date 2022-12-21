@@ -73,22 +73,16 @@ class CommentIgnoreList extends SpecialPage {
 				}
 
 				$user_name = htmlspecialchars_decode( $user_name );
-				$user_id = User::idFromName( $user_name );
-				// Anons can be comment-blocked, but idFromName returns nothing
-				// for an anon, so...
-				if ( !$user_id ) {
-					$user_id = 0;
-				}
 				$blockedUser = User::newFromName( $user_name );
 
 				if ( $blockedUser instanceof User ) {
 					CommentFunctions::deleteBlock( $user, $blockedUser );
-				}
-
-				// Update social statistics
-				if ( $user_id && class_exists( 'UserStatsTrack' ) ) {
-					$stats = new UserStatsTrack( $user_id, $user_name );
-					$stats->decStatField( 'comment_ignored' );
+					// Update social statistics
+					// Anons can be comment-blocked
+					if ( $blockedUser->isRegistered() && class_exists( 'UserStatsTrack' ) ) {
+						$stats = new UserStatsTrack( $blockedUser->getId(), $user_name );
+						$stats->decStatField( 'comment_ignored' );
+					}
 				}
 
 				$output .= $this->displayCommentBlockList();
