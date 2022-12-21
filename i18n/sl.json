@@ -14,6 +14,8 @@
 	"comments-login-required": "Za dodajanje komentarjev morate biti prijavljeni",
 	"comments-ignore-unblock": "Odblokiraj",
 	"comments-ignore-cancel": "Prekliči",
+	"echo-category-title-mention-comment": "Omembe v komentarjih",
+	"echo-pref-tooltip-mention-comment": "Obvesti me, ko kdo v komentarju vstavi povezavo na mojo uporabniško stran.",
 	"comments-time-months": "{{PLURAL:$1|en mesec|$1 meseca|$1 meseci|$1 mesecev}}",
 	"comments-time-days": "{{PLURAL:$1|en dan|$1 dni}}",
 	"comments-time-hours": "{{PLURAL:$1|ena ura|$1 uri|$1 ure|$1 ur}}",
