@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c6483b4_8e66ba2a",
+        "filename": "includes/specials/CommentIgnoreList.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2022-12-22T16:20:33Z",
+      "side": 1,
+      "message": "Unrelated to this patch, but no, this can\u0027t be correct. Why should a user enter HTML encoded characters?",
+      "range": {
+        "startLine": 75,
+        "startChar": 17,
+        "endLine": 75,
+        "endChar": 40
+      },
+      "revId": "c24eb8c672432c32e533fbd6ec5a26291f771741",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
