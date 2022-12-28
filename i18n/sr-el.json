@@ -7,6 +7,8 @@
 		]
 	},
 	"comments-comment": "Komentar",
+	"comments-continue-editing-btn": "Nastavi sa uređivanjem",
+	"comments-preview-failed": "Pregled nije uspeo. Pokušajte ponovo.",
 	"comments-voted-label": "Glasano",
 	"comments-loading": "Učitavam…",
 	"comments-auto-refresher-enable": "Omogući samoosvežavanje komentara",
@@ -32,11 +34,12 @@
 	"comments-time-days": "{{PLURAL:$1|jedan dan|$1 dana}}",
 	"comments-time-hours": "{{PLURAL:$1|jedan sat|$1 sata|$1 sati}}",
 	"comments-time-minutes": "{{PLURAL:$1|jedan minut|$1 minuta}}",
-	"comments-time-seconds": "{{PLURAL:$1|1 sekunda|$1 sekunda|$1 sekundi}}",
+	"comments-time-seconds": "{{PLURAL:$1|1 sekund|$1 sekunda|$1 sekundi}}",
 	"log-show-hide-comments": "$1 dnevnik komentara",
 	"group-commentadmin": "Administratori komentara",
 	"group-commentadmin-member": "{{GENDER:$1|administrator|administratorka}} komentara",
 	"grouppage-commentadmin": "{{ns:project}}:Administratori komentara",
-	"right-comment": "Slanje komentara",
-	"right-commentadmin": "upravljanje korisničkim komentarima"
+	"right-comment": "slanje komentara",
+	"right-commentadmin": "upravljanje korisničkim komentarima",
+	"right-comment-delete-own": "brisanje sopstvenoh komentara"
 }
