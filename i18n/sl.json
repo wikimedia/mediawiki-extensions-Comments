@@ -12,13 +12,15 @@
 	"comments-cancel-reply": "Prekliči",
 	"comments-reply": "Odgovori",
 	"comments-login-required": "Za dodajanje komentarjev morate biti prijavljeni",
+	"comments-permalink": "Trajna povezava",
 	"comments-ignore-unblock": "Odblokiraj",
 	"comments-ignore-cancel": "Prekliči",
 	"echo-category-title-mention-comment": "Omembe v komentarjih",
 	"echo-pref-tooltip-mention-comment": "Obvesti me, ko kdo v komentarju vstavi povezavo na mojo uporabniško stran.",
+	"comments-time-ago": "pred $1",
 	"comments-time-months": "{{PLURAL:$1|en mesec|$1 meseca|$1 meseci|$1 mesecev}}",
-	"comments-time-days": "{{PLURAL:$1|en dan|$1 dni}}",
-	"comments-time-hours": "{{PLURAL:$1|ena ura|$1 uri|$1 ure|$1 ur}}",
-	"comments-time-minutes": "{{PLURAL:$1|ena minuta|dve minuti|$1 minute|$1 minut}}",
-	"comments-time-seconds": "{{PLURAL:$1|ena sekunda|$1 sekundi|$1 sekunde|$1 sekund}}"
+	"comments-time-days": "{{PLURAL:$1|enim dnevom|$1 dnevoma|$1 dnevi}}",
+	"comments-time-hours": "{{PLURAL:$1|eno uro|$1 urama|$1 urami}}",
+	"comments-time-minutes": "{{PLURAL:$1|eno minuto|dvema minutama|$1 minutami}}",
+	"comments-time-seconds": "{{PLURAL:$1|eno sekundo|$1 sekundama|$1 sekundami}}"
 }
