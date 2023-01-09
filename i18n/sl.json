@@ -17,10 +17,12 @@
 	"comments-ignore-cancel": "Prekliči",
 	"echo-category-title-mention-comment": "Omembe v komentarjih",
 	"echo-pref-tooltip-mention-comment": "Obvesti me, ko kdo v komentarju vstavi povezavo na mojo uporabniško stran.",
+	"log-name-comments": "Dnevnik komentarjev",
 	"comments-time-ago": "pred $1",
 	"comments-time-months": "{{PLURAL:$1|en mesec|$1 meseca|$1 meseci|$1 mesecev}}",
 	"comments-time-days": "{{PLURAL:$1|enim dnevom|$1 dnevoma|$1 dnevi}}",
 	"comments-time-hours": "{{PLURAL:$1|eno uro|$1 urama|$1 urami}}",
 	"comments-time-minutes": "{{PLURAL:$1|eno minuto|dvema minutama|$1 minutami}}",
-	"comments-time-seconds": "{{PLURAL:$1|eno sekundo|$1 sekundama|$1 sekundami}}"
+	"comments-time-seconds": "{{PLURAL:$1|eno sekundo|$1 sekundama|$1 sekundami}}",
+	"log-show-hide-comments": "$1 dnevnik komentiranja"
 }
