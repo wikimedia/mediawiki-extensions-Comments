@@ -12,6 +12,7 @@
 	"apihelp-commentsubmit-param-commentText": "Besedilo komentarja",
 	"comments-comment": "Komentar",
 	"comments-continue-editing-btn": "Nadaljuj urejanje",
+	"comments-preview-failed": "Predogled ni uspel. Poskusite znova.",
 	"comments-loading": "Nalaganje ...",
 	"comments-cancel-reply": "Prekliči",
 	"comments-show-comment-link": "Prikaži komentar",
