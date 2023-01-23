@@ -13,6 +13,8 @@
 	"comments-comment": "Komentar",
 	"comments-continue-editing-btn": "Nadaljuj urejanje",
 	"comments-preview-failed": "Predogled ni uspel. Poskusite znova.",
+	"comments-desc": "Doda vstavek razčlenjevalnika <code>&lt;comments&gt;</code>, ki omogoča komentiranje strani",
+	"comments-db-locked": "<h3>Dodajanje komentarjev</h3>Podatkovna zbirka je trenutno zaklenjena za rutinsko vzdrževanje, po tem pa bo spet normalno delovala. Preverite znova pozneje!",
 	"comments-loading": "Nalaganje ...",
 	"comments-cancel-reply": "Prekliči",
 	"comments-show-comment-link": "Prikaži komentar",
