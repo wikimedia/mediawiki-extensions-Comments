@@ -12,7 +12,7 @@
 	"comments-loading": "Tiela'...",
 	"comments-auto-refresher-enable": "Attiva l-aġġornament awtomatikament tal-kummenti",
 	"comments-auto-refresher-pause": "Waqqaf l-aġġornament awtomatikament tal-kummenti",
-	"comments-reply-to": "Irrispondi lil",
+	"comments-reply-to": "Wieġeb lil {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Ħassar",
 	"comments-block-warning-anon": "Inti ċert li tixtieq tinjora għal kollox il-kummenti minn utenti anonimi (permezz tal-indirizz IP)?",
 	"comments-block-warning-user": "Inti ċert li tixtieq tinjora għal kollox il-kummenti mill-utent $1?",
