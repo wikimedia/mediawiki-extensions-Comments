@@ -6,6 +6,7 @@
 		]
 	},
 	"comments-cancel-reply": "Jooskâ",
+	"comments-permalink": "Avalâš liŋkkâ",
 	"comments-ignore-cancel": "Jooskâ",
 	"comments-time-days": "{{PLURAL:$1|ohtâ peivi|$1 peeivi|$1 peeivi|$1 peivid}}"
 }

@@ -90,7 +90,7 @@
 	"logentry-comments-add": "$1 已發表新的評論於 $3",
 	"logentry-comments-delete": "$1 已刪除評論 #$4 於 $3",
 	"comments-time-ago": "$1 前",
-	"comments-time-months": "$1 個月",
+	"comments-time-months": "{{PLURAL:$1|1|$1}} 個月",
 	"comments-time-days": "$1 天",
 	"comments-time-hours": "$1 小時",
 	"comments-time-minutes": "$1 分鍾",
