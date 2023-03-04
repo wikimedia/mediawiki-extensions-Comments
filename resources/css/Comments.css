@@ -81,6 +81,22 @@
 	overflow: auto;
 }
 
+/** VERY crude hack for T236966: tables of content should not be rendered in comments, period
+ * However, trying to turn off ToC rendering in Comment#getText by manipulating the ParserOutput
+ * object just does not work, sadly. Thankfully CSS always works and is easier than regex...
+ * @see https://phabricator.wikimedia.org/T236966
+ * @note If one wanted to hide the ToC for comment previews, .comment-preview #toc would suffice,
+ * but I think it's actually somewhat handy to have it there (unlike in the final rendered comments).
+ */
+.c-comment #toc {
+	display: none;
+}
+
+/* Hide VisualEditor-generated section [edit source] links in comment preview mode */
+.comment-preview .mw-editsection {
+	display: none;
+}
+
 .c-ignored {
 	color: #666;
 	font-size: 11px;
