@@ -13,6 +13,8 @@
 	"comments-reply": "אָנרופֿן",
 	"comments-ignore-cancel": "אַנולירן",
 	"comments-time-months": "{{PLURAL:$1|איין מאנאַט|$1 מאנאַטן}}",
-	"comments-time-hours": "{{PLURAL:$1|איין שעה|$1 שעה׳ן}}",
-	"comments-time-minutes": "{{PLURAL:$1|איין מינוט|$1 מינוט}}"
+	"comments-time-days": "{{PLURAL:$1|איין טאָג|$1 טעג}}",
+	"comments-time-hours": "{{PLURAL:$1|איין שעה|$1 שעהן}}",
+	"comments-time-minutes": "{{PLURAL:$1|איין מינוט|$1 מינוטן}}",
+	"comments-time-seconds": "{{PLURAL:$1|איין סעקונדע|$1 סעקונדעס}}"
 }
