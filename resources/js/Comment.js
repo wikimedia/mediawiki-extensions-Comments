@@ -3,7 +3,7 @@
  *
  * @file
  */
-/* eslint-disable indent */
+
 // Because what the linter expects is obviously wrong, as any developer looking at this
 // file can tell you.
 ( function ( $, mw ) {
