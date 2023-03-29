@@ -1,5 +1,5 @@
 .comments-body .loader,
-.comments-body .loader:after {
+.comments-body .loader::after {
 	border-radius: 50%;
 	width: 15px;
 	height: 15px;
