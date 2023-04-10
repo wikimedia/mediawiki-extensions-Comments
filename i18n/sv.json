@@ -5,7 +5,8 @@
 			"Lokal Profil",
 			"Skalman",
 			"Tobulos1",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Jack Phoenix"
 		]
 	},
 	"apihelp-commentblock-description": "API:et commentblock gör det möjligt att blockera en användare från kommentaren den kommer ifrån efter att följande parametrar fylls i: CommentID",
@@ -34,6 +35,7 @@
 	"apihelp-commentvote-param-voteValue": "Röstvärde för kommentaren",
 	"comments-comment": "Kommentar",
 	"comments-continue-editing-btn": "Fortsätt redigera",
+	"comments-preview-failed": "Förhandsgranskning misslyckades. Var god försök igen.",
 	"comments-desc": "Lägger till parserkroken <code>&lt;comments&gt;</code> som tillåter kommentarer på sidor",
 	"comments-db-locked": "<h3>Lägga till kommentarer</h3>Databasen är för tillfället låst för rutinerat underhåll, och kommer att fungera normalt när det är klart. Var god kom tillbaka senare!",
 	"comments-voted-label": "Röstade",
@@ -70,6 +72,8 @@
 	"comments-ignore-cancel": "Avbryt",
 	"comments-ignore-title": "Ignoreringslista för kommentarer",
 	"commentignorelist": "Ignoreringslista för kommentarer",
+	"echo-category-title-mention-comment": "Omnämnanden i kommentarer",
+	"echo-pref-tooltip-mention-comment": "Meddela mig när någon länkar till min användarsida i en kommentar.",
 	"notification-header-mention-comment": "$1 {{GENDER:$2|nämnde}} {{GENDER:$3|dig}} i [[$4#comment-$5|en kommentar]] på <strong>$4</strong>.",
 	"log-name-comments": "Kommentarlogg",
 	"log-description-comments": "Detta är en logg för kommentarer.",
