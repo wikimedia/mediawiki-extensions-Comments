@@ -1,6 +1,8 @@
 /**
  * JavaScript for the Comments extension.
  *
+ * @param $
+ * @param mw
  * @file
  */
 ( function ( $, mw ) {
