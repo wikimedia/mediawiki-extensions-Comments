@@ -398,7 +398,7 @@ class Comment extends ContextSource {
 			);
 		}
 
-		Hooks::run( 'Comment::add', [ $comment, $commentId, $comment->page->id ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'Comment::add', [ $comment, $commentId, $comment->page->id ] );
 
 		return $comment;
 	}
@@ -664,7 +664,7 @@ class Comment extends ContextSource {
 		$this->page->clearCommentListCache();
 
 		// Ping other extensions that may have hooked into this point (i.e. LinkFilter)
-		Hooks::run( 'Comment::delete', [ $this, $this->id, $this->page->id ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'Comment::delete', [ $this, $this->id, $this->page->id ] );
 	}
 
 	/**

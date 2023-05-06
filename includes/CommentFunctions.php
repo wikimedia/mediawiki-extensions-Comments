@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\AtEase\AtEase;
 
 class CommentFunctions {
@@ -101,7 +102,7 @@ class CommentFunctions {
 		// Allow to hook other anti-spam extensions so that sites that use,
 		// for example, AbuseFilter, Phalanx or SpamBlacklist can add additional
 		// checks
-		Hooks::run( 'Comments::isSpam', [ &$text, &$retVal ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'Comments::isSpam', [ &$text, &$retVal ] );
 		if ( $retVal ) {
 			// Should only be true here...
 			return $retVal;
