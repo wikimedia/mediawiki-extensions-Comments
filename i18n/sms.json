@@ -13,6 +13,7 @@
 	"comments-permalink": "Põõšši liŋkk",
 	"comments-delete-link": "Jaukkâd kommeeʹnt",
 	"comments-anon-name": "Nõõmteʹmes õõʹnni",
+	"comments-ignore-unblock": "Jaukkâd muʹttemcõggmõõžž",
 	"comments-ignore-cancel": "Jõõsk",
 	"comments-time-months": "{{PLURAL:$1|õhtt määnpââʹjj|$1 määnpââʹj|$1 määnpââʹjjed}}",
 	"comments-time-days": "{{PLURAL:$1|õhtt peiʹvv|$1 peeiʹv|$1 peiʹvved}}",
