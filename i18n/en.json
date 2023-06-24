@@ -5,17 +5,11 @@
 			"Mihir Thakkar <mihir9293@gmail.com>"
 		]
 	},
-	"apihelp-commentblock-description": "The commentblock API allows blocking a user from the comment it originated from after filling out the following parameters: CommentID.",
 	"apihelp-commentblock-summary": "The commentblock API allows blocking a user from the comment it originated from after filling out the following parameters: CommentID.",
-	"apihelp-commentdelete-description": "The commentdelete API allows deleting a comment after filling out the following parameters: CommentID.",
 	"apihelp-commentdelete-summary": "The commentdelete API allows deleting a comment after filling out the following parameters: CommentID.",
-	"apihelp-commentlatestid-description": "The commentlatestID API allows to retrieve latest comment ID after filling out the following parameters: pageID",
 	"apihelp-commentlatestid-summary": "The commentlatestID API allows to retrieve latest comment ID after filling out the following parameters: pageID",
-	"apihelp-commentlist-description": "The commentlist API retrieves multiple comments and outputs them as a list after filling out the following parameters: pageID, order, pagerPage, and showForm.",
 	"apihelp-commentlist-summary": "The commentlist API retrieves multiple comments and outputs them as a list after filling out the following parameters: pageID, order, pagerPage, and showForm.",
-	"apihelp-commentsubmit-description": "The commentsubmit API allows to submit/post a comment after filling out the following parameters: pageID, parentID, commentText.",
 	"apihelp-commentsubmit-summary": "The commentsubmit API allows to submit/post a comment after filling out the following parameters: pageID, parentID, commentText.",
-	"apihelp-commentvote-description": "The commentvote API allows to vote on a comment after filling out the following parameters: commentID, voteValue.",
 	"apihelp-commentvote-summary": "The commentvote API allows to vote on a comment after filling out the following parameters: commentID, voteValue.",
 	"apihelp-commentblock-param-commentID": "Comment ID of the comment by user which is to be blocked",
 	"apihelp-commentdelete-param-commentID": "Comment ID of the comment to be deleted",

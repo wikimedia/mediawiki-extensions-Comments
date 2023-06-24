@@ -13,17 +13,11 @@
 			"Umherirrender"
 		]
 	},
-	"apihelp-commentblock-description": "{{doc-apihelp-description|commentblock}}",
 	"apihelp-commentblock-summary": "{{doc-apihelp-summary|commentblock}}",
-	"apihelp-commentdelete-description": "{{doc-apihelp-description|commentdelete}}",
 	"apihelp-commentdelete-summary": "{{doc-apihelp-summary|commentdelete}}",
-	"apihelp-commentlatestid-description": "{{doc-apihelp-description|commentlatestid}}",
 	"apihelp-commentlatestid-summary": "{{doc-apihelp-summary|commentlatestid}}",
-	"apihelp-commentlist-description": "{{doc-apihelp-description|commentlist}}",
 	"apihelp-commentlist-summary": "{{doc-apihelp-summary|commentlist}}",
-	"apihelp-commentsubmit-description": "{{doc-apihelp-description|commentsubmit}}",
 	"apihelp-commentsubmit-summary": "{{doc-apihelp-summary|commentsubmit}}",
-	"apihelp-commentvote-description": "{{doc-apihelp-description|commentvote}}",
 	"apihelp-commentvote-summary": "{{doc-apihelp-summary|commentvote}}",
 	"apihelp-commentblock-param-commentID": "{{doc-apihelp-param|commentblock|commentID}}",
 	"apihelp-commentdelete-param-commentID": "{{doc-apihelp-param|commentdelete|commentID}}",
