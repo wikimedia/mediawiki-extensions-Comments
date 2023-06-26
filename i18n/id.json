@@ -9,17 +9,11 @@
 			"පසිඳු කාවින්ද"
 		]
 	},
-	"apihelp-commentblock-description": "API commentblock memungkinkan memblokir seorang pengguna yang mengirimkan suatu komentar setelah mengisi parameter berikut: CommentID.",
 	"apihelp-commentblock-summary": "API commentblock memungkinkan memblokir seorang pengguna yang mengirimkan suatu komentar setelah mengisi parameter berikut: CommentID.",
-	"apihelp-commentdelete-description": "API commentdelete memungkinkan menghapus sebuah komentar setelah mengisi parameter berikut: CommentID.",
 	"apihelp-commentdelete-summary": "API commentdelete memungkinkan menghapus sebuah komentar setelah mengisi parameter berikut: CommentID.",
-	"apihelp-commentlatestid-description": "API commentlatestID memungkinkan untuk memperoleh ID komentar terbaru setelah mengisi parameter berikut: pageID",
 	"apihelp-commentlatestid-summary": "API commentlatestID memungkinkan untuk memperoleh ID komentar terbaru setelah mengisi parameter berikut: pageID",
-	"apihelp-commentlist-description": "API commentlist mengambil beberapa komentar dan memberikan keluaran daftar komentar-komentar tersebut setelah mengisi parameter berikut: pageID, order, pagerPage, dan showForm.",
 	"apihelp-commentlist-summary": "API commentlist mengambil beberapa komentar dan memberikan keluaran daftar komentar-komentar tersebut setelah mengisi parameter berikut: pageID, order, pagerPage, dan showForm.",
-	"apihelp-commentsubmit-description": "API commentsubmit memungkinkan untuk mengirimkan sebuah komentar setelah mengisi parameter-parameter berikut: pageID, parentID, commentText.",
 	"apihelp-commentsubmit-summary": "API commentsubmit memungkinkan untuk mengirimkan sebuah komentar setelah mengisi parameter-parameter berikut: pageID, parentID, commentText.",
-	"apihelp-commentvote-description": "API commentvote memungkinkan menilai sebuah komentar setelah mengisi parameter berikut: commentID, voteValue.",
 	"apihelp-commentvote-summary": "API commentvote memungkinkan menilai sebuah komentar setelah mengisi parameter berikut: commentID, voteValue.",
 	"apihelp-commentblock-param-commentID": "ID Komentar dari komentar oleh pengguna yang ingin diblokir",
 	"apihelp-commentdelete-param-commentID": "ID Komentar dari komentar yang ingin dihapus",

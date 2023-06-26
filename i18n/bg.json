@@ -7,17 +7,11 @@
 			"පසිඳු කාවින්ද"
 		]
 	},
-	"apihelp-commentblock-description": "API-то на commentblock позволява блокиране на потребител на база негов коментар, след попълване на  следните параметри: CommentID.",
 	"apihelp-commentblock-summary": "API-то на commentblock позволява блокиране на потребител на база негов коментар, след попълване на  следните параметри: CommentID.",
-	"apihelp-commentdelete-description": "API-то на commentblock позволява изтриването на коментар, след попълване на следните параметри: CommentID.",
 	"apihelp-commentdelete-summary": "API-то на commentblock позволява изтриването на коментар, след попълване на следните параметри: CommentID.",
-	"apihelp-commentlatestid-description": "API-то на commentblock позволява получаването на ID на последния коментар, след попълване на следните параметри: pageID",
 	"apihelp-commentlatestid-summary": "API-то на commentblock позволява получаването на ID на последния коментар, след попълване на следните параметри: pageID",
-	"apihelp-commentlist-description": "API-то на commentblock извлича множество коментари и ги извежда във вид на списък, след попълване на следните параметри: pageID, order, pagerPage и showForm.",
 	"apihelp-commentlist-summary": "API-то на commentblock извлича множество коментари и ги извежда във вид на списък, след попълване на следните параметри: pageID, order, pagerPage и showForm.",
-	"apihelp-commentsubmit-description": "API-то на commentsubmit позволява изпращане/публикуване на коментар, след попълване на следните параметри: pageID, parentID, commentText.",
 	"apihelp-commentsubmit-summary": "API-то на commentsubmit позволява изпращане/публикуване на коментар, след попълване на следните параметри: pageID, parentID, commentText.",
-	"apihelp-commentvote-description": "API-то на commentvote позволява гласуване за коментар, след попълване на следните параметри: commentID, voteValue.",
 	"apihelp-commentvote-summary": "PI-то на commentvote позволява гласуване за коментар, след попълване на следните параметри: commentID, voteValue.",
 	"comments-comment": "Коментар",
 	"comments-loading": "Зареждане...",

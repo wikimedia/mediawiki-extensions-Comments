@@ -5,15 +5,10 @@
 			"Xuacu"
 		]
 	},
-	"apihelp-commentblock-description": "L'API de commentblock permite bloquiar a un usuariu dende'l comentariu del que s'orixinó después de rellenar los parámetros siguientes: CommentID.",
 	"apihelp-commentblock-summary": "L'API de commentblock permite bloquiar a un usuariu dende'l comentariu del que s'orixinó después de rellenar los parámetros siguientes: CommentID.",
-	"apihelp-commentdelete-description": "L'API de commentdelete permite desaniciar un comentariu después de rellenar los parámetros siguientes: CommentID.",
 	"apihelp-commentdelete-summary": "L'API de commentdelete permite desaniciar un comentariu después de rellenar los parámetros siguientes: CommentID.",
-	"apihelp-commentlatestid-description": "L'API de commentlatestID permite llograr l'ID del últimu comentariu después de rellenar los parámetros siguientes: pageID.",
 	"apihelp-commentlatestid-summary": "L'API de commentlatestID permite llograr l'ID del últimu comentariu después de rellenar los parámetros siguientes: pageID.",
-	"apihelp-commentlist-description": "La API commentlist recupera múltiples comentarios y preséntalos en forma de llista después de rellenar los siguientes parámetros: pageID, order, pagerPage, y showForm.",
 	"apihelp-commentlist-summary": "La API commentlist recupera múltiples comentarios y preséntalos en forma de llista después de rellenar los siguientes parámetros: pageID, order, pagerPage, y showForm.",
-	"apihelp-commentsubmit-description": "La API commentsubmit permite unviar/espublizar un comentariu después de rellenar los parametros siguientes: pageID, parentID, commentText.",
 	"comments-comment": "Comentariu",
 	"comments-desc": "Añade l'enganche del analizador <code>&lt;comments&gt;</code> que permite comentar nes páxines",
 	"comments-db-locked": "<h3>Amestar comentarios</h3>Nesti momentu la base de datos ta bloquiada por xeres rutinaries de caltenimientu, depués de les que volverá a la normalidá. Torna más sero.",

@@ -5,7 +5,6 @@
 			"Joao Xavier"
 		]
 	},
-	"apihelp-commentlatestid-description": "La programo (API) nomizita ''commentlatestID'' posibligas rekuperar l'identifikilo (ID) de la lasta komento, pos kompletigar la sequanta parametri: ''ID de pagino''",
 	"apihelp-commentlatestid-summary": "La programo (API) nomizita ''commentlatestID'' posibligas rekuperar l'identifiko (ID) de la lasta komento, pos kompletigar la sequanta parametri: ''ID de pagino''",
 	"apihelp-commentlatestid-param-pageID": "ID di la pagino ube skribesis la maxim recenta komento",
 	"comments-comment": "Komento",

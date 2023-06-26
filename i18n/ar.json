@@ -8,17 +8,11 @@
 			"محمد أحمد عبد الفتاح"
 		]
 	},
-	"apihelp-commentblock-description": "تسمح API Commentblock بمنع مستخدم من التعليق الذي تم إنشاؤه من بعد ملء الوسائط التالية: CommentID.",
 	"apihelp-commentblock-summary": "تسمح API Commentblock بمنع مستخدم من التعليق الذي تم إنشاؤه من بعد ملء الوسائط التالية: CommentID.",
-	"apihelp-commentdelete-description": "تسمح API commentdelete حذف تعليق بعد ملء الوسائط التالية: CommentID.",
 	"apihelp-commentdelete-summary": "تسمح API commentdelete حذف تعليق بعد ملء الوسائط التالية: CommentID.",
-	"apihelp-commentlatestid-description": "تسمح API commentlatestID باسترداد معرف أحدث تعليق بعد ملء الوسائط التالية: pageID",
 	"apihelp-commentlatestid-summary": "تسمح API commentlatestID باسترداد معرف أحدث تعليق بعد ملء الوسائط التالية: pageID",
-	"apihelp-commentlist-description": "تسترد API Commentlist عدة تعليقات وتخرجها كقائمة بعد ملء الوسائط التالية: pageID وorder وpagerPage وshowForm.",
 	"apihelp-commentlist-summary": "تسترد API Commentlist عدة تعليقات وتخرجها كقائمة بعد ملء الوسائط التالية: pageID وorder وpagerPage وshowForm.",
-	"apihelp-commentsubmit-description": "تسمح API commentubmit بتقديم/نشر تعليق بعد ملء الوسائط التالية: pageIDو parentID وcommentText.",
 	"apihelp-commentsubmit-summary": "تسمح API commentubmit بتقديم/نشر تعليق بعد ملء الوسائط التالية: pageID وparentID وcommentText.",
-	"apihelp-commentvote-description": "تسمح API commentubmit بالتصويت على تعليق بعد ملء الوسائط التالية: commentID وvoteValue.",
 	"apihelp-commentvote-summary": "تسمح API commentubmit بالتصويت على تعليق بعد ملء الوسائط التالية: commentID وvoteValue.",
 	"apihelp-commentblock-param-commentID": "معرف التعليق للتعليق من قبل المستخدم والذي سيتم منعه",
 	"apihelp-commentdelete-param-commentID": "معرف التعليق للتعليق المراد حذفه",

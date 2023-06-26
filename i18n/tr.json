@@ -7,17 +7,11 @@
 			"Vito Genovese"
 		]
 	},
-	"apihelp-commentblock-description": "Commentblock API'si, bir kullanıcının aşağıdaki parametreleri doldurduktan sonra yaptığı yorumdan engellenmesine izin verir: CommentID.",
 	"apihelp-commentblock-summary": "Commentblock API'si, bir kullanıcının aşağıdaki parametreleri doldurduktan sonra yaptığı yorumdan engellenmesine izin verir: CommentID.",
-	"apihelp-commentdelete-description": "Commentdelete API'si, aşağıdaki parametreleri doldurduktan sonra bir yorumun silinmesine izin verir: CommentID.",
 	"apihelp-commentdelete-summary": "Commentdelete API'si, aşağıdaki parametreleri doldurduktan sonra bir yorumun silinmesine izin verir: CommentID.",
-	"apihelp-commentlatestid-description": "CommentlatestID API'si, aşağıdaki parametreleri doldurduktan sonra en son yorum kimliğinin alınmasına izin verir: pageID",
 	"apihelp-commentlatestid-summary": "CommentlatestID API'si, aşağıdaki parametreleri doldurduktan sonra en son yorum kimliğinin alınmasına izin verir: pageID",
-	"apihelp-commentlist-description": "Commentlist API'si, birden fazla yorumu alır ve aşağıdaki parametreleri doldurduktan sonra bunları bir liste olarak çıkarır: pageID, order, pagerPage ve showForm.",
 	"apihelp-commentlist-summary": "Commentlist API'si, birden fazla yorumu alır ve aşağıdaki parametreleri doldurduktan sonra bunları bir liste olarak çıkarır: pageID, order, pagerPage ve showForm.",
-	"apihelp-commentsubmit-description": "Commentsubmit API'si, aşağıdaki parametreleri doldurduktan sonra bir yorum göndermeye izin verir: pageID, parentID, commentText.",
 	"apihelp-commentsubmit-summary": "Commentsubmit API'si, aşağıdaki parametreleri doldurduktan sonra bir yorum göndermeye izin verir: pageID, parentID, commentText.",
-	"apihelp-commentvote-description": "Commentvote API'si, aşağıdaki parametreleri doldurduktan sonra bir yoruma oy vermeyi sağlar: commentID, voteValue.",
 	"apihelp-commentvote-summary": "Commentvote API'si, aşağıdaki parametreleri doldurduktan sonra bir yoruma oy vermeyi sağlar: commentID, voteValue.",
 	"apihelp-commentblock-param-commentID": "Yorum engellenecek kullanıcı tarafından yorumun kimliği",
 	"apihelp-commentdelete-param-commentID": "Silinecek yorumun yorum kimliği",

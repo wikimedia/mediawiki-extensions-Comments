@@ -13,17 +13,11 @@
 			"Ата"
 		]
 	},
-	"apihelp-commentblock-description": "Commentblock API дозволяє заблокувати користувача за коментарем, за яким його можна відстежити, заповнивши такий параметр: CommentID.",
 	"apihelp-commentblock-summary": "Commentblock API дозволяє заблокувати користувача за коментарем, за яким його можна відстежити, заповнивши такий параметр: CommentID.",
-	"apihelp-commentdelete-description": "Commentdelete API дозволяє вилучити коментар після заповнення такого параметра: CommentID.",
 	"apihelp-commentdelete-summary": "Commentdelete API дозволяє вилучити коментар після заповнення такого параметра: CommentID.",
-	"apihelp-commentlatestid-description": "CommentlatestID API дозволяє отримати останній ідентифікатор коментаря після заповнення такого параметра: pageID",
 	"apihelp-commentlatestid-summary": "CommentlatestID API дозволяє отримати останній ідентифікатор коментаря після заповнення такого параметра: pageID",
-	"apihelp-commentlist-description": "Commentlist API отримує декілька коментарів і виводить їх як список після заповнення таких параметрів: pageID, order, pagerPage, і showForm.",
 	"apihelp-commentlist-summary": "Commentlist API отримує декілька коментарів і виводить їх як список після заповнення таких параметрів: pageID, order, pagerPage, і showForm.",
-	"apihelp-commentsubmit-description": "Commentsubmit API дозволяє надіслати/опублікувати коментар після заповнення таких параметрів: pageID, parentID, commentText.",
 	"apihelp-commentsubmit-summary": "Commentsubmit API дозволяє надіслати/опублікувати коментар після заповнення таких параметрів: pageID, parentID, commentText.",
-	"apihelp-commentvote-description": "Commentvote API дозволяє проголосувати щодо коментаря після заповнення таких параметрів: commentID, voteValue.",
 	"apihelp-commentvote-summary": "Commentvote API дозволяє проголосувати щодо коментаря після заповнення таких параметрів: commentID, voteValue.",
 	"apihelp-commentblock-param-commentID": "Ідентифікатор коментаря, залишеного користувачем, якого треба заблокувати",
 	"apihelp-commentdelete-param-commentID": "Ідентифікатор коментаря, якого треба вилучити",

@@ -11,17 +11,11 @@
 			"ערן"
 		]
 	},
-	"apihelp-commentblock-description": "באמצעות ה־API&rlm; \"commentblock\" ניתן לחסום משתמש מתגובה. יש למלא את הפרמטר CommentID.",
 	"apihelp-commentblock-summary": "באמצעות ה־API&rlm; \"commentblock\" ניתן לחסום משתמש מתגובה. יש למלא את הפרמטר CommentID.",
-	"apihelp-commentdelete-description": "באמצעות ה־API&rlm; \"commentdelete\" ניתן למחוק תגובה. יש למלא את הפרמטר CommentID.",
 	"apihelp-commentdelete-summary": "באמצעות ה־API&rlm; \"commentdelete\" ניתן למחוק תגובה. יש למלא את הפרמטר CommentID.",
-	"apihelp-commentlatestid-description": "באמצעות ה־API&rlm; \"commentlatestID\" ניתן לשלוף את המזהה של התגובה האחרונה. יש למלא את הפרמטר pageID.",
 	"apihelp-commentlatestid-summary": "באמצעות ה־API&rlm; \"commentlatestID\" ניתן לשלוף את המזהה של התגובה האחרונה. יש למלא את הפרמטר pageID.",
-	"apihelp-commentlist-description": "באמצעות ה־API&rlm; \"commentlist\" ניתן לשלוף תגובות מרובות ולהציג אותן כרשימה. יש למלא את הפרמטרים הבאים: pageID&rlm;, order&rlm;, pagerPage&rlm;, showForm.",
 	"apihelp-commentlist-summary": "באמצעות ה־API&rlm; \"commentlist\" ניתן לשלוף תגובות מרובות ולהציג אותן כרשימה. יש למלא את הפרמטרים הבאים: pageID&rlm;, order&rlm;, pagerPage&rlm;, showForm.",
-	"apihelp-commentsubmit-description": "באמצעות ה־API&rlm; \"commentsubmit\" ניתן לשלוח או לפרסם תגובה. יש למלא את הפרמטרים הבאים: pageID&rlm;, parentID&rlm;, commentText.",
 	"apihelp-commentsubmit-summary": "באמצעות ה־API&rlm; \"commentsubmit\" ניתן לשלוח או לפרסם תגובה. יש למלא את הפרמטרים הבאים: pageID&rlm;, parentID&rlm;, commentText.",
-	"apihelp-commentvote-description": "באמצעות ה־API&rlm; \"commentvote\" ניתן להצביע על תגובה. יש למלא את הפרמטרים הבאים: commentID&rlm;, voteValue.",
 	"apihelp-commentvote-summary": "באמצעות ה־API&rlm; \"commentvote\" ניתן להצביע על תגובה. יש למלא את הפרמטרים הבאים: commentID&rlm;, voteValue.",
 	"apihelp-commentblock-param-commentID": "מזהה התגובה שנכתבה על־ידי המשתמש שייחסם",
 	"apihelp-commentdelete-param-commentID": "מזהה התגובה שתימחק",

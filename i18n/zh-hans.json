@@ -15,17 +15,11 @@
 			"佛壁灯"
 		]
 	},
-	"apihelp-commentblock-description": "评论封禁API允许封禁用户的评论权，它在填写以下参数后出现：评论ID。",
 	"apihelp-commentblock-summary": "评论封禁API允许封禁用户的评论权，它在填写以下参数后出现：评论ID。",
-	"apihelp-commentdelete-description": "评论封禁API允许删除评论，在填写完以下参数的情况下：评论ID。",
 	"apihelp-commentdelete-summary": "评论封禁API允许删除评论，在填写完以下参数的情况下：评论ID。",
-	"apihelp-commentlatestid-description": "评论最新ID API允许检索最近评论的ID，在填写完以下参数的情况下：页面ID。",
 	"apihelp-commentlatestid-summary": "评论最新ID API允许检索最近评论的ID，在填写完以下参数的情况下：页面ID。",
-	"apihelp-commentlist-description": "评论列表API检索多条评论，并将其输出为列表，在填写完以下参数的情况下：页面ID、排序、纸张页面及显示表单。",
 	"apihelp-commentlist-summary": "评论列表API检索多条评论，并将其输出为列表，在填写完以下参数的情况下：页面ID、排序、纸张页面及显示表单。",
-	"apihelp-commentsubmit-description": "评论提交API允许提交/发布评论，在填写完以下参数的情况下：页面ID、父ID及评论文本。",
 	"apihelp-commentsubmit-summary": "评论提交API允许提交/发布评论，在填写完以下参数的情况下：页面ID、父ID及评论文本。",
-	"apihelp-commentvote-description": "评论投票API允许对评论投票，在填写完以下参数的情况下：评论ID及投票值。",
 	"apihelp-commentvote-summary": "评论投票API允许对评论投票，在填写完以下参数的情况下：评论ID及投票值。",
 	"apihelp-commentblock-param-commentID": "由要被封禁的用户所作出评论的评论ID",
 	"apihelp-commentdelete-param-commentID": "要删除的评论的评论ID",

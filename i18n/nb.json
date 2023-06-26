@@ -6,17 +6,11 @@
 			"Jon Harald Søby"
 		]
 	},
-	"apihelp-commentblock-description": "Commentblock-API-et gjør det mulig å blokkere en bruker fra kommentaren den kom fra etter å ha fylt ut følgende parametre: CommentID.",
 	"apihelp-commentblock-summary": "Commentblock-API-et gjør det mulig å blokkere en bruker fra kommentaren den kom fra etter å ha fylt ut følgende parametre: CommentID.",
-	"apihelp-commentdelete-description": "Commentdelete-API-et gjør det mulig å slette en kommentar etter å ha fylt ut følgende parametre: CommentID.",
 	"apihelp-commentdelete-summary": "Commentdelete-API-et gjør det mulig å slette en kommentar etter å ha fylt ut følgende parametre: CommentID.",
-	"apihelp-commentlatestid-description": "Commentlatest-API-et gjør det mulig å hente nyeste kommentar etter å ha fylt ut følgende parametre: pageID.",
 	"apihelp-commentlatestid-summary": "Commentlatest-API-et gjør det mulig å hente nyeste kommentar etter å ha fylt ut følgende parametre: pageID.",
-	"apihelp-commentlist-description": "Commentlist-API-et gjør det mulig å hente flere kommentarer og returnere dem som en liste etter å ha fylt ut følgende parametre: pageID, order, pagerPage og showForm.",
 	"apihelp-commentlist-summary": "Commentlist-API-et gjør det mulig å hente flere kommentarer og returnere dem som en liste etter å ha fylt ut følgende parametre: pageID, order, pagerPage og showForm.",
-	"apihelp-commentsubmit-description": "Commentsubmit-API-et gjør det mulig å poste en kommentar etter å ha fylt ut følgende parametre: pageID, parentID, commentText.",
 	"apihelp-commentsubmit-summary": "Commentsubmit-API-et gjør det mulig å poste en kommentar etter å ha fylt ut følgende parametre: pageID, parentID, commentText.",
-	"apihelp-commentvote-description": "Commentvote-API-et gjør det mulig å stemme på en kommentar etter å ha fylt ut følgende parametre: commentID, voteValue.",
 	"apihelp-commentvote-summary": "Commentvote-API-et gjør det mulig å stemme på en kommentar etter å ha fylt ut følgende parametre: commentID, voteValue.",
 	"apihelp-commentblock-param-commentID": "Kommentar-ID-en til kommentaren av brukeren som skal blokkeres",
 	"apihelp-commentdelete-param-commentID": "Kommentar-ID-en til kommentaren som skal slettes",

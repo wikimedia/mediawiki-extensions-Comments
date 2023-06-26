@@ -17,7 +17,6 @@
 			"Sporeunai"
 		]
 	},
-	"apihelp-commentvote-description": "La API commentvote permite votar un comentario tras proporcionar los parámetros siguientes: commentID, voteValue.",
 	"apihelp-commentblock-param-commentID": "Identificador del comentario del usuario que se bloqueará",
 	"apihelp-commentdelete-param-commentID": "Identificador del comentario que se eliminará",
 	"apihelp-commentlatestid-param-pageID": "Identificador de la página donde está el comentario más reciente",

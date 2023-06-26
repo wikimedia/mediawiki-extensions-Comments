@@ -5,17 +5,11 @@
 			"Vlad5250"
 		]
 	},
-	"apihelp-commentblock-description": "Prilog za blokrianje komentara omogućuje blokiranje korisnika od komentiranja nakon što ispunite sljedeće parametre: CommentID.",
 	"apihelp-commentblock-summary": "Prilog za blokrianje komentara omogućuje blokiranje korisnika od komentiranja nakon što ispunite sljedeće parametre: CommentID.",
-	"apihelp-commentdelete-description": "Prilog za brisanje komentara omogućuje brisanje komentara nakon što ispunite sljedeće parametre: CommentID.",
 	"apihelp-commentdelete-summary": "Prilog za brisanje komentara omogućuje brisanje komentara nakon što ispunite sljedeće parametre: CommentID.",
-	"apihelp-commentlatestid-description": "Prilog za naznake najnovijih komentara omogućuje dohvaćanje naznaka najnovijih komentara nakon što ispunite sljedeće parametre: pageID",
 	"apihelp-commentlatestid-summary": "Prilog za naznake najnovijih komentara omogućuje dohvaćanje naznaka najnovijih komentara nakon što ispunite sljedeće parametre: pageID.",
-	"apihelp-commentlist-description": "Prilog za popis komentara za dohvaćanje više komentara; daje ih kao spisak, nakon što se ispunjuju sljedeći parametri: pageID, order, pagerPage i showForm.",
 	"apihelp-commentlist-summary": "Prilog za popis komentara za dohvaćanje više komentara; daje ih kao spisak, nakon što se ispunjuju sljedeći parametri: pageID, order, pagerPage i showForm.",
-	"apihelp-commentsubmit-description": "Prilog za slanje komentara omogućuje slanje/objavu komentara nakon što se ispunjuju sljedeći parametri: pageID, parentID, commentText.",
 	"apihelp-commentsubmit-summary": "Prilog za slanje komentara omogućuje slanje/objavu komentara nakon što se ispunjuju sljedeći parametri: pageID, parentID, commentText.",
-	"apihelp-commentvote-description": "Prilog za glasovanje za komentare omogućuje glasovanje o komentaru nakon što se ispunjuju sljedeći parametri: CommentID.",
 	"apihelp-commentvote-summary": "Prilog za glasovanje za komentare omogućuje glasovanje o komentaru nakon što se ispunjuju sljedeći parametri: CommentID.",
 	"apihelp-commentblock-param-commentID": "Naznaka komentara po korisniku koji treba blokirati",
 	"apihelp-commentdelete-param-commentID": "naznaka komentara koji treba izbrisati",

@@ -9,17 +9,11 @@
 			"WikiPhoenix"
 		]
 	},
-	"apihelp-commentblock-description": "API:et commentblock gör det möjligt att blockera en användare från kommentaren den kommer ifrån efter att följande parametrar fylls i: CommentID",
 	"apihelp-commentblock-summary": "API:et commentblock gör det möjligt att blockera en användare från kommentaren den kommer ifrån efter att följande parametrar fylls i: CommentID.",
-	"apihelp-commentdelete-description": "API:et commentdelete gör det möjligt att radera en kommentar efter att följande parametrar fylls i: CommentID",
 	"apihelp-commentdelete-summary": "API:et commentdelete gör det möjligt att radera en kommentar efter att följande parametrar fylls i: CommentID.",
-	"apihelp-commentlatestid-description": "API:et commentlatestID gör det möjligt att hämta senaste kommentar-ID efter att följande parametrar fylls i: pageID",
 	"apihelp-commentlatestid-summary": "API:et commentlatestID gör det möjligt att hämta senaste kommentar-ID efter att följande parametrar fylls i: pageID",
-	"apihelp-commentlist-description": "API:et commentlist gör det möjligt att hämta flera kommentarer och matar ut dem som en lista efter att följande parametrar fylls i: pageID, order, pagerPage och showForm.",
 	"apihelp-commentlist-summary": "API:et commentlist gör det möjligt att hämta flera kommentarer och matar ut dem som en lista efter att följande parametrar fylls i: pageID, order, pagerPage och showForm.",
-	"apihelp-commentsubmit-description": "API:et commentsubmit gör det möjligt att skicka en kommentar efter att följande parametrar fylls i: pageID, parentID, commentText.",
 	"apihelp-commentsubmit-summary": "API:et commentsubmit gör det möjligt att skicka en kommentar efter att följande parametrar fylls i: pageID, parentID, commentText.",
-	"apihelp-commentvote-description": "API:et commentvote gör det möjligt att rösta på en kommentar efter att följande parametrar fylls i: pageID, parentID, commentText.",
 	"apihelp-commentvote-summary": "API:et commentvote gör det möjligt att rösta på en kommentar efter att följande parametrar fylls i: commentID, voteValue.",
 	"apihelp-commentblock-param-commentID": "Kommentar-ID för användarens kommentar som ska blockeras",
 	"apihelp-commentdelete-param-commentID": "Kommentar-ID för kommentaren att radera",

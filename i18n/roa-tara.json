@@ -5,17 +5,11 @@
 			"Joetaras"
 		]
 	},
-	"apihelp-commentblock-description": "L'API commentblock permette 'u blocche de 'n'utende da 'u commende origgenate dopo ca ave anghiute ste parametre: CommentID.",
 	"apihelp-commentblock-summary": "L'API commentblock permette 'u blocche de 'n'utende da 'u commende origgenate dopo ca ave anghiute ste parametre: CommentID.",
-	"apihelp-commentdelete-description": "L'API commendelete permette 'a scangellazzione de 'nu commende dopo ca ave anghiute ste parametre: CommentID.",
 	"apihelp-commentdelete-summary": "L'API commendelete permette 'a scangellazzione de 'nu commende dopo ca ave anghiute ste parametre: CommentID.",
-	"apihelp-commentlatestid-description": "L'API commentlatestID permette de pigghià l'urteme ID d'u commende dopo ca ave anghiute ste parametre: pageID.",
 	"apihelp-commentlatestid-summary": "L'API commentlatestID permette de pigghià l'urteme ID d'u commende dopo ca ave anghiute ste parametre: pageID.",
-	"apihelp-commentlist-description": "L'API commentlist pigghie cchiù commende e resultate da lore cumme 'n'elenghe dopo ca ave anghiute ste parametre: pageID, order, pagerPage, and showForm.",
 	"apihelp-commentlist-summary": "L'API commentlist pigghie cchiù commende e resultate da lore cumme 'n'elenghe dopo ca ave anghiute ste parametre: pageID, order, pagerPage, and showForm.",
-	"apihelp-commentsubmit-description": "L'API commentsubmit permette de confermà/mannà 'nu commende dopo ca ave anghiute ste parametre: pageID, parentID, commentText.",
 	"apihelp-commentsubmit-summary": "L'API commentsubmit permette de confermà/mannà 'nu commende dopo ca ave anghiute ste parametre: pageID, parentID, commentText.",
-	"apihelp-commentvote-description": "L'API commentvote permette de votà 'nu commende dopo ca ave anghiute ste parametre: commentID, voteValue.",
 	"apihelp-commentvote-summary": "L'API commentvote permette de votà 'nu commende dopo ca ave anghiute ste parametre: commentID, voteValue.",
 	"apihelp-commentblock-param-commentID": "ID d'u commende de quidde de l'utende ca ha state bloccate",
 	"apihelp-commentdelete-param-commentID": "ID d'u commende de quidde da scangellà",

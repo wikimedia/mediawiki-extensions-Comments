@@ -8,17 +8,11 @@
 			"Metalhead64"
 		]
 	},
-	"apihelp-commentblock-description": "Die commentblock-API erlaubt das Sperren eines Benutzers, von dem der Kommentar stammt, nach dem Ausfüllen der folgenden Parameter: CommentID.",
 	"apihelp-commentblock-summary": "Die commentblock-API erlaubt das Sperren eines Benutzers, von dem der Kommentar stammt, nach dem Ausfüllen der folgenden Parameter: CommentID.",
-	"apihelp-commentdelete-description": "Die commentdelete-API erlaubt das Löschen eines Kommentars nach dem Ausfüllen der folgenden Parameter: CommentID.",
 	"apihelp-commentdelete-summary": "Die commentdelete-API erlaubt das Löschen eines Kommentars nach dem Ausfüllen der folgenden Parameter: CommentID.",
-	"apihelp-commentlatestid-description": "Die commentlatestID-API erlaubt das Abrufen der aktuellen Kommentarkennung nach dem Ausfüllen der folgenden Parameter: pageID",
 	"apihelp-commentlatestid-summary": "Die commentlatestID-API erlaubt das Abrufen der aktuellen Kommentarkennung nach dem Ausfüllen der folgenden Parameter: pageID",
-	"apihelp-commentlist-description": "Die commentlist-API ruft mehrere Kommentare ab und gibt sie als Liste aus nach dem Ausfüllen der folgenden Parameter: pageID, order, pagerPage und showForm.",
 	"apihelp-commentlist-summary": "Die commentlist-API ruft mehrere Kommentare ab und gibt sie als Liste aus nach dem Ausfüllen der folgenden Parameter: pageID, order, pagerPage und showForm.",
-	"apihelp-commentsubmit-description": "Die commentsubmit-API ermöglicht es, einen Kommentar zu übermitteln/zu posten, nachdem die folgenden Parameter ausgefüllt wurden: pageID, parentID, commentText.",
 	"apihelp-commentsubmit-summary": "Die commentsubmit-API ermöglicht es, einen Kommentar zu übermitteln/zu posten, nachdem die folgenden Parameter ausgefüllt wurden: pageID, parentID, commentText.",
-	"apihelp-commentvote-description": "Die commentvote-API ermöglicht es, über einen Kommentar abzustimmen, nachdem die folgenden Parameter eingegeben wurden: commentID, voteValue.",
 	"apihelp-commentvote-summary": "Die commentvote-API ermöglicht es, über einen Kommentar abzustimmen, nachdem die folgenden Parameter eingegeben wurden: commentID, voteValue.",
 	"apihelp-commentblock-param-commentID": "Kennung des Kommentars des Benutzers, der gesperrt werden soll.",
 	"apihelp-commentdelete-param-commentID": "Kennung des Kommentars, der gelöscht werden soll.",

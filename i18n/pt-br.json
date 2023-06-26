@@ -10,17 +10,11 @@
 			"Nemo bis"
 		]
 	},
-	"apihelp-commentblock-description": "A API commentblock permite bloquear um utilizador a partir de um comentário feito por ele, após preencher os seguintes parâmetros: CommentID.",
 	"apihelp-commentblock-summary": "A API commentblock permite bloquear um utilizador a partir de um comentário feito por ele, após preencher os seguintes parâmetros: CommentID.",
-	"apihelp-commentdelete-description": "A API commentdelete permite eliminar um comentário após preencher os seguintes parâmetros: CommentID.",
 	"apihelp-commentdelete-summary": "A API commentdelete permite eliminar um comentário após preencher os seguintes parâmetros: CommentID.",
-	"apihelp-commentlatestid-description": "A API commentlatestID permite obter o identificador do comentário mais recente após preencher os seguintes parâmetros: pageID",
 	"apihelp-commentlatestid-summary": "A API commentlatestID permite obter o identificador do comentário mais recente após preencher os seguintes parâmetros: pageID",
-	"apihelp-commentlist-description": "A API commentlist obtém vários comentários e fornece-os na forma de lista após preencher os seguintes parâmetros: pageID, order, pagerPage e showForm.",
 	"apihelp-commentlist-summary": "A API commentlist obtém vários comentários e fornece-os na forma de lista após preencher os seguintes parâmetros: pageID, order, pagerPage e showForm.",
-	"apihelp-commentsubmit-description": "A API commentsubmit permite enviar/publicar um comentário após preencher os seguintes parâmetros: pageID, parentID, commentText.",
 	"apihelp-commentsubmit-summary": "A API commentsubmit permite enviar/publicar um comentário após preencher os seguintes parâmetros: pageID, parentID, commentText.",
-	"apihelp-commentvote-description": "A API commentvote permite votar num comentário após preencher os seguintes parâmetros: commentID, voteValue.",
 	"apihelp-commentvote-summary": "A API commentvote permite votar num comentário após preencher os seguintes parâmetros: commentID, voteValue.",
 	"apihelp-commentblock-param-commentID": "Identificador do comentário do utilizador que vai ser bloqueado",
 	"apihelp-commentdelete-param-commentID": "Identificador do comentário a ser eliminado",
