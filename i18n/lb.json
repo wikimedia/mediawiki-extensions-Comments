@@ -4,7 +4,8 @@
 			"Jack Phoenix",
 			"Les Meloures",
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"apihelp-commentlist-param-pagerPage": "Nummer vun der Säit vun de Bemierkungen",
@@ -22,7 +23,7 @@
 	"comments-cancel-reply": "Ofbriechen",
 	"comments-block-warning-anon": "Sidd Dir sécher datt Dir definitiv all Bemierkunge vun dësem anonymme Benotzer (iwwer seng IP-Adress) ignoréiere wëllt?",
 	"comments-block-warning-user": "Sidd Dir sécher datt Dir definitiv all Bemierkunge vum Benotzer $1 ignoréiere wëllt?",
-	"comments-delete-warning": "Sidd Dir sécher datt Dir dës Bemierkung läsche wëllt?",
+	"comments-delete-warning": "Sidd Dir sécher, datt Dir dës Bemierkung läsche wëllt?",
 	"comments-sort-by-date": "Nom Datum zortéieren",
 	"comments-sort-by-score": "Nom Score zortéieren",
 	"comments-show-comment-link": "Bemierkung weisen",
