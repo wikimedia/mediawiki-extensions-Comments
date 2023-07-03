@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Jack Phoenix",
+			"MagicAho",
 			"Otokoume",
 			"Shirayuki",
 			"Sujiniku",
@@ -9,6 +10,8 @@
 			"Whym"
 		]
 	},
+	"apihelp-commentblock-summary": "Commentblock APIを使用すると、次のパラメーターを入力した後、発生したコメントからユーザーをブロックできます。",
+	"apihelp-commentdelete-summary": "Commentdelete APIを使用すると、次のパラメータを入力した後にコメントを削除できます。",
 	"comments-comment": "コメント",
 	"comments-continue-editing-btn": "編集を続行",
 	"comments-desc": "ページにコメントできるようにする、パーサー フック <code>&lt;comments&gt;</code> を追加する",
