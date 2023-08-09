@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kimberli Mäkäräinen (WMNO)"
+			"Kimberli Mäkäräinen (WMNO)",
+			"Yupik"
 		]
 	},
 	"comments-loading": "Viežžamin...",
-	"comments-cancel-reply": "Šluhtte",
+	"comments-cancel-reply": "Gaskkalduhte",
 	"comments-anon-name": "Anonyma geavaheaddji",
-	"comments-ignore-cancel": "Šluhtte"
+	"comments-ignore-cancel": "Gaskkalduhte"
 }
