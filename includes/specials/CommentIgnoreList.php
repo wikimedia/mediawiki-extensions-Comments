@@ -152,7 +152,7 @@ class CommentIgnoreList extends SpecialPage {
 				<form action="" method="post" name="comment_block">' .
 					Html::hidden( 'user', $user_name ) . "\n" .
 					Html::hidden( 'token', $this->getUser()->getEditToken() ) . "\n" .
-					'<input type="button" class="site-button" value="' . $this->msg( 'comments-ignore-unblock' )->text() . '" onclick="document.comment_block.submit()" />
+					'<input type="submit" class="site-button" value="' . $this->msg( 'comments-ignore-unblock' )->text() . '"  />
 					<input type="button" class="site-button" value="' . $this->msg( 'comments-ignore-cancel' )->text() . '" onclick="history.go(-1)" />
 				</form>
 			</div>';
