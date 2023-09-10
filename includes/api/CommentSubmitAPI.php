@@ -3,7 +3,9 @@
 class CommentSubmitAPI extends ApiBase {
 
 	public function execute() {
+		$main = $this->getMain();
 		$user = $this->getUser();
+
 		// Blocked users cannot submit new comments, and neither can those users
 		// without the necessary privileges.
 		if ( $user->getBlock() ) {
@@ -17,7 +19,7 @@ class CommentSubmitAPI extends ApiBase {
 		// Check title existence early on so that we don't throw fatals in Comment#log
 		// when we're trying to write a log action pertaining to a now-deleted page
 		// or somesuch. (T258275)
-		$pageID = $this->getMain()->getVal( 'pageID' );
+		$pageID = $main->getVal( 'pageID' );
 		$title = Title::newFromId( $pageID );
 		if ( !$title instanceof Title ) {
 			$this->dieWithError(
@@ -26,7 +28,7 @@ class CommentSubmitAPI extends ApiBase {
 			);
 		}
 
-		$commentText = $this->getMain()->getVal( 'commentText' );
+		$commentText = $main->getVal( 'commentText' );
 
 		if ( $commentText != '' ) {
 			// To protect against spam, it's necessary to check the supplied text
@@ -56,7 +58,7 @@ class CommentSubmitAPI extends ApiBase {
 
 			$page = new CommentsPage( $pageID, $this->getContext() );
 
-			Comment::add( $commentText, $page, $user, $this->getMain()->getVal( 'parentID' ) );
+			Comment::add( $commentText, $page, $user, $main->getVal( 'parentID' ) );
 
 			if ( class_exists( 'UserStatsTrack' ) ) {
 				$stats = new UserStatsTrack( $user->getId(), $user->getName() );
