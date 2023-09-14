@@ -515,6 +515,10 @@ class CommentsPage extends ContextSource {
 
 			$output .= '<textarea name="commentText" id="comment" rows="5" cols="64"></textarea>' . "\n";
 			$output .= '<div class="comment-preview"></div>';
+			if ( CommentFunctions::useCaptcha( $user ) ) {
+				$output .= $this->getCaptcha();
+				$output .= '(<a href="#" class="captcha-reload">' . wfMessage( 'comments-captcha-refresh' )->escaped() . '</a>)';
+			}
 			$output .= '<div class="c-form-button">';
 			$output .= '<input type="button" value="' . wfMessage( 'comments-post' )->escaped() .
 				'" class="site-button" name="wpSubmitComment" />' . "\n";
@@ -531,6 +535,31 @@ class CommentsPage extends ContextSource {
 		$output .= Html::hidden( 'token', $this->getUser()->getEditToken() );
 		$output .= '</form>' . "\n";
 		return $output;
+	}
+
+	/**
+	 * @return string CAPTCHA form HTML
+	 */
+	private function getCaptcha() {
+		// NOTE: make sure we have a session. May be required for CAPTCHAs to work.
+		\MediaWiki\Session\SessionManager::getGlobalSession()->persist();
+
+		$captcha = ConfirmEditHooks::getInstance();
+		$captcha->setTrigger( 'comment' );
+		$captcha->setAction( 'comment' );
+
+		$formInformation = $captcha->getFormInformation();
+		$formMetainfo = $formInformation;
+		unset( $formMetainfo['html'] );
+		$captcha->addFormInformationToOutput( $this->getOutput(), $formMetainfo );
+
+		return '<div class="captcha">' .
+			// "To comment, please answer the question that appears below (more info):" text
+			// (or equivalent, depending on CAPTCHA type):
+			$captcha->getMessage( 'comment' ) .
+			// The actual CAPTCHA challenge:
+			$formInformation['html'] .
+			"</div>\n";
 	}
 
 	/**

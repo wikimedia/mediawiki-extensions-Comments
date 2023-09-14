@@ -56,6 +56,19 @@ class CommentSubmitAPI extends ApiBase {
 				$this->dieStatus( $abuseStatus );
 			}
 
+			// Check CAPTCHA if enabled
+			if ( CommentFunctions::useCaptcha( $user ) ) {
+				// Can't use passCaptchaFromRequest() here with $main, it accepts only WebRequest, not ApiMain :-(
+				$index = $main->getVal( 'captcha-id' );
+				$word = $main->getVal( 'captcha-value' );
+				if ( !ConfirmEditHooks::getInstance()->passCaptchaLimited( $index, $word, $user ) ) {
+					$this->dieWithError(
+						$this->msg( 'captcha-edit-fail' ),
+						'comments-captcha-edit-fail'
+					);
+				}
+			}
+
 			$page = new CommentsPage( $pageID, $this->getContext() );
 
 			Comment::add( $commentText, $page, $user, $main->getVal( 'parentID' ) );
@@ -80,7 +93,7 @@ class CommentSubmitAPI extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return [
+		$params = [
 			'pageID' => [
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => 'integer'
@@ -94,5 +107,18 @@ class CommentSubmitAPI extends ApiBase {
 				ApiBase::PARAM_TYPE => 'string'
 			]
 		];
+
+		if ( CommentFunctions::useCaptcha( $this->getUser() ) ) {
+			$params['captcha-id'] = [
+				ApiBase::PARAM_REQUIRED => true,
+				ApiBase::PARAM_TYPE => 'integer'
+			];
+			$params['captcha-value'] = [
+				ApiBase::PARAM_REQUIRED => true,
+				ApiBase::PARAM_TYPE => 'string'
+			];
+		}
+
+		return $params;
 	}
 }

@@ -38,6 +38,7 @@
 		"echo-subscriptions-email-mention-comment": true
 	},
 	"SpecialPages": {
+		"CommentCaptcha": "CommentCaptcha",
 		"CommentIgnoreList": "CommentIgnoreList"
 	},
 	"LogTypes": [
@@ -82,6 +83,7 @@
 		"NumberOfComments": "includes/parser/NumberOfComments.php",
 		"DisplayComments": "includes/parser/DisplayComments.php",
 		"CommentFunctions": "includes/CommentFunctions.php",
+		"CommentCaptcha": "includes/specials/CommentCaptcha.php",
 		"CommentIgnoreList": "includes/specials/CommentIgnoreList.php",
 		"CommentsLogFormatter": "includes/CommentsLogFormatter.php",
 		"CommentsHooks": "includes/CommentsHooks.php",
