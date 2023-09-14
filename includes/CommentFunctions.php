@@ -206,6 +206,20 @@ class CommentFunctions {
 	}
 
 	/**
+	 * @param User $user User object whose user rights to check to see if they are
+	 *   subject to CAPTCHAs or not
+	 * @return bool True if CAPTCHA should be used, false otherwise
+	 */
+	public static function useCaptcha( $user ) {
+		global $wgCaptchaClass, $wgCaptchaTriggers;
+
+		return $wgCaptchaClass &&
+			isset( $wgCaptchaTriggers['comment'] ) &&
+			$wgCaptchaTriggers['comment'] &&
+			!$user->isAllowed( 'skipcaptcha' );
+	}
+
+	/**
 	 * Blocks comments from a user
 	 *
 	 * @param User $blocker The user who is blocking someone else's comments
