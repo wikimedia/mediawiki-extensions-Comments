@@ -10,6 +10,7 @@ $specialPageAliases = [];
 
 /** English */
 $specialPageAliases['en'] = [
+	'CommentCaptcha' => [ 'CommentCaptcha' ],
 	'CommentIgnoreList' => [ 'CommentIgnoreList' ],
 ];
 

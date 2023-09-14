@@ -84,6 +84,23 @@
 		},
 
 		/**
+		 * Get a new CAPTCHA challenge.
+		 *
+		 * @note Before calling this method, you should check if CAPTCHAs are enabled.
+		 *
+		 * @param {string} selector Element selector to which append the new CAPTCHA HTML; if not supplied,
+		 *   '.captcha' is assumed
+		 */
+		getNewCAPTCHA: function ( selector ) {
+			if ( !selector ) {
+				selector = '.captcha';
+			}
+			$.get( mw.util.getUrl( 'Special:CommentCaptcha' ), function ( data ) {
+				$( selector ).html( data );
+			} );
+		},
+
+		/**
 		 * Vote for a comment.
 		 *
 		 * @param {number} commentID Comment ID number
@@ -190,7 +207,7 @@
 		 * Submit a new comment.
 		 */
 		submit: function () {
-			var pageID, parentID, commentText;
+			var pageID, parentID, commentText, requestParams, hasCaptcha;
 
 			if ( Comment.submitted === 0 ) {
 				Comment.submitted = 1;
@@ -203,20 +220,36 @@
 				}
 				commentText = document.commentForm.commentText.value;
 
-				( new mw.Api() ).postWithToken( 'csrf', {
+				requestParams = {
 					action: 'commentsubmit',
 					pageID: pageID,
 					parentID: parentID,
 					commentText: commentText
-				} ).done( function ( response ) {
+				};
+
+				// ConfirmEdit extension (CAPTCHA) support
+				hasCaptcha = ( document.commentForm.wpCaptchaWord !== undefined );
+				if ( hasCaptcha ) {
+					requestParams[ 'captcha-value' ] = document.commentForm.wpCaptchaWord.value;
+					requestParams[ 'captcha-id' ] = document.commentForm.wpCaptchaId.value;
+				}
+
+				( new mw.Api() ).postWithToken( 'csrf', requestParams ).done( function ( response ) {
 					var end;
 
 					if ( response.commentsubmit && response.commentsubmit.ok ) {
 						document.commentForm.commentText.value = '';
+
+						// Load new CAPTCHA here if needed for the current user
+						if ( hasCaptcha ) {
+							Comment.getNewCAPTCHA();
+						}
+
 						end = 1;
 						if ( mw.config.get( 'wgCommentsSortDescending' ) ) {
 							end = 0;
 						}
+
 						Comment.viewComments(
 							0,
 							end
@@ -228,8 +261,18 @@
 				} ).fail( function ( textStatus, response ) {
 					// textStatus is the error code from CommentSubmitAPI.php, i.e. one of these:
 					// comments-missing-page, comments-is-spam or comments-links-are-forbidden
-					// (and when AbuseFilter is installed, it can be e.g. abusefilter-disallowed as well)
+					// and when AbuseFilter is installed, it can be e.g. abusefilter-disallowed as well,
+					// and when ConfirmEdit (CAPTCHA extension) is installed, it can also be comments-captcha-edit-fail
+					// if CAPTCHAs are enabled for the current user but they either didn't supply a value at all,
+					// or didn't supply the correct value.
+					// Note that if textStatus is comments-captcha-edit-fail, we don't need to do anything special
+					// here, the user will be served the properly i18n'ed message already without us having to
+					// account for that.
 					// response is the fuller object with code and info properties
+					// @todo FIXME: if CAPTCHA field is empty, the user will be served the cryptic error msg
+					// "The "captcha-value" parameter must be set."
+					// It's too technical IMO. Map it to "captcha-edit-fail"? (But that'll require adding
+					// said msg to the RL module definition in extension.json at least.)
 					var msg;
 					if ( textStatus === 'comments-missing-page' ) {
 						// 'comments-missing-page' is not (yet?) an i18n msg, just a key
@@ -245,8 +288,15 @@
 						// to be triggered in CommentSubmitAPI.php; seems to be a string like "abusefilter-disallowed"
 						msg = response.error.info;
 					}
+
 					window.alert( msg );
+
 					Comment.submitted = 0;
+
+					// Get a new CAPTCHA challenge if CAPTCHAs are enabled and the user got it wrong
+					if ( hasCaptcha && textStatus === 'comments-captcha-edit-fail' ) {
+						Comment.getNewCAPTCHA();
+					}
 				} );
 
 				Comment.cancelReply();
@@ -417,6 +467,14 @@
 			// "Reply to <username>" links
 			.on( 'click', 'a.comments-cancel-reply-link', function () {
 				Comment.cancelReply();
+			} )
+
+			// The link for getting a new CAPTCHA when CAPTCHAs are enabled
+			.on( 'click', '.captcha-reload', function ( e ) {
+				e.preventDefault();
+				$.get( mw.util.getUrl( 'Special:CommentCaptcha' ), function ( data ) {
+					$( '.captcha' ).html( data );
+				} );
 			} )
 
 			// Handle clicks on the submit button (previously this was an onclick attr)
