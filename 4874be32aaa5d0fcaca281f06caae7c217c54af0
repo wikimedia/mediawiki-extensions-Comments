@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7121325_64d6861c",
+        "filename": "includes/api/CommentSubmitAPI.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2023-09-17T16:29:46Z",
+      "side": 1,
+      "message": "I\u0027m not sure if it\u0027s a good idea to add parameters conditionally based on the current session/user. For example, parameters limiting the number of results to return, they document there\u0027s a maximum value that depends on user right, but doesn\u0027t display that number directly.\n\nI\u0027d add those parameters conditionally based on config ($wgCaptchaClass \u0026\u0026\nisset( $wgCaptchaTriggers[\u0027comment\u0027] ) \u0026\u0026 $wgCaptchaTriggers[\u0027comment\u0027]) but not required. Then check if it\u0027s required when performing the action.",
+      "revId": "4874be32aaa5d0fcaca281f06caae7c217c54af0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
