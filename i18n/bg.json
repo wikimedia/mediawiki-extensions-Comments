@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"DCLXVI",
 			"StanProg",
 			"Vlad5250",
 			"පසිඳු කාවින්ද"
 		]
 	},
-	"apihelp-commentblock-summary": "API-то на commentblock позволява блокиране на потребител на база негов коментар, след попълване на  следните параметри: CommentID.",
+	"apihelp-commentblock-summary": "API-то на commentblock позволява блокиране на потребител на база негов коментар, след попълване на следните параметри: CommentID.",
 	"apihelp-commentdelete-summary": "API-то на commentblock позволява изтриването на коментар, след попълване на следните параметри: CommentID.",
 	"apihelp-commentlatestid-summary": "API-то на commentblock позволява получаването на ID на последния коментар, след попълване на следните параметри: pageID",
 	"apihelp-commentlist-summary": "API-то на commentblock извлича множество коментари и ги извежда във вид на списък, след попълване на следните параметри: pageID, order, pagerPage и showForm.",
