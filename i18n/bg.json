@@ -4,11 +4,12 @@
 			"DCLXVI",
 			"StanProg",
 			"Vlad5250",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Amire80"
 		]
 	},
 	"apihelp-commentblock-description": "API-то на commentblock позволява блокиране на потребител на база негов коментар, след попълване на  следните параметри: CommentID.",
-	"apihelp-commentblock-summary": "API-то на commentblock позволява блокиране на потребител на база негов коментар, след попълване на  следните параметри: CommentID.",
+	"apihelp-commentblock-summary": "API-то на commentblock позволява блокиране на потребител на база негов коментар, след попълване на следните параметри: CommentID.",
 	"apihelp-commentdelete-description": "API-то на commentblock позволява изтриването на коментар, след попълване на следните параметри: CommentID.",
 	"apihelp-commentdelete-summary": "API-то на commentblock позволява изтриването на коментар, след попълване на следните параметри: CommentID.",
 	"apihelp-commentlatestid-description": "API-то на commentblock позволява получаването на ID на последния коментар, след попълване на следните параметри: pageID",
