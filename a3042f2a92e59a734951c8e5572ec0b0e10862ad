@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "baf3e326_51748dfd",
+        "filename": "includes/api/CommentEditAPI.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2023-09-23T15:22:42Z",
+      "side": 1,
+      "message": "I think all the previous logic could be moved into the Comment class, to avoid duplicating it on CommentSubmitAPI too. To get relevant and distinct error messages, the method implementing all this logic could return a StatusValue object, which allows setting a message object and params for fatal errors.",
+      "revId": "a3042f2a92e59a734951c8e5572ec0b0e10862ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47b3c989_b178126b",
+        "filename": "resources/js/Comment.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2023-09-23T15:22:42Z",
+      "side": 1,
+      "message": "It would be nice to output the error messages from the api when the edit fails",
+      "revId": "a3042f2a92e59a734951c8e5572ec0b0e10862ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
