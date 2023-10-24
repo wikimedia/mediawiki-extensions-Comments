@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jack Phoenix",
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"apihelp-commentblock-summary": "L'API de commentblock permite bloquiar a un usuariu dende'l comentariu del que s'orixinó después de rellenar los parámetros siguientes: CommentID.",
@@ -17,7 +18,7 @@
 	"comments-auto-refresher-enable": "Activar actualización automática de comentarios",
 	"comments-auto-refresher-pause": "Posar l'actualizador automáticu de comentarios",
 	"comments-reply-to": "Responder a {{GENDER:$2|$1}}",
-	"comments-cancel-reply": "Encaboxar",
+	"comments-cancel-reply": "Zarrar",
 	"comments-block-warning-anon": "¿Seguro que quies inorar permanentemente tolos comentarios d'esti usuariu anónimu (al traviés de la so dirección IP)?",
 	"comments-block-warning-user": "¿Seguro que quies inorar permanentemente tolos comentarios {{GENDER:$1|del usuariu|de la usuaria}} $1?",
 	"comments-delete-warning": "¿Seguro que quies desaniciar esti comentariu?",
@@ -39,7 +40,7 @@
 	"comments-ignore-no-users": "Nun hai nengún usuariu bloquiáu.",
 	"comments-ignore-remove-message": "¿Tas seguru de que desees desbloquiar los comentarios de <b>$1</b>?",
 	"comments-ignore-unblock": "Desbloquiar",
-	"comments-ignore-cancel": "Encaboxar",
+	"comments-ignore-cancel": "Zarrar",
 	"comments-ignore-title": "Llista de comentarios inoraos",
 	"commentignorelist": "Llista de comentarios inoraos",
 	"log-name-comments": "Rexistru de comentarios",
