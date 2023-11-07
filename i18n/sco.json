@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jack Phoenix",
-			"John Reid"
+			"John Reid",
+			"CiphriusKane"
 		]
 	},
 	"comments-comment": "Comment",
@@ -16,7 +17,7 @@
 	"comments-cancel-reply": "Cancel",
 	"comments-block-warning-anon": "Ar ye sair that ye want tae permanentlie ignore aw comments fae this anonymous uiser (bi waa o thair IP address)?",
 	"comments-block-warning-user": "Ar ye sair that ye want tae permanentlie ignore aw comments fae uiser $1?",
-	"comments-delete-warning": "Ar ye sair that ye want tae delyte this comment?",
+	"comments-delete-warning": "Ar ye shuir that ye want tae delete this comment?",
 	"comments-sort-by-date": "Sort bi date",
 	"comments-sort-by-score": "Sort bi score",
 	"comments-show-comment-link": "Shaw comment",
@@ -30,7 +31,7 @@
 	"comments-submit": "Eik yer comment",
 	"comments-score-text": "Score",
 	"comments-permalink": "Permalink",
-	"comments-delete-link": "Delyte comment",
+	"comments-delete-link": "Delete comment",
 	"comments-anon-name": "Anonymous uiser",
 	"comments-anon-message": "{{SITENAME}} weelcomes '''aw comments'''. Gif ye dinna want tae be anonymous, [[Special:CreateAccount|register]] or [[Special:UserLogin|log in]]. It's free.",
 	"comments-links-are-forbidden": "External links in comments ar forbidden!",
