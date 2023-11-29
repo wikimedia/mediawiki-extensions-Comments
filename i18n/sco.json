@@ -46,7 +46,7 @@
 	"log-name-comments": "Comments log",
 	"log-description-comments": "This is ae log o comments.",
 	"logentry-comments-add": "$1 posted ae new comment oan $3",
-	"logentry-comments-delete": "$1 delytit comment #$4 oan $3",
+	"logentry-comments-delete": "$1 deletit comment #$4 on $3",
 	"comments-time-ago": "$1 syne",
 	"comments-time-months": "{{PLURAL:$1|yin month|$1 months}}",
 	"comments-time-days": "{{PLURAL:$1|yin day|$1 days}}",
