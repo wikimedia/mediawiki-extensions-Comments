@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eleassar"
+			"Eleassar",
+			"Upwinxp"
 		]
 	},
 	"apihelp-commentblock-summary": "API »commentblock« omogoča blokiranje uporabnika iz komentarja, iz katerega izvira, po izpolnitvi naslednjih parametrov: CommentID.",
@@ -63,11 +64,11 @@
 	"commentignorelist": "Seznam prezrtih komentarjev",
 	"echo-category-title-mention-comment": "Omembe v komentarjih",
 	"echo-pref-tooltip-mention-comment": "Obvesti me, ko kdo v komentarju vstavi povezavo na mojo uporabniško stran.",
-	"notification-header-mention-comment": "$1 {{GENDER:$3|vas}} {{GENDER:$2|je omenil|je omenila|je omenil_a}} v [[$4#comment-$5|komentarju]] na strani <strong>$4</strong>.",
+	"notification-header-mention-comment": "$1 {{GENDER:$3|vas}} {{GENDER:$2|je omenil|je omenila|je omenil/a}} v [[$4#comment-$5|komentarju]] na strani <strong>$4</strong>.",
 	"log-name-comments": "Dnevnik komentarjev",
 	"log-description-comments": "To je dnevnik komentarjev.",
 	"logentry-comments-add": "$1 je objavil_a nov komentar na strani $3",
-	"logentry-comments-delete": "$1 je izbrisal_a komentar št.&nbsp;$4 na strani $3",
+	"logentry-comments-delete": "$1 je izbrisal/a komentar št.&nbsp;$4 na strani $3",
 	"comments-time-ago": "pred $1",
 	"comments-time-months": "{{PLURAL:$1|en mesec|$1 meseca|$1 meseci|$1 mesecev}}",
 	"comments-time-days": "{{PLURAL:$1|enim dnevom|$1 dnevoma|$1 dnevi}}",
@@ -77,7 +78,7 @@
 	"log-show-hide-comments": "$1 dnevnik komentiranja",
 	"logeventslist-comments-log": "Dnevnik komentarjev",
 	"group-commentadmin": "Administratorji komentarjev",
-	"group-commentadmin-member": "{{GENDER:$1|sistemski administrator|sistemska administratorka|sistemski_ka administrator_ka}}",
+	"group-commentadmin-member": "{{GENDER:$1|sistemski administrator|sistemska administratorka|sistemski/ka administrator/ka}}",
 	"grouppage-commentadmin": "{{ns:project}}:Administratorji komentarjev",
 	"action-comment": "pošiljanje komentarjev",
 	"right-comment": "Pošiljanje komentarjev",
