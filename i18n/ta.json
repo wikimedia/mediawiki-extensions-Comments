@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shanmugamp7"
+			"Shanmugamp7",
+			"Fahimrazick"
 		]
 	},
 	"comments-comment": "கருத்து",
 	"comments-voted-label": "வாக்களிக்கப்பட்டது",
 	"comments-loading": "ஏற்றப்படுகிறது...",
-	"comments-cancel-reply": "ரத்து செய்",
+	"comments-cancel-reply": "கைவிடு",
 	"comments-sort-by-date": "தேதியைப பொறுத்து வரிசைப்படுத்து",
 	"comments-show-comment-link": "கருத்தை காட்டு",
 	"comments-you": "தாங்கள்",
@@ -23,7 +24,7 @@
 	"comments-ignore-no-users": "தற்போது தடை செய்யப்பட பயனர்கள் யாரும் இல்லை.",
 	"comments-ignore-remove-message": "நீங்கள் உறுதியாக <b>$1</b>-ன் கருத்துக்களை தடை நீக்க விரும்புகிறீர்களா?",
 	"comments-ignore-unblock": "தடை நீக்கு",
-	"comments-ignore-cancel": "ரத்து செய்",
+	"comments-ignore-cancel": "கைவிடு",
 	"comments-ignore-title": "கருத்து புறக்கணிப்பு பட்டியல்",
 	"commentignorelist": "கருத்து புறக்கணிப்பு பட்டியல்",
 	"log-name-comments": "கருத்துகள் பதிகை",
