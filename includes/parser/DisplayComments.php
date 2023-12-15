@@ -38,14 +38,14 @@ class DisplayComments {
 		// whereas the normal, standard MediaWiki style, which this extension
 		// also supports is: <comments allow="Foo,Bar" voting="Plus" />
 		$allow = '';
-		if ( preg_match( '/^\s*Allow\s*=\s*(.*)/mi', $input, $matches ) ) {
+		if ( preg_match( '/^\s*Allow\s*=\s*(.*)/mi', $input ?? '', $matches ) ) {
 			$allow = htmlspecialchars( $matches[1] );
 		} elseif ( !empty( $args['allow'] ) ) {
 			$allow = $args['allow'];
 		}
 
 		$voting = '';
-		if ( preg_match( '/^\s*Voting\s*=\s*(.*)/mi', $input, $matches ) ) {
+		if ( preg_match( '/^\s*Voting\s*=\s*(.*)/mi', $input ?? '', $matches ) ) {
 			$voting = htmlspecialchars( $matches[1] );
 		} elseif (
 			!empty( $args['voting'] ) &&
