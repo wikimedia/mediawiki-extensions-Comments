@@ -103,7 +103,7 @@ class CommentsPage extends ContextSource {
 	 */
 	public function setVoting( $voting ) {
 		$this->voting = $voting;
-		$voting = strtoupper( $voting );
+		$voting = strtoupper( $voting ?? '' );
 
 		if ( $voting == 'OFF' ) {
 			$this->allowMinus = false;
