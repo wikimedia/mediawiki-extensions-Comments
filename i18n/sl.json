@@ -83,7 +83,7 @@
 	"log-show-hide-comments": "$1 dnevnik komentiranja",
 	"logeventslist-comments-log": "Dnevnik komentarjev",
 	"group-commentadmin": "Administratorji komentarjev",
-	"group-commentadmin-member": "{{GENDER:$1|sistemski administrator|sistemska administratorka|sistemski/ka administrator/ka}}",
+	"group-commentadmin-member": "{{GENDER:$1|sistemski administrator|sistemska administratorka|sistemski_ka administrator_ka}}",
 	"grouppage-commentadmin": "{{ns:project}}:Administratorji komentarjev",
 	"action-comment": "pošiljanje komentarjev",
 	"right-comment": "Pošiljanje komentarjev",
