@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11adcd78_a3b8b18a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2023-12-18T16:35:08Z",
+      "side": 1,
+      "message": "While I\u0027m sure this works and you\u0027ve tested it, I don\u0027t exactly *love* this approach. Please allow me to explain why:\n1) right now the function-level doc is somewhat off w/ what the code really does\n2) IMO it makes more sense to handle the \"input value is null\" case even before calling setVoting(); in this case, it looks like you\u0027d need to wrap line 38 of includes/api/CommentListAPI.php in a \"if ( $voting !\u003d\u003d null ) { ... }\" check as it looks like that\u0027s the one and only place which calls setVoting()\n\nNote that this is intentionally also *not* a -1 (let alone -2) because I also don\u0027t /hate/ the approach presented here and I\u0027m willing to approve this solution, too, after some discussion on the points I raised above. Please let me know your thoughts on these and whether you agree or not.",
+      "revId": "bba744700c2cdd4d262ad177fee80b874133fad9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
