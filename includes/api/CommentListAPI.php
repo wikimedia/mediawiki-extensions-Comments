@@ -35,7 +35,9 @@ class CommentListAPI extends ApiBase {
 			$commentsPage->currentPagerPage = $this->getMain()->getVal( 'pagerPage' );
 		}
 		$commentsPage->allow = $allow;
-		$commentsPage->setVoting( $voting );
+		if ( $voting !== null ) {
+			$commentsPage->setVoting( $voting );
+		}
 
 		$output = $form = $anchor = '';
 
