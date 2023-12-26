@@ -50,7 +50,7 @@
 	"comments-time-ago": "$1 syne",
 	"comments-time-months": "{{PLURAL:$1|yin month|$1 months}}",
 	"comments-time-days": "{{PLURAL:$1|yin day|$1 days}}",
-	"comments-time-hours": "{{PLURAL:$1|yin hoor|$1 hoors}}",
+	"comments-time-hours": "{{PLURAL:$1|ae oor|$1 oor}}",
 	"comments-time-minutes": "{{PLURAL:$1|yin minute|$1 minutes}}",
 	"comments-time-seconds": "{{PLURAL:$1|yin seicont|$1 seiconts}}",
 	"log-show-hide-comments": "$1 comment log",
