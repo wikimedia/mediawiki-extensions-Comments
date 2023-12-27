@@ -18,7 +18,7 @@
 	"comments-post": "கருத்துக்களை பதியவும்",
 	"comments-submit": "உங்கள் கருத்தை சேர்க்கவும்",
 	"comments-score-text": "பெறுபுள்ளி",
-	"comments-permalink": "நிரந்தர இணைப்பு",
+	"comments-permalink": "நிலைத்தொடுப்பு",
 	"comments-delete-link": "கருத்தை நீக்கு",
 	"comments-anon-name": "அடையாளம் காட்டாத பயனர்",
 	"comments-ignore-no-users": "தற்போது தடை செய்யப்பட பயனர்கள் யாரும் இல்லை.",
@@ -38,5 +38,5 @@
 	"group-commentadmin": "கருத்து நிர்வாகிகள்",
 	"group-commentadmin-member": "{{GENDER:$1|கருத்து நிர்வாகி}}",
 	"grouppage-commentadmin": "{{ns:project}}:கருத்து நிர்வாகிகள்",
-	"right-comment": "கருத்துகளை அனுப்பவும்"
+	"right-comment": "கருத்துகளைச் சமர்ப்பி"
 }
