@@ -38,5 +38,5 @@
 	"group-commentadmin": "கருத்து நிர்வாகிகள்",
 	"group-commentadmin-member": "{{GENDER:$1|கருத்து நிர்வாகி}}",
 	"grouppage-commentadmin": "{{ns:project}}:கருத்து நிர்வாகிகள்",
-	"right-comment": "கருத்துகளை அனுப்பவும்"
+	"right-comment": "கருத்துகளைச் சமர்ப்பி"
 }
