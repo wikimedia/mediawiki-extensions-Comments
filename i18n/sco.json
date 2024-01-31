@@ -54,9 +54,9 @@
 	"comments-time-minutes": "{{PLURAL:$1|yin minute|$1 minutes}}",
 	"comments-time-seconds": "{{PLURAL:$1|yin seicont|$1 seiconts}}",
 	"log-show-hide-comments": "$1 comment log",
-	"group-commentadmin": "Comment admeenistraters",
+	"group-commentadmin": "Comment administrators",
 	"group-commentadmin-member": "{{GENDER:$1|comment admeenistrater}}",
-	"grouppage-commentadmin": "{{ns:project}}:Comment admeenistraters",
+	"grouppage-commentadmin": "{{ns:project}}:Comment administrators",
 	"right-comment": "Haun comments in",
 	"right-commentadmin": "Admeenistrate uiser-haunit-in comments",
 	"right-commentlinks": "Uise external links in comments"
