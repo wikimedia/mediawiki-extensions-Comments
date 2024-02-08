@@ -280,7 +280,9 @@
 			if ( !Comment.pause ) {
 				Comment.LatestCommentID = document.commentForm.lastCommentId.value;
 				Comment.timer = setTimeout(
-					function () { Comment.checkUpdate(); },
+					function () {
+						Comment.checkUpdate();
+					},
 					Comment.updateDelay
 				);
 			}
@@ -316,7 +318,9 @@
 				if ( !Comment.pause ) {
 					clearTimeout( Comment.timer );
 					Comment.timer = setTimeout(
-						function () { Comment.checkUpdate(); },
+						function () {
+							Comment.checkUpdate();
+						},
 						Comment.updateDelay
 					);
 				}
