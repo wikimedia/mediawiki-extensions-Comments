@@ -16,13 +16,13 @@
 			"پاناروما"
 		]
 	},
-	"apihelp-commentblock-param-commentID": "شناسهٔ نظری که توسط کاربر مورد نظر برای قطع دسترسی ارسال شده‌است",
+	"apihelp-commentblock-param-commentID": "شناسهٔ نظری که توسط کاربر مورد نظر برای قطع دسترسی ارسال شده است",
 	"apihelp-commentdelete-param-commentID": "شناسهٔ نظری که قرار است حذف شود",
 	"apihelp-commentlatestid-param-pageID": "شناسهٔ صفحه‌ای که آخرین نظر در آن وجود دارد",
-	"apihelp-commentlist-param-pageID": "شناسهٔ صفحه‌ای که فهرست نظرات از آن واکشی شده‌است",
+	"apihelp-commentlist-param-pageID": "شناسهٔ صفحه‌ای که فهرست نظرات از آن واکشی شده است",
 	"apihelp-commentlist-param-pagerPage": "شمارهٔ صفحهٔ نظرات",
 	"apihelp-commentlist-param-showForm": "نمایش فرم نظرات",
-	"apihelp-commentsubmit-param-pageID": "شناسهٔ صفحه‌ای که نظر در آن ارسال شده‌است",
+	"apihelp-commentsubmit-param-pageID": "شناسهٔ صفحه‌ای که نظر در آن ارسال شده است",
 	"apihelp-commentsubmit-param-parentID": "شناسهٔ نظر والد",
 	"apihelp-commentsubmit-param-commentText": "متن نظر",
 	"apihelp-commentvote-param-commentID": "شناسهٔ نظری که رأی به آن داده شده",
