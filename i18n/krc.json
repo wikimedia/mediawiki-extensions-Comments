@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Ernác",
-			"Iltever"
+			"Iltever",
+			"Къарачайлы"
 		]
 	},
-	"comments-anon-name": "Аноним",
+	"comments-anon-name": "Аноним хайырланыучу",
 	"comments-time-ago": "$1 алгъа",
 	"comments-time-days": "{{PLURAL:$1|бир кюн|$1 кюн}}",
 	"comments-time-hours": "{{PLURAL:$1|бир сагъат|$1 сагъат}}",
