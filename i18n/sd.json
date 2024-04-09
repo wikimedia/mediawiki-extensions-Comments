@@ -6,5 +6,7 @@
 	},
 	"comments-cancel-reply": "رد",
 	"comments-sort-by-date": "تاريخ سان مرتب ڪريو",
-	"comments-ignore-cancel": "رد"
+	"comments-ignore-cancel": "رد",
+	"comments-time-ago": "$1 اڳ",
+	"comments-time-minutes": "{{PLURAL:$1|ھڪ منٽ|$1 منٽ}}"
 }
