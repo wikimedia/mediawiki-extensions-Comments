@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ansumang",
-			"Jnanaranjan Sahu"
+			"Jnanaranjan Sahu",
+			"Psubhashish"
 		]
 	},
 	"comments-comment": "ମତାମତ",
@@ -23,6 +24,7 @@
 	"comments-post": "ମତ ଦେବେ",
 	"comments-submit": "ଆପଣଙ୍କ ମତ ଦେବେ",
 	"comments-score-text": "ଗଣନା",
+	"comments-permalink": "ସ୍ଥାୟୀ ଲିଙ୍କ",
 	"comments-delete-link": "ମତ ହଟାଇବେ",
 	"comments-ignore-no-users": "ଏବେ କୌଣସି ବ୍ୟବହାରକାରୀଙ୍କୁ କିଳାଯାଇନାହିଁ ।",
 	"comments-ignore-cancel": "ବାତିଲ",
