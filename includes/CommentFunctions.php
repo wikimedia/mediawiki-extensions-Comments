@@ -184,7 +184,10 @@ class CommentFunctions {
 			);
 		}
 
-		$vars = $gen->addUserVars( $user )->addTitleVars( $title, 'page' )->getVariableHolder();
+		$vars = $gen->addUserVars( $user )
+			->addTitleVars( $title, 'page' )
+			->addGenericVars()
+			->getVariableHolder();
 		$vars->setVar( 'summary', 'Comment via the Comments extension' );
 		$vars->setVar( 'action', 'comment' );
 		$vars->setVar( 'new_wikitext', $text );
