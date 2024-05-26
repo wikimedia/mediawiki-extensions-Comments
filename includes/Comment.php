@@ -633,6 +633,13 @@ class Comment extends ContextSource {
 			);
 		}
 
+		// Clear caches (T332815)
+		// This is also consistent with delete() below, which clears the cache after
+		// the DB operations have taken place and it's been logged
+		// @todo FIXME: presumably *not* the most performance-friendly thing to do, as
+		// per the aforementioned task and the discussion there
+		$this->page->clearCommentListCache();
+
 		$score = $this->getScore();
 
 		$this->currentVote = $value;
