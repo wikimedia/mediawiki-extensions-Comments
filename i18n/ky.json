@@ -8,6 +8,7 @@
 	"comments-cancel-reply": "Жокко чыгаруу",
 	"comments-you": "Сиз",
 	"comments-reply": "Жооп берүү",
+	"comments-permalink": "Туруктуу шилтеме",
 	"comments-ignore-cancel": "Жокко чыгаруу",
 	"comments-time-days": "{{PLURAL:$1|бир күн|$1 күн}}"
 }
