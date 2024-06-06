@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Умар"
+			"Умар",
+			"Исмаил Садуев"
 		]
 	},
 	"comments-comment": "Коммент",
@@ -11,7 +12,7 @@
 	"comments-auto-refresher-pause": "Сацаде комментареш автоматически карладахар",
 	"comments-reply-to": "Жоп дала {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Цаоьшу",
-	"comments-sort-by-date": "Терахьца нисйе",
+	"comments-sort-by-date": "Терахьца къепе йало",
 	"comments-you": "Хьо",
 	"comments-reply": "Жоп",
 	"comments-post": "Йита коммент",
