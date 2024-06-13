@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Lloffiwr",
-			"Robin Owain"
+			"Robin Owain",
+			"Afalau"
 		]
 	},
 	"comments-comment": "Sylw",
 	"comments-voted-label": "Wedi pleidleisio",
 	"comments-loading": "Wrthi'n llwytho...",
 	"comments-reply-to": "Ateb {{GENDER:$2|$1}}",
-	"comments-cancel-reply": "Diddymu",
+	"comments-cancel-reply": "Canslo",
 	"comments-delete-warning": "Ydych chi'n siwr eich bod am ddileu'r sylw hwn?",
 	"comments-sort-by-date": "Trefnu yn ôl dyddiad",
 	"comments-reply": "Ateb",
