@@ -4,5 +4,10 @@
 			"Ezagren"
 		]
 	},
-	"apihelp-commentlatestid-param-pageID": "ID laman wadah kumintar pahanyarnya"
+	"apihelp-commentlatestid-param-pageID": "ID laman wadah kumintar pahanyarnya",
+	"comments-time-ago": "$1 nang liwat",
+	"comments-time-days": "{{PLURAL:$1|satu hari|$1 hari}}",
+	"comments-time-hours": "{{PLURAL:$1|satu jam|$1 jam}}",
+	"comments-time-minutes": "{{PLURAL:$1|satu manit|$1 manit}}",
+	"comments-time-seconds": "{{PLURAL:$1|satu datik|$1 datik}}"
 }
