@@ -137,7 +137,6 @@ class CommentsHooks {
 			$updater->addExtensionUpdate( [
 				'runMaintenance',
 				'MigrateOldCommentsUserColumnsToActor',
-				"$dir/../maintenance/migrateOldCommentsUserColumnsToActor.php"
 			] );
 			// 4) drop old columns & indexes
 			$updater->dropExtensionField( 'Comments', 'Comment_user_id', "$dir/patches/actor/drop-Comment_user_id.sql" );
@@ -156,7 +155,6 @@ class CommentsHooks {
 			$updater->addExtensionUpdate( [
 				'runMaintenance',
 				'MigrateOldCommentsBlockUserColumnsToActor',
-				"$dir/../maintenance/migrateOldCommentsBlockUserColumnsToActor.php"
 			] );
 			// 4) drop old columns & indexes
 			$updater->dropExtensionField( 'Comments_block', 'cb_user_id', "$dir/patches/actor/drop-cb_user_id.sql" );
@@ -176,7 +174,6 @@ class CommentsHooks {
 			$updater->addExtensionUpdate( [
 				'runMaintenance',
 				'MigrateOldCommentsVoteUserColumnsToActor',
-				"$dir/../maintenance/migrateOldCommentsVoteUserColumnsToActor.php"
 			] );
 			// 4) drop old columns & indexes
 			$updater->dropExtensionField( 'Comments_Vote', 'Comment_Vote_user_id', "$dir/patches/actor/drop-Comment_Vote_user_id.sql" );
