@@ -215,7 +215,7 @@ class CommentFunctions {
 	 * @param User $blocked User whose comments we want to block
 	 */
 	public static function blockUser( $blocker, $blocked ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = Comment::getDBHandle( 'write' );
 
 		AtEase::suppressWarnings(); // E_STRICT bitching
 		$date = date( 'Y-m-d H:i:s' );
@@ -239,7 +239,7 @@ class CommentFunctions {
 	 */
 	public static function getBlockList( $user ) {
 		$blockList = [];
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = Comment::getDBHandle( 'read' );
 		$res = $dbr->select(
 			'Comments_block',
 			'cb_actor_blocked',
@@ -262,7 +262,7 @@ class CommentFunctions {
 	 * @return bool True if they have
 	 */
 	public static function isUserCommentBlocked( $user, $blocked ) {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = Comment::getDBHandle( 'read' );
 		$s = $dbr->selectRow(
 			'Comments_block',
 			[ 'cb_id' ],
@@ -286,7 +286,7 @@ class CommentFunctions {
 	 * @param User $blockedUser User object representing the blocked user (whose entry is being deleted)
 	 */
 	public static function deleteBlock( $user, $blockedUser ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = Comment::getDBHandle( 'write' );
 		$dbw->delete(
 			'Comments_block',
 			[

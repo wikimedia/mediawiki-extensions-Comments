@@ -47,7 +47,7 @@ class NumberOfComments {
 				$ret = $cache[$magicWordId] = $data;
 			} else {
 				// Not cached → have to fetch it from the database
-				$dbr = wfGetDB( DB_REPLICA );
+				$dbr = Comment::getDBHandle( 'read' );
 				$commentCount = (int)$dbr->selectField(
 					'Comments',
 					'COUNT(*) AS count',
@@ -102,7 +102,7 @@ class NumberOfComments {
 		if ( $cachedValue ) {
 			$val = intval( $cachedValue );
 		} else {
-			$dbr = wfGetDB( DB_REPLICA );
+			$dbr = Comment::getDBHandle( 'read' );
 
 			$res = $dbr->selectField(
 				'Comments',

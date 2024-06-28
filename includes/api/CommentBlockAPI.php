@@ -4,7 +4,7 @@ class CommentBlockAPI extends ApiBase {
 
 	public function execute() {
 		// Load user_name and user_id for person we want to block from the comment it originated from
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = Comment::getDBHandle( 'read' );
 		$s = $dbr->selectRow(
 			'Comments',
 			[ 'Comment_actor' ],
