@@ -103,7 +103,7 @@ class CommentIgnoreList extends SpecialPage {
 		$lang = $this->getLanguage();
 		$title = $this->getPageTitle();
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = Comment::getDBHandle( 'read' );
 		$res = $dbr->select(
 			[ 'Comments_block', 'actor' ],
 			[ 'cb_actor_blocked', 'cb_date' ],

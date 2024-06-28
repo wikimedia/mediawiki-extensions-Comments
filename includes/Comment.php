@@ -119,10 +119,10 @@ class Comment extends ContextSource {
 	 * Constructor - set the page ID
 	 *
 	 * @param CommentsPage $page ID number of the current page
-	 * @param IContextSource|null $context
+	 * @param IContextSource $context
 	 * @param array $data Straight from the DB about the comment
 	 */
-	public function __construct( CommentsPage $page, $context = null, $data ) {
+	public function __construct( CommentsPage $page, $context, $data ) {
 		$this->page = $page;
 
 		$this->setContext( $context );
@@ -146,7 +146,7 @@ class Comment extends ContextSource {
 		if ( isset( $data['current_vote'] ) ) {
 			$vote = $data['current_vote'];
 		} else {
-			$dbr = wfGetDB( DB_REPLICA );
+			$dbr = self::getDBHandle( 'read' );
 			$row = $dbr->selectRow(
 				'Comments_Vote',
 				[ 'Comment_Vote_Score' ],
@@ -178,7 +178,7 @@ class Comment extends ContextSource {
 	 */
 	public static function newFromID( $id ) {
 		$context = RequestContext::getMain();
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = self::getDBHandle( 'read' );
 
 		if ( !is_numeric( $id ) || $id == 0 ) {
 			return null;
@@ -309,7 +309,7 @@ class Comment extends ContextSource {
 	 * @return Comment|null the added comment
 	 */
 	public static function add( $text, CommentsPage $page, User $user, $parentID ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = self::getDBHandle( 'write' );
 		$context = RequestContext::getMain();
 
 		AtEase::suppressWarnings();
@@ -335,7 +335,7 @@ class Comment extends ContextSource {
 		// Add a log entry.
 		self::log( 'add', $user, $page->id, $commentId, $text );
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = self::getDBHandle( 'read' );
 		if (
 			class_exists( 'UserProfile' ) &&
 			$dbr->tableExists( 'user_stats' )
@@ -569,7 +569,7 @@ class Comment extends ContextSource {
 	 * @return string
 	 */
 	function getScore() {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = self::getDBHandle( 'read' );
 		$row = $dbr->selectRow(
 			'Comments_Vote',
 			[ 'SUM(Comment_Vote_Score) AS CommentScore' ],
@@ -589,7 +589,7 @@ class Comment extends ContextSource {
 	 * @param int $value Upvote or downvote (1 or -1)
 	 */
 	function vote( $value ) {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = self::getDBHandle( 'write' );
 
 		if ( $value < -1 ) { // limit to range -1 -> 0 -> 1
 			$value = -1;
@@ -650,7 +650,7 @@ class Comment extends ContextSource {
 	 * Deletes entries from Comments and Comments_Vote tables and clears caches
 	 */
 	function delete() {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = self::getDBHandle( 'write' );
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete(
 			'Comments',
@@ -785,7 +785,7 @@ class Comment extends ContextSource {
 	 * @param string $containerClass
 	 * @return string
 	 */
-	function showIgnore( $hide = false, $containerClass ) {
+	function showIgnore( $hide, $containerClass ) {
 		$blockListTitle = SpecialPage::getTitleFor( 'CommentIgnoreList' );
 
 		$style = '';
@@ -815,7 +815,7 @@ class Comment extends ContextSource {
 	 * @param array $anonList
 	 * @return string
 	 */
-	function showComment( $hide = false, $containerClass, $blockList, $anonList ) {
+	function showComment( $hide, $containerClass, $blockList, $anonList ) {
 		global $wgUserLevels, $wgExtensionAssetsPath, $wgCommentsDefaultAvatar;
 
 		$style = '';
@@ -979,5 +979,33 @@ class Comment extends ContextSource {
 		}
 
 		return $output;
+	}
+
+	/**
+	 * Get a handle for performing database operations.
+	 *
+	 * This is pretty much wfGetDB() in disguise with support for MW 1.39+
+	 * _without_ triggering WMF CI warnings/errors.
+	 *
+	 * @see https://phabricator.wikimedia.org/T273239
+	 *
+	 * @param string $type 'read' or 'write', depending on what we need to do
+	 * @return \Wikimedia\Rdbms\IDatabase|\Wikimedia\Rdbms\IReadableDatabase
+	 */
+	public static function getDBHandle( $type = 'read' ) {
+		$services = MediaWikiServices::getInstance();
+		if ( $type === 'read' ) {
+			if ( method_exists( $services, 'getConnectionProvider' ) ) {
+				return $services->getConnectionProvider()->getReplicaDatabase();
+			} else {
+				return $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
+			}
+		} elseif ( $type === 'write' ) {
+			if ( method_exists( $services, 'getConnectionProvider' ) ) {
+				return $services->getConnectionProvider()->getPrimaryDatabase();
+			} else {
+				return $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+			}
+		}
 	}
 }
