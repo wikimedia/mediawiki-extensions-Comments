@@ -5,5 +5,10 @@
 		]
 	},
 	"comments-reply": "Вуэсстлэ",
-	"comments-post": "Кӯдтӭ коамментарьй"
+	"comments-post": "Кӯдтӭ коамментарьй",
+	"comments-time-ago": "$1 маӈас",
+	"comments-time-days": "{{PLURAL:$1|$1 пе̄ййв|$1 пе̄йв|$1 пе̄ййвэ}}",
+	"comments-time-hours": "{{PLURAL:$1|$1 ча̄сс|$1 ча̄сс|$1 ча̄ссэ}}",
+	"comments-time-minutes": "{{PLURAL:$1|э̄ххт минута|$1 минута|$1 минутэдтӭ}}",
+	"comments-time-seconds": "{{PLURAL:$1|э̄ххт секунда|$1 секунда|$1 секундэдтӭ}}"
 }
