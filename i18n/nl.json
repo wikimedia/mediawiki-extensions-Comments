@@ -27,7 +27,7 @@
 	"apihelp-commentlist-param-pageID": "Pagina-ID van de pagina waarvan de reactielijst wordt opgehaald",
 	"apihelp-commentlist-param-order": "Geeft aan of de commentaarlijst in oplopende of aflopende volgorde is",
 	"apihelp-commentlist-param-pagerPage": "Paginanummer reacties",
-	"apihelp-commentlist-param-showForm": "Reactieformulier tonen",
+	"apihelp-commentlist-param-showForm": "Reactieformulier weergeven",
 	"apihelp-commentsubmit-param-pageID": "Pagina-ID van de pagina waarop een reactie moet worden ingediend",
 	"apihelp-commentsubmit-param-parentID": "Reactie-ID van de bovenliggende reactie",
 	"apihelp-commentsubmit-param-commentText": "Tekst van de reactie",
