@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Ерней",
-			"Ильнар"
+			"Ильнар",
+			"Don Alessandro"
 		]
 	},
 	"comments-voted-label": "Тавыш бирде",
 	"comments-loading": "Төяү бара…",
 	"comments-cancel-reply": "Кире алу",
 	"comments-you": "Сез",
-	"comments-reply": "Җавап бирергә",
+	"comments-reply": "Җавап бирү",
 	"comments-score-text": "Бәя",
 	"comments-permalink": "Даими сылтама",
 	"comments-ignore-unblock": "Блоктан алу",
