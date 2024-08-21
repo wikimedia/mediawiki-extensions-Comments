@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BadDog",
 			"Winston Sung"
 		]
 	},
@@ -52,7 +53,7 @@
 	"comments-delete-link": "Izbriši ​​komentar",
 	"comments-anon-name": "Anonimni korisnik",
 	"comments-anon-message": "{{SITENAME}} pozdravlja '''sve komentare'''. Ako ne želite biti anonimni, [[Special:CreateAccount|registrirajte se]] ili [[Special:UserLogin|prijavite se]]. Besplatno je.",
-	"comments-links-are-forbidden": "U komentarima su zabranjeni vanjski linkovi!",
+	"comments-links-are-forbidden": "Zabranjene su vanjske veze u komentarima.",
 	"comments-is-spam": "Poslani tekst komentara protumačen je kao spam.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> $3 <a href=\"$4\">(deblokiraj)</a>",
 	"comments-ignore-no-users": "Trenutno nema blokiranih korisnika.",
