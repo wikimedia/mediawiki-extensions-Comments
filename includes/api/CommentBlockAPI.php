@@ -1,6 +1,18 @@
 <?php
 
+use MediaWiki\User\UserFactory;
+
 class CommentBlockAPI extends ApiBase {
+	private UserFactory $userFactory;
+
+	public function __construct(
+		ApiMain $main,
+		string $action,
+		UserFactory $userFactory
+	) {
+		parent::__construct( $main, $action );
+		$this->userFactory = $userFactory;
+	}
 
 	public function execute() {
 		// Load user_name and user_id for person we want to block from the comment it originated from
@@ -12,7 +24,7 @@ class CommentBlockAPI extends ApiBase {
 			__METHOD__
 		);
 		if ( $s !== false ) {
-			$blockedUser = User::newFromActorId( $s->comment_actor );
+			$blockedUser = $this->userFactory->newFromActorId( $s->comment_actor );
 
 			if ( $blockedUser && $blockedUser instanceof User ) {
 				CommentFunctions::blockUser( $this->getUser(), $blockedUser );

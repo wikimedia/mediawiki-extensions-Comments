@@ -38,7 +38,12 @@
 		"echo-subscriptions-email-mention-comment": true
 	},
 	"SpecialPages": {
-		"CommentIgnoreList": "CommentIgnoreList"
+		"CommentIgnoreList": {
+			"class": "CommentIgnoreList",
+			"services": [
+				"UserFactory"
+			]
+		}
 	},
 	"LogTypes": [
 		"comments"
@@ -51,7 +56,12 @@
 		"comments/delete": "LogFormatter"
 	},
 	"APIModules": {
-		"commentblock": "CommentBlockAPI",
+		"commentblock": {
+			"class": "CommentBlockAPI",
+			"services": [
+				"UserFactory"
+			]
+		},
 		"commentdelete": "CommentDeleteAPI",
 		"commentlatestid": "CommentLatestIdAPI",
 		"commentlist": {

@@ -246,8 +246,9 @@ class CommentFunctions {
 			[ 'cb_actor' => $user->getActorId() ],
 			__METHOD__
 		);
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		foreach ( $res as $row ) {
-			$blocked = User::newFromActorId( $row->cb_actor_blocked );
+			$blocked = $userFactory->newFromActorId( $row->cb_actor_blocked );
 			if ( $blocked ) {
 				$blockList[] = $blocked->getName();
 			}

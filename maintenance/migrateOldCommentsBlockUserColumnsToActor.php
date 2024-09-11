@@ -102,8 +102,9 @@ class MigrateOldCommentsBlockUserColumnsToActor extends LoggedUpdateMaintenance 
 			__METHOD__,
 			[ 'DISTINCT' ]
 		);
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		foreach ( $res as $row ) {
-			$user = User::newFromAnyId( $row->cb_user_id, $row->cb_user_name, null );
+			$user = $userFactory->newFromAnyId( $row->cb_user_id, $row->cb_user_name, null );
 			if ( interface_exists( '\MediaWiki\User\ActorNormalization' ) ) {
 				// MW 1.36+
 				$actorId = MediaWikiServices::getInstance()->getActorNormalization()->acquireActorId( $user, $dbw );
@@ -133,7 +134,7 @@ class MigrateOldCommentsBlockUserColumnsToActor extends LoggedUpdateMaintenance 
 			[ 'DISTINCT' ]
 		);
 		foreach ( $res as $row ) {
-			$user = User::newFromAnyId( $row->cb_user_id_blocked, $row->cb_user_name_blocked, null );
+			$user = $userFactory->newFromAnyId( $row->cb_user_id_blocked, $row->cb_user_name_blocked, null );
 			if ( interface_exists( '\MediaWiki\User\ActorNormalization' ) ) {
 				// MW 1.36+
 				$actorId = MediaWikiServices::getInstance()->getActorNormalization()->acquireActorId( $user, $dbw );

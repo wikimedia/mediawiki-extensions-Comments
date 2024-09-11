@@ -5,13 +5,18 @@
  * @file
  * @ingroup Extensions
  */
+use MediaWiki\User\UserFactory;
+
 class CommentIgnoreList extends SpecialPage {
 
 	/**
 	 * Constructor -- set up the new special page
 	 */
-	public function __construct() {
+	public function __construct(
+		UserFactory $userFactory
+	) {
 		parent::__construct( 'CommentIgnoreList' );
+		$this->userFactory = $userFactory;
 	}
 
 	public function doesWrites() {
@@ -73,7 +78,7 @@ class CommentIgnoreList extends SpecialPage {
 				}
 
 				$user_name = htmlspecialchars_decode( $user_name );
-				$blockedUser = User::newFromName( $user_name );
+				$blockedUser = $this->userFactory->newFromName( $user_name );
 
 				if ( $blockedUser instanceof User ) {
 					CommentFunctions::deleteBlock( $user, $blockedUser );
@@ -116,7 +121,7 @@ class CommentIgnoreList extends SpecialPage {
 		if ( $res->numRows() > 0 ) {
 			$out = '<ul>';
 			foreach ( $res as $row ) {
-				$user = User::newFromActorId( $row->cb_actor_blocked );
+				$user = $this->userFactory->newFromActorId( $row->cb_actor_blocked );
 				if ( !$user ) {
 					continue;
 				}
