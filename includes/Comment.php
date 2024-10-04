@@ -855,7 +855,7 @@ class Comment extends ContextSource {
 			// Allow users to delete their own comments if that feature is enabled in
 			// site configuration
 			// @see https://phabricator.wikimedia.org/T147796
-			$userObj->isAllowed( 'comment-delete-own' ) && $this->isOwner( $userObj )
+			( $userObj->isAllowed( 'comment-delete-own' ) && $this->isOwner( $userObj ) )
 		) {
 			$dlt = ' | <span class="c-delete">' .
 				'<a href="javascript:void(0);" rel="nofollow" class="comment-delete-link" data-comment-id="' .
