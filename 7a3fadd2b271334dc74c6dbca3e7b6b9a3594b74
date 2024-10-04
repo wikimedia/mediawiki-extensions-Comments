@@ -33,6 +33,23 @@
       "message": "recheck",
       "revId": "7a3fadd2b271334dc74c6dbca3e7b6b9a3594b74",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b883eb3_17c52df3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 664
+      },
+      "writtenOn": "2024-10-04T22:36:32Z",
+      "side": 1,
+      "message": "grumble grumble CI flakiness grumble",
+      "revId": "7a3fadd2b271334dc74c6dbca3e7b6b9a3594b74",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
