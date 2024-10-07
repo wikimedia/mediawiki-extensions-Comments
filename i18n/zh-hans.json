@@ -12,7 +12,8 @@
 			"Shirayuki",
 			"TianyinLee",
 			"Yfdyh000",
-			"佛壁灯"
+			"佛壁灯",
+			"铁桶"
 		]
 	},
 	"apihelp-commentblock-description": "评论封禁API允许封禁用户的评论权，它在填写以下参数后出现：评论ID。",
@@ -92,7 +93,7 @@
 	"comments-time-minutes": "{{PLURAL:$1|$1分钟}}",
 	"comments-time-seconds": "{{PLURAL:$1|$1秒}}",
 	"log-show-hide-comments": "$1评论日志",
-	"logeventslist-comments-log": "注释日志",
+	"logeventslist-comments-log": "评论日志",
 	"group-commentadmin": "评论管理员",
 	"group-commentadmin-member": "{{GENDER:$1|评论管理员}}",
 	"grouppage-commentadmin": "{{ns:project}}:评论管理员",
