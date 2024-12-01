@@ -119,6 +119,8 @@
 				cache: false
 			} ).done( function ( response ) {
 				document.getElementById( 'comments-body' ).innerHTML = response.commentlist.html;
+				// Comments are parsed wikitext, and some templates depend on this hook to work
+				mw.hook( 'wikipage.content' ).fire( $( '#comments-body' ) );
 				// Move the "Sort by <date/score>" menu *above* all the comments, as it oughta be (T292893)
 				$( '.c-order' ).prependTo( '#comments-body' );
 				// This looks awfully silly but seems to be needed to have the permalink feature
