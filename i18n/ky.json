@@ -10,5 +10,6 @@
 	"comments-reply": "Жооп берүү",
 	"comments-permalink": "Туруктуу шилтеме",
 	"comments-ignore-cancel": "Жокко чыгаруу",
-	"comments-time-days": "{{PLURAL:$1|бир күн|$1 күн}}"
+	"comments-time-days": "{{PLURAL:$1|бир күн|$1 күн}}",
+	"comments-time-minutes": "{{PLURAL:$1|бир мүнөт|$1 мүнөт}}"
 }
