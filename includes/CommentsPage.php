@@ -614,7 +614,7 @@ class CommentsPage extends ContextSource {
 		// If SocialProfile is installed, query the user_stats table too.
 		if (
 			class_exists( 'UserProfile' ) &&
-			$dbr->tableExists( 'user_stats' )
+			$dbr->tableExists( 'user_stats', __METHOD__ )
 		) {
 			$tables[] = 'user_stats';
 			$fields[] = 'stats_total_points';
