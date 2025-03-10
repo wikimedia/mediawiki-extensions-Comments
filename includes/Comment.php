@@ -199,7 +199,7 @@ class Comment extends ContextSource {
 		// If SocialProfile is installed, query the user_stats table too.
 		if (
 			class_exists( 'UserProfile' ) &&
-			$dbr->tableExists( 'user_stats' )
+			$dbr->tableExists( 'user_stats', __METHOD__ )
 		) {
 			$tables[] = 'user_stats';
 			$fields[] = 'stats_total_points';
@@ -338,7 +338,7 @@ class Comment extends ContextSource {
 		$dbr = self::getDBHandle( 'read' );
 		if (
 			class_exists( 'UserProfile' ) &&
-			$dbr->tableExists( 'user_stats' )
+			$dbr->tableExists( 'user_stats', __METHOD__ )
 		) {
 			$res = $dbr->select( // need this data for seeding a Comment object
 				'user_stats',
