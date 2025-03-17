@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajeje Brazorf"
+			"Ajeje Brazorf",
+			"GianAntonucci"
 		]
 	},
 	"comments-comment": "Cummentu",
@@ -13,7 +14,7 @@
 	"comments-anon-name": "Utenti anònimu",
 	"comments-ignore-cancel": "Annulla",
 	"logentry-comments-delete": "$1 cancillau lu cummentu #$4 supra $3",
-	"comments-time-ago": "$1 fa",
+	"comments-time-ago": "$1 arrè",
 	"comments-time-months": "{{PLURAL:$1|nu misi|$1 misi}}",
 	"comments-time-days": "{{PLURAL:$1|nu jornu|$1 jorna}}",
 	"comments-time-hours": "{{PLURAL:$1|na ura|$1 uri}}",
