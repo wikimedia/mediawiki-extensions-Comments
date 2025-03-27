@@ -2,13 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Ajeje Brazorf",
-			"GianAntonucci"
+			"GianAntonucci",
+			"Gmelfi"
 		]
 	},
 	"comments-comment": "Cummentu",
 	"comments-cancel-reply": "Annulla",
 	"comments-show-comment-link": "Ammustra cummentu",
 	"comments-you": "Tu",
+	"comments-reply": "Rispunni",
 	"comments-submit": "Agghiunci lu tò cummentu",
 	"comments-delete-link": "Cancella cummentu",
 	"comments-anon-name": "Utenti anònimu",
