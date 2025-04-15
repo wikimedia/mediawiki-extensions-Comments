@@ -136,7 +136,8 @@ class Comment extends ContextSource {
 
 		$this->actorID = (int)$data['Comment_actor'];
 
-		$this->user = $commenter = User::newFromActorId( $data['Comment_actor'] );
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+		$this->user = $commenter = $userFactory->newFromActorId( $data['Comment_actor'] );
 
 		$this->username = $commenter->getName();
 		$this->ip = $data['Comment_IP'];
@@ -516,12 +517,13 @@ class Comment extends ContextSource {
 
 		if ( $wgEchoMentionStatusNotifications ) {
 			// TODO batch?
+			$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 			foreach ( $userMentions['validMentions'] as $mentionedUserId ) {
 				EchoEvent::create( [
 					'type' => 'mention-success',
 					'title' => $title,
 					'extra' => [
-						'subject-name' => User::newFromId( $mentionedUserId )->getName(),
+						'subject-name' => $userFactory->newFromId( $mentionedUserId )->getName(),
 						'section-title' => $header,
 						'revid' => $revId,
 						'comment-id' => $commentId, // added
@@ -844,7 +846,8 @@ class Comment extends ContextSource {
 				$commentPosterLevel = "{$user_level->getLevelName()}";
 			}
 
-			$user = User::newFromId( $this->user->getId() );
+			$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+			$user = $userFactory->newFromId( $this->user->getId() );
 			$CommentReplyToGender = MediaWikiServices::getInstance()->getUserOptionsLookup()
 				->getOption( $user, 'gender', 'unknown' );
 		} else {

@@ -96,9 +96,13 @@ class MigrateOldCommentsVoteUserColumnsToActor extends MediaWiki\Maintenance\Log
 			__METHOD__,
 			[ 'DISTINCT' ]
 		);
+
+		$services = MediaWikiServices::getInstance();
+		$userFactory = $services->getUserFactory();
+
 		foreach ( $res as $row ) {
-			$user = User::newFromAnyId( $row->Comment_Vote_user_id, $row->Comment_Vote_Username, null );
-			$actorId = MediaWikiServices::getInstance()->getActorNormalization()->acquireActorId( $user, $dbw );
+			$user = $userFactory->newFromAnyId( $row->Comment_Vote_user_id, $row->Comment_Vote_Username, null );
+			$actorId = $services->getActorNormalization()->acquireActorId( $user, $dbw );
 			$dbw->update(
 				'Comments_Vote',
 				[
