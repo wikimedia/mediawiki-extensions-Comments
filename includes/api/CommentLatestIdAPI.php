@@ -1,6 +1,9 @@
 <?php
 
-class CommentLatestIdAPI extends ApiBase {
+use MediaWiki\Context\RequestContext;
+use Wikimedia\ParamValidator\ParamValidator;
+
+class CommentLatestIdAPI extends MediaWiki\Api\ApiBase {
 
 	public function execute() {
 		// To avoid API warning, register the parameter used to bust browser cache
@@ -17,8 +20,8 @@ class CommentLatestIdAPI extends ApiBase {
 	public function getAllowedParams() {
 		return [
 			'pageID' => [
-				ApiBase::PARAM_REQUIRED => true,
-				ApiBase::PARAM_TYPE => 'integer'
+				ParamValidator::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'integer'
 			]
 		];
 	}

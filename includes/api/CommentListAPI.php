@@ -1,17 +1,20 @@
 <?php
 
-class CommentListAPI extends ApiBase {
+use MediaWiki\Context\RequestContext;
+use Wikimedia\ParamValidator\ParamValidator;
+
+class CommentListAPI extends MediaWiki\Api\ApiBase {
 
 	/** @var ReadOnlyMode */
 	private $readOnlyMode;
 
 	/**
-	 * @param ApiMain $mainModule
+	 * @param MediaWiki\Api\ApiMain $mainModule
 	 * @param string $moduleName
 	 * @param ReadOnlyMode $readOnlyMode
 	 */
 	public function __construct(
-		ApiMain $mainModule,
+		MediaWiki\Api\ApiMain $mainModule,
 		$moduleName,
 		ReadOnlyMode $readOnlyMode
 	) {
@@ -68,26 +71,27 @@ class CommentListAPI extends ApiBase {
 
 		$result = $this->getResult();
 		$result->addValue( $this->getModuleName(), 'html', $output );
+
 		return true;
 	}
 
 	public function getAllowedParams() {
 		return [
 			'pageID' => [
-				ApiBase::PARAM_REQUIRED => true,
-				ApiBase::PARAM_TYPE => 'integer'
+				ParamValidator::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'integer'
 			],
 			'order' => [
-				ApiBase::PARAM_REQUIRED => true,
-				ApiBase::PARAM_TYPE => 'boolean'
+				ParamValidator::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'boolean'
 			],
 			'pagerPage' => [
-				ApiBase::PARAM_REQUIRED => true,
-				ApiBase::PARAM_TYPE => 'integer'
+				ParamValidator::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'integer'
 			],
 			'showForm' => [
-				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_TYPE => 'integer'
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'integer'
 			]
 		];
 	}

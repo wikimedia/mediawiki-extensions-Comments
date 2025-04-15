@@ -2,9 +2,14 @@
 /**
  * A special page for displaying the list of users whose comments you're
  * ignoring.
+ *
  * @file
  * @ingroup Extensions
  */
+
+use MediaWiki\Html\Html;
+use MediaWiki\SpecialPage\SpecialPage;
+
 class CommentIgnoreList extends SpecialPage {
 
 	/**

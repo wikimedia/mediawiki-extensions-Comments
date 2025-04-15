@@ -1,6 +1,13 @@
 <?php
 
+use MediaWiki\Context\ContextSource;
+use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\Notifications\DiscussionParser;
+use MediaWiki\Extension\Notifications\Model\Event as EchoEvent;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\ParserOptions;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Title\Title;
 use Wikimedia\AtEase\AtEase;
 
 /**
@@ -382,14 +389,14 @@ class Comment extends ContextSource {
 			if ( !$wgEchoMentionOnChanges ) {
 				return null;
 			}
-			// Modified copypasta of EchoDiscussionParser#generateEventsForRevision with less Revision-ism!
+			// Modified copypasta of Echo's DiscussionParser#generateEventsForRevision with less Revision-ism!
 			// (Awful pun is awful, sorry about that.)
-			// EchoDiscussionParser#getChangeInterpretationForRevision is *way*, way too Revision-ist for
+			// Echo's DiscussionParser#getChangeInterpretationForRevision is *way*, way too Revision-ist for
 			// our tastes. DO NOT WANT!
 			$title = Title::newFromId( $page->id );
 
-			// stolen from EchoDiscussionParser#generateEventsForRevision
-			$userLinks = EchoDiscussionParser::getUserLinks( $text, $title );
+			// stolen from MediaWiki\Extension\Notifications\DiscussionParser\DiscussionParser#generateEventsForRevision
+			$userLinks = DiscussionParser::getUserLinks( $text, $title );
 			$header = $text;
 
 			self::generateMentionEvents(
@@ -435,8 +442,8 @@ class Comment extends ContextSource {
 	 * @param string $header The subject line for the discussion.
 	 * @param int[] $userLinks
 	 * @param string $content The content of the post, as a wikitext string.
-	 * @param Title $title
-	 * @param User $agent The user who made the comment.
+	 * @param MediaWiki\Title\Title $title
+	 * @param MediaWiki\User\User $agent The user who made the comment.
 	 * @param Comment $comment
 	 * @param int $commentId
 	 */
@@ -459,14 +466,14 @@ class Comment extends ContextSource {
 		$revId = $title->getLatestRevID();
 		// Comments are often short. These Echo-isms mutilate $content into an empty string.
 		// We don't want that to happen.
-		// $content = EchoDiscussionParser::stripHeader( $content );
-		// $content = EchoDiscussionParser::stripSignature( $content, $title );
+		// $content = DiscussionParser::stripHeader( $content );
+		// $content = DiscussionParser::stripSignature( $content, $title );
 		if ( !$userLinks ) {
 			return;
 		}
 
-		$userMentions = EchoDiscussionParser::getUserMentions( $title, $agent->getId(), $userLinks );
-		// $overallMentionsCount = EchoDiscussionParser::getOverallUserMentionsCount( $userMentions );
+		$userMentions = DiscussionParser::getUserMentions( $title, $agent->getId(), $userLinks );
+		// $overallMentionsCount = DiscussionParser::getOverallUserMentionsCount( $userMentions );
 		$overallMentionsCount = count( $userMentions, COUNT_RECURSIVE ) - count( $userMentions );
 		if ( $overallMentionsCount === 0 ) {
 			return;
@@ -710,7 +717,8 @@ class Comment extends ContextSource {
 		$user = $this->getUser();
 
 		// Blocked users cannot vote, obviously
-		if ( $user->getBlock() ||
+		if (
+			$user->getBlock() ||
 			$user->isBlockedGlobally() ||
 			!$user->isAllowed( 'comment' )
 		) {

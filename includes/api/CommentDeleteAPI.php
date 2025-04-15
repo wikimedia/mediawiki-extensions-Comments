@@ -1,6 +1,8 @@
 <?php
 
-class CommentDeleteAPI extends ApiBase {
+use Wikimedia\ParamValidator\ParamValidator;
+
+class CommentDeleteAPI extends MediaWiki\Api\ApiBase {
 
 	public function execute() {
 		$user = $this->getUser();
@@ -23,6 +25,7 @@ class CommentDeleteAPI extends ApiBase {
 
 		$result = $this->getResult();
 		$result->addValue( $this->getModuleName(), 'ok', 'ok' );
+
 		return true;
 	}
 
@@ -37,8 +40,8 @@ class CommentDeleteAPI extends ApiBase {
 	public function getAllowedParams() {
 		return [
 			'commentID' => [
-				ApiBase::PARAM_REQUIRED => true,
-				ApiBase::PARAM_TYPE => 'integer'
+				ParamValidator::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'integer'
 			]
 		];
 	}

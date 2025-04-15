@@ -5,6 +5,9 @@
  * @file
  * @date 28 July 2013
  */
+
+use MediaWiki\Title\Title;
+
 class CommentsLogFormatter extends WikitextLogFormatter {
 	/**
 	 * Formats parameters intented for action message from
@@ -26,9 +29,7 @@ class CommentsLogFormatter extends WikitextLogFormatter {
 		$commentId = $params[3]; // = $4, because array numbering starts from 0
 
 		$params[0] = Message::rawParam( $this->getPerformerElement() );
-		$identity = method_exists( $entry, 'getPerformerIdentity' ) ?
-			$entry->getPerformerIdentity()->getName() :
-			$entry->getPerformer()->getName();
+		$identity = $entry->getPerformerIdentity()->getName();
 		$params[1] = $this->canView( LogPage::DELETED_USER ) ? $identity : '';
 		$title = $entry->getTarget();
 		if ( $title instanceof Title ) { // healthy paranoia
