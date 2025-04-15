@@ -97,9 +97,13 @@ class MigrateOldCommentsUserColumnsToActor extends MediaWiki\Maintenance\LoggedU
 			__METHOD__,
 			[ 'DISTINCT' ]
 		);
+
+		$services = MediaWikiServices::getInstance();
+		$userFactory = $services->getUserFactory();
+
 		foreach ( $res as $row ) {
-			$user = User::newFromAnyId( $row->Comment_user_id, $row->Comment_Username, null );
-			$actorId = MediaWikiServices::getInstance()->getActorNormalization()->acquireActorId( $user, $dbw );
+			$user = $userFactory->newFromAnyId( $row->Comment_user_id, $row->Comment_Username, null );
+			$actorId = $services->getActorNormalization()->acquireActorId( $user, $dbw );
 			$dbw->update(
 				'Comments',
 				[
