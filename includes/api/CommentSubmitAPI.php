@@ -1,6 +1,8 @@
 <?php
 
-class CommentSubmitAPI extends ApiBase {
+use Wikimedia\ParamValidator\ParamValidator;
+
+class CommentSubmitAPI extends MediaWiki\Api\ApiBase {
 
 	public function execute() {
 		$main = $this->getMain();
@@ -68,6 +70,7 @@ class CommentSubmitAPI extends ApiBase {
 
 		$result = $this->getResult();
 		$result->addValue( $this->getModuleName(), 'ok', 'ok' );
+
 		return true;
 	}
 
@@ -82,16 +85,16 @@ class CommentSubmitAPI extends ApiBase {
 	public function getAllowedParams() {
 		return [
 			'pageID' => [
-				ApiBase::PARAM_REQUIRED => true,
-				ApiBase::PARAM_TYPE => 'integer'
+				ParamValidator::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'integer'
 			],
 			'parentID' => [
-				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_TYPE => 'integer'
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'integer'
 			],
 			'commentText' => [
-				ApiBase::PARAM_REQUIRED => true,
-				ApiBase::PARAM_TYPE => 'string'
+				ParamValidator::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string'
 			]
 		];
 	}

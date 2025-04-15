@@ -12,13 +12,16 @@
  * @link https://www.mediawiki.org/wiki/Extension:Comments Documentation
  */
 
+use MediaWiki\Context\RequestContext;
+use MediaWiki\Parser\Parser;
+
 class CommentsHooks {
 	/**
 	 * Registers the following tags and magic words:
 	 * - <comments />
 	 * - NUMBEROFCOMMENTSPAGE
 	 *
-	 * @param Parser &$parser
+	 * @param MediaWiki\Parser\Parser &$parser
 	 */
 	public static function onParserFirstCallInit( Parser &$parser ) {
 		$parser->setHook( 'comments', [ 'DisplayComments', 'getParserHandler' ] );
@@ -49,7 +52,7 @@ class CommentsHooks {
 			'presentation-model' => 'EchoMentionCommentPresentationModel',
 			'user-locators' => [
 				[
-					'EchoUserLocator::locateFromEventExtra',
+					'MediaWiki\Extension\Notifications\UserLocator::locateFromEventExtra',
 					[
 						'mentioned-users'
 					]
@@ -100,7 +103,7 @@ class CommentsHooks {
 	 * Adds the three new required database tables into the database when the
 	 * user runs /maintenance/update.php (the core database updater script).
 	 *
-	 * @param DatabaseUpdater $updater
+	 * @param MediaWiki\Installer\DatabaseUpdater $updater
 	 */
 	public static function onLoadExtensionSchemaUpdates( $updater ) {
 		$dir = __DIR__ . '/../sql';

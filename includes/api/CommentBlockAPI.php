@@ -1,6 +1,8 @@
 <?php
 
-class CommentBlockAPI extends ApiBase {
+use Wikimedia\ParamValidator\ParamValidator;
+
+class CommentBlockAPI extends MediaWiki\Api\ApiBase {
 
 	public function execute() {
 		// Load user_name and user_id for person we want to block from the comment it originated from
@@ -43,8 +45,8 @@ class CommentBlockAPI extends ApiBase {
 	public function getAllowedParams() {
 		return [
 			'commentID' => [
-				ApiBase::PARAM_REQUIRED => true,
-				ApiBase::PARAM_TYPE => 'integer'
+				ParamValidator::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'integer'
 			]
 		];
 	}

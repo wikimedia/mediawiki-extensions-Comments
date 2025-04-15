@@ -1,6 +1,10 @@
 <?php
 
+use MediaWiki\Context\ContextSource;
+use MediaWiki\Context\RequestContext;
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 /**
  * Class for Comments methods that are not specific to one comments,
@@ -170,7 +174,7 @@ class CommentsPage extends ContextSource {
 		$comments = [];
 
 		// Try to fetch page comments from cache first
-		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+		$cache = MediaWikiServices::getInstance()->getObjectCacheFactory()->getInstance( CACHE_ANYTHING );
 		$cacheKey = $cache->makeKey(
 			'comments',
 			$this->id,
@@ -490,14 +494,15 @@ class CommentsPage extends ContextSource {
 		$userContext = $context->getUser();
 		$language = $context->getLanguage();
 		$ip = $context->getRequest()->getIP();
+		$errorFormatter = MediaWikiServices::getInstance()->getBlockErrorFormatter();
 
 		// Check users block status
 		if ( $user->getBlock() ) {
-			$output .= MediaWikiServices::getInstance()->getBlockErrorFormatter()
+			$output .= $errorFormatter
 				->getMessage( $user->getBlock(), $userContext, $language, $ip )
 				->parse();
 		} elseif ( $user->isBlockedGlobally() ) {
-			$output .= MediaWikiServices::getInstance()->getBlockErrorFormatter()
+			$output .= $errorFormatter
 				->getMessage( $user->getGlobalBlock(), $userContext, $language, $ip )
 				->parse();
 		} elseif ( !$this->getUser()->isAllowed( 'comment' ) ) {
@@ -538,7 +543,7 @@ class CommentsPage extends ContextSource {
 	 */
 	public function clearCommentListCache() {
 		wfDebug( "Clearing comments for page {$this->id} from cache\n" );
-		$cache = ObjectCache::getInstance( CACHE_ANYTHING );
+		$cache = MediaWikiServices::getInstance()->getObjectCacheFactory()->getInstance( CACHE_ANYTHING );
 		// Delete all possible keys for the page
 		// @TODO: this duplicates values returned by getSort()
 		$sorts = [ 'comment_score DESC', 'timestamp DESC', 'timestamp ASC' ];

@@ -6,12 +6,17 @@
  * @date 8 August 2019
  */
 
+use MediaWiki\Extension\Notifications\DiscussionParser;
+use MediaWiki\Extension\Notifications\Formatters\EchoMentionPresentationModel;
+use MediaWiki\Extension\Notifications\Formatters\EchoPresentationModelSection;
+use MediaWiki\Extension\Notifications\Model\Event as EchoEvent;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\User;
 
 class EchoMentionCommentPresentationModel extends EchoMentionPresentationModel {
 
 	/**
-	 * @var EchoPresentationModelSection
+	 * @var MediaWiki\Extension\Notifications\Formatters\EchoPresentationModelSection
 	 */
 	protected $section;
 
@@ -99,7 +104,7 @@ class EchoMentionCommentPresentationModel extends EchoMentionPresentationModel {
 		if ( $content && $this->userCan( RevisionRecord::DELETED_TEXT ) ) {
 			$msg = $this->msg( 'notification-body-mention' );
 			$msg->plaintextParams(
-				EchoDiscussionParser::getTextSnippet(
+				DiscussionParser::getTextSnippet(
 					$content,
 					$this->language,
 					150,

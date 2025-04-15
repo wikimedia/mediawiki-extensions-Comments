@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Html\Html;
+
 class DisplayComments {
 
 	/**
@@ -9,7 +11,7 @@ class DisplayComments {
 	 *
 	 * @param string $input
 	 * @param array $args
-	 * @param Parser $parser
+	 * @param MediaWiki\Parser\Parser $parser
 	 *
 	 * @return string HTML
 	 * @throws MWException
@@ -26,7 +28,7 @@ class DisplayComments {
 		// Add required CSS & JS via ResourceLoader
 		$po->addModuleStyles( [ 'ext.comments.css' ] );
 		$po->addModules( [ 'ext.comments.js' ] );
-		$po->addJsConfigVars( [ 'wgCommentsSortDescending' => $wgCommentsSortDescending ] );
+		$po->setJsConfigVar( 'wgCommentsSortDescending', $wgCommentsSortDescending );
 
 		// Parse arguments
 		// The preg_match() lines here are to support the old-style way of
@@ -74,7 +76,7 @@ class DisplayComments {
 	/**
 	 * @param string $input
 	 * @param string[] $args
-	 * @param Parser $parser
+	 * @param MediaWiki\Parser\Parser $parser
 	 *
 	 * @return string
 	 */

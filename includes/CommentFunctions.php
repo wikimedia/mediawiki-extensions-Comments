@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use Wikimedia\AtEase\AtEase;
 
 class CommentFunctions {
@@ -173,16 +174,8 @@ class CommentFunctions {
 			return Status::newGood();
 		}
 
-		if ( class_exists( MediaWiki\Extension\AbuseFilter\AbuseFilterServices::class ) ) {
-			// post-1.35
-			$gen = MediaWiki\Extension\AbuseFilter\AbuseFilterServices::getVariableGeneratorFactory()->newGenerator();
-			$runnerFactory = MediaWiki\Extension\AbuseFilter\AbuseFilterServices::getFilterRunnerFactory();
-		} else {
-			// 1.35 only
-			$gen = new MediaWiki\Extension\AbuseFilter\VariableGenerator\VariableGenerator(
-				new AbuseFilterVariableHolder()
-			);
-		}
+		$gen = MediaWiki\Extension\AbuseFilter\AbuseFilterServices::getVariableGeneratorFactory()->newGenerator();
+		$runnerFactory = MediaWiki\Extension\AbuseFilter\AbuseFilterServices::getFilterRunnerFactory();
 
 		$vars = $gen->addUserVars( $user )
 			->addTitleVars( $title, 'page' )
@@ -193,17 +186,12 @@ class CommentFunctions {
 		$vars->setVar( 'new_wikitext', $text );
 		$vars->setLazyLoadVar( 'new_size', 'length', [ 'length-var' => 'new_wikitext' ] );
 
-		if ( class_exists( MediaWiki\Extension\AbuseFilter\FilterRunnerFactory::class ) ) {
-			$status = $runnerFactory->newRunner(
-				$user,
-				$title,
-				$vars,
-				$wgCommentsAbuseFilterGroup
-			)->run();
-		} else {
-			// 1.35 only
-			$status = ( new AbuseFilterRunner( $user, $title, $vars, $wgCommentsAbuseFilterGroup ) )->run();
-		}
+		$status = $runnerFactory->newRunner(
+			$user,
+			$title,
+			$vars,
+			$wgCommentsAbuseFilterGroup
+		)->run();
 
 		return $status;
 	}
