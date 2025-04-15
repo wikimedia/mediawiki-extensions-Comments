@@ -132,7 +132,7 @@ class CommentIgnoreList extends SpecialPage {
 			$out .= '</ul>';
 		} else {
 			$out = '<div class="comment_blocked_user">' .
-				$this->msg( 'comments-ignore-no-users' )->text() . '</div>';
+				$this->msg( 'comments-ignore-no-users' )->escaped() . '</div>';
 		}
 		return $out;
 	}
@@ -152,8 +152,8 @@ class CommentIgnoreList extends SpecialPage {
 				<form action="" method="post" name="comment_block">' .
 					Html::hidden( 'user', $user_name ) . "\n" .
 					Html::hidden( 'token', $this->getUser()->getEditToken() ) . "\n" .
-					'<input type="submit" class="site-button" value="' . $this->msg( 'comments-ignore-unblock' )->text() . '"  />
-					<input type="button" class="site-button" value="' . $this->msg( 'comments-ignore-cancel' )->text() . '" onclick="history.go(-1)" />
+					'<input type="submit" class="site-button" value="' . $this->msg( 'comments-ignore-unblock' )->escaped() . '"  />
+					<input type="button" class="site-button" value="' . $this->msg( 'comments-ignore-cancel' )->escaped() . '" onclick="history.go(-1)" />
 				</form>
 			</div>';
 		return $out;

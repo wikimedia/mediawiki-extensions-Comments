@@ -797,9 +797,9 @@ class Comment extends ContextSource {
 		$output .= wfMessage( 'comments-ignore-message' )->parse();
 		$output .= '<div class="c-ignored-links">' . "\n";
 		$output .= "<a href=\"javascript:void(0);\" data-comment-id=\"{$this->id}\">" .
-			$this->msg( 'comments-show-comment-link' )->plain() . '</a> | ';
+			$this->msg( 'comments-show-comment-link' )->escaped() . '</a> | ';
 		$output .= '<a href="' . htmlspecialchars( $blockListTitle->getFullURL() ) . '">' .
-			$this->msg( 'comments-manage-blocklist-link' )->plain() . '</a>';
+			$this->msg( 'comments-manage-blocklist-link' )->escaped() . '</a>';
 		$output .= '</div>' . "\n";
 		$output .= '</div>' . "\n";
 
@@ -860,7 +860,7 @@ class Comment extends ContextSource {
 			$dlt = ' | <span class="c-delete">' .
 				'<a href="javascript:void(0);" rel="nofollow" class="comment-delete-link" data-comment-id="' .
 				$this->id . '">' .
-				$this->msg( 'comments-delete-link' )->plain() . '</a></span>';
+				$this->msg( 'comments-delete-link' )->escaped() . '</a></span>';
 		}
 
 		// Reply Link (does not appear on child comments)
@@ -873,7 +873,7 @@ class Comment extends ContextSource {
 				$replyRow .= " | <a href=\"#end\" rel=\"nofollow\" class=\"comments-reply-to\" data-comment-id=\"{$this->id}\" data-comments-safe-username=\"" .
 					htmlspecialchars( $CommentReplyTo, ENT_QUOTES ) . "\" data-comments-user-gender=\"" .
 					htmlspecialchars( $CommentReplyToGender ) . '">' .
-					wfMessage( 'comments-reply' )->plain() . '</a>';
+					wfMessage( 'comments-reply' )->escaped() . '</a>';
 			}
 		}
 
@@ -933,7 +933,7 @@ class Comment extends ContextSource {
 		$output .= '<div class="c-actions">' . "\n";
 		if ( $this->page->title ) { // for some reason doesn't always exist
 			$output .= '<a href="' . htmlspecialchars( $this->page->title->getFullURL() ) . "#comment-{$this->id}\" rel=\"nofollow\">" .
-			$this->msg( 'comments-permalink' )->plain() . '</a> ';
+			$this->msg( 'comments-permalink' )->escaped() . '</a> ';
 		}
 		if ( $replyRow || $dlt ) {
 			$output .= "{$replyRow} {$dlt}" . "\n";

@@ -447,17 +447,17 @@ class CommentsPage extends ContextSource {
 				<form name="ChangeOrder" action="">
 					<select name="TheOrder">
 						<option value="0">' .
-			wfMessage( 'comments-sort-by-date' )->plain() .
+			wfMessage( 'comments-sort-by-date' )->escaped() .
 			'</option>
 						<option value="1">' .
-			wfMessage( 'comments-sort-by-score' )->plain() .
+			wfMessage( 'comments-sort-by-score' )->escaped() .
 			'</option>
 					</select>
 				</form>
 			</div>
 			<div id="spy" class="c-spy">
 				<a href="javascript:void(0)">' .
-			wfMessage( 'comments-auto-refresher-enable' )->plain() .
+			wfMessage( 'comments-auto-refresher-enable' )->escaped() .
 			'</a>
 			</div>
 			<div class="visualClear"></div>
@@ -505,7 +505,7 @@ class CommentsPage extends ContextSource {
 			$output .= wfMessage( 'comments-not-allowed' )->parse();
 			$output .= '<input type="hidden" name="lastCommentId" value="' . $this->getLatestCommentID() . '" />' . "\n";
 		} else {
-			$output .= '<div class="c-form-title">' . wfMessage( 'comments-submit' )->plain() . '</div>' . "\n";
+			$output .= '<div class="c-form-title">' . wfMessage( 'comments-submit' )->escaped() . '</div>' . "\n";
 			$output .= '<div id="replyto" class="c-form-reply-to"></div>' . "\n";
 			// Show a message to anons, prompting them to register or log in
 			if ( !$user->isRegistered() ) {
