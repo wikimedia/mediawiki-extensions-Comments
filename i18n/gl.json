@@ -26,7 +26,7 @@
 	"comments-cancel-reply": "Cancelar",
 	"comments-block-warning-anon": "Está seguro de querer ignorar permanentemente todos os comentarios deste usuario anónimo (mediante o seu enderezo IP)?",
 	"comments-block-warning-user": "Está seguro de querer ignorar permanentemente todos os comentarios do usuario $1?",
-	"comments-delete-warning": "Estás seguro de querer borrar este comentario?",
+	"comments-delete-warning": "Queres borrar este comentario?",
 	"comments-sort-by-date": "Ordenar por data",
 	"comments-sort-by-score": "Ordenar por puntuación",
 	"comments-show-comment-link": "Amosar comentario",
