@@ -129,6 +129,12 @@
 					// eslint-disable-next-line no-self-assign
 					window.location.hash = window.location.hash;
 				}
+
+				// If the comment submission form should be *before* the list of comments, move it there (T232217)
+				if ( $( '#comments-body' ).data( 'submission-form-location' ) === 'top' ) {
+					var $submissionForm = $( '#comments-body form[name="commentForm"]' );
+					$( '#comments-body .c-order' ).before( $submissionForm );
+				}
 			} );
 		},
 
