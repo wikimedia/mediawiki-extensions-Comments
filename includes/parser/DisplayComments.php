@@ -56,13 +56,22 @@ class DisplayComments {
 			$voting = $args['voting'];
 		}
 
+		// Allow users to move the "submit a comment" form location with <comments form-location="top">
+		// to the top, i.e. *before* all the comments, but default to it being _after_ the list of comments
+		// @see https://phabricator.wikimedia.org/T232217
+		$formLocation = 'bottom';
+		if ( isset( $args['form-location'] ) && $args['form-location'] === 'top' ) {
+			$formLocation = 'top';
+		}
+
 		return Html::rawElement(
 			'div',
 			[
 				'class' => 'comments-body',
 				'id' => 'comments-body',
 				'data-voting' => $voting,
-				'data-allow' => $allow
+				'data-allow' => $allow,
+				'data-submission-form-location' => $formLocation
 			],
 			Html::rawElement(
 				'span',
