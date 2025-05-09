@@ -152,7 +152,7 @@
 		"BeforeCreateEchoEvent": "CommentsHooks::onBeforeCreateEchoEvent",
 		"ParserFirstCallInit": "CommentsHooks::onParserFirstCallInit",
 		"LoadExtensionSchemaUpdates": "CommentsHooks::onLoadExtensionSchemaUpdates",
-		"MagicWordwgVariableIDs": "NumberOfComments::onMagicWordwgVariableIDs",
+		"GetMagicVariableIDs": "NumberOfComments::onGetMagicVariableIDs",
 		"ParserGetVariableValueSwitch": "NumberOfComments::onParserGetVariableValueSwitch",
 		"ArticlePurge": "CommentsHooks::onArticlePurge"
 	},
