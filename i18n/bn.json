@@ -4,10 +4,12 @@
 			"Aftab1995",
 			"Aftabuzzaman",
 			"Bellayet",
+			"Bodhisattwa",
 			"আফতাবুজ্জামান"
 		]
 	},
 	"comments-comment": "মন্তব্য",
+	"comments-voted-label": "ভোট দেওয়া হয়েছে",
 	"comments-loading": "লোড করা হচ্ছে...",
 	"comments-reply-to": "প্রাপক {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "বাতিল",
@@ -15,6 +17,8 @@
 	"comments-you": "আপনি",
 	"comments-reply": "উত্তর",
 	"comments-score-text": "স্কোর",
+	"comments-anon-name": "বেনামী ব্যবহারকারী",
+	"comments-ignore-unblock": "বাধা তুলুন",
 	"comments-ignore-cancel": "বাতিল",
 	"echo-category-title-mention-comment": "মন্তব্যে উল্লেখ",
 	"comments-time-ago": "$1 আগে",
