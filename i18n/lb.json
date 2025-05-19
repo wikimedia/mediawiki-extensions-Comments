@@ -19,7 +19,7 @@
 	"comments-loading": "Lueden...",
 	"comments-auto-refresher-enable": "Automatesch Aktualiséierung vun de Bemierkungen aschalten",
 	"comments-auto-refresher-pause": "Automatesch Aktualisatioun vun de Bemierkungen ausschalten",
-	"comments-reply-to": "Äntwert fir {{GENDER:$2|$1}}",
+	"comments-reply-to": "Äntwert fir {{GENDER:$2|de(n) $1|d'$1}}",
 	"comments-cancel-reply": "Ofbriechen",
 	"comments-block-warning-anon": "Sidd Dir sécher datt Dir definitiv all Bemierkunge vun dësem anonymme Benotzer (iwwer seng IP-Adress) ignoréiere wëllt?",
 	"comments-block-warning-user": "Sidd Dir sécher datt Dir definitiv all Bemierkunge vum Benotzer $1 ignoréiere wëllt?",
