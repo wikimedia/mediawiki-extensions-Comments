@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0bd13542_65c01fc0",
+        "filename": "includes/api/CommentEditAPI.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-05-30T23:11:39Z",
+      "side": 1,
+      "message": "I separated these out into a new parent class for a couple of the API classes, where the error is thrown inside the checks there rather than returning a StatusValue.  This was definitely worth doing as the logic has already diverged.\n\nAlso there\u0027s a minor change because of this, you are no longer allowed to post empty comments, because that check applies to both.",
+      "parentUuid": "baf3e326_51748dfd",
+      "revId": "a3042f2a92e59a734951c8e5572ec0b0e10862ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "47b3c989_b178126b",
         "filename": "resources/js/Comment.js",
         "patchSetId": 14
@@ -31,6 +49,24 @@
       "writtenOn": "2023-09-23T15:22:42Z",
       "side": 1,
       "message": "It would be nice to output the error messages from the api when the edit fails",
+      "revId": "a3042f2a92e59a734951c8e5572ec0b0e10862ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbd6d789_97d3ceab",
+        "filename": "resources/js/Comment.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-05-30T23:11:39Z",
+      "side": 1,
+      "message": "I did this, and got appropriate errors back in testing.",
+      "parentUuid": "47b3c989_b178126b",
       "revId": "a3042f2a92e59a734951c8e5572ec0b0e10862ad",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
