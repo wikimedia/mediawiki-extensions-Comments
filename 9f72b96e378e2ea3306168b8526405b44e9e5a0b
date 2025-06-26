@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6f0959f_1d4e1d50",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "Add use MediaWiki\\User\\User",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65145e10_4c29c695",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "Deprected; use self::getDBHandle( \u0027write\u0027 )",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ebcbdf82_342ff409",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "Was these intentional? can be removed?",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "999c1e67_20b85745",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "UpdateQueryBuilder? The rest of this extension does not use QueryBuilder so this is not required for this patch though.",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f53af463_65a23515",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "Why commented out? can they be removed?",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46e4d461_a2368b14",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "Add use statement for MediaWiki\\Registration\\ExtensionRegistry",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f18d941d_1512f005",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "-\u003eescaped",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63e34810_80560d3b",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 1037,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "Is this secure? I think inside a textarea this is mostly treated as plain text but is text ever sanitized properly? What if someone does `\u003c/textarea\u003e\u003cscript\u003e...` as the user input?",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a24eaece_f2b28048",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "-\u003eescaped",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86ac0537_a338451d",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "-\u003eescaped",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76fb7bee_8ee9198d",
+        "filename": "includes/api/CommentSubmitBase.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "Deprecated since 1.40, can be removed",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "653a85d5_e83b3156",
+        "filename": "includes/api/CommentSubmitBase.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "Needs to use MediaWiki\\Title\\Title (use statement)",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7805dba6_2a645f01",
+        "filename": "includes/api/CommentSubmitBase.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "\u003d\u003d\u003d",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d2098d8_76c2028c",
+        "filename": "includes/api/CommentSubmitBase.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-26T17:02:44Z",
+      "side": 1,
+      "message": "Don\u0027t need $this-\u003emsg for this and below. Also, why use message key as code as well? Is it necessary?",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
