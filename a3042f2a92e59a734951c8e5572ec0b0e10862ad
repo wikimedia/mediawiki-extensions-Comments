@@ -36,6 +36,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "70934712_f1e0993c",
+        "filename": "includes/api/CommentEditAPI.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0bd13542_65c01fc0",
+      "revId": "a3042f2a92e59a734951c8e5572ec0b0e10862ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "47b3c989_b178126b",
@@ -67,6 +85,24 @@
       "side": 1,
       "message": "I did this, and got appropriate errors back in testing.",
       "parentUuid": "47b3c989_b178126b",
+      "revId": "a3042f2a92e59a734951c8e5572ec0b0e10862ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6db0469a_1b1c88b1",
+        "filename": "resources/js/Comment.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbd6d789_97d3ceab",
       "revId": "a3042f2a92e59a734951c8e5572ec0b0e10862ad",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }

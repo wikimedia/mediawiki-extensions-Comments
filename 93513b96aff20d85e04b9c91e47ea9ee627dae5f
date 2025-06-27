@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08636b9f_ce074ea8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "All UO\u0027s suggestions were accepted and included in the next patchset.",
+      "revId": "93513b96aff20d85e04b9c91e47ea9ee627dae5f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}

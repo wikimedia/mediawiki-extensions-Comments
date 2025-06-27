@@ -18,6 +18,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "671f35e2_a029dccb",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b6f0959f_1d4e1d50",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "65145e10_4c29c695",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-06-26T17:02:44Z",
       "side": 1,
       "message": "Deprected; use self::getDBHandle( \u0027write\u0027 )",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cef82d61_7f4b4661",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65145e10_4c29c695",
       "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -54,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "018c2543_677acd8c",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "I didn\u0027t write it, but it looks removeable to me.",
+      "parentUuid": "ebcbdf82_342ff409",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "999c1e67_20b85745",
         "filename": "includes/Comment.php",
         "patchSetId": 19
@@ -65,6 +119,24 @@
       "writtenOn": "2025-06-26T17:02:44Z",
       "side": 1,
       "message": "UpdateQueryBuilder? The rest of this extension does not use QueryBuilder so this is not required for this patch though.",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ced14f1b_522f191c",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done, because why not?",
+      "parentUuid": "999c1e67_20b85745",
       "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -86,6 +158,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a12e9c31_385fd5a3",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "I went ahead and removed it.  We\u0027re not updating the comment date/IP, but we do have a log when comments are edited, which should be okay for a feature like this.  If we want more detail on that, we\u0027d honestly need to change the schema, which seems like a better idea to do in a smaller, more focused patch.",
+      "parentUuid": "f53af463_65a23515",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "46e4d461_a2368b14",
@@ -99,6 +189,24 @@
       "writtenOn": "2025-06-26T17:02:44Z",
       "side": 1,
       "message": "Add use statement for MediaWiki\\Registration\\ExtensionRegistry",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51cfebdd_ac9aaa53",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46e4d461_a2368b14",
       "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -120,6 +228,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f64aee59_411c3633",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f18d941d_1512f005",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63e34810_80560d3b",
@@ -133,6 +259,24 @@
       "writtenOn": "2025-06-26T17:02:44Z",
       "side": 1,
       "message": "Is this secure? I think inside a textarea this is mostly treated as plain text but is text ever sanitized properly? What if someone does `\u003c/textarea\u003e\u003cscript\u003e...` as the user input?",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d058239_69096bc0",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 1037,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "I didn\u0027t test if it was secure, because it looked awfully likely to be insecure.  Thanks for this note, great catch.  Escaped and done in next patch set.",
+      "parentUuid": "63e34810_80560d3b",
       "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -154,6 +298,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37f0b6d3_124e8cad",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a24eaece_f2b28048",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "86ac0537_a338451d",
@@ -167,6 +329,24 @@
       "writtenOn": "2025-06-26T17:02:44Z",
       "side": 1,
       "message": "-\u003eescaped",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9958fe07_90e5467a",
+        "filename": "includes/Comment.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "86ac0537_a338451d",
       "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -188,6 +368,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5174aa6b_c55d6bed",
+        "filename": "includes/api/CommentSubmitBase.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done, but also there are several other places in the code use getGlobalBlock and isBlockedGlobally.  We\u0027ll need to follow up in another patch.",
+      "parentUuid": "76fb7bee_8ee9198d",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "653a85d5_e83b3156",
@@ -201,6 +399,24 @@
       "writtenOn": "2025-06-26T17:02:44Z",
       "side": 1,
       "message": "Needs to use MediaWiki\\Title\\Title (use statement)",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03428dbb_b1637d96",
+        "filename": "includes/api/CommentSubmitBase.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "653a85d5_e83b3156",
       "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -222,6 +438,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2affeece_c1f74ac2",
+        "filename": "includes/api/CommentSubmitBase.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7805dba6_2a645f01",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d2098d8_76c2028c",
@@ -235,6 +469,24 @@
       "writtenOn": "2025-06-26T17:02:44Z",
       "side": 1,
       "message": "Don\u0027t need $this-\u003emsg for this and below. Also, why use message key as code as well? Is it necessary?",
+      "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2855cdb8_e71761dc",
+        "filename": "includes/api/CommentSubmitBase.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-27T21:06:43Z",
+      "side": 1,
+      "message": "Done.  The docs dieWithError are pretty bad tbh.",
+      "parentUuid": "2d2098d8_76c2028c",
       "revId": "9f72b96e378e2ea3306168b8526405b44e9e5a0b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
