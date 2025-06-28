@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "066b86c1_93ad3fbc",
+        "filename": "includes/Comment.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-28T19:21:55Z",
+      "side": 1,
+      "message": "type hint $text as string and return value as : self?",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78d905e4_d5b2e5ba",
+        "filename": "includes/Comment.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-28T19:21:55Z",
+      "side": 1,
+      "message": "Rest of the extension doesnt so not absolutely required but maybe use MainConfig rather than globals?",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6eb78a78_0d5c7b5b",
+        "filename": "includes/Comment.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-28T19:21:55Z",
+      "side": 1,
+      "message": "1) is this (and below) comment(s) even still accurate\n2) EchoDiscussionParser was renamed DiscussionParser upstream so (if it\u0027s still accurate) these comments could be updated to reflect that.",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a105dbdb_a39ffaab",
+        "filename": "includes/Comment.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-28T19:21:55Z",
+      "side": 1,
+      "message": "static function, also type hint $content and return value?",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f36b401_8f267524",
+        "filename": "includes/Comment.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-28T19:21:55Z",
+      "side": 1,
+      "message": "Maybe instead of return false just return an empty array, which would than make sure this only has 1 return type and remove the need for ?: [] below.",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6b6dacf_c5a17b14",
+        "filename": "includes/Comment.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-28T19:21:55Z",
+      "side": 1,
+      "message": "Mostly just a procedural note not actually *requiring* any action.\n\nWhy pass $this and then separately 2 *public* properties of $this? Im not entirly against it since I like properties to not meant to be publicly accessible, and this makes it more clear how to access them but maybe some sort of comment should be added to clarify this? Additionally (not for this patch though), we should eventually move these hooks to hook interfaces with better documentation in PHP doc comments...",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71a51d1c_d0719d7e",
+        "filename": "includes/api/CommentEditAPI.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-28T19:21:55Z",
+      "side": 1,
+      "message": "Can update this like CommentSubmitBase was updated.",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85086ecd_f8108c5e",
+        "filename": "includes/api/CommentSubmitAPI.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-28T19:21:55Z",
+      "side": 1,
+      "message": "UserStatsTrack::class",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5510e0fa_a70d3ecc",
+        "filename": "includes/api/CommentSubmitBase.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-28T19:21:55Z",
+      "side": 1,
+      "message": "Type hint $user?",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c80d4a4d_df8b01ce",
+        "filename": "includes/api/CommentSubmitBase.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-28T19:21:55Z",
+      "side": 1,
+      "message": "Type hints for params?",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
