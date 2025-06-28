@@ -16,6 +16,24 @@
       "message": "PS9(/PS10) is a manual rebase with some small tweaks\n* Tiny grammar tweak in en.json\n* Version bump in extension.json\n* $user-\u003eisBlocked() changed to $user-\u003egetBlock() in the new CommentEditAPI.php file, as per a recently merged patch ()\n* Documentation additions, in includes/Comment.php, resources/js/Comment.js and resources/css/Comments.css\n* Commented out an unused variable in includes/Comment.php\n* Swapped double quotes to single in Comment#showComment\n\nThis theoretically merges now just fine, but I\u0027d still like to test it further and maybe tweak the UI a bit.\nRight now there is no history UI of any kind, which is understandable from a developer POV because we issue an UPDATE query against the text in the DB, so the previous text literally gets overwritten. This may not be desireable, however, from a community aspect, because though comment edits are logged, the log only displays the brand new comment text; the old one may partially be there but this feature *can* allow \"dirty editing\" of comments, thus I\u0027d like to introduce the following things before merging this:\n1) a (tiny) visual indicator of somesuch in the comment HTML block indicating that text has been changed since the initial submission; probably just sticking \u003csmall\u003e(edited)\u003c/small\u003e somewhere will do just fine\n2) a brand new comment-edit or comment-edit-own user right, akin to the existing comment-delete-own user right, given to no group by default but available for users wishing to make use of this feature",
       "revId": "fb7d5894f6a5af465587a8b5f6fc2507f0194c98",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6151c79c_2de8c8b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-28T07:54:41Z",
+      "side": 1,
+      "message": "Resolved by adding a comment-edit-own right, as well as putting an entry in Special:Log/comments.  I admit the log is not the best UI, but it\u0027s at least a record in communities that might be worried about it.\n\nI think the question on whether or not to show edits in the interface depends on how lightweight we want Comments to be.  I don\u0027t feel like versioning is that important -- if you need versions, edit the wiki page.  It might be worth following up with a schema change, and a \"last edited by $user at $time\" added to the frontend.  \n\nOn the other hand, I don\u0027t quite see the use case for not having commentadmins being able to edit by default.  If you can trust them to delete, you can trust them not to speak with someone else\u0027s voice -- and if you can\u0027t, other admins can see the logs.",
+      "parentUuid": "cca906e3_068aaf59",
+      "revId": "fb7d5894f6a5af465587a8b5f6fc2507f0194c98",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }

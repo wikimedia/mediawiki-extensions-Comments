@@ -16,6 +16,24 @@
       "message": "PS11 adds the comment-edit-own user right, given to no user group by default; though now that I think about it, the conditions in includes/api/CommentEditAPI.php are now incorrect if and when this right is given to no group...\n\nAdditionally I\u0027m not sure how I feel about the commentadmin right allowing access to this feature even w/o the comment-edit-own user right. It\u0027d be lovely if there was a 100% foolproof way to turn this off, given the lack of a history interface. Ugh, might even need to implement a feature flag...\n\nPS11 furthermore fixes a tiny grammatical error in the English i18n file and makes the comment edit log entries use CommentsLogFormatter instead of regular LogFormatter, which thus enables improved links: now in the \"logentry-comments-edit\" i18n message, $3 is a link to the target page (which has the \u003ccomments /\u003e tag) *with* the proper #comment-\u003ccomment ID here\u003e URL fragment set. But because $4 is the numerical comment ID and $3 is a proper, already parsed link, it is currently *not* possible to have that message look like this w/o editing CommentsLogFormatter to take this into account: \"$1 edited [[$3|comment #$4]] on $3\" -- it\u0027d be even clearer if the comment ID itself linked into the relevant comment and $3 would \"just\" link to the page, but the current approach is certainly acceptable enough.\n\nThe \"edited\" thing I mentioned earlier (visual indicator clearly indicating that a comment was modified after its initial submission) may be surprisingly tricky to implement, again, given that we don\u0027t store old versions of comments or any metadata about them. One *extremely theoretical* option I considered was looking up if there are any comment edit log entries related to the comment, but this seems mighty inefficient, given the format of the core \"logging\" table (AIUI) - but a schema change to introduce a \"comment_edited\" field of some kind to the relevant DB table seems like overkill to me. 😐",
       "revId": "7acf3428beaaba204ed2466c3f98ad520f81dd39",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "205ba068_bfbeea20",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-28T07:54:41Z",
+      "side": 1,
+      "message": "See comments above, but I don\u0027t think looking at the log entries would be easier.  We\u0027d either need to parse log text, or in the add it to the comment_data field of the core `comment` table (not our `Comments` table) -- but that would mean changing away from ManualLogEntry, since it does not pass on comment_data.\n\nI think a schema change, or perhaps a sparser `Comments_edited` table on (id, time, last_edit_actor) would make more sense.",
+      "parentUuid": "ed745001_d2c73cfa",
+      "revId": "7acf3428beaaba204ed2466c3f98ad520f81dd39",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
