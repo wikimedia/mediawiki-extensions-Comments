@@ -16,6 +16,23 @@
       "message": "All UO\u0027s suggestions were accepted and included in the next patchset.",
       "revId": "93513b96aff20d85e04b9c91e47ea9ee627dae5f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e434514_c490fd54",
+        "filename": "includes/Comment.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 8573
+      },
+      "writtenOn": "2025-06-28T01:19:14Z",
+      "side": 1,
+      "message": "Still needs -\u003eescaped",
+      "revId": "93513b96aff20d85e04b9c91e47ea9ee627dae5f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
