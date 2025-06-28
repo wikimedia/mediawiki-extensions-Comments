@@ -18,6 +18,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6138d88_7b8e2752",
+        "filename": "includes/Comment.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-28T23:23:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "066b86c1_93ad3fbc",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "78d905e4_d5b2e5ba",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-06-28T19:21:55Z",
       "side": 1,
       "message": "Rest of the extension doesnt so not absolutely required but maybe use MainConfig rather than globals?",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67a208c1_7eb833ac",
+        "filename": "includes/Comment.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-28T23:23:49Z",
+      "side": 1,
+      "message": "The worse thing here is that if $wgEchoMentionOnChanges is false, the hooks below are skipped.  This is also true in add() above.  Refactored this whole section on Echo out into its own function in both edit/add.",
+      "parentUuid": "78d905e4_d5b2e5ba",
       "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -52,6 +88,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0a3d155_b8f2aeab",
+        "filename": "includes/Comment.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-28T23:23:49Z",
+      "side": 1,
+      "message": "I\u0027m fairly certain that this was copied from add() from when this patch was originally submitted, and the the extension changed.  Saving the bottom comment because it\u0027s funny, though, and accurate enough.",
+      "parentUuid": "6eb78a78_0d5c7b5b",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a105dbdb_a39ffaab",
@@ -69,6 +123,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da9437f2_e1700a8d",
+        "filename": "includes/Comment.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-28T23:23:49Z",
+      "side": 1,
+      "message": "refactored out.",
+      "parentUuid": "a105dbdb_a39ffaab",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f36b401_8f267524",
@@ -82,6 +154,24 @@
       "writtenOn": "2025-06-28T19:21:55Z",
       "side": 1,
       "message": "Maybe instead of return false just return an empty array, which would than make sure this only has 1 return type and remove the need for ?: [] below.",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d63c5319_049036e7",
+        "filename": "includes/Comment.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-28T23:23:49Z",
+      "side": 1,
+      "message": "refactored out",
+      "parentUuid": "2f36b401_8f267524",
       "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -105,6 +195,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "24c8fa61_e7de77c8",
+        "filename": "includes/Comment.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-28T23:23:49Z",
+      "side": 1,
+      "message": "Honestly I don\u0027t know.  I just looked and I don\u0027t believe we\u0027re using this hook internally anywhere, so I\u0027m not sure why it takes this shape.  I\u0027m a tiny bit wary to introduce a hook if the interface could change.",
+      "parentUuid": "b6b6dacf_c5a17b14",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "71a51d1c_d0719d7e",
         "filename": "includes/api/CommentEditAPI.php",
         "patchSetId": 22
@@ -116,6 +224,24 @@
       "writtenOn": "2025-06-28T19:21:55Z",
       "side": 1,
       "message": "Can update this like CommentSubmitBase was updated.",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c06fa6cf_8042ca4e",
+        "filename": "includes/api/CommentEditAPI.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-28T23:23:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71a51d1c_d0719d7e",
       "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -139,6 +265,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "99fa7a59_66d16073",
+        "filename": "includes/api/CommentSubmitAPI.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-28T23:23:49Z",
+      "side": 1,
+      "message": "This file wasn\u0027t touched in our patch here and should probably be followed up with general cleanups in another patch.",
+      "parentUuid": "85086ecd_f8108c5e",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5510e0fa_a70d3ecc",
         "filename": "includes/api/CommentSubmitBase.php",
         "patchSetId": 22
@@ -150,6 +294,24 @@
       "writtenOn": "2025-06-28T19:21:55Z",
       "side": 1,
       "message": "Type hint $user?",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b4e04fd_f64980c9",
+        "filename": "includes/api/CommentSubmitBase.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-28T23:23:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5510e0fa_a70d3ecc",
       "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -167,6 +329,24 @@
       "writtenOn": "2025-06-28T19:21:55Z",
       "side": 1,
       "message": "Type hints for params?",
+      "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9105d5d_4397622a",
+        "filename": "includes/api/CommentSubmitBase.php",
+        "patchSetId": 22
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 3891
+      },
+      "writtenOn": "2025-06-28T23:23:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c80d4a4d_df8b01ce",
       "revId": "9cf3784be2d00ebf1ed87863cf133754ce7a093e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
