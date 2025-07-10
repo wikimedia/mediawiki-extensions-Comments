@@ -173,8 +173,9 @@
 				// This looks awfully silly but seems to be needed to have the permalink feature
 				// (at least partially?) working (T295567)
 				if ( window.location.hash !== '' ) {
-					// eslint-disable-next-line no-self-assign
-					window.location.hash = window.location.hash;
+					const hash = window.location.hash;
+					window.location.hash = '';
+					window.location.hash = hash;
 				}
 			} );
 		},
