@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"0x010C",
+			"Bananax47",
 			"Crochet.david",
+			"Derugon",
 			"Fitoschido",
 			"Gomoko",
 			"Jack Phoenix",
@@ -20,6 +22,7 @@
 	"apihelp-commentlatestid-summary": "L’API <kbd>commentlatestID</kbd> permet de récupérer le dernier identifiant de commentaire d’une page en fournissant les paramètres suivants : <kbd>pageID</kbd>.",
 	"apihelp-commentlist-summary": "L’API <kbd>commentlist</kbd> permet de lister les différents commentaires d’une page en fournissant les paramètres suivants : <kbd>pageID</kbd>, <kbd>order</kbd>, <kbd>pagerPage</kbd> et <kbd>showForm</kbd>.",
 	"apihelp-commentsubmit-summary": "L’API <kbd>commentsubmit</kbd> permet de soumettre / publier un commentaire en fournissant les paramètres suivants : <kbd>pageID</kbd>, <kbd>parentID</kbd> et <kbd>commentText</kbd>.",
+	"apihelp-commentedit-summary": "L'API commentedit permet de modifier un commentaire déjà existant, avec les paramètres suivants : pageID, commentId, commentText",
 	"apihelp-commentvote-summary": "L’API <tt>commentvote</tt> permet de voter sur un commentaire en fournissant les paramètres suivants : <tt>commentID</tt> et <tt>voteValue</tt>.",
 	"apihelp-commentblock-param-commentID": "Identifiant du commentaire posté par l’utilisateur à bloquer",
 	"apihelp-commentdelete-param-commentID": "Identifiant du commentaire à supprimer",
@@ -31,6 +34,9 @@
 	"apihelp-commentsubmit-param-pageID": "Identifiant de la page sur laquelle le commentaire doit être posté",
 	"apihelp-commentsubmit-param-parentID": "Identifiant du commentaire parent",
 	"apihelp-commentsubmit-param-commentText": "Texte du commentaire",
+	"apihelp-commentedit-param-pageID": "Identifiant de la page sur laquelle le commentaire doit être modifié",
+	"apihelp-commentedit-param-commentText": "Nouveau texte du commentaire",
+	"apihelp-commentedit-param-commentID": "Identifiant du commentaire à modifier",
 	"apihelp-commentvote-param-commentID": "Identifiant du commentaire pour lequel on vote",
 	"apihelp-commentvote-param-voteValue": "Valeur du vote pour le commentaire",
 	"comments-comment": "Commenter",
@@ -54,6 +60,9 @@
 	"comments-ignore-message": "Vous ignorez l’auteur de ce commentaire",
 	"comments-you": " Vous",
 	"comments-reply": "Répondre",
+	"comments-edit": "Modifier",
+	"comments-edit-cancel": "Annuler",
+	"comments-edit-save": "Enregistrer",
 	"comments-login-required": "Vous devez être connecté(e) afin de publier des commentaires",
 	"comments-not-allowed": "Vous n’êtes pas autorisé à publier des commentaires.",
 	"comments-post": "Publier le commentaire",
@@ -65,6 +74,7 @@
 	"comments-anon-message": "{{SITENAME}} accueille '''tous les commentaires'''. Si vous ne voulez pas être anonyme, [[Special:CreateAccount|enregistrez-vous]] ou [[Special:UserLogin|connectez-vous]]. C’est gratuit.",
 	"comments-links-are-forbidden": "Les liens externes dans les commentaires sont interdits !",
 	"comments-is-spam": "Le texte du commentaire soumis a été interprété comme pourriel.",
+	"comments-missing-text": "Les commentaires ne peuvent pes être vides.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> depuis le $3 <a href=\"$4\">(débloquer)</a>",
 	"comments-ignore-no-users": "Il n’y a actuellement aucun utilisateur bloqué.",
 	"comments-ignore-remove-message": "Voulez-vous vraiment débloquer les commentaires de l’utilisateur <b>$1</b> ?",
@@ -79,6 +89,7 @@
 	"log-description-comments": "Ceci est un journal de commentaires.",
 	"logentry-comments-add": "$1 a publié un nouveau commentaire sur $3",
 	"logentry-comments-delete": "$1 a supprimé le commentaire nº $4 sur $3",
+	"logentry-comments-edit": "$1 a modifié le commentaire nº $4 sur $3",
 	"comments-time-ago": "Il y a $1",
 	"comments-time-months": "{{PLURAL:$1|un mois|$1 mois}}",
 	"comments-time-days": "{{PLURAL:$1|un jour|$1 jours}}",
@@ -97,5 +108,8 @@
 	"action-commentlinks": "utiliser des liens externes dans les commentaires",
 	"right-commentlinks": "Utiliser les liens externes dans les commentaires",
 	"action-comment-delete-own": "supprimer vos propres commentaires",
-	"right-comment-delete-own": "Supprimer vos propres commentaires"
+	"right-comment-delete-own": "Supprimer ses propres commentaires",
+	"action-comment-edit-own": "modifier vos propres commentaires",
+	"right-comment-edit-own": "Modifier ses propres commentaires",
+	"comments-edit-permissiondenied": "Vous n’avez pas le droit de modifier ce commentaire."
 }

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"*surak*",
 			"Ameisenigel",
 			"Geitost",
 			"Gerry",
@@ -13,6 +14,7 @@
 	"apihelp-commentlatestid-summary": "Die commentlatestID-API erlaubt das Abrufen der aktuellen Kommentarkennung nach dem Ausfüllen der folgenden Parameter: pageID",
 	"apihelp-commentlist-summary": "Die commentlist-API ruft mehrere Kommentare ab und gibt sie als Liste aus nach dem Ausfüllen der folgenden Parameter: pageID, order, pagerPage und showForm.",
 	"apihelp-commentsubmit-summary": "Die commentsubmit-API ermöglicht es, einen Kommentar zu übermitteln/zu posten, nachdem die folgenden Parameter ausgefüllt wurden: pageID, parentID, commentText.",
+	"apihelp-commentedit-summary": "Die commentedit-API ermöglicht das Bearbeiten eines vorhandenen Kommentars mit den Parametern pageID, commentID, commentText",
 	"apihelp-commentvote-summary": "Die commentvote-API ermöglicht es, über einen Kommentar abzustimmen, nachdem die folgenden Parameter eingegeben wurden: commentID, voteValue.",
 	"apihelp-commentblock-param-commentID": "Kennung des Kommentars des Benutzers, der gesperrt werden soll.",
 	"apihelp-commentdelete-param-commentID": "Kennung des Kommentars, der gelöscht werden soll.",
@@ -24,6 +26,9 @@
 	"apihelp-commentsubmit-param-pageID": "Kennung der Seite, für die der Kommentar eingereicht werden soll.",
 	"apihelp-commentsubmit-param-parentID": "Kommentarkennung des übergeordneten Kommentars",
 	"apihelp-commentsubmit-param-commentText": "Kommentartext",
+	"apihelp-commentedit-param-pageID": "Seiten-ID der Seite, auf der der Kommentar bearbeitet werden soll",
+	"apihelp-commentedit-param-commentText": "Neuer Kommentartext",
+	"apihelp-commentedit-param-commentID": "Kommentar-ID des zu bearbeitenden Kommentars",
 	"apihelp-commentvote-param-commentID": "Kennung des Kommentars, für den abgestimmt wurde.",
 	"apihelp-commentvote-param-voteValue": "Abstimmungswert für den Kommentar",
 	"comments-comment": "Kommentar",
@@ -47,6 +52,9 @@
 	"comments-ignore-message": "Du ignorierst den Verfasser dieses Kommentars",
 	"comments-you": " Du",
 	"comments-reply": "Anworten",
+	"comments-edit": "Bearbeiten",
+	"comments-edit-cancel": "Abbrechen",
+	"comments-edit-save": "Speichern",
 	"comments-login-required": "Du musst angemeldet sein, um Kommentare hinzufügen zu können.",
 	"comments-not-allowed": "Du bist nicht berechtigt Kommentare hinzuzufügen.",
 	"comments-post": "Kommentar speichern",
@@ -58,6 +66,7 @@
 	"comments-anon-message": "{{SITENAME}} freut sich über '''alle Kommentare'''. Sofern du nicht anonym bleiben möchtest, [[Special:CreateAccount|registriere dich bitte]] oder [[Special:UserLogin|melde dich an]].",
 	"comments-links-are-forbidden": "Weblinks sind in Kommentaren verboten!",
 	"comments-is-spam": "Der eingegebene Kommentartext wurde als Spam interpretiert.",
+	"comments-missing-text": "Kommentare dürfen nicht leer sein.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> am $3 <a href=\"$4\">(freigeben)</a>",
 	"comments-ignore-no-users": "Momentan gibt es keine gesperrten Benutzer.",
 	"comments-ignore-remove-message": "Bist du sicher, dass du die Kommentare von Benutzer <b>$1</b> wieder freigeben möchtest?",
@@ -72,6 +81,7 @@
 	"log-description-comments": "Dies ist ein Logbuch von Kommentaren.",
 	"logentry-comments-add": "$1 hinterließ einen neuen Kommentar auf $3",
 	"logentry-comments-delete": "$1 löschte den Kommentar #$4 auf $3",
+	"logentry-comments-edit": "$1 hat den Kommentar $4 auf $3 bearbeitet",
 	"comments-time-ago": "vor $1",
 	"comments-time-months": "{{PLURAL:$1|einem Monat|$1 Monaten}}",
 	"comments-time-days": "{{PLURAL:$1|einem Tag|$1 Tagen}}",
@@ -90,5 +100,8 @@
 	"action-commentlinks": "Weblinks in Kommentaren zu verwenden",
 	"right-commentlinks": "Weblinks in Kommentaren verwenden",
 	"action-comment-delete-own": "eigene Kommentare zu löschen",
-	"right-comment-delete-own": "Eigene Kommentare löschen"
+	"right-comment-delete-own": "Eigene Kommentare löschen",
+	"action-comment-edit-own": "eigene Kommentare bearbeiten",
+	"right-comment-edit-own": "Eigene Kommentare bearbeiten",
+	"comments-edit-permissiondenied": "Du hast nicht die Berechtigung, diesen Kommentar zu bearbeiten."
 }

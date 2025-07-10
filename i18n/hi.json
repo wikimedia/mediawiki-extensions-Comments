@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abijeet Patro",
 			"Ansumang",
 			"Siddhartha Ghai",
 			"Smtchahal",
@@ -14,6 +15,9 @@
 	"comments-show-comment-link": "टीप्पणी दिखाएँ",
 	"comments-you": "आप",
 	"comments-reply": "उत्तर दें",
+	"comments-edit": "सम्पादन",
+	"comments-edit-cancel": "रद्द करें",
+	"comments-edit-save": "सहेजें",
 	"comments-post": "टिप्पणी पोस्ट करें",
 	"comments-submit": "अपनी टिप्पणी जोड़ें",
 	"comments-score-text": "अंक",
