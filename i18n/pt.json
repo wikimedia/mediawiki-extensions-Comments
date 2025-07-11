@@ -49,6 +49,9 @@
 	"comments-ignore-message": "Está a ignorar o autor deste comentário",
 	"comments-you": "Você",
 	"comments-reply": "Responder",
+	"comments-edit": "Editar",
+	"comments-edit-cancel": "Cancelar",
+	"comments-edit-save": "Guardar",
 	"comments-login-required": "Deve iniciar sessão para adicionar comentários",
 	"comments-not-allowed": "Não tem permissão para colocar comentários.",
 	"comments-post": "Publicar comentário",
@@ -92,5 +95,7 @@
 	"action-commentlinks": "usar hiperligações externas em comentários",
 	"right-commentlinks": "Usar hiperligações externas em comentários",
 	"action-comment-delete-own": "eliminar comentários do próprio",
-	"right-comment-delete-own": "Eliminar comentários do próprio"
+	"right-comment-delete-own": "Eliminar comentários do próprio",
+	"action-comment-edit-own": "editar próprios comentários",
+	"right-comment-edit-own": "Editar próprios comentários"
 }
