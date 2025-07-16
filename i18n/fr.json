@@ -12,7 +12,9 @@
 			"Tuxxic",
 			"Urhixidur",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Bananax47",
+			"Derugon"
 		]
 	},
 	"apihelp-commentblock-summary": "L’API <kbd>commentblock</kbd> permet de bloquer un utilisateur à partir du commentaire dont il est l’auteur en fournissant les paramètres suivants : <kbd>CommentID</kbd>.",
@@ -97,5 +99,5 @@
 	"action-commentlinks": "utiliser des liens externes dans les commentaires",
 	"right-commentlinks": "Utiliser les liens externes dans les commentaires",
 	"action-comment-delete-own": "supprimer vos propres commentaires",
-	"right-comment-delete-own": "Supprimer vos propres commentaires"
+	"right-comment-delete-own": "Supprimer ses propres commentaires"
 }
