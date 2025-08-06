@@ -3,6 +3,7 @@
 		"authors": [
 			"Abijeet Patro",
 			"Ansumang",
+			"Saurmandal",
 			"Siddhartha Ghai",
 			"Smtchahal",
 			"Vivek Rai"
@@ -24,5 +25,7 @@
 	"comments-ignore-cancel": "रद्द करें",
 	"log-name-comments": "टिप्पणी लॉग",
 	"comments-time-ago": "$1 पहले",
-	"comments-time-months": "{{PLURAL:$1|एक महीना|$1 महीने}}"
+	"comments-time-months": "{{PLURAL:$1|एक महीना|$1 महीने}}",
+	"action-commentlinks": "टिप्पणियों में बाहरी कड़ियों का उपयोग करने",
+	"right-commentlinks": "टिप्पणियों में बाहरी कड़ियों का उपयोग करना"
 }
