@@ -65,7 +65,7 @@
 	"comments-anon-message": "אתר {{SITENAME}} מקבל בברכה את '''כל התגובות'''. אם לא התכוונת להיות אלמוני, [[Special:CreateAccount|נא להירשם]] או [[Special:UserLogin|להיכנס לחשבון]]. זה חינם.",
 	"comments-links-are-forbidden": "אין להוסיף קישורים חיצוניים בתגובות!",
 	"comments-is-spam": "טקסט מסוים בתגובה שלך זוהה כספאם.",
-	"comments-missing-text": "תגובה לא יכולה להיות ריקה.",
+	"comments-missing-text": "תגובות לא יכולות להיות ריקות.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> ב־$3 <a href=\"$4\">(ביטול חסימה)</a>",
 	"comments-ignore-no-users": "אין משתמשים חסומים כרגע.",
 	"comments-ignore-remove-message": "האם ברצונך באמת לבטל את החסימה של התגובות של <b>$1</b>?",
