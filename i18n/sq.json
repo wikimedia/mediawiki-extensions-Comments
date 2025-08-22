@@ -36,7 +36,7 @@
 	"comments-auto-refresher-pause": "Ndërprit rifreskuesin automatik të komenteve",
 	"comments-reply-to": "Përgjigju {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Anulo",
-	"comments-block-warning-anon": "A je i sigurt që dëshiron t'i injorosh përgjithmonë të gjitha komentet nga ky përdorues anonim (nëpërmjet adresës së tij të IP-së)?",
+	"comments-block-warning-anon": "A je i sigurt që dëshiron t'i injorosh përgjithmonë të gjitha komentet nga ky përdorues anonim (nëpërmjet adresës së tij IP)?",
 	"comments-block-warning-user": "A je i sigurt që dëshiron t'i injorosh përgjithmonë të gjitha komentet nga përdoruesi $1?",
 	"comments-delete-warning": "Je i sigurt që dëshiron ta fshish këtë koment?",
 	"comments-sort-by-date": "Rendit sipas datës",
