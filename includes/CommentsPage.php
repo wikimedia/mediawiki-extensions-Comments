@@ -29,7 +29,7 @@ class CommentsPage extends ContextSource {
 	public $limit = 50;
 
 	/**
-	 * @TODO document
+	 * @todo document
 	 *
 	 * @var int
 	 */
@@ -67,7 +67,7 @@ class CommentsPage extends ContextSource {
 	public $allowMinus = true;
 
 	/**
-	 * @TODO document
+	 * @todo document
 	 *
 	 * @var string
 	 */

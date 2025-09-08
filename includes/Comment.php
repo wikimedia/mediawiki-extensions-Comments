@@ -19,7 +19,6 @@ use Wikimedia\AtEase\AtEase;
  * -displaying the form for adding a new comment
  * -getting all comments for a given page
  *
- * @file
  * @ingroup Extensions
  */
 class Comment extends ContextSource {
