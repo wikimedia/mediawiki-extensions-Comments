@@ -16,11 +16,6 @@ use MediaWiki\User\User;
 class EchoMentionCommentPresentationModel extends EchoMentionPresentationModel {
 
 	/**
-	 * @var MediaWiki\Extension\Notifications\Formatters\EchoPresentationModelSection
-	 */
-	protected $section;
-
-	/**
 	 * @inheritDoc
 	 */
 	protected function __construct( EchoEvent $event, Language $language, User $user, $distributionType ) {
