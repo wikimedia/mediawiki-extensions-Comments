@@ -7,7 +7,6 @@ use MediaWiki\User\User;
  * CommentSubmitBase class
  * Superclass for CommentSubmitApi and CommentEditApi
  *
- * @file
  * @ingroup Extensions
  */
 class CommentSubmitBase extends MediaWiki\Api\ApiBase {
