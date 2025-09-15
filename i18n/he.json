@@ -8,7 +8,8 @@
 			"Steeve815",
 			"חיים",
 			"לואיקה",
-			"ערן"
+			"ערן",
+			"Neriah"
 		]
 	},
 	"apihelp-commentblock-description": "באמצעות ה־API&rlm; \"commentblock\" ניתן לחסום משתמש מתגובה. יש למלא את הפרמטר CommentID.",
@@ -30,7 +31,7 @@
 	"apihelp-commentlist-param-order": "קביעה האם רשימת התגובות מוצגת בסדר עולה או יורד",
 	"apihelp-commentlist-param-pagerPage": "מספר דף התגובות",
 	"apihelp-commentlist-param-showForm": "הצגת תגובות מאת",
-	"apihelp-commentsubmit-param-pageID": "מזהה הדף שאליו תישלח התגובה",
+	"apihelp-commentsubmit-param-pageID": "מזהה הדף שהתגובה תישלח אליו",
 	"apihelp-commentsubmit-param-parentID": "מזהה התגובה ההורה",
 	"apihelp-commentsubmit-param-commentText": "טקסט התגובה",
 	"apihelp-commentvote-param-commentID": "מזהה התגובה שעליה תבוצע ההצבעה",
@@ -98,6 +99,6 @@
 	"right-commentadmin": "ניהול תגובות של משתמשים",
 	"action-commentlinks": "להשתמש בקישורים חיצוניים בתגובות",
 	"right-commentlinks": "שימוש בקישורים חיצוניים בתגובות",
-	"action-comment-delete-own": "למחוק תגובות עצמיות",
+	"action-comment-delete-own": "למחוק תגובות של עצמו",
 	"right-comment-delete-own": "מחיקת תגובות עצמיות"
 }

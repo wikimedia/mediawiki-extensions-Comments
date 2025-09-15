@@ -95,7 +95,7 @@
 	"comments-time-months": "{{PLURAL:$1|1|$1}} 個月",
 	"comments-time-days": "$1 天",
 	"comments-time-hours": "$1 小時",
-	"comments-time-minutes": "$1 分鐘",
+	"comments-time-minutes": "{{PLURAL:$1|1|$1}} 分鐘",
 	"comments-time-seconds": "$1 秒",
 	"log-show-hide-comments": "$1評論日誌",
 	"logeventslist-comments-log": "評論日誌",
