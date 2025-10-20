@@ -7,6 +7,7 @@
 			"Lockal",
 			"Okras",
 			"Ole Yves",
+			"Rairakkumee",
 			"SimonLitt",
 			"Stjn",
 			"Vlad5250"
@@ -15,7 +16,10 @@
 	"apihelp-commentblock-summary": "Приложение для блокировки комментариев позволяет заблокировать участника от комментирования, который возник после заполнения следующих параметров: CommentID.",
 	"apihelp-commentdelete-summary": "Приложение для удаления комментариев позволяет удалить комментарий, который возник после заполнения следующих параметров: CommentID.",
 	"apihelp-commentsubmit-param-commentText": "Текст комментария",
+	"apihelp-commentedit-param-commentText": "Новый текст комментария",
 	"comments-comment": "Комментарий",
+	"comments-continue-editing-btn": "Продолжить редактирование",
+	"comments-preview-failed": "Предварительный просмотр не удался. Попробуйте ещё раз.",
 	"comments-desc": "Добавляет перехватчик синтаксического анализатора <code>&lt;comments&gt;</code>, который позволяет комментировать страницы",
 	"comments-db-locked": "<h3>Добавление комментариев</h3>В настоящее время база данных заблокирована для планового обслуживания баз данных, после чего она вернётся в нормальное состояние. Пожалуйста, попробуйте позже!",
 	"comments-voted-label": "Проголосовал",
@@ -34,6 +38,9 @@
 	"comments-ignore-message": "Вы игнорируете автора этого комментария",
 	"comments-you": "Вы",
 	"comments-reply": "Ответить",
+	"comments-edit": "Править",
+	"comments-edit-cancel": "Отмена",
+	"comments-edit-save": "Сохранить",
 	"comments-login-required": "Для добавления комментариев вы должны авторизоваться.",
 	"comments-not-allowed": "Вы не можете оставлять комментарии.",
 	"comments-post": "Оставить комментарий",
@@ -45,6 +52,7 @@
 	"comments-anon-message": "На сайте {{SITENAME}} приветствуются '''все комментарии'''. Если вы не хотите быть анонимным, [[Special:CreateAccount|зарегистрируйтесь]] или [[Special:UserLogin|представьтесь]]. Это бесплатно.",
 	"comments-links-are-forbidden": "Внешние ссылки в комментариях запрещены!",
 	"comments-is-spam": "Представленный текст комментария был воспринят как спам.",
+	"comments-missing-text": "Комментарии не могут быть пустыми.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> на $3 <a href=\"$4\">(разблокировать)</a>",
 	"comments-ignore-no-users": "В настоящее время нет ни одного заблокированного участника.",
 	"comments-ignore-remove-message": "Вы уверены, что хотите разблокировать комментарии участника <b>$1</b>?",
@@ -73,5 +81,6 @@
 	"right-comment": "Отправить комментарии",
 	"right-commentadmin": "Администрировать комментарии, опубликованные участником",
 	"right-commentlinks": "Использовать внешние ссылки в комментариях",
-	"right-comment-delete-own": "удаление собственных комментариев"
+	"right-comment-delete-own": "удаление собственных комментариев",
+	"comments-edit-permissiondenied": "У вас нет прав для редактирования этого комментария."
 }
