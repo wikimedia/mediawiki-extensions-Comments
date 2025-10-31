@@ -81,16 +81,38 @@
 	overflow: auto;
 }
 
+/* Highlight author's comments on blogs */
+.c-item.c-author {
+    background-color: #f0f8ff; /* Light blue background */
+    border-left: 4px solid #007bff; /* Blue left border */
+    border-radius: 4px;
+    margin: 5px 0;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.1);
+}
+
+.c-item.c-author .c-user {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.c-item.c-author .c-comment {
+    background-color: rgba(0, 123, 255, 0.05);
+    padding: 8px;
+    border-radius: 3px;
+}
+
+/* Ensure replies to author comments also get highlighted */
+.c-item.c-author.reply {
+    background-color: #e6f3ff;
+    border-left-color: #0056b3;
+}
+
 .c-ignored {
 	color: #666;
 	font-size: 11px;
 	padding: 5px 0px 10px 0px;
 	margin: 0px 0px 15px 0px;
 	border-bottom: 1px solid #dcdcdc;
-}
-
-/* stylelint-disable-next-line block-no-empty */
-.c-ignored-links a {
 }
 
 .f-message {

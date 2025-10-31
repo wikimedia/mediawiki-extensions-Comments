@@ -4,6 +4,7 @@ use MediaWiki\Context\ContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Title\Title;
 
 /**
@@ -675,4 +676,55 @@ class CommentsPage extends ContextSource {
 		return $commentsData;
 	}
 
+	/**
+	 * Check if this page is a blog page
+	 * 
+	 * @return bool True if this is a blog page
+	 */
+	public function isBlogPage() {
+		if ( !$this->title ) {
+			return false;
+		}
+
+		$pageId = $this->title->getArticleID();
+		
+		// Page must exist
+		if ( $pageId <= 0 ) {
+			return false;
+		}
+		
+		// Check for BlogPage extension namespace
+		if ( class_exists( 'BlogPage' ) ) {
+			// Check if NS_BLOG constant is defined
+			if ( defined( 'NS_BLOG' ) ) {
+				if ( $this->title->getNamespace() === NS_BLOG ) {
+					return true;
+				}
+			} else {
+				// Fallback: check if namespace name contains "Blog"
+				$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
+				$namespaceName = $this->title->getNamespace() === NS_MAIN 
+					? '' 
+					: $namespaceInfo->getCanonicalName( $this->title->getNamespace() );
+				if ( stripos( $namespaceName, 'blog' ) !== false ) {
+					return true;
+				}
+			}
+		}
+		
+		// Check for blog-related categories using a more efficient method
+		$dbr = Comment::getDBHandle( 'read' );
+		$res = $dbr->select(
+			'categorylinks',
+			[ 'cl_to' ],
+			[
+				'cl_from' => $pageId,
+				'cl_to' => [ 'Blog', 'User_blog' ]
+			],
+			__METHOD__,
+			[ 'LIMIT' => 1 ]
+		);
+		
+		return $res->numRows() > 0;
+	}
 }

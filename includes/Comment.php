@@ -5,6 +5,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Notifications\DiscussionParser;
 use MediaWiki\Extension\Notifications\Model\Event as EchoEvent;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
@@ -953,7 +954,11 @@ class Comment extends ContextSource {
 			$avatarImg = $avatar->getAvatarURL() . "\n";
 		}
 
-		$output = "<div id='comment-{$this->id}' class='c-item {$containerClass}'{$style}>" . "\n";
+		// Check if this is a blog page and if the commenter is the page author
+		$isAuthorComment = $this->isAuthorComment();
+		$authorClass = $isAuthorComment ? ' c-author' : '';
+
+		$output = "<div id='comment-{$this->id}' class='c-item {$containerClass}{$authorClass}'{$style}>" . "\n";
 		$output .= "<div class=\"c-avatar\">{$avatarImg}</div>" . "\n";
 		$output .= '<div class="c-container">' . "\n";
 		$output .= '<div class="c-user">' . "\n";
@@ -1066,4 +1071,117 @@ class Comment extends ContextSource {
 			}
 		}
 	}
+
+	/**
+	 * Check if the commenter is the author of the page (for blog highlighting)
+	 * 
+	 * @return bool True if this is an author's comment on a blog-like page
+	 */
+	public function isAuthorComment() {
+		if ( !$this->page || !$this->page->title ) {
+			return false;
+		}
+
+		$title = $this->page->title;
+		$pageId = $title->getArticleID();
+		
+		// Page must exist
+		if ( $pageId <= 0 ) {
+			return false;
+		}
+
+		// Check if this is a blog page
+		if ( !$this->isBlogPage( $title ) ) {
+			return false;
+		}
+
+		// Get the page author
+		$pageAuthor = $this->getPageAuthor( $title );
+		if ( !$pageAuthor ) {
+			return false;
+		}
+
+		// Compare actor IDs
+		return $this->actorID === $pageAuthor->getActorId();
+	}
+
+	/**
+	 * Check if a page is a blog page
+	 * 
+	 * @param Title $title The page title to check
+	 * @return bool True if this is a blog page
+	 */
+	private function isBlogPage( Title $title ) {
+		// Check for BlogPage extension namespace
+		if ( class_exists( 'BlogPage' ) ) {
+			// Check if NS_BLOG constant is defined
+			if ( defined( 'NS_BLOG' ) ) {
+				if ( $title->getNamespace() === NS_BLOG ) {
+					return true;
+				}
+			} else {
+				// Fallback: check if namespace name contains "Blog"
+				$namespaceName = $title->getNamespace() === NS_MAIN 
+					? '' 
+					: MediaWikiServices::getInstance()->getNamespaceInfo()->getCanonicalName( $title->getNamespace() );
+				if ( stripos( $namespaceName, 'blog' ) !== false ) {
+					return true;
+				}
+			}
+		}
+
+		// Check for blog-related categories using a more efficient method
+		$pageId = $title->getArticleID();
+		if ( $pageId > 0 ) {
+			$dbr = self::getDBHandle( 'read' );
+			$res = $dbr->select(
+				'categorylinks',
+				[ 'cl_to' ],
+				[
+					'cl_from' => $pageId,
+					'cl_to' => [ 'Blog', 'User_blog' ]
+				],
+				__METHOD__,
+				[ 'LIMIT' => 1 ]
+			);
+			
+			if ( $res->numRows() > 0 ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Get the author of a page (the user who created the first revision)
+	 * 
+	 * @param Title $title The page title
+	 * @return User|null The page author, or null if not found
+	 */
+	private function getPageAuthor( Title $title ) {
+		$pageId = $title->getArticleID();
+		
+		// Page must exist
+		if ( $pageId <= 0 ) {
+			return null;
+		}
+
+		$dbr = self::getDBHandle( 'read' );
+		$row = $dbr->selectRow(
+			'revision',
+			[ 'rev_actor' ],
+			[ 'rev_page' => $pageId ],
+			__METHOD__,
+			[ 'ORDER BY' => 'rev_timestamp ASC', 'LIMIT' => 1 ]
+		);
+		
+		if ( !$row || !isset( $row->rev_actor ) ) {
+			return null;
+		}
+
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+		return $userFactory->newFromActorId( $row->rev_actor );
+	}
 }
+
