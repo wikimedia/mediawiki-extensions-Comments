@@ -4,6 +4,7 @@ use MediaWiki\Context\ContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Title\Title;
 
 /**
@@ -675,4 +676,29 @@ class CommentsPage extends ContextSource {
 		return $commentsData;
 	}
 
+	/**
+	 * Check if this page is a blog page
+	 * 
+	 * @return bool True if this is a blog page
+	 */
+	public function isBlogPage() {
+		if ( !$this->title ) {
+			return false;
+		}
+		
+		// Check for BlogPage extension
+		if ( class_exists( 'BlogPage' ) ) {
+			// Check namespace for blogs
+			if ( $this->title->getNamespace() === NS_BLOG ) {
+				return true;
+			}
+		}
+		
+		// Check for blog-related categories
+		$parser = MediaWikiServices::getInstance()->getParser();
+		$parserOutput = $parser->parse( $this->title->getPrefixedText(), $this->title, new ParserOptions() );
+		$categories = $parserOutput->getCategories();
+		
+		return isset( $categories['Blog'] ) || isset( $categories['User_blog'] );
+	}
 }

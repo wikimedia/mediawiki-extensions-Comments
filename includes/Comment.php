@@ -5,6 +5,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Notifications\DiscussionParser;
 use MediaWiki\Extension\Notifications\Model\Event as EchoEvent;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
@@ -952,8 +953,11 @@ class Comment extends ContextSource {
 			$avatar = new wAvatar( $this->user->getId(), 'ml' );
 			$avatarImg = $avatar->getAvatarURL() . "\n";
 		}
+// Check if this is a blog page and if the commenter is the page author
+$isAuthorComment = $this->isAuthorComment();
+$authorClass = $isAuthorComment ? ' c-author' : '';
 
-		$output = "<div id='comment-{$this->id}' class='c-item {$containerClass}'{$style}>" . "\n";
+		$output = "<div id='comment-{$this->id}' class='c-item {$containerClass}{$authorClass}'{$style}>" . "\n";
 		$output .= "<div class=\"c-avatar\">{$avatarImg}</div>" . "\n";
 		$output .= '<div class="c-container">' . "\n";
 		$output .= '<div class="c-user">' . "\n";
@@ -1067,3 +1071,68 @@ class Comment extends ContextSource {
 		}
 	}
 }
+
+/**
+ * Check if the commenter is the author of the page (for blog highlighting)
+ * 
+ * @return bool True if this is an author's comment on a blog-like page
+ */
+public function isAuthorComment() {
+	// Check if this is a blog page (BlogPage extension)
+	if ( class_exists( 'BlogPage' ) && $this->page->title ) {
+		$title = $this->page->title;
+		// Check if this is a blog page by namespace or other indicators
+		if ( $title->getNamespace() === NS_BLOG || 
+			 $title->getText() !== null && 
+			 strpos( $title->getText(), 'Blog:' ) === 0 ) {
+			// Get the page author
+			$pageAuthor = $this->getPageAuthor( $title );
+			if ( $pageAuthor && $this->actorID === $pageAuthor->getActorId() ) {
+				return true;
+			}
+		}
+	}
+	
+	// Alternative: Check if page has a specific template or category indicating it's a blog
+	if ( $this->page->title ) {
+		$title = $this->page->title;
+		// Check for blog-related categories or templates
+		$parser = MediaWikiServices::getInstance()->getParser();
+		$parserOutput = $parser->parse( $title->getPrefixedText(), $title, new ParserOptions() );
+		$categories = $parserOutput->getCategories();
+		
+		if ( isset( $categories['Blog'] ) || isset( $categories['User_blog'] ) ) {
+			$pageAuthor = $this->getPageAuthor( $title );
+			if ( $pageAuthor && $this->actorID === $pageAuthor->getActorId() ) {
+				return true;
+			}
+		}
+	}
+	
+	return false;
+}
+
+/**
+ * Get the author of a page
+ * 
+ * @param Title $title
+ * @return User|null
+ */
+private function getPageAuthor( Title $title ) {
+	$dbr = self::getDBHandle( 'read' );
+	$row = $dbr->selectRow(
+		'revision',
+		[ 'rev_actor' ],
+		[ 'rev_page' => $title->getArticleID() ],
+		__METHOD__,
+		[ 'ORDER BY' => 'rev_timestamp ASC', 'LIMIT' => 1 ]
+	);
+	
+	if ( $row ) {
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+		return $userFactory->newFromActorId( $row->rev_actor );
+	}
+	
+	return null;
+}
+
