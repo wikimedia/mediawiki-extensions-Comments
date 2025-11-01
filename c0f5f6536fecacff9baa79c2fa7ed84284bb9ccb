@@ -16,6 +16,207 @@
       "message": "recheck",
       "revId": "c0f5f6536fecacff9baa79c2fa7ed84284bb9ccb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bad41be_4fb95d4b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2025-11-01T00:23:34Z",
+      "side": 1,
+      "message": "Thanks for this! 👍 Looks very promising, but besides the code style (indentation, trailing whitespace) issues and the parse error on the Comment class, the approach of checking for a certain category or categories as implemented won\u0027t really work, at least for non-English languages, and that\u0027s something that needs to be addressed before this patch can be merged.",
+      "revId": "c0f5f6536fecacff9baa79c2fa7ed84284bb9ccb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c8f9eb4_4c6cf3cc",
+        "filename": "includes/Comment.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 958,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2025-11-01T00:23:34Z",
+      "side": 1,
+      "message": "These lines should be indented by three tabs; additionally, I\u0027d prefer a newline between L955 and L956.",
+      "range": {
+        "startLine": 956,
+        "startChar": 0,
+        "endLine": 958,
+        "endChar": 51
+      },
+      "revId": "c0f5f6536fecacff9baa79c2fa7ed84284bb9ccb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce65a10d_4adf5437",
+        "filename": "includes/Comment.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1075,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2025-11-01T00:23:34Z",
+      "side": 1,
+      "message": "Check the indentation and trailing whitespace here as well. It looks like somehow you placed these methods accidentally **outside** the Comment class (which ends on L1073 above) instead of **inside** that class.",
+      "range": {
+        "startLine": 1075,
+        "startChar": 0,
+        "endLine": 1075,
+        "endChar": 3
+      },
+      "revId": "c0f5f6536fecacff9baa79c2fa7ed84284bb9ccb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b92ad96_aebad51b",
+        "filename": "includes/Comment.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1087,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2025-11-01T00:23:34Z",
+      "side": 1,
+      "message": "Not only is this English-specific (i.e. not internationally compatible), isn\u0027t this unnecessary since you already check for whether the given Title is in the NS_BLOG namespace?",
+      "range": {
+        "startLine": 1087,
+        "startChar": 4,
+        "endLine": 1087,
+        "endChar": 46
+      },
+      "revId": "c0f5f6536fecacff9baa79c2fa7ed84284bb9ccb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "803d66b2_39d12454",
+        "filename": "includes/Comment.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1096,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2025-11-01T00:23:34Z",
+      "side": 1,
+      "message": "This is actually a pretty neat approach, I think! The biggest issue here is probably that this is an entirely new thing, so it\u0027s not exactly \"standardized\", if you will.",
+      "range": {
+        "startLine": 1096,
+        "startChar": 4,
+        "endLine": 1096,
+        "endChar": 89
+      },
+      "revId": "c0f5f6536fecacff9baa79c2fa7ed84284bb9ccb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1038b7f_2b0d4df2",
+        "filename": "includes/Comment.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2025-11-01T00:23:34Z",
+      "side": 1,
+      "message": "This, of course, won\u0027t work for any other languages than English (and maybe some others which happen to be using \"Blog\" as-is as a loanword from English).",
+      "range": {
+        "startLine": 1104,
+        "startChar": 7,
+        "endLine": 1104,
+        "endChar": 72
+      },
+      "revId": "c0f5f6536fecacff9baa79c2fa7ed84284bb9ccb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4472e37_cccc1cfb",
+        "filename": "includes/CommentsPage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2025-11-01T00:23:34Z",
+      "side": 1,
+      "message": "Indentation looks correct but lose the trailing whitespace on this line and L688, L696 and L701 below.\n\nThe comparison on L702 has the same issues as on the previous file, i.e. it\u0027s English-specific and not i18n-compatible and that\u0027ll need to be resolved somehow.",
+      "range": {
+        "startLine": 681,
+        "startChar": 3,
+        "endLine": 681,
+        "endChar": 4
+      },
+      "revId": "c0f5f6536fecacff9baa79c2fa7ed84284bb9ccb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08757acd_1fe62f58",
+        "filename": "resources/css/Comments.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2025-11-01T00:23:34Z",
+      "side": 1,
+      "message": "Could also add a reference to the Phabricator task (T155466) here...then again it\u0027ll be available in git history and such, but \"(T155466)\" is only 9 extra characters. :-)",
+      "range": {
+        "startLine": 84,
+        "startChar": 3,
+        "endLine": 84,
+        "endChar": 39
+      },
+      "revId": "c0f5f6536fecacff9baa79c2fa7ed84284bb9ccb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7ab4528_06b6c808",
+        "filename": "resources/css/Comments.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 243
+      },
+      "writtenOn": "2025-11-01T00:23:34Z",
+      "side": 1,
+      "message": "Indent with one tab, not with four spaces. Applies for L86-90, L94-95, L99-101, L106-107. (CI seems to actually enforce this.)",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 4
+      },
+      "revId": "c0f5f6536fecacff9baa79c2fa7ed84284bb9ccb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
