@@ -22,7 +22,7 @@
 	"comments-anon-name": "Utilisator anonimo",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> sur $3 <a href=\"$4\">(dèblocar)</a>",
 	"comments-ignore-no-users": "Ora y at gins d’utilisator blocâ.",
-	"comments-ignore-remove-message": "Voléd-vos franc dèblocar los comentèros de l’utilisator <b>$1</b> ?",
+	"comments-ignore-remove-message": "Est-o que vos voléd franc dèblocar los comentèros de l’utilisator <b>$1</b> ?",
 	"comments-ignore-unblock": "Dèblocar",
 	"comments-ignore-cancel": "Anular",
 	"log-name-comments": "Jornal des comentèros",
