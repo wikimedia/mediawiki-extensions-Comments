@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "1ee839e549713e461df78d08562612a3d22a3567",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11836b4b_5d34f397",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4111
+      },
+      "writtenOn": "2025-12-01T18:57:27Z",
+      "side": 1,
+      "message": "Recheck https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1213537 now merged to fix the circular dependency error which was causing CI to fail the first time",
+      "revId": "1ee839e549713e461df78d08562612a3d22a3567",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
