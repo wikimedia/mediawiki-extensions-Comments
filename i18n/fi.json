@@ -5,13 +5,14 @@
 			"Jack Phoenix",
 			"Nedergard",
 			"Nike",
-			"Pxos"
+			"Pxos",
+			"Samoasambia"
 		]
 	},
 	"comments-comment": "Kommentoi",
 	"comments-continue-editing-btn": "Jatka muokkaamista",
 	"comments-preview-failed": "Esikatseleminen epäonnistui. Yritä uudelleen.",
-	"comments-db-locked": "<h3>Kommenttien lisääminen</h3>Tietokanta on tällä hetkellä lukittu rutiinihuoltoa varten, jonka jälkeen se palautuu takaisin normaaliksi. Tule myöhemmin uudestaan!",
+	"comments-db-locked": "<h3>Kommenttien lisääminen</h3>Tietokanta on tällä hetkellä lukittu rutiinihuoltoa varten, jonka jälkeen se palautuu takaisin normaaliksi. Tule myöhemmin uudelleen!",
 	"comments-voted-label": "Äänestetty",
 	"comments-loading": "Ladataan...",
 	"comments-auto-refresher-enable": "Ota käyttöön kommenttien automaattinen päivitys",
