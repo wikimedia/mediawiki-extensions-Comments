@@ -6,7 +6,8 @@
 			"Farras",
 			"Jack Phoenix",
 			"William Surya Permana",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Penyuwangi"
 		]
 	},
 	"apihelp-commentblock-summary": "API commentblock memungkinkan memblokir seorang pengguna yang mengirimkan suatu komentar setelah mengisi parameter berikut: CommentID.",
@@ -34,7 +35,7 @@
 	"comments-db-locked": "<h3>Menambahkan komentar</h3>Basis data saat ini terkunci untuk pemeliharaan database rutin, setelahnya akan kembali ke normal. Silakan periksa kembali nanti!",
 	"comments-voted-label": "Dipilih",
 	"comments-loading": "Memuat...",
-	"comments-auto-refresher-enable": "Aktifkan pemuatan ulang komentar otomatis",
+	"comments-auto-refresher-enable": "Nyalakan pembaharuan otomatis komentar",
 	"comments-auto-refresher-pause": "Jedakan pemuatan ulang komentar otomatis",
 	"comments-reply-to": "Balas ke {{GENDER:$2|$1}}",
 	"comments-cancel-reply": "Batal",
