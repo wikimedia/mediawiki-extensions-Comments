@@ -38,7 +38,7 @@ class MigrateOldCommentsBlockUserColumnsToActor extends MediaWiki\Maintenance\Lo
 	 *
 	 * @return string
 	 */
-	protected function updateSkippedMessage() {
+	public function updateSkippedMessage() {
 		return 'Comments_block has already been migrated to use the actor columns.';
 	}
 
