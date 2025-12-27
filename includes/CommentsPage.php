@@ -501,10 +501,6 @@ class CommentsPage extends ContextSource {
 			$output .= $errorFormatter
 				->getMessage( $user->getBlock(), $userContext, $language, $ip )
 				->parse();
-		} elseif ( $user->isBlockedGlobally() ) {
-			$output .= $errorFormatter
-				->getMessage( $user->getGlobalBlock(), $userContext, $language, $ip )
-				->parse();
 		} elseif ( !$this->getUser()->isAllowed( 'comment' ) ) {
 			// 'comment' user right is required to add new comments
 			$output .= wfMessage( 'comments-not-allowed' )->parse();
