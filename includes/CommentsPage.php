@@ -610,7 +610,8 @@ class CommentsPage extends ContextSource {
 			// For total vote count
 			'vote2' => [ 'LEFT JOIN', 'vote2.Comment_Vote_ID = CommentID' ]
 		];
-		$params = [ 'GROUP BY' => 'CommentID, current_vote' ];
+		$params = [ 'GROUP BY' =>
+			'CommentID, Comment_IP, Comment_Text, Comment_actor, Comment_Date, Comment_Parent_ID, current_vote' ];
 
 		// If SocialProfile is installed, query the user_stats table too.
 		if (
