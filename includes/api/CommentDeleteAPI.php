@@ -17,8 +17,6 @@ class CommentDeleteAPI extends MediaWiki\Api\ApiBase {
 		// Blocked users cannot delete comments, and neither can unprivileged ones.
 		if ( $user->getBlock() && !$userCheck ) {
 			$this->dieBlocked( $user->getBlock() );
-		} elseif ( $user->isBlockedGlobally() && !$userCheck ) {
-			$this->dieBlocked( $user->getGlobalBlock() );
 		}
 
 		$comment->delete();

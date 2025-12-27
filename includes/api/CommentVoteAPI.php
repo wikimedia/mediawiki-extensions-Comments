@@ -10,8 +10,6 @@ class CommentVoteAPI extends MediaWiki\Api\ApiBase {
 		// and neither can those users without the necessary privileges
 		if ( $user->getBlock() ) {
 			$this->dieBlocked( $user->getBlock() );
-		} elseif ( $user->isBlockedGlobally() ) {
-			$this->dieBlocked( $user->getGlobalBlock() );
 		} elseif ( !$user->isAllowed( 'comment' ) ) {
 			$this->dieWithError( 'comments-not-allowed' );
 		}
