@@ -587,7 +587,7 @@ class CommentsPage extends ContextSource {
 			'vote2' => 'Comments_Vote',
 		];
 		$fields = [
-			'Comment_IP', 'Comment_Text', 'Comment_actor',
+			'Comment_Text', 'Comment_actor',
 			'Comment_Date', 'Comment_Date AS timestamp',
 			'CommentID', 'Comment_Parent_ID',
 			// @todo FIXME: this and the stats_total_points are buggy on PostgreSQL
@@ -611,7 +611,7 @@ class CommentsPage extends ContextSource {
 			'vote2' => [ 'LEFT JOIN', 'vote2.Comment_Vote_ID = CommentID' ]
 		];
 		$params = [ 'GROUP BY' =>
-			'CommentID, Comment_IP, Comment_Text, Comment_actor, Comment_Date, Comment_Parent_ID, current_vote' ];
+			'CommentID, Comment_Text, Comment_actor, Comment_Date, Comment_Parent_ID, current_vote' ];
 
 		// If SocialProfile is installed, query the user_stats table too.
 		if (
@@ -654,7 +654,6 @@ class CommentsPage extends ContextSource {
 			}
 			$data = [
 				'Comment_actor' => $row->Comment_actor,
-				'Comment_IP' => $row->Comment_IP,
 				'Comment_Text' => $row->Comment_Text,
 				'Comment_Date' => $row->Comment_Date,
 				'Comment_user_points' => ( isset( $row->stats_total_points ) ? number_format( $row->stats_total_points ) : 0 ),
