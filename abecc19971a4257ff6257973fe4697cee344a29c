@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92680ecf_ab128e58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2025-12-29T16:31:04Z",
+      "side": 1,
+      "message": "I think this is ok to me and the column is unused.",
+      "revId": "abecc19971a4257ff6257973fe4697cee344a29c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
