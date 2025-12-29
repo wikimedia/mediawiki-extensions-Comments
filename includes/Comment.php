@@ -82,13 +82,6 @@ class Comment extends ContextSource {
 	public $username = '';
 
 	/**
-	 * IP of the comment poster
-	 *
-	 * @var string
-	 */
-	public $ip = '';
-
-	/**
 	 * Actor ID of the user who posted the comment
 	 *
 	 * @var int
@@ -140,7 +133,6 @@ class Comment extends ContextSource {
 		$this->user = $commenter = $userFactory->newFromActorId( $data['Comment_actor'] );
 
 		$this->username = $commenter->getName();
-		$this->ip = $data['Comment_IP'];
 		$this->text = $data['Comment_Text'];
 		$this->date = $data['Comment_Date'];
 		$this->userPoints = $data['Comment_user_points'];
@@ -199,7 +191,7 @@ class Comment extends ContextSource {
 		// Defaults (for non-social wikis)
 		$tables[] = 'Comments';
 		$fields = [
-			'Comment_actor', 'Comment_IP', 'Comment_Text',
+			'Comment_actor', 'Comment_Text',
 			'Comment_Date', 'Comment_Date AS timestamp',
 			'CommentID', 'Comment_Parent_ID', 'Comment_Page_ID'
 		];
@@ -239,7 +231,6 @@ class Comment extends ContextSource {
 		}
 		$data = [
 			'Comment_actor' => $row->Comment_actor,
-			'Comment_IP' => $row->Comment_IP,
 			'Comment_Text' => $row->Comment_Text,
 			'Comment_Date' => $row->Comment_Date,
 			'Comment_user_points' => ( isset( $row->stats_total_points ) ? number_format( $row->stats_total_points ) : 0 ),
@@ -330,8 +321,7 @@ class Comment extends ContextSource {
 				'Comment_actor' => $user->getActorId(),
 				'Comment_Text' => $text,
 				'Comment_Date' => $dbw->timestamp( $commentDate ),
-				'Comment_Parent_ID' => $parentID,
-				'Comment_IP' => $_SERVER['REMOTE_ADDR']
+				'Comment_Parent_ID' => $parentID
 			],
 			__METHOD__
 		);
@@ -372,7 +362,6 @@ class Comment extends ContextSource {
 		}
 		$data = [
 			'Comment_actor' => $user->getActorId(),
-			'Comment_IP' => $context->getRequest()->getIP(),
 			'Comment_Text' => $text,
 			'Comment_Date' => $commentDate,
 			'Comment_user_points' => $userPoints,
@@ -645,8 +634,7 @@ class Comment extends ContextSource {
 					'Comment_Vote_id' => $this->id,
 					'Comment_Vote_actor' => $this->getUser()->getActorId(),
 					'Comment_Vote_Score' => $value,
-					'Comment_Vote_Date' => $commentDate,
-					'Comment_Vote_IP' => $_SERVER['REMOTE_ADDR']
+					'Comment_Vote_Date' => $commentDate
 				],
 				__METHOD__
 			);
@@ -655,8 +643,7 @@ class Comment extends ContextSource {
 				'Comments_Vote',
 				[
 					'Comment_Vote_Score' => $value,
-					'Comment_Vote_Date' => $commentDate,
-					'Comment_Vote_IP' => $_SERVER['REMOTE_ADDR']
+					'Comment_Vote_Date' => $commentDate
 				],
 				[
 					'Comment_Vote_id' => $this->id,

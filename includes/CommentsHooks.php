@@ -187,5 +187,8 @@ class CommentsHooks {
 			$updater->dropExtensionField( 'Comments_Vote', 'Comment_Vote_Username', "$dir/patches/actor/drop-Comment_Vote_Username.sql" );
 			$updater->dropExtensionIndex( 'Comments_Vote', 'Comment_Vote_user_id', "$dir/patches/actor/drop-Comment_Vote_user_id-index.sql" );
 		}
+
+		$updater->dropExtensionField( 'Comments', $caseSensitiveDb ? 'Comment_IP' : 'comment_ip', "$dir/patches/drop-Comment_IP.sql" );
+		$updater->dropExtensionField( 'Comments_Vote', $caseSensitiveDb ? 'Comment_Vote_IP' : 'comment_vote_ip', "$dir/patches/drop-Comment_Vote_IP.sql" );
 	}
 }
