@@ -5,6 +5,7 @@
 			"Jopparn",
 			"Lokal Profil",
 			"Skalman",
+			"Stefan2255",
 			"Tobulos1",
 			"WikiPhoenix"
 		]
@@ -14,6 +15,7 @@
 	"apihelp-commentlatestid-summary": "API:et commentlatestID gör det möjligt att hämta senaste kommentar-ID efter att följande parametrar fylls i: pageID",
 	"apihelp-commentlist-summary": "API:et commentlist gör det möjligt att hämta flera kommentarer och matar ut dem som en lista efter att följande parametrar fylls i: pageID, order, pagerPage och showForm.",
 	"apihelp-commentsubmit-summary": "API:et commentsubmit gör det möjligt att skicka en kommentar efter att följande parametrar fylls i: pageID, parentID, commentText.",
+	"apihelp-commentedit-summary": "API:et commentedit låter dig redigera en redan existerande kommentar med följande parametrar: pageID, commentId, commentText",
 	"apihelp-commentvote-summary": "API:et commentvote gör det möjligt att rösta på en kommentar efter att följande parametrar fylls i: commentID, voteValue.",
 	"apihelp-commentblock-param-commentID": "Kommentar-ID för användarens kommentar som ska blockeras",
 	"apihelp-commentdelete-param-commentID": "Kommentar-ID för kommentaren att radera",
@@ -25,6 +27,9 @@
 	"apihelp-commentsubmit-param-pageID": "Sid-ID för sidan där kommentaren som ska skickas finns",
 	"apihelp-commentsubmit-param-parentID": "Kommentar-ID för den överliggande kommentaren",
 	"apihelp-commentsubmit-param-commentText": "Kommentarstext",
+	"apihelp-commentedit-param-pageID": "Sid-ID för sidan där kommentaren som ska skickas finns",
+	"apihelp-commentedit-param-commentText": "Ny kommentarstext",
+	"apihelp-commentedit-param-commentID": "Kommentar-ID för kommentaren som ska redigeras",
 	"apihelp-commentvote-param-commentID": "Kommentar-ID för kommentar som ska röstas",
 	"apihelp-commentvote-param-voteValue": "Röstvärde för kommentaren",
 	"comments-comment": "Kommentar",
@@ -48,6 +53,9 @@
 	"comments-ignore-message": "Du ignorerar författaren till denna kommentar",
 	"comments-you": "Du",
 	"comments-reply": "Svara",
+	"comments-edit": "Redigera",
+	"comments-edit-cancel": "Avbryt",
+	"comments-edit-save": "Spara",
 	"comments-login-required": "Du måste vara inloggad för att lägga till kommentarer",
 	"comments-not-allowed": "Du får inte posta kommentarer.",
 	"comments-post": "Skicka kommentar",
@@ -59,6 +67,7 @@
 	"comments-anon-message": "{{SITENAME}} välkomnar '''alla kommentarer'''. Om du inte vill vara anonym kan du [[Special:CreateAccount|registrera]] eller [[Special:UserLogin|logga in]]. Det är gratis.",
 	"comments-links-are-forbidden": "Externa länkar i kommentarer är förbjudna!",
 	"comments-is-spam": "Texten i kommentaren tolkades som spam.",
+	"comments-missing-text": "Kommentarer får inte vara tomma.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> den $3 <a href=\"$4\">(ta bort blockering)</a>",
 	"comments-ignore-no-users": "Det finns inga användare som är blockerade för tillfället.",
 	"comments-ignore-remove-message": "Är du säker på att du vill ta bort blockeringen för användaren <b>$1</b>s kommentarer?",
@@ -73,6 +82,7 @@
 	"log-description-comments": "Detta är en logg för kommentarer.",
 	"logentry-comments-add": "$1 har postat en ny kommentar på $3",
 	"logentry-comments-delete": "$1 borttagen kommentar #$4 på $3",
+	"logentry-comments-edit": "$1 redigerad kommentar nr. $4 på $3",
 	"comments-time-ago": "$1 sedan",
 	"comments-time-months": "{{PLURAL:$1|en månad|$1 månader}}",
 	"comments-time-days": "{{PLURAL:$1|en dag|$1 dagar}}",
@@ -91,5 +101,8 @@
 	"action-commentlinks": "använda externa länkar i kommentarer",
 	"right-commentlinks": "Använd externa länkar i kommentarer",
 	"action-comment-delete-own": "radera egna kommentarer",
-	"right-comment-delete-own": "Radera egna kommentarer"
+	"right-comment-delete-own": "Radera egna kommentarer",
+	"action-comment-edit-own": "redigera egna kommentarer",
+	"right-comment-edit-own": "Redigera egna kommentarer",
+	"comments-edit-permissiondenied": "Du har inte behörighet att redigera den här kommentaren."
 }
