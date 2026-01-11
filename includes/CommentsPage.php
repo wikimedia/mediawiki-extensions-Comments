@@ -256,12 +256,12 @@ class CommentsPage extends ContextSource {
 		$i = $pagerFirst;
 		if ( $pagerLast > $pagesCount ) {
 			// Adjust "center" if at end of query.
-			$i = $i + ( $pagesCount - $pagerLast );
+			$i += $pagesCount - $pagerLast;
 			$pagerLast = $pagesCount;
 		}
 		if ( $i <= 0 ) {
 			// Adjust "center" if at start of query.
-			$pagerLast = $pagerLast + ( 1 - $i );
+			$pagerLast += 1 - $i;
 			$i = 1;
 		}
 
@@ -661,8 +661,8 @@ class CommentsPage extends ContextSource {
 				'Comment_Parent_ID' => $row->Comment_Parent_ID,
 				'thread' => $thread,
 				'timestamp' => wfTimestamp( TS_UNIX, $row->timestamp ),
-				'current_vote' => ( isset( $row->current_vote ) ? $row->current_vote : false ),
-				'total_vote' => ( isset( $row->comment_score ) ? $row->comment_score : 0 ),
+				'current_vote' => $row->current_vote ?? false,
+				'total_vote' => $row->comment_score ?? 0,
 			];
 
 			$commentsData[] = $data;

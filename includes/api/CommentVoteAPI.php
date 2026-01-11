@@ -21,7 +21,6 @@ class CommentVoteAPI extends MediaWiki\Api\ApiBase {
 			$comment->vote( $voteValue );
 
 			$html = $comment->getScoreHTML();
-			$html = htmlspecialchars( $html );
 
 			if ( class_exists( 'UserStatsTrack' ) ) {
 				$stats = new UserStatsTrack( $user->getId(), $user->getName() );

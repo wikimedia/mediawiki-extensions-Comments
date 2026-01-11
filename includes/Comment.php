@@ -165,8 +165,7 @@ class Comment extends ContextSource {
 		$this->currentVote = $vote;
 
 		// @TODO: same as above for current_vote
-		$this->currentScore = isset( $data['total_vote'] )
-			? $data['total_vote'] : $this->getScore();
+		$this->currentScore = $data['total_vote'] ?? $this->getScore();
 	}
 
 	/**
@@ -454,8 +453,8 @@ class Comment extends ContextSource {
 	 * @param string $header The subject line for the discussion.
 	 * @param int[] $userLinks
 	 * @param string $content The content of the post, as a wikitext string.
-	 * @param MediaWiki\Title\Title $title
-	 * @param MediaWiki\User\User $agent The user who made the comment.
+	 * @param Title $title
+	 * @param User $agent The user who made the comment.
 	 * @param Comment $comment
 	 * @param int $commentId
 	 */
@@ -471,10 +470,6 @@ class Comment extends ContextSource {
 	) {
 		global $wgEchoMaxMentionsCount, $wgEchoMentionStatusNotifications;
 
-		// $title = $revision->getTitle();
-		if ( !$title ) {
-			return;
-		}
 		$revId = $title->getLatestRevID();
 		// Comments are often short. These Echo-isms mutilate $content into an empty string.
 		// We don't want that to happen.
