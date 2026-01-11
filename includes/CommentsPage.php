@@ -661,8 +661,8 @@ class CommentsPage extends ContextSource {
 				'Comment_Parent_ID' => $row->Comment_Parent_ID,
 				'thread' => $thread,
 				'timestamp' => wfTimestamp( TS_UNIX, $row->timestamp ),
-				'current_vote' => ( isset( $row->current_vote ) ? $row->current_vote : false ),
-				'total_vote' => ( isset( $row->comment_score ) ? $row->comment_score : 0 ),
+				'current_vote' => $row->current_vote ?? false,
+				'total_vote' => $row->comment_score ?? 0,
 			];
 
 			$commentsData[] = $data;
