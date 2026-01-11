@@ -166,8 +166,7 @@ class Comment extends ContextSource {
 		$this->currentVote = $vote;
 
 		// @TODO: same as above for current_vote
-		$this->currentScore = isset( $data['total_vote'] )
-			? $data['total_vote'] : $this->getScore();
+		$this->currentScore = $data['total_vote'] ?? $this->getScore();
 	}
 
 	/**
