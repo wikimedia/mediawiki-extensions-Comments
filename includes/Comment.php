@@ -9,7 +9,6 @@ use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use Wikimedia\AtEase\AtEase;
 
 /**
  * Comment class
@@ -311,9 +310,8 @@ class Comment extends ContextSource {
 		$dbw = self::getDBHandle( 'write' );
 		$context = RequestContext::getMain();
 
-		AtEase::suppressWarnings();
-		$commentDate = date( 'Y-m-d H:i:s' );
-		AtEase::restoreWarnings();
+		// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+		$commentDate = @date( 'Y-m-d H:i:s' );
 		$dbw->insert(
 			'Comments',
 			[
@@ -623,9 +621,8 @@ class Comment extends ContextSource {
 			$value = 0;
 		}
 
-		AtEase::suppressWarnings();
-		$commentDate = date( 'Y-m-d H:i:s' );
-		AtEase::restoreWarnings();
+		// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+		$commentDate = @date( 'Y-m-d H:i:s' );
 
 		if ( $this->currentVote === false ) { // no vote, insert
 			$dbw->insert(
@@ -943,13 +940,12 @@ class Comment extends ContextSource {
 		$output .= "{$commentPoster}";
 		$output .= "<span class=\"c-user-level\">{$commentPosterLevel}</span> {$blockLink}" . "\n";
 
-		AtEase::suppressWarnings(); // E_STRICT bitches about strtotime()
 		$output .= '<div class="c-time">' .
 			wfMessage(
 				'comments-time-ago',
-				CommentFunctions::getTimeAgo( strtotime( $this->date ) )
+				// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+				CommentFunctions::getTimeAgo( @strtotime( $this->date ) )
 			)->parse() . '</div>' . "\n";
-		AtEase::restoreWarnings();
 
 		$output .= '<div class="c-score">' . "\n";
 		$output .= $this->getScoreHTML();

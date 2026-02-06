@@ -2,7 +2,6 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use Wikimedia\AtEase\AtEase;
 
 class CommentFunctions {
 	/**
@@ -205,9 +204,8 @@ class CommentFunctions {
 	public static function blockUser( $blocker, $blocked ) {
 		$dbw = Comment::getDBHandle( 'write' );
 
-		AtEase::suppressWarnings(); // E_STRICT bitching
-		$date = date( 'Y-m-d H:i:s' );
-		AtEase::restoreWarnings();
+		// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+		$date = @date( 'Y-m-d H:i:s' );
 		$dbw->insert(
 			'Comments_block',
 			[
