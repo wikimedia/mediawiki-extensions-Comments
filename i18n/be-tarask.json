@@ -4,7 +4,8 @@
 			"Jack Phoenix",
 			"Red Winged Duck",
 			"Renessaince",
-			"Wizardist"
+			"Wizardist",
+			"Ucukor"
 		]
 	},
 	"comments-comment": "Камэнтары",
@@ -26,6 +27,7 @@
 	"comments-ignore-message": "Вы ігнаруеце аўтара гэтага камэнтара",
 	"comments-you": "Вы",
 	"comments-reply": "Адказаць",
+	"comments-edit-cancel": "Скасаваць",
 	"comments-login-required": "Вы мусіце ўвайсьці, каб дасылаць камэнтары",
 	"comments-not-allowed": "Вам не дазволена дасылаць камэнтары.",
 	"comments-post": "Даслаць камэнтар",

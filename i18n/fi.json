@@ -6,7 +6,8 @@
 			"Nedergard",
 			"Nike",
 			"Pxos",
-			"Samoasambia"
+			"Samoasambia",
+			"Yupik"
 		]
 	},
 	"comments-comment": "Kommentoi",
@@ -29,6 +30,7 @@
 	"comments-ignore-message": "Et huomioi tämän kommentin kirjoittajaa",
 	"comments-you": "Sinä",
 	"comments-reply": "Vastaa",
+	"comments-edit-save": "Tallenna",
 	"comments-login-required": "Sinun tulee olla kirjautunut sisään voidaksesi lisätä kommentteja",
 	"comments-not-allowed": "Et voi lisätä kommentteja.",
 	"comments-post": "Lähetä kommentti",
