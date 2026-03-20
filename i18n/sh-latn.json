@@ -26,7 +26,7 @@
 	"apihelp-commentvote-param-voteValue": "Vrijednost glasa za komentar",
 	"comments-comment": "Komentar",
 	"comments-continue-editing-btn": "Nastavi s uređivanjem",
-	"comments-preview-failed": "Pregled nije uspio. Molimo pokušajte ponovno.",
+	"comments-preview-failed": "Pregled nije uspio. Pokušajte ponovno.",
 	"comments-desc": "Dodaje parserski okidač <code>&lt;comments&gt;</code> koji dopušta komentare na stranicama",
 	"comments-db-locked": "<h3>Davanje komentara</h3>Baza podataka je trenutno zaključana za rutinsko održavanje baze podataka, nakon čega će se vratiti u normalno stanje. Provjerite kasnije!",
 	"comments-voted-label": "Glasano",
