@@ -4,5 +4,14 @@
 			"Cabal"
 		]
 	},
-	"comments-permalink": "ਪੱਕੀ-ਕੜੀ"
+	"comments-loading": "ਲੱਦ ਰਿਹਾ ਏ...",
+	"comments-cancel-reply": "ਰੱਦ ਕਰੋ",
+	"comments-sort-by-date": "ਮਿਤੀ ਮੁਤਾਬਕ ਛਾਂਟੋ",
+	"comments-you": "ਤੁਸੀਂ",
+	"comments-reply": "ਜੁਆਬ ਦਿਓ",
+	"comments-edit": "ਸੋਧੋ",
+	"comments-edit-cancel": "ਰੱਦ ਕਰੋ",
+	"comments-edit-save": "ਸਾਂਭੋ",
+	"comments-permalink": "ਪੱਕੀ-ਕੜੀ",
+	"comments-time-seconds": "{{PLURAL:$1| ਇੱਕ ਸਕਿੰਟ |$1 ਸਕਿੰਟਾਂ}}"
 }
