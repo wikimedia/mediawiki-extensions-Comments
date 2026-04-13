@@ -52,6 +52,9 @@
 	"comments-ignore-message": "Ви ігноруєте автора цього коментраря",
 	"comments-you": "Ви",
 	"comments-reply": "Відповісти",
+	"comments-edit": "Редагувати",
+	"comments-edit-cancel": "Скасувати",
+	"comments-edit-save": "Зберегти",
 	"comments-login-required": "Ви повинні увійти до системи, щоб додавати коментарі",
 	"comments-not-allowed": "Вам не дозволено надсилати коментарі.",
 	"comments-post": "Надіслати коментар",
@@ -63,6 +66,7 @@
 	"comments-anon-message": "{{SITENAME}} вітає '''всі коментарі'''. Якщо ви не хочете бути анонімним, [[Special:CreateAccount|зареєструйтесь]] або [[Special:UserLogin|увійдіть]]. Це безкоштовно.",
 	"comments-links-are-forbidden": "Зовнішні посилання у коментарях - заборонені!",
 	"comments-is-spam": "Поданий текст коментаря був сприйнятий як спам.",
+	"comments-missing-text": "Коментарі не можуть бути порожніми.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a>, заблоковано $3 <a href=\"$4\">(розблокувати)</a>",
 	"comments-ignore-no-users": "Користувачів, яких наразі заблоковано, немає.",
 	"comments-ignore-remove-message": "Ви впевнені, що хочете розблокувати коментарі користувача <b>$1</b>?",
@@ -95,5 +99,7 @@
 	"action-commentlinks": "використання зовнішніх посилань у коментарях",
 	"right-commentlinks": "Використання зовнішніх посилань у коментарях",
 	"action-comment-delete-own": "видалення власних коментарів",
-	"right-comment-delete-own": "Вилучення власних коментарів"
+	"right-comment-delete-own": "Вилучення власних коментарів",
+	"action-comment-edit-own": "редагування власних коментарів",
+	"right-comment-edit-own": "Редагування власних коментарів"
 }
