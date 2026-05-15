@@ -26,7 +26,7 @@
 	"apihelp-commentlist-param-pagerPage": "댓글 페이지 번호",
 	"apihelp-commentlist-param-showForm": "댓글 양식을 표시",
 	"apihelp-commentsubmit-param-pageID": "댓글이 제출될 문서의 문서 ID",
-	"apihelp-commentsubmit-param-parentID": "부모 댓글의 댓글 ID",
+	"apihelp-commentsubmit-param-parentID": "상위 댓글의 댓글 ID",
 	"apihelp-commentsubmit-param-commentText": "댓글 텍스트",
 	"apihelp-commentedit-param-pageID": "댓글이 편집될 문서의 문서 ID",
 	"apihelp-commentedit-param-commentText": "새 댓글 텍스트",
