@@ -7,7 +7,8 @@
 			"Jack Phoenix",
 			"William Surya Permana",
 			"පසිඳු කාවින්ද",
-			"Penyuwangi"
+			"Penyuwangi",
+			"Bayahiu"
 		]
 	},
 	"apihelp-commentblock-summary": "API commentblock memungkinkan memblokir seorang pengguna yang mengirimkan suatu komentar setelah mengisi parameter berikut: CommentID.",
@@ -74,7 +75,7 @@
 	"log-description-comments": "Ini adalah log komentar.",
 	"logentry-comments-add": "$1 mengirimkan komentar baru pada $3",
 	"logentry-comments-delete": "$1 menghapus komentar #$4 pada $3",
-	"comments-time-ago": "$1 yang lalu",
+	"comments-time-ago": "$1 lalu",
 	"comments-time-months": "{{PLURAL:$1|sebulan|$1 bulan}}",
 	"comments-time-days": "{{PLURAL:$1|sehari|$1 hari}}",
 	"comments-time-hours": "{{PLURAL:$1|sejam|$1 jam}}",
