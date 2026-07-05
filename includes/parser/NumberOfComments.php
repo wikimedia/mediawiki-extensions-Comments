@@ -5,7 +5,7 @@ use MediaWiki\Title\Title;
 
 class NumberOfComments {
 	/**
-	 * Registers NUMBEROFCOMMENTS and NUMPBEROFCOMMENTSPAGE as a valid magic word identifier.
+	 * Registers NUMBEROFCOMMENTS and NUMBEROFCOMMENTSPAGE as a valid magic word identifier.
 	 *
 	 * @param array &$variableIds Array of valid magic word identifiers
 	 */
