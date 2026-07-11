@@ -177,6 +177,10 @@
 		"CommentsAbuseFilterGroup": {
 			"description": "This is the custom group name for AbuseFilter for when the AbuseFilter extension is enabled. It ensures that AbuseFilter only pulls the filters related to Comments. If you would like AbuseFilter to pull all of the filters, enter 'default' here.",
 			"value": "comment"
+		},
+		"CommentsHighlightAuthorNamespaces": {
+			"description": "Array of namespace IDs where the page author's comments should be highlighted (e.g., 500 for Blog).",
+			"value": [ 500 ]
 		}
 	},
 	"manifest_version": 2

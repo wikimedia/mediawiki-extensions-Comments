@@ -34,6 +34,12 @@
 	margin: 0px 0px 15px 0px;
 }
 
+.c-author-comment {
+	background-color: #f8f9fa; /* Light grey background to highlight author */
+	border-left: 3px solid #36c; /* MediaWiki blue border on the left */
+	padding-left: 10px; /* Slight padding inside the highlight */
+}
+
 .c-avatar {
 	position: absolute;
 	top: 0px;

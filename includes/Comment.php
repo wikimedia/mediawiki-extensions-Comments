@@ -933,6 +933,22 @@ class Comment extends ContextSource {
 			$avatarImg = $avatar->getAvatarURL() . "\n";
 		}
 
+		$isAuthor = false;
+		if ( $this->page->getPageAuthorId() > 0 ) {
+			if ( $this->user->getId() == $this->page->getPageAuthorId() ) {
+				$isAuthor = true;
+			}
+		} elseif ( $this->page->getPageAuthorName() !== '' ) {
+			if ( $this->user->getName() == $this->page->getPageAuthorName() ) {
+				$isAuthor = true;
+			}
+		}
+
+		if ( $isAuthor ) {
+			$containerClass .= ' c-author-comment';
+			$commentPosterLevel .= ' ' . $this->msg( 'comments-author-badge' )->escaped();
+		}
+
 		$output = "<div id='comment-{$this->id}' class='c-item {$containerClass}'{$style}>" . "\n";
 		$output .= "<div class=\"c-avatar\">{$avatarImg}</div>" . "\n";
 		$output .= '<div class="c-container">' . "\n";

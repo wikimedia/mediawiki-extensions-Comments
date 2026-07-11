@@ -88,6 +88,21 @@ class CommentsPage extends ContextSource {
 	public $comments = [];
 
 	/**
+	 * @var int|null page author ID (for highlighting their comments)
+	 */
+	public $pageAuthorId = null;
+
+	/**
+	 * @var string|null page author name (for highlighting anon authors or fallback)
+	 */
+	public $pageAuthorName = null;
+
+	/**
+	 * @var bool whether the page author has been loaded from the DB
+	 */
+	private $pageAuthorLoaded = false;
+
+	/**
 	 * Constructor
 	 *
 	 * @param int $pageID current page ID
@@ -97,6 +112,51 @@ class CommentsPage extends ContextSource {
 		$this->id = $pageID;
 		$this->setContext( $context );
 		$this->title = Title::newFromID( $pageID );
+	}
+
+	/**
+	 * Lazily loads the page author data
+	 */
+	private function loadPageAuthor() {
+		global $wgCommentsHighlightAuthorNamespaces;
+		$this->pageAuthorId = 0;
+		$this->pageAuthorName = '';
+		$this->pageAuthorLoaded = true;
+
+		if (
+			$this->title &&
+			is_array( $wgCommentsHighlightAuthorNamespaces ) &&
+			in_array( $this->title->getNamespace(), $wgCommentsHighlightAuthorNamespaces )
+		) {
+			$firstRev = MediaWikiServices::getInstance()
+				->getRevisionLookup()
+				->getFirstRevision( $this->title );
+
+			if ( $firstRev ) {
+				$this->pageAuthorId = $firstRev->getUser()->getId();
+				$this->pageAuthorName = $firstRev->getUser()->getName();
+			}
+		}
+	}
+
+	/**
+	 * @return int Page author ID
+	 */
+	public function getPageAuthorId() {
+		if ( !$this->pageAuthorLoaded ) {
+			$this->loadPageAuthor();
+		}
+		return $this->pageAuthorId;
+	}
+
+	/**
+	 * @return string Page author name
+	 */
+	public function getPageAuthorName() {
+		if ( !$this->pageAuthorLoaded ) {
+			$this->loadPageAuthor();
+		}
+		return $this->pageAuthorName;
 	}
 
 	/**
