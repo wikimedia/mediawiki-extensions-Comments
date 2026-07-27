@@ -7,7 +7,8 @@
 			"Jack Phoenix",
 			"Luanafaro",
 			"Luckas",
-			"Nemo bis"
+			"Nemo bis",
+			"NenhumaFênix"
 		]
 	},
 	"apihelp-commentblock-summary": "A API commentblock permite bloquear um utilizador a partir de um comentário feito por ele, após preencher os seguintes parâmetros: CommentID.",
@@ -83,7 +84,7 @@
 	"log-show-hide-comments": "$1 registo de comentários",
 	"logeventslist-comments-log": "Registo de comentários",
 	"group-commentadmin": "Administradores de comentários",
-	"group-commentadmin-member": "{{GENDER:$1|administrador|administradora}} de comentários",
+	"group-commentadmin-member": "{{GENDER:$1|administrador|administradora|administrador(a)}} de comentários",
 	"grouppage-commentadmin": "{{ns:project}}:Administradores de comentários",
 	"action-comment": "enviar comentários",
 	"right-comment": "Enviar comentários",
