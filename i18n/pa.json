@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cabal"
+			"Cabal",
+			"Bgo eiu"
 		]
 	},
 	"comments-loading": "ਲੱਦ ਰਿਹਾ ਏ...",
@@ -13,5 +14,5 @@
 	"comments-edit-cancel": "ਰੱਦ ਕਰੋ",
 	"comments-edit-save": "ਸਾਂਭੋ",
 	"comments-permalink": "ਪੱਕੀ-ਕੜੀ",
-	"comments-time-seconds": "{{PLURAL:$1| ਇੱਕ ਸਕਿੰਟ |$1 ਸਕਿੰਟਾਂ}}"
+	"comments-time-seconds": "{{PLURAL:$1| ਇੱਕ ਸਕਿੰਟ |$1 ਸਕਿੰਟ}}"
 }
