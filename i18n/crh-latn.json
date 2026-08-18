@@ -4,5 +4,15 @@
 			"Don Alessandro"
 		]
 	},
-	"echo-category-title-mention-comment": "Tefsirlerde añmalar"
+	"echo-category-title-mention-comment": "Tefsirlerde añmalar",
+	"logentry-comments-add": "$1, $3 saifesinde yañı bir tefsir yazdı",
+	"logentry-comments-delete": "$1, #$4 tefsiri $3 saifesinde yoq etti",
+	"comments-time-ago": "$1 evel",
+	"comments-time-months": "{{PLURAL:$1|bir ay|$1 ay}}",
+	"comments-time-days": "{{PLURAL:$1|bir kün|$1 kün}}",
+	"comments-time-hours": "{{PLURAL:$1|bir saat|$1 saat}}",
+	"comments-time-minutes": "{{PLURAL:$1|bir daqqa|$1 daqqa}}",
+	"comments-time-seconds": "{{PLURAL:$1|bir saniye|$1 saniye}}",
+	"action-comment": "tefsir yolla",
+	"right-comment": "Tefsir yolla"
 }
