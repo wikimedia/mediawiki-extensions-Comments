@@ -26,7 +26,7 @@ class CommentBlockAPI extends MediaWiki\Api\ApiBase {
 			__METHOD__
 		);
 		if ( $s !== false ) {
-			$blockedUser = $this->userFactory->newFromActorId( $s->comment_actor );
+			$blockedUser = $this->userFactory->newFromActorId( $s->Comment_actor );
 
 			if ( $blockedUser && $blockedUser instanceof User ) {
 				CommentFunctions::blockUser( $this->getUser(), $blockedUser );
