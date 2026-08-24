@@ -63,7 +63,7 @@
 	"comments-links-are-forbidden": "External links in comments are forbidden!",
 	"comments-is-spam": "Submitted text of the comment was interpreted as spam.",
 	"comments-missing-text": "Comments may not be empty.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> on $3 <a href=\"$4\">(unblock)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] on $2 ([[Special:CommentIgnoreList/$1|unblock]])",
 	"comments-ignore-no-users": "There are no users currently blocked.",
 	"comments-ignore-remove-message": "Are you sure you want to unblock user <b>$1</b>'s comments?",
 	"comments-ignore-unblock": "Unblock",
