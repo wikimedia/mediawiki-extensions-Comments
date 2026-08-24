@@ -50,14 +50,14 @@ class CommentIgnoreList extends SpecialPage {
 	/**
 	 * Show the special page
 	 *
-	 * @param mixed|null $par Parameter passed to the page or null
+	 * @param string|null $par User name of the person to be unblocked (if any)
 	 */
 	public function execute( $par ) {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 		$user = $this->getUser();
 
-		$user_name = $request->getVal( 'user' );
+		$user_name = $request->getVal( 'user', $par );
 
 		/**
 		 * Redirect anonymous users to Login Page
@@ -98,7 +98,7 @@ class CommentIgnoreList extends SpecialPage {
 
 				$output .= $this->displayCommentBlockList();
 			} else {
-				$output .= $this->confirmCommentBlockDelete();
+				$output .= $this->confirmCommentBlockDelete( $user_name );
 			}
 		}
 
@@ -112,7 +112,6 @@ class CommentIgnoreList extends SpecialPage {
 	 */
 	private function displayCommentBlockList() {
 		$lang = $this->getLanguage();
-		$title = $this->getPageTitle();
 
 		$dbr = Comment::getDBHandle( 'read' );
 		$res = $dbr->select(
@@ -126,36 +125,37 @@ class CommentIgnoreList extends SpecialPage {
 
 		if ( $res->numRows() > 0 ) {
 			$out = '<ul>';
+
 			foreach ( $res as $row ) {
-				$user = $this->userFactory->newFromActorId( $row->cb_actor_blocked );
-				if ( !$user ) {
+				$blockedUser = $this->userFactory->newFromActorId( $row->cb_actor_blocked );
+				if ( !$blockedUser ) {
 					continue;
 				}
-				$user_title = $user->getUserPage();
+
+				$blockedUserName = $blockedUser->getName();
 				$out .= '<li>' . $this->msg(
 					'comments-ignore-item',
-					htmlspecialchars( $user_title->getFullURL() ),
-					$user_title->getText(),
-					$lang->timeanddate( $row->cb_date ),
-					htmlspecialchars( $title->getFullURL( 'user=' . $user_title->getText() ) )
-				)->text() . '</li>';
+					$blockedUserName,
+					$lang->timeanddate( $row->cb_date )
+				)->parse() . '</li>';
 			}
+
 			$out .= '</ul>';
 		} else {
 			$out = '<div class="comment_blocked_user">' .
 				$this->msg( 'comments-ignore-no-users' )->escaped() . '</div>';
 		}
+
 		return $out;
 	}
 
 	/**
 	 * Asks for a confirmation when you're about to unblock someone's comments.
 	 *
+	 * @param string $user_name Name of the user whose comments are to be (potentially) unblocked
 	 * @return string HTML
 	 */
-	private function confirmCommentBlockDelete() {
-		$user_name = $this->getRequest()->getVal( 'user' );
-
+	private function confirmCommentBlockDelete( $user_name ) {
 		$out = '<div class="comment_blocked_user">' .
 				$this->msg( 'comments-ignore-remove-message', $user_name )->parse() .
 			'</div>
