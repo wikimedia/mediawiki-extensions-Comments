@@ -34,6 +34,24 @@
       "parentUuid": "222d4954_88b7d85e",
       "revId": "c3ab6bd9b16040d48047d9880895df6b1dcf9eca",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d5ab6be_2bc3fa3c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 121
+      },
+      "writtenOn": "2026-08-24T13:55:22Z",
+      "side": 1,
+      "message": "\u003ca\u003e tags are always sorted out for manual review. Since ages.",
+      "parentUuid": "f6af816d_d8be75d9",
+      "revId": "c3ab6bd9b16040d48047d9880895df6b1dcf9eca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ],
   "submitRequirementResults": []
