@@ -52,6 +52,24 @@
       "parentUuid": "f6af816d_d8be75d9",
       "revId": "c3ab6bd9b16040d48047d9880895df6b1dcf9eca",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28d95365_a97a892c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 177
+      },
+      "writtenOn": "2026-08-24T15:54:33Z",
+      "side": 1,
+      "message": "Ah, I guess that message rarely gets touched which is why this is the first failure I\u0027ve seen. Going to work on removing/reworking that to avoid this.",
+      "parentUuid": "3d5ab6be_2bc3fa3c",
+      "revId": "c3ab6bd9b16040d48047d9880895df6b1dcf9eca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ],
   "submitRequirementResults": []
