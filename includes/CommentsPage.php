@@ -501,10 +501,10 @@ class CommentsPage extends ContextSource {
 			$output .= $errorFormatter
 				->getMessage( $user->getBlock(), $userContext, $language, $ip )
 				->parse();
-		} elseif ( $user->isBlockedGlobally() ) {
+/*		} elseif ( $user->getBlock() ) {
 			$output .= $errorFormatter
 				->getMessage( $user->getGlobalBlock(), $userContext, $language, $ip )
-				->parse();
+				->parse();*/
 		} elseif ( !$this->getUser()->isAllowed( 'comment' ) ) {
 			// 'comment' user right is required to add new comments
 			$output .= wfMessage( 'comments-not-allowed' )->parse();
@@ -614,7 +614,7 @@ class CommentsPage extends ContextSource {
 			// For total vote count
 			'vote2' => [ 'LEFT JOIN', 'vote2.Comment_Vote_ID = CommentID' ]
 		];
-		$params = [ 'GROUP BY' => 'CommentID, current_vote' ];
+		$params = [ 'GROUP BY' => 'CommentID, current_vote, Comment_IP, Comment_Text, Comment_actor, Comment_Date, Comment_Parent_ID' ];
 
 		// If SocialProfile is installed, query the user_stats table too.
 		if (

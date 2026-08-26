@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class CommentSubmitAPI extends MediaWiki\Api\ApiBase {
@@ -12,8 +13,8 @@ class CommentSubmitAPI extends MediaWiki\Api\ApiBase {
 		// without the necessary privileges.
 		if ( $user->getBlock() ) {
 			$this->dieBlocked( $user->getBlock() );
-		} elseif ( $user->isBlockedGlobally() ) {
-			$this->dieBlocked( $user->getGlobalBlock() );
+		/*} elseif ( $user->isBlockedGlobally() ) {
+			$this->dieBlocked( $user->getGlobalBlock() );*/
 		} elseif ( !$user->isAllowed( 'comment' ) ) {
 			$this->dieWithError( 'comments-not-allowed' );
 		}
