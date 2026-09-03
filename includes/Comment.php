@@ -3,9 +3,9 @@
 use MediaWiki\Context\ContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Notifications\DiscussionParser;
-use MediaWiki\Extension\Notifications\Model\Event as EchoEvent;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Registration\ExtensionRegistry;
+use MediaWiki\Notification\RecipientSet;
+use MediaWiki\Notification\Types\WikiNotification;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -415,10 +415,7 @@ class Comment extends ContextSource {
 	 * text, only send if the user was added in the edit.
 	 */
 	public function doEchoNotifications( User $user, ?string $oldText = null ) {
-		if (
-			!ExtensionRegistry::getInstance()->isLoaded( 'Echo' )
-			|| !$this->getConfig()->get( 'EchoMentionOnChanges' )
-		) {
+		if ( !$this->getConfig()->get( 'EchoMentionOnChanges' ) ) {
 			return;
 		}
 
@@ -493,91 +490,85 @@ class Comment extends ContextSource {
 
 		$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
 
+		$notificationService = MediaWikiServices::getInstance()->getNotificationService();
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+
 		if ( $overallMentionsCount > $wgEchoMaxMentionsCount ) {
 			if ( $wgEchoMentionStatusNotifications ) {
-				EchoEvent::create( [
-					'type' => 'mention-failure-too-many',
-					'title' => $title,
-					'extra' => [
+				$notificationService->notify(
+					new WikiNotification( 'mention-failure-too-many', $title, $agent, [
 						'max-mentions' => $wgEchoMaxMentionsCount,
 						'section-title' => $header,
 						'comment-id' => $commentId, // added
-						'notifyAgent' => true
-					],
-					'agent' => $agent,
-				] );
+					] ),
+					new RecipientSet( $agent )
+				);
 				$stats->increment( 'echo.event.mention.notification.failure-too-many' );
 			}
 			return;
 		}
 
 		if ( $userMentions['validMentions'] ) {
-			EchoEvent::create( [
-				'type' => 'mention-comment',
-				'title' => $title,
-				'extra' => [
+			$mentionedUsers = array_map(
+				static function ( $mentionedUserId ) use ( $userFactory ) {
+					return $userFactory->newFromId( $mentionedUserId );
+				},
+				$userMentions['validMentions']
+			);
+			$notificationService->notify(
+				new WikiNotification( 'mention-comment', $title, $agent, [
 					'content' => $content,
 					'section-title' => $header,
 					'revid' => $revId,
 					'comment-id' => $commentId, // added
 					'mentioned-users' => $userMentions['validMentions'],
-				],
-				'agent' => $agent,
-			] );
+				] ),
+				new RecipientSet( $mentionedUsers )
+			);
 		}
 
 		if ( $wgEchoMentionStatusNotifications ) {
 			// TODO batch?
-			$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 			foreach ( $userMentions['validMentions'] as $mentionedUserId ) {
-				EchoEvent::create( [
-					'type' => 'mention-success',
-					'title' => $title,
-					'extra' => [
+				$notificationService->notify(
+					new WikiNotification( 'mention-success', $title, $agent, [
 						'subject-name' => $userFactory->newFromId( $mentionedUserId )->getName(),
 						'section-title' => $header,
 						'revid' => $revId,
 						'comment-id' => $commentId, // added
-						'notifyAgent' => true
-					],
-					'agent' => $agent,
-				] );
+					] ),
+					new RecipientSet( $agent )
+				);
 				$stats->increment( 'echo.event.mention.notification.success' );
 			}
 
 			// TODO batch?
 			foreach ( $userMentions['anonymousUsers'] as $anonymousUser ) {
-				EchoEvent::create( [
-					'type' => 'mention-failure',
-					'title' => $title,
-					'extra' => [
+				$notificationService->notify(
+					new WikiNotification( 'mention-failure', $title, $agent, [
 						'failure-type' => 'user-anonymous',
 						'subject-name' => $anonymousUser,
 						'section-title' => $header,
 						'revid' => $revId,
 						'comment-id' => $commentId, // added
-						'notifyAgent' => true
-					],
-					'agent' => $agent,
-				] );
+					] ),
+					new RecipientSet( $agent )
+				);
 				$stats->increment( 'echo.event.mention.notification.failure-user-anonymous' );
 			}
 
 			// TODO batch?
 			foreach ( $userMentions['unknownUsers'] as $unknownUser ) {
-				EchoEvent::create( [
-					'type' => 'mention-failure',
-					'title' => $title,
-					'extra' => [
+				$notificationService->notify(
+					new WikiNotification( 'mention-failure', $title, $agent, [
 						'failure-type' => 'user-unknown',
 						'subject-name' => $unknownUser,
 						'section-title' => $header,
 						'revid' => $revId,
 						'comment-id' => $commentId, // added
-						'notifyAgent' => true
-					],
-					'agent' => $agent,
-				] );
+					] ),
+					new RecipientSet( $agent )
+				);
 				$stats->increment( 'echo.event.mention.notification.failure-user-unknown' );
 			}
 		}
