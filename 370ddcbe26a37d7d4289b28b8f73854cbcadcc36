@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfe86ef8_62752fab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3039
+      },
+      "writtenOn": "2026-09-11T15:07:44Z",
+      "side": 1,
+      "message": "It’s not unrelated. `$wgEchoMentionOnChanges` is defined in Echo, so if Echo is not loaded, checking the config would throw `MediaWiki\\Config\\ConfigException` rather than silently returning `null` (unless the config is defined in some other way, but that sounds quite unlikely). Please restore the gating on Echo being loaded.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 13
+      },
+      "revId": "370ddcbe26a37d7d4289b28b8f73854cbcadcc36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f20daba_cc3990a3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3039
+      },
+      "writtenOn": "2026-09-11T15:07:44Z",
+      "side": 1,
+      "message": "`extension.json` requires MediaWiki 1.43+. If you use MW 1.45+ features, it should be increased; but probably this should also wait for MW 1.47 LTS being released.",
+      "revId": "370ddcbe26a37d7d4289b28b8f73854cbcadcc36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65e6aa79_70c9218a",
+        "filename": "includes/Comment.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 3039
+      },
+      "writtenOn": "2026-09-11T15:07:44Z",
+      "side": 1,
+      "message": "```suggestion\n\t\t\t\t$userFactory-\u003enewFromId( ... ),\n```\nHowever, it would be even better to query all users in one DB query, and use the result both here and in the loop below.",
+      "range": {
+        "startLine": 513,
+        "startChar": 4,
+        "endLine": 515,
+        "endChar": 6
+      },
+      "revId": "370ddcbe26a37d7d4289b28b8f73854cbcadcc36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
