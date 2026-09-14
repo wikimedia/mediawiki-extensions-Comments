@@ -24,6 +24,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e61d0513_1e044e97",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 12240
+      },
+      "writtenOn": "2026-09-14T08:59:38Z",
+      "side": 1,
+      "message": "You are right, restored the Echo gate and dropped that paragraph from the commit message.",
+      "parentUuid": "cfe86ef8_62752fab",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 13
+      },
+      "revId": "370ddcbe26a37d7d4289b28b8f73854cbcadcc36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5f20daba_cc3990a3",
@@ -54,6 +78,30 @@
       "writtenOn": "2026-09-11T15:07:44Z",
       "side": 1,
       "message": "```suggestion\n\t\t\t\t$userFactory-\u003enewFromId( ... ),\n```\nHowever, it would be even better to query all users in one DB query, and use the result both here and in the loop below.",
+      "range": {
+        "startLine": 513,
+        "startChar": 4,
+        "endLine": 515,
+        "endChar": 6
+      },
+      "revId": "370ddcbe26a37d7d4289b28b8f73854cbcadcc36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99ab796f_a3510d7f",
+        "filename": "includes/Comment.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 12240
+      },
+      "writtenOn": "2026-09-14T08:59:38Z",
+      "side": 1,
+      "message": "Done, in one query: UserIdentityLookup::newSelectQueryBuilder()-\u003ewhereUserIds()-\u003efetchUserIdentities(), reused for the mention-success loop below.",
+      "parentUuid": "65e6aa79_70c9218a",
       "range": {
         "startLine": 513,
         "startChar": 4,
