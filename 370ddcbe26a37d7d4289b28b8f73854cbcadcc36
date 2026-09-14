@@ -65,6 +65,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "12d0b53e_97eabb16",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 12240
+      },
+      "writtenOn": "2026-09-14T08:59:40Z",
+      "side": 1,
+      "message": "Bumped to \u003e\u003d 1.45.0. Happy to hold merging until 1.47 LTS if you prefer.",
+      "parentUuid": "5f20daba_cc3990a3",
+      "revId": "370ddcbe26a37d7d4289b28b8f73854cbcadcc36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "65e6aa79_70c9218a",
