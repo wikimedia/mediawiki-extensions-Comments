@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc109754_d6941667",
+        "filename": "includes/Comment.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 3039
+      },
+      "writtenOn": "2026-09-14T10:15:56Z",
+      "side": 1,
+      "message": "These separate branches are not required: unless there’s some bug in Echo, `(bool)$userMentions[\u0027validMentions\u0027]` should be the exact same as `(bool)$mentionedUsers`.",
+      "range": {
+        "startLine": 525,
+        "startChar": 0,
+        "endLine": 527,
+        "endChar": 26
+      },
+      "revId": "1e3f3d41b665acfbac627a73efc2db8cb6aed8ce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}

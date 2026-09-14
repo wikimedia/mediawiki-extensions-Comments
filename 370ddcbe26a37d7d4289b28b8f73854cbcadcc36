@@ -48,6 +48,30 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fcf870a_d86c2208",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3039
+      },
+      "writtenOn": "2026-09-14T10:15:56Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "e61d0513_1e044e97",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 13
+      },
+      "revId": "370ddcbe26a37d7d4289b28b8f73854cbcadcc36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5f20daba_cc3990a3",
@@ -79,6 +103,24 @@
       "side": 1,
       "message": "Bumped to \u003e\u003d 1.45.0. Happy to hold merging until 1.47 LTS if you prefer.",
       "parentUuid": "5f20daba_cc3990a3",
+      "revId": "370ddcbe26a37d7d4289b28b8f73854cbcadcc36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc494524_211f6c88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3039
+      },
+      "writtenOn": "2026-09-14T10:15:56Z",
+      "side": 1,
+      "message": "Thanks! I’m not a maintainer of this extension, so I don’t have a preference on whether to hold merging; let’s see what the maintainers say.",
+      "parentUuid": "12d0b53e_97eabb16",
       "revId": "370ddcbe26a37d7d4289b28b8f73854cbcadcc36",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
@@ -120,6 +162,30 @@
       "side": 1,
       "message": "Done, in one query: UserIdentityLookup::newSelectQueryBuilder()-\u003ewhereUserIds()-\u003efetchUserIdentities(), reused for the mention-success loop below.",
       "parentUuid": "65e6aa79_70c9218a",
+      "range": {
+        "startLine": 513,
+        "startChar": 4,
+        "endLine": 515,
+        "endChar": 6
+      },
+      "revId": "370ddcbe26a37d7d4289b28b8f73854cbcadcc36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3feaa62d_71147dc5",
+        "filename": "includes/Comment.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 3039
+      },
+      "writtenOn": "2026-09-14T10:15:56Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "99ab796f_a3510d7f",
       "range": {
         "startLine": 513,
         "startChar": 4,
