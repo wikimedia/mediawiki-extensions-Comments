@@ -22,6 +22,30 @@
       },
       "revId": "1e3f3d41b665acfbac627a73efc2db8cb6aed8ce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8983450c_41444fcd",
+        "filename": "includes/Comment.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 12240
+      },
+      "writtenOn": "2026-09-14T11:11:31Z",
+      "side": 1,
+      "message": "Merged into the single validMentions branch.",
+      "parentUuid": "fc109754_d6941667",
+      "range": {
+        "startLine": 525,
+        "startChar": 0,
+        "endLine": 527,
+        "endChar": 26
+      },
+      "revId": "1e3f3d41b665acfbac627a73efc2db8cb6aed8ce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
