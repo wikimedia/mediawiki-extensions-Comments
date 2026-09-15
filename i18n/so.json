@@ -62,7 +62,7 @@
 	"comments-links-are-forbidden": "Xiriiriyeyaasha dibadda ee ku jira faallooyinka waa mamnuuc!",
 	"comments-is-spam": "Qoraalka faallada la gudbiyay waxaa loo aqoonsaday inuu yahay spam.",
 	"comments-missing-text": "Faallooyinku ma noqon karaan kuwo madhan.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> ee $3 <a href=\"$4\">(ka qaad xannibaadda)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] ee $2 ([[Special:CommentIgnoreList/$1|ka qaad xannibaadda]])",
 	"comments-ignore-no-users": "Hadda ma jiraan isticmaaleyaal la xannibay.",
 	"comments-ignore-remove-message": "Ma hubtaa inaad rabto inaad ka qaaddo xannibaadda faallooyinka isticmaalaha <b>$1</b>?",
 	"comments-ignore-unblock": "Ka qaad xannibaadda",

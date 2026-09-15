@@ -65,7 +65,7 @@
 	"comments-links-are-forbidden": "Están prohibidas as ligazóns externas nos comentarios!",
 	"comments-is-spam": "O texto enviado no comentario interpretouse como spam.",
 	"comments-missing-text": "Os comentarios non poden estar baleiros.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> o $3 <a href=\"$4\">(desbloquear)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] o $2([[Special:CommentIgnoreList/$1|desbloquear]])",
 	"comments-ignore-no-users": "Actualmente non hai ningún usuario bloqueado.",
 	"comments-ignore-remove-message": "Queres desbloquear os comentarios do usuario <b>$1</b>?",
 	"comments-ignore-unblock": "Desbloquear",

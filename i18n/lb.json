@@ -45,7 +45,7 @@
 	"comments-anon-message": "{{SITENAME}} freet sech iwwer '''all Bemierkungen'''. Wann Dir net anonym bleiwe wëllt, [[Special:CreateAccount|da mellt Iech wgl. un]] oder [[Special:UserLogin|loggt Iech an]]. Et ass gratis.",
 	"comments-links-are-forbidden": "Extern Linken a Bemierkunge si verbueden!",
 	"comments-is-spam": "Den Text vun der Bemierkung gouf als Spam interpretéiert.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> ëm $3 <a href=\"$4\">(Spär ophiewen)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] de(n) $2 ([[Special:CommentIgnoreList/$1|entspären]])",
 	"comments-ignore-no-users": "Et sinn elo keng Benotzer gespaart.",
 	"comments-ignore-remove-message": "Sidd Dir sécher datt Dir d'Spär fir d'Bemierkunge vum Benotzer <b>$1</b> ophiewe wëllt?",
 	"comments-ignore-unblock": "Spär ophiewen",

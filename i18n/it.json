@@ -39,7 +39,7 @@
 	"comments-anon-message": "{{SITENAME}} accetta '''tutti i commenti'''. Se non vuoi restare anonimo, [[Special:CreateAccount|registrati]] o [[Special:UserLogin|accedi]]. È gratuito.",
 	"comments-links-are-forbidden": "I collegamenti esterni nei commenti sono vietati!",
 	"comments-is-spam": "Il testo del commento inviato è stato interpretato come spam.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> il $3 <a href=\"$4\">(sblocca)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] il $2 ([[Special:CommentIgnoreList/$1|sblocca]])",
 	"comments-ignore-no-users": "Non ci sono utenti attualmente bloccati.",
 	"comments-ignore-remove-message": "Sbloccare i commenti dell'utente <b>$1</b>?",
 	"comments-ignore-unblock": "Sblocca",
