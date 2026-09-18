@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Sahan.ssw",
 			"Singhalawap",
 			"පසිඳු කාවින්ද"
@@ -29,7 +30,7 @@
 	"comments-permalink": "නිත්‍යසබැඳිය",
 	"comments-delete-link": "පරිකථනය මකන්න",
 	"comments-anon-name": "නිර්නාමික පරිශීලක",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> මත $3 <a href=\"$4\">(ආවාරණය)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] මත $2 ([[Special:CommentIgnoreList/$1|ආවාරණය]])",
 	"comments-ignore-no-users": "දැනට වාරණය කරන ලද පරිශීලකයන් නොමැත.",
 	"comments-ignore-unblock": "වාරණය ඉවත්කරන්න",
 	"comments-ignore-cancel": "අත් හරින්න",

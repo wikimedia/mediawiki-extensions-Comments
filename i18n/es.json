@@ -57,7 +57,7 @@
 	"comments-anon-message": "{{SITENAME}} valora '''todos los comentarios'''. Si no quieres ser un usuario anónimo, [[Special:CreateAccount|regístrate]] o [[Special:UserLogin|inicia sesión]]. Es gratis.",
 	"comments-links-are-forbidden": "¡No está permitido poner enlaces externos en los comentarios!",
 	"comments-is-spam": "El texto enviado en el comentario ha sido interpretado como spam.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> el $3 <a href=\"$4\">(desbloquear)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] el $2 ([[Special:CommentIgnoreList/$1|desbloquear]])",
 	"comments-ignore-no-users": "No hay ningún usuario bloqueado.",
 	"comments-ignore-remove-message": "¿Confirmas que quieres desbloquear los comentarios de <b>$1</b>?",
 	"comments-ignore-unblock": "Desbloquear",

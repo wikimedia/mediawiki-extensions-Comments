@@ -3,6 +3,7 @@
 		"authors": [
 			"Fohanno",
 			"Fulup",
+			"Jack Phoenix",
 			"Y-M D"
 		]
 	},
@@ -27,7 +28,7 @@
 	"comments-delete-link": "Diverkañ an evezhiadenn",
 	"comments-anon-name": "Implijer dizanv",
 	"comments-links-are-forbidden": "Difennet eo lakaat liammoù diavaez en evezhiadennoù !",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> war $3 <a href=\"$4\">(distankañ)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] war $2 ([[Special:CommentIgnoreList/$1|distankañ]])",
 	"comments-ignore-no-users": "N'eus implijer stanket ebet evit bremañ.",
 	"comments-ignore-remove-message": "Ha sur oc'h e fell deoc'h distankañ evezhiadennoù an implijer <b>$1</b> ?",
 	"comments-ignore-unblock": "Distankañ",

@@ -61,7 +61,7 @@
 	"comments-anon-message": "A wiki {{SITENAME}} agradece '''todos os comentários'''. Se não quer ser anónimo, [[Special:CreateAccount|registe-se]] ou [[Special:UserLogin|inicie a sua sessão]]. É gratuito.",
 	"comments-links-are-forbidden": "Não são permitidas hiperligações externas nos comentários!",
 	"comments-is-spam": "O texto do comentário enviado foi interpretado como <i>spam</i>.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> a $3 <a href=\"$4\">(desbloquear)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] a $2 ([[Special:CommentIgnoreList/$1|desbloquear]])",
 	"comments-ignore-no-users": "Não há usuários atualmente bloqueados.",
 	"comments-ignore-remove-message": "Você tem certeza que deseja desbloquear os comentários do usuário <b>$1</b>?",
 	"comments-ignore-unblock": "Desbloquear",

@@ -61,7 +61,7 @@
 	"comments-anon-message": "{{SITENAME}} menerima '''segala komentar'''. Jika Anda tidak ingin menjadi seorang anonim, silakan [[Special:CreateAccount|daftar]] atau [[Special:UserLogin|masuk log]]. Gratis.",
 	"comments-links-are-forbidden": "Pranala luar pada komentar tidak diizinkan!",
 	"comments-is-spam": "Teks komentar yang dikirimkan dianggap sebagai spam.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> pada $3 <a href=\"$4\">(batalkan pemblokiran)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] pada $2 ([[Special:CommentIgnoreList/$1|batalkan pemblokiran]])",
 	"comments-ignore-no-users": "Tidak ada pengguna yang saat ini diblokir.",
 	"comments-ignore-remove-message": "Apakah Anda yakin ingin membatalkan pemblokiran komentar pengguna <b>$1</b>?",
 	"comments-ignore-unblock": "Batalkan pemblokiran",

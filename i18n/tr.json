@@ -57,7 +57,7 @@
 	"comments-anon-message": "{{SITENAME}}, '''tüm yorumları''' memnuniyetle karşılıyor. Anonim olmak istemiyorsanız, [[Special:CreateAccount|kaydolun]] veya [[Special:UserLogin|oturum açın]]. Bedava.",
 	"comments-links-are-forbidden": "Yorumlardaki harici bağlantılar yasaktır!",
 	"comments-is-spam": "Yorumun gönderilen metni spam olarak yorumlandı.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> $3 saatinde <a href=\"$4\">(engeli kaldır)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] $2 saatinde ([[Special:CommentIgnoreList/$1|engeli kaldır]])",
 	"comments-ignore-no-users": "Şu anda engellenen kullanıcı yok.",
 	"comments-ignore-remove-message": "<b>$1</b> kullanıcısının yorumlarının engellemesini kaldırmak istediğinizden emin misiniz?",
 	"comments-ignore-unblock": "Engeli kaldır",

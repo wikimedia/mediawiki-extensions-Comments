@@ -64,7 +64,7 @@
 	"comments-links-are-forbidden": "Во коментарите се забранети надворешни врски!",
 	"comments-is-spam": "Поднесениот текст на коментарот беше протолкуван како спам.",
 	"comments-missing-text": "Коментарите не можат да бидат празни.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> на $3 <a href=\"$4\">(одблокирај)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] на $2 ([[Special:CommentIgnoreList/$1|одблокирај]])",
 	"comments-ignore-no-users": "Моментално нема блокирани корисници.",
 	"comments-ignore-remove-message": "Дали сте сигурни дека сакате да ги одблокирате коментарите на корисникот <b>$1</b>?",
 	"comments-ignore-unblock": "Одблокирај",

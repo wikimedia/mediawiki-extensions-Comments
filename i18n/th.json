@@ -36,7 +36,7 @@
 	"comments-anon-message": "{{SITENAME}} ต้อนรับ'''ทุกความเห็น''' ถ้าคุณไม่ต้องการแสดงเป็นนิรนาม กรุณา[[Special:CreateAccount|ลงทะเบียน]]หรือ[[Special:UserLogin|ล็อกอิน]] ไม่มีค่าใช้จ่าย",
 	"comments-links-are-forbidden": "ห้ามใส่ลิงก์ภายนอกในความเห็น",
 	"comments-is-spam": "ข้อความในความเห็นที่ส่งมามีลักษณะเป็นสแปม",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> เมื่อ $3 <a href=\"$4\">(ปลดบล็อก)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] เมื่อ $2 ([[Special:CommentIgnoreList/$1|ปลดบล็อก]])",
 	"comments-ignore-no-users": "ไม่มีผู้ใช้ถูกบล็อกในขณะนี้",
 	"comments-ignore-remove-message": "คุณต้องการปลดบล็อกความเห็นของผู้ใช้ <b>$1</b> หรือไม่",
 	"comments-ignore-unblock": "ปลดบล็อก",

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jack Phoenix",
 			"Xhulianoo"
 		]
 	},
@@ -61,7 +62,7 @@
 	"comments-links-are-forbidden": "Lidhjet e jashtme në komente janë të ndaluara!",
 	"comments-is-spam": "Teksti i dërguar i komentit u interpretua si spam.",
 	"comments-missing-text": "Komentet nuk mund të jenë bosh.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> më $3 <a href=\"$4\">(zhblloko)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] më $2 ([[Special:CommentIgnoreList/$1|zhblloko]])",
 	"comments-ignore-no-users": "Nuk ka përdorues të bllokuar aktualisht.",
 	"comments-ignore-remove-message": "Je i sigurt që dëshiron të zhbllokosh komentet e përdoruesit <b>$1</b>?",
 	"comments-ignore-unblock": "Zhblloko",

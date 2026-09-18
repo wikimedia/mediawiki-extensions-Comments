@@ -5,6 +5,7 @@
 			"Ameisenigel",
 			"Geitost",
 			"Gerry",
+			"Jack Phoenix",
 			"Kghbln",
 			"Metalhead64"
 		]
@@ -67,7 +68,7 @@
 	"comments-links-are-forbidden": "Weblinks sind in Kommentaren verboten!",
 	"comments-is-spam": "Der eingegebene Kommentartext wurde als Spam interpretiert.",
 	"comments-missing-text": "Kommentare dürfen nicht leer sein.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> am $3 <a href=\"$4\">(freigeben)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] am $2 ([[Special:CommentIgnoreList/$1|freigeben]])",
 	"comments-ignore-no-users": "Momentan gibt es keine gesperrten Benutzer.",
 	"comments-ignore-remove-message": "{{#FORMAL:Bist du|Sind Sie}} sicher, dass {{#FORMAL:du|Sie}} die Kommentare von Benutzer <b>$1</b> wieder freigeben {{#FORMAL:möchtest|möchten}}?",
 	"comments-ignore-unblock": "Freigeben",

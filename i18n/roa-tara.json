@@ -55,7 +55,7 @@
 	"comments-anon-message": "{{SITENAME}} bovègne a '''tutte le commende'''. Ce tu non ge vuè essere anonime, [[Special:CreateAccount|reggistrate]] o [[Special:UserLogin|tràse]]. Jè libbere.",
 	"comments-links-are-forbidden": "Collegaminde de fore jndr'à le commende sò vietate!",
 	"comments-is-spam": "'U teste scritte d'u commende ha state 'nderpretate cumme rummate.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> a le $3 <a href=\"$4\">(sblocche)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] a le $2 ([[Special:CommentIgnoreList/$1|sblocche]])",
 	"comments-ignore-no-users": "Non ge stonne utinde bloccate pe mò.",
 	"comments-ignore-remove-message": "Sì secure ca vuè ccu sblocche le commende de l'utende <b>$1</b>?",
 	"comments-ignore-unblock": "Sblocche",

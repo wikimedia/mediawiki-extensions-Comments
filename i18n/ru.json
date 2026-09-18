@@ -53,7 +53,7 @@
 	"comments-links-are-forbidden": "Внешние ссылки в комментариях запрещены!",
 	"comments-is-spam": "Представленный текст комментария был воспринят как спам.",
 	"comments-missing-text": "Комментарии не могут быть пустыми.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> на $3 <a href=\"$4\">(разблокировать)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] на $2 ([[Special:CommentIgnoreList/$1|разблокировать]])",
 	"comments-ignore-no-users": "В настоящее время нет ни одного заблокированного участника.",
 	"comments-ignore-remove-message": "Вы уверены, что хотите разблокировать комментарии участника <b>$1</b>?",
 	"comments-ignore-unblock": "Разблокировать",

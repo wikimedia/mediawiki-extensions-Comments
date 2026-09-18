@@ -36,7 +36,7 @@
 	"comments-anon-message": "{{SITENAME}} weelcomes '''aw comments'''. Gif ye dinna want tae be anonymous, [[Special:CreateAccount|register]] or [[Special:UserLogin|log in]]. It's free.",
 	"comments-links-are-forbidden": "External links in comments ar forbidden!",
 	"comments-is-spam": "Submitted tex o the comment wis interpreted aes spam.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> oan $3 <a href=\"$4\">(onblock)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] oan $2 ([[Special:CommentIgnoreList/$1|onblock]])",
 	"comments-ignore-no-users": "Thaur ar naw uisers blockit richt nou.",
 	"comments-ignore-remove-message": "Ar ye sair ye want tae onblock uiser <b>$1</b>'s comments?",
 	"comments-ignore-unblock": "Onblock",

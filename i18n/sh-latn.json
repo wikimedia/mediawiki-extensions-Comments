@@ -3,6 +3,7 @@
 		"authors": [
 			"Aca",
 			"BadDog",
+			"Jack Phoenix",
 			"Winston Sung"
 		]
 	},
@@ -56,7 +57,7 @@
 	"comments-anon-message": "{{SITENAME}} pozdravlja '''sve komentare'''. Ako ne želite biti anonimni, [[Special:CreateAccount|registrirajte se]] ili [[Special:UserLogin|prijavite se]]. Besplatno je.",
 	"comments-links-are-forbidden": "Zabranjene su vanjske veze u komentarima.",
 	"comments-is-spam": "Poslani tekst komentara protumačen je kao spam.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> $3 <a href=\"$4\">(deblokiraj)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] $2 ([[Special:CommentIgnoreList/$1|deblokiraj]])",
 	"comments-ignore-no-users": "Trenutno nema blokiranih korisnika.",
 	"comments-ignore-remove-message": "Jeste li sigurni da želite deblokirati komentare korisnika <b>$1</b>?",
 	"comments-ignore-unblock": "Deblokiraj",

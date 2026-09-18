@@ -56,7 +56,7 @@
 	"comments-anon-message": "{{SITENAME}} ønsker '''alle kommentarer''' velkommen. [[Special:CreateAccount|Registrer deg]] eller [[Special:UserLogin|logg inn]] hvis du ikke ønsker å være anonym. Det er gratis.",
 	"comments-links-are-forbidden": "Eksterne lenker i kommentarer er forbudt!",
 	"comments-is-spam": "Teksten i kommentaren ble tolket som spam.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> $3 <a href=\"$4\">(avblokker)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] $2 ([[Special:CommentIgnoreList/$1|avblokker]])",
 	"comments-ignore-no-users": "Det er ingen brukere som er blokkerte for øyeblikket.",
 	"comments-ignore-remove-message": "Er du sikker på at du ønsker å avblokkere kommentarene til <b>$1</b>?",
 	"comments-ignore-unblock": "Avblokker",

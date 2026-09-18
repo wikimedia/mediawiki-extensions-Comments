@@ -16,7 +16,7 @@
 	"comments-reply": "Svara",
 	"comments-anon-name": "Dulnevndur brúkari",
 	"comments-anon-message": "{{SITENAME}} vil gjarna hava '''viðmerkingar'''. Um tú ikki vilt vera dulnevnd/ur, so kanst tú [[Special:CreateAccount|skráseta teg]] ella [[Special:UserLogin|rita inn]]. Tað er ókeypis.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> hin $3 <a href=\"$4\">(tak sperring burtur)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] hin $2 ([[Special:CommentIgnoreList/$1|tak sperring burtur]])",
 	"comments-time-ago": "$1 síðan",
 	"comments-time-days": "{{PLURAL:$1|ein dagur|$1 dagar}}",
 	"comments-time-hours": "{{PLURAL:$1|ein tími|$1 tímar}}",

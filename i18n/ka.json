@@ -20,7 +20,7 @@
 	"comments-delete-link": "კომენტარის წაშლა",
 	"comments-anon-name": "ანონიმური მომხმარებელი",
 	"comments-anon-message": "{{SITENAME}} მიესალმება '''ყველა კომენტარს'''. თუ თქვენ არ გსურთ იყოთ ანონიმი, [[Special:CreateAccount|დარეგისტრირდით]] ან [[Special:UserLogin|შედით სისტემაში]]. ეს უფასოა.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> $3-ზე <a href=\"$4\">(განბლოკვა)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] $2-ზე ([[Special:CommentIgnoreList/$1|განბლოკვა]])",
 	"comments-ignore-remove-message": "დარწმუნებული ხართ, რომ გსურთ განბლოკოთ მომხმარებელ <b>$1</b>-ის კომენტარი?",
 	"comments-ignore-unblock": "განბლოკვა",
 	"comments-ignore-cancel": "გაუქმება",

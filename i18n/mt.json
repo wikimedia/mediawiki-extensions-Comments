@@ -32,7 +32,7 @@
 	"comments-delete-link": "Ħassar il-kumment",
 	"comments-anon-name": "Utent anonimu",
 	"comments-anon-message": "{{SITENAME}} tilqa' il-'''kummenti kollha'''. Jekk ma tridx li tibqa' anonimu, [[Special:CreateAccount|irreġistra]] jew [[Special:UserLogin|idħol fil-kont]]. Dan huwa b'xejn.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> nhar il-$3 <a href=\"$4\">(żblokka)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] nhar il-$2 ([[Special:CommentIgnoreList/$1|żblokka]])",
 	"comments-ignore-no-users": "M'hemm l-ebda utent li huwa attwalment imblukkat.",
 	"comments-ignore-remove-message": "Inti ċert li tixtieq tiżblokka l-kummenti tal-utent <b>$1</b>?",
 	"comments-ignore-unblock": "Żblokka",

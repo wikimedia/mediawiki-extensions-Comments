@@ -3,6 +3,7 @@
 		"authors": [
 			"Eitvys200",
 			"Hugo.arg",
+			"Jack Phoenix",
 			"Manvydasz",
 			"Nokeoo"
 		]
@@ -33,7 +34,7 @@
 	"comments-anon-name": "Anoniminis vartotojas",
 	"comments-links-are-forbidden": "Išorinės nuorodos komentaruose draudžiamos!",
 	"comments-is-spam": "Pateiktas komentaro tekstas interpretuotas kaip šlamštas.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> $3 <a href=\"$4\">(atblokuoti)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] $2 ([[Special:CommentIgnoreList/$1|atblokuoti]])",
 	"comments-ignore-no-users": "Šiuo metu nėra užblokuotų vartotojų.",
 	"comments-ignore-remove-message": "Ar tikrai norite atblokuoti vartotojo <b>$1</b> komentarus?",
 	"comments-ignore-unblock": "Atblokuoti",

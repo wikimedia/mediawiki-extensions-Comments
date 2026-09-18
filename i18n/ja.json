@@ -43,7 +43,7 @@
 	"comments-anon-message": "{{SITENAME}}は'''すべてのコメント'''を歓迎します。匿名で投稿したくない場合は、[[Special:CreateAccount|アカウント作成]]または[[Special:UserLogin|ログイン]]してください。無料です。",
 	"comments-links-are-forbidden": "コメント内での外部リンクの使用は禁止されています。",
 	"comments-is-spam": "投稿したコメントの本文はスパムと判定されました。",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> - $3 <a href=\"$4\">(ブロック解除)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] - $2 ([[Special:CommentIgnoreList/$1|ブロック解除]])",
 	"comments-ignore-no-users": "現在ブロックされている利用者はいません。",
 	"comments-ignore-remove-message": "利用者 <b>$1</b> によるコメントを本当にブロック解除しますか?",
 	"comments-ignore-unblock": "ブロック解除",

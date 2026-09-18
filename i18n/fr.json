@@ -75,7 +75,7 @@
 	"comments-links-are-forbidden": "Les liens externes dans les commentaires sont interdits !",
 	"comments-is-spam": "Le texte du commentaire soumis a été interprété comme pourriel.",
 	"comments-missing-text": "Les commentaires ne peuvent pes être vides.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> depuis le $3 <a href=\"$4\">(débloquer)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] depuis le $2 ([[Special:CommentIgnoreList/$1|débloquer]])",
 	"comments-ignore-no-users": "Il n’y a actuellement aucun utilisateur bloqué.",
 	"comments-ignore-remove-message": "Voulez-vous vraiment débloquer les commentaires de l’utilisateur <b>$1</b> ?",
 	"comments-ignore-unblock": "Débloquer",

@@ -35,7 +35,7 @@
 	"comments-anon-message": "{{SITENAME}} mengalu-alukan '''semua komen'''. Jika anda tidak mahu berawanama, sila [[Special:CreateAccount|daftar]] atau [[Special:UserLogin|log masuk]]. Percuma.",
 	"comments-links-are-forbidden": "Pautan luar dilarang dalam komen!",
 	"comments-is-spam": "Teks komen yang dihantar ini ditafsir sebagai spam.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> pada $3 <a href=\"$4\">(nyahsekat)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] pada $2 ([[Special:CommentIgnoreList/$1|nyahsekat]])",
 	"comments-ignore-no-users": "Tiada pengguna yang disekat sekarang.",
 	"comments-ignore-remove-message": "Adakah anda benar-benar ingin menyahsekat komen-komen pengguna <b>$1</b>?",
 	"comments-ignore-unblock": "Nyahsekat",

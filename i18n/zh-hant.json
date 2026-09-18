@@ -79,7 +79,7 @@
 	"comments-links-are-forbidden": "評論內容禁止使用外部連結！",
 	"comments-is-spam": "已送出的評論內容被判定為垃圾訊息。",
 	"comments-missing-text": "評論不能為空。",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> 於 $3 <a href=\"$4\">(解除封鎖)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] 於 $2 ([[Special:CommentIgnoreList/$1|解除封鎖]])",
 	"comments-ignore-no-users": "目前沒有使用者被封鎖。",
 	"comments-ignore-remove-message": "您確定要取消封鎖使用者 <b>$1</b> 的評論？",
 	"comments-ignore-unblock": "解封",

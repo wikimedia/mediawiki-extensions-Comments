@@ -73,7 +73,7 @@
 	"comments-links-are-forbidden": "Externe koppelingen in reacties zijn niet toegestaan!",
 	"comments-is-spam": "De opgegeven reactie is herhemd als spam.",
 	"comments-missing-text": "Reacties mogen niet leeg zijn.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> op $3 <a href=\"$4\">(zichtbaar maken)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] op $2 ([[Special:CommentIgnoreList/$1|zichtbaar maken]])",
 	"comments-ignore-no-users": "Er zijn momenteel geen gebruikers geblokkeerd.",
 	"comments-ignore-remove-message": "Weet u zeker dat u de reacties van <b>$1</b> weer wilt zien?",
 	"comments-ignore-unblock": "Deblokkeren",

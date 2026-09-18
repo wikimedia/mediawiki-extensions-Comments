@@ -62,7 +62,6 @@
 	"comments-anon-message": "{{SITENAME}} '''از همه نظرات''' استقبال می‌کند. اگر شما نمی‌خواهید به صورت ناشناس باشید، [[Special:CreateAccount| ثبت نام کنید]] یا [[Special:UserLogin| وارد سامانه شوید.]]. این عمل رایگان است.",
 	"comments-links-are-forbidden": "اتصالات خارجی در نظرات ممنوع است!",
 	"comments-is-spam": " متن ارائه شدهٔ نظرات به عنوان اسپم ترجمه شده",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> on $3 <a href=\"$4\">(unblock)</a>",
 	"comments-ignore-no-users": "هیچ کاربری در حال حاضر بسته نشده است.",
 	"comments-ignore-remove-message": "آیا مطمئن هستید که می‌خواهید نظرات <b>$1</b> کاربر را باز کنید؟",
 	"comments-ignore-unblock": "باز شود",

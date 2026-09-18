@@ -69,7 +69,7 @@
 	"comments-links-are-forbidden": "댓글 안의 외부 링크는 금지됩니다!",
 	"comments-is-spam": "제출된 글이 스팸으로 판단됩니다.",
 	"comments-missing-text": "댓글은 비워둘 수 없습니다.",
-	"comments-ignore-item": "$3에 <a href=\"$1\">$2</a> <a href=\"$4\">(차단 해제)</a>",
+	"comments-ignore-item": "$2에 [[User:$1|$1]] ([[Special:CommentIgnoreList/$1|차단 해제]])",
 	"comments-ignore-no-users": "현재 차단된 사용자가 없습니다.",
 	"comments-ignore-remove-message": "정말로 사용자 <b>$1</b>의 댓글을 차단 해제하겠습니까?",
 	"comments-ignore-unblock": "차단 해제",

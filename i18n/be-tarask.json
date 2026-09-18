@@ -38,7 +38,7 @@
 	"comments-delete-link": "Выдаліць камэнтар",
 	"comments-anon-name": "Ананімны ўдзельнік",
 	"comments-anon-message": "{{SITENAME}} вітае '''ўсіх камэнтатараў'''. Калі вы не жадаеце хаваць сваю асобу, [[Special:CreateAccount|зарэгіструйцеся]] ці [[Special:UserLogin|ўвайдзіце]]. Гэта бясплатна.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a>, $3 <a href=\"$4\">(разблякаваць)</a>",
+	"comments-ignore-item": "[[User:$1|$1]], $2 ([[Special:CommentIgnoreList/$1|разблякаваць]])",
 	"comments-ignore-no-users": "Цяпер ніводны ўдзельнік не заблякаваны.",
 	"comments-ignore-remove-message": "Вы ўпэўненыя, што жадаеце зноў бачыць камэнтары <b>$1</b>?",
 	"comments-ignore-unblock": "Разблякаваць",

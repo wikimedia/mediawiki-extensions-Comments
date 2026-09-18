@@ -34,7 +34,7 @@
 	"comments-delete-link": "Scancelé ël coment",
 	"comments-anon-name": "Utent anònim",
 	"comments-anon-message": "{{SITENAME}} a aceta '''tùit ij coment'''. Se chiel a veul nen esse anònim, ch'as [[Special:CreateAccount|argistra]] o ch'a [[Special:UserLogin|intra ant ël sistema]]. A l'é a gràtis.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> dzor $3 <a href=\"$4\">(dësblòca)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] dzor $2 ([[Special:CommentIgnoreList/$1|dësblòca]])",
 	"comments-ignore-no-users": "A-i é pa gnun utent blocà al moment.",
 	"comments-ignore-remove-message": "Ses-to sigur ëd vorèj dësbloché ij coment ëd l'utent <b>$1</b>?",
 	"comments-ignore-unblock": "Dësbloché",

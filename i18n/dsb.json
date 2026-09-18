@@ -35,7 +35,7 @@
 	"comments-anon-message": "{{SITENAME}} wjaseli se wó '''wšych komentarach'''. Jolic njocoš anonymny byś, [[Special:CreateAccount|zregistrěruj se]] abo [[Special:UserLogin|pśizjaw se]]. To jo dermo.",
 	"comments-links-are-forbidden": "Eksterne wótkaze su w komentarach zakazane!",
 	"comments-is-spam": "Wótpósłany komentarowy tekst jo se ako spam interpretěrował.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> $3 <a href=\"$4\">(wótblokěrowaś)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] $2 ([[Special:CommentIgnoreList/$1|wótblokěrowaś]])",
 	"comments-ignore-no-users": "Tuchylu njejsu žedne wužywarje zablokowane.",
 	"comments-ignore-remove-message": "Coš napšawdu komentary wužywarja <b>$1</b> wótblokěrowaś?",
 	"comments-ignore-unblock": "Wótblokěrowaś",

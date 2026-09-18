@@ -63,7 +63,7 @@
 	"comments-links-are-forbidden": "Ligamines externe non es permittite in commentos.",
 	"comments-is-spam": "Le texto submittite del commento ha essite interpretate como spam.",
 	"comments-missing-text": "Le commentos non pote esser vacue.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> le $3 <a href=\"$4\">(disblocar)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] le $2 ([[Special:CommentIgnoreList/$1|disblocar]])",
 	"comments-ignore-no-users": "Il non ha usatores blocate.",
 	"comments-ignore-remove-message": "Es tu secur de voler disblocar le commentos del usator <b>$1</b>?",
 	"comments-ignore-unblock": "Disblocar",

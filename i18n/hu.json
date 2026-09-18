@@ -36,7 +36,7 @@
 	"comments-delete-link": "Megjegyzés törlése",
 	"comments-anon-name": "Névtelen felhasználó",
 	"comments-anon-message": "{{SITENAME}} üdvözöl '''minden hozzászólást'''. Ha nem akarsz névtelene lenni, [[Special:CreateAccount|regisztrálj]] vagy [[Special:UserLogin|jelentkezz be]]. Ez ingyenes.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> $3 <a href=\"$4\">(felold)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] $2 ([[Special:CommentIgnoreList/$1|felold]])",
 	"comments-ignore-no-users": "Jelenleg nincs blokkolt felhasználó.",
 	"comments-ignore-remove-message": "Biztos, hogy meg akarod szüntetni <b>$1</b> felhasználó megjegyzéseinek a blokkolását?",
 	"comments-ignore-unblock": "Blokk feloldása",

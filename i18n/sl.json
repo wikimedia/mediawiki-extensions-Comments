@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Eleassar",
+			"Jack Phoenix",
 			"Upwinxp"
 		]
 	},
@@ -55,7 +56,7 @@
 	"comments-anon-message": "{{SITENAME}} pozdravlja '''vse komentarje''. Če ne želite biti anonimni, se [[Special:CreateAccount|registrirajte]] ali [[Special:UserLogin|prijavite]]. Brezplačno je.",
 	"comments-links-are-forbidden": "Zunanje povezave v komentarjih so prepovedane!",
 	"comments-is-spam": "Poslano besedilo komentarja je bilo interpretirano kot promocijsko.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> na $3 <a href=\"$4\">(odblokiraj)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] na $2 ([[Special:CommentIgnoreList/$1|odblokiraj]])",
 	"comments-ignore-no-users": "Trenutno ni blokiranih uporabnikov.",
 	"comments-ignore-remove-message": "Ste prepričani, da želite odblokirati komentarje uporabnika <b>$1</b>?",
 	"comments-ignore-unblock": "Odblokiraj",

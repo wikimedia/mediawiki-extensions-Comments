@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"ChrisPtDe"
+			"ChrisPtDe",
+			"Jack Phoenix"
 		]
 	},
 	"comments-comment": "Comentèro",
@@ -20,7 +21,7 @@
 	"comments-permalink": "Lim fixo",
 	"comments-delete-link": "Ôtar lo comentèro",
 	"comments-anon-name": "Utilisator anonimo",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> sur $3 <a href=\"$4\">(dèblocar)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] sur $2 ([[Special:CommentIgnoreList/$1|dèblocar]])",
 	"comments-ignore-no-users": "Ora y at gins d’utilisator blocâ.",
 	"comments-ignore-remove-message": "Est-o que vos voléd franc dèblocar los comentèros de l’utilisator <b>$1</b> ?",
 	"comments-ignore-unblock": "Dèblocar",
