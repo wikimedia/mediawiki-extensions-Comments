@@ -3,7 +3,8 @@
 		"authors": [
 			"Aca",
 			"BadDog",
-			"Winston Sung"
+			"Winston Sung",
+			"Jack Phoenix"
 		]
 	},
 	"apihelp-commentblock-summary": "API za blokrianje komentara omogućuje blokiranje korisnika od komentiranja nakon što ispunite sljedeće parametre: CommentID.",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Eleassar",
-			"Upwinxp"
+			"Upwinxp",
+			"Jack Phoenix"
 		]
 	},
 	"apihelp-commentblock-summary": "API »commentblock« omogoča blokiranje uporabnika iz komentarja, iz katerega izvira, po izpolnitvi naslednjih parametrov: CommentID.",
