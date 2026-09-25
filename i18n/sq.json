@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xhulianoo"
+			"Xhulianoo",
+			"Jack Phoenix"
 		]
 	},
 	"apihelp-commentblock-summary": "API-ja commentblock lejon bllokimin e një përdoruesi nga komenti nga i cili e ka origjinën, pasi të jenë plotësuar parametrat e mëposhtëm: CommentID.",

@@ -10,7 +10,8 @@
 			"Piramidion",
 			"RLuts",
 			"Vlad5250",
-			"Ата"
+			"Ата",
+			"Jack Phoenix"
 		]
 	},
 	"apihelp-commentblock-summary": "Commentblock API дозволяє заблокувати користувача за коментарем, за яким його можна відстежити, заповнивши такий параметр: CommentID.",

@@ -5,10 +5,12 @@
 			"NikosLikomitros",
 			"Nikosgranturismogt",
 			"Protnet",
-			"ZaDiak"
+			"ZaDiak",
+			"PrinceAzuka134"
 		]
 	},
 	"comments-comment": "Σχόλιο",
+	"comments-db-locked": "<h3>Προσθήκη σχολίων</h3> Η βάση δεδομένων είναι αυτήν τη στιγμή κλειδωμένη για λόγους τακτικής συντήρησης, μετά την οποία θα επανέλθει στην κανονική της λειτουργία. Ελέγξτε ξανά αργότερα!",
 	"comments-voted-label": "Έχετε ψηφίσει",
 	"comments-loading": "Φόρτωση...",
 	"comments-auto-refresher-enable": "Ενεργοποίηση αυτόματης ανανέωσης σχολίων",
