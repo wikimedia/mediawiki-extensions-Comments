@@ -4,8 +4,6 @@
  * @ingroup Maintenance
  */
 
-use MediaWiki\MediaWikiServices;
-
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
@@ -97,7 +95,7 @@ class MigrateOldCommentsVoteUserColumnsToActor extends MediaWiki\Maintenance\Log
 			[ 'DISTINCT' ]
 		);
 
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$userFactory = $services->getUserFactory();
 
 		foreach ( $res as $row ) {
