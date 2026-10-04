@@ -1,6 +1,5 @@
 <?php
 
-use MediaWiki\Context\RequestContext;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class CommentListAPI extends MediaWiki\Api\ApiBase {
@@ -32,7 +31,7 @@ class CommentListAPI extends MediaWiki\Api\ApiBase {
 		// Voting feature flag
 		$voting = $this->getMain()->getVal( 'voting' );
 
-		$commentsPage = new CommentsPage( $this->getMain()->getVal( 'pageID' ), RequestContext::getMain() );
+		$commentsPage = new CommentsPage( $this->getMain()->getVal( 'pageID' ), $this->getContext() );
 		if ( !$isFirstLoad ) {
 			$commentsPage->orderBy = $this->getMain()->getVal( 'order' );
 			$commentsPage->currentPagerPage = $this->getMain()->getVal( 'pagerPage' );
