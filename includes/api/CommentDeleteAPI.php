@@ -7,7 +7,7 @@ class CommentDeleteAPI extends MediaWiki\Api\ApiBase {
 	public function execute() {
 		$user = $this->getUser();
 
-		$comment = Comment::newFromID( $this->getMain()->getVal( 'commentID' ) );
+		$comment = Comment::newFromID( $this->getContext(), $this->getMain()->getVal( 'commentID' ) );
 
 		$userCheck = (
 			$user->isAllowed( 'commentadmin' ) ||

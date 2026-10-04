@@ -14,7 +14,7 @@ class CommentVoteAPI extends MediaWiki\Api\ApiBase {
 			$this->dieWithError( 'comments-not-allowed' );
 		}
 
-		$comment = Comment::newFromID( $this->getMain()->getVal( 'commentID' ) );
+		$comment = Comment::newFromID( $this->getContext(), $this->getMain()->getVal( 'commentID' ) );
 		$voteValue = $this->getMain()->getVal( 'voteValue' );
 
 		if ( $comment && is_numeric( $voteValue ) ) {

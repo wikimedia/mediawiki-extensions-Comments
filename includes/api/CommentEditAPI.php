@@ -15,7 +15,7 @@ class CommentEditAPI extends CommentSubmitBase {
 		$this->checkBlocks( $user );
 		$this->validateCommentText( $commentText, $user, $pageID );
 
-		$comment = Comment::newFromID( $main->getVal( 'commentID' ) );
+		$comment = Comment::newFromID( $this->getContext(), $main->getVal( 'commentID' ) );
 
 		// Do not allow the edit action if the user is not the comment owner (or have no edit rights)
 		// and also not a comments admin

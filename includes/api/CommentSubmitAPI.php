@@ -5,6 +5,7 @@ use Wikimedia\ParamValidator\ParamValidator;
 class CommentSubmitAPI extends CommentSubmitBase {
 
 	public function execute() {
+		$context = $this->getContext();
 		$main = $this->getMain();
 		$user = $this->getUser();
 
@@ -15,9 +16,9 @@ class CommentSubmitAPI extends CommentSubmitBase {
 		$this->checkBlocks( $user );
 		$this->validateCommentText( $commentText, $user, $pageID );
 
-		$page = new CommentsPage( $pageID, $this->getContext() );
+		$page = new CommentsPage( $pageID, $context );
 
-		Comment::add( $commentText, $page, $user, $main->getVal( 'parentID' ) );
+		Comment::add( $context, $commentText, $page, $user, $main->getVal( 'parentID' ) );
 
 		if ( class_exists( 'UserStatsTrack' ) ) {
 			$stats = new UserStatsTrack( $user->getId(), $user->getName() );
