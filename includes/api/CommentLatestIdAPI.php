@@ -1,6 +1,5 @@
 <?php
 
-use MediaWiki\Context\RequestContext;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class CommentLatestIdAPI extends MediaWiki\Api\ApiBase {
@@ -11,7 +10,7 @@ class CommentLatestIdAPI extends MediaWiki\Api\ApiBase {
 
 		$pageID = $this->getMain()->getVal( 'pageID' );
 
-		$commentsPage = new CommentsPage( $pageID, RequestContext::getMain() );
+		$commentsPage = new CommentsPage( $pageID, $this->getContext() );
 
 		$result = $this->getResult();
 		$result->addValue( $this->getModuleName(), 'id', $commentsPage->getLatestCommentID() );
