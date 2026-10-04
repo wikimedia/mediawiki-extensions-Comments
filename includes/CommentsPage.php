@@ -1,7 +1,6 @@
 <?php
 
 use MediaWiki\Context\ContextSource;
-use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
@@ -490,7 +489,7 @@ class CommentsPage extends ContextSource {
 		$user = $this->getUser();
 
 		// Use these for the block/global block check below
-		$context = RequestContext::getMain();
+		$context = $this->getContext();
 		$userContext = $context->getUser();
 		$language = $context->getLanguage();
 		$ip = $context->getRequest()->getIP();

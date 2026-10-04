@@ -1,7 +1,7 @@
 <?php
 
 use MediaWiki\Context\ContextSource;
-use MediaWiki\Context\RequestContext;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Notifications\DiscussionParser;
 use MediaWiki\Extension\Notifications\Model\Event as EchoEvent;
 use MediaWiki\MediaWikiServices;
@@ -172,11 +172,11 @@ class Comment extends ContextSource {
 	/**
 	 * Create a new Comment object from a comment ID.
 	 *
+	 * @param IContextSource $context
 	 * @param int $id Comment ID, must not be zero
 	 * @return null|Comment Null on failure, Comment object on success
 	 */
-	public static function newFromID( $id ) {
-		$context = RequestContext::getMain();
+	public static function newFromID( IContextSource $context, $id ) {
 		$dbr = self::getDBHandle( 'read' );
 
 		if ( !is_numeric( $id ) || $id == 0 ) {
@@ -299,6 +299,7 @@ class Comment extends ContextSource {
 	 * Adds the comment and all necessary info into the Comments table in the
 	 * database.
 	 *
+	 * @param IContextSource $context
 	 * @param string $text Text of the comment
 	 * @param CommentsPage $page Container page
 	 * @param User $user User commenting
@@ -306,9 +307,8 @@ class Comment extends ContextSource {
 	 *
 	 * @return Comment the added comment
 	 */
-	public static function add( $text, CommentsPage $page, User $user, $parentID ): self {
+	public static function add( IContextSource $context, $text, CommentsPage $page, User $user, $parentID ): self {
 		$dbw = self::getDBHandle( 'write' );
-		$context = RequestContext::getMain();
 
 		// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
 		$commentDate = @date( 'Y-m-d H:i:s' );
