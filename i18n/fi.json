@@ -30,6 +30,8 @@
 	"comments-ignore-message": "Et huomioi tämän kommentin kirjoittajaa",
 	"comments-you": "Sinä",
 	"comments-reply": "Vastaa",
+	"comments-edit": "Muokkaa",
+	"comments-edit-cancel": "Peruuta",
 	"comments-edit-save": "Tallenna",
 	"comments-login-required": "Sinun tulee olla kirjautunut sisään voidaksesi lisätä kommentteja",
 	"comments-not-allowed": "Et voi lisätä kommentteja.",
@@ -42,6 +44,7 @@
 	"comments-anon-message": "{{SITENAME}} toivottaa tervetulleeksi '''kaikki kommentit'''. Jos et halua olla anonyymi, [[Special:CreateAccount|rekisteröidy]] tai [[Special:UserLogin|kirjaudu sisään]]. Se on ilmaista.",
 	"comments-links-are-forbidden": "Ulkoiset linkit kommenteissa ovat kiellettyjä!",
 	"comments-is-spam": "Lähetetyn kommentin teksti tulkittiin roskapostiksi.",
+	"comments-missing-text": "Kommentti ei voi olla tyhjä.",
 	"comments-ignore-item": "[[User:$1|$1]]; $2 ([[Special:CommentIgnoreList/$1|poista huomioimattomuuslistalta]])",
 	"comments-ignore-no-users": "Sinulla ei ole yhtään käyttäjää huomioimattomuuslistallasi.",
 	"comments-ignore-remove-message": "Oletko varma, että haluat huomioida kommentit käyttäjältä <b>$1</b>?",
@@ -56,6 +59,7 @@
 	"log-description-comments": "Tämä on loki kommenteista.",
 	"logentry-comments-add": "$1 lähetti uuden kommentin sivulle $3",
 	"logentry-comments-delete": "$1 poisti kommentin #$4 sivulla $3",
+	"logentry-comments-edit": "$1 muokkasi kommenttia nro. $4 $3",
 	"comments-time-ago": "$1 sitten",
 	"comments-time-months": "{{PLURAL:$1|yksi kuukausi|$1 kuukautta}}",
 	"comments-time-days": "{{PLURAL:$1|yksi päivä|$1 päivää}}",
@@ -74,5 +78,8 @@
 	"action-commentlinks": "käyttää ulkoisia linkkejä kommenteissa",
 	"right-commentlinks": "Käyttää ulkoisia linkkejä kommenteissa",
 	"action-comment-delete-own": "poistaa omia kommentteja",
-	"right-comment-delete-own": "Poistaa omia kommentteja"
+	"right-comment-delete-own": "Poistaa omia kommentteja",
+	"action-comment-edit-own": "muokata omia kommenttejasi",
+	"right-comment-edit-own": "Muokata omia kommentteja",
+	"comments-edit-permissiondenied": "Sinulla ei ole oikeutta muokata tätä kommenttia."
 }
