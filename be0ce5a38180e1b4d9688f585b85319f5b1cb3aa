@@ -50,6 +50,24 @@
       "message": "This is 1.42+, by the way. The backwards compatibility can be removed.",
       "revId": "be0ce5a38180e1b4d9688f585b85319f5b1cb3aa",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb26e6d6_ee0c73a4",
+        "filename": "includes/Comment.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1035,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2026-10-08T11:35:43Z",
+      "side": 1,
+      "message": "Done in I50554ff6dcbcf6a6e8d9d810248459c212088e71",
+      "parentUuid": "0f8beff5_e05ab421",
+      "revId": "be0ce5a38180e1b4d9688f585b85319f5b1cb3aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
