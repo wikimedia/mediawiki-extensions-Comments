@@ -1030,19 +1030,9 @@ class Comment extends ContextSource {
 	 * @return \Wikimedia\Rdbms\IDatabase|\Wikimedia\Rdbms\IReadableDatabase
 	 */
 	public static function getDBHandle( $type = 'read' ) {
-		$services = MediaWikiServices::getInstance();
-		if ( $type === 'read' ) {
-			if ( method_exists( $services, 'getConnectionProvider' ) ) {
-				return $services->getConnectionProvider()->getReplicaDatabase();
-			} else {
-				return $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
-			}
-		} elseif ( $type === 'write' ) {
-			if ( method_exists( $services, 'getConnectionProvider' ) ) {
-				return $services->getConnectionProvider()->getPrimaryDatabase();
-			} else {
-				return $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
-			}
-		}
+		$connectionProvider = MediaWikiServices::getInstance()->getConnectionProvider();
+		return $type === 'read' ?
+			$connectionProvider->getReplicaDatabase() :
+			$connectionProvider->getPrimaryDatabase();
 	}
 }
