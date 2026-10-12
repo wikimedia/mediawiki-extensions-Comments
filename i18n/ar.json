@@ -66,7 +66,7 @@
 	"comments-links-are-forbidden": "الروابط الخارجية في التعليقات ممنوعة!",
 	"comments-is-spam": "تم تفسير نص التعليقات المقدم على أنه رسالة غير مرغوب فيها.",
 	"comments-missing-text": "لا يجوز أن تكون التعليقات فارغة.",
-	"comments-ignore-item": "<a href=\"$1\">$2</a> on $3 <a href=\"$4\">(إلغاء المنع)</a>",
+	"comments-ignore-item": "[[User:$1|$1]] على $2 ([[Special:CommentIgnoreList/$1|رفع المنع]])",
 	"comments-ignore-no-users": "لا يوجد مستخدم حاليا ممنوع.",
 	"comments-ignore-remove-message": "هل تريد بالتأكيد إلغاء حظر تعليقات المستخدم <b>$1</b>؟",
 	"comments-ignore-unblock": "رفع المنع",
