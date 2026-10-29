@@ -45,6 +45,9 @@
 	"comments-ignore-message": "Avtorja tega komentarja prezirate",
 	"comments-you": "Vi",
 	"comments-reply": "Odgovori",
+	"comments-edit": "Uredi",
+	"comments-edit-cancel": "Prekliči",
+	"comments-edit-save": "Shrani",
 	"comments-login-required": "Za dodajanje komentarjev morate biti prijavljeni",
 	"comments-not-allowed": "Ni vam dovoljeno objavljati komentarjev.",
 	"comments-post": "Objavi komentar",
@@ -56,6 +59,7 @@
 	"comments-anon-message": "{{SITENAME}} pozdravlja '''vse komentarje''. Če ne želite biti anonimni, se [[Special:CreateAccount|registrirajte]] ali [[Special:UserLogin|prijavite]]. Brezplačno je.",
 	"comments-links-are-forbidden": "Zunanje povezave v komentarjih so prepovedane!",
 	"comments-is-spam": "Poslano besedilo komentarja je bilo interpretirano kot promocijsko.",
+	"comments-missing-text": "Komentarji ne smejo biti prazni.",
 	"comments-ignore-item": "<a href=\"$1\">$2</a> na $3 <a href=\"$4\">(odblokiraj)</a>",
 	"comments-ignore-no-users": "Trenutno ni blokiranih uporabnikov.",
 	"comments-ignore-remove-message": "Ste prepričani, da želite odblokirati komentarje uporabnika <b>$1</b>?",
@@ -88,5 +92,6 @@
 	"action-commentlinks": "uporabo zunanjih povezav v komentarjih",
 	"right-commentlinks": "Uporaba zunanjih povezav v komentarjih",
 	"action-comment-delete-own": "brisanje lastnih komentarjev",
-	"right-comment-delete-own": "Brisanje lastnih komentarjev"
+	"right-comment-delete-own": "Brisanje lastnih komentarjev",
+	"comments-edit-permissiondenied": "Za urejanje tega komentarja nimate dovoljenja."
 }
